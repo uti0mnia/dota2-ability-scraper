@@ -3,6 +3,22 @@ from bs4 import BeautifulSoup as BS
 import re
 from selenium import webdriver
 
+def findNotes(divs, notes):
+    # base case
+    if len(divs) == 0:
+        return notes
+    elif  len(divs[0].find('li').findAll('ul')) != 0:
+        text = divs[0].find('li').text.encode('utf-8').strip()
+        notes.append(text)
+        new_divs = divs[0].find('li').findAll('ul')
+        notes.append(findNotes(new_divs, []))
+        return findNotes(divs[1:], notes)
+    else:
+        text = divs[0].find('li').text.encode('utf-8').strip()
+        notes.append(text)
+        return findNotes(divs[1:], notes)
+
+
 special_sentences = {'Does not pierce spell immunity.': 'NO_PIERCE_SPELL_IMMUNE',
                      'Partially pierces spell immunity.': 'PARTIAL_PIERCE_SPELL_IMMUNE',
                      'Pierces spell immunity.': 'PIERCE_SPELL_IMMUNE',
@@ -59,8 +75,11 @@ for div in soup.findAll('div', style='display: flex; flex-wrap: wrap; align-item
     for d in div_data.findAll('div', style='font-size: 85%; margin-left: 10px;'):
         modifiers += [item.strip().replace(u'\xa0', u' ').encode('utf-8') for item in d.text.strip().split('\n')]
 
-    for d in data:
-        print d
+    # finding notes
+    note_div = div.find('div', style='flex: 2 3 400px; word-wrap: break-word;')
+    notes = findNotes(note_div.findAll('ul', recursive=False), [])
+    for note in notes:
+        print note
 
 
 # driver.close()
