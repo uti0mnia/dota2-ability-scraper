@@ -1,18 +1,21 @@
 from bs4 import BeautifulSoup as BS
 import re
-from selenium import webdriver
-from selenium.webdriver.support.ui import WebDriverWait
+import os
+import pprint
 
 # constants
 SPECIAL_SENTENCES = {
+    'Unique Attack Modifier.': 'UNIQUE_ATTACK_MODIFIER',
     'Does not pierce spell immunity.': 'NO_PIERCE_SPELL_IMMUNE',
     'Partially pierces spell immunity.': 'PARTIAL_PIERCE_SPELL_IMMUNE',
     'Pierces spell immunity.': 'PIERCE_SPELL_IMMUNE',
     'Upgradable by Aghanim\'s Scepter.': 'AGHANIM_UPGRADE',
     'Disabled by Break.': 'DISABLED_BY_BREAK',
+    'Partially disabled by Break.': 'PARTIAL_DISABLE',
     'Not disabled by Break.': 'NOT_DISABLED_BY_BREAK',
     'Not a Unique Attack Modifier.': 'NOT_UNIQUE_ATTACK_MODIFIER',
     'Cannot be used by illusions.': 'ILLUSIONS_CANNOT_USE',
+    'Partially usable by illusions.': 'ILLUSIONS_PARTIAL_USE',
     'Can be used by illusions.': 'ILLUSIONS_CAN_USE',
     'Not blocked by Linken\'s Sphere.': 'NOT_BLOCKED_BY_LINKEN',
     'Partially blocked by Linken\'s Sphere.': 'PARTIAL_BLOCKED_BY_LINKEN',
@@ -48,7 +51,7 @@ def fetch_abilities(soup):
     for div in soup.findAll('div', style='display: flex; flex-wrap: wrap; align-items: flex-start;'):
         children = div.find('div', style=re.compile(r'font-weight: bold; font-size: 110%; border-bottom: 1px solid black;.*')).contents
         # get name
-        name = children[0]
+        name = children[0].encode('utf-8')
 
         # get the special information
         ability_special = [SPECIAL_SENTENCES[a['title'].encode('utf-8')] for a in children[1].findAll('a', recursive=False)]
@@ -80,7 +83,10 @@ def fetch_abilities(soup):
 
         # finding notes
         note_div = div.find('div', style='flex: 2 3 400px; word-wrap: break-word;')
-        notes = findNotes(note_div.findAll('ul', recursive=False), [])
+        if note_div is not None:
+            notes = findNotes(note_div.findAll('ul', recursive=False), [])
+        else:
+            notes = []
 
         abilities[name] = {
             'abilitySpecial': ability_special,
@@ -91,26 +97,23 @@ def fetch_abilities(soup):
 
     return abilities
 
-
-# we need to create the BeautifulSoup object
-base_url = 'http://dota2.gamepedia.com/'  # create the base url
-main_page = 'Dota_2_Wiki'  # the page that will get all the hero names
-
-firefox_profile = webdriver.FirefoxProfile('/Users/casey/Library/Application Support/Firefox/Profiles/5as9qp3r.testing')
-driver = webdriver.Firefox(firefox_profile)  # create the webdriver
-driver.get(base_url + main_page)  # load the page
-soup_html = BS(driver.page_source, 'html.parser')  # parse the page
-
 hero_abilities = {} # what we want to write to csv
 
 # we need to get the abilities for each hero
-for hero_div in soup_html.findAll('div', class_='heroentry'):
-    hero_link = hero_div.find('a').get('href').replace('/', '')  # gets the hero name
-    driver.get(base_url + hero_link)  # load the hero page
-    hero_soup = BS(driver.page_source, 'html.parser')  # soupify the page to parse
-    hero_abilities[hero_link.replace('_', ' ').title()] = fetch_abilities(hero_soup)  # parse and save the data scraped
-    break  # for testing
+for file in os.listdir('./hero_htmls/'):
+    with open('./hero_htmls/' + file, 'r') as html:
+        name = os.path.splitext(file)[0]
+        hero_soup = BS(html.read(), 'html.parser')  # soupify the page to parse
+        hero_abilities[name] = fetch_abilities(hero_soup)  # parse and save the data scraped
+    break
 
-driver.close()  # we're done so close the driver
 
-# we want to write the hero abilities to a csv
+# we want to write a new CSV
+with open('abilities.csv', 'w') as file:
+    for key in hero_abilities:
+        
+
+# # we want to write the hero abilities to a csv
+# with open('ability_ex.txt', 'w') as file:
+#     pp = pprint.PrettyPrinter(indent=4)
+#     file.write(pp.pformat(hero_abilities))
