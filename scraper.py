@@ -3,6 +3,22 @@ import re
 import os
 import pprint
 
+class MyWriter:
+    def __init__(self, file, delimiter=',', quote='"'):
+        self.file = file
+        self.delimiter = delimiter
+        self.quote = quote
+
+    def write(self, string):
+        file.write(self.quote + string + self.quote)
+
+    def add(self, string):
+        file.write(self.delimiter)
+        self.write(string)
+
+    def end_line(self):
+        self.write('\n')
+
 # constants
 SPECIAL_SENTENCES = {
     'Unique Attack Modifier.': 'UNIQUE_ATTACK_MODIFIER',
@@ -110,10 +126,20 @@ for file in os.listdir('./hero_htmls/'):
 
 # we want to write a new CSV
 with open('abilities.csv', 'w') as file:
-    for key in hero_abilities:
-        
+    my_writer = MyWriter(file)  # create a custom writer to make my CSVs
+    for name in hero_abilities:
+        my_writer.write(name)  # write the hero name
+        abilities = hero_abilities[name]  # get the abilities
+        my_writer.write(len(abilities)) # write the number of abilities we will be looking at
+        for ability in abilities:
+            my_writer.add(ability)
+            for key in abilities[ability]:
 
-# # we want to write the hero abilities to a csv
+
+
+
+## we want to write the hero abilities to a csv
 # with open('ability_ex.txt', 'w') as file:
 #     pp = pprint.PrettyPrinter(indent=4)
 #     file.write(pp.pformat(hero_abilities))
+
