@@ -1,0 +1,1107 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" class="client-js desktop landscape" dir="ltr"><head>
+<meta charset="UTF-8" /><script type="text/javascript" async="" src="http://aax.amazon-adsystem.com/e/dtb/bid?src=3165&amp;u=http%3A%2F%2Fdota2.gamepedia.com%2FRazor&amp;pid=5769514701479491754239&amp;cb=8493959731479491754240&amp;ws=1280x707&amp;t=1000"></script><script src="http://gads.pubmatic.com/AdServer/AdCallAggregator?SAVersion=1000&amp;pageURL=http%3A%2F%2Fdota2.gamepedia.com%2FRazor&amp;inIframe=0&amp;kadfloor=2.5&amp;kadpageurl=http%3A%2F%2Fdota2.gamepedia.com%2FRazor&amp;pubId=30296&amp;pm_cb=pm_async_callback&amp;a=1&amp;kltstamp=2016-11-18%2012%3A55%3A54&amp;timezone=-5&amp;screenResolution=1440x900&amp;ranreq=0.04602717832287728&amp;adslots=%5B001%40728x90%2C003%40300x250%2C004%40300x250%2C002%40728x90%2C005%40728x90%2C006%40300x250%5D&amp;lmk=1479491754210" async=""></script><script async="" type="text/javascript" src="http://www.googletagservices.com/tag/js/gpt.js"></script><script async="" src="http://b.scorecardresearch.com/beacon.js"></script><script async="" src="https://www.google-analytics.com/analytics.js"></script><script type="text/javascript" async="" src="http://www.zergnet.com/zerg.js?id=42964"></script><script type="text/javascript" async="" src="http://www.zergnet.com/zerg.js?id=42966"></script><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={xpid:"UAcAUlNACQoAXVVbDw=="};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var o=e[n]={exports:{}};t[n][0].call(o.exports,function(e){var o=t[n][1][e];return r(o||e)},o,o.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o&lt;n.length;o++)r(n[o]);return r}({1:[function(t,e,n){function r(t){try{c.console&amp;&amp;console.log(t)}catch(e){}}var o,i=t("ee"),a=t(15),c={};try{o=localStorage.getItem("__nr_flags").split(","),console&amp;&amp;"function"==typeof console.log&amp;&amp;(c.console=!0,o.indexOf("dev")!==-1&amp;&amp;(c.dev=!0),o.indexOf("nr_dev")!==-1&amp;&amp;(c.nrDev=!0))}catch(s){}c.nrDev&amp;&amp;i.on("internal-error",function(t){r(t.stack)}),c.dev&amp;&amp;i.on("fn-err",function(t,e,n){r(n.stack)}),c.dev&amp;&amp;(r("NR AGENT IN DEVELOPMENT MODE"),r("flags: "+a(c,function(t,e){return t}).join(", ")))},{}],2:[function(t,e,n){function r(t,e,n,r,o){try{d?d-=1:i("err",[o||new UncaughtException(t,e,n)])}catch(c){try{i("ierr",[c,(new Date).getTime(),!0])}catch(s){}}return"function"==typeof f&amp;&amp;f.apply(this,a(arguments))}function UncaughtException(t,e,n){this.message=t||"Uncaught error with no additional information",this.sourceURL=e,this.line=n}function o(t){i("err",[t,(new Date).getTime()])}var i=t("handle"),a=t(16),c=t("ee"),s=t("loader"),f=window.onerror,u=!1,d=0;s.features.err=!0,t(1),window.onerror=r;try{throw new Error}catch(l){"stack"in l&amp;&amp;(t(8),t(7),"addEventListener"in window&amp;&amp;t(5),s.xhrWrappable&amp;&amp;t(9),u=!0)}c.on("fn-start",function(t,e,n){u&amp;&amp;(d+=1)}),c.on("fn-err",function(t,e,n){u&amp;&amp;(this.thrown=!0,o(n))}),c.on("fn-end",function(){u&amp;&amp;!this.thrown&amp;&amp;d&gt;0&amp;&amp;(d-=1)}),c.on("internal-error",function(t){i("ierr",[t,(new Date).getTime(),!0])})},{}],3:[function(t,e,n){t("loader").features.ins=!0},{}],4:[function(t,e,n){function r(t){}if(window.performance&amp;&amp;window.performance.timing&amp;&amp;window.performance.getEntriesByType){var o=t("ee"),i=t("handle"),a=t(8),c=t(7),s="learResourceTimings",f="addEventListener",u="resourcetimingbufferfull",d="bstResource",l="resource",p="-start",h="-end",m="fn"+p,w="fn"+h,v="bstTimer",y="pushState";t("loader").features.stn=!0,t(6);var g=NREUM.o.EV;o.on(m,function(t,e){var n=t[0];n instanceof g&amp;&amp;(this.bstStart=Date.now())}),o.on(w,function(t,e){var n=t[0];n instanceof g&amp;&amp;i("bst",[n,e,this.bstStart,Date.now()])}),a.on(m,function(t,e,n){this.bstStart=Date.now(),this.bstType=n}),a.on(w,function(t,e){i(v,[e,this.bstStart,Date.now(),this.bstType])}),c.on(m,function(){this.bstStart=Date.now()}),c.on(w,function(t,e){i(v,[e,this.bstStart,Date.now(),"requestAnimationFrame"])}),o.on(y+p,function(t){this.time=Date.now(),this.startPath=location.pathname+location.hash}),o.on(y+h,function(t){i("bstHist",[location.pathname+location.hash,this.startPath,this.time])}),f in window.performance&amp;&amp;(window.performance["c"+s]?window.performance[f](u,function(t){i(d,[window.performance.getEntriesByType(l)]),window.performance["c"+s]()},!1):window.performance[f]("webkit"+u,function(t){i(d,[window.performance.getEntriesByType(l)]),window.performance["webkitC"+s]()},!1)),document[f]("scroll",r,!1),document[f]("keypress",r,!1),document[f]("click",r,!1)}},{}],5:[function(t,e,n){function r(t){for(var e=t;e&amp;&amp;!e.hasOwnProperty(u);)e=Object.getPrototypeOf(e);e&amp;&amp;o(e)}function o(t){c.inPlace(t,[u,d],"-",i)}function i(t,e){return t[1]}var a=t("ee").get("events"),c=t(17)(a,!0),s=t("gos"),f=XMLHttpRequest,u="addEventListener",d="removeEventListener";e.exports=a,"getPrototypeOf"in Object?(r(document),r(window),r(f.prototype)):f.prototype.hasOwnProperty(u)&amp;&amp;(o(window),o(f.prototype)),a.on(u+"-start",function(t,e){var n=t[1],r=s(n,"nr@wrapped",function(){function t(){if("function"==typeof n.handleEvent)return n.handleEvent.apply(n,arguments)}var e={object:t,"function":n}[typeof n];return e?c(e,"fn-",null,e.name||"anonymous"):n});this.wrapped=t[1]=r}),a.on(d+"-start",function(t){t[1]=this.wrapped||t[1]})},{}],6:[function(t,e,n){var r=t("ee").get("history"),o=t(17)(r);e.exports=r,o.inPlace(window.history,["pushState","replaceState"],"-")},{}],7:[function(t,e,n){var r=t("ee").get("raf"),o=t(17)(r),i="equestAnimationFrame";e.exports=r,o.inPlace(window,["r"+i,"mozR"+i,"webkitR"+i,"msR"+i],"raf-"),r.on("raf-start",function(t){t[0]=o(t[0],"fn-")})},{}],8:[function(t,e,n){function r(t,e,n){t[0]=a(t[0],"fn-",null,n)}function o(t,e,n){this.method=n,this.timerDuration="number"==typeof t[1]?t[1]:0,t[0]=a(t[0],"fn-",this,n)}var i=t("ee").get("timer"),a=t(17)(i),c="setTimeout",s="setInterval",f="clearTimeout",u="-start",d="-";e.exports=i,a.inPlace(window,[c,"setImmediate"],c+d),a.inPlace(window,[s],s+d),a.inPlace(window,[f,"clearImmediate"],f+d),i.on(s+u,r),i.on(c+u,o)},{}],9:[function(t,e,n){function r(t,e){d.inPlace(e,["onreadystatechange"],"fn-",c)}function o(){var t=this,e=u.context(t);t.readyState&gt;3&amp;&amp;!e.resolved&amp;&amp;(e.resolved=!0,u.emit("xhr-resolved",[],t)),d.inPlace(t,w,"fn-",c)}function i(t){v.push(t),h&amp;&amp;(g=-g,b.data=g)}function a(){for(var t=0;t&lt;v.length;t++)r([],v[t]);v.length&amp;&amp;(v=[])}function c(t,e){return e}function s(t,e){for(var n in t)e[n]=t[n];return e}t(5);var f=t("ee"),u=f.get("xhr"),d=t(17)(u),l=NREUM.o,p=l.XHR,h=l.MO,m="readystatechange",w=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"],v=[];e.exports=u;var y=window.XMLHttpRequest=function(t){var e=new p(t);try{u.emit("new-xhr",[e],e),e.addEventListener(m,o,!1)}catch(n){try{u.emit("internal-error",[n])}catch(r){}}return e};if(s(p,y),y.prototype=p.prototype,d.inPlace(y.prototype,["open","send"],"-xhr-",c),u.on("send-xhr-start",function(t,e){r(t,e),i(e)}),u.on("open-xhr-start",r),h){var g=1,b=document.createTextNode(g);new h(a).observe(b,{characterData:!0})}else f.on("fn-end",function(t){t[0]&amp;&amp;t[0].type===m||a()})},{}],10:[function(t,e,n){function r(t){var e=this.params,n=this.metrics;if(!this.ended){this.ended=!0;for(var r=0;r&lt;d;r++)t.removeEventListener(u[r],this.listener,!1);if(!e.aborted){if(n.duration=(new Date).getTime()-this.startTime,4===t.readyState){e.status=t.status;var i=o(t,this.lastSize);if(i&amp;&amp;(n.rxSize=i),this.sameOrigin){var a=t.getResponseHeader("X-NewRelic-App-Data");a&amp;&amp;(e.cat=a.split(", ").pop())}}else e.status=0;n.cbTime=this.cbTime,f.emit("xhr-done",[t],t),c("xhr",[e,n,this.startTime])}}}function o(t,e){var n=t.responseType;if("json"===n&amp;&amp;null!==e)return e;var r="arraybuffer"===n||"blob"===n||"json"===n?t.response:t.responseText;return h(r)}function i(t,e){var n=s(e),r=t.params;r.host=n.hostname+":"+n.port,r.pathname=n.pathname,t.sameOrigin=n.sameOrigin}var a=t("loader");if(a.xhrWrappable){var c=t("handle"),s=t(11),f=t("ee"),u=["load","error","abort","timeout"],d=u.length,l=t("id"),p=t(14),h=t(13),m=window.XMLHttpRequest;a.features.xhr=!0,t(9),f.on("new-xhr",function(t){var e=this;e.totalCbs=0,e.called=0,e.cbTime=0,e.end=r,e.ended=!1,e.xhrGuids={},e.lastSize=null,p&amp;&amp;(p&gt;34||p&lt;10)||window.opera||t.addEventListener("progress",function(t){e.lastSize=t.loaded},!1)}),f.on("open-xhr-start",function(t){this.params={method:t[0]},i(this,t[1]),this.metrics={}}),f.on("open-xhr-end",function(t,e){"loader_config"in NREUM&amp;&amp;"xpid"in NREUM.loader_config&amp;&amp;this.sameOrigin&amp;&amp;e.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid)}),f.on("send-xhr-start",function(t,e){var n=this.metrics,r=t[0],o=this;if(n&amp;&amp;r){var i=h(r);i&amp;&amp;(n.txSize=i)}this.startTime=(new Date).getTime(),this.listener=function(t){try{"abort"===t.type&amp;&amp;(o.params.aborted=!0),("load"!==t.type||o.called===o.totalCbs&amp;&amp;(o.onloadCalled||"function"!=typeof e.onload))&amp;&amp;o.end(e)}catch(n){try{f.emit("internal-error",[n])}catch(r){}}};for(var a=0;a&lt;d;a++)e.addEventListener(u[a],this.listener,!1)}),f.on("xhr-cb-time",function(t,e,n){this.cbTime+=t,e?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&amp;&amp;"function"==typeof n.onload||this.end(n)}),f.on("xhr-load-added",function(t,e){var n=""+l(t)+!!e;this.xhrGuids&amp;&amp;!this.xhrGuids[n]&amp;&amp;(this.xhrGuids[n]=!0,this.totalCbs+=1)}),f.on("xhr-load-removed",function(t,e){var n=""+l(t)+!!e;this.xhrGuids&amp;&amp;this.xhrGuids[n]&amp;&amp;(delete this.xhrGuids[n],this.totalCbs-=1)}),f.on("addEventListener-end",function(t,e){e instanceof m&amp;&amp;"load"===t[0]&amp;&amp;f.emit("xhr-load-added",[t[1],t[2]],e)}),f.on("removeEventListener-end",function(t,e){e instanceof m&amp;&amp;"load"===t[0]&amp;&amp;f.emit("xhr-load-removed",[t[1],t[2]],e)}),f.on("fn-start",function(t,e,n){e instanceof m&amp;&amp;("onload"===n&amp;&amp;(this.onload=!0),("load"===(t[0]&amp;&amp;t[0].type)||this.onload)&amp;&amp;(this.xhrCbStart=(new Date).getTime()))}),f.on("fn-end",function(t,e){this.xhrCbStart&amp;&amp;f.emit("xhr-cb-time",[(new Date).getTime()-this.xhrCbStart,this.onload,e],e)})}},{}],11:[function(t,e,n){e.exports=function(t){var e=document.createElement("a"),n=window.location,r={};e.href=t,r.port=e.port;var o=e.href.split("://");!r.port&amp;&amp;o[1]&amp;&amp;(r.port=o[1].split("/")[0].split("@").pop().split(":")[1]),r.port&amp;&amp;"0"!==r.port||(r.port="https"===o[0]?"443":"80"),r.hostname=e.hostname||n.hostname,r.pathname=e.pathname,r.protocol=o[0],"/"!==r.pathname.charAt(0)&amp;&amp;(r.pathname="/"+r.pathname);var i=!e.protocol||":"===e.protocol||e.protocol===n.protocol,a=e.hostname===document.domain&amp;&amp;e.port===n.port;return r.sameOrigin=i&amp;&amp;(!e.hostname||a),r}},{}],12:[function(t,e,n){function r(){}function o(t,e,n){return function(){return i(t,[(new Date).getTime()].concat(c(arguments)),e?null:this,n),e?void 0:this}}var i=t("handle"),a=t(15),c=t(16),s=t("ee").get("tracer"),f=NREUM;"undefined"==typeof window.newrelic&amp;&amp;(newrelic=f);var u=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit"],d="api-",l=d+"ixn-";a(u,function(t,e){f[e]=o(d+e,!0,"api")}),f.addPageAction=o(d+"addPageAction",!0),f.setCurrentRouteName=o(d+"routeName",!0),e.exports=newrelic,f.interaction=function(){return(new r).get()};var p=r.prototype={createTracer:function(t,e){var n={},r=this,o="function"==typeof e;return i(l+"tracer",[Date.now(),t,n],r),function(){if(s.emit((o?"":"no-")+"fn-start",[Date.now(),r,o],n),o)try{return e.apply(this,arguments)}finally{s.emit("fn-end",[Date.now()],n)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){p[e]=o(l+e)}),newrelic.noticeError=function(t){"string"==typeof t&amp;&amp;(t=new Error(t)),i("err",[t,(new Date).getTime()])}},{}],13:[function(t,e,n){e.exports=function(t){if("string"==typeof t&amp;&amp;t.length)return t.length;if("object"==typeof t){if("undefined"!=typeof ArrayBuffer&amp;&amp;t instanceof ArrayBuffer&amp;&amp;t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&amp;&amp;t instanceof Blob&amp;&amp;t.size)return t.size;if(!("undefined"!=typeof FormData&amp;&amp;t instanceof FormData))try{return JSON.stringify(t).length}catch(e){return}}}},{}],14:[function(t,e,n){var r=0,o=navigator.userAgent.match(/Firefox[\/\s](\d+\.\d+)/);o&amp;&amp;(r=+o[1]),e.exports=r},{}],15:[function(t,e,n){function r(t,e){var n=[],r="",i=0;for(r in t)o.call(t,r)&amp;&amp;(n[i]=e(r,t[r]),i+=1);return n}var o=Object.prototype.hasOwnProperty;e.exports=r},{}],16:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&amp;&amp;(n=t?t.length:0);for(var r=-1,o=n-e||0,i=Array(o&lt;0?0:o);++r&lt;o;)i[r]=t[e+r];return i}e.exports=r},{}],17:[function(t,e,n){function r(t){return!(t&amp;&amp;t instanceof Function&amp;&amp;t.apply&amp;&amp;!t[a])}var o=t("ee"),i=t(16),a="nr@original",c=Object.prototype.hasOwnProperty,s=!1;e.exports=function(t,e){function n(t,e,n,o){function nrWrapper(){var r,a,c,s;try{a=this,r=i(arguments),c="function"==typeof n?n(r,a):n||{}}catch(f){l([f,"",[r,a,o],c])}u(e+"start",[r,a,o],c);try{return s=t.apply(a,r)}catch(d){throw u(e+"err",[r,a,d],c),d}finally{u(e+"end",[r,a,s],c)}}return r(t)?t:(e||(e=""),nrWrapper[a]=t,d(t,nrWrapper),nrWrapper)}function f(t,e,o,i){o||(o="");var a,c,s,f="-"===o.charAt(0);for(s=0;s&lt;e.length;s++)c=e[s],a=t[c],r(a)||(t[c]=n(a,f?c+o:o,i,c))}function u(n,r,o){if(!s||e){var i=s;s=!0;try{t.emit(n,r,o)}catch(a){l([a,n,r,o])}s=i}}function d(t,e){if(Object.defineProperty&amp;&amp;Object.keys)try{var n=Object.keys(t);return n.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(r){l([r])}for(var o in t)c.call(t,o)&amp;&amp;(e[o]=t[o]);return e}function l(e){try{t.emit("internal-error",e)}catch(n){}}return t||(t=o),n.inPlace=f,n.flag=a,n}},{}],ee:[function(t,e,n){function r(){}function o(t){function e(t){return t&amp;&amp;t instanceof r?t:t?s(t,c,i):i()}function n(n,r,o){if(!l.aborted){t&amp;&amp;t(n,r,o);for(var i=e(o),a=h(n),c=a.length,s=0;s&lt;c;s++)a[s].apply(i,r);var f=u[y[n]];return f&amp;&amp;f.push([g,n,r,i]),i}}function p(t,e){v[t]=h(t).concat(e)}function h(t){return v[t]||[]}function m(t){return d[t]=d[t]||o(n)}function w(t,e){f(t,function(t,n){e=e||"feature",y[n]=e,e in u||(u[e]=[])})}var v={},y={},g={on:p,emit:n,get:m,listeners:h,context:e,buffer:w,abort:a,aborted:!1};return g}function i(){return new r}function a(){(u.api||u.feature)&amp;&amp;(l.aborted=!0,u=l.backlog={})}var c="nr@context",s=t("gos"),f=t(15),u={},d={},l=e.exports=o();l.backlog=u},{}],gos:[function(t,e,n){function r(t,e,n){if(o.call(t,e))return t[e];var r=n();if(Object.defineProperty&amp;&amp;Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return t[e]=r,r}var o=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){o.buffer([t],r),o.emit(t,e,n)}var o=t("ee").get("handle");e.exports=r,r.ee=o},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&amp;&amp;"function"!==e?-1:t===window?0:a(t,i,function(){return o++})}var o=1,i="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!b++){var t=g.info=NREUM.info,e=d.getElementsByTagName("script")[0];if(setTimeout(f.abort,3e4),!(t&amp;&amp;t.licenseKey&amp;&amp;t.applicationID&amp;&amp;e))return f.abort();s(v,function(e,n){t[e]||(t[e]=n)}),c("mark",["onload",a()],null,"api");var n=d.createElement("script");n.src="https://"+t.agent,e.parentNode.insertBefore(n,e)}}function o(){"complete"===d.readyState&amp;&amp;i()}function i(){c("mark",["domContent",a()],null,"api")}function a(){return(new Date).getTime()}var c=t("handle"),s=t(15),f=t("ee"),u=window,d=u.document,l="addEventListener",p="attachEvent",h=u.XMLHttpRequest,m=h&amp;&amp;h.prototype;NREUM.o={ST:setTimeout,CT:clearTimeout,XHR:h,REQ:u.Request,EV:u.Event,PR:u.Promise,MO:u.MutationObserver},t(12);var w=""+location,v={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-998.min.js"},y=h&amp;&amp;m&amp;&amp;m[l]&amp;&amp;!/CriOS/.test(navigator.userAgent),g=e.exports={offset:a(),origin:w,features:{},xhrWrappable:y};d[l]?(d[l]("DOMContentLoaded",i,!1),u[l]("load",r,!1)):(d[p]("onreadystatechange",o),u[p]("onload",r)),c("mark",["firstbyte",a()],null,"api");var b=0},{}]},{},["loader",2,10,4,3]);</script>
+<title>Razor - Dota 2 Wiki</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Razor","wgTitle":"Razor","wgCurRevisionId":1325618,"wgRevisionId":1325618,"wgArticleId":407,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Heroes","Agility heroes","Ranged heroes","Carries","Durable","Nukers","Pushers"],"wgBreakFrames":true,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Razor","wgRelevantArticleId":407,"wgRequestId":"3c06710d8668f311c2c4488a","wgIsProbablyEditable":true,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgPreferredVariant":"en","wgCollapsibleVectorEnabledModules":{"collapsiblenav":true,"experiments":true},"wgVisualEditor":{"pageLanguageCode":"en","pageLanguageDir":"ltr","usePageImages":true,"usePageDescriptions":false},"wgWikiEditorEnabledModules":{"toolbar":true,"dialogs":true,"preview":true,"publish":true},"wgCategoryTreePageCategoryOptions":"{\"mode\":0,\"hideprefix\":20,\"showcount\":true,\"namespaces\":false}","wgVisualEditorToolbarScrollOffset":0});mw.loader.implement("user.options",function($,jQuery,require,module){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/;
+
+});mw.loader.load(["ext.smw.style","mediawiki.page.startup","ext.siteGlobals","ext.visualEditor.desktopArticleTarget.init","ext.hydraAuth.banners","skins.vector.js","skins.hydra.advertisements.js","skins.hydra.footer.js","ext.social"]);});</script>
+<link href="/load.php?debug=false&amp;lang=en&amp;modules=ext.smw.style%7Cext.smw.tooltip.styles&amp;only=styles&amp;skin=hydra" rel="stylesheet" />
+<link href="/load.php?debug=false&amp;lang=en&amp;modules=ext.visualEditor.desktopArticleTarget.noscript%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.page.gallery.styles%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.interface%7Cskins.hydra.advertisements.styles%7Cskins.hydra.footer%2Cnetbar%7Cskins.vector.styles%7Cskins.vector.styles.responsive%7Cskins.z.hydra.light&amp;only=styles&amp;skin=hydra" rel="stylesheet" />
+<meta content="" name="ResourceLoaderDynamicStyles" />
+<link href="/load.php?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=hydra" rel="stylesheet" />
+<script src="/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=hydra" async=""></script>
+<meta content="MediaWiki 1.27.1" name="generator" />
+<meta name="description" />
+<meta content="Razor" name="og:title" />
+<meta content="website" name="og:type" />
+<meta content="https://hydra-media.cursecdn.com/dota2.gamepedia.com/b/bc/Wiki.png" name="og:image" />
+<meta content="http://dota2.gamepedia.com/Razor" name="og:url" />
+<meta content="Dota 2 Wiki" name="og:site_name" />
+<meta content="width=device-width, initial-scale=1" name="viewport" />
+<link href="/index.php?title=Special:ExportRDF/Razor&amp;xmlmime=rdf" title="Razor" type="application/rdf+xml" rel="ExportRDF" />
+<link href="/index.php?title=Razor&amp;action=edit" title="Edit" type="application/x-wiki" rel="alternate" />
+<link href="/index.php?title=Razor&amp;action=edit" title="Edit" rel="edit" />
+<link href="" rel="apple-touch-icon" />
+<link href="https://hydra-media.cursecdn.com/dota2.gamepedia.com/6/64/Favicon.ico" rel="shortcut icon" />
+<link title="Dota 2 Wiki (en)" href="/opensearch_desc.php" type="application/opensearchdescription+xml" rel="search" />
+<link href="//dota2.gamepedia.com/api.php?action=rsd" type="application/rsd+xml" rel="EditURI" />
+<link href="//creativecommons.org/licenses/by-nc-sa/3.0/" rel="copyright" />
+<link href="http://dota2.gamepedia.com/Razor" rel="canonical" />
+<meta content="Gamepedia" itemprop="author" />
+<script src="/load.php?debug=false&amp;lang=en&amp;modules=jquery%2Cmediawiki&amp;only=scripts&amp;skin=hydra&amp;version=0BP4xBo8"></script><script id="factorem" src="http://cdm.cursecdn.com/js/gamepedia/cdmfactorem_min.js?misc=1479491753981" async="" type="text/javascript"></script><script id="curse_geo" src="http://geoservice.curse.com/Geo.svc/json/get/geo?callback=factorem.handleConfig" async=""></script><script id="rubicon" src="http://ads.rubiconproject.com/header/9454.js" async=""></script><script id="casale_script" src="http://as.casalemedia.com/headertag?v=9&amp;x3=1&amp;fn=cygnus_index_parse_res&amp;s=158962&amp;r=%7B%22id%22%3A379428627%2C%22site%22%3A%7B%22page%22%3A%22http%3A%2F%2Fdota2.gamepedia.com%2FRazor%22%2C%22ref%22%3A%22%22%7D%2C%22imp%22%3A%5B%7B%22id%22%3A%221%22%2C%20%22banner%22%3A%7B%22w%22%3A728%2C%22h%22%3A90%2C%22topframe%22%3A1%7D%2C%22ext%22%3A%20%7B%22sid%22%3A%221_0%22%2C%22siteID%22%3A158962%7D%7D%2C%7B%22id%22%3A%222%22%2C%20%22banner%22%3A%7B%22w%22%3A300%2C%22h%22%3A250%2C%22topframe%22%3A1%7D%2C%22ext%22%3A%20%7B%22sid%22%3A%222_0%22%2C%22siteID%22%3A175222%7D%7D%2C%7B%22id%22%3A%223%22%2C%20%22banner%22%3A%7B%22w%22%3A300%2C%22h%22%3A250%2C%22topframe%22%3A1%7D%2C%22ext%22%3A%20%7B%22sid%22%3A%223_0%22%2C%22siteID%22%3A175223%7D%7D%2C%7B%22id%22%3A%224%22%2C%20%22banner%22%3A%7B%22w%22%3A728%2C%22h%22%3A90%2C%22topframe%22%3A1%7D%2C%22ext%22%3A%20%7B%22sid%22%3A%224_0%22%2C%22siteID%22%3A175224%7D%7D%2C%7B%22id%22%3A%225%22%2C%20%22banner%22%3A%7B%22w%22%3A728%2C%22h%22%3A90%2C%22topframe%22%3A1%7D%2C%22ext%22%3A%20%7B%22sid%22%3A%225_0%22%2C%22siteID%22%3A175225%7D%7D%2C%7B%22id%22%3A%226%22%2C%20%22banner%22%3A%7B%22w%22%3A300%2C%22h%22%3A250%2C%22topframe%22%3A1%7D%2C%22ext%22%3A%20%7B%22sid%22%3A%226_0%22%2C%22siteID%22%3A175226%7D%7D%5D%7D&amp;t=300" async=""></script><script id="pm_script_1" src="http://ads.pubmatic.com/AdServer/js/gshowad.js" async=""></script><script id="ox_script" src="http://curse-d.openx.net/w/1.0/jstag?nc=47776697-curse" async=""></script><script id="a9_script" src="http://c.amazon-adsystem.com/aax2/amzn_ads_2.0.js" async=""></script><script id="br_script1" src="http://optimizedby.brealtime.com/jpt?id=5524102&amp;size=728x90&amp;referrer=http%3A%2F%2Fdota2.gamepedia.com%2FRazor&amp;callback=handleBr1" async=""></script><script id="br_script2" src="http://optimizedby.brealtime.com/jpt?id=5524105&amp;size=300x250&amp;referrer=http%3A%2F%2Fdota2.gamepedia.com%2FRazor&amp;callback=handleBr2" async=""></script><script id="br_script3" src="http://optimizedby.brealtime.com/jpt?id=5524107&amp;size=300x250&amp;referrer=http%3A%2F%2Fdota2.gamepedia.com%2FRazor&amp;callback=handleBr3" async=""></script><script id="br_script4" src="http://optimizedby.brealtime.com/jpt?id=5524106&amp;size=728x90&amp;referrer=http%3A%2F%2Fdota2.gamepedia.com%2FRazor&amp;callback=handleBr4" async=""></script><script id="br_script5" src="http://optimizedby.brealtime.com/jpt?id=6507554&amp;size=728x90&amp;referrer=http%3A%2F%2Fdota2.gamepedia.com%2FRazor&amp;callback=handleBr5" async=""></script><script id="br_script6" src="http://optimizedby.brealtime.com/jpt?id=6507553&amp;size=300x250&amp;referrer=http%3A%2F%2Fdota2.gamepedia.com%2FRazor&amp;callback=handleBr6" async=""></script><script id="pp_static" src="http://tag.contextweb.com/getjs.static.js" async=""></script><script id="dm_script1" src="http://ib.adnxs.com/jpt?callback=dm_callback&amp;callback_uid=1&amp;psa=0&amp;id=7294530&amp;size=728x90&amp;referrer=http%3A%2F%2Fdota2.gamepedia.com%2FRazor" async=""></script><script id="dm_script2" src="http://ib.adnxs.com/jpt?callback=dm_callback&amp;callback_uid=2&amp;psa=0&amp;id=7294530&amp;size=300x250&amp;referrer=http%3A%2F%2Fdota2.gamepedia.com%2FRazor" async=""></script><script id="dm_script3" src="http://ib.adnxs.com/jpt?callback=dm_callback&amp;callback_uid=3&amp;psa=0&amp;id=7294530&amp;size=300x250&amp;referrer=http%3A%2F%2Fdota2.gamepedia.com%2FRazor" async=""></script><script id="dm_script4" src="http://ib.adnxs.com/jpt?callback=dm_callback&amp;callback_uid=4&amp;psa=0&amp;id=7294530&amp;size=728x90&amp;referrer=http%3A%2F%2Fdota2.gamepedia.com%2FRazor" async=""></script><script id="dm_script5" src="http://ib.adnxs.com/jpt?callback=dm_callback&amp;callback_uid=5&amp;psa=0&amp;id=7294530&amp;size=728x90&amp;referrer=http%3A%2F%2Fdota2.gamepedia.com%2FRazor" async=""></script><script id="dm_script6" src="http://ib.adnxs.com/jpt?callback=dm_callback&amp;callback_uid=6&amp;psa=0&amp;id=7294530&amp;size=300x250&amp;referrer=http%3A%2F%2Fdota2.gamepedia.com%2FRazor" async=""></script><script src="http://ap.lijit.com/rtb/bid?callback=sv_callback&amp;br=%7B%22id%22%3A%22svCDM%22%2C%22imp%22%3A%5B%7B%22id%22%3A%221%22%2C%22tagid%22%3A%22300207%22%2C%22bidfloor%22%3A0.8%2C%22banner%22%3A%7B%22w%22%3A728%2C%22h%22%3A90%7D%7D%2C%7B%22id%22%3A%222%22%2C%22tagid%22%3A%22300204%22%2C%22bidfloor%22%3A0.8%2C%22banner%22%3A%7B%22w%22%3A300%2C%22h%22%3A250%7D%7D%2C%7B%22id%22%3A%223%22%2C%22tagid%22%3A%22300205%22%2C%22bidfloor%22%3A0.1%2C%22banner%22%3A%7B%22w%22%3A300%2C%22h%22%3A250%7D%7D%2C%7B%22id%22%3A%224%22%2C%22tagid%22%3A%22300209%22%2C%22bidfloor%22%3A0.1%2C%22banner%22%3A%7B%22w%22%3A728%2C%22h%22%3A90%7D%7D%2C%7B%22id%22%3A%226%22%2C%22tagid%22%3A%22331966%22%2C%22bidfloor%22%3A2.4%2C%22banner%22%3A%7B%22w%22%3A300%2C%22h%22%3A250%7D%7D%5D%2C%22site%22%3A%7B%22domain%22%3A%22dota2.gamepedia.com%22%2C%22page%22%3A%22%2FRazor%22%7D%7D"></script><iframe src="http://gslbeacon.lijit.com/beacon?viewId=curse_auction_api&amp;rand=6768&amp;informer=7713456&amp;type=fpads&amp;loc=dota2.gamepedia.com&amp;v=1.2"></iframe><script src="http://partner.googleadservices.com/gpt/pubads_impl_105.js" async=""></script><link rel="dns-prefetch" href="//optimized-by.rubiconproject.com/" /><script type="text/javascript" id="ox_acj_8009495110" src="http://curse-d.openx.net/w/1.0/acj?ai=16f5cfeb-c2eb-4b89-728b-7b8159327d70&amp;o=8009495110&amp;callback=OX_8009495110&amp;ju=http%3A//dota2.gamepedia.com/Razor&amp;jr=&amp;be=1&amp;bc=hb_1api&amp;bt=2500&amp;auid=538399536&amp;aus=728x90&amp;res=1440x900x24&amp;plg=swf%2Csl%2Cshk%2Cpm&amp;ch=UTF-8&amp;tz=300&amp;ws=1280x707&amp;ifr=0&amp;tws=1280x707&amp;vmt=1&amp;sd=59"></script><script type="text/javascript" id="ox_acj_3891477208" src="http://curse-d.openx.net/w/1.0/acj?ai=16f5cfeb-c2eb-4b89-728b-7b8159327d70&amp;o=3891477208&amp;callback=OX_3891477208&amp;ju=http%3A//dota2.gamepedia.com/Razor&amp;jr=&amp;be=1&amp;bc=hb_1api&amp;bt=2500&amp;auid=538399541&amp;aus=300x250&amp;res=1440x900x24&amp;plg=swf%2Csl%2Cshk%2Cpm&amp;ch=UTF-8&amp;tz=300&amp;ws=1280x707&amp;ifr=0&amp;tws=1280x707&amp;vmt=1&amp;sd=59"></script><script type="text/javascript" id="ox_acj_734127308" src="http://curse-d.openx.net/w/1.0/acj?ai=16f5cfeb-c2eb-4b89-728b-7b8159327d70&amp;o=734127308&amp;callback=OX_734127308&amp;ju=http%3A//dota2.gamepedia.com/Razor&amp;jr=&amp;be=1&amp;bc=hb_1api&amp;bt=2500&amp;auid=538399563&amp;aus=300x250&amp;res=1440x900x24&amp;plg=swf%2Csl%2Cshk%2Cpm&amp;ch=UTF-8&amp;tz=300&amp;ws=1280x707&amp;ifr=0&amp;tws=1280x707&amp;vmt=1&amp;sd=59"></script><script type="text/javascript" id="ox_acj_5052422256" src="http://curse-d.openx.net/w/1.0/acj?ai=16f5cfeb-c2eb-4b89-728b-7b8159327d70&amp;o=5052422256&amp;callback=OX_5052422256&amp;ju=http%3A//dota2.gamepedia.com/Razor&amp;jr=&amp;be=1&amp;bc=hb_1api&amp;bt=2500&amp;auid=538399548&amp;aus=728x90&amp;res=1440x900x24&amp;plg=swf%2Csl%2Cshk%2Cpm&amp;ch=UTF-8&amp;tz=300&amp;ws=1280x707&amp;ifr=0&amp;tws=1280x707&amp;vmt=1&amp;sd=59"></script><script type="text/javascript" id="ox_acj_8078429647" src="http://curse-d.openx.net/w/1.0/acj?ai=16f5cfeb-c2eb-4b89-728b-7b8159327d70&amp;o=8078429647&amp;callback=OX_8078429647&amp;ju=http%3A//dota2.gamepedia.com/Razor&amp;jr=&amp;be=1&amp;bc=hb_1api&amp;bt=2500&amp;auid=538399568&amp;aus=728x90&amp;res=1440x900x24&amp;plg=swf%2Csl%2Cshk%2Cpm&amp;ch=UTF-8&amp;tz=300&amp;ws=1280x707&amp;ifr=0&amp;tws=1280x707&amp;vmt=1&amp;sd=59"></script><script type="text/javascript" id="ox_acj_2799608155" src="http://curse-d.openx.net/w/1.0/acj?ai=16f5cfeb-c2eb-4b89-728b-7b8159327d70&amp;o=2799608155&amp;callback=OX_2799608155&amp;ju=http%3A//dota2.gamepedia.com/Razor&amp;jr=&amp;be=1&amp;bc=hb_1api&amp;bt=2500&amp;auid=538399574&amp;aus=300x250&amp;res=1440x900x24&amp;plg=swf%2Csl%2Cshk%2Cpm&amp;ch=UTF-8&amp;tz=300&amp;ws=1280x707&amp;ifr=0&amp;tws=1280x707&amp;vmt=1&amp;sd=59"></script></head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-Razor rootpage-Razor skin-hydra action-view site-dota2-gamepedia show-ads">
+<script type="text/javascript">
+	window.isMobileResponsive = false;
+</script> 
+<script type="text/javascript">
+if (Math.max(document.documentElement.clientHeight, window.innerHeight || 0) &lt; 800) {
+	document.addEventListener("DOMContentLoaded", function(event) { 
+		var element = document.getElementById("cdm-zone-06");
+		if (element) {
+			element.parentNode.removeChild(element);
+		}
+	});
+}
+
+
+var script = document.createElement('script');
+var tstamp = new Date();
+script.id = 'factorem';
+script.src = 'http://cdm.cursecdn.com/js/gamepedia/cdmfactorem_min.js?misc=' + tstamp.getTime();;
+script.async = true;
+script.type='text/javascript';
+document.head.appendChild(script);
+</script>
+
+<script>
+setTimeout(function(){if("undefined"!=typeof b2){var element=document.getElementById(b2);setTimeout(function(){element.parentNode.innerHTML='&lt;div id="'+b2+'"&gt;&lt;/div&gt;'},5000)}},20000)
+</script>
+<script>
+setTimeout(function(){if("undefined"!=typeof b2){var element=document.getElementById(b3);setTimeout(function(){element.parentNode.innerHTML='&lt;div id="'+b3+'"&gt;&lt;/div&gt;'},5000)}},20000)
+</script>
+<script>
+setTimeout(function(){if("undefined"!=typeof b2){var element=document.getElementById(b6);setTimeout(function(){element.parentNode.innerHTML='&lt;div id="'+b6+'"&gt;&lt;/div&gt;'},5000)}},20000)
+</script><div id="netbar">
+	<ul class="netbar-left">
+		<li><a href="http://www.gamepedia.com" class="curse">Gamepedia</a></li>
+					<li><a href="http://support.gamepedia.com/">Help</a></li>
+									</ul>
+
+		<ul class="netbar-right">
+									<li><a id="login-link" href="/index.php?title=Special:UserLogin&amp;returnto=Razor">Sign In</a></li>
+							<li><a id="register-link" href="/index.php?title=Special:CreateAccount&amp;returnto=Razor">Register</a></li>
+						</ul>
+</div><div class="with-siderail" id="global-wrapper">
+	<div class="noprint" id="mw-page-base"></div>
+	<div class="noprint" id="mw-head-base"></div>
+	<div id="pageWrapper">
+		<div role="main" class="mw-body" itemprop="articleBody" id="content">
+			<a id="top"></a>
+
+						<!-- ATF Leaderboard -->
+						<div id="atflb">
+				<div id="cdm-zone-01"></div>			</div>
+						<!-- /ATF Leaderboard -->
+			<div class="mw-indicators">
+</div>
+			<h1 lang="en" class="firstHeading" id="firstHeading">Razor</h1>
+									<div class="mw-body-content" id="bodyContent">
+									<div id="siteSub">From Dota 2 Wiki</div>
+								<div id="contentSub"></div>
+												<div class="mw-jump" id="jump-to-nav">
+					Jump to:					<a href="#mw-head">navigation</a>, 					<a href="#p-search">search</a>
+				</div>
+				<div lang="en" class="mw-content-ltr" dir="ltr" id="mw-content-text"><table cellspacing="0" cellpadding="0" border="0" style="text-align: center; white-space: nowrap; vertical-align: top; margin-bottom: 20px;">
+
+<tbody><tr style="background-color: transparent;">
+<td> </td>
+<td style="padding:0.5em; background-color:white; line-height:0.95em; border:solid 2px #A3B1BF; border-bottom:0; font-weight:bold; width: 20px;"> <strong class="selflink">Hero</strong>
+</td>
+<td style="border-bottom: 2px solid #A3B1BF; width: 3px;">  </td>
+<td style="padding: 0.5em; background-color: #d7e6f4; line-height: 0.95em; border: 1px solid #A3B1BF; border-bottom: solid 2px #A3B1BF; width: 20px;"> <a title="Razor/Guide" href="/Razor/Guide">Strategy</a>
+</td>
+<td style="border-bottom: 2px solid #A3B1BF; width: 3px;"> </td>
+<td style="padding: 0.5em; background-color: #d7e6f4; line-height: 0.95em; border: 1px solid #A3B1BF; border-bottom: solid 2px #A3B1BF; width: 20px;"> <a title="Razor/Counters" href="/Razor/Counters">Counters</a>
+</td>
+<td style="border-bottom: 2px solid #A3B1BF; width: 3px;"> </td>
+<td style="padding: 0.5em; background-color: #d7e6f4; line-height: 0.95em; border: 1px solid #A3B1BF; border-bottom: solid 2px #A3B1BF; width: 20px;"> <a title="Razor/Equipment" href="/Razor/Equipment">Equipment</a>
+</td>
+<td style="border-bottom: 2px solid #A3B1BF; width: 3px;"> </td>
+<td style="padding: 0.5em; background-color: #d7e6f4; line-height: 0.95em; border: 1px solid #A3B1BF; border-bottom: solid 2px #A3B1BF; width: 20px;"> <a title="Razor/Gear" href="/Razor/Gear">Gear</a>
+</td>
+<td style="border-bottom: 2px solid #A3B1BF; width: 3px;"> </td>
+<td style="padding: 0.5em; background-color: #d7e6f4; line-height: 0.95em; border: 1px solid #A3B1BF; border-bottom: solid 2px #A3B1BF; width: 20px;"> <a title="Razor/Responses" href="/Razor/Responses">Responses</a>
+</td>
+<td style="border-bottom: 2px solid #A3B1BF; width: 3px;"> </td>
+<td style="padding: 0.5em; background-color: #d7e6f4; line-height: 0.95em; border: 1px solid #A3B1BF; border-bottom: solid 2px #A3B1BF; width: 20px;"> <a title="Razor/Sounds" href="/Razor/Sounds">Sounds</a>
+</td>
+<td style="border-bottom: 2px solid #A3B1BF; width: 3px;"> </td>
+<td style="padding: 0.5em; background-color: #d7e6f4; line-height: 0.95em; border: 1px solid #A3B1BF; border-bottom: solid 2px #A3B1BF; width: 20px;"> <a title="Razor/Lore" href="/Razor/Lore">Lore</a>
+</td>
+<td style="border-bottom: 2px solid #A3B1BF; width: 3px;"> </td>
+<td style="padding: 0.5em; background-color: #d7e6f4; line-height: 0.95em; border: 1px solid #A3B1BF; border-bottom: solid 2px #A3B1BF; width: 20px;"> <a title="Razor/Old Abilities" href="/Razor/Old_Abilities">Old Abilities</a>
+</td>
+<td style="border-bottom: 2px solid #A3B1BF; width: 3px;"> </td>
+<td style="padding: 0.5em; background-color: #d7e6f4; line-height: 0.95em; border: 1px solid #A3B1BF; border-bottom: solid 2px #A3B1BF; width: 20px;"> <a title="Razor/Changelogs" href="/Razor/Changelogs">Changelogs</a>
+</td>
+<td style="border-bottom: 2px solid #A3B1BF; width: 3px;"> 
+</td>
+<td width="3000" style="border-bottom:2px solid #A3B1BF">  
+</td></tr></tbody></table>
+<table style="float: right; text-align: left; font-size:88%; line-height: 1.5em; white-space: nowrap;" class="infobox">
+
+<tbody><tr>
+<td colspan="4"><div style="color: white; background-color: #167C13; font-size: 112%; text-align: center; font-weight: bold;">Razor</div>
+</td></tr>
+<tr>
+<td colspan="4"> <a class="image" href="/File:Razor.png"><img width="256" height="144" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/a/a0/Razor.png?version=5a03007d6892ec481b8a26b4564b888e" alt="Razor.png" /></a>
+</td></tr>
+<tr>
+<td colspan="4">
+<table width="100%" align="center" style="color: white; background: linear-gradient(45deg, #434137 0%, #292821 100%);">
+
+<tbody><tr>
+<th width="45" align="center"> <a title="Strength" href="/Strength"><img width="40" height="40" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/7a/Strength_attribute_symbol.png/60px-Strength_attribute_symbol.png?version=79371ef0198db066c30dfa55b0e6b483 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/7/7a/Strength_attribute_symbol.png?version=79371ef0198db066c30dfa55b0e6b483 2x" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/7a/Strength_attribute_symbol.png/40px-Strength_attribute_symbol.png?version=79371ef0198db066c30dfa55b0e6b483" alt="Strength" /></a><br /> <b>21</b> + 2.3
+</th>
+<th width="45" align="center"> <a title="Agility" href="/Agility"><img width="40" height="40" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/72/Agility_primary_attribute_symbol.png/60px-Agility_primary_attribute_symbol.png?version=d62be6f497df32db012c4ddcf8153a1a 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/7/72/Agility_primary_attribute_symbol.png?version=d62be6f497df32db012c4ddcf8153a1a 2x" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/72/Agility_primary_attribute_symbol.png/40px-Agility_primary_attribute_symbol.png?version=d62be6f497df32db012c4ddcf8153a1a" alt="Agility" /></a><br /> <b>22</b> + 2
+</th>
+<th width="45" align="center"> <a title="Intelligence" href="/Intelligence"><img width="40" height="40" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/5/56/Intelligence_attribute_symbol.png/60px-Intelligence_attribute_symbol.png?version=4040e46b05f05f761993086ea3d191f0 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/5/56/Intelligence_attribute_symbol.png?version=4040e46b05f05f761993086ea3d191f0 2x" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/5/56/Intelligence_attribute_symbol.png/40px-Intelligence_attribute_symbol.png?version=4040e46b05f05f761993086ea3d191f0" alt="Intelligence" /></a><br /> <b>19</b> + 1.8
+</th></tr></tbody></table>
+</td></tr>
+<tr>
+<td colspan="4">
+<table width="100%" style="border-collapse: collapse;">
+
+<tbody><tr>
+<th width="40%"> Level
+</th>
+<th width="20%"> <span title="Basic values, without any attributes" style="cursor:help; border-bottom:1px dotted;" id="tooltip">Base</span>
+</th>
+<th width="20%"> <span title="With no levels of Attribute Bonus" style="cursor:help; border-bottom:1px dotted;" id="tooltip">1</span>
+</th>
+<th width="20%"> <span title="With 1 level of Attribute Bonus" style="cursor:help; border-bottom:1px dotted;" id="tooltip">16</span>
+</th>
+<th width="20%"> <span title="With 10 levels of Attribute Bonus" style="cursor:help; border-bottom:1px dotted;" id="tooltip">25</span>
+</th></tr>
+<tr style="background:#ededed">
+<td> <b><a title="Health" href="/Health">Health</a></b> </td>
+<td> 200
+</td>
+<td> 620
+</td>
+<td> 1340
+</td>
+<td> 2120
+</td></tr>
+<tr>
+<td> <b><a class="mw-redirect" title="Health regeneration" href="/Health_regeneration">H. Regen</a></b> </td>
+<td> 0.25 </td>
+<td> 0.88 </td>
+<td> 1.98 </td>
+<td> 3.14
+</td></tr>
+<tr style="background:#ededed">
+<td> <b><a title="Mana" href="/Mana">Mana</a></b> </td>
+<td> 50
+</td>
+<td> 278
+</td>
+<td> 626
+</td>
+<td> 1034
+</td></tr>
+<tr>
+<td> <b><a class="mw-redirect" title="Mana regeneration" href="/Mana_regeneration">M. Regen</a></b> </td>
+<td> 0.01 </td>
+<td> 0.77 </td>
+<td> 1.93 </td>
+<td> 3.3
+</td></tr>
+<tr style="background:#ededed">
+<td> <b><a title="Attack damage" href="/Attack_damage">Damage</a></b> </td>
+<td> 23‒25 </td>
+<td> 45‒47
+</td>
+<td> 77‒79
+</td>
+<td> 113‒115
+</td></tr>
+<tr>
+<td> <b><a title="Armor" href="/Armor">Armor</a></b> </td>
+<td> -1
+</td>
+<td> 2.14 </td>
+<td> 6.71 </td>
+<td> 11.86
+</td></tr>
+<tr style="background:#ededed">
+<td><b><a class="mw-redirect" title="Spell Damage" href="/Spell_Damage">Spell Dmg</a></b> </td>
+<td> 0%
+</td>
+<td> 1.19%
+</td>
+<td> 3%
+</td>
+<td> 5.14%
+</td></tr>
+<tr>
+<td> <b><a title="Attack speed" href="/Attack_speed"><span title="Attacks per second" style="cursor:help; border-bottom:1px dotted;" id="tooltip">Att / Sec</span></a></b> </td>
+<td> 0.58 </td>
+<td> 0.71 </td>
+<td> 0.9 </td>
+<td> 1.11
+</td></tr></tbody></table>
+</td></tr>
+<tr>
+<td colspan="4">
+<table width="100%" style="border-collapse: collapse;">
+
+<tbody><tr style="background:#ededed">
+<td style="padding-left: 2em"><b><a title="Movement speed" href="/Movement_speed">Movement Speed</a></b> </td>
+<td> 295
+</td></tr>
+<tr>
+<td style="padding-left: 2em"><b><a title="Turn rate" href="/Turn_rate">Turn Rate</a></b> </td>
+<td> 0.4
+</td></tr>
+<tr style="background:#ededed">
+<td style="padding-left: 2em"><b><a title="Vision" href="/Vision">Vision Range</a></b> </td>
+<td> <span title="During the day" style="cursor:help; border-bottom:1px dotted;" id="tooltip">1800</span>/<span title="During the night" style="cursor:help; border-bottom:1px dotted;" id="tooltip">800</span>
+</td></tr>
+<tr>
+<td style="padding-left: 2em"><b><a title="Attack range" href="/Attack_range">Attack Range</a></b> </td>
+<td> <span title="Ranged" style="cursor:help; border-bottom:1px dotted;" id="tooltip">475</span>
+</td></tr>
+<tr style="background:#ededed">
+<td style="padding-left: 2em"><b>Projectile Speed</b> </td>
+<td>  2000
+</td></tr>
+<tr>
+<td style="padding-left: 2em"><b><a title="Attack animation" href="/Attack_animation">Attack Animation</a></b> </td>
+<td> <span title="Attack point" style="cursor:help; border-bottom:1px dotted;" id="tooltip">0.3</span>+<span title="Attack backswing" style="cursor:help; border-bottom:1px dotted;" id="tooltip">0.7</span>
+</td></tr>
+<tr style="background:#ededed">
+<td style="padding-left: 2em"><b><a title="Attack speed" href="/Attack_speed#Base_attack_time">Base Attack Time</a></b> </td>
+<td> 1.7
+</td></tr>
+<tr>
+<td style="padding-left: 2em"> <b><a title="Magic resistance" href="/Magic_resistance">Magic resistance</a></b> </td>
+<td> 25%
+</td></tr>
+<tr style="background:#ededed">
+<td style="padding-left: 2em"><b>Collision Size</b> </td>
+<td>  24
+</td></tr>
+<tr>
+<td style="padding-left: 2em"> <b>Legs</b> </td>
+<td> 0
+</td></tr></tbody></table>
+</td></tr></tbody></table>
+<p><b>Razor</b> the <b>Lightning Revenant</b> is a <a class="mw-redirect" title="Ranged" href="/Ranged">ranged</a> position-based <a title="Agility" href="/Agility">agility</a> <a class="mw-redirect" title="Tank" href="/Tank">tank</a>/<a class="mw-redirect" title="Carry" href="/Carry">carry</a> that employs his abilities to deal massive damage in a relatively short amount of time, chase down the fleeing injured with his speed, and inflict debuffs on more powerful foes. Razor prefers to keep his position or kite his enemies allowing his spells to unleash its full potential. Known for being a great Anti-carry hero, Razor specializes in using his opponent's own powers against them, draining them of their damage and using it to smite them, as well as damaging, slowing, and purging them of buffs should they dare cast a spell on him. His ultimate, <a href="#Eye_of_the_Storm">Eye of the Storm</a>, further enhances his carry-killing powers by inflicting constant, armor-shattering, lightning strikes on the foe with the lowest HP within a 500 radius. For those who rely on their pure brute force alone to fight, there is truly no escape from the Underscape.
+</p>
+<div class="toc" id="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Bio"><span class="tocnumber">1</span> <span class="toctext">Bio</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Abilities"><span class="tocnumber">2</span> <span class="toctext">Abilities</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Recommended_items"><span class="tocnumber">3</span> <span class="toctext">Recommended items</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#Gameplay"><span class="tocnumber">4</span> <span class="toctext">Gameplay</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="#Audio"><span class="tocnumber">5</span> <span class="toctext">Audio</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="#History"><span class="tocnumber">6</span> <span class="toctext">History</span></a></li>
+<li class="toclevel-1 tocsection-7"><a href="#Equipment"><span class="tocnumber">7</span> <span class="toctext">Equipment</span></a></li>
+<li class="toclevel-1 tocsection-8"><a href="#Trivia"><span class="tocnumber">8</span> <span class="toctext">Trivia</span></a></li>
+<li class="toclevel-1 tocsection-9"><a href="#Gallery"><span class="tocnumber">9</span> <span class="toctext">Gallery</span></a></li>
+<li class="toclevel-1 tocsection-10"><a href="#References"><span class="tocnumber">10</span> <span class="toctext">References</span></a></li>
+</ul>
+</div>
+
+<h2><span id="Bio" class="mw-headline">Bio</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" title="Edit section: Bio" href="/index.php?title=Razor&amp;veaction=edit&amp;vesection=1">edit</a><span class="mw-editsection-divider"> | </span><a title="Edit section: Bio" href="/index.php?title=Razor&amp;action=edit&amp;section=1">edit source</a><span class="mw-editsection-bracket">]</span></span></h2>
+<div class="biobox" style="color:#333333;padding:8px;font-size:12px;">
+<table style="background: none;">
+<tbody><tr>
+<td valign="top">
+<table cellspacing="4" style="background: none;">
+
+<tbody><tr>
+<td colspan="2" style="font-weight:bold;font-size:13px;text-align:center;"> <a title="Razor" href="/Razor"><img width="32" height="32" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/6/66/Razor_icon.png?version=19dc6009aab382c007ec25099775224a" alt="Razor" /></a> Razor, the Lightning Revenant
+</td></tr>
+<tr>
+<td align="center" colspan="2"> <a class="sm2_button" title="Play" href="https://hydra-media.cursecdn.com/dota2.gamepedia.com/2/2f/Raz_rare_01.mp3">Play</a> "I bring my lightning whip not to punish souls, but only to hasten them toward the inevitable exit."
+</td></tr>
+<tr>
+<td width="" valign="top"> <b>Role:</b> </td>
+<td> <a title="Carry" href="/Role#Carry"><img width="24" height="24" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/5/52/Pip_carry.png/36px-Pip_carry.png?version=7897014a7741857935320d543e26bcac 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/5/52/Pip_carry.png/48px-Pip_carry.png?version=7897014a7741857935320d543e26bcac 2x" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/5/52/Pip_carry.png/24px-Pip_carry.png?version=7897014a7741857935320d543e26bcac" alt="Carry" /></a> <a title="Role" href="/Role#Carry">Carry</a> / <a title="Durable" href="/Role#Durable"><img width="24" height="24" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/d/d3/Pip_tank.png/36px-Pip_tank.png?version=5d8ccf7b704ff54ffe6c2a65a3861423 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/d/d3/Pip_tank.png/48px-Pip_tank.png?version=5d8ccf7b704ff54ffe6c2a65a3861423 2x" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/d/d3/Pip_tank.png/24px-Pip_tank.png?version=5d8ccf7b704ff54ffe6c2a65a3861423" alt="Durable" /></a> <a title="Role" href="/Role#Durable">Durable</a> / <a title="Nuker" href="/Role#Nuker"><img width="24" height="24" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/0/04/Pip_ganker.png/36px-Pip_ganker.png?version=f403b95dc688f11a6af39e1110731b4d 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/0/04/Pip_ganker.png/48px-Pip_ganker.png?version=f403b95dc688f11a6af39e1110731b4d 2x" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/0/04/Pip_ganker.png/24px-Pip_ganker.png?version=f403b95dc688f11a6af39e1110731b4d" alt="Nuker" /></a> <a title="Role" href="/Role#Nuker">Nuker</a> / <a title="Pusher" href="/Role#Pusher"><img width="24" height="24" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/1/1e/Pip_pusher.png/36px-Pip_pusher.png?version=41957ab12983b0cea2a71c4b6c24022a 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/1/1e/Pip_pusher.png/48px-Pip_pusher.png?version=41957ab12983b0cea2a71c4b6c24022a 2x" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/1/1e/Pip_pusher.png/24px-Pip_pusher.png?version=41957ab12983b0cea2a71c4b6c24022a" alt="Pusher" /></a> <a title="Role" href="/Role#Pusher">Pusher</a>
+</td></tr>
+<tr>
+<td valign="top"> <b>Lore:</b> </td>
+<td> <i>Among the emblematic powers that populate the Underscape, Razor the Lightning Revenant is one of the most feared. With his whip of lightning, he patrols the Narrow Maze, that treacherous webwork of passages by which the souls of the dead are sorted according to their own innate intelligence, cunning and persistence. Drifting above the Maze, Razor looks down on the baffled souls below, and delivers jolts of scalding electricity that both punish and quicken the souls as they decide their own fates, hurrying on toward luminous exits or endlessly dark pits. Razor is the eternal embodiment of a dominating power, abstract and almost clinical in his application of power. Yet he has a lordly air that suggests he takes a sardonic satisfaction in his work.</i>
+</td></tr>
+<tr>
+<td valign="top"> <b>Voice:</b> </td>
+<td> Eric Newsome (<a title="Razor/Responses" href="/Razor/Responses">Responses</a>)
+</td></tr></tbody></table>
+</td></tr></tbody></table></div>
+<h2><span id="Abilities" class="mw-headline">Abilities</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" title="Edit section: Abilities" href="/index.php?title=Razor&amp;veaction=edit&amp;vesection=2">edit</a><span class="mw-editsection-divider"> | </span><a title="Edit section: Abilities" href="/index.php?title=Razor&amp;action=edit&amp;section=2">edit source</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p><span id="Plasma_Field"></span>
+</p>
+<div style="display: flex; flex-wrap: wrap; align-items: flex-start;"><div style="width: 450px; margin-right: 15px; vertical-align: top; background-color: #EAEAEA;">
+<div style="font-weight: bold; font-size: 110%; border-bottom: 1px solid black; background-color: #B44335; color: white; padding: 3px 5px;">Plasma Field<div style="float:right;">      <a title="Does not pierce spell immunity." href="/Spell_Immunity"><img width="20" height="20" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/9/9c/Spell_immunity_block_symbol.png/30px-Spell_immunity_block_symbol.png?version=7588eb7155b0b0ba78ae6c948c459858 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/9/9c/Spell_immunity_block_symbol.png/40px-Spell_immunity_block_symbol.png?version=7588eb7155b0b0ba78ae6c948c459858 2x" style="vertical-align: text-top" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/9/9c/Spell_immunity_block_symbol.png/20px-Spell_immunity_block_symbol.png?version=7588eb7155b0b0ba78ae6c948c459858" alt="Does not pierce spell immunity." /></a> <span style="position:relative; top:-2px;"><a class="sm2_button" title="Play" href="https://hydra-media.cursecdn.com/dota2.gamepedia.com/9/94/Plasma_Field.mp3">Play</a></span><div style="background-color:white; display:inline-block; margin-left:5px; color:#B44335; padding-left:0.2em; padding-right:0.25em; text-align:center;"><span title="Hotkey" style="cursor:help; border-bottom:1px dotted;" id="tooltip">Q</span></div><div style="background-color:white; display:inline-block; margin-left:5px; color:#B44335; opacity:0.65; padding-left:0.25em; padding-right:0.2em; text-align:center;"><span title="Legacy Key" style="cursor:help; border-bottom:1px dotted;" id="tooltip">F</span></div></div>
+</div><div><div class="ico_active"><a class="image" href="/File:Plasma_Field_icon.png"><img width="128" height="128" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/c/c9/Plasma_Field_icon.png?version=f4e3ba3986a0b16cb6c427c5f50995f9" alt="Plasma Field icon.png" /></a></div>
+<div style="width: 312px; display: inline-block;">
+<div style="padding: 15px 5px; font-size: 85%; line-height: 100%; text-align: center;">
+<div style="display: inline-block; width: 32%; vertical-align: top;"><b>Ability</b><br /><a title="Abilities" href="/Abilities#No_Target">No Target</a> </div>
+<div style="display: inline-block; width: 32%; vertical-align: top;"><b>Affects</b><br />Enemies</div>
+<div style="display: inline-block; width: 32%; vertical-align: top;"><b>Damage</b><br /><a title="Damage types" href="/Damage_types#Magical"><b><span style="color:#3F56AD">Magical</span></b></a></div>
+</div>
+<div style="vertical-align: top; padding: 3px 5px; border-top: 1px solid black;">Releases a wave of energetic plasma that grows in power as it expands, but also zaps on contraction, dealing damage to enemy units caught in its path. Damage increases with distance from Razor.</div>
+</div>
+</div>
+<div style="vertical-align:top; padding: 3px 5px;"><div><b>Cast Animation</b>: <span title="Cast point" style="cursor:help; border-bottom:1px dotted;" id="tooltip">0</span>+<span title="Cast backswing" style="cursor:help; border-bottom:1px dotted;" id="tooltip">0</span>
+</div><div><b>Max Extention Radius</b>: 700</div><div><b>Damage Width</b>: 200</div><div><b>Minimum Damage</b>: 30/50/70/90</div><div><b>Maximum Damage</b>: 160/230/300/370</div><div style="display: inline-block; margin: 8px 0px 0px 50px; width: 190px; vertical-align: top;"><span style="position: relative; top: -2px;"><a title="Cooldown" href="/Cooldown"><img width="20" height="20" style="vertical-align: text-top" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/b/b7/Cooldown_symbol.png?version=7429ed9baf0f121e6ab3324bfdfad708" alt="Cooldown" /></a></span> 14</div>
+<div style="display: inline-block; margin: 8px 0px 0px; width: 190px; vertical-align: top;"><span style="position: relative; top: -2px;"><a title="Mana" href="/Mana"><img width="20" height="20" style="vertical-align: text-top" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/f/f3/Mana_symbol.png?version=a81185ac577f9b52f2df06be91b6600c" alt="Mana" /></a></span> 125
+</div>
+<div style="margin-top: 5px; padding-top: 2px; border-top: 1px solid #C1C1C1;"><i>The Lightning Revenant rules the Underscape with plasmatic power.</i>
+</div>
+</div>
+</div>
+<div style="flex: 2 3 400px; word-wrap: break-word;">
+<p><b>Notes:</b><br />
+</p>
+<ul><li> Plasma Field interrupts Razor's <a title="Channeling" href="/Channeling">channeling</a> spells upon cast.</li></ul>
+<ul><li> Plasma Field expands and retracts at a speed of 636.</li></ul>
+<ul><li> The damage is divided into 2 instances. One instance is applied while expanding, and the other one while retracting. Both instances can hit a unit only once each.</li></ul>
+<ul><li> Plasma Field's damaging area is actually a 200 radius ring, which is right in front of the actual visible ring.</li></ul>
+<ul><li> This means that upon cast, it instantly damages units within 200 radius and can hit units up to 900 range away.</li></ul>
+<ul><li> So upon expanding, the damage hits 200 range before the visible ring hits, and upon retracting, the damage hits after the ring passed the units already.</li></ul>
+<ul><li> Plasma Field is centered on and follows Razor.</li></ul>
+<ul><li> Plasma Field provides 700 radius <a class="mw-redirect" title="Flying vision" href="/Flying_vision">flying vision</a>, following Razor and leaving a trail of vision which lasts 2 seconds.</li></ul>
+</div></div>
+<p><br />
+</p><p><span id="Static_Link"></span>
+</p>
+<div style="display: flex; flex-wrap: wrap; align-items: flex-start;"><div style="width: 450px; margin-right: 15px; vertical-align: top; background-color: #EAEAEA;">
+<div style="font-weight: bold; font-size: 110%; border-bottom: 1px solid black; background-color: #B44335; color: white; padding: 3px 5px;">Static Link<div style="float:right;">     <a title="Blocked by Linken's Sphere." href="/Linken%27s_Sphere"><img width="20" height="20" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/72/Spell_block_symbol.png/30px-Spell_block_symbol.png?version=b767728c632ebe4ef05893d2da7d2488 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/72/Spell_block_symbol.png/40px-Spell_block_symbol.png?version=b767728c632ebe4ef05893d2da7d2488 2x" style="vertical-align: text-top" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/72/Spell_block_symbol.png/20px-Spell_block_symbol.png?version=b767728c632ebe4ef05893d2da7d2488" alt="Blocked by Linken's Sphere." /></a> <a title="Pierces spell immunity." href="/Spell_Immunity"><img width="20" height="20" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/0/0c/Spell_immunity_block_no_symbol.png/30px-Spell_immunity_block_no_symbol.png?version=8a9b499fbc92dda21de2b49951268177 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/0/0c/Spell_immunity_block_no_symbol.png/40px-Spell_immunity_block_no_symbol.png?version=8a9b499fbc92dda21de2b49951268177 2x" style="vertical-align: text-top" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/0/0c/Spell_immunity_block_no_symbol.png/20px-Spell_immunity_block_no_symbol.png?version=8a9b499fbc92dda21de2b49951268177" alt="Pierces spell immunity." /></a> <span style="position:relative; top:-2px;"><a class="sm2_button" title="Play" href="https://hydra-media.cursecdn.com/dota2.gamepedia.com/5/59/Static_Link.mp3">Play</a></span><div style="background-color:white; display:inline-block; margin-left:5px; color:#B44335; padding-left:0.2em; padding-right:0.25em; text-align:center;"><span title="Hotkey" style="cursor:help; border-bottom:1px dotted;" id="tooltip">W</span></div><div style="background-color:white; display:inline-block; margin-left:5px; color:#B44335; opacity:0.65; padding-left:0.25em; padding-right:0.2em; text-align:center;"><span title="Legacy Key" style="cursor:help; border-bottom:1px dotted;" id="tooltip">C</span></div></div>
+</div><div><div class="ico_active"><a class="image" href="/File:Static_Link_icon.png"><img width="128" height="128" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/0/01/Static_Link_icon.png?version=bd0287e6f1d042d7d941ebabd45ef677" alt="Static Link icon.png" /></a></div>
+<div style="width: 312px; display: inline-block;">
+<div style="padding: 15px 5px; font-size: 85%; line-height: 100%; text-align: center;">
+<div style="display: inline-block; width: 32%; vertical-align: top;"><b>Ability</b><br /><a title="Abilities" href="/Abilities#Target_Unit">Target Unit</a> </div>
+<div style="display: inline-block; width: 32%; vertical-align: top;"><b>Affects</b><br /><a title="Heroes" href="/Heroes">Enemy Heroes</a> / Self</div>
+<div style="display: inline-block; width: 32%; vertical-align: top;"></div>
+</div>
+<div style="vertical-align: top; padding: 3px 5px; border-top: 1px solid black;">Creates a charged link between Razor and an enemy Hero, stealing damage from the target and giving it to Razor.</div>
+</div>
+</div>
+<div style="vertical-align:top; padding: 3px 5px;"><div><b>Cast Animation</b>: <span title="Cast point" style="cursor:help; border-bottom:1px dotted;" id="tooltip">0.3</span>+<span title="Cast backswing" style="cursor:help; border-bottom:1px dotted;" id="tooltip">0</span>
+</div><div><b>Cast Range</b>: 600</div><div><b>Link Break Distance</b>: 800</div><div><b>Attack Damage Stolen per Second</b>: 7/14/21/28</div><div><b>Link Duration</b>: 8</div><div><b>Buff Duration</b>: 18</div><div style="display: inline-block; margin: 8px 0px 0px 50px; width: 190px; vertical-align: top;"><span style="position: relative; top: -2px;"><a title="Cooldown" href="/Cooldown"><img width="20" height="20" style="vertical-align: text-top" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/b/b7/Cooldown_symbol.png?version=7429ed9baf0f121e6ab3324bfdfad708" alt="Cooldown" /></a></span> 32/30/28/26</div>
+<div style="display: inline-block; margin: 8px 0px 0px; width: 190px; vertical-align: top;"><span style="position: relative; top: -2px;"><a title="Mana" href="/Mana"><img width="20" height="20" style="vertical-align: text-top" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/f/f3/Mana_symbol.png?version=a81185ac577f9b52f2df06be91b6600c" alt="Mana" /></a></span> 50
+</div><div style="margin-top: 10px;"><b>Modifiers</b></div>
+<div style="font-size: 85%; margin-left: 10px;">
+<div> <img width="16" height="16" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/c/c1/Modifier_buff_symbol.png/24px-Modifier_buff_symbol.png?version=97c71541b396c601c0ac22a73d1a7573 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/c/c1/Modifier_buff_symbol.png/32px-Modifier_buff_symbol.png?version=97c71541b396c601c0ac22a73d1a7573 2x" style="vertical-align: text-top" title="Buff" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/c/c1/Modifier_buff_symbol.png/16px-Modifier_buff_symbol.png?version=97c71541b396c601c0ac22a73d1a7573" alt="Buff" /> <span style="color:#1F631F;"><b>Static Link: </b>Undispellable.</span>
+</div><div> <img width="16" height="16" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/c/c1/Modifier_buff_symbol.png/24px-Modifier_buff_symbol.png?version=97c71541b396c601c0ac22a73d1a7573 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/c/c1/Modifier_buff_symbol.png/32px-Modifier_buff_symbol.png?version=97c71541b396c601c0ac22a73d1a7573 2x" style="vertical-align: text-top" title="Buff" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/c/c1/Modifier_buff_symbol.png/16px-Modifier_buff_symbol.png?version=97c71541b396c601c0ac22a73d1a7573" alt="Buff" /> <span style="color:#1F631F;"><b>Static Link Buff: </b>Undispellable.</span>
+</div><div> <img width="16" height="16" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/1/1a/Modifier_debuff_symbol.png/24px-Modifier_debuff_symbol.png?version=5684dfbf37c3058c80b8495a4d0dc346 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/1/1a/Modifier_debuff_symbol.png/32px-Modifier_debuff_symbol.png?version=5684dfbf37c3058c80b8495a4d0dc346 2x" style="vertical-align: text-top" title="Debuff" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/1/1a/Modifier_debuff_symbol.png/16px-Modifier_debuff_symbol.png?version=5684dfbf37c3058c80b8495a4d0dc346" alt="Debuff" /> <span style="color:#631F1F;"><b>Static Link Vision: </b>Undispellable.</span>
+</div><div> <img width="16" height="16" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/1/1a/Modifier_debuff_symbol.png/24px-Modifier_debuff_symbol.png?version=5684dfbf37c3058c80b8495a4d0dc346 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/1/1a/Modifier_debuff_symbol.png/32px-Modifier_debuff_symbol.png?version=5684dfbf37c3058c80b8495a4d0dc346 2x" style="vertical-align: text-top" title="Debuff" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/1/1a/Modifier_debuff_symbol.png/16px-Modifier_debuff_symbol.png?version=5684dfbf37c3058c80b8495a4d0dc346" alt="Debuff" /> <span style="color:#631F1F;"><b>Static Link Debuff: </b>Undispellable.</span>
+</div>
+</div>
+<div style="margin-top: 5px; padding-top: 2px; border-top: 1px solid #C1C1C1;"><i>Razor's polarity channels electricity into his being, draining the power of his opposition.</i>
+</div>
+</div>
+</div>
+<div style="flex: 2 3 400px; word-wrap: break-word;">
+<p><b>Notes:</b><br />
+</p>
+<ul><li> Static Link is broken when either unit dies or the link break distance is exceeded. Nothing else can break the link.</li></ul>
+<ul><li> The distance between Razor and the target is checked right before each damage steal interval. If the distance is greater upon check, the link breaks.</li></ul>
+<ul><li> Static Link provides <a class="mw-redirect" title="Shared vision" href="/Shared_vision">shared vision</a> over the target while draining.</li></ul>
+<ul><li> Drains 1.75/3.5/5.25/7 damage in 0.25 second intervals, starting immediately upon cast, resulting in 33 instances.</li></ul>
+<ul><li> Can steal up to 57.75/115.5/173.25/231 damage when draining for the full duration.</li></ul>
+<ul><li> Can be cast on heroes, <a title="Illusions" href="/Illusions">illusions</a> and <a class="mw-redirect" title="Creep-heroes" href="/Creep-heroes">creep-heroes</a>.</li></ul>
+<ul><li> Re-casting the spell while already draining refreshes the drain duration, causing more damage to be stolen.
+<ul><li> However, when re-casting it after the first draining stopped, the damage of the first drain gets lost.</li></ul></li></ul>
+</div></div>
+<p><br />
+</p><p><span id="Unstable_Current"></span>
+</p>
+<div style="display: flex; flex-wrap: wrap; align-items: flex-start;"><div style="width: 450px; margin-right: 15px; vertical-align: top; background-color: #EAEAEA;">
+<div style="font-weight: bold; font-size: 110%; border-bottom: 1px solid black; background-color: #B44335; color: white; padding: 3px 5px;">Unstable Current<div style="float:right;"> <a title="Can be used by illusions." href="/Illusions"><img width="20" height="20" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/e/e2/Illusion_symbol.png/30px-Illusion_symbol.png?version=7a3a01543d327eccde768866533cbae2 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/e/e2/Illusion_symbol.png/40px-Illusion_symbol.png?version=7a3a01543d327eccde768866533cbae2 2x" style="vertical-align: text-top" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/e/e2/Illusion_symbol.png/20px-Illusion_symbol.png?version=7a3a01543d327eccde768866533cbae2" alt="Can be used by illusions." /></a> <a title="Disabled by Break." href="/Break"><img width="20" height="20" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/f/f9/Breakable_symbol.png/30px-Breakable_symbol.png?version=75c8c39d828694e4c795718ece243865 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/f/f9/Breakable_symbol.png/40px-Breakable_symbol.png?version=75c8c39d828694e4c795718ece243865 2x" style="vertical-align: text-top" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/f/f9/Breakable_symbol.png/20px-Breakable_symbol.png?version=75c8c39d828694e4c795718ece243865" alt="Disabled by Break." /></a>    <a title="Partially pierces spell immunity." href="/Spell_Immunity"><img width="20" height="20" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/5/59/Spell_immunity_block_partial_symbol.png/30px-Spell_immunity_block_partial_symbol.png?version=923f604c1ecd2a88b6b5a2bf6e32b59e 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/5/59/Spell_immunity_block_partial_symbol.png/40px-Spell_immunity_block_partial_symbol.png?version=923f604c1ecd2a88b6b5a2bf6e32b59e 2x" style="vertical-align: text-top" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/5/59/Spell_immunity_block_partial_symbol.png/20px-Spell_immunity_block_partial_symbol.png?version=923f604c1ecd2a88b6b5a2bf6e32b59e" alt="Partially pierces spell immunity." /></a> <div style="background-color:white; display:inline-block; margin-left:5px; color:#B44335; padding-left:0.2em; padding-right:0.25em; text-align:center;"><span title="Hotkey" style="cursor:help; border-bottom:1px dotted;" id="tooltip">E</span></div><div style="background-color:white; display:inline-block; margin-left:5px; color:#B44335; opacity:0.65; padding-left:0.25em; padding-right:0.2em; text-align:center;"><span title="Legacy Key" style="cursor:help; border-bottom:1px dotted;" id="tooltip">N</span></div></div>
+</div><div><div class="ico_passive"><a class="image" href="/File:Unstable_Current_icon.png"><img width="128" height="128" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/c/cf/Unstable_Current_icon.png?version=0daf93a8aa235d3a74eb15afb9f5a34c" alt="Unstable Current icon.png" /></a></div>
+<div style="width: 312px; display: inline-block;">
+<div style="padding: 15px 5px; font-size: 85%; line-height: 100%; text-align: center;">
+<div style="display: inline-block; width: 32%; vertical-align: top;"><b>Ability</b><br /><a title="Abilities" href="/Abilities#Passive">Passive</a> </div>
+<div style="display: inline-block; width: 32%; vertical-align: top;"><b>Affects</b><br />Self / Enemies</div>
+<div style="display: inline-block; width: 32%; vertical-align: top;"><b>Damage</b><br /><a title="Damage types" href="/Damage_types#Magical"><b><span style="color:#3F56AD">Magical</span></b></a></div>
+</div>
+<div style="vertical-align: top; padding: 3px 5px; border-top: 1px solid black;">Razor moves with increased speed, and any abilities targeted at him are instantly countered with a jolt of electricity which damages, slows, and purges buffs from enemies.</div>
+</div>
+</div>
+<div style="vertical-align:top; padding: 3px 5px;"><div><b>Move Speed Bonus</b>: 4%/8%/12%/16%</div><div><b>Damage</b>: 40/70/100/130</div><div><b>Move Speed Slow</b>: 100%</div><div><b>Attack Speed Slow</b>: 100</div><div><b>Slow Duration</b>: 0.5/1/1.5/2</div><div style="height: 8px; line-height: 0px;"></div><div style="margin-left: 50px;"><span style="position: relative; top: -2px;"><a title="Partially pierces spell immunity." href="/Spell_Immunity"><img width="20" height="20" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/5/59/Spell_immunity_block_partial_symbol.png/30px-Spell_immunity_block_partial_symbol.png?version=923f604c1ecd2a88b6b5a2bf6e32b59e 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/5/59/Spell_immunity_block_partial_symbol.png/40px-Spell_immunity_block_partial_symbol.png?version=923f604c1ecd2a88b6b5a2bf6e32b59e 2x" style="vertical-align: text-top" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/5/59/Spell_immunity_block_partial_symbol.png/20px-Spell_immunity_block_partial_symbol.png?version=923f604c1ecd2a88b6b5a2bf6e32b59e" alt="Partially pierces spell immunity." /></a></span> Always dispels <span style="white-space: nowrap;"><a title="Omniknight#Repel" href="/Omniknight#Repel"><img width="16" height="16" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/f/f7/Repel_icon.png/24px-Repel_icon.png?version=222f47e1907a19d433d8821b3ec9b3c1 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/f/f7/Repel_icon.png/32px-Repel_icon.png?version=222f47e1907a19d433d8821b3ec9b3c1 2x" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/f/f7/Repel_icon.png/16px-Repel_icon.png?version=222f47e1907a19d433d8821b3ec9b3c1" alt="Repel icon.png" /></a> <a title="Omniknight" href="/Omniknight#Repel">Repel</a></span>​ when proccing on a repelled unit. Does not affect spell immune units otherwise. Root and slow persist if debuff was placed before spell immunity and when not dispelled.</div><div style="margin-top: 10px;"><b>Modifiers</b></div>
+<div style="font-size: 85%; margin-left: 10px;">
+<div> <img width="16" height="16" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/1/1a/Modifier_debuff_symbol.png/24px-Modifier_debuff_symbol.png?version=5684dfbf37c3058c80b8495a4d0dc346 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/1/1a/Modifier_debuff_symbol.png/32px-Modifier_debuff_symbol.png?version=5684dfbf37c3058c80b8495a4d0dc346 2x" style="vertical-align: text-top" title="Debuff" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/1/1a/Modifier_debuff_symbol.png/16px-Modifier_debuff_symbol.png?version=5684dfbf37c3058c80b8495a4d0dc346" alt="Debuff" /> <span style="color:#631F1F;"><b>Unstablecurrent Slow: </b>Dispellable with any dispel.</span>
+</div><div> <img width="16" height="16" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/1/1a/Modifier_debuff_symbol.png/24px-Modifier_debuff_symbol.png?version=5684dfbf37c3058c80b8495a4d0dc346 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/1/1a/Modifier_debuff_symbol.png/32px-Modifier_debuff_symbol.png?version=5684dfbf37c3058c80b8495a4d0dc346 2x" style="vertical-align: text-top" title="Debuff" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/1/1a/Modifier_debuff_symbol.png/16px-Modifier_debuff_symbol.png?version=5684dfbf37c3058c80b8495a4d0dc346" alt="Debuff" /> <span style="color:#631F1F;"><b>Rooted: </b>Dispellable with any dispel.</span>
+</div>
+</div>
+<div style="margin-top: 5px; padding-top: 2px; border-top: 1px solid #C1C1C1;"><i>Attacking the Lightning Revenant is rewarded with shock therapy.</i>
+</div>
+</div>
+</div>
+<div style="flex: 2 3 400px; word-wrap: break-word;">
+<p><b>Notes:</b><br />
+</p>
+<ul><li> Unstable Current applies a <a class="mw-redirect" title="Basic dispel" href="/Basic_dispel">basic dispel</a> on hit enemies.</li></ul>
+<ul><li> Applies its effect before the cast spell takes effect.
+<ul><li> This means when the casting unit has low enough health to die to it, the triggering spell is not cast.</li></ul></li></ul>
+<ul><li> Unstable Current has a global range and affects units through the <a class="mw-redirect" title="Fog of War" href="/Fog_of_War">Fog of War</a> or <a title="Invisibility" href="/Invisibility">invisibility</a>.</li></ul>
+<ul><li> Affected enemies are <a title="Root" href="/Root">rooted</a> for the initial 0.33 seconds. However, their <a title="Channeling" href="/Channeling">channeling</a> spells are not interrupted.</li></ul>
+<ul><li> During the very short root, the following spells cannot be cast: <span style="white-space: nowrap;"><a title="Queen of Pain#Blink" href="/Queen_of_Pain#Blink"><img width="16" height="16" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/4/45/Blink_%28Queen_of_Pain%29_icon.png/24px-Blink_%28Queen_of_Pain%29_icon.png?version=6059107d04dcff8d4de26f150992decb 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/4/45/Blink_%28Queen_of_Pain%29_icon.png/32px-Blink_%28Queen_of_Pain%29_icon.png?version=6059107d04dcff8d4de26f150992decb 2x" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/4/45/Blink_%28Queen_of_Pain%29_icon.png/16px-Blink_%28Queen_of_Pain%29_icon.png?version=6059107d04dcff8d4de26f150992decb" alt="Blink (Queen of Pain) icon.png" /></a> <a title="Queen of Pain" href="/Queen_of_Pain#Blink">Blink</a></span>​, <span style="white-space: nowrap;"><a title="Anti-Mage#Blink" href="/Anti-Mage#Blink"><img width="16" height="16" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/c/ce/Blink_%28Anti-Mage%29_icon.png/24px-Blink_%28Anti-Mage%29_icon.png?version=d5071d7e3bd093896138142b6ac55f91 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/c/ce/Blink_%28Anti-Mage%29_icon.png/32px-Blink_%28Anti-Mage%29_icon.png?version=d5071d7e3bd093896138142b6ac55f91 2x" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/c/ce/Blink_%28Anti-Mage%29_icon.png/16px-Blink_%28Anti-Mage%29_icon.png?version=d5071d7e3bd093896138142b6ac55f91" alt="Blink (Anti-Mage) icon.png" /></a> <a title="Anti-Mage" href="/Anti-Mage#Blink">Blink</a></span>​, <span style="white-space: nowrap;"><a title="Nature's Prophet#Teleportation" href="/Nature%27s_Prophet#Teleportation"><img width="16" height="16" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/5/59/Teleportation_icon.png/24px-Teleportation_icon.png?version=62b6263bf8f4275d3d984f58114ae98c 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/5/59/Teleportation_icon.png/32px-Teleportation_icon.png?version=62b6263bf8f4275d3d984f58114ae98c 2x" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/5/59/Teleportation_icon.png/16px-Teleportation_icon.png?version=62b6263bf8f4275d3d984f58114ae98c" alt="Teleportation icon.png" /></a> <a title="Nature's Prophet" href="/Nature%27s_Prophet#Teleportation">Teleportation</a></span>​, <span style="white-space: nowrap;"><a title="Spirit Breaker#Charge of Darkness" href="/Spirit_Breaker#Charge_of_Darkness"><img width="16" height="16" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/4/4d/Charge_of_Darkness_icon.png/24px-Charge_of_Darkness_icon.png?version=fc8cfa55f5ef83ac6add480d3797f9ab 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/4/4d/Charge_of_Darkness_icon.png/32px-Charge_of_Darkness_icon.png?version=fc8cfa55f5ef83ac6add480d3797f9ab 2x" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/4/4d/Charge_of_Darkness_icon.png/16px-Charge_of_Darkness_icon.png?version=fc8cfa55f5ef83ac6add480d3797f9ab" alt="Charge of Darkness icon.png" /></a> <a title="Spirit Breaker" href="/Spirit_Breaker#Charge_of_Darkness">Charge of Darkness</a></span>​, <span style="white-space: nowrap;"><a title="Puck#Phase Shift" href="/Puck#Phase_Shift"><img width="16" height="16" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/79/Phase_Shift_icon.png/24px-Phase_Shift_icon.png?version=675327a0bc276d8ec804bbf3e897f039 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/79/Phase_Shift_icon.png/32px-Phase_Shift_icon.png?version=675327a0bc276d8ec804bbf3e897f039 2x" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/79/Phase_Shift_icon.png/16px-Phase_Shift_icon.png?version=675327a0bc276d8ec804bbf3e897f039" alt="Phase Shift icon.png" /></a> <a title="Puck" href="/Puck#Phase_Shift">Phase Shift</a></span>​, <span style="white-space: nowrap;"><a title="Riki#Tricks of the Trade" href="/Riki#Tricks_of_the_Trade"><img width="16" height="16" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/e/ed/Tricks_of_the_Trade_icon.png/24px-Tricks_of_the_Trade_icon.png?version=ea518ba314035068cf870a42ac0e2a78 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/e/ed/Tricks_of_the_Trade_icon.png/32px-Tricks_of_the_Trade_icon.png?version=ea518ba314035068cf870a42ac0e2a78 2x" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/e/ed/Tricks_of_the_Trade_icon.png/16px-Tricks_of_the_Trade_icon.png?version=ea518ba314035068cf870a42ac0e2a78" alt="Tricks of the Trade icon.png" /></a> <a title="Riki" href="/Riki#Tricks_of_the_Trade">Tricks of the Trade</a></span>​ and <span style="white-space:nowrap"><a title="Blink Dagger" href="/Blink_Dagger"><img width="20" height="15" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/4/4c/Blink_Dagger_icon.png/30px-Blink_Dagger_icon.png?version=5e5c77df754652176e13ef200a71af7a 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/4/4c/Blink_Dagger_icon.png/40px-Blink_Dagger_icon.png?version=5e5c77df754652176e13ef200a71af7a 2x" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/4/4c/Blink_Dagger_icon.png/20px-Blink_Dagger_icon.png?version=5e5c77df754652176e13ef200a71af7a" alt="Blink Dagger icon.png" /></a> <a title="Blink Dagger" href="/Blink_Dagger">Blink Dagger</a></span>.</li></ul>
+<ul><li> All single target spells as well as items trigger Unstable Current. However, <a class="mw-redirect" title="Active attack modifier" href="/Active_attack_modifier">active attack modifiers</a> do not.</li></ul>
+</div></div>
+<p><br />
+</p><p><span id="Eye_of_the_Storm"></span>
+</p>
+<div style="display: flex; flex-wrap: wrap; align-items: flex-start;"><div style="width: 450px; margin-right: 15px; vertical-align: top; background-color: #EAEAEA;">
+<div style="font-weight: bold; font-size: 110%; border-bottom: 1px solid black; background-color: #414141; color: white; padding: 3px 5px;">Eye of the Storm<div style="float:right;">      <a title="Pierces spell immunity." href="/Spell_Immunity"><img width="20" height="20" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/0/0c/Spell_immunity_block_no_symbol.png/30px-Spell_immunity_block_no_symbol.png?version=8a9b499fbc92dda21de2b49951268177 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/0/0c/Spell_immunity_block_no_symbol.png/40px-Spell_immunity_block_no_symbol.png?version=8a9b499fbc92dda21de2b49951268177 2x" style="vertical-align: text-top" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/0/0c/Spell_immunity_block_no_symbol.png/20px-Spell_immunity_block_no_symbol.png?version=8a9b499fbc92dda21de2b49951268177" alt="Pierces spell immunity." /></a> <span style="position:relative; top:-2px;"><a class="sm2_button" title="Play" href="https://hydra-media.cursecdn.com/dota2.gamepedia.com/a/a5/Eye_of_the_Storm.mp3">Play</a></span><div style="background-color:white; display:inline-block; margin-left:5px; color:#414141; padding-left:0.2em; padding-right:0.25em; text-align:center;"><span title="Hotkey" style="cursor:help; border-bottom:1px dotted;" id="tooltip">R</span></div><div style="background-color:white; display:inline-block; margin-left:5px; color:#414141; opacity:0.65; padding-left:0.25em; padding-right:0.2em; text-align:center;"><span title="Legacy Key" style="cursor:help; border-bottom:1px dotted;" id="tooltip">E</span></div></div>
+</div><div><div class="ico_active"><a class="image" href="/File:Eye_of_the_Storm_icon.png"><img width="128" height="128" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/3/3c/Eye_of_the_Storm_icon.png?version=5feeaa6505a811241a158537d0f923f3" alt="Eye of the Storm icon.png" /></a></div>
+<div style="width: 312px; display: inline-block;">
+<div style="padding: 15px 5px; font-size: 85%; line-height: 100%; text-align: center;">
+<div style="display: inline-block; width: 32%; vertical-align: top;"><b>Ability</b><br /><a title="Abilities" href="/Abilities#No_Target">No Target</a> </div>
+<div style="display: inline-block; width: 32%; vertical-align: top;"><b>Affects</b><br />Enemies</div>
+<div style="display: inline-block; width: 32%; vertical-align: top;"><b>Damage</b><br /><a title="Damage types" href="/Damage_types#Physical"><b><span style="color:#71A9EA">Physical</span></b></a></div>
+</div>
+<div style="vertical-align: top; padding: 3px 5px; border-top: 1px solid black;">A powerful lightning storm strikes out at enemy units with the lowest health, dealing damage and reducing their armor.</div>
+</div>
+</div>
+<div style="vertical-align:top; padding: 3px 5px;"><div><b>Cast Animation</b>: <span title="Cast point" style="cursor:help; border-bottom:1px dotted;" id="tooltip">0.3</span>+<span title="Cast backswing" style="cursor:help; border-bottom:1px dotted;" id="tooltip">0.5</span>
+</div><div><b>Search Radius</b>: 500</div><div><b>Strike Interval</b>: 0.7/0.6/0.5 (<a title="Upgradable by Aghanim's Scepter." href="/Aghanim%27s_Scepter"><img width="16" height="16" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/73/Aghanim%27s_Scepter_symbol.png/24px-Aghanim%27s_Scepter_symbol.png?version=7d547f82a4dc57080ed920f762776a32 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/73/Aghanim%27s_Scepter_symbol.png/32px-Aghanim%27s_Scepter_symbol.png?version=7d547f82a4dc57080ed920f762776a32 2x" style="vertical-align: text-top" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/73/Aghanim%27s_Scepter_symbol.png/16px-Aghanim%27s_Scepter_symbol.png?version=7d547f82a4dc57080ed920f762776a32" alt="Upgradable by Aghanim's Scepter." /></a> <span style="color:#538028;">0.6/0.5/0.4</span>)</div><div><b>Damage per Strike</b>: 40/55/70</div><div><b>Armor Reduction per Strike</b>: 1</div><div><b>Duration</b>: 30</div><div style="display: inline-block; margin: 8px 0px 0px 50px; width: 190px; vertical-align: top;"><span style="position: relative; top: -2px;"><a title="Cooldown" href="/Cooldown"><img width="20" height="20" style="vertical-align: text-top" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/b/b7/Cooldown_symbol.png?version=7429ed9baf0f121e6ab3324bfdfad708" alt="Cooldown" /></a></span> 80/70/60</div>
+<div style="display: inline-block; margin: 8px 0px 0px; width: 190px; vertical-align: top;"><span style="position: relative; top: -2px;"><a title="Mana" href="/Mana"><img width="20" height="20" style="vertical-align: text-top" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/f/f3/Mana_symbol.png?version=a81185ac577f9b52f2df06be91b6600c" alt="Mana" /></a></span> 100/150/200
+</div><div style="height: 8px; line-height: 0px;"></div><div style="margin-left: 50px;"><span style="position: relative; top: -2px;"><a title="Upgradable by Aghanim's Scepter." href="/Aghanim%27s_Scepter"><img width="20" height="20" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/73/Aghanim%27s_Scepter_symbol.png/30px-Aghanim%27s_Scepter_symbol.png?version=d829eda2dfcb5c0078dd83220a3299dc 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/73/Aghanim%27s_Scepter_symbol.png/40px-Aghanim%27s_Scepter_symbol.png?version=d829eda2dfcb5c0078dd83220a3299dc 2x" style="vertical-align: text-top" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/73/Aghanim%27s_Scepter_symbol.png/20px-Aghanim%27s_Scepter_symbol.png?version=d829eda2dfcb5c0078dd83220a3299dc" alt="Upgradable by Aghanim's Scepter." /></a></span> Causes faster strikes that can damage structures as well. When striking buildings, it will only target towers, barracks, and the Ancient.</div><div style="margin-top: 10px;"><b>Modifiers</b></div>
+<div style="font-size: 85%; margin-left: 10px;">
+<div> <img width="16" height="16" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/c/c1/Modifier_buff_symbol.png/24px-Modifier_buff_symbol.png?version=97c71541b396c601c0ac22a73d1a7573 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/c/c1/Modifier_buff_symbol.png/32px-Modifier_buff_symbol.png?version=97c71541b396c601c0ac22a73d1a7573 2x" style="vertical-align: text-top" title="Buff" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/c/c1/Modifier_buff_symbol.png/16px-Modifier_buff_symbol.png?version=97c71541b396c601c0ac22a73d1a7573" alt="Buff" /> <span style="color:#1F631F;"><b>Eye Of The Storm: </b>Undispellable.</span>
+</div><div> <img width="16" height="16" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/1/1a/Modifier_debuff_symbol.png/24px-Modifier_debuff_symbol.png?version=5684dfbf37c3058c80b8495a4d0dc346 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/1/1a/Modifier_debuff_symbol.png/32px-Modifier_debuff_symbol.png?version=5684dfbf37c3058c80b8495a4d0dc346 2x" style="vertical-align: text-top" title="Debuff" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/1/1a/Modifier_debuff_symbol.png/16px-Modifier_debuff_symbol.png?version=5684dfbf37c3058c80b8495a4d0dc346" alt="Debuff" /> <span style="color:#631F1F;"><b>Eye Of The Storm Armor: </b>Undispellable.</span>
+</div>
+</div>
+<div style="margin-top: 5px; padding-top: 2px; border-top: 1px solid #C1C1C1;"><i>Ride the lightning.</i>
+</div>
+</div>
+</div>
+<div style="flex: 2 3 400px; word-wrap: break-word;">
+<p><b>Notes:</b><br />
+</p>
+<ul><li> Eye of the Storm always targets the unit with the lowest current health in range as first.
+<ul><li> If there are multiple units with the same lowest health in range, Eye of the Storm prioritizes the closest target.</li></ul></li></ul>
+<ul><li> The armor reduction debuff on units lasts as long as the storm, or until Razor dies.</li></ul>
+<ul><li> The strikes first deal their damage and then apply the armor reduction.</li></ul>
+<ul><li> The strikes are not regular attacks, so they fully ignore things like <a title="Evasion" href="/Evasion">evasion</a> and <a title="Damage Block" href="/Damage_Block">Damage Block</a>.
+<ul><li> This also means that they cannot trigger the on-attack effects of <span style="white-space: nowrap;"><a title="Axe#Counter Helix" href="/Axe#Counter_Helix"><img width="16" height="16" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/1/14/Counter_Helix_icon.png/24px-Counter_Helix_icon.png?version=d37a213987ad458792fb17d018f36e6f 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/1/14/Counter_Helix_icon.png/32px-Counter_Helix_icon.png?version=d37a213987ad458792fb17d018f36e6f 2x" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/1/14/Counter_Helix_icon.png/16px-Counter_Helix_icon.png?version=d37a213987ad458792fb17d018f36e6f" alt="Counter Helix icon.png" /></a> <a title="Axe" href="/Axe#Counter_Helix">Counter Helix</a></span>​, <span style="white-space: nowrap;"><a title="Legion Commander#Moment of Courage" href="/Legion_Commander#Moment_of_Courage"><img width="16" height="16" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/b/bd/Moment_of_Courage_icon.png/24px-Moment_of_Courage_icon.png?version=7b4b41fd5fc1d36693cfe1d6d0956d14 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/b/bd/Moment_of_Courage_icon.png/32px-Moment_of_Courage_icon.png?version=7b4b41fd5fc1d36693cfe1d6d0956d14 2x" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/b/bd/Moment_of_Courage_icon.png/16px-Moment_of_Courage_icon.png?version=7b4b41fd5fc1d36693cfe1d6d0956d14" alt="Moment of Courage icon.png" /></a> <a title="Legion Commander" href="/Legion_Commander#Moment_of_Courage">Moment of Courage</a></span>​ and <span style="white-space: nowrap;"><a title="Timbersaw#Reactive Armor" href="/Timbersaw#Reactive_Armor"><img width="16" height="16" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/e/e5/Reactive_Armor_icon.png/24px-Reactive_Armor_icon.png?version=d866c700b34a75a14e0656ff391efc5f 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/e/e5/Reactive_Armor_icon.png/32px-Reactive_Armor_icon.png?version=d866c700b34a75a14e0656ff391efc5f 2x" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/e/e5/Reactive_Armor_icon.png/16px-Reactive_Armor_icon.png?version=d866c700b34a75a14e0656ff391efc5f" alt="Reactive Armor icon.png" /></a> <a title="Timbersaw" href="/Timbersaw#Reactive_Armor">Reactive Armor</a></span>​ or break enemy <span style="white-space:nowrap"><a title="Tranquil Boots" href="/Tranquil_Boots"><img width="20" height="15" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/2/23/Tranquil_Boots_%28Active%29_icon.png/30px-Tranquil_Boots_%28Active%29_icon.png?version=c1b5f508c12b864f9c08c6ab453decde 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/2/23/Tranquil_Boots_%28Active%29_icon.png/40px-Tranquil_Boots_%28Active%29_icon.png?version=c1b5f508c12b864f9c08c6ab453decde 2x" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/2/23/Tranquil_Boots_%28Active%29_icon.png/20px-Tranquil_Boots_%28Active%29_icon.png?version=c1b5f508c12b864f9c08c6ab453decde" alt="Tranquil Boots (Active) icon.png" /></a> <a title="Tranquil Boots" href="/Tranquil_Boots">Tranquil Boots</a></span>.</li></ul></li></ul>
+<ul><li> Does not affect <a title="Roshan" href="/Roshan">Roshan</a>, <a class="mw-redirect" title="Invisible" href="/Invisible">invisible</a> units and units in the <a class="mw-redirect" title="Fog of War" href="/Fog_of_War">Fog of War</a>.</li></ul>
+<ul><li> <span style="white-space:nowrap"><a title="Aghanim's Scepter" href="/Aghanim%27s_Scepter"><img width="20" height="15" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/0/07/Aghanim%27s_Scepter_icon.png/30px-Aghanim%27s_Scepter_icon.png?version=43732a02c1d1daeca8a103486e85aeb0 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/0/07/Aghanim%27s_Scepter_icon.png/40px-Aghanim%27s_Scepter_icon.png?version=43732a02c1d1daeca8a103486e85aeb0 2x" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/0/07/Aghanim%27s_Scepter_icon.png/20px-Aghanim%27s_Scepter_icon.png?version=43732a02c1d1daeca8a103486e85aeb0" alt="Aghanim's Scepter icon.png" /></a> <a title="Aghanim's Scepter" href="/Aghanim%27s_Scepter">Aghanim's Scepter</a></span> upgraded Eye of the Storm does not lower the armor of <a title="Buildings" href="/Buildings">buildings</a>.</li></ul>
+<ul><li> Aghanim's Scepter upgraded Eye of the Storm always prioritizes units over buildings and fully ignores <a class="mw-redirect" title="Filler buildings" href="/Filler_buildings">filler buildings</a>.</li></ul>
+<ul><li> Eye of the Storm can strike up to 42/50/60 (<a title="Upgradable by Aghanim's Scepter." href="/Aghanim%27s_Scepter"><img width="16" height="16" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/73/Aghanim%27s_Scepter_symbol.png/24px-Aghanim%27s_Scepter_symbol.png?version=7d547f82a4dc57080ed920f762776a32 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/73/Aghanim%27s_Scepter_symbol.png/32px-Aghanim%27s_Scepter_symbol.png?version=7d547f82a4dc57080ed920f762776a32 2x" style="vertical-align: text-top" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/73/Aghanim%27s_Scepter_symbol.png/16px-Aghanim%27s_Scepter_symbol.png?version=7d547f82a4dc57080ed920f762776a32" alt="Upgradable by Aghanim's Scepter." /></a> 50/60/75) times and deal up to 1680/2750/4200 (<a title="Upgradable by Aghanim's Scepter." href="/Aghanim%27s_Scepter"><img width="16" height="16" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/73/Aghanim%27s_Scepter_symbol.png/24px-Aghanim%27s_Scepter_symbol.png?version=7d547f82a4dc57080ed920f762776a32 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/73/Aghanim%27s_Scepter_symbol.png/32px-Aghanim%27s_Scepter_symbol.png?version=7d547f82a4dc57080ed920f762776a32 2x" style="vertical-align: text-top" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/73/Aghanim%27s_Scepter_symbol.png/16px-Aghanim%27s_Scepter_symbol.png?version=7d547f82a4dc57080ed920f762776a32" alt="Upgradable by Aghanim's Scepter." /></a> 2000/3300/5250) damage (<a title="Damage manipulation" href="/Damage_manipulation">before reductions</a>).</li></ul>
+<ul><li> When Razor turns invisible, the whole storm and its strike turn invisible as well, but still strike nearby enemies without them seeing or hearing them.</li></ul>
+<ul><li> Eye of the Storm immediately ends when Razor dies.</li></ul>
+</div></div>
+<p><br />
+</p>
+<h2><span id="Recommended_items" class="mw-headline">Recommended items</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" title="Edit section: Recommended items" href="/index.php?title=Razor&amp;veaction=edit&amp;vesection=3">edit</a><span class="mw-editsection-divider"> | </span><a title="Edit section: Recommended items" href="/index.php?title=Razor&amp;action=edit&amp;section=3">edit source</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p><b>Starting:</b>
+</p>
+<ul><li> <span style="white-space:nowrap"><a title="Iron Branch" href="/Iron_Branch"><img width="30" height="22" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/a/a3/Iron_Branch_icon.png/45px-Iron_Branch_icon.png?version=fe283e2ed6e68366cffdf0a80ac1c5be 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/a/a3/Iron_Branch_icon.png/60px-Iron_Branch_icon.png?version=fe283e2ed6e68366cffdf0a80ac1c5be 2x" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/a/a3/Iron_Branch_icon.png/30px-Iron_Branch_icon.png?version=fe283e2ed6e68366cffdf0a80ac1c5be" alt="Iron Branch icon.png" /></a> <a title="Iron Branch" href="/Iron_Branch">Iron Branch</a></span> adds to Razor's already decent starting stats.</li>
+<li> <span style="white-space:nowrap"><a title="Tango" href="/Tango"><img width="30" height="22" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/f/fd/Tango_icon.png/45px-Tango_icon.png?version=6ddcac461cbd98cc58e99a5f70d04a57 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/f/fd/Tango_icon.png/60px-Tango_icon.png?version=6ddcac461cbd98cc58e99a5f70d04a57 2x" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/f/fd/Tango_icon.png/30px-Tango_icon.png?version=6ddcac461cbd98cc58e99a5f70d04a57" alt="Tango icon.png" /></a> <a title="Tango" href="/Tango">Tango</a></span> helps Razor stay in lane.</li>
+<li> <span style="white-space:nowrap"><a title="Healing Salve" href="/Healing_Salve"><img width="30" height="22" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/3/36/Healing_Salve_icon.png/45px-Healing_Salve_icon.png?version=923f3249add1829368656d8a736b8545 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/3/36/Healing_Salve_icon.png/60px-Healing_Salve_icon.png?version=923f3249add1829368656d8a736b8545 2x" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/3/36/Healing_Salve_icon.png/30px-Healing_Salve_icon.png?version=923f3249add1829368656d8a736b8545" alt="Healing Salve icon.png" /></a> <a title="Healing Salve" href="/Healing_Salve">Healing Salve</a></span> can save Razor if used at the last moment.</li>
+<li> <span style="white-space:nowrap"><a title="Stout Shield" href="/Stout_Shield"><img width="30" height="22" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/0/01/Stout_Shield_icon.png/45px-Stout_Shield_icon.png?version=9edbfc8c6caead89362d029d4085d58a 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/0/01/Stout_Shield_icon.png/60px-Stout_Shield_icon.png?version=9edbfc8c6caead89362d029d4085d58a 2x" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/0/01/Stout_Shield_icon.png/30px-Stout_Shield_icon.png?version=9edbfc8c6caead89362d029d4085d58a" alt="Stout Shield icon.png" /></a> <a title="Stout Shield" href="/Stout_Shield">Stout Shield</a></span> protects Razor in lane, and is sometimes built into a <span style="white-space:nowrap"><a title="Vanguard" href="/Vanguard"><img width="20" height="15" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/a/ab/Vanguard_icon.png/30px-Vanguard_icon.png?version=b0d2d2c1188cbe20cad24e1a9bae5fc7 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/a/ab/Vanguard_icon.png/40px-Vanguard_icon.png?version=b0d2d2c1188cbe20cad24e1a9bae5fc7 2x" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/a/ab/Vanguard_icon.png/20px-Vanguard_icon.png?version=b0d2d2c1188cbe20cad24e1a9bae5fc7" alt="Vanguard icon.png" /></a> <a title="Vanguard" href="/Vanguard">Vanguard</a></span> later.</li></ul>
+<p><b>Early Game:</b>
+</p>
+<ul><li> <span style="white-space:nowrap"><a title="Magic Wand" href="/Magic_Wand"><img width="30" height="22" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/74/Magic_Wand_icon.png/45px-Magic_Wand_icon.png?version=4a31a7c26c0a3e0338aa299b53df8d24 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/74/Magic_Wand_icon.png/60px-Magic_Wand_icon.png?version=4a31a7c26c0a3e0338aa299b53df8d24 2x" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/74/Magic_Wand_icon.png/30px-Magic_Wand_icon.png?version=4a31a7c26c0a3e0338aa299b53df8d24" alt="Magic Wand icon.png" /></a> <a title="Magic Wand" href="/Magic_Wand">Magic Wand</a></span> can help Razor get off an extra Plasma Field.</li>
+<li> <span style="white-space:nowrap"><a title="Boots of Speed" href="/Boots_of_Speed"><img width="30" height="22" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/9/97/Boots_of_Speed_icon.png/45px-Boots_of_Speed_icon.png?version=9321885327b320054df62171f8f89c2b 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/9/97/Boots_of_Speed_icon.png/60px-Boots_of_Speed_icon.png?version=9321885327b320054df62171f8f89c2b 2x" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/9/97/Boots_of_Speed_icon.png/30px-Boots_of_Speed_icon.png?version=9321885327b320054df62171f8f89c2b" alt="Boots of Speed icon.png" /></a> <a title="Boots of Speed" href="/Boots_of_Speed">Boots of Speed</a></span> is mandatory on all heroes. Combined with Unstable Current, it makes Razor one of the fastest heroes in the early game.</li>
+<li> <span style="white-space:nowrap"><a title="Bottle" href="/Bottle"><img width="30" height="22" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/f/fa/Bottle_%28Full%29_icon.png/45px-Bottle_%28Full%29_icon.png?version=89525519f7fa30d0f76eb68d32f8df0a 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/f/fa/Bottle_%28Full%29_icon.png/60px-Bottle_%28Full%29_icon.png?version=89525519f7fa30d0f76eb68d32f8df0a 2x" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/f/fa/Bottle_%28Full%29_icon.png/30px-Bottle_%28Full%29_icon.png?version=89525519f7fa30d0f76eb68d32f8df0a" alt="Bottle (Full) icon.png" /></a> <a title="Bottle" href="/Bottle">Bottle</a></span> is commonly picked up if Razor is playing in mid, as his superior movement speed helps him reach runes faster.</li>
+<li> <span style="white-space:nowrap"><a title="Drum of Endurance" href="/Drum_of_Endurance"><img width="30" height="22" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/9/91/Drum_of_Endurance_icon.png/45px-Drum_of_Endurance_icon.png?version=61e72016b26666f978ef124acee87911 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/9/91/Drum_of_Endurance_icon.png/60px-Drum_of_Endurance_icon.png?version=61e72016b26666f978ef124acee87911 2x" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/9/91/Drum_of_Endurance_icon.png/30px-Drum_of_Endurance_icon.png?version=61e72016b26666f978ef124acee87911" alt="Drum of Endurance icon.png" /></a> <a title="Drum of Endurance" href="/Drum_of_Endurance">Drum of Endurance</a></span> is sometimes bought to make Razor move even faster.</li>
+<li> <span style="white-space:nowrap"><a title="Ring of Aquila" href="/Ring_of_Aquila"><img width="30" height="22" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/3/3f/Ring_of_Aquila_%28Active%29_icon.png/45px-Ring_of_Aquila_%28Active%29_icon.png?version=d9e1851149c0f51e8fc985ee1504740c 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/3/3f/Ring_of_Aquila_%28Active%29_icon.png/60px-Ring_of_Aquila_%28Active%29_icon.png?version=d9e1851149c0f51e8fc985ee1504740c 2x" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/3/3f/Ring_of_Aquila_%28Active%29_icon.png/30px-Ring_of_Aquila_%28Active%29_icon.png?version=d9e1851149c0f51e8fc985ee1504740c" alt="Ring of Aquila (Active) icon.png" /></a> <a title="Ring of Aquila" href="/Ring_of_Aquila">Ring of Aquila</a></span> provides a well-rounded mix of damage, armor, and mana regeneration.</li></ul>
+<p><b>Core:</b>
+</p>
+<ul><li> <span style="white-space:nowrap"><a title="Power Treads" href="/Power_Treads"><img width="30" height="22" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/6/6b/Power_Treads_icon.png/45px-Power_Treads_icon.png?version=8a0928e0797b87663a27ee60823e5b18 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/6/6b/Power_Treads_icon.png/60px-Power_Treads_icon.png?version=8a0928e0797b87663a27ee60823e5b18 2x" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/6/6b/Power_Treads_icon.png/30px-Power_Treads_icon.png?version=8a0928e0797b87663a27ee60823e5b18" alt="Power Treads icon.png" /></a> <a title="Power Treads" href="/Power_Treads">Power Treads</a></span> gives Razor a good attack speed boost.</li>
+<li> <span style="white-space:nowrap"><a title="Phase Boots" href="/Phase_Boots"><img width="30" height="22" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/9/98/Phase_Boots_icon.png/45px-Phase_Boots_icon.png?version=d7c797340db018431a844b72f4b5e7bb 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/9/98/Phase_Boots_icon.png/60px-Phase_Boots_icon.png?version=d7c797340db018431a844b72f4b5e7bb 2x" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/9/98/Phase_Boots_icon.png/30px-Phase_Boots_icon.png?version=d7c797340db018431a844b72f4b5e7bb" alt="Phase Boots icon.png" /></a> <a title="Phase Boots" href="/Phase_Boots">Phase Boots</a></span> can be a good alternative, as it allows Razor to catch up to enemies and keep them within range of Static Link and Eye of the Storm. </li>
+<li> <span style="white-space:nowrap"><a title="Desolator" href="/Desolator"><img width="30" height="22" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/8/84/Desolator_icon.png/45px-Desolator_icon.png?version=cd109e18dbfe71e90f00b54c7931c6c8 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/8/84/Desolator_icon.png/60px-Desolator_icon.png?version=cd109e18dbfe71e90f00b54c7931c6c8 2x" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/8/84/Desolator_icon.png/30px-Desolator_icon.png?version=cd109e18dbfe71e90f00b54c7931c6c8" alt="Desolator icon.png" /></a> <a title="Desolator" href="/Desolator">Desolator</a></span>'s large armor reduction synergizes well with the armor reduction from Eye of the Storm.</li>
+<li> <span style="white-space:nowrap"><a title="Sange and Yasha" href="/Sange_and_Yasha"><img width="30" height="22" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/b/b4/Sange_and_Yasha_icon.png/45px-Sange_and_Yasha_icon.png?version=ea679e01a75a7acfc3752ec13bacdced 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/b/b4/Sange_and_Yasha_icon.png/60px-Sange_and_Yasha_icon.png?version=ea679e01a75a7acfc3752ec13bacdced 2x" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/b/b4/Sange_and_Yasha_icon.png/30px-Sange_and_Yasha_icon.png?version=ea679e01a75a7acfc3752ec13bacdced" alt="Sange and Yasha icon.png" /></a> <a title="Sange and Yasha" href="/Sange_and_Yasha">Sange and Yasha</a></span> provides both extra speed and a slow effect, and helps Razor keep enemies within range of his abilities. </li>
+<li> <span style="white-space:nowrap"><a title="Black King Bar" href="/Black_King_Bar"><img width="30" height="22" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/72/Black_King_Bar_icon.png/45px-Black_King_Bar_icon.png?version=f8be2cb8d6d3f6716a950594ce082d80 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/72/Black_King_Bar_icon.png/60px-Black_King_Bar_icon.png?version=f8be2cb8d6d3f6716a950594ce082d80 2x" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/72/Black_King_Bar_icon.png/30px-Black_King_Bar_icon.png?version=f8be2cb8d6d3f6716a950594ce082d80" alt="Black King Bar icon.png" /></a> <a title="Black King Bar" href="/Black_King_Bar">Black King Bar</a></span> is often needed against enemies with numerous disables, which can prevent Razor from keeping up with enemies.</li></ul>
+<p><b>Situational:</b>
+</p>
+<ul><li> <span style="white-space:nowrap"><a title="Shadow Blade" href="/Shadow_Blade"><img width="30" height="22" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/0/0f/Shadow_Blade_icon.png/45px-Shadow_Blade_icon.png?version=0a69432573a18312685d3cbb85c91cff 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/0/0f/Shadow_Blade_icon.png/60px-Shadow_Blade_icon.png?version=0a69432573a18312685d3cbb85c91cff 2x" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/0/0f/Shadow_Blade_icon.png/30px-Shadow_Blade_icon.png?version=0a69432573a18312685d3cbb85c91cff" alt="Shadow Blade icon.png" /></a> <a title="Shadow Blade" href="/Shadow_Blade">Shadow Blade</a></span> allows Razor to use and pursue enemies with Static Link and Eye of the Storm without retaliation. The sounds and particle effects from his abilities cannot be seen or heard by the enemy when he is invisible, but will still do damage.</li>
+<li> <span style="white-space:nowrap"><a title="Aghanim's Scepter" href="/Aghanim%27s_Scepter"><img width="30" height="22" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/0/07/Aghanim%27s_Scepter_icon.png/45px-Aghanim%27s_Scepter_icon.png?version=edd1c0d7d3c00a8233897e53a0011edd 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/0/07/Aghanim%27s_Scepter_icon.png/60px-Aghanim%27s_Scepter_icon.png?version=edd1c0d7d3c00a8233897e53a0011edd 2x" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/0/07/Aghanim%27s_Scepter_icon.png/30px-Aghanim%27s_Scepter_icon.png?version=edd1c0d7d3c00a8233897e53a0011edd" alt="Aghanim's Scepter icon.png" /></a> <a title="Aghanim's Scepter" href="/Aghanim%27s_Scepter">Aghanim's Scepter</a></span> upgrades Eye of the Storm's damage, and helps Razor take down buildings faster.</li>
+<li> <span style="white-space:nowrap"><a title="Heart of Tarrasque" href="/Heart_of_Tarrasque"><img width="30" height="22" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/75/Heart_of_Tarrasque_icon.png/45px-Heart_of_Tarrasque_icon.png?version=19b3d1e73774fa01327db4bf3d79b92f 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/75/Heart_of_Tarrasque_icon.png/60px-Heart_of_Tarrasque_icon.png?version=19b3d1e73774fa01327db4bf3d79b92f 2x" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/75/Heart_of_Tarrasque_icon.png/30px-Heart_of_Tarrasque_icon.png?version=19b3d1e73774fa01327db4bf3d79b92f" alt="Heart of Tarrasque icon.png" /></a> <a title="Heart of Tarrasque" href="/Heart_of_Tarrasque">Heart of Tarrasque</a></span> gives Razor supreme durability, helping him stay alive and keep Eye of the Storm active as long as possible.</li>
+<li> <span style="white-space:nowrap"><a title="Eye of Skadi" href="/Eye_of_Skadi"><img width="30" height="22" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/1/1e/Eye_of_Skadi_icon.png/45px-Eye_of_Skadi_icon.png?version=85213d6d5978aaa1fecfc32775dc04fe 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/1/1e/Eye_of_Skadi_icon.png/60px-Eye_of_Skadi_icon.png?version=85213d6d5978aaa1fecfc32775dc04fe 2x" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/1/1e/Eye_of_Skadi_icon.png/30px-Eye_of_Skadi_icon.png?version=85213d6d5978aaa1fecfc32775dc04fe" alt="Eye of Skadi icon.png" /></a> <a title="Eye of Skadi" href="/Eye_of_Skadi">Eye of Skadi</a></span> gives a sizeable amount of health, and its slowing effect helps Razor keep enemies in range of his abilities.</li>
+<li> <span style="white-space:nowrap"><a title="Mekansm" href="/Mekansm"><img width="30" height="22" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/f/f7/Mekansm_icon.png/45px-Mekansm_icon.png?version=1b61342ae4b10a3286d0259e8f6ff22b 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/f/f7/Mekansm_icon.png/60px-Mekansm_icon.png?version=1b61342ae4b10a3286d0259e8f6ff22b 2x" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/f/f7/Mekansm_icon.png/30px-Mekansm_icon.png?version=1b61342ae4b10a3286d0259e8f6ff22b" alt="Mekansm icon.png" /></a> <a title="Mekansm" href="/Mekansm">Mekansm</a></span> is sometimes picked up, as Razor relies more on his abilities to do damage.</li>
+<li> <span style="white-space:nowrap"><a title="Dragon Lance" href="/Dragon_Lance"><img width="30" height="22" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/d/db/Dragon_Lance_icon.png/45px-Dragon_Lance_icon.png?version=57bddf366274a17c84f225277e8b1ae8 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/d/db/Dragon_Lance_icon.png/60px-Dragon_Lance_icon.png?version=57bddf366274a17c84f225277e8b1ae8 2x" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/d/db/Dragon_Lance_icon.png/30px-Dragon_Lance_icon.png?version=57bddf366274a17c84f225277e8b1ae8" alt="Dragon Lance icon.png" /></a> <a title="Dragon Lance" href="/Dragon_Lance">Dragon Lance</a></span> is popular to supplement Razor's attack range.</li>
+<li> <span style="white-space:nowrap"><a title="Helm of the Dominator" href="/Helm_of_the_Dominator"><img width="30" height="22" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/9/97/Helm_of_the_Dominator_icon.png/45px-Helm_of_the_Dominator_icon.png?version=02878b74908d39caf56f8edbdedfece3 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/9/97/Helm_of_the_Dominator_icon.png/60px-Helm_of_the_Dominator_icon.png?version=02878b74908d39caf56f8edbdedfece3 2x" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/9/97/Helm_of_the_Dominator_icon.png/30px-Helm_of_the_Dominator_icon.png?version=02878b74908d39caf56f8edbdedfece3" alt="Helm of the Dominator icon.png" /></a> <a title="Helm of the Dominator" href="/Helm_of_the_Dominator">Helm of the Dominator</a></span> helps Razor last longer in a one-on-one fight while he drains his opponent of their damage.</li>
+<li> <span style="white-space:nowrap"><a title="Blade Mail" href="/Blade_Mail"><img width="30" height="22" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/1/18/Blade_Mail_icon.png/45px-Blade_Mail_icon.png?version=83c9442a17d8ab0fa8b50387bea0d70d 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/1/18/Blade_Mail_icon.png/60px-Blade_Mail_icon.png?version=83c9442a17d8ab0fa8b50387bea0d70d 2x" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/1/18/Blade_Mail_icon.png/30px-Blade_Mail_icon.png?version=83c9442a17d8ab0fa8b50387bea0d70d" alt="Blade Mail icon.png" /></a> <a title="Blade Mail" href="/Blade_Mail">Blade Mail</a></span> deters enemies from attacking, letting Razor stay alive longer when using Static Link and Eye of the Storm.</li>
+<li> <span style="white-space:nowrap"><a title="Vanguard" href="/Vanguard"><img width="30" height="22" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/a/ab/Vanguard_icon.png/45px-Vanguard_icon.png?version=d3adaace0e54ab4e8864caba9dd5a6a5 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/a/ab/Vanguard_icon.png/60px-Vanguard_icon.png?version=d3adaace0e54ab4e8864caba9dd5a6a5 2x" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/a/ab/Vanguard_icon.png/30px-Vanguard_icon.png?version=d3adaace0e54ab4e8864caba9dd5a6a5" alt="Vanguard icon.png" /></a> <a title="Vanguard" href="/Vanguard">Vanguard</a></span> adds to Razor's defense, allowing him to take a more aggressive stance in teamfights.</li>
+<li> <span style="white-space:nowrap"><a title="Refresher Orb" href="/Refresher_Orb"><img width="30" height="22" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/e/e2/Refresher_Orb_icon.png/45px-Refresher_Orb_icon.png?version=73b11d34d6bcd3809067c69c92ee0958 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/e/e2/Refresher_Orb_icon.png/60px-Refresher_Orb_icon.png?version=73b11d34d6bcd3809067c69c92ee0958 2x" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/e/e2/Refresher_Orb_icon.png/30px-Refresher_Orb_icon.png?version=73b11d34d6bcd3809067c69c92ee0958" alt="Refresher Orb icon.png" /></a> <a title="Refresher Orb" href="/Refresher_Orb">Refresher Orb</a></span> allows two instances of Eye of the Storm to be active at the same time, dealing heavy DPS and armor reduction.
+<ul><li> Combined with <span style="white-space:nowrap"><a title="Aghanim's Scepter" href="/Aghanim%27s_Scepter"><img width="20" height="15" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/0/07/Aghanim%27s_Scepter_icon.png/30px-Aghanim%27s_Scepter_icon.png?version=43732a02c1d1daeca8a103486e85aeb0 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/0/07/Aghanim%27s_Scepter_icon.png/40px-Aghanim%27s_Scepter_icon.png?version=43732a02c1d1daeca8a103486e85aeb0 2x" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/0/07/Aghanim%27s_Scepter_icon.png/20px-Aghanim%27s_Scepter_icon.png?version=43732a02c1d1daeca8a103486e85aeb0" alt="Aghanim's Scepter icon.png" /></a> <a title="Aghanim's Scepter" href="/Aghanim%27s_Scepter">Aghanim's Scepter</a></span>, this can deal twice the damage to buildings.</li></ul></li>
+<li> <span style="white-space:nowrap"><a title="Butterfly" href="/Butterfly"><img width="30" height="22" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/2/28/Butterfly_icon.png/45px-Butterfly_icon.png?version=f1076a78206994a4de8f684e56ff138a 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/2/28/Butterfly_icon.png/60px-Butterfly_icon.png?version=f1076a78206994a4de8f684e56ff138a 2x" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/2/28/Butterfly_icon.png/30px-Butterfly_icon.png?version=f1076a78206994a4de8f684e56ff138a" alt="Butterfly icon.png" /></a> <a title="Butterfly" href="/Butterfly">Butterfly</a></span> makes it much more difficult for enemy carries to take down Razor, which in turn means he has even more time to drain them damage.</li>
+<li> <span style="white-space:nowrap"><a title="Assault Cuirass" href="/Assault_Cuirass"><img width="30" height="22" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/d/d3/Assault_Cuirass_icon.png/45px-Assault_Cuirass_icon.png?version=32dcc67eef4d3d22b768f37344ca46ee 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/d/d3/Assault_Cuirass_icon.png/60px-Assault_Cuirass_icon.png?version=32dcc67eef4d3d22b768f37344ca46ee 2x" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/d/d3/Assault_Cuirass_icon.png/30px-Assault_Cuirass_icon.png?version=32dcc67eef4d3d22b768f37344ca46ee" alt="Assault Cuirass icon.png" /></a> <a title="Assault Cuirass" href="/Assault_Cuirass">Assault Cuirass</a></span>'s armor reduction works well with Eye of the Storm, as well as <span style="white-space:nowrap"><a title="Desolator" href="/Desolator"><img width="20" height="15" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/8/84/Desolator_icon.png/30px-Desolator_icon.png?version=d788075551de814dbb2d26d0cfc40335 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/8/84/Desolator_icon.png/40px-Desolator_icon.png?version=d788075551de814dbb2d26d0cfc40335 2x" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/8/84/Desolator_icon.png/20px-Desolator_icon.png?version=d788075551de814dbb2d26d0cfc40335" alt="Desolator icon.png" /></a> <a title="Desolator" href="/Desolator">Desolator</a></span>.</li></ul>
+<p><br />
+</p>
+<h2><span id="Gameplay" class="mw-headline">Gameplay</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" title="Edit section: Gameplay" href="/index.php?title=Razor&amp;veaction=edit&amp;vesection=4">edit</a><span class="mw-editsection-divider"> | </span><a title="Edit section: Gameplay" href="/index.php?title=Razor&amp;action=edit&amp;section=4">edit source</a><span class="mw-editsection-bracket">]</span></span></h2>
+<div class="infostripe gradient_gameplay">
+<div><a title="Razor/Guide" href="/Razor/Guide"><img width="128" height="128" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/8/89/Guide_icon.png?version=c1bc57e350e539230810d6f08abac63e" alt="Guide icon.png" /></a><br /><a title="Razor/Guide" href="/Razor/Guide">Strategy &amp; Tips</a></div>
+<div><a title="Razor/Counters" href="/Razor/Counters"><img width="128" height="128" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/d/d4/Counters_icon.png?version=4d68c7b618c63296726dc1f94dfc5b3e" alt="Counters icon.png" /></a><br /><a title="Razor/Counters" href="/Razor/Counters">Counters &amp;<br />Matchups</a></div>
+</div>
+<h2><span id="Audio" class="mw-headline">Audio</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" title="Edit section: Audio" href="/index.php?title=Razor&amp;veaction=edit&amp;vesection=5">edit</a><span class="mw-editsection-divider"> | </span><a title="Edit section: Audio" href="/index.php?title=Razor&amp;action=edit&amp;section=5">edit source</a><span class="mw-editsection-bracket">]</span></span></h2>
+<div class="infostripe gradient_audio">
+<div><a title="Razor/Responses" href="/Razor/Responses"><img width="128" height="128" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/f/f0/Responses_icon.png?version=1172f49574d4199cc093352be89e798d" alt="Responses icon.png" /></a><br /><a title="Razor/Responses" href="/Razor/Responses">Responses</a></div>
+<div><a title="Razor/Sounds" href="/Razor/Sounds"><img width="128" height="128" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/a/a3/Sounds_icon.png?version=3b4503d6f0ad7b5bc001f4c91451e84c" alt="Sounds icon.png" /></a><br /><a title="Razor/Sounds" href="/Razor/Sounds">Sounds</a></div>
+</div>
+<h2><span id="History" class="mw-headline">History</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" title="Edit section: History" href="/index.php?title=Razor&amp;veaction=edit&amp;vesection=6">edit</a><span class="mw-editsection-divider"> | </span><a title="Edit section: History" href="/index.php?title=Razor&amp;action=edit&amp;section=6">edit source</a><span class="mw-editsection-bracket">]</span></span></h2>
+<div class="infostripe gradient_history">
+<div><a title="Razor/Lore" href="/Razor/Lore"><img width="128" height="128" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/8/82/Lore_icon.png?version=e38f088dab25b6e1613e15ad0a5b1b8b" alt="Lore icon.png" /></a><br /><a title="Razor/Lore" href="/Razor/Lore">Lore</a></div>
+<div><a title="Razor/Old Abilities" href="/Razor/Old_Abilities"><img width="128" height="128" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/d/d1/Old_Abilities_icon.png?version=485781f590ed8c56151e42ca514f8ae6" alt="Old Abilities icon.png" /></a><br /><a title="Razor/Old Abilities" href="/Razor/Old_Abilities">Old Abilities</a></div>
+<div><a title="Razor/Changelogs" href="/Razor/Changelogs"><img width="128" height="128" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/c/c6/Changelogs_icon.png?version=8f73f302de0374321f8e1e226e6353a1" alt="Changelogs icon.png" /></a><br /><a title="Razor/Changelogs" href="/Razor/Changelogs">Changelogs</a></div>
+</div>
+<h2><span id="Equipment" class="mw-headline">Equipment</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" title="Edit section: Equipment" href="/index.php?title=Razor&amp;veaction=edit&amp;vesection=7">edit</a><span class="mw-editsection-divider"> | </span><a title="Edit section: Equipment" href="/index.php?title=Razor&amp;action=edit&amp;section=7">edit source</a><span class="mw-editsection-bracket">]</span></span></h2>
+<table cellspacing="0" style=";text-align:center;" class="navbox"><tbody><tr><td style="padding:2px;"><table cellspacing="0" style="width:100%;background:transparent;color:inherit;;" class="nowraplinks mw-collapsible"><tbody><tr><th class="navbox-title" colspan="2" style=";height: 32px;"><span style="float:left;width:6em;text-align:left;"><div style="background:none; padding:0; font-weight:normal;;height: 32px;;background:none transparent;border:none;font-size:100%;; font-size:xx-small;" class="noprint plainlinks navbar"><a href="//dota2.gamepedia.com/Template:Equipment_Razor" class="external text" rel="noreferrer noopener" target="_blank"><span style=";height: 32px;;background:none transparent;border:none;font-size:100%;" title="View this template">v</span></a> <span style="font-size:80%;">•</span> <a href="//dota2.gamepedia.com/Template_talk:Equipment_Razor" class="external text" rel="noreferrer noopener" target="_blank"><span style=";height: 32px;;background:none transparent;border:none;font-size:100%;" title="Discuss this template">d</span></a> <span style="font-size:80%;">•</span> <a href="//dota2.gamepedia.com/index.php?title=Template:Equipment_Razor&amp;action=edit" class="external text" rel="noreferrer noopener" target="_blank"><span style=";height: 32px;;background:none transparent;border:none;font-size:100%;;" title="Edit this template">e</span></a></div></span><span style="font-size:110%;" class="">
+<span style="white-space:nowrap"><a title="Razor" href="/Razor"><img width="32" height="32" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/6/66/Razor_icon.png?version=19dc6009aab382c007ec25099775224a" alt="Razor icon.png" /></a> <strong class="selflink">Razor</strong></span>​ <a title="Equipment" href="/Equipment">Equipment</a> <small><a title="Razor/Equipment" href="/Razor/Equipment">(expand sets)</a></small></span></th></tr><tr style="height:2px;"><td></td></tr><tr><td style=";text-align: center;background: #FFBAE8;" class="navbox-group">Sets</td><td class="navbox-list navbox-odd" style="text-align:left;border-left-width:2px;border-left-style:solid;width:100%;padding:0px;;;background: #FFE0FF;"><div style="padding:0em 0.25em">
+<div style="width:200px;" class="cosmetic-label"><div style="box-shadow:0px 0px 2px 4px #4b69ff;"><a title="Bindings of the Storm-Stealer Set" href="/Bindings_of_the_Storm-Stealer_Set"><img width="200" height="133" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/2/20/Cosmetic_icon_Bindings_of_the_Storm-Stealer_Set.png/300px-Cosmetic_icon_Bindings_of_the_Storm-Stealer_Set.png?version=a5c7b67e92445151a36fd952155cf514 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/2/20/Cosmetic_icon_Bindings_of_the_Storm-Stealer_Set.png/400px-Cosmetic_icon_Bindings_of_the_Storm-Stealer_Set.png?version=a5c7b67e92445151a36fd952155cf514 2x" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/2/20/Cosmetic_icon_Bindings_of_the_Storm-Stealer_Set.png/200px-Cosmetic_icon_Bindings_of_the_Storm-Stealer_Set.png?version=a5c7b67e92445151a36fd952155cf514" alt="Bindings of the Storm-Stealer Set" /></a></div><a title="Bindings of the Storm-Stealer Set" href="/Bindings_of_the_Storm-Stealer_Set">Binding's of the Storm-Stealer Set</a></div> <div style="width:200px;" class="cosmetic-label"><div style="box-shadow:0px 0px 2px 4px #8847ff;"><a title="Compact of the Guardian Construct" href="/Compact_of_the_Guardian_Construct"><img width="200" height="133" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/6/63/Cosmetic_icon_Compact_of_the_Guardian_Construct.png?version=33327b45671266d3fd6675ef4a2036df 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/6/63/Cosmetic_icon_Compact_of_the_Guardian_Construct.png?version=33327b45671266d3fd6675ef4a2036df 2x" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/6/63/Cosmetic_icon_Compact_of_the_Guardian_Construct.png/200px-Cosmetic_icon_Compact_of_the_Guardian_Construct.png?version=33327b45671266d3fd6675ef4a2036df" alt="Compact of the Guardian Construct" /></a></div><a title="Compact of the Guardian Construct" href="/Compact_of_the_Guardian_Construct">Compact of the Guardian Construct</a></div> <div style="width:200px;" class="cosmetic-label"><div style="box-shadow:0px 0px 2px 4px #8847ff;"><a title="Empire of the Lightning Lord" href="/Empire_of_the_Lightning_Lord"><img width="200" height="133" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/3/38/Cosmetic_icon_Empire_of_the_Lightning_Lord.png/300px-Cosmetic_icon_Empire_of_the_Lightning_Lord.png?version=1828c11094a20699749e85acf2f4355d 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/3/38/Cosmetic_icon_Empire_of_the_Lightning_Lord.png/400px-Cosmetic_icon_Empire_of_the_Lightning_Lord.png?version=1828c11094a20699749e85acf2f4355d 2x" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/3/38/Cosmetic_icon_Empire_of_the_Lightning_Lord.png/200px-Cosmetic_icon_Empire_of_the_Lightning_Lord.png?version=1828c11094a20699749e85acf2f4355d" alt="Empire of the Lightning Lord" /></a></div><a title="Empire of the Lightning Lord" href="/Empire_of_the_Lightning_Lord">Empire of the Lightning Lord</a></div> <div style="width:200px;" class="cosmetic-label"><div style="box-shadow:0px 0px 2px 4px #4b69ff;"><a title="Shard of the Revenant" href="/Shard_of_the_Revenant"><img width="200" height="133" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/76/Cosmetic_icon_Shard_of_the_Revenant.png/300px-Cosmetic_icon_Shard_of_the_Revenant.png?version=1204950fbdbc731e4d1085d884e7da90 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/76/Cosmetic_icon_Shard_of_the_Revenant.png/400px-Cosmetic_icon_Shard_of_the_Revenant.png?version=1204950fbdbc731e4d1085d884e7da90 2x" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/76/Cosmetic_icon_Shard_of_the_Revenant.png/200px-Cosmetic_icon_Shard_of_the_Revenant.png?version=1204950fbdbc731e4d1085d884e7da90" alt="Shard of the Revenant" /></a></div><a title="Shard of the Revenant" href="/Shard_of_the_Revenant">Shard of the Revenant</a></div> <div style="width:200px;" class="cosmetic-label"><div style="box-shadow:0px 0px 2px 4px #4b69ff;"><a title="The Twisted Arc Set" href="/The_Twisted_Arc_Set"><img width="200" height="133" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/5/57/Cosmetic_icon_The_Twisted_Arc_Set.png/300px-Cosmetic_icon_The_Twisted_Arc_Set.png?version=d465524c99cc51d8cc8cea687d717a14 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/5/57/Cosmetic_icon_The_Twisted_Arc_Set.png/400px-Cosmetic_icon_The_Twisted_Arc_Set.png?version=d465524c99cc51d8cc8cea687d717a14 2x" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/5/57/Cosmetic_icon_The_Twisted_Arc_Set.png/200px-Cosmetic_icon_The_Twisted_Arc_Set.png?version=d465524c99cc51d8cc8cea687d717a14" alt="The Twisted Arc Set" /></a></div><a title="The Twisted Arc Set" href="/The_Twisted_Arc_Set">The Twisted Arc Set</a></div></div></td></tr><tr style="height:2px"><td></td></tr><tr><td style=";text-align: center;" class="navbox-group">Weapon</td><td class="navbox-list navbox-odd" style="text-align:left;border-left-width:2px;border-left-style:solid;width:100%;padding:0px;;;"><div style="padding:0em 0.25em">
+<div style="width:110px;" class="cosmetic-label"><div style="box-shadow:0px 0px 2px 4px #b28a33;"><a title="Severing Lash" href="/Severing_Lash"><img width="110" height="73" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/c/c6/Cosmetic_icon_Severing_Lash.png/165px-Cosmetic_icon_Severing_Lash.png?version=de02746f6625e66e4326c8d737612748 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/c/c6/Cosmetic_icon_Severing_Lash.png/220px-Cosmetic_icon_Severing_Lash.png?version=de02746f6625e66e4326c8d737612748 2x" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/c/c6/Cosmetic_icon_Severing_Lash.png/110px-Cosmetic_icon_Severing_Lash.png?version=de02746f6625e66e4326c8d737612748" alt="Severing Lash" /></a></div><a title="Severing Lash" href="/Severing_Lash">Severing Lash</a></div></div></td></tr><tr style="height:2px"><td></td></tr><tr><td style=";text-align: center;" class="navbox-group">Head</td><td class="navbox-list navbox-even" style="text-align:left;border-left-width:2px;border-left-style:solid;width:100%;padding:0px;;;"><div style="padding:0em 0.25em">
+<div style="width:110px;" class="cosmetic-label"><div style="box-shadow:0px 0px 2px 4px #b28a33;"><a title="Golden Severing Crest" href="/Golden_Severing_Crest"><img width="110" height="73" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/6/6e/Cosmetic_icon_Golden_Severing_Crest.png/165px-Cosmetic_icon_Golden_Severing_Crest.png?version=d197720d53aa7a54cdf5d7a3e23bbcc3 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/6/6e/Cosmetic_icon_Golden_Severing_Crest.png/220px-Cosmetic_icon_Golden_Severing_Crest.png?version=d197720d53aa7a54cdf5d7a3e23bbcc3 2x" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/6/6e/Cosmetic_icon_Golden_Severing_Crest.png/110px-Cosmetic_icon_Golden_Severing_Crest.png?version=d197720d53aa7a54cdf5d7a3e23bbcc3" alt="Golden Severing Crest" /></a></div><a title="Golden Severing Crest" href="/Golden_Severing_Crest">Golden Severing Crest</a></div> <div style="width:110px;" class="cosmetic-label"><div style="box-shadow:0px 0px 2px 4px #4b69ff;"><a title="Grand Helm of the Narrow Maze" href="/Grand_Helm_of_the_Narrow_Maze"><img width="110" height="73" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/8/8b/Cosmetic_icon_Grand_Helm_of_the_Narrow_Maze.png/165px-Cosmetic_icon_Grand_Helm_of_the_Narrow_Maze.png?version=8bf0c60952d1c8d8f3cb5fc07957ba9a 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/8/8b/Cosmetic_icon_Grand_Helm_of_the_Narrow_Maze.png/220px-Cosmetic_icon_Grand_Helm_of_the_Narrow_Maze.png?version=8bf0c60952d1c8d8f3cb5fc07957ba9a 2x" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/8/8b/Cosmetic_icon_Grand_Helm_of_the_Narrow_Maze.png/110px-Cosmetic_icon_Grand_Helm_of_the_Narrow_Maze.png?version=8bf0c60952d1c8d8f3cb5fc07957ba9a" alt="Grand Helm of the Narrow Maze" /></a></div><a title="Grand Helm of the Narrow Maze" href="/Grand_Helm_of_the_Narrow_Maze">Grand Helm of the Narrow Maze</a></div> <div style="width:110px;" class="cosmetic-label"><div style="box-shadow:0px 0px 2px 4px #b28a33;"><a title="Severing Crest" href="/Severing_Crest"><img width="110" height="73" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/d/d6/Cosmetic_icon_Severing_Crest.png/165px-Cosmetic_icon_Severing_Crest.png?version=3d8bf911bd94be199d69db63a2bb7c84 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/d/d6/Cosmetic_icon_Severing_Crest.png/220px-Cosmetic_icon_Severing_Crest.png?version=3d8bf911bd94be199d69db63a2bb7c84 2x" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/d/d6/Cosmetic_icon_Severing_Crest.png/110px-Cosmetic_icon_Severing_Crest.png?version=3d8bf911bd94be199d69db63a2bb7c84" alt="Severing Crest" /></a></div><a title="Severing Crest" href="/Severing_Crest">Severing Crest</a></div></div></td></tr></tbody></table></td></tr></tbody></table>
+<h2><span id="Trivia" class="mw-headline">Trivia</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" title="Edit section: Trivia" href="/index.php?title=Razor&amp;veaction=edit&amp;vesection=8">edit</a><span class="mw-editsection-divider"> | </span><a title="Edit section: Trivia" href="/index.php?title=Razor&amp;action=edit&amp;section=8">edit source</a><span class="mw-editsection-bracket">]</span></span></h2>
+<ul><li> Razor's alternate/fun name was <a href="https://en.wikipedia.org/wiki/Gillette_%28brand%29" class="external text" rel="nofollow noreferrer noopener" target="_blank">Gillette</a>, which is also the name of a reputable brand of shaving razors.</li>
+<li> Razor's attack response <a class="sm2_button" title="Play" href="https://hydra-media.cursecdn.com/dota2.gamepedia.com/6/6e/Raz_attack_07.mp3">Play</a> "<i>Ride the Lightning!</i>" is also the name of a Metallica's album and song (which references execution via electric chair).</li>
+<li> Razor's response upon picking the <span style="white-space:nowrap"><a title="Aegis of the Immortal" href="/Aegis_of_the_Immortal"><img width="20" height="15" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/2/20/Aegis_of_the_Immortal_icon.png/30px-Aegis_of_the_Immortal_icon.png?version=0770262007abf52cfe519d4c871d3408 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/2/20/Aegis_of_the_Immortal_icon.png/40px-Aegis_of_the_Immortal_icon.png?version=0770262007abf52cfe519d4c871d3408 2x" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/2/20/Aegis_of_the_Immortal_icon.png/20px-Aegis_of_the_Immortal_icon.png?version=0770262007abf52cfe519d4c871d3408" alt="Aegis of the Immortal icon.png" /></a> <a title="Aegis of the Immortal" href="/Aegis_of_the_Immortal">Aegis of the Immortal</a></span> <a class="sm2_button" title="Play" href="https://hydra-media.cursecdn.com/dota2.gamepedia.com/4/4e/Raz_immort_02.mp3">Play</a> "<i>There is a lightning that never goes out.</i>" is a reference to a song "<i>There is a light that never goes out</i>" by The Smiths.</li>
+<li> Razor's response  "<i>Conduct me where you will.</i>" is also a line said by Scrooge in <i><a href="https://en.wikipedia.org/wiki/A_Christmas_Carol" class="external text" rel="nofollow noreferrer noopener" target="_blank">A Christmas Carol</a></i>.</li></ul>
+<h2><span id="Gallery" class="mw-headline">Gallery</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" title="Edit section: Gallery" href="/index.php?title=Razor&amp;veaction=edit&amp;vesection=9">edit</a><span class="mw-editsection-divider"> | </span><a title="Edit section: Gallery" href="/index.php?title=Razor&amp;action=edit&amp;section=9">edit source</a><span class="mw-editsection-bracket">]</span></span></h2>
+<ul class="gallery mw-gallery-traditional">
+		<li style="width: 155px" class="gallerybox"><div style="width: 155px">
+			<div style="width: 150px;" class="thumb"><div style="margin:41px auto;"><a class="image" href="/File:Razor_Full_Trading_Card.jpg"><img width="120" height="68" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/9/9d/Razor_Full_Trading_Card.jpg/180px-Razor_Full_Trading_Card.jpg?version=d51eed7cfce4488b343494cf181b03fe 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/9/9d/Razor_Full_Trading_Card.jpg/240px-Razor_Full_Trading_Card.jpg?version=d51eed7cfce4488b343494cf181b03fe 2x" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/9/9d/Razor_Full_Trading_Card.jpg/120px-Razor_Full_Trading_Card.jpg?version=d51eed7cfce4488b343494cf181b03fe" alt="" /></a></div></div>
+			<div class="gallerytext">
+<p>Trading card art
+</p>
+			</div>
+		</div></li>
+		<li style="width: 155px" class="gallerybox"><div style="width: 155px">
+			<div style="width: 150px;" class="thumb"><div style="margin:51px auto;"><a class="image" href="/File:Razor_Concept_Art1.jpg"><img width="120" height="48" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/6/67/Razor_Concept_Art1.jpg/180px-Razor_Concept_Art1.jpg.png?version=be2fe3eba0c0f7f52edcd1c9d6a2766e 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/6/67/Razor_Concept_Art1.jpg/240px-Razor_Concept_Art1.jpg.png?version=be2fe3eba0c0f7f52edcd1c9d6a2766e 2x" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/6/67/Razor_Concept_Art1.jpg/120px-Razor_Concept_Art1.jpg.png?version=be2fe3eba0c0f7f52edcd1c9d6a2766e" alt="" /></a></div></div>
+			<div class="gallerytext">
+<p>Concept art
+</p>
+			</div>
+		</div></li>
+		<li style="width: 155px" class="gallerybox"><div style="width: 155px">
+			<div style="width: 150px;" class="thumb"><div style="margin:45px auto;"><a class="image" href="/File:Razor_ability_icon_progress.png"><img width="120" height="60" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/5/52/Razor_ability_icon_progress.png/180px-Razor_ability_icon_progress.png?version=b305c360251cb40ae2da40852a69db5b 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/5/52/Razor_ability_icon_progress.png/240px-Razor_ability_icon_progress.png?version=b305c360251cb40ae2da40852a69db5b 2x" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/5/52/Razor_ability_icon_progress.png/120px-Razor_ability_icon_progress.png?version=b305c360251cb40ae2da40852a69db5b" alt="" /></a></div></div>
+			<div class="gallerytext">
+<p>Ability icon progress
+</p>
+			</div>
+		</div></li>
+		<li style="width: 155px" class="gallerybox"><div style="width: 155px">
+			<div style="width: 150px;" class="thumb"><div style="margin:15px auto;"><a class="image" href="/File:Razor_hero_icon_progress.png"><img width="106" height="120" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/8/81/Razor_hero_icon_progress.png/159px-Razor_hero_icon_progress.png?version=200c8e2b1cbf93734cb8786dd453f5f4 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/8/81/Razor_hero_icon_progress.png/212px-Razor_hero_icon_progress.png?version=200c8e2b1cbf93734cb8786dd453f5f4 2x" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/8/81/Razor_hero_icon_progress.png/106px-Razor_hero_icon_progress.png?version=200c8e2b1cbf93734cb8786dd453f5f4" alt="" /></a></div></div>
+			<div class="gallerytext">
+<p>Hero icon progress
+</p>
+			</div>
+		</div></li>
+</ul>
+<h2><span id="References" class="mw-headline">References</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" title="Edit section: References" href="/index.php?title=Razor&amp;veaction=edit&amp;vesection=10">edit</a><span class="mw-editsection-divider"> | </span><a title="Edit section: References" href="/index.php?title=Razor&amp;action=edit&amp;section=10">edit source</a><span class="mw-editsection-bracket">]</span></span></h2>
+
+<!-- 
+NewPP limit report
+Cached time: 20161118164737
+Cache expiry: 86400
+Dynamic content: false
+[SMW] In‐text annotation parser time: 0.001 seconds
+CPU time usage: 2.040 seconds
+Real time usage: 3.204 seconds
+Preprocessor visited node count: 30916/1000000
+Preprocessor generated node count: 73427/1000000
+Post‐expand include size: 141017/2097152 bytes
+Template argument size: 49311/2097152 bytes
+Highest expansion depth: 18/40
+Expensive parser function count: 0/99
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00% 2564.942      1 - -total
+ 55.87% 1433.024      4 - Template:Ability
+ 22.38%  574.014     10 - Template:A
+ 15.27%  391.616     33 - Template:I
+ 15.01%  384.957     30 - Template:Ability_name
+ 13.95%  357.930    282 - Template:Lang
+ 12.46%  319.526      1 - Template:Equipment_Razor
+ 12.37%  317.185      1 - Template:Equipment
+ 12.32%  316.058     33 - Template:Item_link
+ 12.24%  313.987      1 - Template:Navbox
+-->
+
+<!-- Saved in parser cache with key dota2_gamepedia:pcache:idhash:407-0!*!0!default!!en!5!* and timestamp 20161118164733 and revision id 1325618
+ -->
+</div>					<div class="printfooter">
+						Retrieved from "<a href="http://dota2.gamepedia.com/index.php?title=Razor&amp;oldid=1325618" dir="ltr">http://dota2.gamepedia.com/index.php?title=Razor&amp;oldid=1325618</a>"					</div>
+				<div data-mw="interface" class="catlinks" id="catlinks"><div class="mw-normal-catlinks" id="mw-normal-catlinks"><a title="Special:Categories" href="/Special:Categories">Categories</a>: <ul><li><a title="Category:Heroes" href="/Category:Heroes">Heroes</a></li><li><a title="Category:Agility heroes" href="/Category:Agility_heroes">Agility heroes</a></li><li><a title="Category:Ranged heroes" href="/Category:Ranged_heroes">Ranged heroes</a></li><li><a title="Category:Carries" href="/Category:Carries">Carries</a></li><li><a title="Category:Durable" href="/Category:Durable">Durable</a></li><li><a title="Category:Nukers" href="/Category:Nukers">Nukers</a></li><li><a title="Category:Pushers" href="/Category:Pushers">Pushers</a></li></ul></div></div>				<div class="visualClear"></div>
+							</div>
+						<div id="siderail">
+				<!-- 300x250 Ad block -->
+								<div id="atfmrec">
+					<div id="cdm-zone-02"></div>				</div>
+								<!-- End 300x250 Ad block -->
+
+				<!-- ZergNet Side Rail -->
+								<div id="zergnetsiderail">
+					<div id="zergnet-widget-42966" class="widget-loaded"><div class="zergheader">Around The Web</div>
+<div class="zerglayoutcl"><div class="zergrow">
+			<div class="zergentity">
+				<a class="zergimg" rel="nofollow" target="_blank" href="http://www.zergnet.com/i/1030963/42966/0/0/73820373">
+					<img data-pin-no-hover="true" nopin="true" src="http://img4.zergnet.com/1030963_300.jpg" />
+				</a>
+				<div class="zergheadline">
+					<a rel="nofollow" target="_blank" href="http://www.zergnet.com/i/1030963/42966/0/0/73820373">Video Games That Killed People In Real Life</a>
+				</div>
+			</div>
+			<div class="zergentity">
+				<a class="zergimg" rel="nofollow" target="_blank" href="http://www.zergnet.com/i/703229/42966/0/0/73820373">
+					<img data-pin-no-hover="true" nopin="true" src="http://img2.zergnet.com/703229_300.jpg" />
+				</a>
+				<div class="zergheadline">
+					<a rel="nofollow" target="_blank" href="http://www.zergnet.com/i/703229/42966/0/0/73820373">8 Worst 'Game of the Year' Winners of All Time</a>
+				</div>
+			</div>
+			<div class="zergentity">
+				<a class="zergimg" rel="nofollow" target="_blank" href="http://www.zergnet.com/i/1295990/42966/0/0/73820373">
+					<img data-pin-no-hover="true" nopin="true" src="http://img5.zergnet.com/1295990_300.jpg" />
+				</a>
+				<div class="zergheadline">
+					<a rel="nofollow" target="_blank" href="http://www.zergnet.com/i/1295990/42966/0/0/73820373">Games Everyone Says They're Good at But Really Aren't</a>
+				</div>
+			</div>
+			<div class="zergentity">
+				<a class="zergimg" rel="nofollow" target="_blank" href="http://www.zergnet.com/i/1018538/42966/0/0/73820373">
+					<img data-pin-no-hover="true" nopin="true" src="http://img5.zergnet.com/1018538_300.jpg" />
+				</a>
+				<div class="zergheadline">
+					<a rel="nofollow" target="_blank" href="http://www.zergnet.com/i/1018538/42966/0/0/73820373">10 Overhyped Games That Ended Up Being Terrible</a>
+				</div>
+			</div></div></div><div style="clear: both"></div><style type="text/css">#zergnet-widget-42966 .zergentity {float:left; width:47%; margin-left:2%; overflow: hidden; margin-bottom: 10px}
+#zergnet-widget-42966 .zerglayoutcl  {width: 100%}
+#zergnet-widget-42966 .zergheadline {width:100%; margin-top:6px; text-align:left} 
+#zergnet-widget-42966 .zergheadline a {text-transform:uppercase; font-size:15px; text-decoration:none; font-family: 'Oswald', 'Roboto', 'Arial Narrow', 'Arial Black', Arial, sans-serif; color:inherit}
+#zergnet-widget-42966 .zergentity:nth-of-type(2n+1) {clear:left;}
+
+#zergnet-widget-42966 .zergentity img {width: 100%; height: auto}
+
+#zergnet-widget-42966 .zergheader{text-align:left; font-size:20px; font-family: 'Oswald', 'Roboto', 'Arial Narrow', 'Arial Black', Arial, sans-serif; color:inherit; margin-bottom:5px; margin-left:2%}
+
+@font-face {
+ font-family: 'Oswald';
+ font-style: normal;
+ font-weight: 400;
+ src: local('Oswald Regular'), local('Oswald-Regular'), url(https://fonts.gstatic.com/s/oswald/v10/_P8jt3Y65hJ9c4AzRE0V1OvvDin1pK8aKteLpeZ5c0A.woff2) format('woff2');
+ unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}</style></div>
+
+<script type="text/javascript" language="javascript">
+    (function() {
+        var zergnet = document.createElement('script');
+        zergnet.type = 'text/javascript'; zergnet.async = true;
+        zergnet.src = 'http://www.zergnet.com/zerg.js?id=42966';
+        var znscr = document.getElementsByTagName('script')[0];
+        znscr.parentNode.insertBefore(zergnet, znscr);
+    })();
+</script>				</div>
+				
+				<div id="gp-pro-upsell">
+					<a href="https://www.gamepedia.com/pro"><img src="http://dota2.gamepedia.com/skins/Hydra/images/gppro/gpproupsellshort.png" /></a>
+				</div>
+				<!-- 300x250 Ad block -->
+								<div id="btfmrec">
+									</div>
+								<!-- End 300x250 Ad block -->
+			</div>
+			<div class="visualClear"></div>
+						<!-- ZergNet -->
+						<div id="zergnet_container">
+				<div id="zergnet-widget-42964" class="widget-loaded"><div class="zergheader">Around The Web</div>
+<div class="zerglayoutcl"><div class="zergrow">
+			<div class="zergentity">
+				<a class="zergimg" rel="nofollow" target="_blank" href="http://www.zergnet.com/i/1293567/42964/0/0/73820373">
+					<img data-pin-no-hover="true" nopin="true" src="http://img4.zergnet.com/1293567_300.jpg" />
+				</a>
+				<div class="zergheadline">
+					<a rel="nofollow" target="_blank" href="http://www.zergnet.com/i/1293567/42964/0/0/73820373">15 Awesome Games Every PS4 Owner Should Play</a>
+				</div>
+			</div>
+			<div class="zergentity">
+				<a class="zergimg" rel="nofollow" target="_blank" href="http://www.zergnet.com/i/1274879/42964/0/0/73820373">
+					<img data-pin-no-hover="true" nopin="true" src="http://img4.zergnet.com/1274879_300.jpg" />
+				</a>
+				<div class="zergheadline">
+					<a rel="nofollow" target="_blank" href="http://www.zergnet.com/i/1274879/42964/0/0/73820373">10 PS4 Gems That Were Seriously Overlooked</a>
+				</div>
+			</div>
+			<div class="zergentity">
+				<a class="zergimg" rel="nofollow" target="_blank" href="http://www.zergnet.com/i/1154446/42964/0/0/73820373">
+					<img data-pin-no-hover="true" nopin="true" src="http://img5.zergnet.com/1154446_300.jpg" />
+				</a>
+				<div class="zergheadline">
+					<a rel="nofollow" target="_blank" href="http://www.zergnet.com/i/1154446/42964/0/0/73820373">Strange Things Accidentally Left in Video Games</a>
+				</div>
+			</div>
+			<div class="zergentity">
+				<a class="zergimg" rel="nofollow" target="_blank" href="http://www.zergnet.com/i/767909/42964/0/0/73820373">
+					<img data-pin-no-hover="true" nopin="true" src="http://img2.zergnet.com/767909_300.jpg" />
+				</a>
+				<div class="zergheadline">
+					<a rel="nofollow" target="_blank" href="http://www.zergnet.com/i/767909/42964/0/0/73820373">5 Games You're Lucky You Even Got To Play</a>
+				</div>
+			</div>
+			<div class="zergentity">
+				<a class="zergimg" rel="nofollow" target="_blank" href="http://www.zergnet.com/i/1293590/42964/0/0/73820373">
+					<img data-pin-no-hover="true" nopin="true" src="http://img5.zergnet.com/1293590_300.jpg" />
+				</a>
+				<div class="zergheadline">
+					<a rel="nofollow" target="_blank" href="http://www.zergnet.com/i/1293590/42964/0/0/73820373">10 Times Game Physics Went Laughably Wrong</a>
+				</div>
+			</div>
+			<div class="zergentity">
+				<a class="zergimg" rel="nofollow" target="_blank" href="http://www.zergnet.com/i/936188/42964/0/0/73820373">
+					<img data-pin-no-hover="true" nopin="true" src="http://img1.zergnet.com/936188_300.jpg" />
+				</a>
+				<div class="zergheadline">
+					<a rel="nofollow" target="_blank" href="http://www.zergnet.com/i/936188/42964/0/0/73820373">12 Awesome Video Games Nobody Played</a>
+				</div>
+			</div>
+			<div class="zergentity">
+				<a class="zergimg" rel="nofollow" target="_blank" href="http://www.zergnet.com/i/1209325/42964/0/0/73820373">
+					<img data-pin-no-hover="true" nopin="true" src="http://img2.zergnet.com/1209325_300.jpg" />
+				</a>
+				<div class="zergheadline">
+					<a rel="nofollow" target="_blank" href="http://www.zergnet.com/i/1209325/42964/0/0/73820373">7 Mario Games They Wish We Forgot About</a>
+				</div>
+			</div>
+			<div class="zergentity">
+				<a class="zergimg" rel="nofollow" target="_blank" href="http://www.zergnet.com/i/1293256/42964/0/0/73820373">
+					<img data-pin-no-hover="true" nopin="true" src="http://img1.zergnet.com/1293256_300.jpg" />
+				</a>
+				<div class="zergheadline">
+					<a rel="nofollow" target="_blank" href="http://www.zergnet.com/i/1293256/42964/0/0/73820373">Why We Never Got to Play 'Dead Space 4'</a>
+				</div>
+			</div></div></div><div style="clear: both"></div><style type="text/css">#zergnet-widget-42964 {font-family: 'Oswald', 'Roboto', 'Arial Narrow', 'Arial Black', Arial, sans-serif;
+text-transform: uppercase;}
+
+#zergnet-widget-42964 {width:100%}
+#zergnet-widget-42964 .zergentity {float:left; width:180px; margin-right:20px}
+#zergnet-widget-42964 .zergentity img {width:180px; height:180px; margin-top:-30px}
+#zergnet-widget-42964 .zergimg { height:120px; overflow:hidden; display:block; }
+#zergnet-widget-42964 .zergheadline a{ font-size:16px; text-decoration:none; color:inherit}
+#zergnet-widget-42964 .zergheadline {text-align:left; margin-top:6px; width:180px}
+#zergnet-widget-42964 .zergheader{font-size:20px; color:inherit; margin-bottom:2px}
+
+@media (max-width: 1850px) {
+#zergnet-widget-42964 .zergentity:nth-of-type(8) {display:none}
+}
+
+@media (max-width: 1650px) {
+#zergnet-widget-42964 .zergentity:nth-of-type(7) {display:none}
+}
+
+@media (max-width: 1450px) {
+#zergnet-widget-42964 .zergentity:nth-of-type(6) {display:none}
+}
+
+@media (max-width: 1257px) {
+#zergnet-widget-42964 .zergentity:nth-of-type(5) {display:none}
+}
+
+@media (max-width: 1056px) {
+#zergnet-widget-42964 .zergentity:nth-of-type(4) {display:none}
+}
+
+
+@media (max-width: 1000px) {
+#zergnet-widget-42964 .zergentity:nth-of-type(4) {display:block}
+#zergnet-widget-42964 .zergheadline {width:100%}
+#zergnet-widget-42964 .zerglayoutcl {width:100%}
+#zergnet-widget-42964 .zergentity {width:48%; overflow: hidden; margin-right:2%; margin-bottom:20px}
+#zergnet-widget-42964 .zergentity:nth-of-type(odd) { clear: left !important }
+
+
+#zergnet-widget-42964 .zergentity img {
+width:300px; height:300px; margin-top:0px; width:100%; 
+-ms-transform: translateY(16.5%);
+-webkit-transform: translateY(16.5%);
+transform: translateY(16.5%);
+height: auto
+}
+
+#zergnet-widget-42964 .zergimg {
+height:auto;
+display: block;
+overflow: hidden;
+margin-top:-33%;
+}
+
+}
+
+@media (max-width: 600px) {
+#zergnet-widget-42964 .zergentity:nth-of-type(3n+1) {clear:none; margin-left:2%}
+#zergnet-widget-42964 .zergentity:nth-of-type(2n+1) {clear:left; margin-left:2%}
+#zergnet-widget-42964 .zergheadline a {font-size:14px}
+#zergnet-widget-42964 .zergheader{margin-left:2%; margin-bottom:5px}
+#zergnet-widget-42964 .zergentity { width:48%; margin-left:2%;}
+}
+
+
+@font-face {
+ font-family: 'Oswald';
+ font-style: normal;
+ font-weight: 400;
+ src: local('Oswald Regular'), local('Oswald-Regular'), url(https://fonts.gstatic.com/s/oswald/v10/_P8jt3Y65hJ9c4AzRE0V1OvvDin1pK8aKteLpeZ5c0A.woff2) format('woff2');
+ unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}</style></div>
+
+<script type="text/javascript" language="javascript">
+    (function() {
+        var zergnet = document.createElement('script');
+        zergnet.type = 'text/javascript'; zergnet.async = true;
+        zergnet.src = 'http://www.zergnet.com/zerg.js?id=42964';
+        var znscr = document.getElementsByTagName('script')[0];
+        znscr.parentNode.insertBefore(zergnet, znscr);
+    })();
+</script>
+<script async="" src="//s.ntv.io/serve/load.js" type="text/javascript"></script>			</div>
+						<!-- /ZergNet -->
+			<!-- BTF Leaderboard -->
+						<div id="btflb">
+				<div id="cdm-zone-04"></div>			</div>
+						<!-- /BTF Leaderboard -->
+		</div>
+		<div id="mw-navigation">
+			<h2>Navigation menu</h2>
+
+			<div id="mw-head">
+								<div id="left-navigation">
+										<div aria-labelledby="p-namespaces-label" class="vectorTabs" role="navigation" id="p-namespaces">
+						<h3 id="p-namespaces-label">Namespaces</h3>
+						<ul>
+															<li class="selected" id="ca-nstab-main"><span><a accesskey="c" title="View the content page [c]" href="/Razor">Page</a></span></li>
+															<li id="ca-talk"><span><a rel="discussion" accesskey="t" title="Discussion about the content page [t]" href="/Talk:Razor">Discussion</a></span></li>
+													</ul>
+					</div>
+										<div aria-labelledby="p-variants-label" class="vectorMenu emptyPortlet" role="navigation" id="p-variants">
+												<h3 id="p-variants-label">
+							<span>Variants</span><a href="#"></a>
+						</h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+										<div aria-labelledby="p-sharing-label" class="vectorMenu" role="navigation" id="p-sharing">
+						<h3 id="p-sharing-label"><span>Share</span><a href="#"></a></h3>
+						<div class="menu">
+							
+				<div id="socialIconImages">
+					<a target="_blank" href="https://twitter.com/intent/tweet?text=Check+out+Razor+on+Dota+2+Wiki+--&amp;via=CurseGamepedia&amp;url=http%3A%2F%2Fdota2.gamepedia.com%2FRazor"><img src="/extensions/Social/images/square_icons/twitter.png" /></a><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fdota2.gamepedia.com%2FRazor"><img src="/extensions/Social/images/square_icons/facebook.png" /></a><a target="_blank" href="https://plus.google.com/share?url=http%3A%2F%2Fdota2.gamepedia.com%2FRazor"><img src="/extensions/Social/images/square_icons/googleplus.png" /></a><a target="_blank" href="http://www.reddit.com/submit?url=http%3A%2F%2Fdota2.gamepedia.com%2FRazor&amp;title=Check+out+Razor+on+Dota+2+Wiki+via+%40CurseGamepedia%3A+http%3A%2F%2Fdota2.gamepedia.com%2FRazor"><img src="/extensions/Social/images/square_icons/reddit.png" /></a><a target="_blank" href="http://www.tumblr.com/share/link?url=http%3A%2F%2Fdota2.gamepedia.com%2FRazor&amp;name=Dota+2+Wiki&amp;description=Check+out+Razor+on+Dota+2+Wiki+via+%3Ca+href%3D%22https%3A%2F%2Ftwitter.com%2FCurseGamepedia%22+target%3D%22_blank%22%3E%40CurseGamepedia%3C%2Fa%3E%3A+http%3A%2F%2Fdota2.gamepedia.com%2FRazor"><img src="/extensions/Social/images/square_icons/tumblr.png" /></a>
+				</div>
+						</div>
+					</div>
+									</div>
+				<div id="right-navigation">
+										<div aria-labelledby="p-views-label" class="vectorTabs" role="navigation" id="p-views">
+						<h3 id="p-views-label">Views</h3>
+						<ul>
+															<li class="selected" id="ca-view"><span><a href="/Razor">View</a></span></li>
+															<li id="ca-ve-edit"><span><a accesskey="v" title="Edit this page with the VisualEditor [v]" href="/index.php?title=Razor&amp;veaction=edit">Edit</a></span></li>
+															<li class=" collapsible" id="ca-edit"><span><a accesskey="e" title="Edit this page [e]" href="/index.php?title=Razor&amp;action=edit">Edit source</a></span></li>
+															<li class="collapsible" id="ca-history"><span><a accesskey="h" title="Past revisions of this page [h]" href="/index.php?title=Razor&amp;action=history">History</a></span></li>
+													</ul>
+					</div>
+										<div aria-labelledby="p-cactions-label" class="vectorMenu emptyPortlet" role="navigation" id="p-cactions">
+						<h3 id="p-cactions-label"><span>More</span><a href="#"></a></h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+										<div role="search" id="p-search">
+						<h3>
+							<label for="searchInput">Search</label>
+						</h3>
+
+						<form id="searchform" action="/index.php">
+							<div id="simpleSearch">
+							<input type="search" id="searchInput" accesskey="f" title="Search Dota 2 Wiki [f]" placeholder="Search" name="search" /><input type="hidden" name="title" value="Special:Search" /><input type="submit" class="searchButton mw-fallbackSearchButton" id="mw-searchButton" title="Search the pages for this text" value="Search" name="fulltext" /><input type="submit" class="searchButton" id="searchButton" title="Go to a page with this exact name if it exists" value="Go" name="go" />							</div>
+						</form>
+					</div>
+									</div>
+			</div>
+			<div id="mw-panel">
+				<div role="banner" id="p-logo"><a title="Main page" href="/Dota_2_Wiki" class="mw-wiki-logo"></a></div>
+						<div aria-labelledby="p-navigation-label" id="p-navigation" role="navigation" class="portal">
+			<h3 id="p-navigation-label">Navigation</h3>
+
+			<div class="body">
+									<ul>
+						<li id="n-mainpage-description"><a accesskey="z" title="Visit the main page [z]" href="/Dota_2_Wiki">Main page</a></li><li id="n-Heroes"><a href="/Heroes">Heroes</a></li><li id="n-Items"><a href="/Items">Items</a></li><li id="n-Mechanics"><a href="/Mechanics">Mechanics</a></li><li id="n-Creeps"><a href="/Creeps">Creeps</a></li><li id="n-Buildings"><a href="/Buildings">Buildings</a></li><li id="n-Runes"><a href="/Runes">Runes</a></li><li id="n-Minimap"><a href="/Minimap">Minimap</a></li><li id="n-Game-modes"><a href="/Game_Modes">Game modes</a></li><li id="n-Events"><a href="/Events">Events</a></li><li id="n-Patches"><a href="/Patches">Patches</a></li><li id="n-Versions"><a href="/Versions">Versions</a></li><li id="n-Console"><a href="/List_of_Console_Commands">Console</a></li><li id="n-Hero-stats-table"><a href="/Table_of_hero_attributes">Hero stats table</a></li>					</ul>
+							</div>
+		</div>
+			<div aria-labelledby="p-Cosmetics-label" id="p-Cosmetics" role="navigation" class="portal">
+			<h3 id="p-Cosmetics-label">Cosmetics</h3>
+
+			<div class="body">
+									<ul>
+						<li id="n-Equipment"><a href="/Equipment">Equipment</a></li><li id="n-Gems"><a href="/Gems">Gems</a></li><li id="n-Couriers"><a href="/Custom_Courier">Couriers</a></li><li id="n-Wards"><a href="/Custom_Wards">Wards</a></li><li id="n-HUD-Skins"><a href="/HUD_Skins">HUD Skins</a></li><li id="n-Music"><a href="/Music">Music</a></li><li id="n-Emoticons"><a href="/Emoticons">Emoticons</a></li>					</ul>
+							</div>
+		</div>
+			<div aria-labelledby="p-tb-label" id="p-tb" role="navigation" class="portal">
+			<h3 id="p-tb-label">Tools</h3>
+
+			<div class="body">
+									<ul>
+						<li id="t-whatlinkshere"><a accesskey="j" title="A list of all wiki pages that link here [j]" href="/Special:WhatLinksHere/Razor">What links here</a></li><li id="t-recentchangeslinked"><a accesskey="k" title="Recent changes in pages linked from this page [k]" href="/Special:RecentChangesLinked/Razor">Related changes</a></li><li id="t-specialpages"><a accesskey="q" title="A list of all special pages [q]" href="/Special:SpecialPages">Special pages</a></li><li id="t-print"><a accesskey="p" title="Printable version of this page [p]" rel="alternate" href="/index.php?title=Razor&amp;printable=yes">Printable version</a></li><li id="t-permalink"><a title="Permanent link to this revision of the page" href="/index.php?title=Razor&amp;oldid=1325618">Permanent link</a></li><li id="t-info"><a title="More information about this page" href="/index.php?title=Razor&amp;action=info">Page information</a></li><li id="t-smwbrowselink"><a rel="smw-browse" href="/Special:Browse/Razor">Browse properties</a></li>					</ul>
+							</div>
+		</div>
+			<div aria-labelledby="p-Wiki_Links-label" id="p-Wiki_Links" role="navigation" class="portal">
+			<h3 id="p-Wiki_Links-label">Wiki Links</h3>
+
+			<div class="body">
+									<ul>
+						<li id="n-Discussion"><a href="/Dota_2_Wiki:Discussion">Discussion</a></li><li id="n-Twitter"><a target="_blank" rel="nofollow" href="https://twitter.com/dota2wiki">Twitter</a></li><li id="n-Steam-Group"><a target="_blank" rel="nofollow" href="http://steamcommunity.com/groups/dota2wiki">Steam Group</a></li><li id="n-IRC-channel"><a href="/Dota_2_Wiki:IRC">IRC channel</a></li><li id="n-Translate"><a href="/Help:Language_translation">Translate</a></li><li id="n-recentchanges"><a accesskey="r" title="A list of recent changes in the wiki [r]" href="/Special:RecentChanges">Recent changes</a></li>					</ul>
+							</div>
+		</div>
+			<div aria-labelledby="p-Official_Links-label" id="p-Official_Links" role="navigation" class="portal">
+			<h3 id="p-Official_Links-label">Official Links</h3>
+
+			<div class="body">
+									<ul>
+						<li id="n-Blog"><a target="_blank" rel="nofollow" href="http://blog.dota2.com">Blog</a></li><li id="n-Store"><a target="_blank" rel="nofollow" href="http://www.dota2.com/store/">Store</a></li><li id="n-Steam-Hub"><a target="_blank" rel="nofollow" href="http://steamcommunity.com/app/570">Steam Hub</a></li><li id="n-Twitter"><a target="_blank" rel="nofollow" href="http://twitter.com/#%21/dota2">Twitter</a></li><li id="n-Facebook"><a target="_blank" rel="nofollow" href="http://www.facebook.com/pages/Dota-2/106876872711112">Facebook</a></li>					</ul>
+							</div>
+		</div>
+			<div aria-labelledby="p-Gamepedia-label" id="p-Gamepedia" role="navigation" class="portal">
+			<h3 id="p-Gamepedia-label">Gamepedia</h3>
+
+			<div class="body">
+									<ul>
+						<li id="n-Forums"><a target="_blank" href="http://gamepedia.com/forums">Forums</a></li><li id="n-Help"><a target="_blank" href="http://help.gamepedia.com">Help</a></li><li id="n-Contact"><a target="_blank" href="http://help.gamepedia.com/How_To_Contact_Gamepedia">Contact</a></li>					</ul>
+							</div>
+		</div>
+			<div aria-labelledby="p-Partners-label" id="p-Partners" role="navigation" class="portal">
+			<h3 id="p-Partners-label">Partner</h3>
+
+			<div class="body">
+									<ul>
+						<li id="n-Abios-Gaming"><a target="_blank" href="http://abiosgaming.com">Abios Gaming</a></li><li id="n-PlayDota-Reborn"><a target="_blank" rel="nofollow" href="https://forums.playdota.com/">PlayDota Reborn</a></li><li id="n-Dota-2-Reddit"><a target="_blank" rel="nofollow" href="https://www.reddit.com/r/DotA2">Dota 2 Reddit</a></li>					</ul>
+							</div>
+		</div>
+			<div aria-labelledby="p-Languages-label" id="p-Languages" role="navigation" class="portal">
+			<h3 id="p-Languages-label">Languages</h3>
+
+			<div class="body">
+									<ul>
+						<li id="n-English"><a href="/Razor">English</a></li><li id="n-Deutsch"><a href="/Razor/de">Deutsch</a></li><li id="n-Espa.C3.B1ol"><a href="/Razor/es">Español</a></li><li id="n-.E6.97.A5.E6.9C.AC.E8.AA.9E"><a href="/Razor/ja">日本語</a></li><li id="n-Portugu.C3.AAs"><a href="/Razor/pt">Português</a></li><li id="n-Portugu.C3.AAs-do-Brasil"><a href="/Razor/pt-br">Português do Brasil</a></li><li id="n-.D0.A0.D1.83.D1.81.D1.81.D0.BA.D0.B8.D0.B9"><a href="/Razor/ru">Русский</a></li><li id="n-.E0.B8.A0.E0.B8.B2.E0.B8.A9.E0.B8.B2.E0.B9.84.E0.B8.97.E0.B8.A2"><a href="/Razor/th">ภาษาไทย</a></li><li id="n-Ti.E1.BA.BFng-Vi.E1.BB.87t"><a href="/Razor/vi">Tiếng Việt</a></li><li id="n-.E2.80.AA.E4.B8.AD.E6.96.87.28.E7.AE.80.E4.BD.93.29.E2.80.AC"><a href="/Razor/zh-hans">‪中文(简体)‬</a></li><li id="n-.E2.80.AA.E4.B8.AD.E6.96.87.28.E7.B9.81.E9.AB.94.29"><a href="/Razor/zh-hant">‪中文(繁體)</a></li>					</ul>
+							</div>
+		</div>
+			<div aria-labelledby="p-socialProfiles-label" id="p-socialProfiles" role="navigation" class="portal persistent">
+			<h3 id="p-socialProfiles-label"></h3>
+
+			<div class="body">
+				<div class="socialSidebar">
+						<script type="text/javascript">
+							document.getElementById('p-socialProfiles').className = 'portal persistent';
+						</script>
+						<div class="socialLink twitter"><a target="_blank" href="https://twitter.com/CurseGamepedia"><img src="/extensions/Social/images/square_icons/twitter.png" /></a></div><div class="socialLink facebook"><a target="_blank" href="https://www.facebook.com/CurseGamepedia"><img src="/extensions/Social/images/square_icons/facebook.png" /></a></div><div class="socialLink twitch"><a target="_blank" href="https://www.twitch.tv/curseentertainment/videos/all"><img src="/extensions/Social/images/square_icons/twitch.png" /></a></div>
+					</div>			</div>
+		</div>
+				</div>
+		</div>
+		<div role="contentinfo" id="footer">
+							<ul id="footer-info">
+											<li id="footer-info-lastmod"> This page was last modified on <time datetime="2016-21-10T14:58" itemprop="datePublished">21 October 2016, at 14:58</time>.</li>
+											<li id="footer-info-copyright">Content is available under <a href="//creativecommons.org/licenses/by-nc-sa/3.0/" rel="nofollow" class="external">CC BY-NC-SA 3.0</a> unless otherwise noted.<br />Dota 2 content and materials are trademarks and copyrights of Valve or its licensors. All rights reserved.<br />
+This site is a part of Curse, Inc. and is not affiliated with Valve.</li>
+									</ul>
+							<ul id="footer-places">
+											<li id="footer-places-about"><a title="Dota 2 Wiki:About" href="/Dota_2_Wiki:About">About Dota 2 Wiki</a></li>
+											<li id="footer-places-disclaimer"><a title="Dota 2 Wiki:General disclaimer" href="/Dota_2_Wiki:General_disclaimer">Disclaimers</a></li>
+											<li id="footer-places-mobileview"><a class="noprint stopMobileRedirectToggle" href="//dota2.gamepedia.com/index.php?title=Razor&amp;mobileaction=toggle_view_mobile">Mobile view</a></li>
+									</ul>
+										<ul class="noprint" id="footer-icons">
+											<li id="footer-copyrightico">
+							<a href="//creativecommons.org/licenses/by-nc-sa/3.0/"><img width="88" height="31" alt="CC BY-NC-SA 3.0" src="//i.creativecommons.org/l/by-nc-sa/3.0/88x31.png" /></a>						</li>
+											<li id="footer-poweredbyico">
+							<a href="//www.mediawiki.org/"><img width="88" height="31" srcset="/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /resources/assets/poweredby_mediawiki_176x62.png 2x" alt="Powered by MediaWiki" src="/resources/assets/poweredby_mediawiki_88x31.png" /></a><a href="https://help.gamepedia.com/What_is_Hydra"><img width="88" height="31" alt="Powered by Hydra" src="/skins/Hydra/images/icons/poweredbyhydra.png" /></a><a href="https://www.semantic-mediawiki.org/wiki/Semantic_MediaWiki"><img width="88" height="31" alt="Powered by Semantic MediaWiki" src="/extensions/SemanticMediaWiki/includes/../res/images/smw_button.png" /></a>						</li>
+									</ul>
+						<div style="clear:both"></div>
+		</div>
+	</div>
+	<div id="footer-push"></div>
+</div>
+		<script>(window.RLQ=window.RLQ||[]).push(function(){mw.loader.state({"user":"ready","user.groups":"ready"});mw.loader.load(["ext.wfSoundManager2Button","ext.smw.tooltips","mediawiki.toc","mediawiki.action.view.postEdit","site","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","ext.collapsiblevector.collapsibleNav","ext.visualEditor.targetLoader"]);});</script><footer class="show-ads" role="complimentary" id="footer">
+	<div class="footer-links">
+				<a class="curse" href="http://www.gamepedia.com">Gamepedia powered by Curse</a>
+		<ul class="social">
+			<li><a class="fb" href="https://www.facebook.com/CurseGamepedia">Facebook</a></li>
+			<li><a class="tw" href="https://twitter.com/CurseGamepedia">Twitter</a></li>
+			<li><a class="yt" href="http://youtube.com/CurseEntertainment">Youtube</a></li>
+			<li><a class="nl" href="http://help.gamepedia.com/How_To_Contact_Gamepedia">Newsletter</a></li>
+			<li><a class="advertise" href="http://tyranny.gamepedia.com">Tyranny Wiki</a></li>
+		</ul>
+				<ul class="you">
+									<li><a class="sign-in" id="login-link" href="/index.php?title=Special:UserLogin&amp;returnto=Razor">Sign In</a></li>
+									<li><a id="register-link" class="register" href="/index.php?title=Special:CreateAccount&amp;returnto=Razor">Register</a></li>
+										<li><a class="careers" href="http://www.curseinc.com/careers">Careers</a></li>
+			<li><a class="help" href="http://support.gamepedia.com/">Help</a></li>
+			<li><a class="about" href="http://tyranny.gamepedia.com/How_to_Play_Guide_for_Tyranny">Tyranny Guide</a></li>
+				</ul>
+		<ul class="more">
+					<li><a class="about" href="http://www.curseinc.com/">About Curse</a></li>
+			<li><a class="advertise" href="http://www.curseinc.com/audience">Advertise</a></li>
+			<li><a class="tos" href="http://www.curse.com/terms">Terms of Service</a></li>
+			<li><a class="privacy-policy" href="http://www.curse.com/privacy">Privacy Policy</a></li>
+			<li><a class="tos" href="http://finalfantasyxv.gamepedia.com">FFXV Wiki</a></li>
+		</ul>
+		<span class="copyright">Copyright 2005-2016, Curse Inc.</span>
+	</div>
+			<div class="ad-placement ad-main-med-rect-footer">
+			<div id="cdm-zone-03"></div>		</div>
+	</footer>
+
+<script type="text/javascript">
+(function(i, s, o, g, r, a, m) {
+	i['GoogleAnalyticsObject'] = r;
+	i[r] = i[r] || function() {
+		(i[r].q = i[r].q || []).push(arguments)
+	}
+
+	, i[r].l = 1 * new Date();
+	a = s.createElement(o),
+		m = s.getElementsByTagName(o)[0];
+	a.async = 1;
+	a.src = g;
+	m.parentNode.insertBefore(a, m)
+})(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+ga('create', 'UA-41338520-39', 'auto', 'tracker0');
+ga('create', 'UA-1045810-22', 'auto', 'tracker1');
+ga('create', 'UA-35871056-4', 'auto', 'tracker2');
+ga('create', 'UA-26524418-3', 'auto', 'tracker3');
+ga('tracker0.send', 'pageview');
+ga('tracker1.send', 'pageview');
+ga('tracker2.send', 'pageview');
+ga('tracker3.send', 'pageview');
+</script>
+
+
+<!-- Begin comScore -->
+<script>
+var _comscore = _comscore || [];
+_comscore.push({ c1: "2", c2: "6035118" });
+(function() {
+	var s = document.createElement("script"), el = document.getElementsByTagName("script")[0]; s.async = true;
+	s.src = (document.location.protocol == "https:" ? "https://sb" : "http://b") + ".scorecardresearch.com/beacon.js";
+	el.parentNode.insertBefore(s, el);
+})();
+</script>
+<noscript>
+&lt;img src="http://b.scorecardresearch.com/p?c1=2&amp;c2=6035118&amp;cv=2.0&amp;cj=1" /&gt;
+</noscript>
+<!-- End comScore -->
+
+<!-- Begin Nielsen -->
+<script type="text/javascript">
+(function () {
+	var d = new Image(1, 1);
+	d.onerror = d.onload = function () {
+		d.onerror = d.onload = null;
+	};
+	d.src = ["//secure-us.imrworldwide.com/cgi-bin/m?ci=us-603339h&amp;cg=0&amp;cc=1&amp;si=", escape(window.location.href), "&amp;rp=", escape(document.referrer), "&amp;ts=compact&amp;rnd=", (new Date()).getTime()].join('');
+})();
+</script>
+<noscript>
+&lt;div&gt;&lt;img src="//secure-us.imrworldwide.com/cgi-bin/m?ci=us-603339h&amp;cg=0&amp;cc=1&amp;ts=noscript" width="1" height="1" alt="" /&gt;&lt;/div&gt;
+</noscript>
+<!-- End Nielsen --><div id="cdm-zone-end"></div><!-- Start PubMP -->
+<script src="//ads.pubmatic.com/AdServer/js/showad.js#PIX&amp;ptask=DSP&amp;SPug=1" type="text/javascript"></script> 
+<!-- End PubMP -->
+			<script type="text/javascript">
+				window.genreCategory = 'MOBA';
+			</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":482});});</script>
+	<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"75f4858b7a","applicationID":"1909498","transactionName":"YlVXbREHWksEUkVdCVsfYEsKSV1WAVRJGhZdQA==","queueTime":0,"applicationTime":633,"atts":"ThJAG1kdSRRHUBMOHUhN","errorBeacon":"bam.nr-data.net","agent":""}</script>
+
+<img width="1" height="1" id="pi1" src="http://dmp.springserve.com/px?l=sp_11_load&amp;sp=11" style="display: none;" /><script data-client-id="aDMTWFGqpPYIhjB" src="//d1xfq2052q7thw.cloudfront.net/1.7.508.js" async=""></script></body></html>
