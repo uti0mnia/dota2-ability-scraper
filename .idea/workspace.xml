@@ -2,6 +2,155 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c381486c-2855-4016-a2e5-137469954122" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htmls/Abyssal Blade.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htmls/Aether Lens.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htmls/Aghanim's Scepter.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htmls/Animal Courier.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htmls/Arcane Boots.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htmls/Armlet of Mordiggian.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htmls/Assault Cuirass.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htmls/Band of Elvenskin.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htmls/Battle Fury.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htmls/Belt of Strength.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htmls/Black King Bar.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htmls/Blade Mail.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htmls/Blade of Alacrity.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htmls/Blades of Attack.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htmls/Blight Stone.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htmls/Blink Dagger.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htmls/Bloodstone.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htmls/Bloodthorn.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htmls/Boots of Speed.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htmls/Boots of Travel.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htmls/Bottle.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htmls/Bracer.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htmls/Broadsword.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htmls/Buckler.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htmls/Butterfly.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htmls/Chainmail.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htmls/Circlet.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htmls/Clarity.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htmls/Claymore.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htmls/Cloak.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htmls/Crimson Guard.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htmls/Crystalys.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htmls/Daedalus.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htmls/Dagon.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htmls/Demon Edge.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htmls/Desolator.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htmls/Diffusal Blade.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htmls/Divine Rapier.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htmls/Dragon Lance.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htmls/Drum of Endurance.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htmls/Dust of Appearance.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htmls/Eaglesong.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htmls/Echo Sabre.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htmls/Enchanted Mango.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htmls/Energy Booster.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htmls/Ethereal Blade.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htmls/Eul's Scepter of Divinity.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htmls/Eye of Skadi.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htmls/Faerie Fire.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htmls/Flying Courier.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htmls/Force Staff.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htmls/Gauntlets of Strength.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htmls/Gem of True Sight.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htmls/Ghost Scepter.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htmls/Glimmer Cape.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htmls/Gloves of Haste.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htmls/Guardian Greaves.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htmls/Hand of Midas.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htmls/Headdress.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htmls/Healing Salve.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htmls/Heart of Tarrasque.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htmls/Heaven's Halberd.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htmls/Helm of Iron Will.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htmls/Helm of the Dominator.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htmls/Hood of Defiance.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htmls/Hurricane Pike.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htmls/Hyperstone.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htmls/Infused Raindrop.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htmls/Iron Branch.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htmls/Iron Talon.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htmls/Javelin.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htmls/Linken's Sphere.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htmls/Lotus Orb.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htmls/Maelstrom.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htmls/Magic Stick.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htmls/Magic Wand.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htmls/Manta Style.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htmls/Mantle of Intelligence.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htmls/Mask of Madness.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htmls/Medallion of Courage.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htmls/Mekansm.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htmls/Mithril Hammer.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htmls/Mjollnir.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htmls/Monkey King Bar.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htmls/Moon Shard.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htmls/Morbid Mask.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htmls/Mystic Staff.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htmls/Necronomicon.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htmls/Null Talisman.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htmls/Oblivion Staff.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htmls/Observer Ward.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htmls/Octarine Core.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htmls/Ogre Club.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htmls/Orb of Venom.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htmls/Orchid Malevolence.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htmls/Perseverance.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htmls/Phase Boots.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htmls/Pipe of Insight.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htmls/Platemail.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htmls/Point Booster.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htmls/Poor Man's Shield.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htmls/Power Treads.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htmls/Quarterstaff.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htmls/Quelling Blade.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htmls/Radiance.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htmls/Reaver.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htmls/Refresher Orb.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htmls/Ring of Aquila.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htmls/Ring of Basilius.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htmls/Ring of Health.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htmls/Ring of Protection.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htmls/Ring of Regen.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htmls/Robe of the Magi.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htmls/Rod of Atos.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htmls/Sacred Relic.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htmls/Sage's Mask.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htmls/Sange and Yasha.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htmls/Sange.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htmls/Satanic.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htmls/Scythe of Vyse.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htmls/Sentry Ward.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htmls/Shadow Amulet.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htmls/Shadow Blade.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htmls/Shiva's Guard.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htmls/Silver Edge.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htmls/Skull Basher.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htmls/Slippers of Agility.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htmls/Smoke of Deceit.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htmls/Solar Crest.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htmls/Soul Booster.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htmls/Soul Ring.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htmls/Staff of Wizardry.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htmls/Stout Shield.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htmls/Talisman of Evasion.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htmls/Tango.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htmls/Tome of Knowledge.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htmls/Town Portal Scroll.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htmls/Tranquil Boots.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htmls/Ultimate Orb.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htmls/Urn of Shadows.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htmls/Vanguard.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htmls/Veil of Discord.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htmls/Vitality Booster.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htmls/Vladmir's Offering.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htmls/Void Stone.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htmls/Wind Lace.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htmls/Wraith Band.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htmls/Yasha.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scraper.py" afterPath="$PROJECT_DIR$/scraper.py" />
     </list>
@@ -16,7 +165,8 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/dota2-ability-scraper$scrape.coverage" NAME="scrape Coverage Results" MODIFIED="1479590100258" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/dota2-ability-scraper$scrape.coverage" NAME="scrape Coverage Results" MODIFIED="1479949301478" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/dota2-ability-scraper$scraper.coverage" NAME="scraper Coverage Results" MODIFIED="1479938696380" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../item-scraper" />
   </component>
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
@@ -26,40 +176,52 @@
     <favorites_list name="ability_scrape" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="scraper.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/scraper.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="198">
-              <caret line="11" column="64" selection-start-line="11" selection-start-column="64" selection-end-line="11" selection-end-column="64" />
-              <folding>
-                <element signature="e#0#35#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ability_ex.txt" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/ability_ex.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="273">
-              <caret line="16" column="126" selection-start-line="16" selection-start-column="126" selection-end-line="16" selection-end-column="126" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="abilities.txt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/abilities.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="468">
-              <caret line="0" column="5944" selection-start-line="0" selection-start-column="5887" selection-end-line="0" selection-end-column="5944" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <splitter split-orientation="horizontal" split-proportion="0.5">
+      <split-first>
+        <leaf>
+          <file leaf-file-name="scraper.py" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/scraper.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="183">
+                  <caret line="113" column="0" selection-start-line="113" selection-start-column="0" selection-end-line="113" selection-end-column="0" />
+                  <folding>
+                    <element signature="e#0#35#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="scraper.py" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/../item-scraper/scraper.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="216">
+                  <caret line="12" column="112" selection-start-line="4" selection-start-column="0" selection-end-line="12" selection-end-column="112" />
+                  <folding>
+                    <element signature="e#0#9#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-first>
+      <split-second>
+        <leaf>
+          <file leaf-file-name="scraper.py" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/scraper.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="853">
+                  <caret line="109" column="25" selection-start-line="109" selection-start-column="25" selection-end-line="109" selection-end-column="25" />
+                  <folding>
+                    <element signature="e#0#35#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-second>
+    </splitter>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -75,6 +237,7 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/ability_ex.txt" />
+        <option value="$PROJECT_DIR$/../item-scraper/scraper.py" />
         <option value="$PROJECT_DIR$/scraper.py" />
       </list>
     </option>
@@ -91,7 +254,7 @@
     <option name="width" value="1900" />
     <option name="height" value="1049" />
   </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="false">
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
     <OptionsSetting value="true" id="Remove" />
     <OptionsSetting value="true" id="Checkout" />
@@ -117,6 +280,7 @@
     </navigator>
     <panes>
       <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -137,14 +301,21 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../item-scraper" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+    <property name="settings.editor.selected.configurable" value="preferences.editor" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/hero_htmls" />
+    </key>
   </component>
   <component name="RunManager" selected="Python.scrape">
     <configuration default="true" type="DjangoTestsConfigurationType" factoryName="Django tests">
@@ -395,16 +566,15 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="10" y="22" width="1900" height="1049" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.118421055" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32959184" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32959184" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32857144" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32857144" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -414,6 +584,7 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32959184" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -430,11 +601,35 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="14" />
+      <option name="time" value="15" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/scraper.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="11" column="64" selection-start-line="11" selection-start-column="64" selection-end-line="11" selection-end-column="64" />
+          <folding>
+            <element signature="e#0#35#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ability_ex.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/abilities.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="5944" selection-start-line="0" selection-start-column="5887" selection-end-line="0" selection-end-column="5944" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/scraper.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -449,7 +644,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="88" selection-start-line="0" selection-start-column="59" selection-end-line="0" selection-end-column="88" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -467,7 +661,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="234">
           <caret line="13" column="55" selection-start-line="13" selection-start-column="55" selection-end-line="13" selection-end-column="55" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -496,40 +689,46 @@
     <entry file="file://$PROJECT_DIR$/all.html" />
     <entry file="file://$PROJECT_DIR$/output.html" />
     <entry file="file://$USER_HOME$/Library/Python/2.7/lib/python/site-packages/bs4/element.py" />
-    <entry file="file://$PROJECT_DIR$/abilities.csv">
-      <provider editor-type-id="LargeFileEditor">
-        <state />
-      </provider>
+    <entry file="file://$PROJECT_DIR$/abilities.csv" />
+    <entry file="file://$PROJECT_DIR$/ability_ex.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="0" column="1288" selection-start-line="0" selection-start-column="1288" selection-end-line="0" selection-end-column="1288" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scraper.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="11" column="64" selection-start-line="11" selection-start-column="64" selection-end-line="11" selection-end-column="64" />
-          <folding>
-            <element signature="e#0#35#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="183">
+          <caret line="11" column="31" selection-start-line="11" selection-start-column="31" selection-end-line="11" selection-end-column="31" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/abilities.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="468">
+        <state relative-caret-position="18">
           <caret line="0" column="5944" selection-start-line="0" selection-start-column="5887" selection-end-line="0" selection-end-column="5944" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/htmls/Cloak.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ability_ex.txt">
+    <entry file="file://$PROJECT_DIR$/../item-scraper/scraper.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="273">
-          <caret line="16" column="126" selection-start-line="16" selection-start-column="126" selection-end-line="16" selection-end-column="126" />
-          <folding />
+        <state relative-caret-position="216">
+          <caret line="12" column="112" selection-start-line="4" selection-start-column="0" selection-end-line="12" selection-end-column="112" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scraper.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="183">
+          <caret line="113" column="0" selection-start-line="113" selection-start-column="0" selection-end-line="113" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#35#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

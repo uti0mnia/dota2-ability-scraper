@@ -63,7 +63,7 @@ def findNotes(divs, notes):
         return findNotes(divs[1:], notes) # recurse with the rest
 
 
-def fetch_abilities(soup):
+def fetch_abilities(soup, extra = False):
     abilities = {}
     for div in soup.findAll('div', style='display: flex; flex-wrap: wrap; align-items: flex-start;'):
         children = div.find('div', style=re.compile(r'font-weight: bold; font-size: 110%; border-bottom: 1px solid black;.*')).contents
@@ -109,10 +109,39 @@ def fetch_abilities(soup):
             'abilitySpecial': ability_special,
             'data': data,
             'modifiers': modifiers,
-            'notes': notes
+            'notes': notes,
         }
 
+        if extra:
+            for extra_div in div.find('div', style='display: inline-block; margin: 8px 0px 0px 50px; width: 190px; vertical-align: top;'):
+                if extra_div.find('img', alt='Cooldown') is not None:
+                    abilities[name]['Cooldown']
+
+
     return abilities
+
+def fetch_items(soup):
+    item_data = {}
+    # find the first ul that contains the additional information
+    div = soup.find('div', id='mw-content-text')  # get the div that contains the ul
+    ul = div.find('ul', recursive=False)  # get the ul
+    additional_info = []
+    for li in ul.findAll('li'):  # get each li in the ul
+        if li.find('li') is not None:
+            print 'Double li'
+        additional_info.append(re.sub(' +', ' ', li.text.encode('utf-8').strip()))  # removes double whitespaces
+    item_data['additional_info'] = additional_info
+
+
+    # find each ability for the item
+    # for div in soup.findAll('div', style='display: flex; flex-wrap: wrap; align-items: flex-start;'):
+    #     children = div.find('div', style=re.compile(r'font-weight: bold; font-size: 110%; border-bottom: 1px solid black;.*')).contents
+    #     # get name
+    #     name = children[0].encode('utf-8')
+    #     print name
+    #
+    pp = pprint.PrettyPrinter()
+    pp.pprint(fetch_abilities(soup))
 
 
 
@@ -178,15 +207,27 @@ def write_to_csv(ability_dict = {}, csvstr = MyCSVString()):
     return write_to_csv(ability_dict, new_csvstr)  # recurse on the rest of the dicionary and the new csv string
 
 # we need to get the abilities for each hero
+# i = 0
+# num_files = len(os.listdir('./hero_htmls/'))
+# with open('abilities.txt', 'w') as csv:
+#     for file in os.listdir('./hero_htmls/'):
+#         i += 1
+#         print str(i) + '/' + str(num_files)
+#         with open('./hero_htmls/' + file, 'r') as html:
+#             name = os.path.splitext(file)[0]
+#             print name
+#             hero_soup = BS(html.read(), 'html.parser')  # soupify the page to parse
+#             line = write_to_csv({ name:  fetch_abilities(hero_soup) }, MyCSVString()).string
+#             csv.write( line + '\n')
+
 i = 0
-num_files = len(os.listdir('./hero_htmls/'))
-with open('abilities.txt', 'w') as csv:
-    for file in os.listdir('./hero_htmls/'):
+num_files = len(os.listdir('./htmls/'))
+with open('items.csv', 'w') as csv:
+    for file in os.listdir('./htmls/'):
+        if i == 1:
+            break
         i += 1
-        print str(i) + '/' + str(num_files)
-        with open('./hero_htmls/' + file, 'r') as html:
-            name = os.path.splitext(file)[0]
-            print name
-            hero_soup = BS(html.read(), 'html.parser')  # soupify the page to parse
-            line = write_to_csv({ name:  fetch_abilities(hero_soup) }, MyCSVString()).string
-            csv.write( line + '\n')
+        print str(i) + '/' + str(num_files)  # logging
+        with open('./htmls/' + file, 'r') as html:
+            soup = BS(html.read(), 'html.parser')
+            fetch_items(soup)
