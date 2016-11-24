@@ -1,7 +1,7 @@
 from bs4 import BeautifulSoup as BS
 import re
 import os
-import pprint
+import json
 
 class MyCSVString:
     def __init__(self, item='', delimiter=',', quote='"'):
@@ -41,26 +41,26 @@ SPECIAL_SENTENCES = {
 
 # divs is an array of <ul> tags
 # notes is the array used recursively, also the return value
-def findNotes(divs, notes):
+def find_notes(divs, notes):
     # base case, we are done
     if len(divs) == 0:
         return notes
 
     # if there are any <ul>'s in the tag, recurse on them first
-    elif len(divs[0].find('li').findAll('ul')) != 0: # if there are subpoints (i.e <ul> in the <li>)
-        li = divs[0].find('li') # get the <li>
-        ul_divs = li.findAll('ul') # get the sub points
-        ul_notes = findNotes(ul_divs, []) # get the points for those sub points
-        [d.extract() for d in ul_divs] # remove them from the tag since we're done
-        text = li.text.encode('utf-8').strip() # get the text from the <li> (without children now)
+    elif len(divs[0].find('li').findAll('ul')) != 0:  # if there are subpoints (i.e <ul> in the <li>)
+        li = divs[0].find('li')  # get the <li>
+        ul_divs = li.findAll('ul')  # get the sub points
+        ul_notes = find_notes(ul_divs, [])  # get the points for those sub points
+        [d.extract() for d in ul_divs]  # remove them from the tag since we're done
+        text = li.text.encode('utf-8').strip().replace('\xe2\x80\x8b', '')  # get the text from the <li> (without children now)
         notes.append(text)
         notes.append(ul_notes)
-        return findNotes(divs[1:], notes)
+        return find_notes(divs[1:], notes)
 
     # no subpoints, get the text and return in the notes
     else:
-        [notes.append(div.text.encode('utf-8').strip()) for div in divs[0].findAll('li')]  # append all <li> text to the notes
-        return findNotes(divs[1:], notes) # recurse with the rest
+        [notes.append(div.text.encode('utf-8').strip().replace('\xe2\x80\x8b', '')) for div in divs[0].findAll('li')]  # append all <li> text to the notes
+        return find_notes(divs[1:], notes) # recurse with the rest
 
 
 def fetch_abilities(soup, extra = False):
@@ -101,7 +101,7 @@ def fetch_abilities(soup, extra = False):
         # finding notes
         note_div = div.find('div', style='flex: 2 3 400px; word-wrap: break-word;')
         if note_div is not None:
-            notes = findNotes(note_div.findAll('ul', recursive=False), [])
+            notes = find_notes(note_div.findAll('ul', recursive=False), [])
         else:
             notes = []
 
@@ -110,41 +110,43 @@ def fetch_abilities(soup, extra = False):
             'data': data,
             'modifiers': modifiers,
             'notes': notes,
+            'Cooldown': '',
+            'Mana': '',
         }
 
+        # are we getting cooldown and mana cost?
         if extra:
-            for extra_div in div.find('div', style='display: inline-block; margin: 8px 0px 0px 50px; width: 190px; vertical-align: top;'):
-                if extra_div.find('img', alt='Cooldown') is not None:
-                    abilities[name]['Cooldown']
-
+            # check if there's a cooldown "div"
+            if div.find('a', title='Cooldown') is not None:
+                abilities[name]['Cooldown'] = div.find('a', title='Cooldown').parent.parent.text.encode('utf-8').strip()
+            if div.find('a', title='Mana') is not None:
+                abilities[name]['Mana'] = div.find('a', title='Mana').parent.parent.text.replace(u'\xa0', u' ').encode('utf-8').strip()
 
     return abilities
 
 def fetch_items(soup):
+    # return dictionary
     item_data = {}
-    # find the first ul that contains the additional information
+
+    # get the main div with the data
     div = soup.find('div', id='mw-content-text')  # get the div that contains the ul
+
+    # get the ability data
+    item_data = fetch_abilities(soup, True)
+
+    # find the first ul that contains the additional information
     ul = div.find('ul', recursive=False)  # get the ul
     additional_info = []
-    for li in ul.findAll('li'):  # get each li in the ul
-        if li.find('li') is not None:
-            print 'Double li'
-        additional_info.append(re.sub(' +', ' ', li.text.encode('utf-8').strip()))  # removes double whitespaces
+
+    if ul is not None:
+        for li in ul.findAll('li'):  # get each li in the ul
+            if li.find('li') is not None:
+                print 'Double li'
+            additional_info.append(re.sub(' +', ' ', li.text.encode('utf-8').strip()).replace('\xe2\x80\x8b', '')) #  removes double whitespaces and other utf-8 bad chars
+
     item_data['additional_info'] = additional_info
 
-
-    # find each ability for the item
-    # for div in soup.findAll('div', style='display: flex; flex-wrap: wrap; align-items: flex-start;'):
-    #     children = div.find('div', style=re.compile(r'font-weight: bold; font-size: 110%; border-bottom: 1px solid black;.*')).contents
-    #     # get name
-    #     name = children[0].encode('utf-8')
-    #     print name
-    #
-    pp = pprint.PrettyPrinter()
-    pp.pprint(fetch_abilities(soup))
-
-
-
+    return item_data
 
 # this function is meant to count the length of an array recursively
 def recursive_length(array = [], length = 0):
@@ -206,28 +208,36 @@ def write_to_csv(ability_dict = {}, csvstr = MyCSVString()):
     new_csvstr = write_to_csv(value, csvstr)  # get the new csv str from the value (the dictionary)
     return write_to_csv(ability_dict, new_csvstr)  # recurse on the rest of the dicionary and the new csv string
 
+# FOR HEROES
 # we need to get the abilities for each hero
+i = 0
+num_files = len(os.listdir('./hero_htmls/'))
+with open('abilities.json', 'w') as jsonfile:
+    heroes = {}
+    for file in os.listdir('./hero_htmls/'):
+        i += 1
+        print str(i) + '/' + str(num_files)
+        with open('./hero_htmls/' + file, 'r') as html:
+            name = os.path.splitext(file)[0]
+            print name
+            hero_soup = BS(html.read(), 'html.parser')  # soupify the page to parse
+            heroes[name] = fetch_abilities(hero_soup)
+
+    json.dump(heroes, jsonfile)
+
+
+# FOR ITEMS
 # i = 0
-# num_files = len(os.listdir('./hero_htmls/'))
-# with open('abilities.txt', 'w') as csv:
-#     for file in os.listdir('./hero_htmls/'):
+# num_files = len(os.listdir('./htmls/'))
+# items = {}
+# with open('items.json', 'w') as jsonfile:
+#     for file in os.listdir('./htmls/'):
 #         i += 1
-#         print str(i) + '/' + str(num_files)
-#         with open('./hero_htmls/' + file, 'r') as html:
+#         print str(i) + '/' + str(num_files)  # logging
+#         with open('./htmls/' + file, 'r') as html:
 #             name = os.path.splitext(file)[0]
 #             print name
-#             hero_soup = BS(html.read(), 'html.parser')  # soupify the page to parse
-#             line = write_to_csv({ name:  fetch_abilities(hero_soup) }, MyCSVString()).string
-#             csv.write( line + '\n')
-
-i = 0
-num_files = len(os.listdir('./htmls/'))
-with open('items.csv', 'w') as csv:
-    for file in os.listdir('./htmls/'):
-        if i == 1:
-            break
-        i += 1
-        print str(i) + '/' + str(num_files)  # logging
-        with open('./htmls/' + file, 'r') as html:
-            soup = BS(html.read(), 'html.parser')
-            fetch_items(soup)
+#             soup = BS(html.read(), 'html.parser')
+#             items[name] = fetch_items(soup)
+#
+#     json.dump(items, jsonfile)
