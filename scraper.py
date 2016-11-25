@@ -2,23 +2,7 @@ from bs4 import BeautifulSoup as BS
 import re
 import os
 import json
-
-class MyCSVString:
-    def __init__(self, item='', delimiter=',', quote='"'):
-        self.delimiter = delimiter
-        self.quote = quote
-        self.string = ''
-        if item != '':
-            self.string = quote + str(item).replace('\n', '\\n') + quote
-
-    def write(self, item):
-        if self.string == '':
-            self.string += self.quote + str(item).replace('\n', '\\n') + self.quote
-        else:
-            self.string += self.delimiter + self.quote + str(item).replace('\n', '\\n') + self.quote
-
-    def end_line(self):
-        self.string += '\n'
+from pprint import pprint
 
 # constants
 SPECIAL_SENTENCES = {
@@ -63,7 +47,71 @@ def find_notes(divs, notes):
         return find_notes(divs[1:], notes) # recurse with the rest
 
 
-def fetch_abilities(soup, extra = False):
+def hero_data(soup, extra=True):
+    # return object
+    hero = {}
+
+    # get description
+    p = soup.find('div', id='mw-content-text').find('p')
+    description = p.text.encode('utf-8')
+    hero['description'] = description
+
+    # get info
+    tablebody = soup.find('table', class_='infobox').find('tbody')
+    trs = tablebody.findAll('tr', recursive=False)
+
+    # get attributes
+    attributes_table = trs[2].findAll('th')
+    attributes = {}
+    for th in attributes_table:
+        attributes[th.find('a').get('title')] = {
+            'base': th.text.split('+')[0].encode('utf-8').strip(),
+            'increment': th.text.split('+')[1].encode('utf-8').strip(),
+            'primary': 1 if 'primary_attribute' in th.find('img').get('src') else 0
+        }
+
+    hero['attributes'] = attributes
+
+    # get base stats
+    get_stat = lambda tr, idx: tr.findAll('td')[idx].text.encode('utf-8').strip()
+    stats_table = trs[3].findAll('tr')
+    base_stats = {}
+    base_stats['hp'] = get_stat(stats_table[1], 1)
+    base_stats['hp_regen'] = get_stat(stats_table[2], 1)
+    base_stats['mana'] = get_stat(stats_table[3], 1)
+    base_stats['mana_regen'] = get_stat(stats_table[4], 1)
+    base_stats['damage'] = {
+        'min': get_stat(stats_table[5], 1).split('\xe2\x80\x92')[0],
+        'max': get_stat(stats_table[5], 1).split('\xe2\x80\x92')[1],
+    }
+    base_stats['armor'] = get_stat(stats_table[6], 1)
+    base_stats['spell_damage'] = get_stat(stats_table[7], 1)
+    base_stats['attack/s'] = get_stat(stats_table[8], 1)
+
+    hero['base_stats'] = base_stats
+
+
+    # get misc stats
+    misc_stats_table = trs[4].findAll('tr')
+    misc_stats = {}
+    for tr in misc_stats_table:
+        misc_stats[get_stat(tr, 0).encode('utf-8').strip()] = get_stat(tr, 1).encode('utf-8').strip()
+
+    hero['misc_stats'] = misc_stats
+
+    # get bio
+    bio_trs = soup.find('div', class_='biobox').findAll('tbody')[-1].findAll('tr', recursive=False)
+    roles = []
+    for a in bio_trs[2].findAll('td')[1].findAll('a'):
+        if a.text is None or a.text == '':
+            continue
+        roles.append(a.text.encode('utf-8').strip())
+    hero['roles'] = roles
+    lore = bio_trs[3].findAll('td')[1].text.encode('utf-8').strip()
+    hero['lore'] = lore
+
+
+    #get abilities
     abilities = {}
     for div in soup.findAll('div', style='display: flex; flex-wrap: wrap; align-items: flex-start;'):
         children = div.find('div', style=re.compile(r'font-weight: bold; font-size: 110%; border-bottom: 1px solid black;.*')).contents
@@ -122,7 +170,9 @@ def fetch_abilities(soup, extra = False):
             if div.find('a', title='Mana') is not None:
                 abilities[name]['Mana'] = div.find('a', title='Mana').parent.parent.text.replace(u'\xa0', u' ').encode('utf-8').strip()
 
-    return abilities
+    hero['abilities'] = abilities
+    pprint(hero, indent=2)
+    return hero
 
 def fetch_items(soup):
     # return dictionary
@@ -148,80 +198,22 @@ def fetch_items(soup):
 
     return item_data
 
-# this function is meant to count the length of an array recursively
-def recursive_length(array = [], length = 0):
-    # base case
-    if len(array) == 0:
-        return length
-
-    # recursive call on list in list
-    item = array.pop(0)
-    if isinstance(item, list):
-        new_length = recursive_length(item, length)
-        return recursive_length(array, new_length)
-
-    # recursive call on object in list
-    return recursive_length(array, length + 1)
-
-
-# this function is meant to write a csv style string of an array, including the length of each sub array
-def write_array_to_csv(array = [], csvstr = MyCSVString(), length = 0):
-    # base case
-    if len(array) == 0:
-        return csvstr, length
-
-    item = array.pop(0) # get the item we will write
-
-    # prepare for recursion on a list
-    if isinstance(item, list):
-        csvstr.write(len(item))  # write the number of items in this array for reading (this is a sub item)
-        new_csvstr, new_length  = write_array_to_csv(item, csvstr, length)
-        return write_array_to_csv(array, new_csvstr, new_length)
-
-    # item is not a list
-    length += 1
-    csvstr.write(item)
-
-    # preparefor recursion on an object
-    return write_array_to_csv(array, csvstr, length)
-
-
-# this function is meant to write a dictionary of objects or arrays to a csv type string and return it
-def write_to_csv(ability_dict = {}, csvstr = MyCSVString()):
-    # base case
-    if not ability_dict:
-        return csvstr
-
-    key, value = ability_dict.popitem() # get what we want to be writing
-
-    # if it's a list, recursive write the list data
-    if isinstance(value, list):
-        csvstr.write(key)
-        my_csv, length = write_array_to_csv(value, MyCSVString())
-        csvstr.write(length)  # write the number of items that we'll be writing
-        csvstr.write(my_csv.string[1:-1])  # write the array to the csv string (remove the 1st and last quotation)
-        return write_to_csv(ability_dict, csvstr)  # recurse on the rest of the dictionary
-
-    # it's not a list (it's a dictionary)
-    csvstr.write(key)  # we want to write the name/ability name
-    csvstr.write(len(value))  # write the number of abilities (otr data objects) we're about to write
-    new_csvstr = write_to_csv(value, csvstr)  # get the new csv str from the value (the dictionary)
-    return write_to_csv(ability_dict, new_csvstr)  # recurse on the rest of the dicionary and the new csv string
-
 # FOR HEROES
 # we need to get the abilities for each hero
 i = 0
 num_files = len(os.listdir('./hero_htmls/'))
-with open('abilities.json', 'w') as jsonfile:
+with open('heroes.json', 'w') as jsonfile:
     heroes = {}
     for file in os.listdir('./hero_htmls/'):
+        if i == 1:
+            break
         i += 1
         print str(i) + '/' + str(num_files)
         with open('./hero_htmls/' + file, 'r') as html:
             name = os.path.splitext(file)[0]
             print name
             hero_soup = BS(html.read(), 'html.parser')  # soupify the page to parse
-            heroes[name] = fetch_abilities(hero_soup)
+            heroes[name] = hero_data(hero_soup)
 
     json.dump(heroes, jsonfile)
 
