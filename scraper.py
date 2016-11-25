@@ -1,4 +1,4 @@
-from bs4 import BeautifulSoup as BS
+from bs4 import BeautifulSoup as BS, NavigableString
 import re
 import os
 import json
@@ -46,6 +46,72 @@ def find_notes(divs, notes):
         [notes.append(div.text.encode('utf-8').strip().replace('\xe2\x80\x8b', '')) for div in divs[0].findAll('li')]  # append all <li> text to the notes
         return find_notes(divs[1:], notes) # recurse with the rest
 
+def fetch_abilities(soup, extra=True):
+    abilities = {}
+    for div in soup.findAll('div', style='display: flex; flex-wrap: wrap; align-items: flex-start;'):
+        children = div.find('div', style=re.compile(
+            r'font-weight: bold; font-size: 110%; border-bottom: 1px solid black;.*')).contents
+        # get name
+        name = children[0].encode('utf-8')
+
+        # get the special information
+        ability_special = [SPECIAL_SENTENCES[a['title'].encode('utf-8')] for a in
+                           children[1].findAll('a', recursive=False)]
+
+        # get the data about the ability
+        div_data = div.find('div', style='vertical-align:top; padding: 3px 5px;')
+        data = []
+
+        # find all the divs
+        for data_item in div_data.findAll('div'):
+            # we want to break once we hit the modifiers
+            if data_item.find('b') is not None and data_item.find('b').text == 'Modifiers':
+                break
+            if data_item.text.strip() != '':  # make sure it's not empty (some are)
+                if data_item.has_attr('style'):
+                    # we're checking if it has a style (i.e mana/cooldown) and we want to ignore it
+                    if re.search(r'display: inline-block.*', data_item['style']):
+                        continue
+                a_tag = data_item.find(
+                    'a')  # this is for the special ablities (i.e aghs upgrade, linken partial, etc...)
+                if a_tag is not None:
+                    # we want to append the data so when we can add it when getting the div's text
+                    a_tag.append(SPECIAL_SENTENCES[a_tag['title']])
+
+                # we finally have a data object to push
+                data.append(data_item.text.replace(u'\xa0', u' ').encode('utf-8').strip())
+
+        modifiers = []
+        # finding the modifiers
+        for d in div_data.findAll('div', style='font-size: 85%; margin-left: 10px;'):
+            modifiers += [item.strip().replace(u'\xa0', u' ').encode('utf-8') for item in d.text.strip().split('\n')]
+
+        # finding notes
+        note_div = div.find('div', style='flex: 2 3 400px; word-wrap: break-word;')
+        if note_div is not None:
+            notes = find_notes(note_div.findAll('ul', recursive=False), [])
+        else:
+            notes = []
+
+        abilities[name] = {
+            'abilitySpecial': ability_special,
+            'data': data,
+            'modifiers': modifiers,
+            'notes': notes,
+            'Cooldown': '',
+            'Mana': '',
+        }
+
+        # are we getting cooldown and mana cost?
+        if extra:
+            # check if there's a cooldown "div"
+            if div.find('a', title='Cooldown') is not None:
+                abilities[name]['Cooldown'] = div.find('a', title='Cooldown').parent.parent.text.encode('utf-8').strip()
+            if div.find('a', title='Mana') is not None:
+                abilities[name]['Mana'] = div.find('a', title='Mana').parent.parent.text.replace(u'\xa0', u' ').encode(
+                    'utf-8').strip()
+
+    return abilities
 
 def hero_data(soup, extra=True):
     # return object
@@ -112,64 +178,7 @@ def hero_data(soup, extra=True):
 
 
     #get abilities
-    abilities = {}
-    for div in soup.findAll('div', style='display: flex; flex-wrap: wrap; align-items: flex-start;'):
-        children = div.find('div', style=re.compile(r'font-weight: bold; font-size: 110%; border-bottom: 1px solid black;.*')).contents
-        # get name
-        name = children[0].encode('utf-8')
-
-        # get the special information
-        ability_special = [SPECIAL_SENTENCES[a['title'].encode('utf-8')] for a in children[1].findAll('a', recursive=False)]
-
-        # get the data about the ability
-        div_data = div.find('div', style='vertical-align:top; padding: 3px 5px;')
-        data = []
-
-        # find all the divs
-        for data_item in div_data.findAll('div'):
-            # we want to break once we hit the modifiers
-            if data_item.find('b') is not None and data_item.find('b').text == 'Modifiers':
-                break
-            if data_item.text.strip() != '': # make sure it's not empty (some are)
-                if data_item.has_attr('style'):
-                    if re.search(r'display: inline-block.*', data_item['style']): # we're checking if it has a style (i.e mana/cooldown) and we want to ignore it
-                        continue
-                a_tag = data_item.find('a') # this is for the special ablities (i.e aghs upgrade, linken partial, etc...)
-                if a_tag is not None:
-                    a_tag.append(SPECIAL_SENTENCES[a_tag['title']]) # we want to append the data so when we can add it when getting the div's text
-
-                # we finally have a data object to push
-                data.append(data_item.text.replace(u'\xa0', u' ').encode('utf-8').strip())
-
-        modifiers = []
-        # finding the modifiers
-        for d in div_data.findAll('div', style='font-size: 85%; margin-left: 10px;'):
-            modifiers += [item.strip().replace(u'\xa0', u' ').encode('utf-8') for item in d.text.strip().split('\n')]
-
-        # finding notes
-        note_div = div.find('div', style='flex: 2 3 400px; word-wrap: break-word;')
-        if note_div is not None:
-            notes = find_notes(note_div.findAll('ul', recursive=False), [])
-        else:
-            notes = []
-
-        abilities[name] = {
-            'abilitySpecial': ability_special,
-            'data': data,
-            'modifiers': modifiers,
-            'notes': notes,
-            'Cooldown': '',
-            'Mana': '',
-        }
-
-        # are we getting cooldown and mana cost?
-        if extra:
-            # check if there's a cooldown "div"
-            if div.find('a', title='Cooldown') is not None:
-                abilities[name]['Cooldown'] = div.find('a', title='Cooldown').parent.parent.text.encode('utf-8').strip()
-            if div.find('a', title='Mana') is not None:
-                abilities[name]['Mana'] = div.find('a', title='Mana').parent.parent.text.replace(u'\xa0', u' ').encode('utf-8').strip()
-
+    abilities = fetch_abilities(soup, extra)
     hero['abilities'] = abilities
     pprint(hero, indent=2)
     return hero
@@ -182,7 +191,7 @@ def fetch_items(soup):
     div = soup.find('div', id='mw-content-text')  # get the div that contains the ul
 
     # get the ability data
-    item_data = fetch_abilities(soup, True)
+    item_data['abilities'] = fetch_abilities(soup, True)
 
     # find the first ul that contains the additional information
     ul = div.find('ul', recursive=False)  # get the ul
@@ -196,40 +205,87 @@ def fetch_items(soup):
 
     item_data['additional_info'] = additional_info
 
+    # find the table with the item info and get its <tr> tags
+    trs = soup.find('table', class_='infobox').find('tbody').findAll('tr', recursive=False)
+    item_data['lore'] = trs[3].text.encode('utf-8').strip()
+    item_data['cost'] = re.sub(r'[a-z]|[A-Z]', '', trs[4].find('th').find('div').text)  # removes text (keeps cost + recipe)
+    item_data['type'] = re.sub(r'Bought From', '', trs[4].find('th').findAll('div', recursive=False)[-1].text)
+
+    # get the details
+    detail_trs = trs[-1].find('tbody').findAll('tr')
+    details = {}
+    for tr in detail_trs:
+        # make sure it's not empty
+        if tr.find('td') is None:
+            continue
+        detail = tr.find('td').text.encode('utf-8').strip()
+
+        # if it's a recipe, we do something different
+        if detail == 'Recipe':
+            recipe_td = detail_trs[-1].find('td')  # the recipe is always the last tag
+
+            # get what the item build into
+            builds_into_div = recipe_td.find('div')
+            builds_into = []
+            for a in builds_into_div.findAll('a'):
+                builds_into_div.append(re.sub(r'\(|\)|[0-9]', '', a.get('title')))
+
+            # get the items that build it
+            builds_from_div = recipe_td.findAll('div', recursive=False)[-1]
+            builds_from = []
+            for a in builds_from_div.findAll('a'):
+                builds_from.append(re.sub('\(|\)|[0-9]', '', a.get('title')).encode('utf-8').strip())
+
+            details['builds_from'] = builds_from
+            details['builds_into'] = builds_into
+            break
+
+        # we want to clear the br (make them into ',')
+        for br in tr.findAll('td')[1].findAll('br'):
+            br.name = 'p'
+            br.insert(0, NavigableString(','))
+
+        details[detail] = [x.strip() for x in tr.findAll('td')[1].text.encode('utf-8').split(',') if x.strip() != '']
+
+    item_data['details'] = details
+
     return item_data
 
 # FOR HEROES
 # we need to get the abilities for each hero
-i = 0
-num_files = len(os.listdir('./hero_htmls/'))
-with open('heroes.json', 'w') as jsonfile:
-    heroes = {}
-    for file in os.listdir('./hero_htmls/'):
-        if i == 1:
-            break
-        i += 1
-        print str(i) + '/' + str(num_files)
-        with open('./hero_htmls/' + file, 'r') as html:
-            name = os.path.splitext(file)[0]
-            print name
-            hero_soup = BS(html.read(), 'html.parser')  # soupify the page to parse
-            heroes[name] = hero_data(hero_soup)
-
-    json.dump(heroes, jsonfile)
+# i = 0
+# num_files = len(os.listdir('./hero_htmls/'))
+# with open('heroes.json', 'w') as jsonfile:
+#     heroes = {}
+#     for file in os.listdir('./hero_htmls/'):
+#         if i == 1:
+#             break
+#         i += 1
+#         print str(i) + '/' + str(num_files)
+#         with open('./hero_htmls/' + file, 'r') as html:
+#             name = os.path.splitext(file)[0]
+#             print name
+#             hero_soup = BS(html.read(), 'html.parser')  # soupify the page to parse
+#             heroes[name] = hero_data(hero_soup)
+#
+#     json.dump(heroes, jsonfile)
 
 
 # FOR ITEMS
-# i = 0
-# num_files = len(os.listdir('./htmls/'))
-# items = {}
-# with open('items.json', 'w') as jsonfile:
-#     for file in os.listdir('./htmls/'):
-#         i += 1
-#         print str(i) + '/' + str(num_files)  # logging
-#         with open('./htmls/' + file, 'r') as html:
-#             name = os.path.splitext(file)[0]
-#             print name
-#             soup = BS(html.read(), 'html.parser')
-#             items[name] = fetch_items(soup)
-#
-#     json.dump(items, jsonfile)
+i = 0
+num_files = len(os.listdir('./htmls/'))
+items = {}
+with open('items.json', 'w') as jsonfile:
+    for file in os.listdir('./htmls/'):
+        if i == 1:
+            break
+        i += 1
+        print str(i) + '/' + str(num_files)  # logging
+        with open('./htmls/' + file, 'r') as html:
+            name = os.path.splitext(file)[0]
+            print name
+            soup = BS(html.read(), 'html.parser')
+            items[name] = fetch_items(soup)
+
+    pprint(items)
+    json.dump(items, jsonfile)
