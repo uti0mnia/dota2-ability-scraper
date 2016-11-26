@@ -2,7 +2,7 @@ from bs4 import BeautifulSoup as BS, NavigableString
 import re
 import os
 import json
-from pprint import pprint
+from pprint import pprint, pformat
 
 # constants
 SPECIAL_SENTENCES = {
@@ -152,7 +152,7 @@ def hero_data(soup, extra=True):
     }
     base_stats['armor'] = get_stat(stats_table[6], 1)
     base_stats['spell_damage'] = get_stat(stats_table[7], 1)
-    base_stats['attack/s'] = get_stat(stats_table[8], 1)
+    base_stats['attack_s'] = get_stat(stats_table[8], 1)
 
     hero['base_stats'] = base_stats
 
@@ -180,7 +180,6 @@ def hero_data(soup, extra=True):
     #get abilities
     abilities = fetch_abilities(soup, extra)
     hero['abilities'] = abilities
-    pprint(hero, indent=2)
     return hero
 
 def fetch_items(soup):
@@ -216,7 +215,7 @@ def fetch_items(soup):
     details = {}
     for tr in detail_trs:
         # make sure it's not empty
-        if tr.find('td') is None:
+        if tr.find('td') is None or tr.find('td').text.strip() == '':
             continue
         detail = tr.find('td').text.encode('utf-8').strip()
 
@@ -228,7 +227,7 @@ def fetch_items(soup):
             builds_into_div = recipe_td.find('div')
             builds_into = []
             for a in builds_into_div.findAll('a'):
-                builds_into_div.append(re.sub(r'\(|\)|[0-9]', '', a.get('title')))
+                builds_into.append(re.sub(r'\(|\)|[0-9]', '', a.get('title')).encode('utf-8').strip())
 
             # get the items that build it
             builds_from_div = recipe_td.findAll('div', recursive=False)[-1]
@@ -258,8 +257,6 @@ def fetch_items(soup):
 # with open('heroes.json', 'w') as jsonfile:
 #     heroes = {}
 #     for file in os.listdir('./hero_htmls/'):
-#         if i == 1:
-#             break
 #         i += 1
 #         print str(i) + '/' + str(num_files)
 #         with open('./hero_htmls/' + file, 'r') as html:
@@ -272,20 +269,39 @@ def fetch_items(soup):
 
 
 # FOR ITEMS
-i = 0
-num_files = len(os.listdir('./htmls/'))
-items = {}
-with open('items.json', 'w') as jsonfile:
-    for file in os.listdir('./htmls/'):
-        if i == 1:
-            break
-        i += 1
-        print str(i) + '/' + str(num_files)  # logging
-        with open('./htmls/' + file, 'r') as html:
-            name = os.path.splitext(file)[0]
-            print name
-            soup = BS(html.read(), 'html.parser')
-            items[name] = fetch_items(soup)
+# i = 0
+# num_files = len(os.listdir('./htmls/'))
+# items = {}
+# with open('items.json', 'w') as jsonfile:
+#     for file in os.listdir('./htmls/'):
+#         i += 1
+#         print str(i) + '/' + str(num_files)  # logging
+#         with open('./htmls/' + file, 'r') as html:
+#             name = os.path.splitext(file)[0]
+#             print name
+#             soup = BS(html.read(), 'html.parser')
+#             items[name] = fetch_items(soup)
+#
+#     json.dump(items, jsonfile)
 
-    pprint(items)
-    json.dump(items, jsonfile)
+# combine files into 1
+with open('heroes_fixed.json', 'r') as herofile:
+    heroes = json.load(herofile)
+    with open('items.json', 'r') as itemfile:
+        items = json.load(itemfile)
+        new_json = {}
+        new_json['hero'] = heroes
+        new_json['item'] = items
+        with open('dota.json', 'w') as dotafile:
+            json.dump(new_json, dotafile)
+
+# pretty print it for readability
+# with open('heroes_fixed.json', 'r') as file:
+#     data = json.load(file)
+#     with open('heroes_pretty.json', 'w') as prettyfile:
+#         prettyfile.write(pformat(data, indent=2))
+#
+# with open('items_fixed.json', 'r') as file:
+#     data = json.load(file)
+#     with open('items_pretty.json', 'w') as prettyfile:
+#         prettyfile.write(pformat(data, indent=2))
