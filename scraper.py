@@ -1,6 +1,7 @@
 from bs4 import BeautifulSoup as BS, NavigableString
 import re
 import os
+import urllib
 import json
 from pprint import pprint, pformat
 
@@ -20,7 +21,9 @@ SPECIAL_SENTENCES = {
     'Can be used by illusions.': 'ILLUSIONS_CAN_USE',
     'Not blocked by Linken\'s Sphere.': 'NOT_BLOCKED_BY_LINKEN',
     'Partially blocked by Linken\'s Sphere.': 'PARTIAL_BLOCKED_BY_LINKEN',
-    'Blocked by Linken\'s Sphere.': 'BLOCKED_BY_LINKEN'
+    'Blocked by Linken\'s Sphere.': 'BLOCKED_BY_LINKEN',
+    'Available at Secret Shop': 'SECRET_SHOP',
+    'Available at Side Lane Shop': 'SIDE_SHOP'
 }
 
 # divs is an array of <ul> tags
@@ -49,8 +52,7 @@ def find_notes(divs, notes):
 def fetch_abilities(soup, extra=True):
     abilities = {}
     for div in soup.findAll('div', style='display: flex; flex-wrap: wrap; align-items: flex-start;'):
-        children = div.find('div', style=re.compile(
-            r'font-weight: bold; font-size: 110%; border-bottom: 1px solid black;.*')).contents
+        children = div.find('div', style=re.compile(r'font-weight: bold; font-size: 110%; border-bottom: 1px solid black;.*')).contents
         # get name
         name = children[0].encode('utf-8')
 
@@ -206,6 +208,9 @@ def fetch_items(soup):
 
     # find the table with the item info and get its <tr> tags
     trs = soup.find('table', class_='infobox').find('tbody').findAll('tr', recursive=False)
+    item_data['availability'] = []
+    for span in trs[0].findAll('span'):
+        item_data['availability'].append(SPECIAL_SENTENCES[span.get('title')])
     item_data['lore'] = trs[3].text.encode('utf-8').strip()
     item_data['cost'] = re.sub(r'[a-z]|[A-Z]', '', trs[4].find('th').find('div').text)  # removes text (keeps cost + recipe)
     item_data['type'] = re.sub(r'Bought From', '', trs[4].find('th').findAll('div', recursive=False)[-1].text)
@@ -250,6 +255,54 @@ def fetch_items(soup):
 
     return item_data
 
+def fetch_item_image(soup, name):
+    table = soup.find('table', class_='infobox')
+    tr = table.find('tbody').findAll('tr', recursive=False)[1]
+    img = tr.find('img')
+    urllib.urlretrieve(img.get('src'), './images/' + name + '.' + img.get('alt').split('.')[-1])
+
+
+def fetch_hero_images(soup, hero_name):
+    fetch_image(soup)
+    fetch_ability_images(soup, hero_name)
+
+def fetch_image(soup):
+    table = soup.find('table', class_='infobox')
+    img = table.find('img')
+    name = table.find('tr').text.encode('utf-8').strip()
+    urllib.urlretrieve(img.get('src'), './images/' + name + '.' + img.get('alt').split('.')[-1])
+
+def fetch_ability_images(soup, owner):
+    # get each ability
+    for div in soup.findAll('div', style='display: flex; flex-wrap: wrap; align-items: flex-start;'):
+        children = div.find('div', style=re.compile(r'font-weight: bold; font-size: 110%; border-bottom: 1px solid black;.*')).contents
+        # get name
+        name = children[0].encode('utf-8')
+        div_img = div.find('div', class_=re.compile(r'ico_.*'))
+        img = div_img.find('img')
+        urllib.urlretrieve(img.get('src'), './images/' + name + '_' + owner + '.' + img.get('alt').split('.')[-1])
+
+
+# FOR IMAGES
+i = 0
+num_files = len(os.listdir('./hero_htmls/')) + len(os.listdir('./htmls/'))
+# for file in os.listdir('./hero_htmls/'):
+#     i += 1
+#     print str(i) + '/' + str(num_files)
+#     with open('./hero_htmls/' + file, 'r') as html:
+#         name = os.path.splitext(file)[0]
+#         soup = BS(html.read(), 'html.parser')
+#         fetch_hero_images(soup, name)
+
+# for file in os.listdir('./htmls/'):
+#     i += 1
+#     print str(i) + '/' + str(num_files)
+#     with open('./htmls/' + file, 'r') as html:
+#         name = os.path.splitext(file)[0]
+#         soup = BS(html.read(), 'html.parser')
+#         fetch_item_image(soup, name)
+
+
 # FOR HEROES
 # we need to get the abilities for each hero
 # i = 0
@@ -287,7 +340,7 @@ def fetch_items(soup):
 # combine files into 1
 with open('heroes_fixed.json', 'r') as herofile:
     heroes = json.load(herofile)
-    with open('items.json', 'r') as itemfile:
+    with open('items_fixed.json', 'r') as itemfile:
         items = json.load(itemfile)
         new_json = {}
         new_json['hero'] = heroes
