@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
 from bs4 import BeautifulSoup as BS, NavigableString
 import re
 import os
@@ -50,8 +52,9 @@ def find_notes(divs, notes):
         return find_notes(divs[1:], notes) # recurse with the rest
 
 def fetch_abilities(soup, extra=True):
-    abilities = {}
+    abilities = []
     for div in soup.findAll('div', style='display: flex; flex-wrap: wrap; align-items: flex-start;'):
+        ability = {}
         children = div.find('div', style=re.compile(r'font-weight: bold; font-size: 110%; border-bottom: 1px solid black;.*')).contents
         # get name
         name = children[0].encode('utf-8')
@@ -95,7 +98,7 @@ def fetch_abilities(soup, extra=True):
         else:
             notes = []
 
-        abilities[name] = {
+        ability[name] = {
             'abilitySpecial': ability_special,
             'data': data,
             'modifiers': modifiers,
@@ -108,10 +111,13 @@ def fetch_abilities(soup, extra=True):
         if extra:
             # check if there's a cooldown "div"
             if div.find('a', title='Cooldown') is not None:
-                abilities[name]['Cooldown'] = div.find('a', title='Cooldown').parent.parent.text.encode('utf-8').strip()
+                ability[name]['Cooldown'] = div.find('a', title='Cooldown').parent.parent.text.encode('utf-8').strip()
             if div.find('a', title='Mana') is not None:
-                abilities[name]['Mana'] = div.find('a', title='Mana').parent.parent.text.replace(u'\xa0', u' ').encode(
+                ability[name]['Mana'] = div.find('a', title='Mana').parent.parent.text.replace(u'\xa0', u' ').encode(
                     'utf-8').strip()
+
+        # add to array
+        abilities.append(ability)
 
     return abilities
 
@@ -282,6 +288,17 @@ def fetch_ability_images(soup, owner):
         img = div_img.find('img')
         urllib.urlretrieve(img.get('src'), './images/' + name + '_' + owner + '.' + img.get('alt').split('.')[-1])
 
+def replace_unicode(string):
+    REPLACE_STRINGS = {
+        '\u2019': '',
+        '\u02da': '˚',
+        '\u00b1': '±',
+        '\u2019': '\'',
+        '\u200b': '',
+    }
+    pattern = re.compile('|'.join(re.escape(key) for key in REPLACE_STRINGS.keys()))
+    return pattern.sub(lambda x: REPLACE_STRINGS[x.group()], string)
+
 
 # FOR IMAGES
 i = 0
@@ -337,16 +354,32 @@ num_files = len(os.listdir('./hero_htmls/')) + len(os.listdir('./htmls/'))
 #
 #     json.dump(items, jsonfile)
 
+# fix files
+with open ('items.json', 'r') as jsonfile:
+    jsondata = json.load(jsonfile, encoding='utf-8')
+    data = json.dumps(jsondata, encoding='utf-8')
+    fixed = replace_unicode(data)
+    with open('items_fixed.json', 'w') as fixed_file:
+        fixed_file.write(fixed)
+
+with open('heroes.json', 'r') as jsonfile:
+    jsondata = json.load(jsonfile, encoding='utf-8')
+    data = json.dumps(jsondata, encoding='utf-8')
+    fixed = replace_unicode(data)
+    with open('heroes_fixed.json', 'w') as fixed_file:
+        fixed_file.write(fixed)
+
+
 # combine files into 1
 with open('heroes_fixed.json', 'r') as herofile:
-    heroes = json.load(herofile)
+    heroes = json.load(herofile, encoding='utf-8')
     with open('items_fixed.json', 'r') as itemfile:
-        items = json.load(itemfile)
+        items = json.load(itemfile, encoding='utf-8')
         new_json = {}
         new_json['hero'] = heroes
         new_json['item'] = items
         with open('dota.json', 'w') as dotafile:
-            json.dump(new_json, dotafile)
+            json.dump(new_json, dotafile, encoding='utf-8')
 
 # pretty print it for readability
 # with open('heroes_fixed.json', 'r') as file:
