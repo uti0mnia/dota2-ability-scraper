@@ -308,91 +308,98 @@ def replace_unicode(string):
 
 
 # FOR IMAGES
-i = 0
-num_files = len(os.listdir('./hero_htmls/')) + len(os.listdir('./htmls/'))
-# for file in os.listdir('./hero_htmls/'):
-#     i += 1
-#     print str(i) + '/' + str(num_files)
-#     with open('./hero_htmls/' + file, 'r') as html:
-#         name = os.path.splitext(file)[0]
-#         soup = BS(html.read(), 'html.parser')
-#         fetch_hero_images(soup, name)
+def fetch_images():
+    i = 0
+    num_files = len(os.listdir('./hero_htmls/')) + len(os.listdir('./htmls/'))
+    for file in os.listdir('./hero_htmls/'):
+        i += 1
+        print str(i) + '/' + str(num_files)
+        with open('./hero_htmls/' + file, 'r') as html:
+            name = os.path.splitext(file)[0]
+            soup = BS(html.read(), 'html.parser')
+            fetch_hero_images(soup, name)
 
-# for file in os.listdir('./htmls/'):
-#     i += 1
-#     print str(i) + '/' + str(num_files)
-#     with open('./htmls/' + file, 'r') as html:
-#         name = os.path.splitext(file)[0]
-#         soup = BS(html.read(), 'html.parser')
-#         fetch_item_image(soup, name)
-
-
-# FOR HEROES
-# we need to get the abilities for each hero
-# i = 0
-# num_files = len(os.listdir('./hero_htmls/'))
-# with open('heroes.json', 'w') as jsonfile:
-#     heroes = {}
-#     for file in os.listdir('./hero_htmls/'):
-#         i += 1
-#         print str(i) + '/' + str(num_files)
-#         with open('./hero_htmls/' + file, 'r') as html:
-#             name = os.path.splitext(file)[0]
-#             print name
-#             hero_soup = BS(html.read(), 'html.parser')  # soupify the page to parse
-#             heroes[name] = hero_data(hero_soup)
-#
-#     json.dump(heroes, jsonfile)
+    for file in os.listdir('./htmls/'):
+        i += 1
+        print str(i) + '/' + str(num_files)
+        with open('./htmls/' + file, 'r') as html:
+            name = os.path.splitext(file)[0]
+            soup = BS(html.read(), 'html.parser')
+            fetch_item_image(soup, name)
 
 
-# FOR ITEMS
-# i = 0
-# num_files = len(os.listdir('./htmls/'))
-# items = {}
-# with open('items.json', 'w') as jsonfile:
-#     for file in os.listdir('./htmls/'):
-#         i += 1
-#         print str(i) + '/' + str(num_files)  # logging
-#         with open('./htmls/' + file, 'r') as html:
-#             name = os.path.splitext(file)[0]
-#             print name
-#             soup = BS(html.read(), 'html.parser')
-#             items[name] = fetch_items(soup)
-#
-#     json.dump(items, jsonfile)
+def hero_data():
+    # we need to get the abilities for each hero
+    i = 0
+    num_files = len(os.listdir('./hero_htmls/'))
+    with open('heroes.json', 'w') as jsonfile:
+        heroes = {}
+        for file in os.listdir('./hero_htmls/'):
+            i += 1
+            print str(i) + '/' + str(num_files)
+            with open('./hero_htmls/' + file, 'r') as html:
+                name = os.path.splitext(file)[0]
+                print name
+                hero_soup = BS(html.read(), 'html.parser')  # soupify the page to parse
+                heroes[name] = hero_data(hero_soup)
 
-# fix files
-with open ('items.json', 'r') as jsonfile:
-    data = jsonfile.read()
-    fixed = replace_unicode(data)
-    with open('items_fixed.json', 'w') as fixed_file:
-        fixed_file.write(fixed)
-
-with open('heroes.json', 'r') as jsonfile:
-    data = jsonfile.read()
-    fixed = replace_unicode(data)
-    with open('heroes_fixed.json', 'w') as fixed_file:
-        fixed_file.write(fixed)
+        json.dump(heroes, jsonfile)
 
 
-# combine files into 1
-with open('heroes_fixed.json', 'r') as herofile:
-    heroes = herofile.read()
-    with open('items_fixed.json', 'r') as itemfile:
-        items = itemfile.read()
-        new_json = {}
-        new_json['hero'] = heroes
-        new_json['item'] = items
-        with open('dota.json', 'w') as dotafile:
-            json.dump(new_json, dotafile, encoding='utf-8')
+def item_data():
+    i = 0
+    num_files = len(os.listdir('./htmls/'))
+    items = {}
+    with open('items.json', 'w') as jsonfile:
+        for file in os.listdir('./htmls/'):
+            i += 1
+            print str(i) + '/' + str(num_files)  # logging
+            with open('./htmls/' + file, 'r') as html:
+                name = os.path.splitext(file)[0]
+                print name
+                soup = BS(html.read(), 'html.parser')
+                items[name] = fetch_items(soup)
 
-# pretty print it for readability
-# with open('heroes_fixed.json', 'r') as file:
-#     data = json.load(file)
-#     with open('heroes_pretty.json', 'w') as prettyfile:
-#         prettyfile.write(pformat(data, indent=2))
-#
-# with open('items_fixed.json', 'r') as file:
-#     data = json.load(file)
-#     with open('items_pretty.json', 'w') as prettyfile:
-#         prettyfile.write(pformat(data, indent=2))
+        json.dump(items, jsonfile)
+
+def fix_items():
+    # fix files
+    with open('items.json', 'r') as jsonfile:
+        data = jsonfile.read()
+        fixed = replace_unicode(data)
+        with open('items_fixed.json', 'w') as fixed_file:
+            fixed_file.write(fixed)
+
+def fix_heroes():
+    with open('heroes.json', 'r') as jsonfile:
+        data = jsonfile.read()
+        fixed = replace_unicode(data)
+        with open('heroes_fixed.json', 'w') as fixed_file:
+            fixed_file.write(fixed)
+
+
+def combine():
+    # combine files into 1
+    with open('heroes_fixed.json', 'r') as herofile:
+        heroes = herofile.read()
+        with open('items_fixed.json', 'r') as itemfile:
+            items = itemfile.read()
+            new_json = {}
+            new_json['hero'] = heroes
+            new_json['item'] = items
+            with open('dota.json', 'w') as dotafile:
+                json.dump(new_json, dotafile, encoding='utf-8')
+
+def pretty_print():
+    # pretty print it for readability
+    with open('heroes_fixed.json', 'r') as file:
+        data = json.load(file)
+        with open('heroes_pretty.json', 'w') as prettyfile:
+            prettyfile.write(pformat(data, indent=2))
+
+    with open('items_fixed.json', 'r') as file:
+        data = json.load(file)
+        with open('items_pretty.json', 'w') as prettyfile:
+            prettyfile.write(pformat(data, indent=2))
+
+
