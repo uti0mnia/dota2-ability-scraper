@@ -370,15 +370,15 @@ def get_items():
 def combine():
     # combine files into 1
     with open('heroes.json', 'r') as herofile:
-        heroes = herofile.read()
+        heroes = json.load(herofile)
         with open('items.json', 'r') as itemfile:
-            items = itemfile.read()
+            items = json.load(itemfile)
             new_json = {
                 'hero': heroes,
                 'item': items,
             }
             with open('dota.json', 'w') as dotafile:
-                json.dump(new_json, dotafile, ensure_ascii=False)
+                json.dump(new_json, dotafile)
 
 def pretty_print():
     # pretty print it for readability
@@ -393,6 +393,4 @@ def pretty_print():
             prettyfile.write(pformat(data, indent=2))
 
 
-get_heroes()
-get_items()
 combine()
