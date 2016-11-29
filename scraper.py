@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+# !/usr/bin/env python
 # -*- coding: utf-8 -*-
 from bs4 import BeautifulSoup as BS, NavigableString
 import re
@@ -290,11 +290,18 @@ def fetch_ability_images(soup, owner):
 
 def replace_unicode(string):
     REPLACE_STRINGS = {
-        '\u2019': '',
         '\u02da': '˚',
         '\u00b1': '±',
         '\u2019': '\'',
         '\u200b': '',
+        '\u00a0': '',
+        '\u2014': '-',
+        '\u2026': '...',
+        '\u201c': '\"',
+        '\u201d': '\"',
+        '\u00d7': 'x',
+        '\u00b0': '˚',
+        '\u2013': '-',
     }
     pattern = re.compile('|'.join(re.escape(key) for key in REPLACE_STRINGS.keys()))
     return pattern.sub(lambda x: REPLACE_STRINGS[x.group()], string)
@@ -356,15 +363,13 @@ num_files = len(os.listdir('./hero_htmls/')) + len(os.listdir('./htmls/'))
 
 # fix files
 with open ('items.json', 'r') as jsonfile:
-    jsondata = json.load(jsonfile, encoding='utf-8')
-    data = json.dumps(jsondata, encoding='utf-8')
+    data = jsonfile.read()
     fixed = replace_unicode(data)
     with open('items_fixed.json', 'w') as fixed_file:
         fixed_file.write(fixed)
 
 with open('heroes.json', 'r') as jsonfile:
-    jsondata = json.load(jsonfile, encoding='utf-8')
-    data = json.dumps(jsondata, encoding='utf-8')
+    data = jsonfile.read()
     fixed = replace_unicode(data)
     with open('heroes_fixed.json', 'w') as fixed_file:
         fixed_file.write(fixed)
@@ -372,9 +377,9 @@ with open('heroes.json', 'r') as jsonfile:
 
 # combine files into 1
 with open('heroes_fixed.json', 'r') as herofile:
-    heroes = json.load(herofile, encoding='utf-8')
+    heroes = herofile.read()
     with open('items_fixed.json', 'r') as itemfile:
-        items = json.load(itemfile, encoding='utf-8')
+        items = itemfile.read()
         new_json = {}
         new_json['hero'] = heroes
         new_json['item'] = items
