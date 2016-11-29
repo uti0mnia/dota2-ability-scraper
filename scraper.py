@@ -3,6 +3,7 @@
 from bs4 import BeautifulSoup as BS, NavigableString
 import re
 import os
+import codecs
 import urllib
 import json
 from pprint import pprint, pformat
@@ -27,6 +28,8 @@ SPECIAL_SENTENCES = {
     'Available at Secret Shop': 'SECRET_SHOP',
     'Available at Side Lane Shop': 'SIDE_SHOP'
 }
+HERO_HTMLS = './htmls/heroes/'
+ITEM_HTMLS = './htmls/items/'
 
 # divs is an array of <ul> tags
 # notes is the array used recursively, also the return value
@@ -77,14 +80,15 @@ def fetch_abilities(soup, extra=True):
                     # we're checking if it has a style (i.e mana/cooldown) and we want to ignore it
                     if re.search(r'display: inline-block.*', data_item['style']):
                         continue
-                a_tag = data_item.find(
-                    'a')  # this is for the special ablities (i.e aghs upgrade, linken partial, etc...)
+                # this is for the special ablities (i.e aghs upgrade, linken partial, etc...)
+                a_tag = data_item.find('a')
                 if a_tag is not None:
                     # we want to append the data so when we can add it when getting the div's text
                     a_tag.append(SPECIAL_SENTENCES[a_tag['title']])
 
                 # we finally have a data object to push
-                data.append(data_item.text.replace(u'\xa0', u' ').encode('utf-8').strip())
+                text = data_item.text.replace(u'\xa0', u' ').encode('utf-8').strip()
+                data.append(text)
 
         modifiers = []
         # finding the modifiers
@@ -310,85 +314,71 @@ def replace_unicode(string):
 # FOR IMAGES
 def fetch_images():
     i = 0
-    num_files = len(os.listdir('./hero_htmls/')) + len(os.listdir('./htmls/'))
-    for file in os.listdir('./hero_htmls/'):
+    num_files = len(os.listdir(HERO_HTMLS)) + len(os.listdir(ITEM_HTMLS))
+    for file in os.listdir(HERO_HTMLS):
         i += 1
         print str(i) + '/' + str(num_files)
-        with open('./hero_htmls/' + file, 'r') as html:
+        with open(HERO_HTMLS + file, 'r') as html:
             name = os.path.splitext(file)[0]
             soup = BS(html.read(), 'html.parser')
             fetch_hero_images(soup, name)
 
-    for file in os.listdir('./htmls/'):
+    for file in os.listdir(ITEM_HTMLS):
         i += 1
         print str(i) + '/' + str(num_files)
-        with open('./htmls/' + file, 'r') as html:
+        with open(ITEM_HTMLS + file, 'r') as html:
             name = os.path.splitext(file)[0]
             soup = BS(html.read(), 'html.parser')
             fetch_item_image(soup, name)
 
 
-def hero_data():
+def get_heroes():
     # we need to get the abilities for each hero
     i = 0
-    num_files = len(os.listdir('./hero_htmls/'))
+    num_files = len(os.listdir(HERO_HTMLS))
     with open('heroes.json', 'w') as jsonfile:
         heroes = {}
-        for file in os.listdir('./hero_htmls/'):
+        for file in os.listdir(HERO_HTMLS):
             i += 1
             print str(i) + '/' + str(num_files)
-            with open('./hero_htmls/' + file, 'r') as html:
+            with open(HERO_HTMLS + file, 'r') as html:
                 name = os.path.splitext(file)[0]
                 print name
                 hero_soup = BS(html.read(), 'html.parser')  # soupify the page to parse
                 heroes[name] = hero_data(hero_soup)
 
-        json.dump(heroes, jsonfile)
+        json.dump(heroes, jsonfile, ensure_ascii=False)
 
 
-def item_data():
+def get_items():
     i = 0
-    num_files = len(os.listdir('./htmls/'))
+    num_files = len(os.listdir(ITEM_HTMLS))
     items = {}
     with open('items.json', 'w') as jsonfile:
-        for file in os.listdir('./htmls/'):
+        for file in os.listdir(ITEM_HTMLS):
             i += 1
             print str(i) + '/' + str(num_files)  # logging
-            with open('./htmls/' + file, 'r') as html:
+            with open(ITEM_HTMLS + file, 'r') as html:
                 name = os.path.splitext(file)[0]
                 print name
                 soup = BS(html.read(), 'html.parser')
                 items[name] = fetch_items(soup)
 
-        json.dump(items, jsonfile)
-
-def fix_items():
-    # fix files
-    with open('items.json', 'r') as jsonfile:
-        data = jsonfile.read()
-        fixed = replace_unicode(data)
-        with open('items_fixed.json', 'w') as fixed_file:
-            fixed_file.write(fixed)
-
-def fix_heroes():
-    with open('heroes.json', 'r') as jsonfile:
-        data = jsonfile.read()
-        fixed = replace_unicode(data)
-        with open('heroes_fixed.json', 'w') as fixed_file:
-            fixed_file.write(fixed)
+        json.dump(items, jsonfile, ensure_ascii=False)
 
 
 def combine():
     # combine files into 1
-    with open('heroes_fixed.json', 'r') as herofile:
+    with open('heroes.json', 'r') as herofile:
         heroes = herofile.read()
-        with open('items_fixed.json', 'r') as itemfile:
+        with open('items.json', 'r') as itemfile:
             items = itemfile.read()
-            new_json = {}
-            new_json['hero'] = heroes
-            new_json['item'] = items
+            new_json = {
+                'hero': heroes,
+                'item': items,
+            }
             with open('dota.json', 'w') as dotafile:
-                json.dump(new_json, dotafile, encoding='utf-8')
+                json.dump(new_json, dotafile, ensure_ascii=False)
 
 def pretty_print():
     # pretty print it for readability
@@ -403,3 +393,6 @@ def pretty_print():
             prettyfile.write(pformat(data, indent=2))
 
 
+get_heroes()
+get_items()
+combine()
