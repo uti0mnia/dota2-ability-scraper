@@ -2,162 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c381486c-2855-4016-a2e5-137469954122" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/abilities_fixed.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dota_fixed.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/heroes_fixed.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/htmls/Abyssal Blade.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/htmls/Aether Lens.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/htmls/Aghanim's Scepter.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/htmls/Animal Courier.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/htmls/Arcane Boots.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/htmls/Armlet of Mordiggian.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/htmls/Assault Cuirass.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/htmls/Band of Elvenskin.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/htmls/Battle Fury.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/htmls/Belt of Strength.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/htmls/Black King Bar.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/htmls/Blade Mail.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/htmls/Blade of Alacrity.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/htmls/Blades of Attack.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/htmls/Blight Stone.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/htmls/Blink Dagger.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/htmls/Bloodstone.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/htmls/Bloodthorn.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/htmls/Boots of Speed.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/htmls/Boots of Travel.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/htmls/Bottle.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/htmls/Bracer.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/htmls/Broadsword.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/htmls/Buckler.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/htmls/Butterfly.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/htmls/Chainmail.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/htmls/Circlet.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/htmls/Clarity.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/htmls/Claymore.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/htmls/Cloak.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/htmls/Crimson Guard.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/htmls/Crystalys.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/htmls/Daedalus.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/htmls/Dagon.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/htmls/Demon Edge.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/htmls/Desolator.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/htmls/Diffusal Blade.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/htmls/Divine Rapier.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/htmls/Dragon Lance.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/htmls/Drum of Endurance.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/htmls/Dust of Appearance.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/htmls/Eaglesong.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/htmls/Echo Sabre.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/htmls/Enchanted Mango.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/htmls/Energy Booster.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/htmls/Ethereal Blade.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/htmls/Eul's Scepter of Divinity.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/htmls/Eye of Skadi.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/htmls/Faerie Fire.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/htmls/Flying Courier.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/htmls/Force Staff.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/htmls/Gauntlets of Strength.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/htmls/Gem of True Sight.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/htmls/Ghost Scepter.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/htmls/Glimmer Cape.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/htmls/Gloves of Haste.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/htmls/Guardian Greaves.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/htmls/Hand of Midas.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/htmls/Headdress.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/htmls/Healing Salve.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/htmls/Heart of Tarrasque.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/htmls/Heaven's Halberd.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/htmls/Helm of Iron Will.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/htmls/Helm of the Dominator.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/htmls/Hood of Defiance.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/htmls/Hurricane Pike.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/htmls/Hyperstone.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/htmls/Infused Raindrop.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/htmls/Iron Branch.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/htmls/Iron Talon.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/htmls/Javelin.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/htmls/Linken's Sphere.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/htmls/Lotus Orb.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/htmls/Maelstrom.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/htmls/Magic Stick.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/htmls/Magic Wand.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/htmls/Manta Style.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/htmls/Mantle of Intelligence.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/htmls/Mask of Madness.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/htmls/Medallion of Courage.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/htmls/Mekansm.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/htmls/Mithril Hammer.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/htmls/Mjollnir.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/htmls/Monkey King Bar.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/htmls/Moon Shard.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/htmls/Morbid Mask.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/htmls/Mystic Staff.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/htmls/Necronomicon.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/htmls/Null Talisman.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/htmls/Oblivion Staff.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/htmls/Observer Ward.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/htmls/Octarine Core.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/htmls/Ogre Club.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/htmls/Orb of Venom.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/htmls/Orchid Malevolence.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/htmls/Perseverance.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/htmls/Phase Boots.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/htmls/Pipe of Insight.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/htmls/Platemail.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/htmls/Point Booster.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/htmls/Poor Man's Shield.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/htmls/Power Treads.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/htmls/Quarterstaff.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/htmls/Quelling Blade.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/htmls/Radiance.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/htmls/Reaver.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/htmls/Refresher Orb.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/htmls/Ring of Aquila.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/htmls/Ring of Basilius.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/htmls/Ring of Health.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/htmls/Ring of Protection.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/htmls/Ring of Regen.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/htmls/Robe of the Magi.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/htmls/Rod of Atos.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/htmls/Sacred Relic.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/htmls/Sage's Mask.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/htmls/Sange and Yasha.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/htmls/Sange.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/htmls/Satanic.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/htmls/Scythe of Vyse.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/htmls/Sentry Ward.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/htmls/Shadow Amulet.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/htmls/Shadow Blade.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/htmls/Shiva's Guard.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/htmls/Silver Edge.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/htmls/Skull Basher.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/htmls/Slippers of Agility.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/htmls/Smoke of Deceit.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/htmls/Solar Crest.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/htmls/Soul Booster.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/htmls/Soul Ring.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/htmls/Staff of Wizardry.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/htmls/Stout Shield.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/htmls/Talisman of Evasion.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/htmls/Tango.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/htmls/Tome of Knowledge.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/htmls/Town Portal Scroll.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/htmls/Tranquil Boots.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/htmls/Ultimate Orb.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/htmls/Urn of Shadows.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/htmls/Vanguard.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/htmls/Veil of Discord.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/htmls/Vitality Booster.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/htmls/Vladmir's Offering.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/htmls/Void Stone.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/htmls/Wind Lace.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/htmls/Wraith Band.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/htmls/Yasha.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/items_fixed.json" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dota.json" afterPath="$PROJECT_DIR$/dota.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/heroes.json" afterPath="$PROJECT_DIR$/heroes.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/items.json" afterPath="$PROJECT_DIR$/items.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scraper.py" afterPath="$PROJECT_DIR$/scraper.py" />
     </list>
     <ignored path="ability_scrape.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -172,7 +18,7 @@
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/dota2-ability-scraper$scrape.coverage" NAME="scrape Coverage Results" MODIFIED="1480303436343" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/dota2-ability-scraper$scraper.coverage" NAME="scraper Coverage Results" MODIFIED="1479938696380" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../item-scraper" />
-    <SUITE FILE_PATH="coverage/ability_scrape$scrape.coverage" NAME="scrape Coverage Results" MODIFIED="1480450567699" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/ability_scrape$scrape.coverage" NAME="scrape Coverage Results" MODIFIED="1480450725449" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
@@ -191,11 +37,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="scraper.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="scraper.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/scraper.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-544">
-              <caret line="29" column="1" lean-forward="false" selection-start-line="29" selection-start-column="1" selection-end-line="29" selection-end-column="1" />
+            <state relative-caret-position="425">
+              <caret line="293" column="0" lean-forward="true" selection-start-line="293" selection-start-column="0" selection-end-line="293" selection-end-column="0" />
               <folding>
                 <element signature="n#!!doc" expanded="false" />
                 <element signature="e#228#1231#0" expanded="false" />
@@ -232,11 +78,36 @@
                 <element signature="e#12144#12602#0" expanded="false" />
                 <element signature="e#12162#12448#0" expanded="false" />
                 <element signature="e#12642#13295#0" expanded="false" />
+                <element signature="e#12770#13008#0" expanded="false" />
+                <element signature="e#12884#13008#0" expanded="false" />
+                <element signature="e#13058#13295#0" expanded="false" />
+                <element signature="e#13172#13295#0" expanded="false" />
+                <element signature="e#13320#13924#0" expanded="false" />
+                <element signature="e#13474#13924#0" expanded="false" />
+                <element signature="e#13542#13867#0" expanded="false" />
+                <element signature="e#13668#13867#0" expanded="false" />
+                <element signature="e#13948#14469#0" expanded="false" />
+                <element signature="e#14067#14469#0" expanded="false" />
+                <element signature="e#14115#14413#0" expanded="false" />
                 <element signature="e#14252#14413#0" expanded="false" />
+                <element signature="e#14491#14900#0" expanded="false" />
+                <element signature="e#14569#14900#0" expanded="false" />
+                <element signature="e#14656#14900#0" expanded="false" />
+                <element signature="e#14703#14781#0" expanded="false" />
                 <element signature="e#14926#15346#0" expanded="false" />
                 <element signature="e#15017#15153#0" expanded="false" />
                 <element signature="e#15211#15346#0" expanded="false" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="dota.json" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/dota.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="147">
+              <caret line="0" column="832907" lean-forward="false" selection-start-line="0" selection-start-column="832906" selection-end-line="0" selection-end-column="832907" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -265,6 +136,8 @@
       <find>'data</find>
       <find>'./hero_htmls/'</find>
       <find>'./htmls/'</find>
+      <find>360</find>
+      <find>°</find>
     </findStrings>
     <replaceStrings>
       <replace>±</replace>
@@ -287,6 +160,7 @@
         <option value="$PROJECT_DIR$/heroes.json" />
         <option value="$PROJECT_DIR$/dota.json" />
         <option value="$PROJECT_DIR$/scraper.py" />
+        <option value="$PROJECT_DIR$/page_downloader.py" />
       </list>
     </option>
   </component>
@@ -618,9 +492,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="10" y="22" width="1420" height="864" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22714078" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22714078" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.41062176" sideWeight="0.50290275" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -725,7 +599,22 @@
             <element signature="e#12144#12602#0" expanded="false" />
             <element signature="e#12162#12448#0" expanded="false" />
             <element signature="e#12642#13295#0" expanded="false" />
+            <element signature="e#12770#13008#0" expanded="false" />
+            <element signature="e#12884#13008#0" expanded="false" />
+            <element signature="e#13058#13295#0" expanded="false" />
+            <element signature="e#13172#13295#0" expanded="false" />
+            <element signature="e#13320#13924#0" expanded="false" />
+            <element signature="e#13474#13924#0" expanded="false" />
+            <element signature="e#13542#13867#0" expanded="false" />
+            <element signature="e#13668#13867#0" expanded="false" />
+            <element signature="e#13948#14469#0" expanded="false" />
+            <element signature="e#14067#14469#0" expanded="false" />
+            <element signature="e#14115#14413#0" expanded="false" />
             <element signature="e#14252#14413#0" expanded="false" />
+            <element signature="e#14491#14900#0" expanded="false" />
+            <element signature="e#14569#14900#0" expanded="false" />
+            <element signature="e#14656#14900#0" expanded="false" />
+            <element signature="e#14703#14781#0" expanded="false" />
             <element signature="e#14926#15346#0" expanded="false" />
             <element signature="e#15017#15153#0" expanded="false" />
             <element signature="e#15211#15346#0" expanded="false" />
@@ -787,7 +676,22 @@
             <element signature="e#12144#12602#0" expanded="false" />
             <element signature="e#12162#12448#0" expanded="false" />
             <element signature="e#12642#13295#0" expanded="false" />
+            <element signature="e#12770#13008#0" expanded="false" />
+            <element signature="e#12884#13008#0" expanded="false" />
+            <element signature="e#13058#13295#0" expanded="false" />
+            <element signature="e#13172#13295#0" expanded="false" />
+            <element signature="e#13320#13924#0" expanded="false" />
+            <element signature="e#13474#13924#0" expanded="false" />
+            <element signature="e#13542#13867#0" expanded="false" />
+            <element signature="e#13668#13867#0" expanded="false" />
+            <element signature="e#13948#14469#0" expanded="false" />
+            <element signature="e#14067#14469#0" expanded="false" />
+            <element signature="e#14115#14413#0" expanded="false" />
             <element signature="e#14252#14413#0" expanded="false" />
+            <element signature="e#14491#14900#0" expanded="false" />
+            <element signature="e#14569#14900#0" expanded="false" />
+            <element signature="e#14656#14900#0" expanded="false" />
+            <element signature="e#14703#14781#0" expanded="false" />
             <element signature="e#14926#15346#0" expanded="false" />
             <element signature="e#15017#15153#0" expanded="false" />
             <element signature="e#15211#15346#0" expanded="false" />
@@ -842,7 +746,22 @@
             <element signature="e#12144#12602#0" expanded="false" />
             <element signature="e#12162#12448#0" expanded="false" />
             <element signature="e#12642#13295#0" expanded="false" />
+            <element signature="e#12770#13008#0" expanded="false" />
+            <element signature="e#12884#13008#0" expanded="false" />
+            <element signature="e#13058#13295#0" expanded="false" />
+            <element signature="e#13172#13295#0" expanded="false" />
+            <element signature="e#13320#13924#0" expanded="false" />
+            <element signature="e#13474#13924#0" expanded="false" />
+            <element signature="e#13542#13867#0" expanded="false" />
+            <element signature="e#13668#13867#0" expanded="false" />
+            <element signature="e#13948#14469#0" expanded="false" />
+            <element signature="e#14067#14469#0" expanded="false" />
+            <element signature="e#14115#14413#0" expanded="false" />
             <element signature="e#14252#14413#0" expanded="false" />
+            <element signature="e#14491#14900#0" expanded="false" />
+            <element signature="e#14569#14900#0" expanded="false" />
+            <element signature="e#14656#14900#0" expanded="false" />
+            <element signature="e#14703#14781#0" expanded="false" />
             <element signature="e#14926#15346#0" expanded="false" />
             <element signature="e#15017#15153#0" expanded="false" />
             <element signature="e#15211#15346#0" expanded="false" />
@@ -897,7 +816,22 @@
             <element signature="e#12144#12602#0" expanded="false" />
             <element signature="e#12162#12448#0" expanded="false" />
             <element signature="e#12642#13295#0" expanded="false" />
+            <element signature="e#12770#13008#0" expanded="false" />
+            <element signature="e#12884#13008#0" expanded="false" />
+            <element signature="e#13058#13295#0" expanded="false" />
+            <element signature="e#13172#13295#0" expanded="false" />
+            <element signature="e#13320#13924#0" expanded="false" />
+            <element signature="e#13474#13924#0" expanded="false" />
+            <element signature="e#13542#13867#0" expanded="false" />
+            <element signature="e#13668#13867#0" expanded="false" />
+            <element signature="e#13948#14469#0" expanded="false" />
+            <element signature="e#14067#14469#0" expanded="false" />
+            <element signature="e#14115#14413#0" expanded="false" />
             <element signature="e#14252#14413#0" expanded="false" />
+            <element signature="e#14491#14900#0" expanded="false" />
+            <element signature="e#14569#14900#0" expanded="false" />
+            <element signature="e#14656#14900#0" expanded="false" />
+            <element signature="e#14703#14781#0" expanded="false" />
             <element signature="e#14926#15346#0" expanded="false" />
             <element signature="e#15017#15153#0" expanded="false" />
             <element signature="e#15211#15346#0" expanded="false" />
@@ -945,7 +879,22 @@
             <element signature="e#12144#12602#0" expanded="false" />
             <element signature="e#12162#12448#0" expanded="false" />
             <element signature="e#12642#13295#0" expanded="false" />
+            <element signature="e#12770#13008#0" expanded="false" />
+            <element signature="e#12884#13008#0" expanded="false" />
+            <element signature="e#13058#13295#0" expanded="false" />
+            <element signature="e#13172#13295#0" expanded="false" />
+            <element signature="e#13320#13924#0" expanded="false" />
+            <element signature="e#13474#13924#0" expanded="false" />
+            <element signature="e#13542#13867#0" expanded="false" />
+            <element signature="e#13668#13867#0" expanded="false" />
+            <element signature="e#13948#14469#0" expanded="false" />
+            <element signature="e#14067#14469#0" expanded="false" />
+            <element signature="e#14115#14413#0" expanded="false" />
             <element signature="e#14252#14413#0" expanded="false" />
+            <element signature="e#14491#14900#0" expanded="false" />
+            <element signature="e#14569#14900#0" expanded="false" />
+            <element signature="e#14656#14900#0" expanded="false" />
+            <element signature="e#14703#14781#0" expanded="false" />
             <element signature="e#14926#15346#0" expanded="false" />
             <element signature="e#15017#15153#0" expanded="false" />
             <element signature="e#15211#15346#0" expanded="false" />
@@ -1007,7 +956,22 @@
             <element signature="e#12144#12602#0" expanded="false" />
             <element signature="e#12162#12448#0" expanded="false" />
             <element signature="e#12642#13295#0" expanded="false" />
+            <element signature="e#12770#13008#0" expanded="false" />
+            <element signature="e#12884#13008#0" expanded="false" />
+            <element signature="e#13058#13295#0" expanded="false" />
+            <element signature="e#13172#13295#0" expanded="false" />
+            <element signature="e#13320#13924#0" expanded="false" />
+            <element signature="e#13474#13924#0" expanded="false" />
+            <element signature="e#13542#13867#0" expanded="false" />
+            <element signature="e#13668#13867#0" expanded="false" />
+            <element signature="e#13948#14469#0" expanded="false" />
+            <element signature="e#14067#14469#0" expanded="false" />
+            <element signature="e#14115#14413#0" expanded="false" />
             <element signature="e#14252#14413#0" expanded="false" />
+            <element signature="e#14491#14900#0" expanded="false" />
+            <element signature="e#14569#14900#0" expanded="false" />
+            <element signature="e#14656#14900#0" expanded="false" />
+            <element signature="e#14703#14781#0" expanded="false" />
             <element signature="e#14926#15346#0" expanded="false" />
             <element signature="e#15017#15153#0" expanded="false" />
             <element signature="e#15211#15346#0" expanded="false" />
@@ -1062,7 +1026,22 @@
             <element signature="e#12144#12602#0" expanded="false" />
             <element signature="e#12162#12448#0" expanded="false" />
             <element signature="e#12642#13295#0" expanded="false" />
+            <element signature="e#12770#13008#0" expanded="false" />
+            <element signature="e#12884#13008#0" expanded="false" />
+            <element signature="e#13058#13295#0" expanded="false" />
+            <element signature="e#13172#13295#0" expanded="false" />
+            <element signature="e#13320#13924#0" expanded="false" />
+            <element signature="e#13474#13924#0" expanded="false" />
+            <element signature="e#13542#13867#0" expanded="false" />
+            <element signature="e#13668#13867#0" expanded="false" />
+            <element signature="e#13948#14469#0" expanded="false" />
+            <element signature="e#14067#14469#0" expanded="false" />
+            <element signature="e#14115#14413#0" expanded="false" />
             <element signature="e#14252#14413#0" expanded="false" />
+            <element signature="e#14491#14900#0" expanded="false" />
+            <element signature="e#14569#14900#0" expanded="false" />
+            <element signature="e#14656#14900#0" expanded="false" />
+            <element signature="e#14703#14781#0" expanded="false" />
             <element signature="e#14926#15346#0" expanded="false" />
             <element signature="e#15017#15153#0" expanded="false" />
             <element signature="e#15211#15346#0" expanded="false" />
@@ -1117,7 +1096,22 @@
             <element signature="e#12144#12602#0" expanded="false" />
             <element signature="e#12162#12448#0" expanded="false" />
             <element signature="e#12642#13295#0" expanded="false" />
+            <element signature="e#12770#13008#0" expanded="false" />
+            <element signature="e#12884#13008#0" expanded="false" />
+            <element signature="e#13058#13295#0" expanded="false" />
+            <element signature="e#13172#13295#0" expanded="false" />
+            <element signature="e#13320#13924#0" expanded="false" />
+            <element signature="e#13474#13924#0" expanded="false" />
+            <element signature="e#13542#13867#0" expanded="false" />
+            <element signature="e#13668#13867#0" expanded="false" />
+            <element signature="e#13948#14469#0" expanded="false" />
+            <element signature="e#14067#14469#0" expanded="false" />
+            <element signature="e#14115#14413#0" expanded="false" />
             <element signature="e#14252#14413#0" expanded="false" />
+            <element signature="e#14491#14900#0" expanded="false" />
+            <element signature="e#14569#14900#0" expanded="false" />
+            <element signature="e#14656#14900#0" expanded="false" />
+            <element signature="e#14703#14781#0" expanded="false" />
             <element signature="e#14926#15346#0" expanded="false" />
             <element signature="e#15017#15153#0" expanded="false" />
             <element signature="e#15211#15346#0" expanded="false" />
@@ -1165,7 +1159,22 @@
             <element signature="e#12144#12602#0" expanded="false" />
             <element signature="e#12162#12448#0" expanded="false" />
             <element signature="e#12642#13295#0" expanded="false" />
+            <element signature="e#12770#13008#0" expanded="false" />
+            <element signature="e#12884#13008#0" expanded="false" />
+            <element signature="e#13058#13295#0" expanded="false" />
+            <element signature="e#13172#13295#0" expanded="false" />
+            <element signature="e#13320#13924#0" expanded="false" />
+            <element signature="e#13474#13924#0" expanded="false" />
+            <element signature="e#13542#13867#0" expanded="false" />
+            <element signature="e#13668#13867#0" expanded="false" />
+            <element signature="e#13948#14469#0" expanded="false" />
+            <element signature="e#14067#14469#0" expanded="false" />
+            <element signature="e#14115#14413#0" expanded="false" />
             <element signature="e#14252#14413#0" expanded="false" />
+            <element signature="e#14491#14900#0" expanded="false" />
+            <element signature="e#14569#14900#0" expanded="false" />
+            <element signature="e#14656#14900#0" expanded="false" />
+            <element signature="e#14703#14781#0" expanded="false" />
             <element signature="e#14926#15346#0" expanded="false" />
             <element signature="e#15017#15153#0" expanded="false" />
             <element signature="e#15211#15346#0" expanded="false" />
@@ -1208,13 +1217,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/items.csv" />
-    <entry file="file://$PROJECT_DIR$/page_downloader.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/abilities.json" />
     <entry file="file://$PROJECT_DIR$/Writer.py" />
     <entry file="file:///System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/json/encoder.py">
@@ -1261,7 +1263,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dota.json" />
     <entry file="file://$PROJECT_DIR$/abilities_fixed.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="258">
@@ -1286,10 +1287,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/page_downloader.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="15" column="54" lean-forward="false" selection-start-line="15" selection-start-column="54" selection-end-line="15" selection-end-column="54" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/scraper.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-544">
-          <caret line="29" column="1" lean-forward="false" selection-start-line="29" selection-start-column="1" selection-end-line="29" selection-end-column="1" />
+        <state relative-caret-position="425">
+          <caret line="293" column="0" lean-forward="true" selection-start-line="293" selection-start-column="0" selection-end-line="293" selection-end-column="0" />
           <folding>
             <element signature="n#!!doc" expanded="false" />
             <element signature="e#228#1231#0" expanded="false" />
@@ -1326,11 +1335,34 @@
             <element signature="e#12144#12602#0" expanded="false" />
             <element signature="e#12162#12448#0" expanded="false" />
             <element signature="e#12642#13295#0" expanded="false" />
+            <element signature="e#12770#13008#0" expanded="false" />
+            <element signature="e#12884#13008#0" expanded="false" />
+            <element signature="e#13058#13295#0" expanded="false" />
+            <element signature="e#13172#13295#0" expanded="false" />
+            <element signature="e#13320#13924#0" expanded="false" />
+            <element signature="e#13474#13924#0" expanded="false" />
+            <element signature="e#13542#13867#0" expanded="false" />
+            <element signature="e#13668#13867#0" expanded="false" />
+            <element signature="e#13948#14469#0" expanded="false" />
+            <element signature="e#14067#14469#0" expanded="false" />
+            <element signature="e#14115#14413#0" expanded="false" />
             <element signature="e#14252#14413#0" expanded="false" />
+            <element signature="e#14491#14900#0" expanded="false" />
+            <element signature="e#14569#14900#0" expanded="false" />
+            <element signature="e#14656#14900#0" expanded="false" />
+            <element signature="e#14703#14781#0" expanded="false" />
             <element signature="e#14926#15346#0" expanded="false" />
             <element signature="e#15017#15153#0" expanded="false" />
             <element signature="e#15211#15346#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dota.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="147">
+          <caret line="0" column="832907" lean-forward="false" selection-start-line="0" selection-start-column="832906" selection-end-line="0" selection-end-column="832907" />
+          <folding />
         </state>
       </provider>
     </entry>
