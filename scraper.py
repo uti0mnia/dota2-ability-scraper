@@ -66,13 +66,42 @@ def fetch_abilities(soup, extra=True):
         ability_special = [SPECIAL_SENTENCES[a['title'].encode('utf-8')] for a in
                            children[1].findAll('a', recursive=False)]
 
+        # get "type" (i.e no target/passive/etc) and summary
+        type_div = div.find('div', style='padding: 15px 5px; font-size: 85%; line-height: 100%; text-align: center;')
+        types = {}
+        for type in type_div.findAll('div', recursive=False):
+            if type.find('b') is None:
+                continue
+
+            # get the type val we're dealing with (ability, affects, damage, etc)
+            b = type.find('b')
+            val = b.text.encode('utf-8').strip()
+            b.extract()
+
+            # iterate through each block that's split by a br (this doesn't makes sense lol)
+            string = ''
+            strings = []
+            soups = [BS(x, 'html.parser') for x in unicode(''.join([unicode(child) for child in list(type.children)])).split('<br/>') if x != '']
+            for s in soups:
+                string += ' '.join([SPECIAL_SENTENCES[a.get('title').encode('utf-8')] for a in s.findAll('a') if a.get('title').encode('utf-8') in SPECIAL_SENTENCES])
+                string += ' '.join([re.sub(r'\(|\)', '', x.encode('utf-8')) for x in s.findAll(text=True) if x.strip() != ''])
+                strings.append(string.strip())
+                string = ''
+
+            # save
+            types[val] = strings
+
+        # get description
+        description = div.find('div', style='vertical-align: top; padding: 3px 5px; border-top: 1px solid black;').text.encode('utf-8')
+
         # get the data about the ability
         div_data = div.find('div', style='vertical-align:top; padding: 3px 5px;')
         data = []
+        special_details = []
 
         # find all the divs
         for data_item in div_data.findAll('div'):
-            # we want to break once we hit the modifiers
+            # we want to break once we hit
             if data_item.find('b') is not None and data_item.find('b').text == 'Modifiers':
                 break
             if data_item.text.strip() != '':  # make sure it's not empty (some are)
@@ -103,7 +132,10 @@ def fetch_abilities(soup, extra=True):
             notes = []
 
         ability[name] = {
-            'abilitySpecial': ability_special,
+            'ability_special': ability_special,
+            'special_details': special_details,
+            'types': types,
+            'description': description,
             'data': data,
             'modifiers': modifiers,
             'notes': notes,
@@ -393,4 +425,6 @@ def pretty_print():
             prettyfile.write(pformat(data, indent=2))
 
 
+get_heroes()
+get_items()
 combine()
