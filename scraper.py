@@ -97,27 +97,29 @@ def fetch_abilities(soup, extra=True):
         # get the data about the ability
         div_data = div.find('div', style='vertical-align:top; padding: 3px 5px;')
         data = []
-        special_details = []
 
         # find all the divs
         for data_item in div_data.findAll('div'):
-            # we want to break once we hit
-            if data_item.find('b') is not None and data_item.find('b').text == 'Modifiers':
+            # we want to break once we hit a style-less div
+            if data_item.has_attr('style'):
                 break
-            if data_item.text.strip() != '':  # make sure it's not empty (some are)
-                if data_item.has_attr('style'):
-                    # we're checking if it has a style (i.e mana/cooldown) and we want to ignore it
-                    if re.search(r'display: inline-block.*', data_item['style']):
-                        continue
-                # this is for the special ablities (i.e aghs upgrade, linken partial, etc...)
-                a_tag = data_item.find('a')
-                if a_tag is not None:
-                    # we want to append the data so when we can add it when getting the div's text
-                    a_tag.append(SPECIAL_SENTENCES[a_tag['title']])
 
-                # we finally have a data object to push
-                text = data_item.text.replace(u'\xa0', u' ').encode('utf-8').strip()
-                data.append(text)
+            # push data
+            text = data_item.text.replace(u'\xa0', u' ').encode('utf-8').strip()
+            data.append(text)
+
+        # get special details (i.e extra notes about the special)
+        special_details = []
+        for special_div in div_data.findAll('div', style='margin-left: 50px;'):
+            # this is for the special ablities (i.e aghs upgrade, linken partial, etc...)
+            a_tag = special_div.find('a')
+            if a_tag is not None:
+                # we want to append the data so when we can add it when getting the div's text
+                a_tag.append(SPECIAL_SENTENCES[a_tag['title']])
+
+            text = special_div.text.encode('utf-8').strip()
+            special_details.append(text)
+
 
         modifiers = []
         # finding the modifiers
