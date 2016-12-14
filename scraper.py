@@ -411,7 +411,7 @@ def combine():
                 'hero': heroes,
                 'item': items,
             }
-            with open('dota.json', 'w') as dotafile:
+            with open('dota2.json', 'w') as dotafile:
                 json.dump(new_json, dotafile)
 
 def pretty_print():
