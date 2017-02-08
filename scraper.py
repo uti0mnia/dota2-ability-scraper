@@ -26,7 +26,8 @@ SPECIAL_SENTENCES = {
     'Partially blocked by Linken\'s Sphere.': 'PARTIAL_BLOCKED_BY_LINKEN',
     'Blocked by Linken\'s Sphere.': 'BLOCKED_BY_LINKEN',
     'Available at Secret Shop': 'SECRET_SHOP',
-    'Available at Side Lane Shop': 'SIDE_SHOP'
+    'Available at Side Lane Shop': 'SIDE_SHOP',
+    'Talent': 'TALENT'
 }
 HERO_HTMLS = './htmls/heroes/'
 ITEM_HTMLS = './htmls/items/'
@@ -56,6 +57,7 @@ def find_notes(divs, notes):
 
 def fetch_abilities(soup, extra=True):
     abilities = []
+    # iterate through all ability divs
     for div in soup.findAll('div', style='display: flex; flex-wrap: wrap; align-items: flex-start;'):
         ability = {}
         children = div.find('div', style=re.compile(r'font-weight: bold; font-size: 110%; border-bottom: 1px solid black;.*')).contents
@@ -65,6 +67,11 @@ def fetch_abilities(soup, extra=True):
         # get the special information
         ability_special = [SPECIAL_SENTENCES[a['title'].encode('utf-8')] for a in
                            children[1].findAll('a', recursive=False)]
+
+        # get if aghs upgrade too since it's not shown in the title
+        if len([x.get('alt') for x in div.findAll('img') if x.get('alt') == 'Upgradable by Aghanim\'s Scepter.']) != 0:
+            ability_special.append('AGHANIM_UPGRADE')
+
 
         # get "type" (i.e no target/passive/etc) and summary
         type_div = div.find('div', style='padding: 15px 5px; font-size: 85%; line-height: 100%; text-align: center;')
@@ -79,14 +86,19 @@ def fetch_abilities(soup, extra=True):
             b.extract()
 
             # iterate through each block that's split by a br (this doesn't makes sense lol)
-            string = ''
-            strings = []
+            extra = ''  # used to save if talent tree or aghs type
+            strings = {}
             soups = [BS(x, 'html.parser') for x in unicode(''.join([unicode(child) for child in list(type.children)])).split('<br/>') if x != '']
             for s in soups:
-                string += ' '.join([SPECIAL_SENTENCES[a.get('title').encode('utf-8')] for a in s.findAll('a') if a.get('title').encode('utf-8') in SPECIAL_SENTENCES])
-                string += ' '.join([re.sub(r'\(|\)', '', x.encode('utf-8')) for x in s.findAll(text=True) if x.strip() != ''])
-                strings.append(string.strip())
-                string = ''
+                extra = ' '.join([SPECIAL_SENTENCES[a.get('title').encode('utf-8')] for a in s.findAll('a') if a.get('title').encode('utf-8') in SPECIAL_SENTENCES])  # if it works don't fix
+                string = ' '.join([re.sub(r'\(|\)', '', x.encode('utf-8')) for x in s.findAll(text=True) if x.strip() != ''])
+                if extra is not '':
+                    strings[extra] = [string]
+                else:
+                    if 'normal' in strings.keys():
+                        strings['normal'] = strings['normal'].append(string.strip())
+                    else:
+                        strings['normal'] = [string.strip()]
 
             # save
             types[val] = strings
@@ -96,7 +108,7 @@ def fetch_abilities(soup, extra=True):
 
         # get the data about the ability
         div_data = div.find('div', style='vertical-align:top; padding: 3px 5px;')
-        data = []
+        data = {}
 
         # find all the divs
         for data_item in div_data.findAll('div'):
@@ -121,10 +133,11 @@ def fetch_abilities(soup, extra=True):
             special_details.append(text)
 
 
-        modifiers = []
+        modifiers = {}
         # finding the modifiers
         for d in div_data.findAll('div', style='font-size: 85%; margin-left: 10px;'):
-            modifiers += [item.strip().replace(u'\xa0', u' ').encode('utf-8') for item in d.text.strip().split('\n')]
+            for item in d.text.strip().split('\n'):
+                modifiers[item.strip().replace(u'\xa0', u' ').encode('utf-8')] = 'red' if d.find('span').get('style') == u'color:#631F1F;' else 'green'
 
         # finding notes
         note_div = div.find('div', style='flex: 2 3 400px; word-wrap: break-word;')
@@ -159,6 +172,7 @@ def fetch_abilities(soup, extra=True):
 
     return abilities
 
+# FOR DATA
 def hero_data(soup, extra=True):
     # return object
     hero = {}
@@ -326,6 +340,7 @@ def fetch_ability_images(soup, owner):
         img = div_img.find('img')
         urllib.urlretrieve(img.get('src'), './images/' + name + '_' + owner + '.' + img.get('alt').split('.')[-1])
 
+
 def replace_unicode(string):
     REPLACE_STRINGS = {
         '\u02da': '˚',
@@ -414,6 +429,8 @@ def combine():
             with open('dota2.json', 'w') as dotafile:
                 json.dump(new_json, dotafile)
 
+
+## LOGGING
 def pretty_print():
     # pretty print it for readability
     with open('heroes_fixed.json', 'r') as file:
@@ -425,8 +442,28 @@ def pretty_print():
         data = json.load(file)
         with open('items_pretty.json', 'w') as prettyfile:
             prettyfile.write(pformat(data, indent=2))
+def log_ability_data():
+    with open('heroes.json', 'w') as jsonfile:
+        heroes = {}
+        for file in os.listdir(HERO_HTMLS):
+            with open(HERO_HTMLS + file, 'r') as html:
+                name = os.path.splitext(file)[0]
+                print name
+                hero_soup = BS(html.read(), 'html.parser')  # soupify the page to parse
+                for div in hero_soup.findAll('div', style='display: flex; flex-wrap: wrap; align-items: flex-start;'):
+                    div_data = div.find('div', style='vertical-align:top; padding: 3px 5px;')
+                    for data_item in div_data.findAll('div'):
+                        # we want to break once we hit a style-less div
+                        if data_item.has_attr('style'):
+                            break
 
+                        # push data
+                        print str(data_item.text.encode('utf-8')).split(':')[0]
+                        if len([x for x in data_item.findAll('a')]) is not 0:
+                            print data_item.find('a').get('title')
+                        print [x.strip() for x in str(data_item.text.encode('utf-8')).split(':')[1].split('(')]
 
-get_heroes()
-get_items()
-combine()
+# get_heroes()
+# get_items()
+# combine()
+log_ability_data()

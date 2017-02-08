@@ -2,8 +2,259 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c381486c-2855-4016-a2e5-137469954122" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/htmls/heroes/Nature's Prophet.html" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dota2.json" afterPath="$PROJECT_DIR$/dota2.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/heroes.json" afterPath="$PROJECT_DIR$/heroes.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmls/heroes/Abaddon.html" afterPath="$PROJECT_DIR$/htmls/heroes/Abaddon.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmls/heroes/Alchemist.html" afterPath="$PROJECT_DIR$/htmls/heroes/Alchemist.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmls/heroes/Ancient Apparition.html" afterPath="$PROJECT_DIR$/htmls/heroes/Ancient Apparition.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmls/heroes/Anti-Mage.html" afterPath="$PROJECT_DIR$/htmls/heroes/Anti-Mage.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmls/heroes/Arc Warden.html" afterPath="$PROJECT_DIR$/htmls/heroes/Arc Warden.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmls/heroes/Axe.html" afterPath="$PROJECT_DIR$/htmls/heroes/Axe.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmls/heroes/Bane.html" afterPath="$PROJECT_DIR$/htmls/heroes/Bane.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmls/heroes/Batrider.html" afterPath="$PROJECT_DIR$/htmls/heroes/Batrider.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmls/heroes/Beastmaster.html" afterPath="$PROJECT_DIR$/htmls/heroes/Beastmaster.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmls/heroes/Bloodseeker.html" afterPath="$PROJECT_DIR$/htmls/heroes/Bloodseeker.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmls/heroes/Bounty Hunter.html" afterPath="$PROJECT_DIR$/htmls/heroes/Bounty Hunter.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmls/heroes/Brewmaster.html" afterPath="$PROJECT_DIR$/htmls/heroes/Brewmaster.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmls/heroes/Bristleback.html" afterPath="$PROJECT_DIR$/htmls/heroes/Bristleback.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmls/heroes/Broodmother.html" afterPath="$PROJECT_DIR$/htmls/heroes/Broodmother.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmls/heroes/Centaur Warrunner.html" afterPath="$PROJECT_DIR$/htmls/heroes/Centaur Warrunner.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmls/heroes/Chaos Knight.html" afterPath="$PROJECT_DIR$/htmls/heroes/Chaos Knight.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmls/heroes/Chen.html" afterPath="$PROJECT_DIR$/htmls/heroes/Chen.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmls/heroes/Clinkz.html" afterPath="$PROJECT_DIR$/htmls/heroes/Clinkz.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmls/heroes/Clockwerk.html" afterPath="$PROJECT_DIR$/htmls/heroes/Clockwerk.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmls/heroes/Crystal Maiden.html" afterPath="$PROJECT_DIR$/htmls/heroes/Crystal Maiden.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmls/heroes/Dark Seer.html" afterPath="$PROJECT_DIR$/htmls/heroes/Dark Seer.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmls/heroes/Dazzle.html" afterPath="$PROJECT_DIR$/htmls/heroes/Dazzle.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmls/heroes/Death Prophet.html" afterPath="$PROJECT_DIR$/htmls/heroes/Death Prophet.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmls/heroes/Disruptor.html" afterPath="$PROJECT_DIR$/htmls/heroes/Disruptor.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmls/heroes/Doom.html" afterPath="$PROJECT_DIR$/htmls/heroes/Doom.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmls/heroes/Dragon Knight.html" afterPath="$PROJECT_DIR$/htmls/heroes/Dragon Knight.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmls/heroes/Drow Ranger.html" afterPath="$PROJECT_DIR$/htmls/heroes/Drow Ranger.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmls/heroes/Earth Spirit.html" afterPath="$PROJECT_DIR$/htmls/heroes/Earth Spirit.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmls/heroes/Earthshaker.html" afterPath="$PROJECT_DIR$/htmls/heroes/Earthshaker.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmls/heroes/Elder Titan.html" afterPath="$PROJECT_DIR$/htmls/heroes/Elder Titan.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmls/heroes/Ember Spirit.html" afterPath="$PROJECT_DIR$/htmls/heroes/Ember Spirit.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmls/heroes/Enchantress.html" afterPath="$PROJECT_DIR$/htmls/heroes/Enchantress.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmls/heroes/Enigma.html" afterPath="$PROJECT_DIR$/htmls/heroes/Enigma.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmls/heroes/Faceless Void.html" afterPath="$PROJECT_DIR$/htmls/heroes/Faceless Void.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmls/heroes/Gyrocopter.html" afterPath="$PROJECT_DIR$/htmls/heroes/Gyrocopter.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmls/heroes/Huskar.html" afterPath="$PROJECT_DIR$/htmls/heroes/Huskar.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmls/heroes/Invoker.html" afterPath="$PROJECT_DIR$/htmls/heroes/Invoker.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmls/heroes/Io.html" afterPath="$PROJECT_DIR$/htmls/heroes/Io.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmls/heroes/Jakiro.html" afterPath="$PROJECT_DIR$/htmls/heroes/Jakiro.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmls/heroes/Juggernaut.html" afterPath="$PROJECT_DIR$/htmls/heroes/Juggernaut.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmls/heroes/Keeper Of The Light.html" afterPath="$PROJECT_DIR$/htmls/heroes/Keeper Of The Light.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmls/heroes/Kunkka.html" afterPath="$PROJECT_DIR$/htmls/heroes/Kunkka.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmls/heroes/Legion Commander.html" afterPath="$PROJECT_DIR$/htmls/heroes/Legion Commander.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmls/heroes/Leshrac.html" afterPath="$PROJECT_DIR$/htmls/heroes/Leshrac.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmls/heroes/Lich.html" afterPath="$PROJECT_DIR$/htmls/heroes/Lich.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmls/heroes/Lifestealer.html" afterPath="$PROJECT_DIR$/htmls/heroes/Lifestealer.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmls/heroes/Lina.html" afterPath="$PROJECT_DIR$/htmls/heroes/Lina.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmls/heroes/Lion.html" afterPath="$PROJECT_DIR$/htmls/heroes/Lion.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmls/heroes/Lone Druid.html" afterPath="$PROJECT_DIR$/htmls/heroes/Lone Druid.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmls/heroes/Luna.html" afterPath="$PROJECT_DIR$/htmls/heroes/Luna.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmls/heroes/Lycan.html" afterPath="$PROJECT_DIR$/htmls/heroes/Lycan.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmls/heroes/Magnus.html" afterPath="$PROJECT_DIR$/htmls/heroes/Magnus.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmls/heroes/Medusa.html" afterPath="$PROJECT_DIR$/htmls/heroes/Medusa.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmls/heroes/Meepo.html" afterPath="$PROJECT_DIR$/htmls/heroes/Meepo.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmls/heroes/Mirana.html" afterPath="$PROJECT_DIR$/htmls/heroes/Mirana.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmls/heroes/Morphling.html" afterPath="$PROJECT_DIR$/htmls/heroes/Morphling.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmls/heroes/Naga Siren.html" afterPath="$PROJECT_DIR$/htmls/heroes/Naga Siren.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmls/heroes/Necrophos.html" afterPath="$PROJECT_DIR$/htmls/heroes/Necrophos.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmls/heroes/Night Stalker.html" afterPath="$PROJECT_DIR$/htmls/heroes/Night Stalker.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmls/heroes/Nyx Assassin.html" afterPath="$PROJECT_DIR$/htmls/heroes/Nyx Assassin.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmls/heroes/Ogre Magi.html" afterPath="$PROJECT_DIR$/htmls/heroes/Ogre Magi.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmls/heroes/Omniknight.html" afterPath="$PROJECT_DIR$/htmls/heroes/Omniknight.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmls/heroes/Oracle.html" afterPath="$PROJECT_DIR$/htmls/heroes/Oracle.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmls/heroes/Outworld Devourer.html" afterPath="$PROJECT_DIR$/htmls/heroes/Outworld Devourer.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmls/heroes/Phantom Assassin.html" afterPath="$PROJECT_DIR$/htmls/heroes/Phantom Assassin.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmls/heroes/Phantom Lancer.html" afterPath="$PROJECT_DIR$/htmls/heroes/Phantom Lancer.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmls/heroes/Phoenix.html" afterPath="$PROJECT_DIR$/htmls/heroes/Phoenix.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmls/heroes/Puck.html" afterPath="$PROJECT_DIR$/htmls/heroes/Puck.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmls/heroes/Pudge.html" afterPath="$PROJECT_DIR$/htmls/heroes/Pudge.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmls/heroes/Pugna.html" afterPath="$PROJECT_DIR$/htmls/heroes/Pugna.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmls/heroes/Queen Of Pain.html" afterPath="$PROJECT_DIR$/htmls/heroes/Queen Of Pain.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmls/heroes/Razor.html" afterPath="$PROJECT_DIR$/htmls/heroes/Razor.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmls/heroes/Riki.html" afterPath="$PROJECT_DIR$/htmls/heroes/Riki.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmls/heroes/Rubick.html" afterPath="$PROJECT_DIR$/htmls/heroes/Rubick.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmls/heroes/Sand King.html" afterPath="$PROJECT_DIR$/htmls/heroes/Sand King.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmls/heroes/Shadow Demon.html" afterPath="$PROJECT_DIR$/htmls/heroes/Shadow Demon.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmls/heroes/Shadow Fiend.html" afterPath="$PROJECT_DIR$/htmls/heroes/Shadow Fiend.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmls/heroes/Shadow Shaman.html" afterPath="$PROJECT_DIR$/htmls/heroes/Shadow Shaman.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmls/heroes/Silencer.html" afterPath="$PROJECT_DIR$/htmls/heroes/Silencer.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmls/heroes/Skywrath Mage.html" afterPath="$PROJECT_DIR$/htmls/heroes/Skywrath Mage.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmls/heroes/Slardar.html" afterPath="$PROJECT_DIR$/htmls/heroes/Slardar.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmls/heroes/Slark.html" afterPath="$PROJECT_DIR$/htmls/heroes/Slark.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmls/heroes/Sniper.html" afterPath="$PROJECT_DIR$/htmls/heroes/Sniper.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmls/heroes/Spectre.html" afterPath="$PROJECT_DIR$/htmls/heroes/Spectre.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmls/heroes/Spirit Breaker.html" afterPath="$PROJECT_DIR$/htmls/heroes/Spirit Breaker.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmls/heroes/Storm Spirit.html" afterPath="$PROJECT_DIR$/htmls/heroes/Storm Spirit.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmls/heroes/Sven.html" afterPath="$PROJECT_DIR$/htmls/heroes/Sven.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmls/heroes/Techies.html" afterPath="$PROJECT_DIR$/htmls/heroes/Techies.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmls/heroes/Templar Assassin.html" afterPath="$PROJECT_DIR$/htmls/heroes/Templar Assassin.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmls/heroes/Terrorblade.html" afterPath="$PROJECT_DIR$/htmls/heroes/Terrorblade.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmls/heroes/Tidehunter.html" afterPath="$PROJECT_DIR$/htmls/heroes/Tidehunter.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmls/heroes/Timbersaw.html" afterPath="$PROJECT_DIR$/htmls/heroes/Timbersaw.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmls/heroes/Tinker.html" afterPath="$PROJECT_DIR$/htmls/heroes/Tinker.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmls/heroes/Tiny.html" afterPath="$PROJECT_DIR$/htmls/heroes/Tiny.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmls/heroes/Treant Protector.html" afterPath="$PROJECT_DIR$/htmls/heroes/Treant Protector.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmls/heroes/Troll Warlord.html" afterPath="$PROJECT_DIR$/htmls/heroes/Troll Warlord.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmls/heroes/Tusk.html" afterPath="$PROJECT_DIR$/htmls/heroes/Tusk.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmls/heroes/Underlord.html" afterPath="$PROJECT_DIR$/htmls/heroes/Underlord.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmls/heroes/Undying.html" afterPath="$PROJECT_DIR$/htmls/heroes/Undying.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmls/heroes/Ursa.html" afterPath="$PROJECT_DIR$/htmls/heroes/Ursa.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmls/heroes/Vengeful Spirit.html" afterPath="$PROJECT_DIR$/htmls/heroes/Vengeful Spirit.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmls/heroes/Venomancer.html" afterPath="$PROJECT_DIR$/htmls/heroes/Venomancer.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmls/heroes/Viper.html" afterPath="$PROJECT_DIR$/htmls/heroes/Viper.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmls/heroes/Visage.html" afterPath="$PROJECT_DIR$/htmls/heroes/Visage.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmls/heroes/Warlock.html" afterPath="$PROJECT_DIR$/htmls/heroes/Warlock.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmls/heroes/Weaver.html" afterPath="$PROJECT_DIR$/htmls/heroes/Weaver.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmls/heroes/Windranger.html" afterPath="$PROJECT_DIR$/htmls/heroes/Windranger.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmls/heroes/Winter Wyvern.html" afterPath="$PROJECT_DIR$/htmls/heroes/Winter Wyvern.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmls/heroes/Witch Doctor.html" afterPath="$PROJECT_DIR$/htmls/heroes/Witch Doctor.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmls/heroes/Wraith King.html" afterPath="$PROJECT_DIR$/htmls/heroes/Wraith King.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmls/heroes/Zeus.html" afterPath="$PROJECT_DIR$/htmls/heroes/Zeus.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmls/items/Abyssal Blade.html" afterPath="$PROJECT_DIR$/htmls/items/Abyssal Blade.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmls/items/Aether Lens.html" afterPath="$PROJECT_DIR$/htmls/items/Aether Lens.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmls/items/Aghanim's Scepter.html" afterPath="$PROJECT_DIR$/htmls/items/Aghanim's Scepter.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmls/items/Animal Courier.html" afterPath="$PROJECT_DIR$/htmls/items/Animal Courier.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmls/items/Arcane Boots.html" afterPath="$PROJECT_DIR$/htmls/items/Arcane Boots.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmls/items/Armlet of Mordiggian.html" afterPath="$PROJECT_DIR$/htmls/items/Armlet of Mordiggian.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmls/items/Assault Cuirass.html" afterPath="$PROJECT_DIR$/htmls/items/Assault Cuirass.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmls/items/Band of Elvenskin.html" afterPath="$PROJECT_DIR$/htmls/items/Band of Elvenskin.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmls/items/Battle Fury.html" afterPath="$PROJECT_DIR$/htmls/items/Battle Fury.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmls/items/Belt of Strength.html" afterPath="$PROJECT_DIR$/htmls/items/Belt of Strength.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmls/items/Black King Bar.html" afterPath="$PROJECT_DIR$/htmls/items/Black King Bar.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmls/items/Blade Mail.html" afterPath="$PROJECT_DIR$/htmls/items/Blade Mail.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmls/items/Blade of Alacrity.html" afterPath="$PROJECT_DIR$/htmls/items/Blade of Alacrity.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmls/items/Blades of Attack.html" afterPath="$PROJECT_DIR$/htmls/items/Blades of Attack.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmls/items/Blight Stone.html" afterPath="$PROJECT_DIR$/htmls/items/Blight Stone.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmls/items/Blink Dagger.html" afterPath="$PROJECT_DIR$/htmls/items/Blink Dagger.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmls/items/Bloodstone.html" afterPath="$PROJECT_DIR$/htmls/items/Bloodstone.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmls/items/Bloodthorn.html" afterPath="$PROJECT_DIR$/htmls/items/Bloodthorn.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmls/items/Boots of Speed.html" afterPath="$PROJECT_DIR$/htmls/items/Boots of Speed.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmls/items/Boots of Travel.html" afterPath="$PROJECT_DIR$/htmls/items/Boots of Travel.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmls/items/Bottle.html" afterPath="$PROJECT_DIR$/htmls/items/Bottle.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmls/items/Bracer.html" afterPath="$PROJECT_DIR$/htmls/items/Bracer.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmls/items/Broadsword.html" afterPath="$PROJECT_DIR$/htmls/items/Broadsword.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmls/items/Buckler.html" afterPath="$PROJECT_DIR$/htmls/items/Buckler.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmls/items/Butterfly.html" afterPath="$PROJECT_DIR$/htmls/items/Butterfly.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmls/items/Chainmail.html" afterPath="$PROJECT_DIR$/htmls/items/Chainmail.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmls/items/Circlet.html" afterPath="$PROJECT_DIR$/htmls/items/Circlet.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmls/items/Clarity.html" afterPath="$PROJECT_DIR$/htmls/items/Clarity.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmls/items/Claymore.html" afterPath="$PROJECT_DIR$/htmls/items/Claymore.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmls/items/Cloak.html" afterPath="$PROJECT_DIR$/htmls/items/Cloak.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmls/items/Crimson Guard.html" afterPath="$PROJECT_DIR$/htmls/items/Crimson Guard.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmls/items/Crystalys.html" afterPath="$PROJECT_DIR$/htmls/items/Crystalys.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmls/items/Daedalus.html" afterPath="$PROJECT_DIR$/htmls/items/Daedalus.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmls/items/Dagon.html" afterPath="$PROJECT_DIR$/htmls/items/Dagon.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmls/items/Desolator.html" afterPath="$PROJECT_DIR$/htmls/items/Desolator.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmls/items/Diffusal Blade.html" afterPath="$PROJECT_DIR$/htmls/items/Diffusal Blade.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmls/items/Divine Rapier.html" afterPath="$PROJECT_DIR$/htmls/items/Divine Rapier.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmls/items/Dragon Lance.html" afterPath="$PROJECT_DIR$/htmls/items/Dragon Lance.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmls/items/Drum of Endurance.html" afterPath="$PROJECT_DIR$/htmls/items/Drum of Endurance.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmls/items/Dust of Appearance.html" afterPath="$PROJECT_DIR$/htmls/items/Dust of Appearance.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmls/items/Echo Sabre.html" afterPath="$PROJECT_DIR$/htmls/items/Echo Sabre.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmls/items/Enchanted Mango.html" afterPath="$PROJECT_DIR$/htmls/items/Enchanted Mango.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmls/items/Ethereal Blade.html" afterPath="$PROJECT_DIR$/htmls/items/Ethereal Blade.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmls/items/Eul's Scepter of Divinity.html" afterPath="$PROJECT_DIR$/htmls/items/Eul's Scepter of Divinity.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmls/items/Eye of Skadi.html" afterPath="$PROJECT_DIR$/htmls/items/Eye of Skadi.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmls/items/Faerie Fire.html" afterPath="$PROJECT_DIR$/htmls/items/Faerie Fire.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmls/items/Flying Courier.html" afterPath="$PROJECT_DIR$/htmls/items/Flying Courier.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmls/items/Force Staff.html" afterPath="$PROJECT_DIR$/htmls/items/Force Staff.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmls/items/Gauntlets of Strength.html" afterPath="$PROJECT_DIR$/htmls/items/Gauntlets of Strength.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmls/items/Gem of True Sight.html" afterPath="$PROJECT_DIR$/htmls/items/Gem of True Sight.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmls/items/Ghost Scepter.html" afterPath="$PROJECT_DIR$/htmls/items/Ghost Scepter.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmls/items/Glimmer Cape.html" afterPath="$PROJECT_DIR$/htmls/items/Glimmer Cape.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmls/items/Gloves of Haste.html" afterPath="$PROJECT_DIR$/htmls/items/Gloves of Haste.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmls/items/Guardian Greaves.html" afterPath="$PROJECT_DIR$/htmls/items/Guardian Greaves.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmls/items/Hand of Midas.html" afterPath="$PROJECT_DIR$/htmls/items/Hand of Midas.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmls/items/Headdress.html" afterPath="$PROJECT_DIR$/htmls/items/Headdress.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmls/items/Healing Salve.html" afterPath="$PROJECT_DIR$/htmls/items/Healing Salve.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmls/items/Heart of Tarrasque.html" afterPath="$PROJECT_DIR$/htmls/items/Heart of Tarrasque.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmls/items/Heaven's Halberd.html" afterPath="$PROJECT_DIR$/htmls/items/Heaven's Halberd.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmls/items/Helm of Iron Will.html" afterPath="$PROJECT_DIR$/htmls/items/Helm of Iron Will.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmls/items/Helm of the Dominator.html" afterPath="$PROJECT_DIR$/htmls/items/Helm of the Dominator.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmls/items/Hood of Defiance.html" afterPath="$PROJECT_DIR$/htmls/items/Hood of Defiance.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmls/items/Hurricane Pike.html" afterPath="$PROJECT_DIR$/htmls/items/Hurricane Pike.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmls/items/Infused Raindrop.html" afterPath="$PROJECT_DIR$/htmls/items/Infused Raindrop.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmls/items/Iron Branch.html" afterPath="$PROJECT_DIR$/htmls/items/Iron Branch.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmls/items/Iron Talon.html" afterPath="$PROJECT_DIR$/htmls/items/Iron Talon.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmls/items/Javelin.html" afterPath="$PROJECT_DIR$/htmls/items/Javelin.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmls/items/Linken's Sphere.html" afterPath="$PROJECT_DIR$/htmls/items/Linken's Sphere.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmls/items/Lotus Orb.html" afterPath="$PROJECT_DIR$/htmls/items/Lotus Orb.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmls/items/Maelstrom.html" afterPath="$PROJECT_DIR$/htmls/items/Maelstrom.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmls/items/Magic Stick.html" afterPath="$PROJECT_DIR$/htmls/items/Magic Stick.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmls/items/Magic Wand.html" afterPath="$PROJECT_DIR$/htmls/items/Magic Wand.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmls/items/Manta Style.html" afterPath="$PROJECT_DIR$/htmls/items/Manta Style.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmls/items/Mantle of Intelligence.html" afterPath="$PROJECT_DIR$/htmls/items/Mantle of Intelligence.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmls/items/Mask of Madness.html" afterPath="$PROJECT_DIR$/htmls/items/Mask of Madness.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmls/items/Medallion of Courage.html" afterPath="$PROJECT_DIR$/htmls/items/Medallion of Courage.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmls/items/Mekansm.html" afterPath="$PROJECT_DIR$/htmls/items/Mekansm.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmls/items/Mithril Hammer.html" afterPath="$PROJECT_DIR$/htmls/items/Mithril Hammer.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmls/items/Mjollnir.html" afterPath="$PROJECT_DIR$/htmls/items/Mjollnir.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmls/items/Monkey King Bar.html" afterPath="$PROJECT_DIR$/htmls/items/Monkey King Bar.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmls/items/Moon Shard.html" afterPath="$PROJECT_DIR$/htmls/items/Moon Shard.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmls/items/Morbid Mask.html" afterPath="$PROJECT_DIR$/htmls/items/Morbid Mask.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmls/items/Necronomicon.html" afterPath="$PROJECT_DIR$/htmls/items/Necronomicon.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmls/items/Null Talisman.html" afterPath="$PROJECT_DIR$/htmls/items/Null Talisman.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmls/items/Oblivion Staff.html" afterPath="$PROJECT_DIR$/htmls/items/Oblivion Staff.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmls/items/Observer Ward.html" afterPath="$PROJECT_DIR$/htmls/items/Observer Ward.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmls/items/Octarine Core.html" afterPath="$PROJECT_DIR$/htmls/items/Octarine Core.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmls/items/Ogre Club.html" afterPath="$PROJECT_DIR$/htmls/items/Ogre Club.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmls/items/Orb of Venom.html" afterPath="$PROJECT_DIR$/htmls/items/Orb of Venom.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmls/items/Orchid Malevolence.html" afterPath="$PROJECT_DIR$/htmls/items/Orchid Malevolence.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmls/items/Perseverance.html" afterPath="$PROJECT_DIR$/htmls/items/Perseverance.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmls/items/Phase Boots.html" afterPath="$PROJECT_DIR$/htmls/items/Phase Boots.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmls/items/Pipe of Insight.html" afterPath="$PROJECT_DIR$/htmls/items/Pipe of Insight.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmls/items/Poor Man's Shield.html" afterPath="$PROJECT_DIR$/htmls/items/Poor Man's Shield.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmls/items/Power Treads.html" afterPath="$PROJECT_DIR$/htmls/items/Power Treads.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmls/items/Quarterstaff.html" afterPath="$PROJECT_DIR$/htmls/items/Quarterstaff.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmls/items/Quelling Blade.html" afterPath="$PROJECT_DIR$/htmls/items/Quelling Blade.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmls/items/Radiance.html" afterPath="$PROJECT_DIR$/htmls/items/Radiance.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmls/items/Refresher Orb.html" afterPath="$PROJECT_DIR$/htmls/items/Refresher Orb.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmls/items/Ring of Aquila.html" afterPath="$PROJECT_DIR$/htmls/items/Ring of Aquila.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmls/items/Ring of Basilius.html" afterPath="$PROJECT_DIR$/htmls/items/Ring of Basilius.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmls/items/Ring of Health.html" afterPath="$PROJECT_DIR$/htmls/items/Ring of Health.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmls/items/Ring of Protection.html" afterPath="$PROJECT_DIR$/htmls/items/Ring of Protection.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmls/items/Ring of Regen.html" afterPath="$PROJECT_DIR$/htmls/items/Ring of Regen.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmls/items/Robe of the Magi.html" afterPath="$PROJECT_DIR$/htmls/items/Robe of the Magi.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmls/items/Rod of Atos.html" afterPath="$PROJECT_DIR$/htmls/items/Rod of Atos.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmls/items/Sage's Mask.html" afterPath="$PROJECT_DIR$/htmls/items/Sage's Mask.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmls/items/Sange and Yasha.html" afterPath="$PROJECT_DIR$/htmls/items/Sange and Yasha.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmls/items/Sange.html" afterPath="$PROJECT_DIR$/htmls/items/Sange.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmls/items/Satanic.html" afterPath="$PROJECT_DIR$/htmls/items/Satanic.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmls/items/Scythe of Vyse.html" afterPath="$PROJECT_DIR$/htmls/items/Scythe of Vyse.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmls/items/Sentry Ward.html" afterPath="$PROJECT_DIR$/htmls/items/Sentry Ward.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmls/items/Shadow Amulet.html" afterPath="$PROJECT_DIR$/htmls/items/Shadow Amulet.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmls/items/Shadow Blade.html" afterPath="$PROJECT_DIR$/htmls/items/Shadow Blade.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmls/items/Shiva's Guard.html" afterPath="$PROJECT_DIR$/htmls/items/Shiva's Guard.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmls/items/Silver Edge.html" afterPath="$PROJECT_DIR$/htmls/items/Silver Edge.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmls/items/Skull Basher.html" afterPath="$PROJECT_DIR$/htmls/items/Skull Basher.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmls/items/Slippers of Agility.html" afterPath="$PROJECT_DIR$/htmls/items/Slippers of Agility.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmls/items/Smoke of Deceit.html" afterPath="$PROJECT_DIR$/htmls/items/Smoke of Deceit.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmls/items/Solar Crest.html" afterPath="$PROJECT_DIR$/htmls/items/Solar Crest.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmls/items/Soul Booster.html" afterPath="$PROJECT_DIR$/htmls/items/Soul Booster.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmls/items/Soul Ring.html" afterPath="$PROJECT_DIR$/htmls/items/Soul Ring.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmls/items/Staff of Wizardry.html" afterPath="$PROJECT_DIR$/htmls/items/Staff of Wizardry.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmls/items/Stout Shield.html" afterPath="$PROJECT_DIR$/htmls/items/Stout Shield.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmls/items/Tango.html" afterPath="$PROJECT_DIR$/htmls/items/Tango.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmls/items/Tome of Knowledge.html" afterPath="$PROJECT_DIR$/htmls/items/Tome of Knowledge.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmls/items/Town Portal Scroll.html" afterPath="$PROJECT_DIR$/htmls/items/Town Portal Scroll.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmls/items/Tranquil Boots.html" afterPath="$PROJECT_DIR$/htmls/items/Tranquil Boots.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmls/items/Urn of Shadows.html" afterPath="$PROJECT_DIR$/htmls/items/Urn of Shadows.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmls/items/Vanguard.html" afterPath="$PROJECT_DIR$/htmls/items/Vanguard.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmls/items/Veil of Discord.html" afterPath="$PROJECT_DIR$/htmls/items/Veil of Discord.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmls/items/Vladmir's Offering.html" afterPath="$PROJECT_DIR$/htmls/items/Vladmir's Offering.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmls/items/Void Stone.html" afterPath="$PROJECT_DIR$/htmls/items/Void Stone.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmls/items/Wind Lace.html" afterPath="$PROJECT_DIR$/htmls/items/Wind Lace.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmls/items/Wraith Band.html" afterPath="$PROJECT_DIR$/htmls/items/Wraith Band.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmls/items/Yasha.html" afterPath="$PROJECT_DIR$/htmls/items/Yasha.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/items.json" afterPath="$PROJECT_DIR$/items.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/page_downloader.py" afterPath="$PROJECT_DIR$/page_downloader.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scraper.py" afterPath="$PROJECT_DIR$/scraper.py" />
     </list>
     <ignored path="ability_scrape.iws" />
@@ -18,8 +269,9 @@
   </component>
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/ability_scrape$scrape.coverage" NAME="scrape Coverage Results" MODIFIED="1480106264414" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/dota2-ability-scraper$scrape.coverage" NAME="scrape Coverage Results" MODIFIED="1481666377317" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/dota2-ability-scraper$scrape.coverage" NAME="scrape Coverage Results" MODIFIED="1486509062549" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/dota2-ability-scraper$scraper.coverage" NAME="scraper Coverage Results" MODIFIED="1479938696380" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../item-scraper" />
+    <SUITE FILE_PATH="coverage/dota2-ability-scraper$page_downloader.coverage" NAME="page downloader Coverage Results" MODIFIED="1486522926482" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="/Volumes/HDD/casey/OneDrive/Documents/Coding/Projects/Python/dota2-ability-scraper" />
   </component>
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
@@ -41,58 +293,20 @@
       <file leaf-file-name="scraper.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/scraper.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-792">
-              <caret line="310" column="41" lean-forward="true" selection-start-line="310" selection-start-column="41" selection-end-line="310" selection-end-column="41" />
+            <state relative-caret-position="702">
+              <caret line="467" column="11" lean-forward="true" selection-start-line="467" selection-start-column="11" selection-end-line="467" selection-end-column="11" />
               <folding>
-                <element signature="n#!!doc" expanded="false" />
-                <element signature="e#1420#2445#0" expanded="false" />
-                <element signature="e#1664#2155#0" expanded="false" />
-                <element signature="e#2232#2445#0" expanded="false" />
-                <element signature="e#3862#4214#0" expanded="false" />
-                <element signature="e#6739#6877#0" expanded="false" />
-                <element signature="e#7445#7719#0" expanded="false" />
-                <element signature="e#7485#7719#0" expanded="false" />
-                <element signature="e#8167#8312#0" expanded="false" />
-                <element signature="e#8973#9081#0" expanded="false" />
-                <element signature="e#9344#12259#0" expanded="false" />
-                <element signature="e#9769#10068#0" expanded="false" />
-                <element signature="e#9834#10068#0" expanded="false" />
-                <element signature="e#10853#12201#0" expanded="false" />
-                <element signature="e#11129#11900#0" expanded="false" />
-                <element signature="e#12022#12082#0" expanded="false" />
-                <element signature="e#12299#12528#0" expanded="false" />
-                <element signature="e#12575#12634#0" expanded="false" />
-                <element signature="e#12663#12889#0" expanded="false" />
-                <element signature="e#12934#13465#0" expanded="false" />
-                <element signature="e#13063#13465#0" expanded="false" />
-                <element signature="e#13500#13958#0" expanded="false" />
-                <element signature="e#13518#13804#0" expanded="false" />
-                <element signature="e#13998#14651#0" expanded="false" />
-                <element signature="e#14126#14364#0" expanded="false" />
-                <element signature="e#14240#14364#0" expanded="false" />
-                <element signature="e#14414#14651#0" expanded="false" />
-                <element signature="e#14528#14651#0" expanded="false" />
-                <element signature="e#15423#15825#0" expanded="false" />
-                <element signature="e#15471#15769#0" expanded="false" />
-                <element signature="e#15608#15769#0" expanded="false" />
-                <element signature="e#15847#16244#0" expanded="false" />
-                <element signature="e#15925#16244#0" expanded="false" />
-                <element signature="e#16016#16244#0" expanded="false" />
-                <element signature="e#16067#16145#0" expanded="false" />
-                <element signature="e#16270#16690#0" expanded="false" />
-                <element signature="e#16361#16497#0" expanded="false" />
-                <element signature="e#16555#16690#0" expanded="false" />
+                <element signature="e#7721#10040#0" expanded="false" />
+                <element signature="e#10069#12984#0" expanded="false" />
+                <element signature="e#13024#13253#0" expanded="false" />
+                <element signature="e#13300#13359#0" expanded="false" />
+                <element signature="e#13388#13614#0" expanded="false" />
+                <element signature="e#13659#14190#0" expanded="false" />
+                <element signature="e#14724#15377#0" expanded="false" />
+                <element signature="e#16030#16551#0" expanded="false" />
+                <element signature="e#16573#16974#0" expanded="false" />
+                <element signature="e#17009#17429#0" expanded="false" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="dota.json" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dota.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="1046038" lean-forward="false" selection-start-line="0" selection-start-column="1046023" selection-end-line="0" selection-end-column="1046038" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -112,7 +326,6 @@
       <find>re.replace</find>
       <find>maelstrom</find>
       <find>builds_into</find>
-      <find>%27</find>
       <find>builds_into&quot;: [</find>
       <find>availability</find>
       <find>abilities</find>
@@ -121,10 +334,15 @@
       <find>Double li</find>
       <find>aphotic shield&quot;:</find>
       <find>shadow walk&quot;:</find>
+      <find>(</find>
+      <find>\x</find>
+      <find>Talent</find>
+      <find>%27</find>
     </findStrings>
     <replaceStrings>
       <replace>±</replace>
       <replace>...</replace>
+      <replace>'</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -142,6 +360,9 @@
         <option value="$PROJECT_DIR$/heroes.json" />
         <option value="$PROJECT_DIR$/dota.json" />
         <option value="$PROJECT_DIR$/scraper.py" />
+        <option value="$PROJECT_DIR$/htmls/heroes/Nature's Prophet.html" />
+        <option value="$PROJECT_DIR$/page_downloader.py" />
+        <option value="/Volumes/HDD/casey/OneDrive/Documents/Coding/Projects/Python/dota2-ability-scraper/page_downloader.py" />
       </list>
     </option>
   </component>
@@ -152,10 +373,10 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="7" />
+    <option name="x" value="10" />
     <option name="y" value="22" />
-    <option name="width" value="1900" />
-    <option name="height" value="1049" />
+    <option name="width" value="2540" />
+    <option name="height" value="1409" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -175,7 +396,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
@@ -189,8 +409,23 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dota2-ability-scraper" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dota2-ability-scraper" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="htmls" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -209,7 +444,7 @@
       <recent name="$PROJECT_DIR$/hero_htmls" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.scrape">
+  <component name="RunManager" selected="Python.page downloader">
     <configuration default="true" type="DjangoTestsConfigurationType" factoryName="Django tests">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -442,8 +677,27 @@
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
     </configuration>
-    <list size="1">
+    <configuration default="false" name="page downloader" type="PythonConfigurationType" factoryName="Python">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="/System/Library/Frameworks/Python.framework/Versions/2.7/bin/python2.7" />
+      <option name="WORKING_DIRECTORY" value="/Volumes/HDD/casey/OneDrive/Documents/Coding/Projects/Python/dota2-ability-scraper" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="ability_scrape" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="/Volumes/HDD/casey/OneDrive/Documents/Coding/Projects/Python/dota2-ability-scraper/page_downloader.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+    <list size="2">
       <item index="0" class="java.lang.String" itemvalue="Python.scrape" />
+      <item index="1" class="java.lang.String" itemvalue="Python.page downloader" />
     </list>
   </component>
   <component name="ShelveChangesManager" show_recycled="false">
@@ -472,27 +726,27 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="7" y="22" width="1900" height="1049" extended-state="0" />
+    <frame x="10" y="22" width="2540" height="1409" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22157894" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16574803" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.41062176" sideWeight="0.50290275" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32537314" sideWeight="0.49718308" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39626867" sideWeight="0.49709725" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3255102" sideWeight="0.49718308" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32959184" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39693877" sideWeight="0.49709725" order="3" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -531,6 +785,18 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/scraper.py</url>
+          <line>123</line>
+          <option name="timeStamp" value="33" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/page_downloader.py</url>
+          <line>45</line>
+          <option name="timeStamp" value="35" />
+        </line-breakpoint>
+      </breakpoints>
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
@@ -541,7 +807,7 @@
           </properties>
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="27" />
+      <option name="time" value="39" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -551,651 +817,547 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="n#!!doc" expanded="false" />
-            <element signature="e#1420#2445#0" expanded="false" />
-            <element signature="e#1664#2155#0" expanded="false" />
-            <element signature="e#2232#2445#0" expanded="false" />
-            <element signature="e#3862#4214#0" expanded="false" />
-            <element signature="e#6739#6877#0" expanded="false" />
-            <element signature="e#7445#7719#0" expanded="false" />
-            <element signature="e#7485#7719#0" expanded="false" />
-            <element signature="e#8167#8312#0" expanded="false" />
-            <element signature="e#8973#9081#0" expanded="false" />
-            <element signature="e#9344#12259#0" expanded="false" />
-            <element signature="e#9769#10068#0" expanded="false" />
-            <element signature="e#9834#10068#0" expanded="false" />
-            <element signature="e#10853#12201#0" expanded="false" />
-            <element signature="e#11129#11900#0" expanded="false" />
-            <element signature="e#12022#12082#0" expanded="false" />
-            <element signature="e#12299#12528#0" expanded="false" />
-            <element signature="e#12575#12634#0" expanded="false" />
-            <element signature="e#12663#12889#0" expanded="false" />
-            <element signature="e#12934#13465#0" expanded="false" />
-            <element signature="e#13063#13465#0" expanded="false" />
-            <element signature="e#13500#13958#0" expanded="false" />
-            <element signature="e#13518#13804#0" expanded="false" />
-            <element signature="e#13998#14651#0" expanded="false" />
-            <element signature="e#14126#14364#0" expanded="false" />
-            <element signature="e#14240#14364#0" expanded="false" />
-            <element signature="e#14414#14651#0" expanded="false" />
-            <element signature="e#14528#14651#0" expanded="false" />
-            <element signature="e#15423#15825#0" expanded="false" />
-            <element signature="e#15471#15769#0" expanded="false" />
-            <element signature="e#15608#15769#0" expanded="false" />
-            <element signature="e#15847#16244#0" expanded="false" />
-            <element signature="e#15925#16244#0" expanded="false" />
-            <element signature="e#16016#16244#0" expanded="false" />
-            <element signature="e#16067#16145#0" expanded="false" />
-            <element signature="e#16270#16690#0" expanded="false" />
-            <element signature="e#16361#16497#0" expanded="false" />
-            <element signature="e#16555#16690#0" expanded="false" />
+            <element signature="e#7721#10040#0" expanded="false" />
+            <element signature="e#10069#12984#0" expanded="false" />
+            <element signature="e#13024#13253#0" expanded="false" />
+            <element signature="e#13300#13359#0" expanded="false" />
+            <element signature="e#13388#13614#0" expanded="false" />
+            <element signature="e#13659#14190#0" expanded="false" />
+            <element signature="e#14724#15377#0" expanded="false" />
+            <element signature="e#16030#16551#0" expanded="false" />
+            <element signature="e#16573#16974#0" expanded="false" />
+            <element signature="e#17009#17429#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Writer.py" />
-    <entry file="file://$PROJECT_DIR$/scraper.py">
+    <entry file="file:///System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/socket.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="n#!!doc" expanded="false" />
-            <element signature="e#1420#2445#0" expanded="false" />
-            <element signature="e#1664#2155#0" expanded="false" />
-            <element signature="e#2232#2445#0" expanded="false" />
-            <element signature="e#3862#4214#0" expanded="false" />
-            <element signature="e#6739#6877#0" expanded="false" />
-            <element signature="e#7445#7719#0" expanded="false" />
-            <element signature="e#7485#7719#0" expanded="false" />
-            <element signature="e#8167#8312#0" expanded="false" />
-            <element signature="e#8973#9081#0" expanded="false" />
-            <element signature="e#9344#12259#0" expanded="false" />
-            <element signature="e#9769#10068#0" expanded="false" />
-            <element signature="e#9834#10068#0" expanded="false" />
-            <element signature="e#10853#12201#0" expanded="false" />
-            <element signature="e#11129#11900#0" expanded="false" />
-            <element signature="e#12022#12082#0" expanded="false" />
-            <element signature="e#12299#12528#0" expanded="false" />
-            <element signature="e#12575#12634#0" expanded="false" />
-            <element signature="e#12663#12889#0" expanded="false" />
-            <element signature="e#12934#13465#0" expanded="false" />
-            <element signature="e#13063#13465#0" expanded="false" />
-            <element signature="e#13500#13958#0" expanded="false" />
-            <element signature="e#13518#13804#0" expanded="false" />
-            <element signature="e#13998#14651#0" expanded="false" />
-            <element signature="e#14126#14364#0" expanded="false" />
-            <element signature="e#14240#14364#0" expanded="false" />
-            <element signature="e#14414#14651#0" expanded="false" />
-            <element signature="e#14528#14651#0" expanded="false" />
-            <element signature="e#15423#15825#0" expanded="false" />
-            <element signature="e#15471#15769#0" expanded="false" />
-            <element signature="e#15608#15769#0" expanded="false" />
-            <element signature="e#15847#16244#0" expanded="false" />
-            <element signature="e#15925#16244#0" expanded="false" />
-            <element signature="e#16016#16244#0" expanded="false" />
-            <element signature="e#16067#16145#0" expanded="false" />
-            <element signature="e#16270#16690#0" expanded="false" />
-            <element signature="e#16361#16497#0" expanded="false" />
-            <element signature="e#16555#16690#0" expanded="false" />
-          </folding>
+        <state relative-caret-position="260">
+          <caret line="285" column="0" lean-forward="false" selection-start-line="285" selection-start-column="0" selection-end-line="285" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../item-scraper/scraper.py">
+    <entry file="file:///System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/httplib.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="278">
+          <caret line="563" column="0" lean-forward="false" selection-start-line="563" selection-start-column="0" selection-end-line="563" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../item-scraper/scraper.py">
+    <entry file="file://$PROJECT_DIR$/htmls/heroes/Nature%27s Prophet.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scraper.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="n#!!doc" expanded="false" />
-            <element signature="e#1420#2445#0" expanded="false" />
-            <element signature="e#1664#2155#0" expanded="false" />
-            <element signature="e#2232#2445#0" expanded="false" />
-            <element signature="e#3862#4214#0" expanded="false" />
-            <element signature="e#6739#6877#0" expanded="false" />
-            <element signature="e#7445#7719#0" expanded="false" />
-            <element signature="e#7485#7719#0" expanded="false" />
-            <element signature="e#8167#8312#0" expanded="false" />
-            <element signature="e#8973#9081#0" expanded="false" />
-            <element signature="e#9344#12259#0" expanded="false" />
-            <element signature="e#9769#10068#0" expanded="false" />
-            <element signature="e#9834#10068#0" expanded="false" />
-            <element signature="e#10853#12201#0" expanded="false" />
-            <element signature="e#11129#11900#0" expanded="false" />
-            <element signature="e#12022#12082#0" expanded="false" />
-            <element signature="e#12299#12528#0" expanded="false" />
-            <element signature="e#12575#12634#0" expanded="false" />
-            <element signature="e#12663#12889#0" expanded="false" />
-            <element signature="e#12934#13465#0" expanded="false" />
-            <element signature="e#13063#13465#0" expanded="false" />
-            <element signature="e#13500#13958#0" expanded="false" />
-            <element signature="e#13518#13804#0" expanded="false" />
-            <element signature="e#13998#14651#0" expanded="false" />
-            <element signature="e#14126#14364#0" expanded="false" />
-            <element signature="e#14240#14364#0" expanded="false" />
-            <element signature="e#14414#14651#0" expanded="false" />
-            <element signature="e#14528#14651#0" expanded="false" />
-            <element signature="e#15423#15825#0" expanded="false" />
-            <element signature="e#15471#15769#0" expanded="false" />
-            <element signature="e#15608#15769#0" expanded="false" />
-            <element signature="e#15847#16244#0" expanded="false" />
-            <element signature="e#15925#16244#0" expanded="false" />
-            <element signature="e#16016#16244#0" expanded="false" />
-            <element signature="e#16067#16145#0" expanded="false" />
-            <element signature="e#16270#16690#0" expanded="false" />
-            <element signature="e#16361#16497#0" expanded="false" />
-            <element signature="e#16555#16690#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../item-scraper/scraper.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scraper.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="n#!!doc" expanded="false" />
-            <element signature="e#1420#2445#0" expanded="false" />
-            <element signature="e#1664#2155#0" expanded="false" />
-            <element signature="e#2232#2445#0" expanded="false" />
-            <element signature="e#3862#4214#0" expanded="false" />
-            <element signature="e#6739#6877#0" expanded="false" />
-            <element signature="e#7445#7719#0" expanded="false" />
-            <element signature="e#7485#7719#0" expanded="false" />
-            <element signature="e#8167#8312#0" expanded="false" />
-            <element signature="e#8973#9081#0" expanded="false" />
-            <element signature="e#9344#12259#0" expanded="false" />
-            <element signature="e#9769#10068#0" expanded="false" />
-            <element signature="e#9834#10068#0" expanded="false" />
-            <element signature="e#10853#12201#0" expanded="false" />
-            <element signature="e#11129#11900#0" expanded="false" />
-            <element signature="e#12022#12082#0" expanded="false" />
-            <element signature="e#12299#12528#0" expanded="false" />
-            <element signature="e#12575#12634#0" expanded="false" />
-            <element signature="e#12663#12889#0" expanded="false" />
-            <element signature="e#12934#13465#0" expanded="false" />
-            <element signature="e#13063#13465#0" expanded="false" />
-            <element signature="e#13500#13958#0" expanded="false" />
-            <element signature="e#13518#13804#0" expanded="false" />
-            <element signature="e#13998#14651#0" expanded="false" />
-            <element signature="e#14126#14364#0" expanded="false" />
-            <element signature="e#14240#14364#0" expanded="false" />
-            <element signature="e#14414#14651#0" expanded="false" />
-            <element signature="e#14528#14651#0" expanded="false" />
-            <element signature="e#15423#15825#0" expanded="false" />
-            <element signature="e#15471#15769#0" expanded="false" />
-            <element signature="e#15608#15769#0" expanded="false" />
-            <element signature="e#15847#16244#0" expanded="false" />
-            <element signature="e#15925#16244#0" expanded="false" />
-            <element signature="e#16016#16244#0" expanded="false" />
-            <element signature="e#16067#16145#0" expanded="false" />
-            <element signature="e#16270#16690#0" expanded="false" />
-            <element signature="e#16361#16497#0" expanded="false" />
-            <element signature="e#16555#16690#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../item-scraper/scraper.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="112" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scraper.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1853">
-          <caret line="109" column="0" lean-forward="false" selection-start-line="109" selection-start-column="0" selection-end-line="109" selection-end-column="0" />
-          <folding>
-            <element signature="n#!!doc" expanded="false" />
-            <element signature="e#1420#2445#0" expanded="false" />
-            <element signature="e#1664#2155#0" expanded="false" />
-            <element signature="e#2232#2445#0" expanded="false" />
-            <element signature="e#3862#4214#0" expanded="false" />
-            <element signature="e#6739#6877#0" expanded="false" />
-            <element signature="e#7445#7719#0" expanded="false" />
-            <element signature="e#7485#7719#0" expanded="false" />
-            <element signature="e#8167#8312#0" expanded="false" />
-            <element signature="e#8973#9081#0" expanded="false" />
-            <element signature="e#9344#12259#0" expanded="false" />
-            <element signature="e#9769#10068#0" expanded="false" />
-            <element signature="e#9834#10068#0" expanded="false" />
-            <element signature="e#10853#12201#0" expanded="false" />
-            <element signature="e#11129#11900#0" expanded="false" />
-            <element signature="e#12022#12082#0" expanded="false" />
-            <element signature="e#12299#12528#0" expanded="false" />
-            <element signature="e#12575#12634#0" expanded="false" />
-            <element signature="e#12663#12889#0" expanded="false" />
-            <element signature="e#12934#13465#0" expanded="false" />
-            <element signature="e#13063#13465#0" expanded="false" />
-            <element signature="e#13500#13958#0" expanded="false" />
-            <element signature="e#13518#13804#0" expanded="false" />
-            <element signature="e#13998#14651#0" expanded="false" />
-            <element signature="e#14126#14364#0" expanded="false" />
-            <element signature="e#14240#14364#0" expanded="false" />
-            <element signature="e#14414#14651#0" expanded="false" />
-            <element signature="e#14528#14651#0" expanded="false" />
-            <element signature="e#15423#15825#0" expanded="false" />
-            <element signature="e#15471#15769#0" expanded="false" />
-            <element signature="e#15608#15769#0" expanded="false" />
-            <element signature="e#15847#16244#0" expanded="false" />
-            <element signature="e#15925#16244#0" expanded="false" />
-            <element signature="e#16016#16244#0" expanded="false" />
-            <element signature="e#16067#16145#0" expanded="false" />
-            <element signature="e#16270#16690#0" expanded="false" />
-            <element signature="e#16361#16497#0" expanded="false" />
-            <element signature="e#16555#16690#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scraper.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="11" column="64" lean-forward="false" selection-start-line="11" selection-start-column="64" selection-end-line="11" selection-end-column="64" />
-          <folding>
-            <element signature="n#!!doc" expanded="false" />
-            <element signature="e#1420#2445#0" expanded="false" />
-            <element signature="e#1664#2155#0" expanded="false" />
-            <element signature="e#2232#2445#0" expanded="false" />
-            <element signature="e#3862#4214#0" expanded="false" />
-            <element signature="e#6739#6877#0" expanded="false" />
-            <element signature="e#7445#7719#0" expanded="false" />
-            <element signature="e#7485#7719#0" expanded="false" />
-            <element signature="e#8167#8312#0" expanded="false" />
-            <element signature="e#8973#9081#0" expanded="false" />
-            <element signature="e#9344#12259#0" expanded="false" />
-            <element signature="e#9769#10068#0" expanded="false" />
-            <element signature="e#9834#10068#0" expanded="false" />
-            <element signature="e#10853#12201#0" expanded="false" />
-            <element signature="e#11129#11900#0" expanded="false" />
-            <element signature="e#12022#12082#0" expanded="false" />
-            <element signature="e#12299#12528#0" expanded="false" />
-            <element signature="e#12575#12634#0" expanded="false" />
-            <element signature="e#12663#12889#0" expanded="false" />
-            <element signature="e#12934#13465#0" expanded="false" />
-            <element signature="e#13063#13465#0" expanded="false" />
-            <element signature="e#13500#13958#0" expanded="false" />
-            <element signature="e#13518#13804#0" expanded="false" />
-            <element signature="e#13998#14651#0" expanded="false" />
-            <element signature="e#14126#14364#0" expanded="false" />
-            <element signature="e#14240#14364#0" expanded="false" />
-            <element signature="e#14414#14651#0" expanded="false" />
-            <element signature="e#14528#14651#0" expanded="false" />
-            <element signature="e#15423#15825#0" expanded="false" />
-            <element signature="e#15471#15769#0" expanded="false" />
-            <element signature="e#15608#15769#0" expanded="false" />
-            <element signature="e#15847#16244#0" expanded="false" />
-            <element signature="e#15925#16244#0" expanded="false" />
-            <element signature="e#16016#16244#0" expanded="false" />
-            <element signature="e#16067#16145#0" expanded="false" />
-            <element signature="e#16270#16690#0" expanded="false" />
-            <element signature="e#16361#16497#0" expanded="false" />
-            <element signature="e#16555#16690#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ability_ex.txt" />
-    <entry file="file://$PROJECT_DIR$/abilities.txt" />
-    <entry file="file://$PROJECT_DIR$/scraper.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="n#!!doc" expanded="false" />
-            <element signature="e#1420#2445#0" expanded="false" />
-            <element signature="e#1664#2155#0" expanded="false" />
-            <element signature="e#2232#2445#0" expanded="false" />
-            <element signature="e#3862#4214#0" expanded="false" />
-            <element signature="e#6739#6877#0" expanded="false" />
-            <element signature="e#7445#7719#0" expanded="false" />
-            <element signature="e#7485#7719#0" expanded="false" />
-            <element signature="e#8167#8312#0" expanded="false" />
-            <element signature="e#8973#9081#0" expanded="false" />
-            <element signature="e#9344#12259#0" expanded="false" />
-            <element signature="e#9769#10068#0" expanded="false" />
-            <element signature="e#9834#10068#0" expanded="false" />
-            <element signature="e#10853#12201#0" expanded="false" />
-            <element signature="e#11129#11900#0" expanded="false" />
-            <element signature="e#12022#12082#0" expanded="false" />
-            <element signature="e#12299#12528#0" expanded="false" />
-            <element signature="e#12575#12634#0" expanded="false" />
-            <element signature="e#12663#12889#0" expanded="false" />
-            <element signature="e#12934#13465#0" expanded="false" />
-            <element signature="e#13063#13465#0" expanded="false" />
-            <element signature="e#13500#13958#0" expanded="false" />
-            <element signature="e#13518#13804#0" expanded="false" />
-            <element signature="e#13998#14651#0" expanded="false" />
-            <element signature="e#14126#14364#0" expanded="false" />
-            <element signature="e#14240#14364#0" expanded="false" />
-            <element signature="e#14414#14651#0" expanded="false" />
-            <element signature="e#14528#14651#0" expanded="false" />
-            <element signature="e#15423#15825#0" expanded="false" />
-            <element signature="e#15471#15769#0" expanded="false" />
-            <element signature="e#15608#15769#0" expanded="false" />
-            <element signature="e#15847#16244#0" expanded="false" />
-            <element signature="e#15925#16244#0" expanded="false" />
-            <element signature="e#16016#16244#0" expanded="false" />
-            <element signature="e#16067#16145#0" expanded="false" />
-            <element signature="e#16270#16690#0" expanded="false" />
-            <element signature="e#16361#16497#0" expanded="false" />
-            <element signature="e#16555#16690#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ability_ex.txt" />
-    <entry file="file://$PROJECT_DIR$/scraper.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="n#!!doc" expanded="false" />
-            <element signature="e#1420#2445#0" expanded="false" />
-            <element signature="e#1664#2155#0" expanded="false" />
-            <element signature="e#2232#2445#0" expanded="false" />
-            <element signature="e#3862#4214#0" expanded="false" />
-            <element signature="e#6739#6877#0" expanded="false" />
-            <element signature="e#7445#7719#0" expanded="false" />
-            <element signature="e#7485#7719#0" expanded="false" />
-            <element signature="e#8167#8312#0" expanded="false" />
-            <element signature="e#8973#9081#0" expanded="false" />
-            <element signature="e#9344#12259#0" expanded="false" />
-            <element signature="e#9769#10068#0" expanded="false" />
-            <element signature="e#9834#10068#0" expanded="false" />
-            <element signature="e#10853#12201#0" expanded="false" />
-            <element signature="e#11129#11900#0" expanded="false" />
-            <element signature="e#12022#12082#0" expanded="false" />
-            <element signature="e#12299#12528#0" expanded="false" />
-            <element signature="e#12575#12634#0" expanded="false" />
-            <element signature="e#12663#12889#0" expanded="false" />
-            <element signature="e#12934#13465#0" expanded="false" />
-            <element signature="e#13063#13465#0" expanded="false" />
-            <element signature="e#13500#13958#0" expanded="false" />
-            <element signature="e#13518#13804#0" expanded="false" />
-            <element signature="e#13998#14651#0" expanded="false" />
-            <element signature="e#14126#14364#0" expanded="false" />
-            <element signature="e#14240#14364#0" expanded="false" />
-            <element signature="e#14414#14651#0" expanded="false" />
-            <element signature="e#14528#14651#0" expanded="false" />
-            <element signature="e#15423#15825#0" expanded="false" />
-            <element signature="e#15471#15769#0" expanded="false" />
-            <element signature="e#15608#15769#0" expanded="false" />
-            <element signature="e#15847#16244#0" expanded="false" />
-            <element signature="e#15925#16244#0" expanded="false" />
-            <element signature="e#16016#16244#0" expanded="false" />
-            <element signature="e#16067#16145#0" expanded="false" />
-            <element signature="e#16270#16690#0" expanded="false" />
-            <element signature="e#16361#16497#0" expanded="false" />
-            <element signature="e#16555#16690#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ability_ex.txt" />
-    <entry file="file://$PROJECT_DIR$/scraper.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="n#!!doc" expanded="false" />
-            <element signature="e#1420#2445#0" expanded="false" />
-            <element signature="e#1664#2155#0" expanded="false" />
-            <element signature="e#2232#2445#0" expanded="false" />
-            <element signature="e#3862#4214#0" expanded="false" />
-            <element signature="e#6739#6877#0" expanded="false" />
-            <element signature="e#7445#7719#0" expanded="false" />
-            <element signature="e#7485#7719#0" expanded="false" />
-            <element signature="e#8167#8312#0" expanded="false" />
-            <element signature="e#8973#9081#0" expanded="false" />
-            <element signature="e#9344#12259#0" expanded="false" />
-            <element signature="e#9769#10068#0" expanded="false" />
-            <element signature="e#9834#10068#0" expanded="false" />
-            <element signature="e#10853#12201#0" expanded="false" />
-            <element signature="e#11129#11900#0" expanded="false" />
-            <element signature="e#12022#12082#0" expanded="false" />
-            <element signature="e#12299#12528#0" expanded="false" />
-            <element signature="e#12575#12634#0" expanded="false" />
-            <element signature="e#12663#12889#0" expanded="false" />
-            <element signature="e#12934#13465#0" expanded="false" />
-            <element signature="e#13063#13465#0" expanded="false" />
-            <element signature="e#13500#13958#0" expanded="false" />
-            <element signature="e#13518#13804#0" expanded="false" />
-            <element signature="e#13998#14651#0" expanded="false" />
-            <element signature="e#14126#14364#0" expanded="false" />
-            <element signature="e#14240#14364#0" expanded="false" />
-            <element signature="e#14414#14651#0" expanded="false" />
-            <element signature="e#14528#14651#0" expanded="false" />
-            <element signature="e#15423#15825#0" expanded="false" />
-            <element signature="e#15471#15769#0" expanded="false" />
-            <element signature="e#15608#15769#0" expanded="false" />
-            <element signature="e#15847#16244#0" expanded="false" />
-            <element signature="e#15925#16244#0" expanded="false" />
-            <element signature="e#16016#16244#0" expanded="false" />
-            <element signature="e#16067#16145#0" expanded="false" />
-            <element signature="e#16270#16690#0" expanded="false" />
-            <element signature="e#16361#16497#0" expanded="false" />
-            <element signature="e#16555#16690#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scraper.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="n#!!doc" expanded="false" />
-            <element signature="e#1420#2445#0" expanded="false" />
-            <element signature="e#1664#2155#0" expanded="false" />
-            <element signature="e#2232#2445#0" expanded="false" />
-            <element signature="e#3862#4214#0" expanded="false" />
-            <element signature="e#6739#6877#0" expanded="false" />
-            <element signature="e#7445#7719#0" expanded="false" />
-            <element signature="e#7485#7719#0" expanded="false" />
-            <element signature="e#8167#8312#0" expanded="false" />
-            <element signature="e#8973#9081#0" expanded="false" />
-            <element signature="e#9344#12259#0" expanded="false" />
-            <element signature="e#9769#10068#0" expanded="false" />
-            <element signature="e#9834#10068#0" expanded="false" />
-            <element signature="e#10853#12201#0" expanded="false" />
-            <element signature="e#11129#11900#0" expanded="false" />
-            <element signature="e#12022#12082#0" expanded="false" />
-            <element signature="e#12299#12528#0" expanded="false" />
-            <element signature="e#12575#12634#0" expanded="false" />
-            <element signature="e#12663#12889#0" expanded="false" />
-            <element signature="e#12934#13465#0" expanded="false" />
-            <element signature="e#13063#13465#0" expanded="false" />
-            <element signature="e#13500#13958#0" expanded="false" />
-            <element signature="e#13518#13804#0" expanded="false" />
-            <element signature="e#13998#14651#0" expanded="false" />
-            <element signature="e#14126#14364#0" expanded="false" />
-            <element signature="e#14240#14364#0" expanded="false" />
-            <element signature="e#14414#14651#0" expanded="false" />
-            <element signature="e#14528#14651#0" expanded="false" />
-            <element signature="e#15423#15825#0" expanded="false" />
-            <element signature="e#15471#15769#0" expanded="false" />
-            <element signature="e#15608#15769#0" expanded="false" />
-            <element signature="e#15847#16244#0" expanded="false" />
-            <element signature="e#15925#16244#0" expanded="false" />
-            <element signature="e#16016#16244#0" expanded="false" />
-            <element signature="e#16067#16145#0" expanded="false" />
-            <element signature="e#16270#16690#0" expanded="false" />
-            <element signature="e#16361#16497#0" expanded="false" />
-            <element signature="e#16555#16690#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/output.txt" />
-    <entry file="file://$PROJECT_DIR$/geckodriver.log" />
-    <entry file="file://$PROJECT_DIR$/all.html" />
-    <entry file="file://$PROJECT_DIR$/output.html" />
-    <entry file="file://$USER_HOME$/Library/Python/2.7/lib/python/site-packages/bs4/element.py" />
-    <entry file="file://$PROJECT_DIR$/abilities.csv" />
-    <entry file="file://$PROJECT_DIR$/ability_ex.txt" />
-    <entry file="file://$PROJECT_DIR$/abilities.txt" />
-    <entry file="file://$PROJECT_DIR$/htmls/Cloak.html" />
-    <entry file="file://$PROJECT_DIR$/../item-scraper/scraper.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/items.csv" />
-    <entry file="file://$PROJECT_DIR$/page_downloader.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/abilities.json" />
-    <entry file="file://$PROJECT_DIR$/Writer.py" />
-    <entry file="file:///System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/json/encoder.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1369">
-          <caret line="183" column="0" lean-forward="false" selection-start-line="183" selection-start-column="0" selection-end-line="183" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/images/Abaddon.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/images/Acid Spray_Alchemist.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/images/Chilling Touch_Ancient Apparition.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/images/Unstable Concoction Throw_Alchemist.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/images/Doom.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/images/Doom_Doom.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/images/.png" />
-    <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/pydevd.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="709">
-          <caret line="973" column="0" lean-forward="false" selection-start-line="973" selection-start-column="0" selection-end-line="973" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/items_fixed.json" />
-    <entry file="file://$PROJECT_DIR$/dota_fixed.json" />
-    <entry file="file://$PROJECT_DIR$/heroes_pretty.json" />
-    <entry file="file://$PROJECT_DIR$/heroes_fixed.json" />
-    <entry file="file://$PROJECT_DIR$/heroes.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="59184">
-          <caret line="0" column="649551" lean-forward="false" selection-start-line="0" selection-start-column="649551" selection-end-line="0" selection-end-column="649551" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///Library/Python/2.7/site-packages/bs4/element.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="996" column="0" lean-forward="false" selection-start-line="996" selection-start-column="0" selection-end-line="996" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/items.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="0" column="2861" lean-forward="false" selection-start-line="0" selection-start-column="2861" selection-end-line="0" selection-end-column="2861" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dota.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="1046038" lean-forward="false" selection-start-line="0" selection-start-column="1046023" selection-end-line="0" selection-end-column="1046038" />
+        <state relative-caret-position="378">
+          <caret line="5" column="4582" lean-forward="false" selection-start-line="5" selection-start-column="4582" selection-end-line="5" selection-end-column="4582" />
           <folding />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/htmls/heroes/Nature's Prophet.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="91523">
+          <caret line="4859" column="93" lean-forward="false" selection-start-line="4859" selection-start-column="93" selection-end-line="4859" selection-end-column="93" />
+          <folding>
+            <element signature="n#style#0;n#table#0;n#div#3;n#div#2;n#div#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#tr#0;n#table#0;n#div#3;n#div#2;n#div#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#td#1;n#tr#0;n#table#0;n#div#3;n#div#2;n#div#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#td#2;n#tr#0;n#table#0;n#div#3;n#div#2;n#div#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#td#3;n#tr#0;n#table#0;n#div#3;n#div#2;n#div#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#td#4;n#tr#0;n#table#0;n#div#3;n#div#2;n#div#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#td#5;n#tr#0;n#table#0;n#div#3;n#div#2;n#div#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#td#6;n#tr#0;n#table#0;n#div#3;n#div#2;n#div#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#td#7;n#tr#0;n#table#0;n#div#3;n#div#2;n#div#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#td#8;n#tr#0;n#table#0;n#div#3;n#div#2;n#div#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#td#9;n#tr#0;n#table#0;n#div#3;n#div#2;n#div#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#td#10;n#tr#0;n#table#0;n#div#3;n#div#2;n#div#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#td#11;n#tr#0;n#table#0;n#div#3;n#div#2;n#div#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#td#12;n#tr#0;n#table#0;n#div#3;n#div#2;n#div#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#td#13;n#tr#0;n#table#0;n#div#3;n#div#2;n#div#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#td#14;n#tr#0;n#table#0;n#div#3;n#div#2;n#div#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#td#15;n#tr#0;n#table#0;n#div#3;n#div#2;n#div#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#td#16;n#tr#0;n#table#0;n#div#3;n#div#2;n#div#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#td#17;n#tr#0;n#table#0;n#div#3;n#div#2;n#div#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#td#18;n#tr#0;n#table#0;n#div#3;n#div#2;n#div#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#td#19;n#tr#0;n#table#0;n#div#3;n#div#2;n#div#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#td#20;n#tr#0;n#table#0;n#div#3;n#div#2;n#div#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#td#21;n#tr#0;n#table#0;n#div#3;n#div#2;n#div#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#table#1;n#div#3;n#div#2;n#div#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#td#0;n#tr#0;n#table#1;n#div#3;n#div#2;n#div#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#table#0;n#td#0;n#tr#2;n#table#1;n#div#3;n#div#2;n#div#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#table#0;n#td#0;n#tr#3;n#table#1;n#div#3;n#div#2;n#div#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#span#0;n#th#1;n#tr#0;n#table#0;n#td#0;n#tr#3;n#table#1;n#div#3;n#div#2;n#div#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#span#0;n#th#3;n#tr#0;n#table#0;n#td#0;n#tr#3;n#table#1;n#div#3;n#div#2;n#div#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#span#0;n#th#4;n#tr#0;n#table#0;n#td#0;n#tr#3;n#table#1;n#div#3;n#div#2;n#div#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#tr#1;n#table#0;n#td#0;n#tr#3;n#table#1;n#div#3;n#div#2;n#div#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#tr#3;n#table#0;n#td#0;n#tr#3;n#table#1;n#div#3;n#div#2;n#div#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#tr#5;n#table#0;n#td#0;n#tr#3;n#table#1;n#div#3;n#div#2;n#div#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#tr#7;n#table#0;n#td#0;n#tr#3;n#table#1;n#div#3;n#div#2;n#div#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#span#0;n#a#0;n#b#0;n#td#0;n#tr#8;n#table#0;n#td#0;n#tr#3;n#table#1;n#div#3;n#div#2;n#div#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#table#0;n#td#0;n#tr#4;n#table#1;n#div#3;n#div#2;n#div#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#tr#0;n#table#0;n#td#0;n#tr#4;n#table#1;n#div#3;n#div#2;n#div#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#td#0;n#tr#0;n#table#0;n#td#0;n#tr#4;n#table#1;n#div#3;n#div#2;n#div#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#td#0;n#tr#1;n#table#0;n#td#0;n#tr#4;n#table#1;n#div#3;n#div#2;n#div#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#tr#2;n#table#0;n#td#0;n#tr#4;n#table#1;n#div#3;n#div#2;n#div#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#td#0;n#tr#2;n#table#0;n#td#0;n#tr#4;n#table#1;n#div#3;n#div#2;n#div#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#span#0;n#td#1;n#tr#2;n#table#0;n#td#0;n#tr#4;n#table#1;n#div#3;n#div#2;n#div#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#span#1;n#td#1;n#tr#2;n#table#0;n#td#0;n#tr#4;n#table#1;n#div#3;n#div#2;n#div#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#td#0;n#tr#3;n#table#0;n#td#0;n#tr#4;n#table#1;n#div#3;n#div#2;n#div#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#span#0;n#td#1;n#tr#3;n#table#0;n#td#0;n#tr#4;n#table#1;n#div#3;n#div#2;n#div#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#tr#4;n#table#0;n#td#0;n#tr#4;n#table#1;n#div#3;n#div#2;n#div#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#td#0;n#tr#4;n#table#0;n#td#0;n#tr#4;n#table#1;n#div#3;n#div#2;n#div#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#td#0;n#tr#5;n#table#0;n#td#0;n#tr#4;n#table#1;n#div#3;n#div#2;n#div#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#span#0;n#td#1;n#tr#5;n#table#0;n#td#0;n#tr#4;n#table#1;n#div#3;n#div#2;n#div#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#span#1;n#td#1;n#tr#5;n#table#0;n#td#0;n#tr#4;n#table#1;n#div#3;n#div#2;n#div#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#tr#6;n#table#0;n#td#0;n#tr#4;n#table#1;n#div#3;n#div#2;n#div#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#td#0;n#tr#6;n#table#0;n#td#0;n#tr#4;n#table#1;n#div#3;n#div#2;n#div#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#td#0;n#tr#7;n#table#0;n#td#0;n#tr#4;n#table#1;n#div#3;n#div#2;n#div#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#tr#8;n#table#0;n#td#0;n#tr#4;n#table#1;n#div#3;n#div#2;n#div#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#td#0;n#tr#8;n#table#0;n#td#0;n#tr#4;n#table#1;n#div#3;n#div#2;n#div#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#td#0;n#tr#9;n#table#0;n#td#0;n#tr#4;n#table#1;n#div#3;n#div#2;n#div#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#1;n#div#3;n#div#2;n#div#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#table#0;n#div#1;n#div#3;n#div#2;n#div#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#table#0;n#td#0;n#tr#0;n#table#0;n#div#1;n#div#3;n#div#2;n#div#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#td#0;n#tr#0;n#table#0;n#td#0;n#tr#0;n#table#0;n#div#1;n#div#3;n#div#2;n#div#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#2;n#div#3;n#div#2;n#div#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#div#2;n#div#3;n#div#2;n#div#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#2;n#div#3;n#div#2;n#div#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#2;n#div#3;n#div#2;n#div#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#img#0;n#a#0;n#div#0;n#div#0;n#div#0;n#div#2;n#div#3;n#div#2;n#div#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#img#0;n#a#1;n#div#0;n#div#0;n#div#0;n#div#2;n#div#3;n#div#2;n#div#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#span#0;n#div#0;n#div#0;n#div#0;n#div#2;n#div#3;n#div#2;n#div#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#2;n#div#3;n#div#2;n#div#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#span#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#2;n#div#3;n#div#2;n#div#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#2;n#div#3;n#div#2;n#div#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#span#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#2;n#div#3;n#div#2;n#div#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#1;n#div#1;n#div#0;n#div#2;n#div#3;n#div#2;n#div#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#div#1;n#div#1;n#div#0;n#div#2;n#div#3;n#div#2;n#div#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#1;n#div#0;n#div#2;n#div#3;n#div#2;n#div#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#1;n#div#0;n#div#1;n#div#1;n#div#0;n#div#2;n#div#3;n#div#2;n#div#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#2;n#div#0;n#div#1;n#div#1;n#div#0;n#div#2;n#div#3;n#div#2;n#div#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#1;n#div#1;n#div#1;n#div#0;n#div#2;n#div#3;n#div#2;n#div#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#2;n#div#0;n#div#2;n#div#3;n#div#2;n#div#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#span#0;n#div#0;n#div#2;n#div#0;n#div#2;n#div#3;n#div#2;n#div#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#span#1;n#div#0;n#div#2;n#div#0;n#div#2;n#div#3;n#div#2;n#div#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#4;n#div#2;n#div#0;n#div#2;n#div#3;n#div#2;n#div#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#span#0;n#div#4;n#div#2;n#div#0;n#div#2;n#div#3;n#div#2;n#div#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#img#0;n#a#0;n#span#0;n#div#4;n#div#2;n#div#0;n#div#2;n#div#3;n#div#2;n#div#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#5;n#div#2;n#div#0;n#div#2;n#div#3;n#div#2;n#div#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#span#0;n#div#5;n#div#2;n#div#0;n#div#2;n#div#3;n#div#2;n#div#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#img#0;n#a#0;n#span#0;n#div#5;n#div#2;n#div#0;n#div#2;n#div#3;n#div#2;n#div#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#6;n#div#2;n#div#0;n#div#2;n#div#3;n#div#2;n#div#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#7;n#div#2;n#div#0;n#div#2;n#div#3;n#div#2;n#div#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#span#0;n#div#7;n#div#2;n#div#0;n#div#2;n#div#3;n#div#2;n#div#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#img#0;n#a#0;n#span#0;n#div#7;n#div#2;n#div#0;n#div#2;n#div#3;n#div#2;n#div#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#8;n#div#2;n#div#0;n#div#2;n#div#3;n#div#2;n#div#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#span#0;n#div#8;n#div#2;n#div#0;n#div#2;n#div#3;n#div#2;n#div#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#img#0;n#a#0;n#span#0;n#div#8;n#div#2;n#div#0;n#div#2;n#div#3;n#div#2;n#div#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#9;n#div#2;n#div#0;n#div#2;n#div#3;n#div#2;n#div#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#1;n#div#2;n#div#3;n#div#2;n#div#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#3;n#div#3;n#div#2;n#div#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#div#3;n#div#3;n#div#2;n#div#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#3;n#div#3;n#div#2;n#div#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#3;n#div#3;n#div#2;n#div#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#span#0;n#div#0;n#div#0;n#div#0;n#div#3;n#div#3;n#div#2;n#div#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#3;n#div#3;n#div#2;n#div#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#span#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#3;n#div#3;n#div#2;n#div#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#3;n#div#3;n#div#2;n#div#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#span#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#3;n#div#3;n#div#2;n#div#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#1;n#div#1;n#div#0;n#div#3;n#div#3;n#div#2;n#div#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#div#1;n#div#1;n#div#0;n#div#3;n#div#3;n#div#2;n#div#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#1;n#div#0;n#div#3;n#div#3;n#div#2;n#div#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#1;n#div#0;n#div#1;n#div#1;n#div#0;n#div#3;n#div#3;n#div#2;n#div#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#2;n#div#0;n#div#1;n#div#1;n#div#0;n#div#3;n#div#3;n#div#2;n#div#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#1;n#div#1;n#div#1;n#div#0;n#div#3;n#div#3;n#div#2;n#div#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#2;n#div#0;n#div#3;n#div#3;n#div#2;n#div#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#span#0;n#div#0;n#div#2;n#div#0;n#div#3;n#div#3;n#div#2;n#div#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#span#1;n#div#0;n#div#2;n#div#0;n#div#3;n#div#3;n#div#2;n#div#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#2;n#div#2;n#div#0;n#div#3;n#div#3;n#div#2;n#div#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#span#0;n#div#2;n#div#2;n#div#0;n#div#3;n#div#3;n#div#2;n#div#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#img#0;n#a#0;n#span#0;n#div#2;n#div#2;n#div#0;n#div#3;n#div#3;n#div#2;n#div#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#3;n#div#2;n#div#0;n#div#3;n#div#3;n#div#2;n#div#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#span#0;n#div#3;n#div#2;n#div#0;n#div#3;n#div#3;n#div#2;n#div#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#img#0;n#a#0;n#span#0;n#div#3;n#div#2;n#div#0;n#div#3;n#div#3;n#div#2;n#div#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#4;n#div#2;n#div#0;n#div#3;n#div#3;n#div#2;n#div#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#5;n#div#2;n#div#0;n#div#3;n#div#3;n#div#2;n#div#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#img#0;n#div#0;n#div#5;n#div#2;n#div#0;n#div#3;n#div#3;n#div#2;n#div#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#span#0;n#div#0;n#div#5;n#div#2;n#div#0;n#div#3;n#div#3;n#div#2;n#div#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#6;n#div#2;n#div#0;n#div#3;n#div#3;n#div#2;n#div#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#1;n#div#3;n#div#3;n#div#2;n#div#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#span#0;n#li#0;n#ul#2;n#div#1;n#div#3;n#div#3;n#div#2;n#div#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#span#1;n#li#0;n#ul#2;n#div#1;n#div#3;n#div#3;n#div#2;n#div#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#table#2;n#div#3;n#div#2;n#div#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#th#0;n#tr#0;n#table#2;n#div#3;n#div#2;n#div#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#span#0;n#a#0;n#th#0;n#tr#0;n#table#2;n#div#3;n#div#2;n#div#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#td#0;n#tr#2;n#table#2;n#div#3;n#div#2;n#div#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#td#0;n#tr#2;n#table#2;n#div#3;n#div#2;n#div#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#th#0;n#tr#3;n#table#2;n#div#3;n#div#2;n#div#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#table#0;n#td#0;n#tr#4;n#table#2;n#div#3;n#div#2;n#div#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#img#0;n#a#0;n#td#1;n#tr#2;n#table#0;n#td#0;n#tr#4;n#table#2;n#div#3;n#div#2;n#div#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#span#0;n#td#1;n#tr#4;n#table#0;n#td#0;n#tr#4;n#table#2;n#div#3;n#div#2;n#div#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#span#0;n#td#1;n#tr#6;n#table#0;n#td#0;n#tr#4;n#table#2;n#div#3;n#div#2;n#div#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#img#0;n#a#0;n#span#0;n#td#1;n#tr#6;n#table#0;n#td#0;n#tr#4;n#table#2;n#div#3;n#div#2;n#div#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#img#0;n#a#1;n#span#0;n#td#1;n#tr#6;n#table#0;n#td#0;n#tr#4;n#table#2;n#div#3;n#div#2;n#div#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#span#0;n#td#1;n#tr#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#span#0;n#td#1;n#tr#2;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#span#1;n#td#1;n#tr#2;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#span#0;n#td#1;n#tr#3;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#span#0;n#td#1;n#tr#7;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#span#1;n#td#1;n#tr#7;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#span#2;n#td#1;n#tr#7;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#span#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#span#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#span#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#1;n#div#1;n#div#0;n#div#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#div#1;n#div#1;n#div#0;n#div#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#1;n#div#0;n#div#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#1;n#div#0;n#div#1;n#div#1;n#div#0;n#div#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#2;n#div#0;n#div#1;n#div#1;n#div#0;n#div#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#span#0;n#b#0;n#a#0;n#div#2;n#div#0;n#div#1;n#div#1;n#div#0;n#div#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#1;n#div#1;n#div#1;n#div#0;n#div#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#2;n#div#0;n#div#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#span#0;n#div#0;n#div#2;n#div#0;n#div#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#span#1;n#div#0;n#div#2;n#div#0;n#div#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#5;n#div#2;n#div#0;n#div#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#span#0;n#div#5;n#div#2;n#div#0;n#div#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#img#0;n#a#0;n#span#0;n#div#5;n#div#2;n#div#0;n#div#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#6;n#div#2;n#div#0;n#div#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#span#0;n#div#6;n#div#2;n#div#0;n#div#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#img#0;n#a#0;n#span#0;n#div#6;n#div#2;n#div#0;n#div#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#7;n#div#2;n#div#0;n#div#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#1;n#div#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#table#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#th#0;n#tr#0;n#table#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#span#0;n#a#0;n#th#0;n#tr#0;n#table#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#td#0;n#tr#2;n#table#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#td#0;n#tr#2;n#table#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#th#0;n#tr#3;n#table#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#table#0;n#td#0;n#tr#4;n#table#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#img#0;n#a#0;n#td#1;n#tr#2;n#table#0;n#td#0;n#tr#4;n#table#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#span#0;n#td#1;n#tr#4;n#table#0;n#td#0;n#tr#4;n#table#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#span#0;n#td#1;n#tr#6;n#table#0;n#td#0;n#tr#4;n#table#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#img#0;n#a#0;n#span#0;n#td#1;n#tr#6;n#table#0;n#td#0;n#tr#4;n#table#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#img#0;n#a#1;n#span#0;n#td#1;n#tr#6;n#table#0;n#td#0;n#tr#4;n#table#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#span#0;n#td#1;n#tr#11;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#span#0;n#td#1;n#tr#13;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#span#1;n#td#1;n#tr#13;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#span#0;n#td#1;n#tr#14;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#span#0;n#td#1;n#tr#18;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#span#1;n#td#1;n#tr#18;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#span#2;n#td#1;n#tr#18;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#1;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#div#1;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#img#0;n#a#0;n#div#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#img#0;n#a#1;n#div#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#span#0;n#div#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#span#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#span#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#1;n#div#1;n#div#0;n#div#1;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#div#1;n#div#1;n#div#0;n#div#1;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#1;n#div#0;n#div#1;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#1;n#div#0;n#div#1;n#div#1;n#div#0;n#div#1;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#2;n#div#0;n#div#1;n#div#1;n#div#0;n#div#1;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#span#0;n#b#0;n#a#0;n#div#2;n#div#0;n#div#1;n#div#1;n#div#0;n#div#1;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#1;n#div#1;n#div#1;n#div#0;n#div#1;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#2;n#div#0;n#div#1;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#span#0;n#div#0;n#div#2;n#div#0;n#div#1;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#span#1;n#div#0;n#div#2;n#div#0;n#div#1;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#img#0;n#a#0;n#div#5;n#div#2;n#div#0;n#div#1;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#span#0;n#div#5;n#div#2;n#div#0;n#div#1;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#img#0;n#a#0;n#div#6;n#div#2;n#div#0;n#div#1;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#span#0;n#div#6;n#div#2;n#div#0;n#div#1;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#7;n#div#2;n#div#0;n#div#1;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#span#0;n#div#7;n#div#2;n#div#0;n#div#1;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#img#0;n#a#0;n#span#0;n#div#7;n#div#2;n#div#0;n#div#1;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#8;n#div#2;n#div#0;n#div#1;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#span#0;n#div#8;n#div#2;n#div#0;n#div#1;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#img#0;n#a#0;n#span#0;n#div#8;n#div#2;n#div#0;n#div#1;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#9;n#div#2;n#div#0;n#div#1;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#10;n#div#2;n#div#0;n#div#1;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#span#0;n#div#10;n#div#2;n#div#0;n#div#1;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#img#0;n#a#0;n#span#0;n#div#10;n#div#2;n#div#0;n#div#1;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#11;n#div#2;n#div#0;n#div#1;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#span#0;n#div#11;n#div#2;n#div#0;n#div#1;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#img#0;n#a#0;n#span#0;n#div#11;n#div#2;n#div#0;n#div#1;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#12;n#div#2;n#div#0;n#div#1;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#13;n#div#2;n#div#0;n#div#1;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#img#0;n#div#0;n#div#13;n#div#2;n#div#0;n#div#1;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#span#0;n#div#0;n#div#13;n#div#2;n#div#0;n#div#1;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#14;n#div#2;n#div#0;n#div#1;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#1;n#div#1;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#img#0;n#a#0;n#li#0;n#ul#6;n#div#1;n#div#1;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#span#0;n#li#0;n#ul#7;n#div#1;n#div#1;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#span#0;n#li#0;n#ul#0;n#li#0;n#ul#7;n#div#1;n#div#1;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#span#0;n#li#1;n#ul#0;n#li#0;n#ul#7;n#div#1;n#div#1;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#span#0;n#li#2;n#ul#0;n#li#0;n#ul#7;n#div#1;n#div#1;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#2;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#div#2;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#table#0;n#div#0;n#div#2;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#td#0;n#tr#0;n#table#0;n#div#0;n#div#2;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#span#0;n#a#0;n#b#0;n#td#0;n#tr#0;n#table#0;n#div#0;n#div#2;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#td#1;n#tr#1;n#table#0;n#div#0;n#div#2;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#span#0;n#td#1;n#tr#1;n#table#0;n#div#0;n#div#2;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#td#1;n#tr#2;n#table#0;n#div#0;n#div#2;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#span#0;n#td#1;n#tr#2;n#table#0;n#div#0;n#div#2;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#td#1;n#tr#3;n#table#0;n#div#0;n#div#2;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#span#0;n#td#1;n#tr#3;n#table#0;n#div#0;n#div#2;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#span#0;n#td#2;n#tr#3;n#table#0;n#div#0;n#div#2;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#td#1;n#tr#4;n#table#0;n#div#0;n#div#2;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#span#0;n#td#1;n#tr#4;n#table#0;n#div#0;n#div#2;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#1;n#div#2;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#span#0;n#li#0;n#ul#3;n#div#1;n#div#2;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#span#0;n#li#0;n#ul#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#span#1;n#li#0;n#ul#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#span#2;n#li#0;n#ul#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#span#0;n#li#1;n#ul#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#span#0;n#li#2;n#ul#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#span#0;n#li#3;n#ul#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#span#0;n#li#0;n#ul#1;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#span#0;n#li#1;n#ul#1;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#span#1;n#li#1;n#ul#1;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#span#0;n#li#2;n#ul#1;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#span#1;n#li#2;n#ul#1;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#span#0;n#li#0;n#ul#2;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#span#0;n#li#1;n#ul#2;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#span#0;n#li#2;n#ul#2;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#span#0;n#li#3;n#ul#2;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#span#0;n#li#0;n#ul#3;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#span#0;n#li#1;n#ul#3;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#span#1;n#li#1;n#ul#3;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#span#0;n#li#2;n#ul#3;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#span#0;n#li#3;n#ul#3;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#span#1;n#li#3;n#ul#3;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#span#0;n#li#4;n#ul#3;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#span#0;n#li#5;n#ul#3;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#span#0;n#li#6;n#ul#3;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#span#0;n#li#7;n#ul#3;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#span#0;n#li#8;n#ul#3;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#span#0;n#li#9;n#ul#3;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#span#0;n#li#10;n#ul#3;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#span#0;n#li#11;n#ul#3;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#span#0;n#li#12;n#ul#3;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#span#0;n#li#13;n#ul#3;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#span#0;n#li#14;n#ul#3;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#span#0;n#li#15;n#ul#3;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#span#0;n#li#16;n#ul#3;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#span#0;n#li#17;n#ul#3;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#span#0;n#li#18;n#ul#3;n#!!top" expanded="false" />
+            <element signature="e#154272#154277#0" expanded="false" />
+            <element signature="e#154662#154667#0" expanded="false" />
+            <element signature="n#style#0;n#table#1;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#td#0;n#tr#0;n#table#1;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#table#0;n#td#0;n#tr#0;n#table#1;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#th#0;n#tr#0;n#table#0;n#td#0;n#tr#0;n#table#1;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#span#0;n#th#0;n#tr#0;n#table#0;n#td#0;n#tr#0;n#table#1;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#span#0;n#th#0;n#tr#0;n#table#0;n#td#0;n#tr#0;n#table#1;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#span#0;n#a#0;n#div#0;n#span#0;n#th#0;n#tr#0;n#table#0;n#td#0;n#tr#0;n#table#1;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#span#0;n#div#0;n#span#0;n#th#0;n#tr#0;n#table#0;n#td#0;n#tr#0;n#table#1;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#span#0;n#a#1;n#div#0;n#span#0;n#th#0;n#tr#0;n#table#0;n#td#0;n#tr#0;n#table#1;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#span#1;n#div#0;n#span#0;n#th#0;n#tr#0;n#table#0;n#td#0;n#tr#0;n#table#1;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#span#0;n#a#2;n#div#0;n#span#0;n#th#0;n#tr#0;n#table#0;n#td#0;n#tr#0;n#table#1;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#span#1;n#th#0;n#tr#0;n#table#0;n#td#0;n#tr#0;n#table#1;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#span#0;n#span#1;n#th#0;n#tr#0;n#table#0;n#td#0;n#tr#0;n#table#1;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#tr#1;n#table#0;n#td#0;n#tr#0;n#table#1;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#td#0;n#tr#2;n#table#0;n#td#0;n#tr#0;n#table#1;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#td#1;n#tr#2;n#table#0;n#td#0;n#tr#0;n#table#1;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#td#1;n#tr#2;n#table#0;n#td#0;n#tr#0;n#table#1;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#td#1;n#tr#2;n#table#0;n#td#0;n#tr#0;n#table#1;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#td#1;n#tr#2;n#table#0;n#td#0;n#tr#0;n#table#1;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#1;n#div#0;n#td#1;n#tr#2;n#table#0;n#td#0;n#tr#0;n#table#1;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#td#1;n#tr#2;n#table#0;n#td#0;n#tr#0;n#table#1;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#2;n#div#0;n#td#1;n#tr#2;n#table#0;n#td#0;n#tr#0;n#table#1;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#div#2;n#div#0;n#td#1;n#tr#2;n#table#0;n#td#0;n#tr#0;n#table#1;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#3;n#div#0;n#td#1;n#tr#2;n#table#0;n#td#0;n#tr#0;n#table#1;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#div#3;n#div#0;n#td#1;n#tr#2;n#table#0;n#td#0;n#tr#0;n#table#1;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#4;n#div#0;n#td#1;n#tr#2;n#table#0;n#td#0;n#tr#0;n#table#1;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#div#4;n#div#0;n#td#1;n#tr#2;n#table#0;n#td#0;n#tr#0;n#table#1;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#5;n#div#0;n#td#1;n#tr#2;n#table#0;n#td#0;n#tr#0;n#table#1;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#div#5;n#div#0;n#td#1;n#tr#2;n#table#0;n#td#0;n#tr#0;n#table#1;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#6;n#div#0;n#td#1;n#tr#2;n#table#0;n#td#0;n#tr#0;n#table#1;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#div#6;n#div#0;n#td#1;n#tr#2;n#table#0;n#td#0;n#tr#0;n#table#1;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#7;n#div#0;n#td#1;n#tr#2;n#table#0;n#td#0;n#tr#0;n#table#1;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#div#7;n#div#0;n#td#1;n#tr#2;n#table#0;n#td#0;n#tr#0;n#table#1;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#8;n#div#0;n#td#1;n#tr#2;n#table#0;n#td#0;n#tr#0;n#table#1;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#div#8;n#div#0;n#td#1;n#tr#2;n#table#0;n#td#0;n#tr#0;n#table#1;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#9;n#div#0;n#td#1;n#tr#2;n#table#0;n#td#0;n#tr#0;n#table#1;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#div#9;n#div#0;n#td#1;n#tr#2;n#table#0;n#td#0;n#tr#0;n#table#1;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#10;n#div#0;n#td#1;n#tr#2;n#table#0;n#td#0;n#tr#0;n#table#1;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#div#10;n#div#0;n#td#1;n#tr#2;n#table#0;n#td#0;n#tr#0;n#table#1;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#11;n#div#0;n#td#1;n#tr#2;n#table#0;n#td#0;n#tr#0;n#table#1;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#div#11;n#div#0;n#td#1;n#tr#2;n#table#0;n#td#0;n#tr#0;n#table#1;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#12;n#div#0;n#td#1;n#tr#2;n#table#0;n#td#0;n#tr#0;n#table#1;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#div#12;n#div#0;n#td#1;n#tr#2;n#table#0;n#td#0;n#tr#0;n#table#1;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#tr#3;n#table#0;n#td#0;n#tr#0;n#table#1;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#td#0;n#tr#4;n#table#0;n#td#0;n#tr#0;n#table#1;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#td#1;n#tr#4;n#table#0;n#td#0;n#tr#0;n#table#1;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#td#1;n#tr#4;n#table#0;n#td#0;n#tr#0;n#table#1;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#td#1;n#tr#4;n#table#0;n#td#0;n#tr#0;n#table#1;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#td#1;n#tr#4;n#table#0;n#td#0;n#tr#0;n#table#1;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#1;n#div#0;n#td#1;n#tr#4;n#table#0;n#td#0;n#tr#0;n#table#1;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#td#1;n#tr#4;n#table#0;n#td#0;n#tr#0;n#table#1;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#2;n#div#0;n#td#1;n#tr#4;n#table#0;n#td#0;n#tr#0;n#table#1;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#div#2;n#div#0;n#td#1;n#tr#4;n#table#0;n#td#0;n#tr#0;n#table#1;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#3;n#div#0;n#td#1;n#tr#4;n#table#0;n#td#0;n#tr#0;n#table#1;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#div#3;n#div#0;n#td#1;n#tr#4;n#table#0;n#td#0;n#tr#0;n#table#1;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#4;n#div#0;n#td#1;n#tr#4;n#table#0;n#td#0;n#tr#0;n#table#1;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#div#4;n#div#0;n#td#1;n#tr#4;n#table#0;n#td#0;n#tr#0;n#table#1;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#5;n#div#0;n#td#1;n#tr#4;n#table#0;n#td#0;n#tr#0;n#table#1;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#div#5;n#div#0;n#td#1;n#tr#4;n#table#0;n#td#0;n#tr#0;n#table#1;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#6;n#div#0;n#td#1;n#tr#4;n#table#0;n#td#0;n#tr#0;n#table#1;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#div#6;n#div#0;n#td#1;n#tr#4;n#table#0;n#td#0;n#tr#0;n#table#1;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#7;n#div#0;n#td#1;n#tr#4;n#table#0;n#td#0;n#tr#0;n#table#1;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#div#7;n#div#0;n#td#1;n#tr#4;n#table#0;n#td#0;n#tr#0;n#table#1;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#8;n#div#0;n#td#1;n#tr#4;n#table#0;n#td#0;n#tr#0;n#table#1;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#div#8;n#div#0;n#td#1;n#tr#4;n#table#0;n#td#0;n#tr#0;n#table#1;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#9;n#div#0;n#td#1;n#tr#4;n#table#0;n#td#0;n#tr#0;n#table#1;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#div#9;n#div#0;n#td#1;n#tr#4;n#table#0;n#td#0;n#tr#0;n#table#1;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#10;n#div#0;n#td#1;n#tr#4;n#table#0;n#td#0;n#tr#0;n#table#1;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#div#10;n#div#0;n#td#1;n#tr#4;n#table#0;n#td#0;n#tr#0;n#table#1;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#tr#5;n#table#0;n#td#0;n#tr#0;n#table#1;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#td#0;n#tr#6;n#table#0;n#td#0;n#tr#0;n#table#1;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#td#1;n#tr#6;n#table#0;n#td#0;n#tr#0;n#table#1;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#td#1;n#tr#6;n#table#0;n#td#0;n#tr#0;n#table#1;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#td#1;n#tr#6;n#table#0;n#td#0;n#tr#0;n#table#1;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#td#1;n#tr#6;n#table#0;n#td#0;n#tr#0;n#table#1;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#1;n#div#0;n#td#1;n#tr#6;n#table#0;n#td#0;n#tr#0;n#table#1;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#td#1;n#tr#6;n#table#0;n#td#0;n#tr#0;n#table#1;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#tr#7;n#table#0;n#td#0;n#tr#0;n#table#1;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#td#0;n#tr#8;n#table#0;n#td#0;n#tr#0;n#table#1;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#td#1;n#tr#8;n#table#0;n#td#0;n#tr#0;n#table#1;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#td#1;n#tr#8;n#table#0;n#td#0;n#tr#0;n#table#1;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#td#1;n#tr#8;n#table#0;n#td#0;n#tr#0;n#table#1;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#td#1;n#tr#8;n#table#0;n#td#0;n#tr#0;n#table#1;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#tr#9;n#table#0;n#td#0;n#tr#0;n#table#1;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#td#0;n#tr#10;n#table#0;n#td#0;n#tr#0;n#table#1;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#td#1;n#tr#10;n#table#0;n#td#0;n#tr#0;n#table#1;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#td#1;n#tr#10;n#table#0;n#td#0;n#tr#0;n#table#1;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#td#1;n#tr#10;n#table#0;n#td#0;n#tr#0;n#table#1;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#td#1;n#tr#10;n#table#0;n#td#0;n#tr#0;n#table#1;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#tr#11;n#table#0;n#td#0;n#tr#0;n#table#1;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#td#0;n#tr#12;n#table#0;n#td#0;n#tr#0;n#table#1;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#td#1;n#tr#12;n#table#0;n#td#0;n#tr#0;n#table#1;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#td#1;n#tr#12;n#table#0;n#td#0;n#tr#0;n#table#1;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#td#1;n#tr#12;n#table#0;n#td#0;n#tr#0;n#table#1;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#td#1;n#tr#12;n#table#0;n#td#0;n#tr#0;n#table#1;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#1;n#div#0;n#td#1;n#tr#12;n#table#0;n#td#0;n#tr#0;n#table#1;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#td#1;n#tr#12;n#table#0;n#td#0;n#tr#0;n#table#1;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#tr#13;n#table#0;n#td#0;n#tr#0;n#table#1;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#td#0;n#tr#14;n#table#0;n#td#0;n#tr#0;n#table#1;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#td#1;n#tr#14;n#table#0;n#td#0;n#tr#0;n#table#1;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#td#1;n#tr#14;n#table#0;n#td#0;n#tr#0;n#table#1;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#td#1;n#tr#14;n#table#0;n#td#0;n#tr#0;n#table#1;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#td#1;n#tr#14;n#table#0;n#td#0;n#tr#0;n#table#1;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#tr#15;n#table#0;n#td#0;n#tr#0;n#table#1;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#td#0;n#tr#16;n#table#0;n#td#0;n#tr#0;n#table#1;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#td#1;n#tr#16;n#table#0;n#td#0;n#tr#0;n#table#1;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#td#1;n#tr#16;n#table#0;n#td#0;n#tr#0;n#table#1;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#td#1;n#tr#16;n#table#0;n#td#0;n#tr#0;n#table#1;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#td#1;n#tr#16;n#table#0;n#td#0;n#tr#0;n#table#1;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#1;n#div#0;n#td#1;n#tr#16;n#table#0;n#td#0;n#tr#0;n#table#1;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#td#1;n#tr#16;n#table#0;n#td#0;n#tr#0;n#table#1;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#2;n#div#0;n#td#1;n#tr#16;n#table#0;n#td#0;n#tr#0;n#table#1;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#div#2;n#div#0;n#td#1;n#tr#16;n#table#0;n#td#0;n#tr#0;n#table#1;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#3;n#div#0;n#td#1;n#tr#16;n#table#0;n#td#0;n#tr#0;n#table#1;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#div#3;n#div#0;n#td#1;n#tr#16;n#table#0;n#td#0;n#tr#0;n#table#1;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#4;n#div#0;n#td#1;n#tr#16;n#table#0;n#td#0;n#tr#0;n#table#1;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#div#4;n#div#0;n#td#1;n#tr#16;n#table#0;n#td#0;n#tr#0;n#table#1;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#5;n#div#0;n#td#1;n#tr#16;n#table#0;n#td#0;n#tr#0;n#table#1;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#div#5;n#div#0;n#td#1;n#tr#16;n#table#0;n#td#0;n#tr#0;n#table#1;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#6;n#div#0;n#td#1;n#tr#16;n#table#0;n#td#0;n#tr#0;n#table#1;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#div#6;n#div#0;n#td#1;n#tr#16;n#table#0;n#td#0;n#tr#0;n#table#1;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#tr#17;n#table#0;n#td#0;n#tr#0;n#table#1;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#td#0;n#tr#18;n#table#0;n#td#0;n#tr#0;n#table#1;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#td#1;n#tr#18;n#table#0;n#td#0;n#tr#0;n#table#1;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#td#1;n#tr#18;n#table#0;n#td#0;n#tr#0;n#table#1;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#td#1;n#tr#18;n#table#0;n#td#0;n#tr#0;n#table#1;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#td#1;n#tr#18;n#table#0;n#td#0;n#tr#0;n#table#1;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#1;n#div#0;n#td#1;n#tr#18;n#table#0;n#td#0;n#tr#0;n#table#1;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#td#1;n#tr#18;n#table#0;n#td#0;n#tr#0;n#table#1;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#2;n#div#0;n#td#1;n#tr#18;n#table#0;n#td#0;n#tr#0;n#table#1;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#div#2;n#div#0;n#td#1;n#tr#18;n#table#0;n#td#0;n#tr#0;n#table#1;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#tr#19;n#table#0;n#td#0;n#tr#0;n#table#1;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#td#0;n#tr#20;n#table#0;n#td#0;n#tr#0;n#table#1;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#td#1;n#tr#20;n#table#0;n#td#0;n#tr#0;n#table#1;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#td#1;n#tr#20;n#table#0;n#td#0;n#tr#0;n#table#1;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#td#1;n#tr#20;n#table#0;n#td#0;n#tr#0;n#table#1;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#td#1;n#tr#20;n#table#0;n#td#0;n#tr#0;n#table#1;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#1;n#div#0;n#td#1;n#tr#20;n#table#0;n#td#0;n#tr#0;n#table#1;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#td#1;n#tr#20;n#table#0;n#td#0;n#tr#0;n#table#1;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#span#0;n#li#0;n#ul#4;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#span#0;n#li#4;n#ul#4;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#span#1;n#li#4;n#ul#4;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#li#0;n#ul#5;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#li#0;n#ul#5;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#li#0;n#ul#5;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#li#0;n#ul#5;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#li#1;n#ul#5;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#li#1;n#ul#5;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#li#1;n#ul#5;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#li#1;n#ul#5;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#li#2;n#ul#5;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#li#2;n#ul#5;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#li#2;n#ul#5;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#li#2;n#ul#5;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#li#3;n#ul#5;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#li#3;n#ul#5;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#li#3;n#ul#5;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#li#3;n#ul#5;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#li#4;n#ul#5;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#li#4;n#ul#5;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#li#4;n#ul#5;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#li#4;n#ul#5;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#li#5;n#ul#5;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#li#5;n#ul#5;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#li#5;n#ul#5;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#li#5;n#ul#5;n#!!top" expanded="false" />
+            <element signature="e#219852#219857#0" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#div#14;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///Volumes/HDD/casey/OneDrive/Documents/Coding/Projects/Python/dota2-ability-scraper/page_downloader.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="540">
+          <caret line="59" column="14" lean-forward="false" selection-start-line="59" selection-start-column="14" selection-end-line="59" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/page_downloader.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="729">
+          <caret line="65" column="13" lean-forward="false" selection-start-line="65" selection-start-column="13" selection-end-line="65" selection-end-column="13" />
+          <folding>
+            <element signature="e#0#30#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/scraper.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-792">
-          <caret line="310" column="41" lean-forward="true" selection-start-line="310" selection-start-column="41" selection-end-line="310" selection-end-column="41" />
+        <state relative-caret-position="702">
+          <caret line="467" column="11" lean-forward="true" selection-start-line="467" selection-start-column="11" selection-end-line="467" selection-end-column="11" />
           <folding>
-            <element signature="n#!!doc" expanded="false" />
-            <element signature="e#1420#2445#0" expanded="false" />
-            <element signature="e#1664#2155#0" expanded="false" />
-            <element signature="e#2232#2445#0" expanded="false" />
-            <element signature="e#3862#4214#0" expanded="false" />
-            <element signature="e#6739#6877#0" expanded="false" />
-            <element signature="e#7445#7719#0" expanded="false" />
-            <element signature="e#7485#7719#0" expanded="false" />
-            <element signature="e#8167#8312#0" expanded="false" />
-            <element signature="e#8973#9081#0" expanded="false" />
-            <element signature="e#9344#12259#0" expanded="false" />
-            <element signature="e#9769#10068#0" expanded="false" />
-            <element signature="e#9834#10068#0" expanded="false" />
-            <element signature="e#10853#12201#0" expanded="false" />
-            <element signature="e#11129#11900#0" expanded="false" />
-            <element signature="e#12022#12082#0" expanded="false" />
-            <element signature="e#12299#12528#0" expanded="false" />
-            <element signature="e#12575#12634#0" expanded="false" />
-            <element signature="e#12663#12889#0" expanded="false" />
-            <element signature="e#12934#13465#0" expanded="false" />
-            <element signature="e#13063#13465#0" expanded="false" />
-            <element signature="e#13500#13958#0" expanded="false" />
-            <element signature="e#13518#13804#0" expanded="false" />
-            <element signature="e#13998#14651#0" expanded="false" />
-            <element signature="e#14126#14364#0" expanded="false" />
-            <element signature="e#14240#14364#0" expanded="false" />
-            <element signature="e#14414#14651#0" expanded="false" />
-            <element signature="e#14528#14651#0" expanded="false" />
-            <element signature="e#15423#15825#0" expanded="false" />
-            <element signature="e#15471#15769#0" expanded="false" />
-            <element signature="e#15608#15769#0" expanded="false" />
-            <element signature="e#15847#16244#0" expanded="false" />
-            <element signature="e#15925#16244#0" expanded="false" />
-            <element signature="e#16016#16244#0" expanded="false" />
-            <element signature="e#16067#16145#0" expanded="false" />
-            <element signature="e#16270#16690#0" expanded="false" />
-            <element signature="e#16361#16497#0" expanded="false" />
-            <element signature="e#16555#16690#0" expanded="false" />
+            <element signature="e#7721#10040#0" expanded="false" />
+            <element signature="e#10069#12984#0" expanded="false" />
+            <element signature="e#13024#13253#0" expanded="false" />
+            <element signature="e#13300#13359#0" expanded="false" />
+            <element signature="e#13388#13614#0" expanded="false" />
+            <element signature="e#13659#14190#0" expanded="false" />
+            <element signature="e#14724#15377#0" expanded="false" />
+            <element signature="e#16030#16551#0" expanded="false" />
+            <element signature="e#16573#16974#0" expanded="false" />
+            <element signature="e#17009#17429#0" expanded="false" />
           </folding>
         </state>
       </provider>
