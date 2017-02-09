@@ -45,36 +45,46 @@ def find_notes(divs, notes):
         ul_divs = li.findAll('ul')  # get the sub points
         ul_notes = find_notes(ul_divs, [])  # get the points for those sub points
         [d.extract() for d in ul_divs]  # remove them from the tag since we're done
-        text = li.text.encode('utf-8').strip().replace('\xe2\x80\x8b', '')  # get the text from the <li> (without children now)
-        notes.append(text)
+        text = li.text.encode('utf-8')
+        notes.append(clean(text))
         notes.append(ul_notes)
         return find_notes(divs[1:], notes)
 
     # no subpoints, get the text and return in the notes
     else:
-        [notes.append(div.text.encode('utf-8').strip().replace('\xe2\x80\x8b', '')) for div in divs[0].findAll('li')]  # append all <li> text to the notes
+        texts = []
+        for div in divs[0].findAll('li'):
+            text = div.text.encode('utf-8')
+            texts.append(clean(text))
+        notes += texts
         return find_notes(divs[1:], notes) # recurse with the rest
+
+def clean(str):
+    str = str.strip()
+    str = re.sub('\n+', '', str)
+    str = re.sub(' +', ' ', str)
+    return str
 
 def fetch_abilities(soup, extra=True):
     abilities = []
     # iterate through all ability divs
-    for div in soup.findAll('div', style='display: flex; flex-wrap: wrap; align-items: flex-start;')[0:-1]:
+    for ability_div in soup.findAll('div', style='display: flex; flex-wrap: wrap; align-items: flex-start;')[0:-1]:
         ability = {}
-        children = div.find('div', style=re.compile(r'font-weight: bold; font-size: 110%; border-bottom: 1px solid black;.*')).contents
+        children = ability_div.find('div', style=re.compile(r'font-weight: bold; font-size: 110%; border-bottom: 1px solid black;.*')).contents
         # get name
-        name = children[0].encode('utf-8')
+        name = children[0].encode('utf-8').strip()
 
         # get the special information
         ability_special = [SPECIAL_SENTENCES[a['title'].encode('utf-8')] for a in
                            children[1].findAll('a', recursive=False)]
 
         # get if aghs upgrade too since it's not shown in the title
-        if len([x.get('alt') for x in div.findAll('img') if x.get('alt') == 'Upgradable by Aghanim\'s Scepter.']) != 0:
+        if len([x.get('alt') for x in ability_div.findAll('img') if x.get('alt') == 'Upgradable by Aghanim\'s Scepter.']) != 0:
             ability_special.append('AGHANIM_UPGRADE')
 
 
         # get "type" (i.e no target/passive/etc) and summary
-        type_div = div.find('div', style='padding: 15px 5px; font-size: 85%; line-height: 100%; text-align: center;')
+        type_div = ability_div.find('div', style='padding: 15px 5px; font-size: 85%; line-height: 100%; text-align: center;')
         types = {}
         for type in type_div.findAll('div', recursive=False):
             if type.find('b') is None:
@@ -88,10 +98,11 @@ def fetch_abilities(soup, extra=True):
             # iterate through each block that's split by a br (this doesn't makes sense lol)
             extra = ''  # used to save if talent tree or aghs type
             strings = {}
-            soups = [BS(x, 'html.parser') for x in unicode(''.join([unicode(child) for child in list(type.children)])).split('<br/>') if x != '']
+            soups = [BS(x.strip(), 'html.parser') for x in unicode(''.join([unicode(child) for child in list(type.children)])).split('<br/>') if x.strip() != '']
             for s in soups:
                 extra = ' '.join([SPECIAL_SENTENCES[a.get('title').encode('utf-8')] for a in s.findAll('a') if a.get('title').encode('utf-8') in SPECIAL_SENTENCES])  # if it works don't fix
                 string = ' '.join([re.sub(r'\(|\)', '', x.encode('utf-8')) for x in s.findAll(text=True) if x.strip() != ''])
+                string = clean(string)
                 if extra is not '':
                     strings[extra] = [string]
                 else:
@@ -104,13 +115,14 @@ def fetch_abilities(soup, extra=True):
             types[val] = strings
 
         # get description
-        description = div.find('div', style='vertical-align: top; padding: 3px 5px; border-top: 1px solid black;').text.encode('utf-8')
+        description = ability_div.find('div', style='vertical-align: top; padding: 3px 5px; border-top: 1px solid black;').text.encode('utf-8')
+        description = clean(description)
 
-        # find all the divs
-        div_data = div.find('div', style='vertical-align:top; padding: 3px 5px;')
+        # find all the divs for data
+        div_data = ability_div.find('div', style='vertical-align:top; padding: 3px 5px;')
         data = {}
         for data_item in div_data.findAll('div'):
-            # we want to break once we hit a style-less div
+            # we want to break once we hit a div with a style
             if data_item.has_attr('style'):
                 break
             lines = [x.strip() for x in data_item.text.encode('utf-8').split(':')]  # [Radius, 0 (  Upgradable by Aghanim's Scepter. 900 )] or some shit
@@ -121,16 +133,18 @@ def fetch_abilities(soup, extra=True):
             data[lines[0]]['normal'] = lines[0]
 
         # get special details (i.e extra notes about the special)
-        special_details = []
+        special_details = {}
         for special_div in div_data.findAll('div', style='margin-left: 50px;'):
             # this is for the special ablities (i.e aghs upgrade, linken partial, etc...)
             a_tag = special_div.find('a')
             if a_tag is not None:
-                # we want to append the data so when we can add it when getting the div's text
-                a_tag.append(SPECIAL_SENTENCES[a_tag['title']])
+                special = SPECIAL_SENTENCES[a_tag['title']]
+            else:
+                print 'No a-tag for ' + name
 
             text = special_div.text.encode('utf-8').strip()
-            special_details.append(text)
+            text = re.sub(' +', ' ', text)
+            special_details[special] = text.replace('\n \n', '\n')
 
 
         modifiers = {}
@@ -140,7 +154,7 @@ def fetch_abilities(soup, extra=True):
                 modifiers[item.strip().replace(u'\xa0', u' ').encode('utf-8')] = 'red' if d.find('span').get('style') == u'color:#631F1F;' else 'green'
 
         # finding notes
-        note_div = div.find('div', style='flex: 2 3 400px; word-wrap: break-word;')
+        note_div = ability_div.find('div', style='flex: 2 3 400px; word-wrap: break-word;')
         if note_div is not None:
             notes = find_notes(note_div.findAll('ul', recursive=False), [])
         else:
@@ -161,11 +175,38 @@ def fetch_abilities(soup, extra=True):
         # are we getting cooldown and mana cost?
         if extra:
             # check if there's a cooldown "div"
-            if div.find('a', title='Cooldown') is not None:
-                ability[name]['Cooldown'] = div.find('a', title='Cooldown').parent.parent.text.encode('utf-8').strip()
-            if div.find('a', title='Mana') is not None:
-                ability[name]['Mana'] = div.find('a', title='Mana').parent.parent.text.replace(u'\xa0', u' ').encode(
-                    'utf-8').strip()
+            cooldown_atag = ability_div.find('a', title='Cooldown')
+            if cooldown_atag is not None:
+                cooldown = {}
+                cooldown_div = cooldown_atag.parent.parent
+                extra_a_tag = cooldown_div.find('a', recursive = False)
+
+                # check if there is a TALENT or AGHS upgrade that changes the value
+                if extra_a_tag is not None:
+                    extra_cooldown = cooldown_div.text.split('(')[-1].replace(')', '')
+                    cooldown[extra] = clean(extra_cooldown)
+
+                # set the normal value of the cooldown
+                normal_cooldown = cooldown_div.text.split('(')[0].replace(')', '')
+                cooldown['normal'] = clean(normal_cooldown)
+                ability[name]['Cooldown'] = cooldown
+
+            # check if there's a mana div
+            mana_atag = ability_div.find('a', title='Mana')
+            if mana_atag is not None:
+                mana = {}
+                mana_div = mana_atag.parent.parent
+                extra_a_tag = mana_div.find('a', recursive=False)
+
+                # check if there is a TALENT or AGHS upgrade that changes the value
+                if extra_a_tag is not None:
+                    extra_mana = mana_div.text.split('(')[-1].replace(')', '')
+                    mana[extra] = clean(extra_mana)
+
+                # set the normal value of the mana
+                normal_mana = mana_div.text.split('(')[0].replace(')', '')
+                mana['normal'] = clean(normal_mana)
+                ability[name]['Mana'] = mana
 
         # add to array
         abilities.append(ability)
@@ -243,6 +284,9 @@ def hero_data(soup, extra=True):
     #get abilities
     abilities = fetch_abilities(soup, extra)
     hero['abilities'] = abilities
+
+
+
     return hero
 
 def fetch_items(soup):
@@ -468,6 +512,6 @@ def get_ability_data(hero_div):
             data[lines[0]]['normal'] = lines[0]
         pprint(data)
 
-get_heroes()
-# get_items()
+# get_heroes()
+get_items()
 # combine()
