@@ -285,7 +285,27 @@ def hero_data(soup, extra=True):
     abilities = fetch_abilities(soup, extra)
     hero['abilities'] = abilities
 
-
+    # get talents
+    talents = {}
+    talent_div = soup.find('span', id='Talents').parent.findNext('div')
+    talent_table = talent_div.find('table')
+    trs = talent_table.findAll('tr', recursive = False)[1:]
+    for tr in trs:
+        tds = tr.findAll('td', recursive = False)
+        left = clean(tds[0].text)
+        level = clean(tds[1].text)
+        right = clean(tds[2].text)
+        talents[level] = {
+            'left': left,
+            'right': right
+        }
+    note_div = talent_div.findAll('div', recursive = False)[1]
+    if note_div is not None:
+        notes = find_notes(note_div.findAll('ul', recursive=False), [])
+    else:
+        notes = []
+    talents['notes'] = notes
+    hero['talents'] = talents
 
     return hero
 
@@ -485,33 +505,6 @@ def pretty_print():
         with open('items_pretty.json', 'w') as prettyfile:
             prettyfile.write(pformat(data, indent=2))
 
-
-def log_ability_data():
-    for file in os.listdir(HERO_HTMLS):
-        with open(HERO_HTMLS + file, 'r') as html:
-            name = os.path.splitext(file)[0]
-            print name
-            hero_soup = BS(html.read(), 'html.parser')  # soupify the page to parse
-            get_ability_data(hero_soup)
-            break
-
-
-def get_ability_data(hero_div):
-    for div in hero_div.findAll('div', style='display: flex; flex-wrap: wrap; align-items: flex-start;')[0:-1]:
-        div_data = div.find('div', style='vertical-align:top; padding: 3px 5px;')
-        data = {}
-        for data_item in div_data.findAll('div'):
-            # we want to break once we hit a style-less div
-            if data_item.has_attr('style'):
-                break
-            lines = [x.strip() for x in data_item.text.encode('utf-8').split(':')]  # [Radius, 0 (  Upgradable by Aghanim's Scepter. 900 )] or some shit
-            data[lines[0]] = {}
-            extras = [x for x in data_item.findAll('a')]  # AGHS and/or TALENT
-            for extra in extras:
-                data[lines[0]][extra.get('title')] = lines[1].split('(')[extras.index(extra) + 1].strip().replace(')', '')
-            data[lines[0]]['normal'] = lines[0]
-        pprint(data)
-
-# get_heroes()
+get_heroes()
 get_items()
 # combine()
