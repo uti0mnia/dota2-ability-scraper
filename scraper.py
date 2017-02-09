@@ -130,7 +130,7 @@ def fetch_abilities(soup, extra=True):
             extras = [x for x in data_item.findAll('a')]  # AGHS and/or TALENT
             for extra in extras:
                 data[lines[0]][extra.get('title')] = re.sub(' +', ' ', lines[1].split('(')[extras.index(extra) + 1].strip().replace(')', '')).replace('\n', '')
-            data[lines[0]]['normal'] = lines[0]
+            data[lines[0]]['normal'] = clean(lines[1].split('(')[0])
 
         # get special details (i.e extra notes about the special)
         special_details = {}
@@ -160,6 +160,39 @@ def fetch_abilities(soup, extra=True):
         else:
             notes = []
 
+        # check if there's a cooldown "div"
+        cooldown = {}
+        cooldown_atag = ability_div.find('a', title='Cooldown')
+        if cooldown_atag is not None:
+            cooldown_div = cooldown_atag.parent.parent
+            extra_a_tag = cooldown_div.find('a', recursive = False)
+
+            # check if there is a TALENT or AGHS upgrade that changes the value
+            if extra_a_tag is not None:
+                extra_cooldown = cooldown_div.text.split('(')[-1].replace(')', '')
+                cooldown[SPECIAL_SENTENCES[extra_a_tag.get('title')]] = clean(extra_cooldown)
+
+            # set the normal value of the cooldown
+            normal_cooldown = cooldown_div.text.split('(')[0].replace(')', '')
+            cooldown['normal'] = clean(normal_cooldown)
+
+        # check if there's a mana div
+        mana = {}
+        mana_atag = ability_div.find('a', title='Mana')
+        if mana_atag is not None:
+            mana_div = mana_atag.parent.parent
+            extra_a_tag = mana_div.find('a', recursive=False)
+
+            # check if there is a TALENT or AGHS upgrade that changes the value
+            if extra_a_tag is not None:
+                extra_mana = mana_div.text.split('(')[-1].replace(')', '')
+                mana[SPECIAL_SENTENCES[extra_a_tag.get('title')]] = clean(extra_mana)
+
+            # set the normal value of the mana
+            normal_mana = mana_div.text.split('(')[0].replace(')', '')
+            mana['normal'] = clean(normal_mana)
+
+
         ability[name] = {
             'ability_special': ability_special,
             'special_details': special_details,
@@ -168,47 +201,9 @@ def fetch_abilities(soup, extra=True):
             'data': data,
             'modifiers': modifiers,
             'notes': notes,
-            'Cooldown': '',
-            'Mana': '',
+            'Cooldown': cooldown,
+            'Mana': mana,
         }
-
-        # are we getting cooldown and mana cost?
-        if extra:
-            # check if there's a cooldown "div"
-            cooldown_atag = ability_div.find('a', title='Cooldown')
-            if cooldown_atag is not None:
-                cooldown = {}
-                cooldown_div = cooldown_atag.parent.parent
-                extra_a_tag = cooldown_div.find('a', recursive = False)
-
-                # check if there is a TALENT or AGHS upgrade that changes the value
-                if extra_a_tag is not None:
-                    extra_cooldown = cooldown_div.text.split('(')[-1].replace(')', '')
-                    cooldown[extra] = clean(extra_cooldown)
-
-                # set the normal value of the cooldown
-                normal_cooldown = cooldown_div.text.split('(')[0].replace(')', '')
-                cooldown['normal'] = clean(normal_cooldown)
-                ability[name]['Cooldown'] = cooldown
-
-            # check if there's a mana div
-            mana_atag = ability_div.find('a', title='Mana')
-            if mana_atag is not None:
-                mana = {}
-                mana_div = mana_atag.parent.parent
-                extra_a_tag = mana_div.find('a', recursive=False)
-
-                # check if there is a TALENT or AGHS upgrade that changes the value
-                if extra_a_tag is not None:
-                    extra_mana = mana_div.text.split('(')[-1].replace(')', '')
-                    mana[extra] = clean(extra_mana)
-
-                # set the normal value of the mana
-                normal_mana = mana_div.text.split('(')[0].replace(')', '')
-                mana['normal'] = clean(normal_mana)
-                ability[name]['Mana'] = mana
-
-        # add to array
         abilities.append(ability)
 
     return abilities
@@ -505,6 +500,6 @@ def pretty_print():
         with open('items_pretty.json', 'w') as prettyfile:
             prettyfile.write(pformat(data, indent=2))
 
-get_heroes()
+# get_heroes()
 get_items()
 # combine()
