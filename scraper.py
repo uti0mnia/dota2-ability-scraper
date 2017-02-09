@@ -58,7 +58,7 @@ def find_notes(divs, notes):
 def fetch_abilities(soup, extra=True):
     abilities = []
     # iterate through all ability divs
-    for div in soup.findAll('div', style='display: flex; flex-wrap: wrap; align-items: flex-start;'):
+    for div in soup.findAll('div', style='display: flex; flex-wrap: wrap; align-items: flex-start;')[0:-1]:
         ability = {}
         children = div.find('div', style=re.compile(r'font-weight: bold; font-size: 110%; border-bottom: 1px solid black;.*')).contents
         # get name
@@ -106,19 +106,19 @@ def fetch_abilities(soup, extra=True):
         # get description
         description = div.find('div', style='vertical-align: top; padding: 3px 5px; border-top: 1px solid black;').text.encode('utf-8')
 
-        # get the data about the ability
+        # find all the divs
         div_data = div.find('div', style='vertical-align:top; padding: 3px 5px;')
         data = {}
-
-        # find all the divs
         for data_item in div_data.findAll('div'):
             # we want to break once we hit a style-less div
             if data_item.has_attr('style'):
                 break
-
-            # push data
-            text = data_item.text.replace(u'\xa0', u' ').encode('utf-8').strip()
-            data.append(text)
+            lines = [x.strip() for x in data_item.text.encode('utf-8').split(':')]  # [Radius, 0 (  Upgradable by Aghanim's Scepter. 900 )] or some shit
+            data[lines[0]] = {}
+            extras = [x for x in data_item.findAll('a')]  # AGHS and/or TALENT
+            for extra in extras:
+                data[lines[0]][extra.get('title')] = re.sub(' +', ' ', lines[1].split('(')[extras.index(extra) + 1].strip().replace(')', '')).replace('\n', '')
+            data[lines[0]]['normal'] = lines[0]
 
         # get special details (i.e extra notes about the special)
         special_details = []
@@ -179,11 +179,11 @@ def hero_data(soup, extra=True):
 
     # get description
     p = soup.find('div', id='mw-content-text').find('p')
-    description = p.text.encode('utf-8')
+    description = re.sub(' +', ' ', p.text.encode('utf-8')).replace('\n', '').strip()
     hero['description'] = description
 
     # get info
-    tablebody = soup.find('table', class_='infobox').find('tbody')
+    tablebody = soup.find('table', class_='infobox')#.find('tbody')
     trs = tablebody.findAll('tr', recursive=False)
 
     # get attributes
@@ -221,21 +221,24 @@ def hero_data(soup, extra=True):
     misc_stats_table = trs[4].findAll('tr')
     misc_stats = {}
     for tr in misc_stats_table:
-        misc_stats[get_stat(tr, 0).encode('utf-8').strip()] = get_stat(tr, 1).encode('utf-8').strip()
+        misc_stat = get_stat(tr, 0).encode('utf-8').strip()
+        misc_stat_value = get_stat(tr, 1).encode('utf-8').strip()
+        misc_stats[misc_stat] = re.sub(' +', ' ', misc_stat_value).replace('\n', '')
 
     hero['misc_stats'] = misc_stats
 
     # get bio
-    bio_trs = soup.find('div', class_='biobox').findAll('tbody')[-1].findAll('tr', recursive=False)
+    bio_trs = soup.find('div', class_='biobox').findAll('table')[1].findAll('tr', recursive=False)
     roles = []
     for a in bio_trs[2].findAll('td')[1].findAll('a'):
-        if a.text is None or a.text == '':
+        if a.get('title') == 'Role':
             continue
-        roles.append(a.text.encode('utf-8').strip())
+        roles.append(a.get('title'))
     hero['roles'] = roles
     lore = bio_trs[3].findAll('td')[1].text.encode('utf-8').strip()
-    hero['lore'] = lore
-
+    lore = re.sub(' +', ' ', lore)
+    lore = re.sub('\n+', '\n', lore)
+    hero['lore'] = lore.replace('\n \n', '\n')
 
     #get abilities
     abilities = fetch_abilities(soup, extra)
@@ -313,12 +316,12 @@ def fetch_items(soup):
 
     return item_data
 
+## IMAGES
 def fetch_item_image(soup, name):
     table = soup.find('table', class_='infobox')
     tr = table.find('tbody').findAll('tr', recursive=False)[1]
     img = tr.find('img')
     urllib.urlretrieve(img.get('src'), './images/' + name + '.' + img.get('alt').split('.')[-1])
-
 
 def fetch_hero_images(soup, hero_name):
     fetch_image(soup)
@@ -340,7 +343,6 @@ def fetch_ability_images(soup, owner):
         img = div_img.find('img')
         urllib.urlretrieve(img.get('src'), './images/' + name + '_' + owner + '.' + img.get('alt').split('.')[-1])
 
-
 def replace_unicode(string):
     REPLACE_STRINGS = {
         '\u02da': '˚',
@@ -359,8 +361,7 @@ def replace_unicode(string):
     pattern = re.compile('|'.join(re.escape(key) for key in REPLACE_STRINGS.keys()))
     return pattern.sub(lambda x: REPLACE_STRINGS[x.group()], string)
 
-
-# FOR IMAGES
+## DATA
 def fetch_images():
     i = 0
     num_files = len(os.listdir(HERO_HTMLS)) + len(os.listdir(ITEM_HTMLS))
@@ -398,7 +399,6 @@ def get_heroes():
 
         json.dump(heroes, jsonfile, ensure_ascii=False)
 
-
 def get_items():
     i = 0
     num_files = len(os.listdir(ITEM_HTMLS))
@@ -415,7 +415,6 @@ def get_items():
 
         json.dump(items, jsonfile, ensure_ascii=False)
 
-
 def combine():
     # combine files into 1
     with open('heroes.json', 'r') as herofile:
@@ -429,7 +428,6 @@ def combine():
             with open('dota2.json', 'w') as dotafile:
                 json.dump(new_json, dotafile)
 
-
 ## LOGGING
 def pretty_print():
     # pretty print it for readability
@@ -442,26 +440,34 @@ def pretty_print():
         data = json.load(file)
         with open('items_pretty.json', 'w') as prettyfile:
             prettyfile.write(pformat(data, indent=2))
+
+
 def log_ability_data():
     for file in os.listdir(HERO_HTMLS):
         with open(HERO_HTMLS + file, 'r') as html:
             name = os.path.splitext(file)[0]
             print name
             hero_soup = BS(html.read(), 'html.parser')  # soupify the page to parse
-            for div in hero_soup.findAll('div', style='display: flex; flex-wrap: wrap; align-items: flex-start;')[0:-1]:
-                div_data = div.find('div', style='vertical-align:top; padding: 3px 5px;')
-                for data_item in div_data.findAll('div'):
-                    # we want to break once we hit a style-less div
-                    if data_item.has_attr('style'):
-                        break
+            get_ability_data(hero_soup)
+            break
 
-                    # push data
-                    print str(data_item.text.encode('utf-8')).split(':')[0].strip()
-                    if len([x for x in data_item.findAll('a')]) is not 0:
-                        print data_item.find('a').get('title')
-                    print [x.strip() for x in str(data_item.text.encode('utf-8')).split(':')[1].split('(')]
 
-# get_heroes()
+def get_ability_data(hero_div):
+    for div in hero_div.findAll('div', style='display: flex; flex-wrap: wrap; align-items: flex-start;')[0:-1]:
+        div_data = div.find('div', style='vertical-align:top; padding: 3px 5px;')
+        data = {}
+        for data_item in div_data.findAll('div'):
+            # we want to break once we hit a style-less div
+            if data_item.has_attr('style'):
+                break
+            lines = [x.strip() for x in data_item.text.encode('utf-8').split(':')]  # [Radius, 0 (  Upgradable by Aghanim's Scepter. 900 )] or some shit
+            data[lines[0]] = {}
+            extras = [x for x in data_item.findAll('a')]  # AGHS and/or TALENT
+            for extra in extras:
+                data[lines[0]][extra.get('title')] = lines[1].split('(')[extras.index(extra) + 1].strip().replace(')', '')
+            data[lines[0]]['normal'] = lines[0]
+        pprint(data)
+
+get_heroes()
 # get_items()
 # combine()
-log_ability_data()
