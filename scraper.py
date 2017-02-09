@@ -443,25 +443,23 @@ def pretty_print():
         with open('items_pretty.json', 'w') as prettyfile:
             prettyfile.write(pformat(data, indent=2))
 def log_ability_data():
-    with open('heroes.json', 'w') as jsonfile:
-        heroes = {}
-        for file in os.listdir(HERO_HTMLS):
-            with open(HERO_HTMLS + file, 'r') as html:
-                name = os.path.splitext(file)[0]
-                print name
-                hero_soup = BS(html.read(), 'html.parser')  # soupify the page to parse
-                for div in hero_soup.findAll('div', style='display: flex; flex-wrap: wrap; align-items: flex-start;'):
-                    div_data = div.find('div', style='vertical-align:top; padding: 3px 5px;')
-                    for data_item in div_data.findAll('div'):
-                        # we want to break once we hit a style-less div
-                        if data_item.has_attr('style'):
-                            break
+    for file in os.listdir(HERO_HTMLS):
+        with open(HERO_HTMLS + file, 'r') as html:
+            name = os.path.splitext(file)[0]
+            print name
+            hero_soup = BS(html.read(), 'html.parser')  # soupify the page to parse
+            for div in hero_soup.findAll('div', style='display: flex; flex-wrap: wrap; align-items: flex-start;')[0:-1]:
+                div_data = div.find('div', style='vertical-align:top; padding: 3px 5px;')
+                for data_item in div_data.findAll('div'):
+                    # we want to break once we hit a style-less div
+                    if data_item.has_attr('style'):
+                        break
 
-                        # push data
-                        print str(data_item.text.encode('utf-8')).split(':')[0]
-                        if len([x for x in data_item.findAll('a')]) is not 0:
-                            print data_item.find('a').get('title')
-                        print [x.strip() for x in str(data_item.text.encode('utf-8')).split(':')[1].split('(')]
+                    # push data
+                    print str(data_item.text.encode('utf-8')).split(':')[0].strip()
+                    if len([x for x in data_item.findAll('a')]) is not 0:
+                        print data_item.find('a').get('title')
+                    print [x.strip() for x in str(data_item.text.encode('utf-8')).split(':')[1].split('(')]
 
 # get_heroes()
 # get_items()
