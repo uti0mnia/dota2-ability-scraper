@@ -1,5 +1,8 @@
 # !/usr/bin/env python
-# -*- coding: utf-8 -*-
+# -*- coding: utf-8 -*-import sys
+import sys
+reload(sys)
+sys.setdefaultencoding('utf-8')
 from bs4 import BeautifulSoup as BS, NavigableString
 import re
 import os
@@ -34,7 +37,9 @@ ITEM_HTMLS = './htmls/items/'
 
 # divs is an array of <ul> tags
 # notes is the array used recursively, also the return value
-def find_notes(divs, notes):
+def find_notes(divs_old, notes):
+    divs = [BS(str(div), 'html.parser') for div in divs_old]  # deep copy fixes problems later on with the BS object
+
     # base case, we are done
     if len(divs) == 0:
         return notes
@@ -45,7 +50,14 @@ def find_notes(divs, notes):
         ul_divs = li.findAll('ul')  # get the sub points
         ul_notes = find_notes(ul_divs, [])  # get the points for those sub points
         [d.extract() for d in ul_divs]  # remove them from the tag since we're done
-        text = li.text.encode('utf-8')
+
+        # if there is a talent or aghs image
+        for a in li.findAll('a'):
+            if a.get('title') == 'Talent' or a.get('title') == 'Upgradable by Aghanim\'s Scepter.':
+                a.replace_with(BS('<img src="' + SPECIAL_SENTENCES[a.get('title')] + '.png">', 'html.parser'))
+            elif a.find('img') is not None:
+                a.extract()
+        text = clean(str(li))
         notes.append(clean(text))
         notes.append(ul_notes)
         return find_notes(divs[1:], notes)
@@ -53,9 +65,14 @@ def find_notes(divs, notes):
     # no subpoints, get the text and return in the notes
     else:
         texts = []
-        for div in divs[0].findAll('li'):
-            text = div.text.encode('utf-8')
-            texts.append(clean(text))
+        for li in divs[0].findAll('li'):
+            # if there is a talent or aghs image
+            for a in li.findAll('a'):
+                if a.get('title') == 'Talent' or a.get('title') == 'Upgradable by Aghanim\'s Scepter.':
+                    a.replace_with(BS('<img src="' + SPECIAL_SENTENCES[a.get('title')] + '.png">', 'html.parser'))
+                elif a.find('img') is not None:
+                    a.extract()
+            texts.append(clean(str(li)))
         notes += texts
         return find_notes(divs[1:], notes) # recurse with the rest
 
@@ -129,7 +146,7 @@ def fetch_abilities(soup, extra=True):
             data[lines[0]] = {}
             extras = [x for x in data_item.findAll('a')]  # AGHS and/or TALENT
             for extra in extras:
-                data[lines[0]][extra.get('title')] = re.sub(' +', ' ', lines[1].split('(')[extras.index(extra) + 1].strip().replace(')', '')).replace('\n', '')
+                data[lines[0]][extra.get('title')] = lines[1].split('(')[-1].replace(')', '').split(',')[extras.index(extra)]
             data[lines[0]]['normal'] = clean(lines[1].split('(')[0])
 
         # get special details (i.e extra notes about the special)
@@ -150,8 +167,7 @@ def fetch_abilities(soup, extra=True):
         modifiers = {}
         # finding the modifiers
         for d in div_data.findAll('div', style='font-size: 85%; margin-left: 10px;'):
-            for item in d.text.strip().split('\n'):
-                modifiers[item.strip().replace(u'\xa0', u' ').encode('utf-8')] = 'red' if d.find('span').get('style') == u'color:#631F1F;' else 'green'
+            modifiers[clean(d.text)] = 'red' if d.find('span').get('style') == u'color:#631F1F;' else 'green'
 
         # finding notes
         note_div = ability_div.find('div', style='flex: 2 3 400px; word-wrap: break-word;')
@@ -178,7 +194,7 @@ def fetch_abilities(soup, extra=True):
 
         # check if there's a mana div
         mana = {}
-        mana_atag = ability_div.find('a', title='Mana')
+        mana_atag = ability_div.find('a', title='Mana')  # reparsing as BS object seems to fix a bug
         if mana_atag is not None:
             mana_div = mana_atag.parent.parent
             extra_a_tag = mana_div.find('a', recursive=False)
@@ -322,27 +338,27 @@ def fetch_items(soup):
         for li in ul.findAll('li'):  # get each li in the ul
             if li.find('li') is not None:
                 print 'Double li'
-            additional_info.append(re.sub(' +', ' ', li.text.encode('utf-8').strip()).replace('\xe2\x80\x8b', '')) #  removes double whitespaces and other utf-8 bad chars
+            additional_info.append(clean(li.text.encode('utf-8').strip())) #  removes double whitespaces and other utf-8 bad chars
 
     item_data['additional_info'] = additional_info
 
     # find the table with the item info and get its <tr> tags
-    trs = soup.find('table', class_='infobox').find('tbody').findAll('tr', recursive=False)
+    trs = soup.find('table', class_='infobox').findAll('tr', recursive=False) or soup.find('table', class_='infobox').find('tbody').findAll('tr', recursive=False)
     item_data['availability'] = []
     for span in trs[0].findAll('span'):
         item_data['availability'].append(SPECIAL_SENTENCES[span.get('title')])
-    item_data['lore'] = trs[3].text.encode('utf-8').strip()
-    item_data['cost'] = re.sub(r'[a-z]|[A-Z]', '', trs[4].find('th').find('div').text)  # removes text (keeps cost + recipe)
-    item_data['type'] = re.sub(r'Bought From', '', trs[4].find('th').findAll('div', recursive=False)[-1].text)
+    item_data['lore'] = clean(trs[3].text)
+    item_data['cost'] = clean(re.sub(r'[a-z]|[A-Z]', '', trs[4].find('th').find('div').text))  # removes text (keeps cost + recipe)
+    item_data['type'] = clean(re.sub(r'Bought From', '', trs[4].find('th').findAll('div', recursive=False)[-1].text))
 
     # get the details
-    detail_trs = trs[-1].find('tbody').findAll('tr')
+    detail_trs = trs[-1].findAll('tr')
     details = {}
     for tr in detail_trs:
         # make sure it's not empty
         if tr.find('td') is None or tr.find('td').text.strip() == '':
             continue
-        detail = tr.find('td').text.encode('utf-8').strip()
+        detail = clean(tr.find('td').text)
 
         # if it's a recipe, we do something different
         if detail == 'Recipe':
@@ -369,7 +385,7 @@ def fetch_items(soup):
             br.name = 'p'
             br.insert(0, NavigableString(','))
 
-        details[detail] = [x.strip() for x in tr.findAll('td')[1].text.encode('utf-8').split(',') if x.strip() != '']
+        details[detail] = [clean(x) for x in tr.findAll('td')[1].text.encode('utf-8').split(',') if x.strip() != '']
 
     item_data['details'] = details
 
@@ -448,6 +464,8 @@ def get_heroes():
     with open('heroes.json', 'w') as jsonfile:
         heroes = {}
         for file in os.listdir(HERO_HTMLS):
+            if file != 'Jakiro.html':
+                continue
             i += 1
             print str(i) + '/' + str(num_files)
             with open(HERO_HTMLS + file, 'r') as html:
@@ -500,6 +518,6 @@ def pretty_print():
         with open('items_pretty.json', 'w') as prettyfile:
             prettyfile.write(pformat(data, indent=2))
 
-# get_heroes()
+get_heroes()
 get_items()
 # combine()
