@@ -51,11 +51,17 @@ def find_notes(divs_old, notes):
         [d.extract() for d in ul_divs]  # remove them from the tag since we're done
 
         # if there is a talent or aghs image
+        img_tag = ''
         for a in li.findAll('a'):
             if a.get('title') == 'Talent' or a.get('title') == 'Upgradable by Aghanim\'s Scepter.':
-                a.replace_with(BS('<img src="' + SPECIAL_SENTENCES[a.get('title')] + '.png">', 'html.parser'))
-            else:
-                a.unwrap()
+                img_tag = BS(str(li), 'html.parser').new_tag('img')
+                img_tag['src'] = SPECIAL_SENTENCES[a.get('title')] + '.png'
+                a.replace_with(img_tag)
+        for tag in li.find_all():
+            if tag == img_tag:
+                continue
+            tag.unwrap()
+
         text = clean(str(li))
         notes.append(clean(text))
         notes.append(ul_notes)
@@ -529,6 +535,6 @@ def pretty_print():
         with open('items_pretty.json', 'w') as prettyfile:
             prettyfile.write(pformat(data, indent=2))
 
-# get_heroes()
-# get_items()
+get_heroes()
+get_items()
 combine()
