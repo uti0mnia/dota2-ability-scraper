@@ -6,7 +6,6 @@ sys.setdefaultencoding('utf-8')
 from bs4 import BeautifulSoup as BS, NavigableString
 import re
 import os
-import codecs
 import urllib
 import json
 from pprint import pprint, pformat
@@ -55,8 +54,8 @@ def find_notes(divs_old, notes):
         for a in li.findAll('a'):
             if a.get('title') == 'Talent' or a.get('title') == 'Upgradable by Aghanim\'s Scepter.':
                 a.replace_with(BS('<img src="' + SPECIAL_SENTENCES[a.get('title')] + '.png">', 'html.parser'))
-            elif a.find('img') is not None:
-                a.extract()
+            else:
+                a.unwrap()
         text = clean(str(li))
         notes.append(clean(text))
         notes.append(ul_notes)
@@ -67,11 +66,16 @@ def find_notes(divs_old, notes):
         texts = []
         for li in divs[0].findAll('li'):
             # if there is a talent or aghs image
+            img_tag = ''
             for a in li.findAll('a'):
                 if a.get('title') == 'Talent' or a.get('title') == 'Upgradable by Aghanim\'s Scepter.':
-                    a.replace_with(BS('<img src="' + SPECIAL_SENTENCES[a.get('title')] + '.png">', 'html.parser'))
-                elif a.find('img') is not None:
-                    a.extract()
+                    img_tag = BS(str(li), 'html.parser').new_tag('img')
+                    img_tag['src'] = SPECIAL_SENTENCES[a.get('title')] + '.png'
+                    a.replace_with(img_tag)
+            for tag in li.find_all():
+                if tag == img_tag:
+                    continue
+                tag.unwrap()
             texts.append(clean(str(li)))
         notes += texts
         return find_notes(divs[1:], notes) # recurse with the rest
@@ -473,8 +477,6 @@ def get_heroes():
     with open('heroes.json', 'w') as jsonfile:
         heroes = {}
         for file in os.listdir(HERO_HTMLS):
-            if file != 'Jakiro.html':
-                continue
             i += 1
             print str(i) + '/' + str(num_files)
             with open(HERO_HTMLS + file, 'r') as html:
@@ -527,6 +529,6 @@ def pretty_print():
         with open('items_pretty.json', 'w') as prettyfile:
             prettyfile.write(pformat(data, indent=2))
 
-get_heroes()
-get_items()
-# combine()
+# get_heroes()
+# get_items()
+combine()

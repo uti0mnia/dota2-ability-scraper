@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file:///Volumes/HDD/casey/OneDrive/Documents/Coding/Projects/Python/dota2-ability-scraper/.idea/ability_scrape.iml" filepath="/Volumes/HDD/casey/OneDrive/Documents/Coding/Projects/Python/dota2-ability-scraper/.idea/ability_scrape.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/dota2-ability-scraper.iml" filepath="$PROJECT_DIR$/.idea/dota2-ability-scraper.iml" />
     </modules>
   </component>
 </project>
