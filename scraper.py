@@ -113,7 +113,6 @@ def fetch_abilities(soup, extra=True):
             b.extract()
 
             # iterate through each block that's split by a br (this doesn't makes sense lol)
-            extra = ''  # used to save if talent tree or aghs type
             strings = {}
             soups = [BS(x.strip(), 'html.parser') for x in unicode(''.join([unicode(child) for child in list(type.children)])).split('<br/>') if x.strip() != '']
             for s in soups:
@@ -142,12 +141,22 @@ def fetch_abilities(soup, extra=True):
             # we want to break once we hit a div with a style
             if data_item.has_attr('style'):
                 break
-            lines = [x.strip() for x in data_item.text.encode('utf-8').split(':')]  # [Radius, 0 (  Upgradable by Aghanim's Scepter. 900 )] or some shit
-            data[lines[0]] = {}
-            extras = [x for x in data_item.findAll('a')]  # AGHS and/or TALENT
-            for extra in extras:
-                data[lines[0]][extra.get('title')] = lines[1].split('(')[-1].replace(')', '').split(',')[extras.index(extra)]
-            data[lines[0]]['normal'] = clean(lines[1].split('(')[0])
+
+            lines = [BS(x,'html.parser') for x in str(data_item).split(':', 1)]  # left side is data, right side is/are value(s)
+            data_object = clean(lines[0].text)
+            data[data_object] = {}
+            values = [BS(x, 'html.parser') for x in str(lines[1]).split('(')]
+            for value in values:
+                if ',' in value.text:  ## there is a talent value along with a aghs value
+                    for a_tag in value.findAll('a', recursive=False):
+                        if a_tag.get('title') == 'Talent':
+                            data[data_object][SPECIAL_SENTENCES['Talent'] + '_AGHS'] = clean(a_tag.findNext('span').text)
+                        else:
+                            data[data_object][SPECIAL_SENTENCES['Talent']] = clean(a_tag.findNext('span').text)
+                elif value.find('a') is not None:
+                    data[data_object][SPECIAL_SENTENCES[value.find('a').get('title')]] = clean(value.text.replace(')', ''))
+                else:
+                    data[data_object]['normal'] = clean(value.text)
 
         # get special details (i.e extra notes about the special)
         special_details = {}
