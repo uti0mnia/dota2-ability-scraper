@@ -174,10 +174,14 @@ def fetch_abilities(soup, extra=True):
             special_details[special] = text.replace('\n \n', '\n')
 
 
-        modifiers = {}
+        modifiers = []
         # finding the modifiers
         for d in div_data.findAll('div', style='font-size: 85%; margin-left: 10px;'):
-            modifiers[clean(d.text)] = 'red' if d.find('span').get('style') == u'color:#631F1F;' else 'green'
+            modifier = {
+                'value': clean(d.text),
+                'colour': 'red' if d.find('span').get('style') == u'color:#631F1F;' else 'green'
+            }
+            modifiers.append(modifier)
 
         # finding notes
         note_div = ability_div.find('div', style='flex: 2 3 400px; word-wrap: break-word;')
@@ -227,8 +231,8 @@ def fetch_abilities(soup, extra=True):
             'data': data,
             'modifiers': modifiers,
             'notes': notes,
-            'Cooldown': cooldown,
-            'Mana': mana,
+            'cooldown': cooldown,
+            'mana': mana,
         }
         abilities.append(ability)
 
