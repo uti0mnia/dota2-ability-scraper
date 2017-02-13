@@ -51,19 +51,11 @@ def find_notes(divs_old, notes):
         [d.extract() for d in ul_divs]  # remove them from the tag since we're done
 
         # if there is a talent or aghs image
-        img_tag = ''
         for a in li.findAll('a'):
             if a.get('title') == 'Talent' or a.get('title') == 'Upgradable by Aghanim\'s Scepter.':
-                img_tag = BS(str(li), 'html.parser').new_tag('img')
-                img_tag['src'] = SPECIAL_SENTENCES[a.get('title')] + '.png'
-                a.replace_with(img_tag)
-        for tag in li.find_all():
-            if tag == img_tag:
-                continue
-            tag.unwrap()
-
-        text = clean(str(li))
-        notes.append(clean(text))
+                a.string = '$$' + SPECIAL_SENTENCES[a.get('title')] + '$$'
+        text = clean(li.text)
+        notes.append(text.split('$$'))  # split by $$ because that's where our dictionary keys are
         notes.append(ul_notes)
         return find_notes(divs[1:], notes)
 
@@ -72,17 +64,10 @@ def find_notes(divs_old, notes):
         texts = []
         for li in divs[0].findAll('li'):
             # if there is a talent or aghs image
-            img_tag = ''
             for a in li.findAll('a'):
                 if a.get('title') == 'Talent' or a.get('title') == 'Upgradable by Aghanim\'s Scepter.':
-                    img_tag = BS(str(li), 'html.parser').new_tag('img')
-                    img_tag['src'] = SPECIAL_SENTENCES[a.get('title')] + '.png'
-                    a.replace_with(img_tag)
-            for tag in li.find_all():
-                if tag == img_tag:
-                    continue
-                tag.unwrap()
-            texts.append(clean(str(li)))
+                    a.string = '$$' + SPECIAL_SENTENCES[a.get('title')] + '$$'
+            texts.append(clean(li.text).split('$$'))
         notes += texts
         return find_notes(divs[1:], notes) # recurse with the rest
 
@@ -112,7 +97,7 @@ def fetch_abilities(soup, extra=True):
 
         # get "type" (i.e no target/passive/etc) and summary
         type_div = ability_div.find('div', style='padding: 15px 5px; font-size: 85%; line-height: 100%; text-align: center;')
-        types = {}
+        types = []
         for type in type_div.findAll('div', recursive=False):
             if type.find('b') is None:
                 continue
@@ -130,15 +115,16 @@ def fetch_abilities(soup, extra=True):
                 string = ' '.join([re.sub(r'\(|\)', '', x.encode('utf-8')) for x in s.findAll(text=True) if x.strip() != ''])
                 string = clean(string)
                 if extra is not '':
-                    strings[extra] = [string]
+                    strings[extra] = string
                 else:
                     if 'normal' in strings.keys():
-                        strings['normal'] = strings['normal'].append(string.strip())
+                        strings['normal'] += ', ' + string
                     else:
-                        strings['normal'] = [string.strip()]
+                        strings['normal'] = string
 
             # save
-            types[val] = strings
+            strings['name'] = val
+            types.append(strings)
 
         # get description
         description = ability_div.find('div', style='vertical-align: top; padding: 3px 5px; border-top: 1px solid black;').text.encode('utf-8')
@@ -146,27 +132,32 @@ def fetch_abilities(soup, extra=True):
 
         # find all the divs for data
         div_data = ability_div.find('div', style='vertical-align:top; padding: 3px 5px;')
-        data = {}
+        data = []
         for data_item in div_data.findAll('div'):
             # we want to break once we hit a div with a style
             if data_item.has_attr('style'):
                 break
 
+            for span in data_item.find('b').findAll('span'):
+                span.unwrap()
             lines = [BS(x,'html.parser') for x in str(data_item).split(':', 1)]  # left side is data, right side is/are value(s)
             data_object = clean(lines[0].text)
-            data[data_object] = {}
+            current_data = {
+                'name': data_object
+            }
             values = [BS(x, 'html.parser') for x in str(lines[1]).split('(')]
             for value in values:
                 if ',' in value.text:  ## there is a talent value along with a aghs value
                     for a_tag in value.findAll('a', recursive=False):
                         if a_tag.get('title') == 'Talent':
-                            data[data_object][SPECIAL_SENTENCES['Talent'] + '_AGHS'] = clean(a_tag.findNext('span').text)
+                            current_data[SPECIAL_SENTENCES['Talent'] + '_AGHS'] = clean(a_tag.findNext('span').text)
                         else:
-                            data[data_object][SPECIAL_SENTENCES['Talent']] = clean(a_tag.findNext('span').text)
+                            current_data[SPECIAL_SENTENCES[a_tag.get('title')]] = clean(a_tag.findNext('span').text)
                 elif value.find('a') is not None:
-                    data[data_object][SPECIAL_SENTENCES[value.find('a').get('title')]] = clean(value.text.replace(')', ''))
+                    current_data[SPECIAL_SENTENCES[value.find('a').get('title')]] = clean(value.text.replace(')', ''))
                 else:
-                    data[data_object]['normal'] = clean(value.text)
+                    current_data['normal'] = clean(value.text)
+            data.append(current_data)
 
         # get special details (i.e extra notes about the special)
         special_details = {}
@@ -367,7 +358,15 @@ def fetch_items(soup):
     for span in trs[0].findAll('span'):
         item_data['availability'].append(SPECIAL_SENTENCES[span.get('title')])
     item_data['lore'] = clean(trs[3].text)
-    item_data['cost'] = clean(re.sub(r'[a-z]|[A-Z]', '', trs[4].find('th').find('div').text))  # removes text (keeps cost + recipe)
+
+    cost = clean(re.sub(r'[a-z]|[A-Z]', '', trs[4].find('th').find('div').text))
+    item_data['cost'] = {
+        'item': cost.split('(')[0].strip()
+    }
+    if len(cost.split('(')) > 1:
+        item_data['cost']['recipe'] = cost.split('(')[1].replace(')', '').strip()
+
+    # removes text (keeps cost + recipe)
     item_data['type'] = clean(re.sub(r'Bought From', '', trs[4].find('th').findAll('div', recursive=False)[-1].text))
 
     # get the details
