@@ -2,9 +2,6 @@
 <html class="client-nojs" dir="ltr" lang="en">
  <head>
   <meta charset="utf-8"/>
-  <script type="text/javascript">
-   (window.NREUM||(NREUM={})).loader_config={xpid:"UAcAUlNACQoAXVVbDw=="};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var o=e[n]={exports:{}};t[n][0].call(o.exports,function(e){var o=t[n][1][e];return r(o||e)},o,o.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({1:[function(t,e,n){function r(t){try{c.console&&console.log(t)}catch(e){}}var o,i=t("ee"),a=t(15),c={};try{o=localStorage.getItem("__nr_flags").split(","),console&&"function"==typeof console.log&&(c.console=!0,o.indexOf("dev")!==-1&&(c.dev=!0),o.indexOf("nr_dev")!==-1&&(c.nrDev=!0))}catch(s){}c.nrDev&&i.on("internal-error",function(t){r(t.stack)}),c.dev&&i.on("fn-err",function(t,e,n){r(n.stack)}),c.dev&&(r("NR AGENT IN DEVELOPMENT MODE"),r("flags: "+a(c,function(t,e){return t}).join(", ")))},{}],2:[function(t,e,n){function r(t,e,n,r,o){try{d?d-=1:i("err",[o||new UncaughtException(t,e,n)])}catch(c){try{i("ierr",[c,(new Date).getTime(),!0])}catch(s){}}return"function"==typeof f&&f.apply(this,a(arguments))}function UncaughtException(t,e,n){this.message=t||"Uncaught error with no additional information",this.sourceURL=e,this.line=n}function o(t){i("err",[t,(new Date).getTime()])}var i=t("handle"),a=t(16),c=t("ee"),s=t("loader"),f=window.onerror,u=!1,d=0;s.features.err=!0,t(1),window.onerror=r;try{throw new Error}catch(l){"stack"in l&&(t(8),t(7),"addEventListener"in window&&t(5),s.xhrWrappable&&t(9),u=!0)}c.on("fn-start",function(t,e,n){u&&(d+=1)}),c.on("fn-err",function(t,e,n){u&&(this.thrown=!0,o(n))}),c.on("fn-end",function(){u&&!this.thrown&&d>0&&(d-=1)}),c.on("internal-error",function(t){i("ierr",[t,(new Date).getTime(),!0])})},{}],3:[function(t,e,n){t("loader").features.ins=!0},{}],4:[function(t,e,n){function r(t){}if(window.performance&&window.performance.timing&&window.performance.getEntriesByType){var o=t("ee"),i=t("handle"),a=t(8),c=t(7),s="learResourceTimings",f="addEventListener",u="resourcetimingbufferfull",d="bstResource",l="resource",p="-start",h="-end",m="fn"+p,w="fn"+h,v="bstTimer",y="pushState";t("loader").features.stn=!0,t(6);var g=NREUM.o.EV;o.on(m,function(t,e){var n=t[0];n instanceof g&&(this.bstStart=Date.now())}),o.on(w,function(t,e){var n=t[0];n instanceof g&&i("bst",[n,e,this.bstStart,Date.now()])}),a.on(m,function(t,e,n){this.bstStart=Date.now(),this.bstType=n}),a.on(w,function(t,e){i(v,[e,this.bstStart,Date.now(),this.bstType])}),c.on(m,function(){this.bstStart=Date.now()}),c.on(w,function(t,e){i(v,[e,this.bstStart,Date.now(),"requestAnimationFrame"])}),o.on(y+p,function(t){this.time=Date.now(),this.startPath=location.pathname+location.hash}),o.on(y+h,function(t){i("bstHist",[location.pathname+location.hash,this.startPath,this.time])}),f in window.performance&&(window.performance["c"+s]?window.performance[f](u,function(t){i(d,[window.performance.getEntriesByType(l)]),window.performance["c"+s]()},!1):window.performance[f]("webkit"+u,function(t){i(d,[window.performance.getEntriesByType(l)]),window.performance["webkitC"+s]()},!1)),document[f]("scroll",r,{passive:!0}),document[f]("keypress",r,!1),document[f]("click",r,!1)}},{}],5:[function(t,e,n){function r(t){for(var e=t;e&&!e.hasOwnProperty(u);)e=Object.getPrototypeOf(e);e&&o(e)}function o(t){c.inPlace(t,[u,d],"-",i)}function i(t,e){return t[1]}var a=t("ee").get("events"),c=t(17)(a,!0),s=t("gos"),f=XMLHttpRequest,u="addEventListener",d="removeEventListener";e.exports=a,"getPrototypeOf"in Object?(r(document),r(window),r(f.prototype)):f.prototype.hasOwnProperty(u)&&(o(window),o(f.prototype)),a.on(u+"-start",function(t,e){var n=t[1],r=s(n,"nr@wrapped",function(){function t(){if("function"==typeof n.handleEvent)return n.handleEvent.apply(n,arguments)}var e={object:t,"function":n}[typeof n];return e?c(e,"fn-",null,e.name||"anonymous"):n});this.wrapped=t[1]=r}),a.on(d+"-start",function(t){t[1]=this.wrapped||t[1]})},{}],6:[function(t,e,n){var r=t("ee").get("history"),o=t(17)(r);e.exports=r,o.inPlace(window.history,["pushState","replaceState"],"-")},{}],7:[function(t,e,n){var r=t("ee").get("raf"),o=t(17)(r),i="equestAnimationFrame";e.exports=r,o.inPlace(window,["r"+i,"mozR"+i,"webkitR"+i,"msR"+i],"raf-"),r.on("raf-start",function(t){t[0]=o(t[0],"fn-")})},{}],8:[function(t,e,n){function r(t,e,n){t[0]=a(t[0],"fn-",null,n)}function o(t,e,n){this.method=n,this.timerDuration="number"==typeof t[1]?t[1]:0,t[0]=a(t[0],"fn-",this,n)}var i=t("ee").get("timer"),a=t(17)(i),c="setTimeout",s="setInterval",f="clearTimeout",u="-start",d="-";e.exports=i,a.inPlace(window,[c,"setImmediate"],c+d),a.inPlace(window,[s],s+d),a.inPlace(window,[f,"clearImmediate"],f+d),i.on(s+u,r),i.on(c+u,o)},{}],9:[function(t,e,n){function r(t,e){d.inPlace(e,["onreadystatechange"],"fn-",c)}function o(){var t=this,e=u.context(t);t.readyState>3&&!e.resolved&&(e.resolved=!0,u.emit("xhr-resolved",[],t)),d.inPlace(t,w,"fn-",c)}function i(t){v.push(t),h&&(g=-g,b.data=g)}function a(){for(var t=0;t<v.length;t++)r([],v[t]);v.length&&(v=[])}function c(t,e){return e}function s(t,e){for(var n in t)e[n]=t[n];return e}t(5);var f=t("ee"),u=f.get("xhr"),d=t(17)(u),l=NREUM.o,p=l.XHR,h=l.MO,m="readystatechange",w=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"],v=[];e.exports=u;var y=window.XMLHttpRequest=function(t){var e=new p(t);try{u.emit("new-xhr",[e],e),e.addEventListener(m,o,!1)}catch(n){try{u.emit("internal-error",[n])}catch(r){}}return e};if(s(p,y),y.prototype=p.prototype,d.inPlace(y.prototype,["open","send"],"-xhr-",c),u.on("send-xhr-start",function(t,e){r(t,e),i(e)}),u.on("open-xhr-start",r),h){var g=1,b=document.createTextNode(g);new h(a).observe(b,{characterData:!0})}else f.on("fn-end",function(t){t[0]&&t[0].type===m||a()})},{}],10:[function(t,e,n){function r(t){var e=this.params,n=this.metrics;if(!this.ended){this.ended=!0;for(var r=0;r<d;r++)t.removeEventListener(u[r],this.listener,!1);if(!e.aborted){if(n.duration=(new Date).getTime()-this.startTime,4===t.readyState){e.status=t.status;var i=o(t,this.lastSize);if(i&&(n.rxSize=i),this.sameOrigin){var a=t.getResponseHeader("X-NewRelic-App-Data");a&&(e.cat=a.split(", ").pop())}}else e.status=0;n.cbTime=this.cbTime,f.emit("xhr-done",[t],t),c("xhr",[e,n,this.startTime])}}}function o(t,e){var n=t.responseType;if("json"===n&&null!==e)return e;var r="arraybuffer"===n||"blob"===n||"json"===n?t.response:t.responseText;return h(r)}function i(t,e){var n=s(e),r=t.params;r.host=n.hostname+":"+n.port,r.pathname=n.pathname,t.sameOrigin=n.sameOrigin}var a=t("loader");if(a.xhrWrappable){var c=t("handle"),s=t(11),f=t("ee"),u=["load","error","abort","timeout"],d=u.length,l=t("id"),p=t(14),h=t(13),m=window.XMLHttpRequest;a.features.xhr=!0,t(9),f.on("new-xhr",function(t){var e=this;e.totalCbs=0,e.called=0,e.cbTime=0,e.end=r,e.ended=!1,e.xhrGuids={},e.lastSize=null,p&&(p>34||p<10)||window.opera||t.addEventListener("progress",function(t){e.lastSize=t.loaded},!1)}),f.on("open-xhr-start",function(t){this.params={method:t[0]},i(this,t[1]),this.metrics={}}),f.on("open-xhr-end",function(t,e){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&e.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid)}),f.on("send-xhr-start",function(t,e){var n=this.metrics,r=t[0],o=this;if(n&&r){var i=h(r);i&&(n.txSize=i)}this.startTime=(new Date).getTime(),this.listener=function(t){try{"abort"===t.type&&(o.params.aborted=!0),("load"!==t.type||o.called===o.totalCbs&&(o.onloadCalled||"function"!=typeof e.onload))&&o.end(e)}catch(n){try{f.emit("internal-error",[n])}catch(r){}}};for(var a=0;a<d;a++)e.addEventListener(u[a],this.listener,!1)}),f.on("xhr-cb-time",function(t,e,n){this.cbTime+=t,e?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof n.onload||this.end(n)}),f.on("xhr-load-added",function(t,e){var n=""+l(t)+!!e;this.xhrGuids&&!this.xhrGuids[n]&&(this.xhrGuids[n]=!0,this.totalCbs+=1)}),f.on("xhr-load-removed",function(t,e){var n=""+l(t)+!!e;this.xhrGuids&&this.xhrGuids[n]&&(delete this.xhrGuids[n],this.totalCbs-=1)}),f.on("addEventListener-end",function(t,e){e instanceof m&&"load"===t[0]&&f.emit("xhr-load-added",[t[1],t[2]],e)}),f.on("removeEventListener-end",function(t,e){e instanceof m&&"load"===t[0]&&f.emit("xhr-load-removed",[t[1],t[2]],e)}),f.on("fn-start",function(t,e,n){e instanceof m&&("onload"===n&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=(new Date).getTime()))}),f.on("fn-end",function(t,e){this.xhrCbStart&&f.emit("xhr-cb-time",[(new Date).getTime()-this.xhrCbStart,this.onload,e],e)})}},{}],11:[function(t,e,n){e.exports=function(t){var e=document.createElement("a"),n=window.location,r={};e.href=t,r.port=e.port;var o=e.href.split("://");!r.port&&o[1]&&(r.port=o[1].split("/")[0].split("@").pop().split(":")[1]),r.port&&"0"!==r.port||(r.port="https"===o[0]?"443":"80"),r.hostname=e.hostname||n.hostname,r.pathname=e.pathname,r.protocol=o[0],"/"!==r.pathname.charAt(0)&&(r.pathname="/"+r.pathname);var i=!e.protocol||":"===e.protocol||e.protocol===n.protocol,a=e.hostname===document.domain&&e.port===n.port;return r.sameOrigin=i&&(!e.hostname||a),r}},{}],12:[function(t,e,n){function r(){}function o(t,e,n){return function(){return i(t,[(new Date).getTime()].concat(c(arguments)),e?null:this,n),e?void 0:this}}var i=t("handle"),a=t(15),c=t(16),s=t("ee").get("tracer"),f=NREUM;"undefined"==typeof window.newrelic&&(newrelic=f);var u=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(u,function(t,e){f[e]=o(d+e,!0,"api")}),f.addPageAction=o(d+"addPageAction",!0),f.setCurrentRouteName=o(d+"routeName",!0),e.exports=newrelic,f.interaction=function(){return(new r).get()};var p=r.prototype={createTracer:function(t,e){var n={},r=this,o="function"==typeof e;return i(l+"tracer",[Date.now(),t,n],r),function(){if(s.emit((o?"":"no-")+"fn-start",[Date.now(),r,o],n),o)try{return e.apply(this,arguments)}finally{s.emit("fn-end",[Date.now()],n)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){p[e]=o(l+e)}),newrelic.noticeError=function(t){"string"==typeof t&&(t=new Error(t)),i("err",[t,(new Date).getTime()])}},{}],13:[function(t,e,n){e.exports=function(t){if("string"==typeof t&&t.length)return t.length;if("object"==typeof t){if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if(!("undefined"!=typeof FormData&&t instanceof FormData))try{return JSON.stringify(t).length}catch(e){return}}}},{}],14:[function(t,e,n){var r=0,o=navigator.userAgent.match(/Firefox[\/\s](\d+\.\d+)/);o&&(r=+o[1]),e.exports=r},{}],15:[function(t,e,n){function r(t,e){var n=[],r="",i=0;for(r in t)o.call(t,r)&&(n[i]=e(r,t[r]),i+=1);return n}var o=Object.prototype.hasOwnProperty;e.exports=r},{}],16:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,o=n-e||0,i=Array(o<0?0:o);++r<o;)i[r]=t[e+r];return i}e.exports=r},{}],17:[function(t,e,n){function r(t){return!(t&&t instanceof Function&&t.apply&&!t[a])}var o=t("ee"),i=t(16),a="nr@original",c=Object.prototype.hasOwnProperty,s=!1;e.exports=function(t,e){function n(t,e,n,o){function nrWrapper(){var r,a,c,s;try{a=this,r=i(arguments),c="function"==typeof n?n(r,a):n||{}}catch(f){l([f,"",[r,a,o],c])}u(e+"start",[r,a,o],c);try{return s=t.apply(a,r)}catch(d){throw u(e+"err",[r,a,d],c),d}finally{u(e+"end",[r,a,s],c)}}return r(t)?t:(e||(e=""),nrWrapper[a]=t,d(t,nrWrapper),nrWrapper)}function f(t,e,o,i){o||(o="");var a,c,s,f="-"===o.charAt(0);for(s=0;s<e.length;s++)c=e[s],a=t[c],r(a)||(t[c]=n(a,f?c+o:o,i,c))}function u(n,r,o){if(!s||e){var i=s;s=!0;try{t.emit(n,r,o)}catch(a){l([a,n,r,o])}s=i}}function d(t,e){if(Object.defineProperty&&Object.keys)try{var n=Object.keys(t);return n.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(r){l([r])}for(var o in t)c.call(t,o)&&(e[o]=t[o]);return e}function l(e){try{t.emit("internal-error",e)}catch(n){}}return t||(t=o),n.inPlace=f,n.flag=a,n}},{}],ee:[function(t,e,n){function r(){}function o(t){function e(t){return t&&t instanceof r?t:t?s(t,c,i):i()}function n(n,r,o){if(!l.aborted){t&&t(n,r,o);for(var i=e(o),a=h(n),c=a.length,s=0;s<c;s++)a[s].apply(i,r);var f=u[y[n]];return f&&f.push([g,n,r,i]),i}}function p(t,e){v[t]=h(t).concat(e)}function h(t){return v[t]||[]}function m(t){return d[t]=d[t]||o(n)}function w(t,e){f(t,function(t,n){e=e||"feature",y[n]=e,e in u||(u[e]=[])})}var v={},y={},g={on:p,emit:n,get:m,listeners:h,context:e,buffer:w,abort:a,aborted:!1};return g}function i(){return new r}function a(){(u.api||u.feature)&&(l.aborted=!0,u=l.backlog={})}var c="nr@context",s=t("gos"),f=t(15),u={},d={},l=e.exports=o();l.backlog=u},{}],gos:[function(t,e,n){function r(t,e,n){if(o.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return t[e]=r,r}var o=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){o.buffer([t],r),o.emit(t,e,n)}var o=t("ee").get("handle");e.exports=r,r.ee=o},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,i,function(){return o++})}var o=1,i="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!b++){var t=g.info=NREUM.info,e=d.getElementsByTagName("script")[0];if(setTimeout(f.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return f.abort();s(v,function(e,n){t[e]||(t[e]=n)}),c("mark",["onload",a()],null,"api");var n=d.createElement("script");n.src="https://"+t.agent,e.parentNode.insertBefore(n,e)}}function o(){"complete"===d.readyState&&i()}function i(){c("mark",["domContent",a()],null,"api")}function a(){return(new Date).getTime()}var c=t("handle"),s=t(15),f=t("ee"),u=window,d=u.document,l="addEventListener",p="attachEvent",h=u.XMLHttpRequest,m=h&&h.prototype;NREUM.o={ST:setTimeout,CT:clearTimeout,XHR:h,REQ:u.Request,EV:u.Event,PR:u.Promise,MO:u.MutationObserver},t(12);var w=""+location,v={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1016.min.js"},y=h&&m&&m[l]&&!/CriOS/.test(navigator.userAgent),g=e.exports={offset:a(),origin:w,features:{},xhrWrappable:y};d[l]?(d[l]("DOMContentLoaded",i,!1),u[l]("load",r,!1)):(d[p]("onreadystatechange",o),u[p]("onload",r)),c("mark",["firstbyte",a()],null,"api");var b=0},{}]},{},["loader",2,10,4,3]);
-  </script>
   <title>
    Visage - Dota 2 Wiki
   </title>
@@ -12,7 +9,7 @@
    document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );
   </script>
   <script>
-   (window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Visage","wgTitle":"Visage","wgCurRevisionId":1438701,"wgRevisionId":1438701,"wgArticleId":8729,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Heroes","Intelligence heroes","Ranged heroes","Supports","Nukers","Durable","Disablers","Pushers"],"wgBreakFrames":true,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Visage","wgRelevantArticleId":8729,"wgRequestId":"840cf563442cfa199c8fa43a","wgIsProbablyEditable":true,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgPreferredVariant":"en","wgCollapsibleVectorEnabledModules":{"collapsiblenav":true,"experiments":true},"wgVisualEditor":{"pageLanguageCode":"en","pageLanguageDir":"ltr","usePageImages":true,"usePageDescriptions":false},"wgWikiEditorEnabledModules":{"toolbar":true,"dialogs":true,"preview":true,"publish":true},"wgCategoryTreePageCategoryOptions":"{\"mode\":0,\"hideprefix\":20,\"showcount\":true,\"namespaces\":false}","wgVisualEditorToolbarScrollOffset":0});mw.loader.implement("user.options",function($,jQuery,require,module){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function ( $, jQuery, require, module ) {
+   (window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Visage","wgTitle":"Visage","wgCurRevisionId":1532186,"wgRevisionId":1532186,"wgArticleId":8729,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Heroes","Intelligence heroes","Ranged heroes","Supports","Nukers","Durable","Disablers","Pushers"],"wgBreakFrames":true,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Visage","wgRelevantArticleId":8729,"wgRequestId":"a17d62d4f975ccc88c8563c6","wgIsProbablyEditable":true,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgPreferredVariant":"en","wgCollapsibleVectorEnabledModules":{"collapsiblenav":true,"experiments":true},"wgVisualEditor":{"pageLanguageCode":"en","pageLanguageDir":"ltr","usePageImages":true,"usePageDescriptions":false},"wgWikiEditorEnabledModules":{"toolbar":true,"dialogs":true,"preview":true,"publish":true},"wgCategoryTreePageCategoryOptions":"{\"mode\":0,\"hideprefix\":20,\"showcount\":true,\"namespaces\":false}","wgVisualEditorToolbarScrollOffset":0});mw.loader.implement("user.options",function($,jQuery,require,module){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function ( $, jQuery, require, module ) {
 mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/;
 
 });mw.loader.load(["ext.smw.style","mediawiki.page.startup","ext.siteGlobals","ext.bunnyears","ext.visualEditor.desktopArticleTarget.init","ext.hydraAuth.banners","skins.vector.js","skins.hydra.advertisements.js","skins.hydra.footer.js","ext.social"]);});
@@ -23,11 +20,11 @@ mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","cs
   <link href="/load.php?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=hydra" rel="stylesheet"/>
   <script async="" src="/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=hydra">
   </script>
-  <meta content="MediaWiki 1.27.1" name="generator"/>
+  <meta content="MediaWiki 1.27.3" name="generator"/>
   <meta content="Visage" name="og:title"/>
   <meta content="website" name="og:type"/>
   <meta content="https://hydra-media.cursecdn.com/dota2.gamepedia.com/b/bc/Wiki.png" name="og:image"/>
-  <meta content="http://dota2.gamepedia.com/Visage" name="og:url"/>
+  <meta content="https://dota2.gamepedia.com/Visage" name="og:url"/>
   <meta content="Dota 2 Wiki" name="og:site_name"/>
   <meta name="description"/>
   <meta content="" name="keywords"/>
@@ -40,13 +37,13 @@ mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","cs
   <link href="/opensearch_desc.php" rel="search" title="Dota 2 Wiki (en)" type="application/opensearchdescription+xml"/>
   <link href="//dota2.gamepedia.com/api.php?action=rsd" rel="EditURI" type="application/rsd+xml"/>
   <link href="//creativecommons.org/licenses/by-nc-sa/3.0/" rel="copyright"/>
-  <link href="http://dota2.gamepedia.com/Visage" rel="canonical"/>
+  <link href="https://dota2.gamepedia.com/Visage" rel="canonical"/>
   <link href="dota2-de.gamepedia.com" hreflang="de" rel="alternate"/>
   <link href="dota2-ru.gamepedia.com" hreflang="ru" rel="alternate"/>
   <link href="dota2-pt.gamepedia.com" hreflang="pt" rel="alternate"/>
   <link href="dota2-zh.gamepedia.com" hreflang="zh" rel="alternate"/>
   <meta content="Gamepedia" itemprop="author"/>
-  <link href="https://stations.cursetech.com/be/bunnyears.min.css" rel="stylesheet" type="text/css"/>
+  <link href="https://stations.cursetech.com/be/bunnyears-1.1.min.css" rel="stylesheet" type="text/css"/>
  </head>
  <body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-Visage rootpage-Visage skin-hydra action-view site-dota2-gamepedia show-ads">
   <script type="application/ld+json">
@@ -81,8 +78,8 @@ mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","cs
 		"target": "https://dota2.gamepedia.com/index.php?title=Special:Search&search={search_term}",
 		"query-input": "required name=search_term"
 	},
-	"datePublished": "2017-01-10T19:02:24Z",
-	"dateModified": "2017-01-10T19:02:24Z",
+	"datePublished": "2017-06-03T11:31:50Z",
+	"dateModified": "2017-06-03T11:31:50Z",
 	"mainEntityOfPage": "https://dota2.gamepedia.com/Visage"
 }
   </script>
@@ -124,7 +121,7 @@ mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","cs
 var script = document.createElement('script');
 var tstamp = new Date();
 script.id = 'factorem';
-script.src = 'http://cdm.cursecdn.com/js/gamepedia/cdmfactorem_min.js?misc=' + tstamp.getTime();;
+script.src = '//cdm.cursecdn.com/js/gamepedia/cdmfactorem_min.js?misc=' + tstamp.getTime();;
 script.async = true;
 script.type='text/javascript';
 document.head.appendChild(script);
@@ -133,10 +130,10 @@ document.head.appendChild(script);
    setTimeout(function(){if("undefined"!=typeof b2){var element=document.getElementById(b2);setTimeout(function(){element.parentNode.innerHTML='<div id="'+b2+'"></div>'},5000)}},20000)
   </script>
   <script>
-   setTimeout(function(){if("undefined"!=typeof b2){var element=document.getElementById(b3);setTimeout(function(){element.parentNode.innerHTML='<div id="'+b3+'"></div>'},5000)}},20000)
+   setTimeout(function(){if("undefined"!=typeof b3){var element=document.getElementById(b3);setTimeout(function(){element.parentNode.innerHTML='<div id="'+b3+'"></div>'},5000)}},20000)
   </script>
   <script>
-   setTimeout(function(){if("undefined"!=typeof b2){var element=document.getElementById(b6);setTimeout(function(){element.parentNode.innerHTML='<div id="'+b6+'"></div>'},5000)}},20000)
+   setTimeout(function(){if("undefined"!=typeof b6){var element=document.getElementById(b6);setTimeout(function(){element.parentNode.innerHTML='<div id="'+b6+'"></div>'},5000)}},20000)
   </script>
   <div id="netbar">
    <ul class="netbar-left">
@@ -293,8 +290,8 @@ document.head.appendChild(script);
         </tr>
         <tr>
          <td colspan="4">
-          <a class="image" href="/File:Visage.png">
-           <img alt="Visage.png" height="144" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/c/c2/Visage.png?version=d961c64b86170b583829c0761dea0b87" width="256"/>
+          <a class="image" href="/File:Visage_icon.png">
+           <img alt="Visage icon.png" height="144" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/9/9e/Visage_icon.png?version=cde9f6133afac9ed1de1c0ed0b342f7d" width="256"/>
           </a>
          </td>
         </tr>
@@ -304,17 +301,17 @@ document.head.appendChild(script);
            <tr>
             <th align="center" width="45">
              <a href="/Strength" title="Strength">
-              <img alt="Strength" height="40" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/7a/Strength_attribute_symbol.png/40px-Strength_attribute_symbol.png?version=79371ef0198db066c30dfa55b0e6b483" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/7a/Strength_attribute_symbol.png/60px-Strength_attribute_symbol.png?version=79371ef0198db066c30dfa55b0e6b483 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/7/7a/Strength_attribute_symbol.png?version=79371ef0198db066c30dfa55b0e6b483 2x" width="40"/>
+              <img alt="Strength attribute symbol.png" height="40" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/7a/Strength_attribute_symbol.png/40px-Strength_attribute_symbol.png?version=79371ef0198db066c30dfa55b0e6b483" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/7a/Strength_attribute_symbol.png/60px-Strength_attribute_symbol.png?version=79371ef0198db066c30dfa55b0e6b483 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/7/7a/Strength_attribute_symbol.png?version=79371ef0198db066c30dfa55b0e6b483 2x" width="40"/>
              </a>
              <br/>
              <b>
               22
              </b>
-             + 2.4
+             + 2.7
             </th>
             <th align="center" width="45">
              <a href="/Agility" title="Agility">
-              <img alt="Agility" height="40" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/2/2d/Agility_attribute_symbol.png/40px-Agility_attribute_symbol.png?version=366b1f8f1bc09dbc72aac21691851193" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/2/2d/Agility_attribute_symbol.png/60px-Agility_attribute_symbol.png?version=366b1f8f1bc09dbc72aac21691851193 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/2/2d/Agility_attribute_symbol.png?version=366b1f8f1bc09dbc72aac21691851193 2x" width="40"/>
+              <img alt="Agility attribute symbol.png" height="40" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/2/2d/Agility_attribute_symbol.png/40px-Agility_attribute_symbol.png?version=366b1f8f1bc09dbc72aac21691851193" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/2/2d/Agility_attribute_symbol.png/60px-Agility_attribute_symbol.png?version=366b1f8f1bc09dbc72aac21691851193 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/2/2d/Agility_attribute_symbol.png?version=366b1f8f1bc09dbc72aac21691851193 2x" width="40"/>
              </a>
              <br/>
              <b>
@@ -324,7 +321,7 @@ document.head.appendChild(script);
             </th>
             <th align="center" width="45">
              <a href="/Intelligence" title="Intelligence">
-              <img alt="Intelligence" height="40" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/8/8a/Intelligence_primary_attribute_symbol.png/40px-Intelligence_primary_attribute_symbol.png?version=cd41b47c3a87abbc2e57de213f72220a" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/8/8a/Intelligence_primary_attribute_symbol.png/60px-Intelligence_primary_attribute_symbol.png?version=cd41b47c3a87abbc2e57de213f72220a 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/8/8a/Intelligence_primary_attribute_symbol.png?version=cd41b47c3a87abbc2e57de213f72220a 2x" width="40"/>
+              <img alt="Intelligence primary attribute symbol.png" height="40" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/8/8a/Intelligence_primary_attribute_symbol.png/40px-Intelligence_primary_attribute_symbol.png?version=cd41b47c3a87abbc2e57de213f72220a" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/8/8a/Intelligence_primary_attribute_symbol.png/60px-Intelligence_primary_attribute_symbol.png?version=cd41b47c3a87abbc2e57de213f72220a 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/8/8a/Intelligence_primary_attribute_symbol.png?version=cd41b47c3a87abbc2e57de213f72220a 2x" width="40"/>
              </a>
              <br/>
              <b>
@@ -377,10 +374,10 @@ document.head.appendChild(script);
              640
             </td>
             <td>
-             1300
+             1380
             </td>
             <td>
-             1780
+             1920
             </td>
            </tr>
            <tr>
@@ -392,16 +389,16 @@ document.head.appendChild(script);
              </b>
             </td>
             <td>
-             0.25
+             0
             </td>
             <td>
-             0.91
+             1.32
             </td>
             <td>
-             1.92
+             3.59
             </td>
             <td>
-             2.64
+             5.21
             </td>
            </tr>
            <tr style="background:#ededed">
@@ -413,16 +410,16 @@ document.head.appendChild(script);
              </b>
             </td>
             <td>
-             50
+             75
             </td>
             <td>
-             338
+             339
             </td>
             <td>
-             758
+             724
             </td>
             <td>
-             1058
+             999
             </td>
            </tr>
            <tr>
@@ -500,13 +497,13 @@ document.head.appendChild(script);
              0%
             </td>
             <td>
-             1.5%
+             1.71%
             </td>
             <td>
-             3.69%
+             4.21%
             </td>
             <td>
-             5.25%
+             6%
             </td>
            </tr>
            <tr>
@@ -857,14 +854,8 @@ document.head.appendChild(script);
          <span class="mw-editsection-bracket">
           [
          </span>
-         <a class="mw-editsection-visualeditor" href="/index.php?title=Visage&amp;veaction=edit&amp;vesection=1" title="Edit section: Bio">
-          edit
-         </a>
-         <span class="mw-editsection-divider">
-          |
-         </span>
          <a href="/index.php?title=Visage&amp;action=edit&amp;section=1" title="Edit section: Bio">
-          edit source
+          edit
          </a>
          <span class="mw-editsection-bracket">
           ]
@@ -872,96 +863,91 @@ document.head.appendChild(script);
         </span>
        </h2>
        <div class="biobox" style="color:#333333;padding:8px;font-size:12px;">
-        <table style="background: none;">
+        <table cellspacing="4" style="background: none;">
          <tr>
-          <td valign="top">
-           <table cellspacing="4" style="background: none;">
-            <tr>
-             <td colspan="2" style="font-weight:bold;font-size:13px;text-align:center;">
-              <a href="/Visage" title="Visage">
-               <img alt="Visage" height="32" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/9/9e/Visage_icon.png?version=8ad072686f262d739719b41b04460c11" width="32"/>
-              </a>
-              Visage, the Bound Form of Necro'lic
-             </td>
-            </tr>
-            <tr>
-             <td align="center" colspan="2">
-              <a class="sm2_button" href="https://hydra-media.cursecdn.com/dota2.gamepedia.com/e/ea/Visa_rare_04.mp3" title="Play">
-               Play
-              </a>
-              "It is one thing to animate a corpse from beneath the ground. It is another to rip a soul from beyond the veil."
-             </td>
-            </tr>
-            <tr>
-             <td valign="top">
-              <b>
-               Role:
-              </b>
-             </td>
-             <td>
-              <a href="/Role#Support" title="Support">
-               <img alt="Support" height="24" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/0/01/Pip_roamer.png/24px-Pip_roamer.png?version=9754909d24c9078b6f0c152c01faea38" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/0/01/Pip_roamer.png/36px-Pip_roamer.png?version=9754909d24c9078b6f0c152c01faea38 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/0/01/Pip_roamer.png/48px-Pip_roamer.png?version=9754909d24c9078b6f0c152c01faea38 2x" width="24"/>
-              </a>
-              <a href="/Role#Support" title="Role">
-               Support
-              </a>
-              /
-              <a href="/Role#Nuker" title="Nuker">
-               <img alt="Nuker" height="24" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/0/04/Pip_ganker.png/24px-Pip_ganker.png?version=f403b95dc688f11a6af39e1110731b4d" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/0/04/Pip_ganker.png/36px-Pip_ganker.png?version=f403b95dc688f11a6af39e1110731b4d 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/0/04/Pip_ganker.png/48px-Pip_ganker.png?version=f403b95dc688f11a6af39e1110731b4d 2x" width="24"/>
-              </a>
-              <a href="/Role#Nuker" title="Role">
-               Nuker
-              </a>
-              /
-              <a href="/Role#Durable" title="Durable">
-               <img alt="Durable" height="24" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/d/d3/Pip_tank.png/24px-Pip_tank.png?version=5d8ccf7b704ff54ffe6c2a65a3861423" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/d/d3/Pip_tank.png/36px-Pip_tank.png?version=5d8ccf7b704ff54ffe6c2a65a3861423 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/d/d3/Pip_tank.png/48px-Pip_tank.png?version=5d8ccf7b704ff54ffe6c2a65a3861423 2x" width="24"/>
-              </a>
-              <a href="/Role#Durable" title="Role">
-               Durable
-              </a>
-              /
-              <a href="/Role#Disabler" title="Disabler">
-               <img alt="Disabler" height="24" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/c/c3/Pip_disabler.png/24px-Pip_disabler.png?version=340edcbcd7b35f85bea7d18c802ed99c" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/c/c3/Pip_disabler.png/36px-Pip_disabler.png?version=340edcbcd7b35f85bea7d18c802ed99c 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/c/c3/Pip_disabler.png/48px-Pip_disabler.png?version=340edcbcd7b35f85bea7d18c802ed99c 2x" width="24"/>
-              </a>
-              <a href="/Role#Disabler" title="Role">
-               Disabler
-              </a>
-              /
-              <a href="/Role#Pusher" title="Pusher">
-               <img alt="Pusher" height="24" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/1/1e/Pip_pusher.png/24px-Pip_pusher.png?version=41957ab12983b0cea2a71c4b6c24022a" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/1/1e/Pip_pusher.png/36px-Pip_pusher.png?version=41957ab12983b0cea2a71c4b6c24022a 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/1/1e/Pip_pusher.png/48px-Pip_pusher.png?version=41957ab12983b0cea2a71c4b6c24022a 2x" width="24"/>
-              </a>
-              <a href="/Role#Pusher" title="Role">
-               Pusher
-              </a>
-             </td>
-            </tr>
-            <tr>
-             <td valign="top">
-              <b>
-               Lore:
-              </b>
-             </td>
-             <td>
-              <i>
-               Perched atop the entrance to the Narrow Maze sit the looming shapes of sneering gargoyles, the paths into the hereafter forever in their gaze. Beasts and birds, men and monsters, all creatures that die and choose to travel beyond must someday pass beneath their sight. For an untethered spirit, the decision to journey through the veil of death is irrevocable. When chance comes, and by craft or cunning some restless soul escapes their hells and heavens, it is the dreaded gargoyle Visage, the bound form of the eternal spirit Necro’lic, who is dispatched to reclaim them. Ruthless and efficient, unhindered by the principles of death and fatigue, Visage stalks its prey without mercy or end, willingly destroying all which may give shelter to the fugitive essence. That which flaunts the laws of the afterlife may never rest, for while it is true that the dead may be revived, it is only a matter of time before Visage finds and returns them to their proper place.
-              </i>
-             </td>
-            </tr>
-            <tr>
-             <td valign="top">
-              <b>
-               Voice:
-              </b>
-             </td>
-             <td>
-              Dempsey Pappion (
-              <a href="/Visage/Responses" title="Visage/Responses">
-               Responses
-              </a>
-              )
-             </td>
-            </tr>
-           </table>
+          <td colspan="2" style="font-weight: bold; font-size: 13px; text-align: center;">
+           <a href="/Visage" title="Visage">
+            <img alt="Visage" height="32" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/2/2f/Visage_minimap_icon.png?version=9980ae04956537c784509c081e8938d9" width="32"/>
+           </a>
+           Visage, the Bound Form of Necro'lic
+          </td>
+         </tr>
+         <tr>
+          <td colspan="2" style="text-align: center;">
+           <a class="sm2_button" href="https://hydra-media.cursecdn.com/dota2.gamepedia.com/e/ea/Visa_rare_04.mp3" title="Play">
+            Play
+           </a>
+           "It is one thing to animate a corpse from beneath the ground. It is another to rip a soul from beyond the veil."
+          </td>
+         </tr>
+         <tr>
+          <td>
+           <b>
+            Role:
+           </b>
+          </td>
+          <td>
+           <a href="/Role#Support" title="Support">
+            <img alt="Support" height="24" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/0/01/Pip_roamer.png/24px-Pip_roamer.png?version=9754909d24c9078b6f0c152c01faea38" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/0/01/Pip_roamer.png/36px-Pip_roamer.png?version=9754909d24c9078b6f0c152c01faea38 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/0/01/Pip_roamer.png/48px-Pip_roamer.png?version=9754909d24c9078b6f0c152c01faea38 2x" width="24"/>
+           </a>
+           <a href="/Role#Support" title="Role">
+            Support
+           </a>
+           /
+           <a href="/Role#Nuker" title="Nuker">
+            <img alt="Nuker" height="24" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/0/04/Pip_ganker.png/24px-Pip_ganker.png?version=f403b95dc688f11a6af39e1110731b4d" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/0/04/Pip_ganker.png/36px-Pip_ganker.png?version=f403b95dc688f11a6af39e1110731b4d 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/0/04/Pip_ganker.png/48px-Pip_ganker.png?version=f403b95dc688f11a6af39e1110731b4d 2x" width="24"/>
+           </a>
+           <a href="/Role#Nuker" title="Role">
+            Nuker
+           </a>
+           /
+           <a href="/Role#Durable" title="Durable">
+            <img alt="Durable" height="24" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/d/d3/Pip_tank.png/24px-Pip_tank.png?version=5d8ccf7b704ff54ffe6c2a65a3861423" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/d/d3/Pip_tank.png/36px-Pip_tank.png?version=5d8ccf7b704ff54ffe6c2a65a3861423 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/d/d3/Pip_tank.png/48px-Pip_tank.png?version=5d8ccf7b704ff54ffe6c2a65a3861423 2x" width="24"/>
+           </a>
+           <a href="/Role#Durable" title="Role">
+            Durable
+           </a>
+           /
+           <a href="/Role#Disabler" title="Disabler">
+            <img alt="Disabler" height="24" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/c/c3/Pip_disabler.png/24px-Pip_disabler.png?version=340edcbcd7b35f85bea7d18c802ed99c" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/c/c3/Pip_disabler.png/36px-Pip_disabler.png?version=340edcbcd7b35f85bea7d18c802ed99c 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/c/c3/Pip_disabler.png/48px-Pip_disabler.png?version=340edcbcd7b35f85bea7d18c802ed99c 2x" width="24"/>
+           </a>
+           <a href="/Role#Disabler" title="Role">
+            Disabler
+           </a>
+           /
+           <a href="/Role#Pusher" title="Pusher">
+            <img alt="Pusher" height="24" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/1/1e/Pip_pusher.png/24px-Pip_pusher.png?version=41957ab12983b0cea2a71c4b6c24022a" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/1/1e/Pip_pusher.png/36px-Pip_pusher.png?version=41957ab12983b0cea2a71c4b6c24022a 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/1/1e/Pip_pusher.png/48px-Pip_pusher.png?version=41957ab12983b0cea2a71c4b6c24022a 2x" width="24"/>
+           </a>
+           <a href="/Role#Pusher" title="Role">
+            Pusher
+           </a>
+          </td>
+         </tr>
+         <tr>
+          <td style="vertical-align: top;">
+           <b>
+            <a href="/Visage/Lore" title="Visage/Lore">
+             Lore
+            </a>
+            :
+           </b>
+          </td>
+          <td style="font-style: italic;">
+           Perched atop the entrance to the Narrow Maze sit the looming shapes of sneering gargoyles, the paths into the hereafter forever in their gaze. Beasts and birds, men and monsters, all creatures that die and choose to travel beyond must someday pass beneath their sight. For an untethered spirit, the decision to journey through the veil of death is irrevocable. When chance comes, and by craft or cunning some restless soul escapes their hells and heavens, it is the dreaded gargoyle Visage, the bound form of the eternal spirit Necro’lic, who is dispatched to reclaim them. Ruthless and efficient, unhindered by the principles of death and fatigue, Visage stalks its prey without mercy or end, willingly destroying all which may give shelter to the fugitive essence. That which flaunts the laws of the afterlife may never rest, for while it is true that the dead may be revived, it is only a matter of time before Visage finds and returns them to their proper place.
+          </td>
+         </tr>
+         <tr>
+          <td>
+           <b>
+            Voice:
+           </b>
+          </td>
+          <td>
+           Dempsey Pappion (
+           <a href="/Visage/Responses" title="Visage/Responses">
+            Responses
+           </a>
+           )
           </td>
          </tr>
         </table>
@@ -974,14 +960,8 @@ document.head.appendChild(script);
          <span class="mw-editsection-bracket">
           [
          </span>
-         <a class="mw-editsection-visualeditor" href="/index.php?title=Visage&amp;veaction=edit&amp;vesection=2" title="Edit section: Abilities">
-          edit
-         </a>
-         <span class="mw-editsection-divider">
-          |
-         </span>
          <a href="/index.php?title=Visage&amp;action=edit&amp;section=2" title="Edit section: Abilities">
-          edit source
+          edit
          </a>
          <span class="mw-editsection-bracket">
           ]
@@ -1070,31 +1050,43 @@ document.head.appendChild(script);
            <b>
             Cast Range
            </b>
-           : 650 (
-           <a href="/Talents" title="Talent">
-            <img alt="Talent" height="16" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/c/cd/Talent_tree_symbol.png/16px-Talent_tree_symbol.png?version=b4db4b31a2f9c215885be017c22a8b0c" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/c/cd/Talent_tree_symbol.png/24px-Talent_tree_symbol.png?version=b4db4b31a2f9c215885be017c22a8b0c 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/c/cd/Talent_tree_symbol.png/32px-Talent_tree_symbol.png?version=b4db4b31a2f9c215885be017c22a8b0c 2x" style="vertical-align: text-top" width="16"/>
-           </a>
-           750)
+           :
+           <span style="white-space: nowrap">
+            650 (
+            <a href="/Talents" title="Talent">
+             <img alt="Talent" height="16" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/c/cd/Talent_tree_symbol.png/16px-Talent_tree_symbol.png?version=b4db4b31a2f9c215885be017c22a8b0c" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/c/cd/Talent_tree_symbol.png/24px-Talent_tree_symbol.png?version=b4db4b31a2f9c215885be017c22a8b0c 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/c/cd/Talent_tree_symbol.png/32px-Talent_tree_symbol.png?version=b4db4b31a2f9c215885be017c22a8b0c 2x" style="vertical-align: text-top" width="16"/>
+            </a>
+            750)
+           </span>
           </div>
           <div>
            <b>
-            Move Speed Slow &amp; Bonus
+            Move Speed Change
            </b>
-           : 32%
+           :
+           <span style="white-space: nowrap">
+            32%
+           </span>
           </div>
           <div>
            <b>
-            Attack Speed Slow &amp; Bonus
+            Attack Speed Change
            </b>
-           : 64
+           :
+           <span style="white-space: nowrap">
+            64
+           </span>
           </div>
           <div>
            <b>
             Duration
            </b>
-           : 3/4/5/6
+           :
+           <span style="white-space: nowrap">
+            3.25/4.5/5.75/7
+           </span>
           </div>
-          <div style="display: inline-block; margin: 8px 0px 0px 50px; width: 190px; vertical-align: top;">
+          <div style="display: inline-block; margin: 8px 0px 0px 50px; width: 190px; vertical-align: top; word-wrap: break-word;">
            <span style="position: relative; top: -2px;">
             <a href="/Cooldown" title="Cooldown">
              <img alt="Cooldown symbol.png" height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/b/b7/Cooldown_symbol.png?version=7429ed9baf0f121e6ab3324bfdfad708" style="vertical-align: text-top" width="20"/>
@@ -1102,7 +1094,7 @@ document.head.appendChild(script);
            </span>
            16/14/12/10
           </div>
-          <div style="display: inline-block; margin: 8px 0px 0px; width: 190px; vertical-align: top;">
+          <div style="display: inline-block; margin: 8px 0px 0px; width: 190px; vertical-align: top; word-wrap: break-word;">
            <span style="position: relative; top: -2px;">
             <a href="/Mana" title="Mana">
              <img alt="Mana symbol.png" height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/f/f3/Mana_symbol.png?version=a81185ac577f9b52f2df06be91b6600c" style="vertical-align: text-top" width="20"/>
@@ -1132,7 +1124,9 @@ document.head.appendChild(script);
           </div>
           <div style="margin-top: 10px;">
            <b>
-            Modifiers
+            <span id="tooltip" style="cursor:help; border-bottom:1px dotted;" title="The displayed names are the intern names of the modifiers. Do not change them even if they don't match the ability name.">
+             Modifiers
+            </span>
            </b>
           </div>
           <div style="font-size: 85%; margin-left: 10px;">
@@ -1176,46 +1170,31 @@ document.head.appendChild(script);
             slow
            </a>
            and speed bonus are independent from each other. Grave Chill does not literally drain the speed.
-          </li>
-         </ul>
-         <ul>
-          <li>
-           This means Visage's
-           <a href="/Movement_speed" title="Movement speed">
-            movement speed
-           </a>
-           is increased by 32%, while the target's is slowed by 32%, each based on their own movement speed.
-          </li>
-         </ul>
-         <ul>
-          <li>
-           The same goes for the
-           <a href="/Attack_speed" title="Attack speed">
-            attack speed
-           </a>
-           . Visage's attack speed is increased by 64, while the target's is slowed by 64.
-          </li>
-         </ul>
-         <ul>
-          <li>
-           This also means when one of them loses the buff or debuff, the other still keeps theirs.
-          </li>
-         </ul>
-         <ul>
-          <li>
-           Does not slow the attack speed of
-           <a href="/Illusions" title="Illusions">
-            illusions
-           </a>
-           .
+           <ul>
+            <li>
+             This means Visage's
+             <a href="/Movement_speed" title="Movement speed">
+              movement speed
+             </a>
+             is increased by 32%, while the target's is slowed by 32%, each based on their own movement speed.
+            </li>
+            <li>
+             The same goes for the
+             <a href="/Attack_speed" title="Attack speed">
+              attack speed
+             </a>
+             . Visage's attack speed is increased by 64, while the target's is slowed by 64.
+            </li>
+            <li>
+             This also means when one of them loses the buff or debuff, the other still keeps theirs.
+            </li>
+           </ul>
           </li>
          </ul>
         </div>
        </div>
        <p>
         <br/>
-       </p>
-       <p>
         <span id="Soul_Assumption">
         </span>
        </p>
@@ -1277,11 +1256,11 @@ document.head.appendChild(script);
              </b>
              <br/>
              <a href="/Damage_types#Magical" title="Damage types">
-              <b>
-               <span style="color:#3F56AD">
+              <span style="color:#3F56AD">
+               <b>
                 Magical
-               </span>
-              </b>
+               </b>
+              </span>
              </a>
             </div>
            </div>
@@ -1308,49 +1287,70 @@ document.head.appendChild(script);
            <b>
             Cast Range
            </b>
-           : 900 (
-           <a href="/Talents" title="Talent">
-            <img alt="Talent" height="16" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/c/cd/Talent_tree_symbol.png/16px-Talent_tree_symbol.png?version=b4db4b31a2f9c215885be017c22a8b0c" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/c/cd/Talent_tree_symbol.png/24px-Talent_tree_symbol.png?version=b4db4b31a2f9c215885be017c22a8b0c 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/c/cd/Talent_tree_symbol.png/32px-Talent_tree_symbol.png?version=b4db4b31a2f9c215885be017c22a8b0c 2x" style="vertical-align: text-top" width="16"/>
-           </a>
-           1000)
+           :
+           <span style="white-space: nowrap">
+            900 (
+            <a href="/Talents" title="Talent">
+             <img alt="Talent" height="16" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/c/cd/Talent_tree_symbol.png/16px-Talent_tree_symbol.png?version=b4db4b31a2f9c215885be017c22a8b0c" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/c/cd/Talent_tree_symbol.png/24px-Talent_tree_symbol.png?version=b4db4b31a2f9c215885be017c22a8b0c 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/c/cd/Talent_tree_symbol.png/32px-Talent_tree_symbol.png?version=b4db4b31a2f9c215885be017c22a8b0c 2x" style="vertical-align: text-top" width="16"/>
+            </a>
+            1000)
+           </span>
           </div>
           <div>
            <b>
             Assumption Radius
            </b>
-           : 1375
+           :
+           <span style="white-space: nowrap">
+            1375
+           </span>
           </div>
           <div>
            <b>
             Charge Gain Damage Threshold
            </b>
-           : 110
+           :
+           <span style="white-space: nowrap">
+            110
+           </span>
           </div>
           <div>
            <b>
             Maximum Charges
            </b>
-           : 3/4/5/6
+           :
+           <span style="white-space: nowrap">
+            3/4/5/6
+           </span>
           </div>
           <div>
            <b>
             Base Damage
            </b>
-           : 20
+           :
+           <span style="white-space: nowrap">
+            20
+           </span>
           </div>
           <div>
            <b>
             Damage per Charge
            </b>
-           : 65
+           :
+           <span style="white-space: nowrap">
+            65
+           </span>
           </div>
           <div>
            <b>
             Charge Duration
            </b>
-           : 6
+           :
+           <span style="white-space: nowrap">
+            6
+           </span>
           </div>
-          <div style="display: inline-block; margin: 8px 0px 0px 50px; width: 190px; vertical-align: top;">
+          <div style="display: inline-block; margin: 8px 0px 0px 50px; width: 190px; vertical-align: top; word-wrap: break-word;">
            <span style="position: relative; top: -2px;">
             <a href="/Cooldown" title="Cooldown">
              <img alt="Cooldown symbol.png" height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/b/b7/Cooldown_symbol.png?version=7429ed9baf0f121e6ab3324bfdfad708" style="vertical-align: text-top" width="20"/>
@@ -1358,7 +1358,7 @@ document.head.appendChild(script);
            </span>
            4
           </div>
-          <div style="display: inline-block; margin: 8px 0px 0px; width: 190px; vertical-align: top;">
+          <div style="display: inline-block; margin: 8px 0px 0px; width: 190px; vertical-align: top; word-wrap: break-word;">
            <span style="position: relative; top: -2px;">
             <a href="/Mana" title="Mana">
              <img alt="Mana symbol.png" height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/f/f3/Mana_symbol.png?version=a81185ac577f9b52f2df06be91b6600c" style="vertical-align: text-top" width="20"/>
@@ -1378,7 +1378,9 @@ document.head.appendChild(script);
           </div>
           <div style="margin-top: 10px;">
            <b>
-            Modifiers
+            <span id="tooltip" style="cursor:help; border-bottom:1px dotted;" title="The displayed names are the intern names of the modifiers. Do not change them even if they don't match the ability name.">
+             Modifiers
+            </span>
            </b>
           </div>
           <div style="font-size: 85%; margin-left: 10px;">
@@ -1484,12 +1486,45 @@ document.head.appendChild(script);
            ).
           </li>
          </ul>
+         <ul>
+          <li>
+           When choosing the level 20 talent, whenever Soul Assumption is cast, a different random target within cast range is also targeted by a second Soul Assumption.
+           <ul>
+            <li>
+             Since it uses the spell's cast range, cast range increasing effects increase its range as well.
+            </li>
+            <li>
+             <a href="/Heroes" title="Heroes">
+              Heroes
+             </a>
+             and
+             <a href="/Illusions" title="Illusions">
+              illusions
+             </a>
+             have a higher priority than other units. Treats
+             <a class="mw-redirect" href="/Creep-heroes" title="Creep-heroes">
+              creep-heroes
+             </a>
+             as creeps.
+            </li>
+            <li>
+             The second Soul Assumption does not target
+             <a class="mw-redirect" href="/Invisible" title="Invisible">
+              invisible
+             </a>
+             units or units inside the
+             <a class="mw-redirect" href="/Fog_of_war" title="Fog of war">
+              fog of war
+             </a>
+             .
+            </li>
+           </ul>
+          </li>
+         </ul>
         </div>
        </div>
        <p>
         <br/>
-       </p>
-       <p>
         <span id="Gravekeeper.27s_Cloak">
         </span>
        </p>
@@ -1560,35 +1595,52 @@ document.head.appendChild(script);
            <b>
             Aura Radius
            </b>
-           : 900
+           :
+           <span style="white-space: nowrap">
+            900
+           </span>
           </div>
           <div>
            <b>
             Max Layers
            </b>
-           : 4
+           :
+           <span style="white-space: nowrap">
+            4
+           </span>
           </div>
           <div>
            <b>
             Damage Reduction per Layer
            </b>
-           : 8%/12%/16%/20%
+           :
+           <span style="white-space: nowrap">
+            8%/12%/16%/20%
+           </span>
           </div>
           <div>
            <b>
             Minimum Damage Threshold
            </b>
-           : 50
+           :
+           <span style="white-space: nowrap">
+            50
+           </span>
           </div>
           <div>
            <b>
             Layer Recharge Time
            </b>
-           : 6/5/4/3
+           :
+           <span style="white-space: nowrap">
+            6/5/4/3
+           </span>
           </div>
           <div style="margin-top: 10px;">
            <b>
-            Modifiers
+            <span id="tooltip" style="cursor:help; border-bottom:1px dotted;" title="The displayed names are the intern names of the modifiers. Do not change them even if they don't match the ability name.">
+             Modifiers
+            </span>
            </b>
           </div>
           <div style="font-size: 85%; margin-left: 10px;">
@@ -1645,7 +1697,7 @@ document.head.appendChild(script);
          </ul>
          <ul>
           <li>
-           Only reacts on player-based damage, exluding self-inflicted damage.
+           Only reacts on player-based damage, excluding self-inflicted damage.
           </li>
          </ul>
          <ul>
@@ -1685,8 +1737,6 @@ document.head.appendChild(script);
        </div>
        <p>
         <br/>
-       </p>
-       <p>
         <span id="Summon_Familiars">
         </span>
        </p>
@@ -1737,11 +1787,11 @@ document.head.appendChild(script);
              </b>
              <br/>
              <a href="/Damage_types#Physical" title="Damage types">
-              <b>
-               <span style="color:#71A9EA">
+              <span style="color:#71A9EA">
+               <b>
                 Physical
-               </span>
-              </b>
+               </b>
+              </span>
              </a>
             </div>
            </div>
@@ -1768,40 +1818,55 @@ document.head.appendChild(script);
            <b>
             Number of Familiars
            </b>
-           : 2 (
-           <a href="/Aghanim%27s_Scepter" title="Upgradable by Aghanim's Scepter.">
-            <img alt="Upgradable by Aghanim's Scepter." height="16" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/73/Aghanim%27s_Scepter_symbol.png/16px-Aghanim%27s_Scepter_symbol.png?version=7d547f82a4dc57080ed920f762776a32" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/73/Aghanim%27s_Scepter_symbol.png/24px-Aghanim%27s_Scepter_symbol.png?version=7d547f82a4dc57080ed920f762776a32 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/73/Aghanim%27s_Scepter_symbol.png/32px-Aghanim%27s_Scepter_symbol.png?version=7d547f82a4dc57080ed920f762776a32 2x" style="vertical-align: text-top" width="16"/>
-           </a>
-           <span style="color:#538028;">
-            3
+           :
+           <span style="white-space: nowrap">
+            2 (
+            <a href="/Aghanim%27s_Scepter" title="Upgradable by Aghanim's Scepter.">
+             <img alt="Upgradable by Aghanim's Scepter." height="16" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/73/Aghanim%27s_Scepter_symbol.png/16px-Aghanim%27s_Scepter_symbol.png?version=7d547f82a4dc57080ed920f762776a32" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/73/Aghanim%27s_Scepter_symbol.png/24px-Aghanim%27s_Scepter_symbol.png?version=7d547f82a4dc57080ed920f762776a32 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/73/Aghanim%27s_Scepter_symbol.png/32px-Aghanim%27s_Scepter_symbol.png?version=7d547f82a4dc57080ed920f762776a32 2x" style="vertical-align: text-top" width="16"/>
+            </a>
+            <span style="color:#538028;">
+             3
+            </span>
+            )
            </span>
-           )
           </div>
           <div>
            <b>
             Max Attack Damage Charges
            </b>
-           : 7
+           :
+           <span style="white-space: nowrap">
+            7
+           </span>
           </div>
           <div>
            <b>
             Attack Damage per Charge
            </b>
-           : 8/16/24
+           :
+           <span style="white-space: nowrap">
+            8/16/24
+           </span>
           </div>
           <div>
            <b>
             Charge Recharge Time
            </b>
-           : 2
+           :
+           <span style="white-space: nowrap">
+            2
+           </span>
           </div>
           <div>
            <b>
             Familiar Duration
            </b>
-           : Permanent
+           :
+           <span style="white-space: nowrap">
+            Permanent
+           </span>
           </div>
-          <div style="display: inline-block; margin: 8px 0px 0px 50px; width: 190px; vertical-align: top;">
+          <div style="display: inline-block; margin: 8px 0px 0px 50px; width: 190px; vertical-align: top; word-wrap: break-word;">
            <span style="position: relative; top: -2px;">
             <a href="/Cooldown" title="Cooldown">
              <img alt="Cooldown symbol.png" height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/b/b7/Cooldown_symbol.png?version=7429ed9baf0f121e6ab3324bfdfad708" style="vertical-align: text-top" width="20"/>
@@ -1809,7 +1874,7 @@ document.head.appendChild(script);
            </span>
            160/145/130
           </div>
-          <div style="display: inline-block; margin: 8px 0px 0px; width: 190px; vertical-align: top;">
+          <div style="display: inline-block; margin: 8px 0px 0px; width: 190px; vertical-align: top; word-wrap: break-word;">
            <span style="position: relative; top: -2px;">
             <a href="/Mana" title="Mana">
              <img alt="Mana symbol.png" height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/f/f3/Mana_symbol.png?version=a81185ac577f9b52f2df06be91b6600c" style="vertical-align: text-top" width="20"/>
@@ -1829,7 +1894,9 @@ document.head.appendChild(script);
           </div>
           <div style="margin-top: 10px;">
            <b>
-            Modifiers
+            <span id="tooltip" style="cursor:help; border-bottom:1px dotted;" title="The displayed names are the intern names of the modifiers. Do not change them even if they don't match the ability name.">
+             Modifiers
+            </span>
            </b>
           </div>
           <div style="font-size: 85%; margin-left: 10px;">
@@ -1873,7 +1940,7 @@ document.head.appendChild(script);
          </ul>
          <ul>
           <li>
-           The Familiars are summoned 200 range in front on Visage, with 120 range distance between the Familiars and Visage being inbetween.
+           The Familiars are summoned 200 range in front on Visage, with 120 range distance between the Familiars and Visage being in between.
            <ul>
             <li>
              When summoning 3 Familiars with
@@ -1885,7 +1952,7 @@ document.head.appendChild(script);
                Aghanim's Scepter
               </a>
              </span>
-             , the additional Familiar spawns next to the right Familiar, again with 120 range inbetween each, forming a line of 3 Familiars.
+             , the additional Familiar spawns next to the right Familiar, again with 120 range in between each, forming a line of 3 Familiars.
             </li>
            </ul>
           </li>
@@ -1945,7 +2012,7 @@ document.head.appendChild(script);
              Proximity Mines
             </a>
            </span>
-           ​.
+           .
           </li>
          </ul>
          <ul>
@@ -1977,25 +2044,19 @@ document.head.appendChild(script);
          <span class="mw-editsection-bracket">
           [
          </span>
-         <a class="mw-editsection-visualeditor" href="/index.php?title=Visage&amp;veaction=edit&amp;vesection=3" title="Edit section: Familiars">
-          edit
-         </a>
-         <span class="mw-editsection-divider">
-          |
-         </span>
          <a href="/index.php?title=Visage&amp;action=edit&amp;section=3" title="Edit section: Familiars">
-          edit source
+          edit
          </a>
          <span class="mw-editsection-bracket">
           ]
          </span>
         </span>
        </h3>
-       <table class="infobox" style="float:right; text-align:center; line-height: 1.5em; white-space: nowrap; font-size: 80%;">
+       <table class="infobox" style="text-align:center; line-height:1.5em; font-size:80%; white-space:nowrap;">
         <tr>
-         <th style="color:white; background-color:#B44335; font-size:112%;">
+         <th style="background-color:#B44335; font-size:112%;">
           <a href="/Familiar" title="Familiar">
-           <span style="color:#FFFFFF;">
+           <span style="color:white;">
             Familiar
            </span>
           </a>
@@ -2009,118 +2070,667 @@ document.head.appendChild(script);
          </td>
         </tr>
         <tr>
-         <td class="images40pxwidth">
-          <div style="display:table; table-layout:fixed; width:100%;">
-           <div style="display:table-row">
-           </div>
-          </div>
+         <td style="border-top:1px solid black;">
          </td>
         </tr>
         <tr>
-         <th style="color:white;background-color:#FFBE66" width="100%">
+         <td style="background:black;">
+          <a class="image" href="/File:Visage_Familiar_icon.png">
+           <img alt="Visage Familiar icon.png" height="72" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/e/e7/Visage_Familiar_icon.png?version=0d90f26a6de000374af8f04e807b9994" width="128"/>
+          </a>
+         </td>
+        </tr>
+        <tr>
+         <th style="color:white; background-color:#FFBE66;">
           Ancient Creep-Hero
          </th>
         </tr>
         <tr>
          <td>
-          <table class="oddrowsgray" style="width:100%; text-align:left; border-collapse:collapse; padding-left: 10px;">
+          <table class="oddrowsgray" style="width:100%; text-align:left; border-collapse:collapse;">
            <tr>
-            <td>
-             <b>
-              Level
-             </b>
-            </td>
+            <th>
+             Level
+            </th>
             <td>
              2
             </td>
            </tr>
            <tr>
-            <td>
-             <b>
-              Duration
-             </b>
-            </td>
-            <td>
+            <th>
+             Duration
+            </th>
+            <td style="white-space:normal;">
              Permanent
             </td>
            </tr>
            <tr>
-            <td>
-             <b>
-              <a href="/Health" title="Health">
-               Health
-              </a>
-             </b>
-            </td>
-            <td>
-             300/500/700
+            <th>
+             <a href="/Health" title="Health">
+              Health
+             </a>
+            </th>
+            <td style="white-space:normal;">
+             400/550/700
             </td>
            </tr>
            <tr>
-            <td>
-             <b>
-              <a class="mw-redirect" href="/Health_regeneration" title="Health regeneration">
-               Health regeneration
-              </a>
-             </b>
-            </td>
+            <th>
+             <a class="mw-redirect" href="/Health_regeneration" title="Health regeneration">
+              Health regeneration
+             </a>
+            </th>
             <td>
              0
             </td>
            </tr>
            <tr>
-            <td>
-             <b>
-              <a href="/Armor" title="Armor">
-               Armor
-              </a>
-             </b>
-            </td>
-            <td>
+            <th>
+             <a href="/Armor" title="Armor">
+              Armor
+             </a>
+            </th>
+            <td style="white-space:normal;">
              <span id="tooltip" style="cursor:help; border-bottom:1px dotted;" title="Type: Hero">
               0/1/2
              </span>
             </td>
            </tr>
            <tr>
-            <td>
-             <b>
-              <a href="/Magic_resistance" title="Magic resistance">
-               Magic resistance
-              </a>
-             </b>
-            </td>
-            <td>
+            <th>
+             <a href="/Magic_resistance" title="Magic resistance">
+              Magic resistance
+             </a>
+            </th>
+            <td style="white-space:normal;">
              35 %
             </td>
            </tr>
            <tr>
-            <td>
-             <b>
-              <a href="/Attack_damage" title="Attack damage">
-               Damage
-              </a>
-             </b>
-            </td>
-            <td>
+            <th>
+             <a href="/Attack_damage" title="Attack damage">
+              Attack damage
+             </a>
+            </th>
+            <td style="white-space:normal;">
              <span id="tooltip" style="cursor:help; border-bottom:1px dotted;" title="Type: Hero">
               10
              </span>
             </td>
            </tr>
            <tr>
+            <th>
+             <a class="mw-redirect" href="/Acquisition_range" title="Acquisition range">
+              Acquisition range
+             </a>
+            </th>
+            <td style="white-space:normal;">
+             250
+            </td>
+           </tr>
+           <tr>
+            <th>
+             <a href="/Attack_range" title="Attack range">
+              Attack range
+             </a>
+            </th>
+            <td style="white-space:normal;">
+             <span id="tooltip" style="cursor:help; border-bottom:1px dotted;" title="Ranged">
+              160
+             </span>
+            </td>
+           </tr>
+           <tr>
+            <th>
+             <a href="/Attack_speed" title="Attack speed">
+              Base attack time
+             </a>
+            </th>
             <td>
+             0.4
+            </td>
+           </tr>
+           <tr>
+            <th>
+             <a href="/Attack_animation" title="Attack animation">
+              Attack animation
+             </a>
+            </th>
+            <td>
+             <span id="tooltip" style="cursor:help; border-bottom:1px dotted;" title="Attack point">
+              0.33
+             </span>
+             +
+             <span id="tooltip" style="cursor:help; border-bottom:1px dotted;" title="Attack backswing">
+              0.2
+             </span>
+            </td>
+           </tr>
+           <tr>
+            <th>
+             <a class="mw-redirect" href="/Projectile_speed" title="Projectile speed">
+              Projectile speed
+             </a>
+            </th>
+            <td>
+             900
+            </td>
+           </tr>
+           <tr>
+            <th>
+             <a href="/Movement_speed" title="Movement speed">
+              Movement speed
+             </a>
+            </th>
+            <td style="white-space:normal;">
+             <span id="tooltip" style="cursor:help; border-bottom:1px dotted;" title="Flying">
+              430
+              <span style="white-space:nowrap;">
+               (
+               <a href="/Talents" title="Talent">
+                <img alt="Talent" height="16" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/c/cd/Talent_tree_symbol.png/16px-Talent_tree_symbol.png?version=b4db4b31a2f9c215885be017c22a8b0c" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/c/cd/Talent_tree_symbol.png/24px-Talent_tree_symbol.png?version=b4db4b31a2f9c215885be017c22a8b0c 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/c/cd/Talent_tree_symbol.png/32px-Talent_tree_symbol.png?version=b4db4b31a2f9c215885be017c22a8b0c 2x" style="vertical-align: text-top" width="16"/>
+               </a>
+               550)
+              </span>
+             </span>
+            </td>
+           </tr>
+           <tr>
+            <th>
+             <a class="mw-redirect" href="/Follow_range" title="Follow range">
+              Follow range
+             </a>
+            </th>
+            <td>
+             100
+            </td>
+           </tr>
+           <tr>
+            <th>
+             <a href="/Turn_rate" title="Turn rate">
+              Turn rate
+             </a>
+            </th>
+            <td>
+             0.5
+            </td>
+           </tr>
+           <tr>
+            <th>
+             <a href="/Collision_size" title="Collision size">
+              Collision size
+             </a>
+            </th>
+            <td>
+             16
+            </td>
+           </tr>
+           <tr>
+            <th>
+             <a href="/Vision" title="Vision">
+              Vision range
+             </a>
+            </th>
+            <td>
+             <span id="tooltip" style="cursor:help; border-bottom:1px dotted;" title="During the day">
+              390
+             </span>
+             •
+             <span id="tooltip" style="cursor:help; border-bottom:1px dotted;" title="During the night">
+              390
+             </span>
+             (
+             <span id="tooltip" style="cursor:help; border-bottom:1px dotted;" title="Flying vision">
+              F
+             </span>
+             )
+            </td>
+           </tr>
+           <tr>
+            <th>
+             <a href="/Gold" title="Gold">
+              Bounty
+             </a>
+            </th>
+            <td style="white-space:normal;">
+             100
+            </td>
+           </tr>
+           <tr>
+            <th>
+             <a href="/Experience" title="Experience">
+              Experience
+             </a>
+            </th>
+            <td>
+             41
+            </td>
+           </tr>
+           <tr>
+            <th>
+             Model scale
+            </th>
+            <td>
+             0.66
+            </td>
+           </tr>
+           <tr>
+            <th>
+             Notes
+            </th>
+            <td style="white-space:normal;">
              <b>
-              <a class="mw-redirect" href="/Acquisition_range" title="Acquisition range">
-               Acquisition range
-              </a>
+              Abilities:
              </b>
+             <br/>
+             <span style="white-space: nowrap;">
+              <a href="/Familiar#Stone_Form" title="Familiar#Stone Form">
+               <img alt="Stone Form (Familiar) icon.png" height="16" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/2/20/Stone_Form_%28Familiar%29_icon.png/16px-Stone_Form_%28Familiar%29_icon.png?version=9afa58769762dfcb78ce20d4aae2ac67" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/2/20/Stone_Form_%28Familiar%29_icon.png/24px-Stone_Form_%28Familiar%29_icon.png?version=9afa58769762dfcb78ce20d4aae2ac67 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/2/20/Stone_Form_%28Familiar%29_icon.png/32px-Stone_Form_%28Familiar%29_icon.png?version=9afa58769762dfcb78ce20d4aae2ac67 2x" width="16"/>
+              </a>
+              <a href="/Familiar#Stone_Form" title="Familiar">
+               Stone Form
+              </a>
+             </span>
             </td>
            </tr>
           </table>
          </td>
         </tr>
        </table>
+       <p>
+        <span id="Stone_Form">
+        </span>
+       </p>
+       <div style="display: flex; flex-wrap: wrap; align-items: flex-start;">
+        <div style="width: 450px; margin-right: 15px; vertical-align: top; background-color: #EAEAEA;">
+         <div style="font-weight: bold; font-size: 110%; border-bottom: 1px solid black; background-color: #2277AA; color: white; padding: 3px 5px;">
+          Stone Form
+          <div style="float:right;">
+           <a href="/Spell_Immunity" title="Does not pierce spell immunity.">
+            <img alt="Does not pierce spell immunity." height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/9/9c/Spell_immunity_block_symbol.png/20px-Spell_immunity_block_symbol.png?version=7588eb7155b0b0ba78ae6c948c459858" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/9/9c/Spell_immunity_block_symbol.png/30px-Spell_immunity_block_symbol.png?version=7588eb7155b0b0ba78ae6c948c459858 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/9/9c/Spell_immunity_block_symbol.png/40px-Spell_immunity_block_symbol.png?version=7588eb7155b0b0ba78ae6c948c459858 2x" style="vertical-align: text-top" width="20"/>
+           </a>
+           <span style="position:relative; top:-2px;">
+            <a class="sm2_button" href="https://hydra-media.cursecdn.com/dota2.gamepedia.com/c/c9/Stone_Form.mp3" title="Play">
+             Play
+            </a>
+           </span>
+           <span style="position:relative; top:-2px;">
+            <a class="sm2_button" href="https://hydra-media.cursecdn.com/dota2.gamepedia.com/3/31/Stone_Form_alt.mp3" title="Play">
+             Play
+            </a>
+           </span>
+           <div style="background-color:white; display:inline-block; margin-left:5px; color:#2277AA; padding-left:0.2em; padding-right:0.25em; text-align:center;">
+            <span id="tooltip" style="cursor:help; border-bottom:1px dotted;" title="Hotkey">
+             Q
+            </span>
+           </div>
+           <div style="background-color:white; display:inline-block; margin-left:5px; color:#2277AA; opacity:0.65; padding-left:0.25em; padding-right:0.2em; text-align:center;">
+            <span id="tooltip" style="cursor:help; border-bottom:1px dotted;" title="Legacy Key">
+             F
+            </span>
+           </div>
+          </div>
+         </div>
+         <div>
+          <div class="ico_active">
+           <a class="image" href="/File:Stone_Form_(Familiar)_icon.png">
+            <img alt="Stone Form (Familiar) icon.png" height="128" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/2/20/Stone_Form_%28Familiar%29_icon.png?version=867aa08d6e52a1727695c59bf674a5a8" width="128"/>
+           </a>
+          </div>
+          <div style="width: 312px; display: inline-block;">
+           <div style="padding: 15px 5px; font-size: 85%; line-height: 100%; text-align: center;">
+            <div style="display: inline-block; width: 32%; vertical-align: top;">
+             <b>
+              Ability
+             </b>
+             <br/>
+             <a href="/Abilities#No_Target" title="Abilities">
+              No Target
+             </a>
+            </div>
+            <div style="display: inline-block; width: 32%; vertical-align: top;">
+             <b>
+              Affects
+             </b>
+             <br/>
+             Enemies / Self
+            </div>
+            <div style="display: inline-block; width: 32%; vertical-align: top;">
+             <b>
+              Damage
+             </b>
+             <br/>
+             <a href="/Damage_types#Magical" title="Damage types">
+              <span style="color:#3F56AD">
+               <b>
+                Magical
+               </b>
+              </span>
+             </a>
+            </div>
+           </div>
+           <div style="vertical-align: top; padding: 3px 5px; border-top: 1px solid black;">
+            After a short delay, the Familiar turns into stone and smashes into the ground, stunning and damaging all targets in the area. The Familiar becomes invulnerable, and will regain its health very rapidly. After 6 seconds, the Familiar will automatically leave Stone Form.
+           </div>
+          </div>
+         </div>
+         <div style="vertical-align:top; padding: 3px 5px;">
+          <div>
+           <b>
+            Cast Animation
+           </b>
+           :
+           <span id="tooltip" style="cursor:help; border-bottom:1px dotted;" title="Cast point">
+            0
+           </span>
+           +
+           <span id="tooltip" style="cursor:help; border-bottom:1px dotted;" title="Cast backswing">
+            0
+           </span>
+          </div>
+          <div>
+           <b>
+            Effect Radius
+           </b>
+           :
+           <span style="white-space: nowrap">
+            350
+           </span>
+          </div>
+          <div>
+           <b>
+            Effect Delay
+           </b>
+           :
+           <span style="white-space: nowrap">
+            0.55
+           </span>
+          </div>
+          <div>
+           <b>
+            Health Regen Bonus
+           </b>
+           :
+           <span style="white-space: nowrap">
+            150/175/200
+           </span>
+          </div>
+          <div>
+           <b>
+            Damage
+           </b>
+           :
+           <span style="white-space: nowrap">
+            60/100/140
+           </span>
+          </div>
+          <div>
+           <b>
+            Stun Duration
+           </b>
+           :
+           <span style="white-space: nowrap">
+            1/1.25/1.5
+           </span>
+          </div>
+          <div>
+           <b>
+            Stone Form Duration
+           </b>
+           :
+           <span style="white-space: nowrap">
+            6
+           </span>
+          </div>
+          <div style="display: inline-block; margin: 8px 0px 0px 50px; width: 370px; vertical-align: top; word-wrap: break-word;">
+           <span style="position: relative; top: -2px;">
+            <a href="/Cooldown" title="Cooldown">
+             <img alt="Cooldown symbol.png" height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/b/b7/Cooldown_symbol.png?version=7429ed9baf0f121e6ab3324bfdfad708" style="vertical-align: text-top" width="20"/>
+            </a>
+           </span>
+           14
+          </div>
+          <div style="display: inline-block; margin: 8px 0px 0px; width: 10px; vertical-align: top; word-wrap: break-word;">
+          </div>
+          <div style="margin-top: 10px;">
+           <b>
+            <span id="tooltip" style="cursor:help; border-bottom:1px dotted;" title="The displayed names are the intern names of the modifiers. Do not change them even if they don't match the ability name.">
+             Modifiers
+            </span>
+           </b>
+          </div>
+          <div style="font-size: 85%; margin-left: 10px;">
+           <div>
+            <img alt="Buff" height="16" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/c/c1/Modifier_buff_symbol.png/16px-Modifier_buff_symbol.png?version=97c71541b396c601c0ac22a73d1a7573" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/c/c1/Modifier_buff_symbol.png/24px-Modifier_buff_symbol.png?version=97c71541b396c601c0ac22a73d1a7573 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/c/c1/Modifier_buff_symbol.png/32px-Modifier_buff_symbol.png?version=97c71541b396c601c0ac22a73d1a7573 2x" style="vertical-align: text-top" title="Buff" width="16"/>
+            <span style="color:#1F631F;">
+             <b>
+              Rooted:
+             </b>
+             Dispellable with any dispel.
+            </span>
+           </div>
+           <div>
+            <img alt="Buff" height="16" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/c/c1/Modifier_buff_symbol.png/16px-Modifier_buff_symbol.png?version=97c71541b396c601c0ac22a73d1a7573" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/c/c1/Modifier_buff_symbol.png/24px-Modifier_buff_symbol.png?version=97c71541b396c601c0ac22a73d1a7573 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/c/c1/Modifier_buff_symbol.png/32px-Modifier_buff_symbol.png?version=97c71541b396c601c0ac22a73d1a7573 2x" style="vertical-align: text-top" title="Buff" width="16"/>
+            <span style="color:#1F631F;">
+             <b>
+              Summon Familiars Stone Form Buff:
+             </b>
+             Undispellable.
+            </span>
+           </div>
+           <div>
+            <img alt="Buff" height="16" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/c/c1/Modifier_buff_symbol.png/16px-Modifier_buff_symbol.png?version=97c71541b396c601c0ac22a73d1a7573" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/c/c1/Modifier_buff_symbol.png/24px-Modifier_buff_symbol.png?version=97c71541b396c601c0ac22a73d1a7573 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/c/c1/Modifier_buff_symbol.png/32px-Modifier_buff_symbol.png?version=97c71541b396c601c0ac22a73d1a7573 2x" style="vertical-align: text-top" title="Buff" width="16"/>
+            <span style="color:#1F631F;">
+             <b>
+              Summonfamiliars Timer:
+             </b>
+             Undispellable.
+            </span>
+           </div>
+           <div>
+            <img alt="Debuff" height="16" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/1/1a/Modifier_debuff_symbol.png/16px-Modifier_debuff_symbol.png?version=5684dfbf37c3058c80b8495a4d0dc346" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/1/1a/Modifier_debuff_symbol.png/24px-Modifier_debuff_symbol.png?version=5684dfbf37c3058c80b8495a4d0dc346 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/1/1a/Modifier_debuff_symbol.png/32px-Modifier_debuff_symbol.png?version=5684dfbf37c3058c80b8495a4d0dc346 2x" style="vertical-align: text-top" title="Debuff" width="16"/>
+            <span style="color:#631F1F;">
+             <b>
+              Stunned:
+             </b>
+             Dispellable with strong dispels.
+            </span>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div style="flex: 2 3 400px; word-wrap: break-word;">
+         <p>
+          <b>
+           Notes:
+          </b>
+          <br/>
+         </p>
+         <ul>
+          <li>
+           During the effect delay, the Familiar is
+           <a href="/Root" title="Root">
+            rooted
+           </a>
+           and
+           <a href="/Disarm" title="Disarm">
+            disarmed
+           </a>
+           , being prevented from moving or attacking.
+          </li>
+         </ul>
+         <ul>
+          <li>
+           After the effect delay, the Familiar's health regeneration is heavily boosted, it is turned
+           <a class="mw-redirect" href="/Invulnerable" title="Invulnerable">
+            invulnerable
+           </a>
+           and it gets
+           <a href="/Disable" title="Disable">
+            disabled
+           </a>
+           .
+          </li>
+         </ul>
+         <ul>
+          <li>
+           The area stun and damage are applied right after the effect delay as well.
+          </li>
+         </ul>
+         <ul>
+          <li>
+           The stun and damage location is determined upon landing, not upon cast.
+          </li>
+         </ul>
+         <ul>
+          <li>
+           When a Familiar dies during the effect delay, the area damage and stun are not applied, but the visual effects still appear.
+          </li>
+         </ul>
+         <ul>
+          <li>
+           The Stone Form's duration is indicated by a yellow number above the Familiar. This number is visible to Visage only.
+          </li>
+         </ul>
+        </div>
+       </div>
+       <p>
+        <br/>
+       </p>
+       <h2>
+        <span class="mw-headline" id="Talents">
+         Talents
+        </span>
+        <span class="mw-editsection">
+         <span class="mw-editsection-bracket">
+          [
+         </span>
+         <a href="/index.php?title=Visage&amp;action=edit&amp;section=4" title="Edit section: Talents">
+          edit
+         </a>
+         <span class="mw-editsection-bracket">
+          ]
+         </span>
+        </span>
+       </h2>
+       <div style="display: flex; flex-wrap: wrap; align-items: flex-start;">
+        <div style="margin: 3px 5px;">
+         <table class="wikitable" style="text-align:center; margin: 0px;">
+          <tr>
+           <td colspan="3" height="40px" style="background-color: #0c2a5a">
+            <b>
+             <a href="/Talents" title="Talents">
+              <span style="color: white; font-size:14pt">
+               Hero Talents
+              </span>
+             </a>
+            </b>
+           </td>
+          </tr>
+          <tr>
+           <td width="240">
+            +120
+            <span style="white-space:nowrap">
+             <a href="/Familiar" title="Familiar">
+              <img alt="Visage Familiar icon.png" height="14" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/e/e7/Visage_Familiar_icon.png/24px-Visage_Familiar_icon.png?version=d6dda32b3a70b9645e7059995e46d45f" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/e/e7/Visage_Familiar_icon.png/36px-Visage_Familiar_icon.png?version=d6dda32b3a70b9645e7059995e46d45f 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/e/e7/Visage_Familiar_icon.png/48px-Visage_Familiar_icon.png?version=d6dda32b3a70b9645e7059995e46d45f 2x" width="24"/>
+             </a>
+             <a href="/Familiar" title="Familiar">
+              Familiar
+             </a>
+            </span>
+            s Movement Speed
+           </td>
+           <td style="padding: 10px; background-color: #0c2a5a">
+            <span style="color: white; font-size:13pt">
+             <b>
+              25
+             </b>
+            </span>
+           </td>
+           <td width="240">
+            +20% Spell Amplification
+           </td>
+          </tr>
+          <tr>
+           <td width="240">
+            <span style="white-space: nowrap;">
+             <a href="/Visage#Soul_Assumption" title="Visage#Soul Assumption">
+              <img alt="Soul Assumption icon.png" height="16" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/4/4d/Soul_Assumption_icon.png/16px-Soul_Assumption_icon.png?version=32bcefaf6e66b069026c437b668db508" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/4/4d/Soul_Assumption_icon.png/24px-Soul_Assumption_icon.png?version=32bcefaf6e66b069026c437b668db508 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/4/4d/Soul_Assumption_icon.png/32px-Soul_Assumption_icon.png?version=32bcefaf6e66b069026c437b668db508 2x" width="16"/>
+             </a>
+             <a href="/Visage#Soul_Assumption" title="Visage">
+              Soul Assumption
+             </a>
+            </span>
+            Double Strike
+           </td>
+           <td style="padding: 10px; background-color: #15499d">
+            <span style="color: white; font-size:13pt">
+             <b>
+              20
+             </b>
+            </span>
+           </td>
+           <td width="240">
+            +300 Health
+           </td>
+          </tr>
+          <tr>
+           <td width="240">
+            +100 Cast Range
+           </td>
+           <td style="padding: 10px; background-color: #1c5eca">
+            <span style="color: white; font-size:13pt">
+             <b>
+              15
+             </b>
+            </span>
+           </td>
+           <td width="240">
+            +50 Damage
+           </td>
+          </tr>
+          <tr>
+           <td width="240">
+            +30% XP Gain
+           </td>
+           <td style="padding: 10px; background-color: #3578e3">
+            <span style="color: white; font-size:13pt">
+             <b>
+              10
+             </b>
+            </span>
+           </td>
+           <td width="240">
+            +90 Gold/Min
+           </td>
+          </tr>
+         </table>
+        </div>
+        <div style="word-wrap: break-word;">
+         <b>
+          Notes:
+         </b>
+         <ul>
+          <li>
+           Gold granted from the talent is
+           <a class="mw-redirect" href="/Unreliable_gold" title="Unreliable gold">
+            unreliable gold
+           </a>
+           .
+          </li>
+         </ul>
+         <ul>
+          <li>
+           The attack damage is added as bonus attack damage, and therefore does not benefit illusions.
+          </li>
+         </ul>
+         <ul>
+          <li>
+           Upgrading health increases maximum health capacity and keeps the current health percentage.
+          </li>
+         </ul>
+        </div>
+       </div>
       </div>
      </div>
     </div>
@@ -2128,556 +2738,6 @@ document.head.appendChild(script);
   </div>
  </body>
 </html>
-<td>
- 250
-</td>
-<tr>
- <td>
-  <b>
-   <a href="/Attack_range" title="Attack range">
-    Attack Range
-   </a>
-  </b>
- </td>
- <td>
-  <span id="tooltip" style="cursor:help; border-bottom:1px dotted;" title="Ranged">
-   160
-  </span>
- </td>
-</tr>
-<tr>
- <td>
-  <b>
-   <a href="/Attack_speed" title="Attack speed">
-    Base Attack Time
-   </a>
-  </b>
- </td>
- <td>
-  0.4
- </td>
-</tr>
-<tr>
- <td>
-  <b>
-   <a href="/Attack_animation" title="Attack animation">
-    Attack Animation
-   </a>
-  </b>
- </td>
- <td>
-  <span id="tooltip" style="cursor:help; border-bottom:1px dotted;" title="Attack point">
-   0.33
-  </span>
-  +
-  <span id="tooltip" style="cursor:help; border-bottom:1px dotted;" title="Attack backswing">
-   0.2
-  </span>
- </td>
-</tr>
-<tr>
- <td>
-  <b>
-   Projectile Speed
-  </b>
- </td>
- <td>
-  900
- </td>
-</tr>
-<tr>
- <td>
-  <b>
-   <a href="/Movement_speed" title="Movement speed">
-    Movement Speed
-   </a>
-  </b>
- </td>
- <td>
-  <span id="tooltip" style="cursor:help; border-bottom:1px dotted;" title="Flying">
-   430 (
-   <a href="/Talents" title="Talent">
-    <img alt="Talent" height="16" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/c/cd/Talent_tree_symbol.png/16px-Talent_tree_symbol.png?version=b4db4b31a2f9c215885be017c22a8b0c" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/c/cd/Talent_tree_symbol.png/24px-Talent_tree_symbol.png?version=b4db4b31a2f9c215885be017c22a8b0c 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/c/cd/Talent_tree_symbol.png/32px-Talent_tree_symbol.png?version=b4db4b31a2f9c215885be017c22a8b0c 2x" style="vertical-align: text-top" width="16"/>
-   </a>
-   550)
-  </span>
- </td>
-</tr>
-<tr>
- <td>
-  <b>
-   <a class="mw-redirect" href="/Follow_range" title="Follow range">
-    Follow range
-   </a>
-  </b>
- </td>
- <td>
-  100
- </td>
-</tr>
-<tr>
- <td>
-  <b>
-   <a href="/Turn_rate" title="Turn rate">
-    Turn Rate
-   </a>
-  </b>
- </td>
- <td>
-  0.5
- </td>
-</tr>
-<tr>
- <td>
-  <b>
-   Collision Size
-  </b>
- </td>
- <td>
-  16
- </td>
-</tr>
-<tr>
- <td>
-  <b>
-   <a href="/Vision" title="Vision">
-    Vision Range
-   </a>
-  </b>
- </td>
- <td>
-  <span id="tooltip" style="cursor:help; border-bottom:1px dotted;" title="During the day">
-   390
-  </span>
-  •
-  <span id="tooltip" style="cursor:help; border-bottom:1px dotted;" title="During the night">
-   390
-  </span>
-  (
-  <span id="tooltip" style="cursor:help; border-bottom:1px dotted;" title="Flying vision">
-   F
-  </span>
-  )
- </td>
-</tr>
-<tr>
- <td>
-  <b>
-   <a href="/Gold" title="Gold">
-    Bounty
-   </a>
-  </b>
- </td>
- <td>
-  100
- </td>
-</tr>
-<tr>
- <td>
-  <b>
-   <a href="/Experience" title="Experience">
-    Experience
-   </a>
-  </b>
- </td>
- <td>
-  41
- </td>
-</tr>
-<tr>
- <td>
-  <b>
-   Model scale
-  </b>
- </td>
- <td>
-  0.66
- </td>
-</tr>
-<tr>
- <td>
-  <b>
-   Notes
-  </b>
- </td>
- <td>
-  <b>
-   Abilities:
-  </b>
-  <br/>
-  <span style="white-space: nowrap;">
-   <a href="/Familiar#Stone_Form" title="Familiar#Stone Form">
-    <img alt="Stone Form (Familiar) icon.png" height="16" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/2/20/Stone_Form_%28Familiar%29_icon.png/16px-Stone_Form_%28Familiar%29_icon.png?version=9afa58769762dfcb78ce20d4aae2ac67" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/2/20/Stone_Form_%28Familiar%29_icon.png/24px-Stone_Form_%28Familiar%29_icon.png?version=9afa58769762dfcb78ce20d4aae2ac67 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/2/20/Stone_Form_%28Familiar%29_icon.png/32px-Stone_Form_%28Familiar%29_icon.png?version=9afa58769762dfcb78ce20d4aae2ac67 2x" width="16"/>
-   </a>
-   <a href="/Familiar#Stone_Form" title="Familiar">
-    Stone Form
-   </a>
-  </span>
-  ​
- </td>
-</tr>
-<p>
- <span id="Stone_Form">
- </span>
-</p>
-<div style="display: flex; flex-wrap: wrap; align-items: flex-start;">
- <div style="width: 450px; margin-right: 15px; vertical-align: top; background-color: #EAEAEA;">
-  <div style="font-weight: bold; font-size: 110%; border-bottom: 1px solid black; background-color: #2277AA; color: white; padding: 3px 5px;">
-   Stone Form
-   <div style="float:right;">
-    <a href="/Spell_Immunity" title="Does not pierce spell immunity.">
-     <img alt="Does not pierce spell immunity." height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/9/9c/Spell_immunity_block_symbol.png/20px-Spell_immunity_block_symbol.png?version=7588eb7155b0b0ba78ae6c948c459858" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/9/9c/Spell_immunity_block_symbol.png/30px-Spell_immunity_block_symbol.png?version=7588eb7155b0b0ba78ae6c948c459858 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/9/9c/Spell_immunity_block_symbol.png/40px-Spell_immunity_block_symbol.png?version=7588eb7155b0b0ba78ae6c948c459858 2x" style="vertical-align: text-top" width="20"/>
-    </a>
-    <span style="position:relative; top:-2px;">
-     <a class="sm2_button" href="https://hydra-media.cursecdn.com/dota2.gamepedia.com/c/c9/Stone_Form.mp3" title="Play">
-      Play
-     </a>
-    </span>
-    <span style="position:relative; top:-2px;">
-     <a class="sm2_button" href="https://hydra-media.cursecdn.com/dota2.gamepedia.com/3/31/Stone_Form_alt.mp3" title="Play">
-      Play
-     </a>
-    </span>
-    <div style="background-color:white; display:inline-block; margin-left:5px; color:#2277AA; padding-left:0.2em; padding-right:0.25em; text-align:center;">
-     <span id="tooltip" style="cursor:help; border-bottom:1px dotted;" title="Hotkey">
-      Q
-     </span>
-    </div>
-    <div style="background-color:white; display:inline-block; margin-left:5px; color:#2277AA; opacity:0.65; padding-left:0.25em; padding-right:0.2em; text-align:center;">
-     <span id="tooltip" style="cursor:help; border-bottom:1px dotted;" title="Legacy Key">
-      F
-     </span>
-    </div>
-   </div>
-  </div>
-  <div>
-   <div class="ico_active">
-    <a class="image" href="/File:Stone_Form_(Familiar)_icon.png">
-     <img alt="Stone Form (Familiar) icon.png" height="128" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/2/20/Stone_Form_%28Familiar%29_icon.png?version=867aa08d6e52a1727695c59bf674a5a8" width="128"/>
-    </a>
-   </div>
-   <div style="width: 312px; display: inline-block;">
-    <div style="padding: 15px 5px; font-size: 85%; line-height: 100%; text-align: center;">
-     <div style="display: inline-block; width: 32%; vertical-align: top;">
-      <b>
-       Ability
-      </b>
-      <br/>
-      <a href="/Abilities#No_Target" title="Abilities">
-       No Target
-      </a>
-     </div>
-     <div style="display: inline-block; width: 32%; vertical-align: top;">
-      <b>
-       Affects
-      </b>
-      <br/>
-      Enemies / Self
-     </div>
-     <div style="display: inline-block; width: 32%; vertical-align: top;">
-      <b>
-       Damage
-      </b>
-      <br/>
-      <a href="/Damage_types#Magical" title="Damage types">
-       <b>
-        <span style="color:#3F56AD">
-         Magical
-        </span>
-       </b>
-      </a>
-     </div>
-    </div>
-    <div style="vertical-align: top; padding: 3px 5px; border-top: 1px solid black;">
-     After a short delay, the Familiar turns into stone and smashes into the ground, stunning and damaging all targets in the area. The Familiar becomes invulnerable, and will regain its health very rapidly. After 6 seconds, the Familiar will automatically leave Stone Form.
-    </div>
-   </div>
-  </div>
-  <div style="vertical-align:top; padding: 3px 5px;">
-   <div>
-    <b>
-     Cast Animation
-    </b>
-    :
-    <span id="tooltip" style="cursor:help; border-bottom:1px dotted;" title="Cast point">
-     0
-    </span>
-    +
-    <span id="tooltip" style="cursor:help; border-bottom:1px dotted;" title="Cast backswing">
-     0
-    </span>
-   </div>
-   <div>
-    <b>
-     Effect Radius
-    </b>
-    : 350
-   </div>
-   <div>
-    <b>
-     Effect Delay
-    </b>
-    : 0.55
-   </div>
-   <div>
-    <b>
-     Health Regen Bonus
-    </b>
-    : 150/175/200
-   </div>
-   <div>
-    <b>
-     Damage
-    </b>
-    : 60/100/140
-   </div>
-   <div>
-    <b>
-     Stun Duration
-    </b>
-    : 1/1.25/1.5
-   </div>
-   <div>
-    <b>
-     Stone Form Duration
-    </b>
-    : 6
-   </div>
-   <div style="display: inline-block; margin: 8px 0px 0px 50px; width: 370px; vertical-align: top;">
-    <span style="position: relative; top: -2px;">
-     <a href="/Cooldown" title="Cooldown">
-      <img alt="Cooldown symbol.png" height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/b/b7/Cooldown_symbol.png?version=7429ed9baf0f121e6ab3324bfdfad708" style="vertical-align: text-top" width="20"/>
-     </a>
-    </span>
-    14
-   </div>
-   <div style="display: inline-block; margin: 8px 0px 0px; width: 10px; vertical-align: top;">
-   </div>
-   <div style="margin-top: 10px;">
-    <b>
-     Modifiers
-    </b>
-   </div>
-   <div style="font-size: 85%; margin-left: 10px;">
-    <div>
-     <img alt="Buff" height="16" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/c/c1/Modifier_buff_symbol.png/16px-Modifier_buff_symbol.png?version=97c71541b396c601c0ac22a73d1a7573" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/c/c1/Modifier_buff_symbol.png/24px-Modifier_buff_symbol.png?version=97c71541b396c601c0ac22a73d1a7573 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/c/c1/Modifier_buff_symbol.png/32px-Modifier_buff_symbol.png?version=97c71541b396c601c0ac22a73d1a7573 2x" style="vertical-align: text-top" title="Buff" width="16"/>
-     <span style="color:#1F631F;">
-      <b>
-       Rooted:
-      </b>
-      Dispellable with any dispel.
-     </span>
-    </div>
-    <div>
-     <img alt="Buff" height="16" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/c/c1/Modifier_buff_symbol.png/16px-Modifier_buff_symbol.png?version=97c71541b396c601c0ac22a73d1a7573" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/c/c1/Modifier_buff_symbol.png/24px-Modifier_buff_symbol.png?version=97c71541b396c601c0ac22a73d1a7573 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/c/c1/Modifier_buff_symbol.png/32px-Modifier_buff_symbol.png?version=97c71541b396c601c0ac22a73d1a7573 2x" style="vertical-align: text-top" title="Buff" width="16"/>
-     <span style="color:#1F631F;">
-      <b>
-       Summon Familiars Stone Form Buff:
-      </b>
-      Undispellable.
-     </span>
-    </div>
-    <div>
-     <img alt="Buff" height="16" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/c/c1/Modifier_buff_symbol.png/16px-Modifier_buff_symbol.png?version=97c71541b396c601c0ac22a73d1a7573" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/c/c1/Modifier_buff_symbol.png/24px-Modifier_buff_symbol.png?version=97c71541b396c601c0ac22a73d1a7573 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/c/c1/Modifier_buff_symbol.png/32px-Modifier_buff_symbol.png?version=97c71541b396c601c0ac22a73d1a7573 2x" style="vertical-align: text-top" title="Buff" width="16"/>
-     <span style="color:#1F631F;">
-      <b>
-       Summonfamiliars Timer:
-      </b>
-      Undispellable.
-     </span>
-    </div>
-    <div>
-     <img alt="Debuff" height="16" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/1/1a/Modifier_debuff_symbol.png/16px-Modifier_debuff_symbol.png?version=5684dfbf37c3058c80b8495a4d0dc346" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/1/1a/Modifier_debuff_symbol.png/24px-Modifier_debuff_symbol.png?version=5684dfbf37c3058c80b8495a4d0dc346 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/1/1a/Modifier_debuff_symbol.png/32px-Modifier_debuff_symbol.png?version=5684dfbf37c3058c80b8495a4d0dc346 2x" style="vertical-align: text-top" title="Debuff" width="16"/>
-     <span style="color:#631F1F;">
-      <b>
-       Stunned:
-      </b>
-      Dispellable with strong dispels.
-     </span>
-    </div>
-   </div>
-  </div>
- </div>
- <div style="flex: 2 3 400px; word-wrap: break-word;">
-  <p>
-   <b>
-    Notes:
-   </b>
-   <br/>
-  </p>
-  <ul>
-   <li>
-    During the effect delay, the Familiar is
-    <a href="/Root" title="Root">
-     rooted
-    </a>
-    and
-    <a href="/Disarm" title="Disarm">
-     disarmed
-    </a>
-    , being prevented from moving or attacking.
-   </li>
-  </ul>
-  <ul>
-   <li>
-    After the effect delay, the Familiar's health regeneration is heavily boosted, it is turned
-    <a class="mw-redirect" href="/Invulnerable" title="Invulnerable">
-     invulnerable
-    </a>
-    and it gets
-    <a href="/Disable" title="Disable">
-     disabled
-    </a>
-    .
-   </li>
-  </ul>
-  <ul>
-   <li>
-    The area stun and damage are applied right after the effect delay as well.
-   </li>
-  </ul>
-  <ul>
-   <li>
-    The stun and damage location is determined upon landing, not upon cast.
-   </li>
-  </ul>
-  <ul>
-   <li>
-    When a Familiar dies during the effect delay, the area damage and stun are not applied, but the visual effects still appear.
-   </li>
-  </ul>
-  <ul>
-   <li>
-    The Stone Form's duration is indicated by a yellow number above the Familiar. This number is visible to Visage only.
-   </li>
-  </ul>
- </div>
-</div>
-<p>
- <br/>
-</p>
-<h2>
- <span class="mw-headline" id="Talents">
-  Talents
- </span>
- <span class="mw-editsection">
-  <span class="mw-editsection-bracket">
-   [
-  </span>
-  <a class="mw-editsection-visualeditor" href="/index.php?title=Visage&amp;veaction=edit&amp;vesection=4" title="Edit section: Talents">
-   edit
-  </a>
-  <span class="mw-editsection-divider">
-   |
-  </span>
-  <a href="/index.php?title=Visage&amp;action=edit&amp;section=4" title="Edit section: Talents">
-   edit source
-  </a>
-  <span class="mw-editsection-bracket">
-   ]
-  </span>
- </span>
-</h2>
-<div style="display: flex; flex-wrap: wrap; align-items: flex-start;">
- <div style="margin: 3px 5px;">
-  <table class="wikitable" style="text-align:center; margin: 0px;">
-   <tr>
-    <td colspan="3" height="40px" style="background-color: #0c2a5a">
-     <b>
-      <a href="/Talents" title="Talents">
-       <span style="color: white; font-size:14pt">
-        Hero Talents
-       </span>
-      </a>
-     </b>
-    </td>
-   </tr>
-   <tr>
-    <td width="240">
-     +120 Familiars Movement Speed
-    </td>
-    <td style="padding: 10px; background-color: #0c2a5a">
-     <span style="color: white; font-size:13pt">
-      <b>
-       25
-      </b>
-     </span>
-    </td>
-    <td width="240">
-     +20% Spell Amplification
-    </td>
-   </tr>
-   <tr>
-    <td width="240">
-     -30s Respawn Time
-    </td>
-    <td style="padding: 10px; background-color: #15499d">
-     <span style="color: white; font-size:13pt">
-      <b>
-       20
-      </b>
-     </span>
-    </td>
-    <td width="240">
-     +250 Health
-    </td>
-   </tr>
-   <tr>
-    <td width="240">
-     +100 Cast Range
-    </td>
-    <td style="padding: 10px; background-color: #1c5eca">
-     <span style="color: white; font-size:13pt">
-      <b>
-       15
-      </b>
-     </span>
-    </td>
-    <td width="240">
-     +50 Damage
-    </td>
-   </tr>
-   <tr>
-    <td width="240">
-     +15% XP Gain
-    </td>
-    <td style="padding: 10px; background-color: #3578e3">
-     <span style="color: white; font-size:13pt">
-      <b>
-       10
-      </b>
-     </span>
-    </td>
-    <td width="240">
-     +60 Gold/Min
-    </td>
-   </tr>
-  </table>
- </div>
- <div style="word-wrap: break-word;">
-  <b>
-   Notes:
-  </b>
- </div>
-</div>
-<ul>
- <li>
-  Gold granted from the talent is
-  <a class="mw-redirect" href="/Unreliable_gold" title="Unreliable gold">
-   unreliable gold
-  </a>
-  .
- </li>
- <li>
-  The attack damage is added as bonus attack damage, and therefore does not benefit illusions.
- </li>
- <li>
-  Upgrading health increases maximum health capacity and keeps the current health percentage.
- </li>
- <li>
-  Respawn reductions cannot reduce respawn time below 1 second.
- </li>
-</ul>
 <h2>
  <span class="mw-headline" id="Recommended_items">
   Recommended items
@@ -2686,14 +2746,8 @@ document.head.appendChild(script);
   <span class="mw-editsection-bracket">
    [
   </span>
-  <a class="mw-editsection-visualeditor" href="/index.php?title=Visage&amp;veaction=edit&amp;vesection=5" title="Edit section: Recommended items">
-   edit
-  </a>
-  <span class="mw-editsection-divider">
-   |
-  </span>
   <a href="/index.php?title=Visage&amp;action=edit&amp;section=5" title="Edit section: Recommended items">
-   edit source
+   edit
   </a>
   <span class="mw-editsection-bracket">
    ]
@@ -2744,7 +2798,7 @@ document.head.appendChild(script);
     Soul Assumption
    </a>
   </span>
-  ​, which costs roughly half of his base mana pool and can be important for securing kills during ganks.
+  , which costs roughly half of his base mana pool and can be important for securing kills during ganks.
  </li>
  <li>
   <span style="white-space:nowrap">
@@ -2764,7 +2818,7 @@ document.head.appendChild(script);
     Gravekeeper's Cloak
    </a>
   </span>
-  ​. It also builds into a Ring of Basilius from the Side Lane Shop without being forced to return to base or use the courier.
+  . It also builds into a Ring of Basilius from the Side Lane Shop without being forced to return to base or use the courier.
  </li>
  <li>
   Two
@@ -2843,7 +2897,7 @@ document.head.appendChild(script);
     Grave Chill
    </a>
   </span>
-  ​ to slow them.
+  to slow them.
  </li>
  <li>
   <span style="white-space:nowrap">
@@ -2925,7 +2979,7 @@ document.head.appendChild(script);
     Summon Familiars
    </a>
   </span>
-  ​.
+  .
  </li>
  <li>
   <span style="white-space:nowrap">
@@ -2963,7 +3017,7 @@ document.head.appendChild(script);
     Stone Form
    </a>
   </span>
-  ​. The item also provides Visage with all-around attributes, giving him more HP and mana.
+  . The item also provides Visage with all-around attributes, giving him more HP and mana.
  </li>
  <li>
   <span style="white-space:nowrap">
@@ -3117,7 +3171,7 @@ document.head.appendChild(script);
     Eul's Scepter of Divinity
    </a>
   </span>
-  gives Visage more support and utility power. The item provides Visage with more intelligence and mana regeneration, greatly increasing his ability to to cast spells, and the bonus movement speed allows him to more easily position himself for casting spells or chasing with Grave Chill. The active can allow Visage to remove debuffs from himself while making himself temporarily invulnerable, or can hard-disable an enemy at range to set them up for Stone Form stuns.
+  gives Visage more support and utility power. The item provides Visage with more intelligence and mana regeneration, greatly increasing his ability to cast spells, and the bonus movement speed allows him to more easily position himself for casting spells or chasing with Grave Chill. The active can allow Visage to remove debuffs from himself while making himself temporarily invulnerable, or can hard-disable an enemy at range to set them up for Stone Form stuns.
  </li>
  <li>
   <span style="white-space:nowrap">
@@ -3175,9 +3229,6 @@ document.head.appendChild(script);
   is a very powerful support item that gives Visage powerful utility in teamfights. The increased attributes and aura make Visage much tankier, and he can heal himself while also removing negative debuffs with the active.
  </li>
 </ul>
-<p>
- <br/>
-</p>
 <h2>
  <span class="mw-headline" id="Gameplay">
   Gameplay
@@ -3186,14 +3237,8 @@ document.head.appendChild(script);
   <span class="mw-editsection-bracket">
    [
   </span>
-  <a class="mw-editsection-visualeditor" href="/index.php?title=Visage&amp;veaction=edit&amp;vesection=6" title="Edit section: Gameplay">
-   edit
-  </a>
-  <span class="mw-editsection-divider">
-   |
-  </span>
   <a href="/index.php?title=Visage&amp;action=edit&amp;section=6" title="Edit section: Gameplay">
-   edit source
+   edit
   </a>
   <span class="mw-editsection-bracket">
    ]
@@ -3230,14 +3275,8 @@ document.head.appendChild(script);
   <span class="mw-editsection-bracket">
    [
   </span>
-  <a class="mw-editsection-visualeditor" href="/index.php?title=Visage&amp;veaction=edit&amp;vesection=7" title="Edit section: Audio">
-   edit
-  </a>
-  <span class="mw-editsection-divider">
-   |
-  </span>
   <a href="/index.php?title=Visage&amp;action=edit&amp;section=7" title="Edit section: Audio">
-   edit source
+   edit
   </a>
   <span class="mw-editsection-bracket">
    ]
@@ -3272,14 +3311,8 @@ document.head.appendChild(script);
   <span class="mw-editsection-bracket">
    [
   </span>
-  <a class="mw-editsection-visualeditor" href="/index.php?title=Visage&amp;veaction=edit&amp;vesection=8" title="Edit section: History">
-   edit
-  </a>
-  <span class="mw-editsection-divider">
-   |
-  </span>
   <a href="/index.php?title=Visage&amp;action=edit&amp;section=8" title="Edit section: History">
-   edit source
+   edit
   </a>
   <span class="mw-editsection-bracket">
    ]
@@ -3323,14 +3356,8 @@ document.head.appendChild(script);
   <span class="mw-editsection-bracket">
    [
   </span>
-  <a class="mw-editsection-visualeditor" href="/index.php?title=Visage&amp;veaction=edit&amp;vesection=9" title="Edit section: Equipment">
-   edit
-  </a>
-  <span class="mw-editsection-divider">
-   |
-  </span>
   <a href="/index.php?title=Visage&amp;action=edit&amp;section=9" title="Edit section: Equipment">
-   edit source
+   edit
   </a>
   <span class="mw-editsection-bracket">
    ]
@@ -3371,13 +3398,12 @@ document.head.appendChild(script);
       <span class="" style="font-size:110%;">
        <span style="white-space:nowrap">
         <a href="/Visage" title="Visage">
-         <img alt="Visage icon.png" height="32" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/9/9e/Visage_icon.png?version=8ad072686f262d739719b41b04460c11" width="32"/>
+         <img alt="Visage minimap icon.png" height="32" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/2/2f/Visage_minimap_icon.png?version=9980ae04956537c784509c081e8938d9" width="32"/>
         </a>
         <strong class="selflink">
          Visage
         </strong>
        </span>
-       ​
        <a href="/Equipment" title="Equipment">
         Equipment
        </a>
@@ -3447,14 +3473,8 @@ document.head.appendChild(script);
   <span class="mw-editsection-bracket">
    [
   </span>
-  <a class="mw-editsection-visualeditor" href="/index.php?title=Visage&amp;veaction=edit&amp;vesection=10" title="Edit section: Trivia">
-   edit
-  </a>
-  <span class="mw-editsection-divider">
-   |
-  </span>
   <a href="/index.php?title=Visage&amp;action=edit&amp;section=10" title="Edit section: Trivia">
-   edit source
+   edit
   </a>
   <span class="mw-editsection-bracket">
    ]
@@ -3489,13 +3509,12 @@ document.head.appendChild(script);
   Visage's rival line towards
   <span style="white-space:nowrap">
    <a href="/Keeper_of_the_Light" title="Keeper of the Light">
-    <img alt="Keeper of the Light icon.png" height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/b/b9/Keeper_of_the_Light_icon.png/20px-Keeper_of_the_Light_icon.png?version=61e740950df482fac3c6e150fa8f50c3" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/b/b9/Keeper_of_the_Light_icon.png/30px-Keeper_of_the_Light_icon.png?version=61e740950df482fac3c6e150fa8f50c3 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/b/b9/Keeper_of_the_Light_icon.png?version=61e740950df482fac3c6e150fa8f50c3 2x" width="20"/>
+    <img alt="Keeper of the Light minimap icon.png" height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/76/Keeper_of_the_Light_minimap_icon.png/20px-Keeper_of_the_Light_minimap_icon.png?version=ffb833b7afcca982b2edb48e65a717a7" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/76/Keeper_of_the_Light_minimap_icon.png/30px-Keeper_of_the_Light_minimap_icon.png?version=ffb833b7afcca982b2edb48e65a717a7 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/7/76/Keeper_of_the_Light_minimap_icon.png?version=ffb833b7afcca982b2edb48e65a717a7 2x" width="20"/>
    </a>
    <a href="/Keeper_of_the_Light" title="Keeper of the Light">
     Keeper of the Light
    </a>
   </span>
-  ​
   <a class="sm2_button" href="https://hydra-media.cursecdn.com/dota2.gamepedia.com/d/da/Visa_rival_02.mp3" title="Play">
    Play
   </a>
@@ -3527,14 +3546,8 @@ document.head.appendChild(script);
   <span class="mw-editsection-bracket">
    [
   </span>
-  <a class="mw-editsection-visualeditor" href="/index.php?title=Visage&amp;veaction=edit&amp;vesection=11" title="Edit section: Gallery">
-   edit
-  </a>
-  <span class="mw-editsection-divider">
-   |
-  </span>
   <a href="/index.php?title=Visage&amp;action=edit&amp;section=11" title="Edit section: Gallery">
-   edit source
+   edit
   </a>
   <span class="mw-editsection-bracket">
    ]
@@ -3650,14 +3663,8 @@ document.head.appendChild(script);
   <span class="mw-editsection-bracket">
    [
   </span>
-  <a class="mw-editsection-visualeditor" href="/index.php?title=Visage&amp;veaction=edit&amp;vesection=12" title="Edit section: References">
-   edit
-  </a>
-  <span class="mw-editsection-divider">
-   |
-  </span>
   <a href="/index.php?title=Visage&amp;action=edit&amp;section=12" title="Edit section: References">
-   edit source
+   edit
   </a>
   <span class="mw-editsection-bracket">
    ]
@@ -3680,38 +3687,39 @@ document.head.appendChild(script);
 </ol>
 <!-- 
 NewPP limit report
-Cached time: 20170207214728
+Cached time: 20170608231102
 Cache expiry: 86400
 Dynamic content: false
 [SMW] In‐text annotation parser time: 0.001 seconds
-CPU time usage: 2.328 seconds
-Real time usage: 3.607 seconds
-Preprocessor visited node count: 15981/1000000
-Preprocessor generated node count: 63197/1000000
-Post‐expand include size: 148060/2097152 bytes
-Template argument size: 39334/2097152 bytes
-Highest expansion depth: 18/40
-Expensive parser function count: 0/99
+CPU time usage: 1.824 seconds
+Real time usage: 3.308 seconds
+Preprocessor visited node count: 9086/1000000
+Preprocessor generated node count: 56259/1000000
+Post‐expand include size: 142928/2097152 bytes
+Template argument size: 39253/2097152 bytes
+Highest expansion depth: 13/40
+Expensive parser function count: 1/99
+ExtLoops count: 42/1000
 -->
 <!-- 
 Transclusion expansion time report (%,ms,calls,template)
-100.00% 3011.499      1 - -total
- 39.44% 1187.714      5 - Template:Ability
- 26.07%  785.125     38 - Template:I
- 20.61%  620.661      1 - Template:Ability_wrapper
- 13.30%  400.623     38 - Template:Item_link
- 10.36%  311.907     38 - Template:Item_name
-  8.62%  259.573      1 - Template:Hero_infobox
-  8.47%  255.198      1 - Template:Unit_infobox_wrapper
-  8.36%  251.831      1 - Template:Unit_infobox
-  8.32%  250.576    151 - Template:If_lang
+100.00% 2635.817      1 - -total
+ 40.98% 1080.161      5 - Template:Ability
+ 19.15%  504.635      1 - Template:Ability_wrapper
+ 16.73%  440.948     38 - Template:I
+ 13.94%  367.387      1 - Template:Unit_infobox_wrapper
+ 13.79%  363.609      1 - Template:Unit_infobox
+  9.29%  244.830      1 - Template:Hero_infobox
+  7.75%  204.190      7 - Template:A
+  6.35%  167.436      1 - Template:Equipment_Visage
+  6.19%  163.138      1 - Template:Equipment
 -->
-<!-- Saved in parser cache with key dota2_gamepedia:pcache:idhash:8729-0!*!0!default!!en!5!* and timestamp 20170207214724 and revision id 1438701
+<!-- Saved in parser cache with key dota2_gamepedia:pcache:idhash:8729-0!*!0!default!!en!5!* and timestamp 20170608231059 and revision id 1532186
  -->
 <div class="printfooter">
  Retrieved from "
- <a dir="ltr" href="http://dota2.gamepedia.com/index.php?title=Visage&amp;oldid=1438701">
-  http://dota2.gamepedia.com/index.php?title=Visage&amp;oldid=1438701
+ <a dir="ltr" href="https://dota2.gamepedia.com/index.php?title=Visage&amp;oldid=1532186">
+  https://dota2.gamepedia.com/index.php?title=Visage&amp;oldid=1532186
  </a>
  "
 </div>
@@ -3780,7 +3788,7 @@ Transclusion expansion time report (%,ms,calls,template)
     (function() {
         var zergnet = document.createElement('script');
         zergnet.type = 'text/javascript'; zergnet.async = true;
-        zergnet.src = 'http://www.zergnet.com/zerg.js?id=42966';
+        zergnet.src = '//www.zergnet.com/zerg.js?id=42966';
         var znscr = document.getElementsByTagName('script')[0];
         znscr.parentNode.insertBefore(zergnet, znscr);
     })();
@@ -3870,19 +3878,19 @@ Transclusion expansion time report (%,ms,calls,template)
     </h3>
     <div class="menu">
      <div id="socialIconImages">
-      <a href="https://twitter.com/intent/tweet?text=Check+out+Visage+on+Dota+2+Wiki+--&amp;via=CurseGamepedia&amp;url=http%3A%2F%2Fdota2.gamepedia.com%2FVisage" target="_blank">
+      <a href="https://twitter.com/intent/tweet?text=Check+out+Visage+on+Dota+2+Wiki+--&amp;via=CurseGamepedia&amp;url=https%3A%2F%2Fdota2.gamepedia.com%2FVisage" target="_blank">
        <img src="/extensions/Social/images/square_icons/twitter.png"/>
       </a>
-      <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fdota2.gamepedia.com%2FVisage" target="_blank">
+      <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdota2.gamepedia.com%2FVisage" target="_blank">
        <img src="/extensions/Social/images/square_icons/facebook.png"/>
       </a>
-      <a href="https://plus.google.com/share?url=http%3A%2F%2Fdota2.gamepedia.com%2FVisage" target="_blank">
+      <a href="https://plus.google.com/share?url=https%3A%2F%2Fdota2.gamepedia.com%2FVisage" target="_blank">
        <img src="/extensions/Social/images/square_icons/googleplus.png"/>
       </a>
-      <a href="http://www.reddit.com/submit?url=http%3A%2F%2Fdota2.gamepedia.com%2FVisage&amp;title=Check+out+Visage+on+Dota+2+Wiki+via+%40CurseGamepedia%3A+http%3A%2F%2Fdota2.gamepedia.com%2FVisage" target="_blank">
+      <a href="http://www.reddit.com/submit?url=https%3A%2F%2Fdota2.gamepedia.com%2FVisage&amp;title=Check+out+Visage+on+Dota+2+Wiki+via+%40CurseGamepedia%3A+https%3A%2F%2Fdota2.gamepedia.com%2FVisage" target="_blank">
        <img src="/extensions/Social/images/square_icons/reddit.png"/>
       </a>
-      <a href="http://www.tumblr.com/share/link?url=http%3A%2F%2Fdota2.gamepedia.com%2FVisage&amp;name=Dota+2+Wiki&amp;description=Check+out+Visage+on+Dota+2+Wiki+via+%3Ca+href%3D%22https%3A%2F%2Ftwitter.com%2FCurseGamepedia%22+target%3D%22_blank%22%3E%40CurseGamepedia%3C%2Fa%3E%3A+http%3A%2F%2Fdota2.gamepedia.com%2FVisage" target="_blank">
+      <a href="http://www.tumblr.com/share/link?url=https%3A%2F%2Fdota2.gamepedia.com%2FVisage&amp;name=Dota+2+Wiki&amp;description=Check+out+Visage+on+Dota+2+Wiki+via+%3Ca+href%3D%22https%3A%2F%2Ftwitter.com%2FCurseGamepedia%22+target%3D%22_blank%22%3E%40CurseGamepedia%3C%2Fa%3E%3A+https%3A%2F%2Fdota2.gamepedia.com%2FVisage" target="_blank">
        <img src="/extensions/Social/images/square_icons/tumblr.png"/>
       </a>
      </div>
@@ -3902,17 +3910,10 @@ Transclusion expansion time report (%,ms,calls,template)
        </a>
       </span>
      </li>
-     <li id="ca-ve-edit">
-      <span>
-       <a accesskey="v" href="/index.php?title=Visage&amp;veaction=edit" title="Edit this page [v]">
-        Edit
-       </a>
-      </span>
-     </li>
-     <li class=" collapsible" id="ca-edit">
+     <li id="ca-edit">
       <span>
        <a accesskey="e" href="/index.php?title=Visage&amp;action=edit" title="Edit this page [e]">
-        Edit source
+        Edit
        </a>
       </span>
      </li>
@@ -4110,7 +4111,7 @@ Transclusion expansion time report (%,ms,calls,template)
       </a>
      </li>
      <li id="t-permalink">
-      <a href="/index.php?title=Visage&amp;oldid=1438701" title="Permanent link to this revision of the page">
+      <a href="/index.php?title=Visage&amp;oldid=1532186" title="Permanent link to this revision of the page">
        Permanent link
       </a>
      </li>
@@ -4274,12 +4275,41 @@ Transclusion expansion time report (%,ms,calls,template)
     </div>
    </div>
   </div>
+  <div aria-labelledby="p-lang-label" class="portal" id="p-lang" role="navigation">
+   <h3 id="p-lang-label">
+    In other languages
+   </h3>
+   <div class="body">
+    <ul>
+     <li class="interlanguage-link interwiki-de">
+      <a href="http://dota2-de.gamepedia.com/Visage" hreflang="de" lang="de" title="Visage – Deutsch">
+       Deutsch
+      </a>
+     </li>
+     <li class="interlanguage-link interwiki-pt">
+      <a href="http://dota2-pt.gamepedia.com/Visage" hreflang="pt" lang="pt" title="Visage – português">
+       Português
+      </a>
+     </li>
+     <li class="interlanguage-link interwiki-ru">
+      <a href="http://dota2-ru.gamepedia.com/Visage" hreflang="ru" lang="ru" title="Visage – русский">
+       Русский
+      </a>
+     </li>
+     <li class="interlanguage-link interwiki-zh">
+      <a href="http://dota2-zh.gamepedia.com/%E7%BB%B4%E8%90%A8%E5%90%89" hreflang="zh" lang="zh" title="维萨吉 – 中文">
+       中文
+      </a>
+     </li>
+    </ul>
+   </div>
+  </div>
  </div>
 </div>
 <div id="footer" role="contentinfo">
  <ul id="footer-info">
   <li id="footer-info-lastmod">
-   This page was last modified on 10 January 2017, at 19:02.
+   This page was last modified on 3 June 2017, at 11:31.
   </li>
   <li id="footer-info-copyright">
    Content is available under
@@ -4363,8 +4393,8 @@ Transclusion expansion time report (%,ms,calls,template)
     </a>
    </li>
    <li>
-    <a class="advertise" href="https://ghostreconwildlands.gamepedia.com">
-     Ghost Recon
+    <a class="advertise" href="https://masseffectandromeda.gamepedia.com/Mass_Effect:_Andromeda_Wiki">
+     ME:Andromeda
     </a>
    </li>
   </ul>
@@ -4390,8 +4420,8 @@ Transclusion expansion time report (%,ms,calls,template)
     </a>
    </li>
    <li>
-    <a class="about" href="http://www.hearthpwn.com/guides/1480-how-to-get-cheaper-hearthstone-packs-buy-amazon">
-     HS Packs
+    <a class="advertise" href="https://masseffectandromeda.gamepedia.com/Skill">
+     ME:A Skills
     </a>
    </li>
   </ul>
@@ -4417,8 +4447,8 @@ Transclusion expansion time report (%,ms,calls,template)
     </a>
    </li>
    <li>
-    <a class="tos" href="https://forhonor.gamepedia.com">
-     For Honor
+    <a class="advertise" href="https://zelda.gamepedia.com/Main_Page">
+     Zelda Wiki
     </a>
    </li>
   </ul>
@@ -4474,8 +4504,5 @@ _comscore.push({ c1: "2", c2: "6035118" });
 				window.wikiTags = ["action","defense of the ancients","esports","free-to-play","free to play","ftp","game:dota 2","linux","mac","pc","rts","source","steam","valve"];
 </script>
 <script>
- (window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":121});});
-</script>
-<script type="text/javascript">
- window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"75f4858b7a","applicationID":"1909498","transactionName":"YlVXbREHWksEUkVdCVsfYEsKSV1WAVRJGhZdQA==","queueTime":0,"applicationTime":138,"atts":"ThJAG1kdSRRHUBMOHUhN","errorBeacon":"bam.nr-data.net","agent":""}
+ (window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":84});});
 </script>

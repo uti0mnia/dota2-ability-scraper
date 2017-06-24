@@ -2,9 +2,6 @@
 <html class="client-nojs" dir="ltr" lang="en">
  <head>
   <meta charset="utf-8"/>
-  <script type="text/javascript">
-   (window.NREUM||(NREUM={})).loader_config={xpid:"UAcAUlNACQoAXVVbDw=="};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var o=e[n]={exports:{}};t[n][0].call(o.exports,function(e){var o=t[n][1][e];return r(o||e)},o,o.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({1:[function(t,e,n){function r(t){try{c.console&&console.log(t)}catch(e){}}var o,i=t("ee"),a=t(15),c={};try{o=localStorage.getItem("__nr_flags").split(","),console&&"function"==typeof console.log&&(c.console=!0,o.indexOf("dev")!==-1&&(c.dev=!0),o.indexOf("nr_dev")!==-1&&(c.nrDev=!0))}catch(s){}c.nrDev&&i.on("internal-error",function(t){r(t.stack)}),c.dev&&i.on("fn-err",function(t,e,n){r(n.stack)}),c.dev&&(r("NR AGENT IN DEVELOPMENT MODE"),r("flags: "+a(c,function(t,e){return t}).join(", ")))},{}],2:[function(t,e,n){function r(t,e,n,r,o){try{d?d-=1:i("err",[o||new UncaughtException(t,e,n)])}catch(c){try{i("ierr",[c,(new Date).getTime(),!0])}catch(s){}}return"function"==typeof f&&f.apply(this,a(arguments))}function UncaughtException(t,e,n){this.message=t||"Uncaught error with no additional information",this.sourceURL=e,this.line=n}function o(t){i("err",[t,(new Date).getTime()])}var i=t("handle"),a=t(16),c=t("ee"),s=t("loader"),f=window.onerror,u=!1,d=0;s.features.err=!0,t(1),window.onerror=r;try{throw new Error}catch(l){"stack"in l&&(t(8),t(7),"addEventListener"in window&&t(5),s.xhrWrappable&&t(9),u=!0)}c.on("fn-start",function(t,e,n){u&&(d+=1)}),c.on("fn-err",function(t,e,n){u&&(this.thrown=!0,o(n))}),c.on("fn-end",function(){u&&!this.thrown&&d>0&&(d-=1)}),c.on("internal-error",function(t){i("ierr",[t,(new Date).getTime(),!0])})},{}],3:[function(t,e,n){t("loader").features.ins=!0},{}],4:[function(t,e,n){function r(t){}if(window.performance&&window.performance.timing&&window.performance.getEntriesByType){var o=t("ee"),i=t("handle"),a=t(8),c=t(7),s="learResourceTimings",f="addEventListener",u="resourcetimingbufferfull",d="bstResource",l="resource",p="-start",h="-end",m="fn"+p,w="fn"+h,v="bstTimer",y="pushState";t("loader").features.stn=!0,t(6);var g=NREUM.o.EV;o.on(m,function(t,e){var n=t[0];n instanceof g&&(this.bstStart=Date.now())}),o.on(w,function(t,e){var n=t[0];n instanceof g&&i("bst",[n,e,this.bstStart,Date.now()])}),a.on(m,function(t,e,n){this.bstStart=Date.now(),this.bstType=n}),a.on(w,function(t,e){i(v,[e,this.bstStart,Date.now(),this.bstType])}),c.on(m,function(){this.bstStart=Date.now()}),c.on(w,function(t,e){i(v,[e,this.bstStart,Date.now(),"requestAnimationFrame"])}),o.on(y+p,function(t){this.time=Date.now(),this.startPath=location.pathname+location.hash}),o.on(y+h,function(t){i("bstHist",[location.pathname+location.hash,this.startPath,this.time])}),f in window.performance&&(window.performance["c"+s]?window.performance[f](u,function(t){i(d,[window.performance.getEntriesByType(l)]),window.performance["c"+s]()},!1):window.performance[f]("webkit"+u,function(t){i(d,[window.performance.getEntriesByType(l)]),window.performance["webkitC"+s]()},!1)),document[f]("scroll",r,{passive:!0}),document[f]("keypress",r,!1),document[f]("click",r,!1)}},{}],5:[function(t,e,n){function r(t){for(var e=t;e&&!e.hasOwnProperty(u);)e=Object.getPrototypeOf(e);e&&o(e)}function o(t){c.inPlace(t,[u,d],"-",i)}function i(t,e){return t[1]}var a=t("ee").get("events"),c=t(17)(a,!0),s=t("gos"),f=XMLHttpRequest,u="addEventListener",d="removeEventListener";e.exports=a,"getPrototypeOf"in Object?(r(document),r(window),r(f.prototype)):f.prototype.hasOwnProperty(u)&&(o(window),o(f.prototype)),a.on(u+"-start",function(t,e){var n=t[1],r=s(n,"nr@wrapped",function(){function t(){if("function"==typeof n.handleEvent)return n.handleEvent.apply(n,arguments)}var e={object:t,"function":n}[typeof n];return e?c(e,"fn-",null,e.name||"anonymous"):n});this.wrapped=t[1]=r}),a.on(d+"-start",function(t){t[1]=this.wrapped||t[1]})},{}],6:[function(t,e,n){var r=t("ee").get("history"),o=t(17)(r);e.exports=r,o.inPlace(window.history,["pushState","replaceState"],"-")},{}],7:[function(t,e,n){var r=t("ee").get("raf"),o=t(17)(r),i="equestAnimationFrame";e.exports=r,o.inPlace(window,["r"+i,"mozR"+i,"webkitR"+i,"msR"+i],"raf-"),r.on("raf-start",function(t){t[0]=o(t[0],"fn-")})},{}],8:[function(t,e,n){function r(t,e,n){t[0]=a(t[0],"fn-",null,n)}function o(t,e,n){this.method=n,this.timerDuration="number"==typeof t[1]?t[1]:0,t[0]=a(t[0],"fn-",this,n)}var i=t("ee").get("timer"),a=t(17)(i),c="setTimeout",s="setInterval",f="clearTimeout",u="-start",d="-";e.exports=i,a.inPlace(window,[c,"setImmediate"],c+d),a.inPlace(window,[s],s+d),a.inPlace(window,[f,"clearImmediate"],f+d),i.on(s+u,r),i.on(c+u,o)},{}],9:[function(t,e,n){function r(t,e){d.inPlace(e,["onreadystatechange"],"fn-",c)}function o(){var t=this,e=u.context(t);t.readyState>3&&!e.resolved&&(e.resolved=!0,u.emit("xhr-resolved",[],t)),d.inPlace(t,w,"fn-",c)}function i(t){v.push(t),h&&(g=-g,b.data=g)}function a(){for(var t=0;t<v.length;t++)r([],v[t]);v.length&&(v=[])}function c(t,e){return e}function s(t,e){for(var n in t)e[n]=t[n];return e}t(5);var f=t("ee"),u=f.get("xhr"),d=t(17)(u),l=NREUM.o,p=l.XHR,h=l.MO,m="readystatechange",w=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"],v=[];e.exports=u;var y=window.XMLHttpRequest=function(t){var e=new p(t);try{u.emit("new-xhr",[e],e),e.addEventListener(m,o,!1)}catch(n){try{u.emit("internal-error",[n])}catch(r){}}return e};if(s(p,y),y.prototype=p.prototype,d.inPlace(y.prototype,["open","send"],"-xhr-",c),u.on("send-xhr-start",function(t,e){r(t,e),i(e)}),u.on("open-xhr-start",r),h){var g=1,b=document.createTextNode(g);new h(a).observe(b,{characterData:!0})}else f.on("fn-end",function(t){t[0]&&t[0].type===m||a()})},{}],10:[function(t,e,n){function r(t){var e=this.params,n=this.metrics;if(!this.ended){this.ended=!0;for(var r=0;r<d;r++)t.removeEventListener(u[r],this.listener,!1);if(!e.aborted){if(n.duration=(new Date).getTime()-this.startTime,4===t.readyState){e.status=t.status;var i=o(t,this.lastSize);if(i&&(n.rxSize=i),this.sameOrigin){var a=t.getResponseHeader("X-NewRelic-App-Data");a&&(e.cat=a.split(", ").pop())}}else e.status=0;n.cbTime=this.cbTime,f.emit("xhr-done",[t],t),c("xhr",[e,n,this.startTime])}}}function o(t,e){var n=t.responseType;if("json"===n&&null!==e)return e;var r="arraybuffer"===n||"blob"===n||"json"===n?t.response:t.responseText;return h(r)}function i(t,e){var n=s(e),r=t.params;r.host=n.hostname+":"+n.port,r.pathname=n.pathname,t.sameOrigin=n.sameOrigin}var a=t("loader");if(a.xhrWrappable){var c=t("handle"),s=t(11),f=t("ee"),u=["load","error","abort","timeout"],d=u.length,l=t("id"),p=t(14),h=t(13),m=window.XMLHttpRequest;a.features.xhr=!0,t(9),f.on("new-xhr",function(t){var e=this;e.totalCbs=0,e.called=0,e.cbTime=0,e.end=r,e.ended=!1,e.xhrGuids={},e.lastSize=null,p&&(p>34||p<10)||window.opera||t.addEventListener("progress",function(t){e.lastSize=t.loaded},!1)}),f.on("open-xhr-start",function(t){this.params={method:t[0]},i(this,t[1]),this.metrics={}}),f.on("open-xhr-end",function(t,e){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&e.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid)}),f.on("send-xhr-start",function(t,e){var n=this.metrics,r=t[0],o=this;if(n&&r){var i=h(r);i&&(n.txSize=i)}this.startTime=(new Date).getTime(),this.listener=function(t){try{"abort"===t.type&&(o.params.aborted=!0),("load"!==t.type||o.called===o.totalCbs&&(o.onloadCalled||"function"!=typeof e.onload))&&o.end(e)}catch(n){try{f.emit("internal-error",[n])}catch(r){}}};for(var a=0;a<d;a++)e.addEventListener(u[a],this.listener,!1)}),f.on("xhr-cb-time",function(t,e,n){this.cbTime+=t,e?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof n.onload||this.end(n)}),f.on("xhr-load-added",function(t,e){var n=""+l(t)+!!e;this.xhrGuids&&!this.xhrGuids[n]&&(this.xhrGuids[n]=!0,this.totalCbs+=1)}),f.on("xhr-load-removed",function(t,e){var n=""+l(t)+!!e;this.xhrGuids&&this.xhrGuids[n]&&(delete this.xhrGuids[n],this.totalCbs-=1)}),f.on("addEventListener-end",function(t,e){e instanceof m&&"load"===t[0]&&f.emit("xhr-load-added",[t[1],t[2]],e)}),f.on("removeEventListener-end",function(t,e){e instanceof m&&"load"===t[0]&&f.emit("xhr-load-removed",[t[1],t[2]],e)}),f.on("fn-start",function(t,e,n){e instanceof m&&("onload"===n&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=(new Date).getTime()))}),f.on("fn-end",function(t,e){this.xhrCbStart&&f.emit("xhr-cb-time",[(new Date).getTime()-this.xhrCbStart,this.onload,e],e)})}},{}],11:[function(t,e,n){e.exports=function(t){var e=document.createElement("a"),n=window.location,r={};e.href=t,r.port=e.port;var o=e.href.split("://");!r.port&&o[1]&&(r.port=o[1].split("/")[0].split("@").pop().split(":")[1]),r.port&&"0"!==r.port||(r.port="https"===o[0]?"443":"80"),r.hostname=e.hostname||n.hostname,r.pathname=e.pathname,r.protocol=o[0],"/"!==r.pathname.charAt(0)&&(r.pathname="/"+r.pathname);var i=!e.protocol||":"===e.protocol||e.protocol===n.protocol,a=e.hostname===document.domain&&e.port===n.port;return r.sameOrigin=i&&(!e.hostname||a),r}},{}],12:[function(t,e,n){function r(){}function o(t,e,n){return function(){return i(t,[(new Date).getTime()].concat(c(arguments)),e?null:this,n),e?void 0:this}}var i=t("handle"),a=t(15),c=t(16),s=t("ee").get("tracer"),f=NREUM;"undefined"==typeof window.newrelic&&(newrelic=f);var u=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(u,function(t,e){f[e]=o(d+e,!0,"api")}),f.addPageAction=o(d+"addPageAction",!0),f.setCurrentRouteName=o(d+"routeName",!0),e.exports=newrelic,f.interaction=function(){return(new r).get()};var p=r.prototype={createTracer:function(t,e){var n={},r=this,o="function"==typeof e;return i(l+"tracer",[Date.now(),t,n],r),function(){if(s.emit((o?"":"no-")+"fn-start",[Date.now(),r,o],n),o)try{return e.apply(this,arguments)}finally{s.emit("fn-end",[Date.now()],n)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){p[e]=o(l+e)}),newrelic.noticeError=function(t){"string"==typeof t&&(t=new Error(t)),i("err",[t,(new Date).getTime()])}},{}],13:[function(t,e,n){e.exports=function(t){if("string"==typeof t&&t.length)return t.length;if("object"==typeof t){if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if(!("undefined"!=typeof FormData&&t instanceof FormData))try{return JSON.stringify(t).length}catch(e){return}}}},{}],14:[function(t,e,n){var r=0,o=navigator.userAgent.match(/Firefox[\/\s](\d+\.\d+)/);o&&(r=+o[1]),e.exports=r},{}],15:[function(t,e,n){function r(t,e){var n=[],r="",i=0;for(r in t)o.call(t,r)&&(n[i]=e(r,t[r]),i+=1);return n}var o=Object.prototype.hasOwnProperty;e.exports=r},{}],16:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,o=n-e||0,i=Array(o<0?0:o);++r<o;)i[r]=t[e+r];return i}e.exports=r},{}],17:[function(t,e,n){function r(t){return!(t&&t instanceof Function&&t.apply&&!t[a])}var o=t("ee"),i=t(16),a="nr@original",c=Object.prototype.hasOwnProperty,s=!1;e.exports=function(t,e){function n(t,e,n,o){function nrWrapper(){var r,a,c,s;try{a=this,r=i(arguments),c="function"==typeof n?n(r,a):n||{}}catch(f){l([f,"",[r,a,o],c])}u(e+"start",[r,a,o],c);try{return s=t.apply(a,r)}catch(d){throw u(e+"err",[r,a,d],c),d}finally{u(e+"end",[r,a,s],c)}}return r(t)?t:(e||(e=""),nrWrapper[a]=t,d(t,nrWrapper),nrWrapper)}function f(t,e,o,i){o||(o="");var a,c,s,f="-"===o.charAt(0);for(s=0;s<e.length;s++)c=e[s],a=t[c],r(a)||(t[c]=n(a,f?c+o:o,i,c))}function u(n,r,o){if(!s||e){var i=s;s=!0;try{t.emit(n,r,o)}catch(a){l([a,n,r,o])}s=i}}function d(t,e){if(Object.defineProperty&&Object.keys)try{var n=Object.keys(t);return n.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(r){l([r])}for(var o in t)c.call(t,o)&&(e[o]=t[o]);return e}function l(e){try{t.emit("internal-error",e)}catch(n){}}return t||(t=o),n.inPlace=f,n.flag=a,n}},{}],ee:[function(t,e,n){function r(){}function o(t){function e(t){return t&&t instanceof r?t:t?s(t,c,i):i()}function n(n,r,o){if(!l.aborted){t&&t(n,r,o);for(var i=e(o),a=h(n),c=a.length,s=0;s<c;s++)a[s].apply(i,r);var f=u[y[n]];return f&&f.push([g,n,r,i]),i}}function p(t,e){v[t]=h(t).concat(e)}function h(t){return v[t]||[]}function m(t){return d[t]=d[t]||o(n)}function w(t,e){f(t,function(t,n){e=e||"feature",y[n]=e,e in u||(u[e]=[])})}var v={},y={},g={on:p,emit:n,get:m,listeners:h,context:e,buffer:w,abort:a,aborted:!1};return g}function i(){return new r}function a(){(u.api||u.feature)&&(l.aborted=!0,u=l.backlog={})}var c="nr@context",s=t("gos"),f=t(15),u={},d={},l=e.exports=o();l.backlog=u},{}],gos:[function(t,e,n){function r(t,e,n){if(o.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return t[e]=r,r}var o=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){o.buffer([t],r),o.emit(t,e,n)}var o=t("ee").get("handle");e.exports=r,r.ee=o},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,i,function(){return o++})}var o=1,i="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!b++){var t=g.info=NREUM.info,e=d.getElementsByTagName("script")[0];if(setTimeout(f.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return f.abort();s(v,function(e,n){t[e]||(t[e]=n)}),c("mark",["onload",a()],null,"api");var n=d.createElement("script");n.src="https://"+t.agent,e.parentNode.insertBefore(n,e)}}function o(){"complete"===d.readyState&&i()}function i(){c("mark",["domContent",a()],null,"api")}function a(){return(new Date).getTime()}var c=t("handle"),s=t(15),f=t("ee"),u=window,d=u.document,l="addEventListener",p="attachEvent",h=u.XMLHttpRequest,m=h&&h.prototype;NREUM.o={ST:setTimeout,CT:clearTimeout,XHR:h,REQ:u.Request,EV:u.Event,PR:u.Promise,MO:u.MutationObserver},t(12);var w=""+location,v={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1016.min.js"},y=h&&m&&m[l]&&!/CriOS/.test(navigator.userAgent),g=e.exports={offset:a(),origin:w,features:{},xhrWrappable:y};d[l]?(d[l]("DOMContentLoaded",i,!1),u[l]("load",r,!1)):(d[p]("onreadystatechange",o),u[p]("onload",r)),c("mark",["firstbyte",a()],null,"api");var b=0},{}]},{},["loader",2,10,4,3]);
-  </script>
   <title>
    Templar Assassin - Dota 2 Wiki
   </title>
@@ -12,7 +9,7 @@
    document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );
   </script>
   <script>
-   (window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Templar_Assassin","wgTitle":"Templar Assassin","wgCurRevisionId":1440169,"wgRevisionId":1440169,"wgArticleId":1417,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Heroes","Agility heroes","Ranged heroes","Carries","Escape"],"wgBreakFrames":true,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Templar_Assassin","wgRelevantArticleId":1417,"wgRequestId":"33129ab58d683e20ebea9b57","wgIsProbablyEditable":true,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgPreferredVariant":"en","wgCollapsibleVectorEnabledModules":{"collapsiblenav":true,"experiments":true},"wgVisualEditor":{"pageLanguageCode":"en","pageLanguageDir":"ltr","usePageImages":true,"usePageDescriptions":false},"wgWikiEditorEnabledModules":{"toolbar":true,"dialogs":true,"preview":true,"publish":true},"wgCategoryTreePageCategoryOptions":"{\"mode\":0,\"hideprefix\":20,\"showcount\":true,\"namespaces\":false}","wgVisualEditorToolbarScrollOffset":0});mw.loader.implement("user.options",function($,jQuery,require,module){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function ( $, jQuery, require, module ) {
+   (window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Templar_Assassin","wgTitle":"Templar Assassin","wgCurRevisionId":1533600,"wgRevisionId":1533600,"wgArticleId":1417,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Heroes","Agility heroes","Ranged heroes","Carries","Escape"],"wgBreakFrames":true,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Templar_Assassin","wgRelevantArticleId":1417,"wgRequestId":"4cce7e6811669bf45de3957e","wgIsProbablyEditable":true,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgPreferredVariant":"en","wgCollapsibleVectorEnabledModules":{"collapsiblenav":true,"experiments":true},"wgVisualEditor":{"pageLanguageCode":"en","pageLanguageDir":"ltr","usePageImages":true,"usePageDescriptions":false},"wgWikiEditorEnabledModules":{"toolbar":true,"dialogs":true,"preview":true,"publish":true},"wgCategoryTreePageCategoryOptions":"{\"mode\":0,\"hideprefix\":20,\"showcount\":true,\"namespaces\":false}","wgVisualEditorToolbarScrollOffset":0});mw.loader.implement("user.options",function($,jQuery,require,module){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function ( $, jQuery, require, module ) {
 mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/;
 
 });mw.loader.load(["ext.smw.style","mediawiki.page.startup","ext.siteGlobals","ext.bunnyears","ext.visualEditor.desktopArticleTarget.init","ext.hydraAuth.banners","skins.vector.js","skins.hydra.advertisements.js","skins.hydra.footer.js","ext.social"]);});
@@ -23,11 +20,11 @@ mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","cs
   <link href="/load.php?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=hydra" rel="stylesheet"/>
   <script async="" src="/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=hydra">
   </script>
-  <meta content="MediaWiki 1.27.1" name="generator"/>
+  <meta content="MediaWiki 1.27.3" name="generator"/>
   <meta content="Templar Assassin" name="og:title"/>
   <meta content="website" name="og:type"/>
   <meta content="https://hydra-media.cursecdn.com/dota2.gamepedia.com/b/bc/Wiki.png" name="og:image"/>
-  <meta content="http://dota2.gamepedia.com/Templar_Assassin" name="og:url"/>
+  <meta content="https://dota2.gamepedia.com/Templar_Assassin" name="og:url"/>
   <meta content="Dota 2 Wiki" name="og:site_name"/>
   <meta name="description"/>
   <meta content="" name="keywords"/>
@@ -40,13 +37,13 @@ mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","cs
   <link href="/opensearch_desc.php" rel="search" title="Dota 2 Wiki (en)" type="application/opensearchdescription+xml"/>
   <link href="//dota2.gamepedia.com/api.php?action=rsd" rel="EditURI" type="application/rsd+xml"/>
   <link href="//creativecommons.org/licenses/by-nc-sa/3.0/" rel="copyright"/>
-  <link href="http://dota2.gamepedia.com/Templar_Assassin" rel="canonical"/>
+  <link href="https://dota2.gamepedia.com/Templar_Assassin" rel="canonical"/>
   <link href="dota2-de.gamepedia.com" hreflang="de" rel="alternate"/>
   <link href="dota2-ru.gamepedia.com" hreflang="ru" rel="alternate"/>
   <link href="dota2-pt.gamepedia.com" hreflang="pt" rel="alternate"/>
   <link href="dota2-zh.gamepedia.com" hreflang="zh" rel="alternate"/>
   <meta content="Gamepedia" itemprop="author"/>
-  <link href="https://stations.cursetech.com/be/bunnyears.min.css" rel="stylesheet" type="text/css"/>
+  <link href="https://stations.cursetech.com/be/bunnyears-1.1.min.css" rel="stylesheet" type="text/css"/>
  </head>
  <body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-Templar_Assassin rootpage-Templar_Assassin skin-hydra action-view site-dota2-gamepedia show-ads">
   <script type="application/ld+json">
@@ -81,8 +78,8 @@ mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","cs
 		"target": "https://dota2.gamepedia.com/index.php?title=Special:Search&search={search_term}",
 		"query-input": "required name=search_term"
 	},
-	"datePublished": "2017-01-14T09:04:45Z",
-	"dateModified": "2017-01-14T09:04:45Z",
+	"datePublished": "2017-06-08T20:03:38Z",
+	"dateModified": "2017-06-08T20:03:38Z",
 	"mainEntityOfPage": "https://dota2.gamepedia.com/Templar_Assassin"
 }
   </script>
@@ -124,7 +121,7 @@ mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","cs
 var script = document.createElement('script');
 var tstamp = new Date();
 script.id = 'factorem';
-script.src = 'http://cdm.cursecdn.com/js/gamepedia/cdmfactorem_min.js?misc=' + tstamp.getTime();;
+script.src = '//cdm.cursecdn.com/js/gamepedia/cdmfactorem_min.js?misc=' + tstamp.getTime();;
 script.async = true;
 script.type='text/javascript';
 document.head.appendChild(script);
@@ -133,10 +130,10 @@ document.head.appendChild(script);
    setTimeout(function(){if("undefined"!=typeof b2){var element=document.getElementById(b2);setTimeout(function(){element.parentNode.innerHTML='<div id="'+b2+'"></div>'},5000)}},20000)
   </script>
   <script>
-   setTimeout(function(){if("undefined"!=typeof b2){var element=document.getElementById(b3);setTimeout(function(){element.parentNode.innerHTML='<div id="'+b3+'"></div>'},5000)}},20000)
+   setTimeout(function(){if("undefined"!=typeof b3){var element=document.getElementById(b3);setTimeout(function(){element.parentNode.innerHTML='<div id="'+b3+'"></div>'},5000)}},20000)
   </script>
   <script>
-   setTimeout(function(){if("undefined"!=typeof b2){var element=document.getElementById(b6);setTimeout(function(){element.parentNode.innerHTML='<div id="'+b6+'"></div>'},5000)}},20000)
+   setTimeout(function(){if("undefined"!=typeof b6){var element=document.getElementById(b6);setTimeout(function(){element.parentNode.innerHTML='<div id="'+b6+'"></div>'},5000)}},20000)
   </script>
   <div id="netbar">
    <ul class="netbar-left">
@@ -279,6 +276,13 @@ document.head.appendChild(script);
          </td>
          <td style="border-bottom: 2px solid #A3B1BF; width: 3px;">
          </td>
+         <td style="padding: 0.5em; background-color: #d7e6f4; line-height: 0.95em; border: 1px solid #A3B1BF; border-bottom: solid 2px #A3B1BF; width: 20px;">
+          <a href="/Templar_Assassin/Bugs" title="Templar Assassin/Bugs">
+           Known Bugs
+          </a>
+         </td>
+         <td style="border-bottom: 2px solid #A3B1BF; width: 3px;">
+         </td>
          <td style="border-bottom:2px solid #A3B1BF" width="3000">
          </td>
         </tr>
@@ -293,8 +297,8 @@ document.head.appendChild(script);
         </tr>
         <tr>
          <td colspan="4">
-          <a class="image" href="/File:Templar_Assassin.png">
-           <img alt="Templar Assassin.png" height="144" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/2/27/Templar_Assassin.png?version=35e3627fe72dac626269e6c024e0a992" width="256"/>
+          <a class="image" href="/File:Templar_Assassin_icon.png">
+           <img alt="Templar Assassin icon.png" height="144" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/9/9c/Templar_Assassin_icon.png?version=d5023ec1b58687cab157ea207fc6da23" width="256"/>
           </a>
          </td>
         </tr>
@@ -304,27 +308,27 @@ document.head.appendChild(script);
            <tr>
             <th align="center" width="45">
              <a href="/Strength" title="Strength">
-              <img alt="Strength" height="40" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/7a/Strength_attribute_symbol.png/40px-Strength_attribute_symbol.png?version=79371ef0198db066c30dfa55b0e6b483" width="40"/>
+              <img alt="Strength attribute symbol.png" height="40" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/7a/Strength_attribute_symbol.png/40px-Strength_attribute_symbol.png?version=79371ef0198db066c30dfa55b0e6b483" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/7a/Strength_attribute_symbol.png/60px-Strength_attribute_symbol.png?version=79371ef0198db066c30dfa55b0e6b483 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/7/7a/Strength_attribute_symbol.png?version=79371ef0198db066c30dfa55b0e6b483 2x" width="40"/>
              </a>
              <br/>
              <b>
               18
              </b>
-             + 2.1
+             + 2.4
             </th>
             <th align="center" width="45">
              <a href="/Agility" title="Agility">
-              <img alt="Agility" height="40" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/72/Agility_primary_attribute_symbol.png/40px-Agility_primary_attribute_symbol.png?version=d62be6f497df32db012c4ddcf8153a1a" width="40"/>
+              <img alt="Agility primary attribute symbol.png" height="40" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/72/Agility_primary_attribute_symbol.png/40px-Agility_primary_attribute_symbol.png?version=d62be6f497df32db012c4ddcf8153a1a" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/72/Agility_primary_attribute_symbol.png/60px-Agility_primary_attribute_symbol.png?version=d62be6f497df32db012c4ddcf8153a1a 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/7/72/Agility_primary_attribute_symbol.png?version=d62be6f497df32db012c4ddcf8153a1a 2x" width="40"/>
              </a>
              <br/>
              <b>
               23
              </b>
-             + 2.7
+             + 2.3
             </th>
             <th align="center" width="45">
              <a href="/Intelligence" title="Intelligence">
-              <img alt="Intelligence" height="40" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/5/56/Intelligence_attribute_symbol.png/40px-Intelligence_attribute_symbol.png?version=4040e46b05f05f761993086ea3d191f0" width="40"/>
+              <img alt="Intelligence attribute symbol.png" height="40" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/5/56/Intelligence_attribute_symbol.png/40px-Intelligence_attribute_symbol.png?version=4040e46b05f05f761993086ea3d191f0" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/5/56/Intelligence_attribute_symbol.png/60px-Intelligence_attribute_symbol.png?version=4040e46b05f05f761993086ea3d191f0 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/5/56/Intelligence_attribute_symbol.png?version=4040e46b05f05f761993086ea3d191f0 2x" width="40"/>
              </a>
              <br/>
              <b>
@@ -377,10 +381,10 @@ document.head.appendChild(script);
              560
             </td>
             <td>
-             1140
+             1220
             </td>
             <td>
-             1560
+             1700
             </td>
            </tr>
            <tr>
@@ -392,16 +396,16 @@ document.head.appendChild(script);
              </b>
             </td>
             <td>
-             0.25
+             0
             </td>
             <td>
-             0.79
+             1.08
             </td>
             <td>
-             1.67
+             3.1
             </td>
             <td>
-             2.3
+             4.54
             </td>
            </tr>
            <tr style="background:#ededed">
@@ -413,16 +417,16 @@ document.head.appendChild(script);
              </b>
             </td>
             <td>
-             50
+             75
             </td>
             <td>
-             290
+             295
             </td>
             <td>
-             626
+             603
             </td>
             <td>
-             866
+             823
             </td>
            </tr>
            <tr>
@@ -461,10 +465,10 @@ document.head.appendChild(script);
              53‒59
             </td>
             <td>
-             90‒96
+             85‒91
             </td>
             <td>
-             117‒123
+             108‒114
             </td>
            </tr>
            <tr>
@@ -482,10 +486,10 @@ document.head.appendChild(script);
              4.29
             </td>
             <td>
-             9.69
+             8.89
             </td>
             <td>
-             13.54
+             12.17
             </td>
            </tr>
            <tr style="background:#ededed">
@@ -500,13 +504,13 @@ document.head.appendChild(script);
              0%
             </td>
             <td>
-             1.25%
+             1.43%
             </td>
             <td>
-             3%
+             3.43%
             </td>
             <td>
-             4.25%
+             4.86%
             </td>
            </tr>
            <tr>
@@ -526,10 +530,10 @@ document.head.appendChild(script);
              0.72
             </td>
             <td>
-             0.94
+             0.91
             </td>
             <td>
-             1.1
+             1.04
             </td>
            </tr>
           </table>
@@ -854,14 +858,8 @@ document.head.appendChild(script);
          <span class="mw-editsection-bracket">
           [
          </span>
-         <a class="mw-editsection-visualeditor" href="/index.php?title=Templar_Assassin&amp;veaction=edit&amp;vesection=1" title="Edit section: Bio">
-          edit
-         </a>
-         <span class="mw-editsection-divider">
-          |
-         </span>
          <a href="/index.php?title=Templar_Assassin&amp;action=edit&amp;section=1" title="Edit section: Bio">
-          edit source
+          edit
          </a>
          <span class="mw-editsection-bracket">
           ]
@@ -869,75 +867,70 @@ document.head.appendChild(script);
         </span>
        </h2>
        <div class="biobox" style="color:#333333;padding:8px;font-size:12px;">
-        <table style="background: none;">
+        <table cellspacing="4" style="background: none;">
          <tr>
-          <td valign="top">
-           <table cellspacing="4" style="background: none;">
-            <tr>
-             <td colspan="2" style="font-weight:bold;font-size:13px;text-align:center;">
-              <a href="/Templar_Assassin" title="Templar Assassin">
-               <img alt="Templar Assassin" height="32" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/9/9c/Templar_Assassin_icon.png?version=5a55f734f8edc18788085c9b4d6e3f85" width="32"/>
-              </a>
-              Lanaya, the Templar Assassin
-             </td>
-            </tr>
-            <tr>
-             <td align="center" colspan="2">
-              <a class="sm2_button" href="https://hydra-media.cursecdn.com/dota2.gamepedia.com/a/a7/Temp_rare_01.mp3" title="Play">
-               Play
-              </a>
-              "Where the Hidden Ones send me, I go without question. I do not even question why I question not."
-             </td>
-            </tr>
-            <tr>
-             <td valign="top">
-              <b>
-               Role:
-              </b>
-             </td>
-             <td>
-              <a href="/Role#Carry" title="Carry">
-               <img alt="Carry" height="24" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/5/52/Pip_carry.png/24px-Pip_carry.png?version=7897014a7741857935320d543e26bcac" width="24"/>
-              </a>
-              <a href="/Role#Carry" title="Role">
-               Carry
-              </a>
-              /
-              <a href="/Role#Escape" title="Escape">
-               <img alt="Escape" height="24" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/d/d3/Pip_tank.png/24px-Pip_tank.png?version=5d8ccf7b704ff54ffe6c2a65a3861423" width="24"/>
-              </a>
-              <a href="/Role#Escape" title="Role">
-               Escape
-              </a>
-             </td>
-            </tr>
-            <tr>
-             <td valign="top">
-              <b>
-               Lore:
-              </b>
-             </td>
-             <td>
-              <i>
-               Lanaya, the Templar Assassin, came to her calling by a path of curious inquiry. Possessed of a scientific bent, she spent her early years engaged in meticulous study of nature's laws--peering into grimoires of magic and alchemy, recreating experiments from charred fragments of the Violet Archives, and memorizing observations of the Keen recordkeepers. Already quiet and secretive by nature, the difficulty of acquiring these objects further reinforced her skills of stealth. Had she been less retiring, she might have become notorious among the guilds as a thief-scholar. Instead her investigations led her into far more obscure corners. As she devoted her furtive talents to unlocking the secrets of the universe, she instead unlocked a secret door that exists in nature itself: the entryway to the most Hidden Temple. The intelligences that waited beyond that portal, proved to be expecting her, and whatever mysteries they revealed in the moment of their discovery was nothing compared to the answers they held out to Lanaya should she continue in their service. She swore to protect the mysteries, but more to the point, in service to the Hidden Temple she satisfies her endless craving for understanding. In the eyes of each foe she expunges, a bit more of the mystery is revealed.
-              </i>
-             </td>
-            </tr>
-            <tr>
-             <td valign="top">
-              <b>
-               Voice:
-              </b>
-             </td>
-             <td>
-              Linda K. Morris (
-              <a href="/Templar_Assassin/Responses" title="Templar Assassin/Responses">
-               Responses
-              </a>
-              )
-             </td>
-            </tr>
-           </table>
+          <td colspan="2" style="font-weight: bold; font-size: 13px; text-align: center;">
+           <a href="/Templar_Assassin" title="Templar Assassin">
+            <img alt="Templar Assassin" height="32" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/6/6b/Templar_Assassin_minimap_icon.png?version=1f7317bcb10d60158b6b87d487cdfc7d" width="32"/>
+           </a>
+           Lanaya, the Templar Assassin
+          </td>
+         </tr>
+         <tr>
+          <td colspan="2" style="text-align: center;">
+           <a class="sm2_button" href="https://hydra-media.cursecdn.com/dota2.gamepedia.com/a/a7/Temp_rare_01.mp3" title="Play">
+            Play
+           </a>
+           "Where the Hidden Ones send me, I go without question. I do not even question why I question not."
+          </td>
+         </tr>
+         <tr>
+          <td>
+           <b>
+            Role:
+           </b>
+          </td>
+          <td>
+           <a href="/Role#Carry" title="Carry">
+            <img alt="Carry" height="24" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/5/52/Pip_carry.png/24px-Pip_carry.png?version=7897014a7741857935320d543e26bcac" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/5/52/Pip_carry.png/36px-Pip_carry.png?version=7897014a7741857935320d543e26bcac 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/5/52/Pip_carry.png/48px-Pip_carry.png?version=7897014a7741857935320d543e26bcac 2x" width="24"/>
+           </a>
+           <a href="/Role#Carry" title="Role">
+            Carry
+           </a>
+           /
+           <a href="/Role#Escape" title="Escape">
+            <img alt="Escape" height="24" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/d/d3/Pip_tank.png/24px-Pip_tank.png?version=5d8ccf7b704ff54ffe6c2a65a3861423" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/d/d3/Pip_tank.png/36px-Pip_tank.png?version=5d8ccf7b704ff54ffe6c2a65a3861423 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/d/d3/Pip_tank.png/48px-Pip_tank.png?version=5d8ccf7b704ff54ffe6c2a65a3861423 2x" width="24"/>
+           </a>
+           <a href="/Role#Escape" title="Role">
+            Escape
+           </a>
+          </td>
+         </tr>
+         <tr>
+          <td style="vertical-align: top;">
+           <b>
+            <a href="/Templar_Assassin/Lore" title="Templar Assassin/Lore">
+             Lore
+            </a>
+            :
+           </b>
+          </td>
+          <td style="font-style: italic;">
+           Lanaya, the Templar Assassin, came to her calling by a path of curious inquiry. Possessed of a scientific bent, she spent her early years engaged in meticulous study of nature's laws--peering into grimoires of magic and alchemy, recreating experiments from charred fragments of the Violet Archives, and memorizing observations of the Keen recordkeepers. Already quiet and secretive by nature, the difficulty of acquiring these objects further reinforced her skills of stealth. Had she been less retiring, she might have become notorious among the guilds as a thief-scholar. Instead her investigations led her into far more obscure corners. As she devoted her furtive talents to unlocking the secrets of the universe, she instead unlocked a secret door that exists in nature itself: the entryway to the most Hidden Temple. The intelligences that waited beyond that portal, proved to be expecting her, and whatever mysteries they revealed in the moment of their discovery was nothing compared to the answers they held out to Lanaya should she continue in their service. She swore to protect the mysteries, but more to the point, in service to the Hidden Temple she satisfies her endless craving for understanding. In the eyes of each foe she expunges, a bit more of the mystery is revealed.
+          </td>
+         </tr>
+         <tr>
+          <td>
+           <b>
+            Voice:
+           </b>
+          </td>
+          <td>
+           Linda K. Morris (
+           <a href="/Templar_Assassin/Responses" title="Templar Assassin/Responses">
+            Responses
+           </a>
+           )
           </td>
          </tr>
         </table>
@@ -950,14 +943,8 @@ document.head.appendChild(script);
          <span class="mw-editsection-bracket">
           [
          </span>
-         <a class="mw-editsection-visualeditor" href="/index.php?title=Templar_Assassin&amp;veaction=edit&amp;vesection=2" title="Edit section: Abilities">
-          edit
-         </a>
-         <span class="mw-editsection-divider">
-          |
-         </span>
          <a href="/index.php?title=Templar_Assassin&amp;action=edit&amp;section=2" title="Edit section: Abilities">
-          edit source
+          edit
          </a>
          <span class="mw-editsection-bracket">
           ]
@@ -988,7 +975,7 @@ document.head.appendChild(script);
           Refraction
           <div style="float:right;">
            <a href="/Spell_Immunity" title="Pierces spell immunity.">
-            <img alt="Pierces spell immunity." height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/0/0c/Spell_immunity_block_no_symbol.png/20px-Spell_immunity_block_no_symbol.png?version=8a9b499fbc92dda21de2b49951268177" style="vertical-align: text-top" width="20"/>
+            <img alt="Pierces spell immunity." height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/0/0c/Spell_immunity_block_no_symbol.png/20px-Spell_immunity_block_no_symbol.png?version=8a9b499fbc92dda21de2b49951268177" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/0/0c/Spell_immunity_block_no_symbol.png/30px-Spell_immunity_block_no_symbol.png?version=8a9b499fbc92dda21de2b49951268177 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/0/0c/Spell_immunity_block_no_symbol.png/40px-Spell_immunity_block_no_symbol.png?version=8a9b499fbc92dda21de2b49951268177 2x" style="vertical-align: text-top" width="20"/>
            </a>
            <span style="position:relative; top:-2px;">
             <a class="sm2_button" href="https://hydra-media.cursecdn.com/dota2.gamepedia.com/4/4b/Refraction.mp3" title="Play">
@@ -1057,25 +1044,34 @@ document.head.appendChild(script);
            <b>
             Number of Instances
            </b>
-           : 3/4/5/6 (
-           <a href="/Talents" title="Talent">
-            <img alt="Talent" height="16" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/c/cd/Talent_tree_symbol.png/16px-Talent_tree_symbol.png?version=b4db4b31a2f9c215885be017c22a8b0c" style="vertical-align: text-top" width="16"/>
-           </a>
-           6/7/8/9)
+           :
+           <span style="white-space: nowrap">
+            3/4/5/6 (
+            <a href="/Talents" title="Talent">
+             <img alt="Talent" height="16" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/c/cd/Talent_tree_symbol.png/16px-Talent_tree_symbol.png?version=b4db4b31a2f9c215885be017c22a8b0c" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/c/cd/Talent_tree_symbol.png/24px-Talent_tree_symbol.png?version=b4db4b31a2f9c215885be017c22a8b0c 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/c/cd/Talent_tree_symbol.png/32px-Talent_tree_symbol.png?version=b4db4b31a2f9c215885be017c22a8b0c 2x" style="vertical-align: text-top" width="16"/>
+            </a>
+            6/7/8/9)
+           </span>
           </div>
           <div>
            <b>
             Attack Damage Bonus
            </b>
-           : 20/40/60/80
+           :
+           <span style="white-space: nowrap">
+            20/40/60/80
+           </span>
           </div>
           <div>
            <b>
             Duration
            </b>
-           : 17
+           :
+           <span style="white-space: nowrap">
+            17
+           </span>
           </div>
-          <div style="display: inline-block; margin: 8px 0px 0px 50px; width: 190px; vertical-align: top;">
+          <div style="display: inline-block; margin: 8px 0px 0px 50px; width: 190px; vertical-align: top; word-wrap: break-word;">
            <span style="position: relative; top: -2px;">
             <a href="/Cooldown" title="Cooldown">
              <img alt="Cooldown symbol.png" height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/b/b7/Cooldown_symbol.png?version=7429ed9baf0f121e6ab3324bfdfad708" style="vertical-align: text-top" width="20"/>
@@ -1083,7 +1079,7 @@ document.head.appendChild(script);
            </span>
            17
           </div>
-          <div style="display: inline-block; margin: 8px 0px 0px; width: 190px; vertical-align: top;">
+          <div style="display: inline-block; margin: 8px 0px 0px; width: 190px; vertical-align: top; word-wrap: break-word;">
            <span style="position: relative; top: -2px;">
             <a href="/Mana" title="Mana">
              <img alt="Mana symbol.png" height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/f/f3/Mana_symbol.png?version=a81185ac577f9b52f2df06be91b6600c" style="vertical-align: text-top" width="20"/>
@@ -1093,12 +1089,14 @@ document.head.appendChild(script);
           </div>
           <div style="margin-top: 10px;">
            <b>
-            Modifiers
+            <span id="tooltip" style="cursor:help; border-bottom:1px dotted;" title="The displayed names are the intern names of the modifiers. Do not change them even if they don't match the ability name.">
+             Modifiers
+            </span>
            </b>
           </div>
           <div style="font-size: 85%; margin-left: 10px;">
            <div>
-            <img alt="Buff" height="16" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/c/c1/Modifier_buff_symbol.png/16px-Modifier_buff_symbol.png?version=97c71541b396c601c0ac22a73d1a7573" style="vertical-align: text-top" title="Buff" width="16"/>
+            <img alt="Buff" height="16" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/c/c1/Modifier_buff_symbol.png/16px-Modifier_buff_symbol.png?version=97c71541b396c601c0ac22a73d1a7573" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/c/c1/Modifier_buff_symbol.png/24px-Modifier_buff_symbol.png?version=97c71541b396c601c0ac22a73d1a7573 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/c/c1/Modifier_buff_symbol.png/32px-Modifier_buff_symbol.png?version=97c71541b396c601c0ac22a73d1a7573 2x" style="vertical-align: text-top" title="Buff" width="16"/>
             <span style="color:#1F631F;">
              <b>
               Refraction Absorb:
@@ -1107,7 +1105,7 @@ document.head.appendChild(script);
             </span>
            </div>
            <div>
-            <img alt="Buff" height="16" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/c/c1/Modifier_buff_symbol.png/16px-Modifier_buff_symbol.png?version=97c71541b396c601c0ac22a73d1a7573" style="vertical-align: text-top" title="Buff" width="16"/>
+            <img alt="Buff" height="16" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/c/c1/Modifier_buff_symbol.png/16px-Modifier_buff_symbol.png?version=97c71541b396c601c0ac22a73d1a7573" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/c/c1/Modifier_buff_symbol.png/24px-Modifier_buff_symbol.png?version=97c71541b396c601c0ac22a73d1a7573 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/c/c1/Modifier_buff_symbol.png/32px-Modifier_buff_symbol.png?version=97c71541b396c601c0ac22a73d1a7573 2x" style="vertical-align: text-top" title="Buff" width="16"/>
             <span style="color:#1F631F;">
              <b>
               Refraction Damage:
@@ -1189,31 +1187,31 @@ document.head.appendChild(script);
              Has a higher priority than
              <span style="white-space: nowrap;">
               <a href="/Abaddon#Aphotic_Shield" title="Abaddon#Aphotic Shield">
-               <img alt="Aphotic Shield icon.png" height="16" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/b/b1/Aphotic_Shield_icon.png/16px-Aphotic_Shield_icon.png?version=c9b700fe986be0150fa31bf2e2af38d2" width="16"/>
+               <img alt="Aphotic Shield icon.png" height="16" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/b/b1/Aphotic_Shield_icon.png/16px-Aphotic_Shield_icon.png?version=c9b700fe986be0150fa31bf2e2af38d2" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/b/b1/Aphotic_Shield_icon.png/24px-Aphotic_Shield_icon.png?version=c9b700fe986be0150fa31bf2e2af38d2 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/b/b1/Aphotic_Shield_icon.png/32px-Aphotic_Shield_icon.png?version=c9b700fe986be0150fa31bf2e2af38d2 2x" width="16"/>
               </a>
               <a href="/Abaddon#Aphotic_Shield" title="Abaddon">
                Aphotic Shield
               </a>
              </span>
-             ​ and
+             and
              <span style="white-space: nowrap;">
               <a href="/Treant_Protector#Living_Armor" title="Treant Protector#Living Armor">
-               <img alt="Living Armor icon.png" height="16" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/b/b8/Living_Armor_icon.png/16px-Living_Armor_icon.png?version=e346cc718c2541aac83ee1eb0b0c7850" width="16"/>
+               <img alt="Living Armor icon.png" height="16" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/b/b8/Living_Armor_icon.png/16px-Living_Armor_icon.png?version=e346cc718c2541aac83ee1eb0b0c7850" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/b/b8/Living_Armor_icon.png/24px-Living_Armor_icon.png?version=e346cc718c2541aac83ee1eb0b0c7850 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/b/b8/Living_Armor_icon.png/32px-Living_Armor_icon.png?version=e346cc718c2541aac83ee1eb0b0c7850 2x" width="16"/>
               </a>
               <a href="/Treant_Protector#Living_Armor" title="Treant Protector">
                Living Armor
               </a>
              </span>
-             ​, but lower than
+             , but lower than
              <span style="white-space: nowrap;">
               <a href="/Oracle#False_Promise" title="Oracle#False Promise">
-               <img alt="False Promise icon.png" height="16" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/f/f0/False_Promise_icon.png/16px-False_Promise_icon.png?version=816b8983e94cc40151b924cdb06b0314" width="16"/>
+               <img alt="False Promise icon.png" height="16" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/f/f0/False_Promise_icon.png/16px-False_Promise_icon.png?version=816b8983e94cc40151b924cdb06b0314" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/f/f0/False_Promise_icon.png/24px-False_Promise_icon.png?version=816b8983e94cc40151b924cdb06b0314 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/f/f0/False_Promise_icon.png/32px-False_Promise_icon.png?version=816b8983e94cc40151b924cdb06b0314 2x" width="16"/>
               </a>
               <a href="/Oracle#False_Promise" title="Oracle">
                False Promise
               </a>
              </span>
-             ​. However, it still loses a charge when combined with the latter.
+             . However, it still loses a charge when combined with the latter.
             </li>
             <li>
              Damage below 5 (
@@ -1240,8 +1238,6 @@ document.head.appendChild(script);
        </div>
        <p>
         <br/>
-       </p>
-       <p>
         <span id="Meld">
         </span>
        </p>
@@ -1251,7 +1247,7 @@ document.head.appendChild(script);
           Meld
           <div style="float:right;">
            <a href="/Spell_Immunity" title="Pierces spell immunity.">
-            <img alt="Pierces spell immunity." height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/0/0c/Spell_immunity_block_no_symbol.png/20px-Spell_immunity_block_no_symbol.png?version=8a9b499fbc92dda21de2b49951268177" style="vertical-align: text-top" width="20"/>
+            <img alt="Pierces spell immunity." height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/0/0c/Spell_immunity_block_no_symbol.png/20px-Spell_immunity_block_no_symbol.png?version=8a9b499fbc92dda21de2b49951268177" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/0/0c/Spell_immunity_block_no_symbol.png/30px-Spell_immunity_block_no_symbol.png?version=8a9b499fbc92dda21de2b49951268177 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/0/0c/Spell_immunity_block_no_symbol.png/40px-Spell_immunity_block_no_symbol.png?version=8a9b499fbc92dda21de2b49951268177 2x" style="vertical-align: text-top" width="20"/>
            </a>
            <span style="position:relative; top:-2px;">
             <a class="sm2_button" href="https://hydra-media.cursecdn.com/dota2.gamepedia.com/f/fe/Meld.mp3" title="Play">
@@ -1300,11 +1296,11 @@ document.head.appendChild(script);
              </b>
              <br/>
              <a href="/Damage_types#Physical" title="Damage types">
-              <b>
-               <span style="color:#71A9EA">
+              <span style="color:#71A9EA">
+               <b>
                 Physical
-               </span>
-              </b>
+               </b>
+              </span>
              </a>
             </div>
            </div>
@@ -1331,33 +1327,52 @@ document.head.appendChild(script);
            <b>
             Fade Time
            </b>
-           : 0
+           :
+           <span style="white-space: nowrap">
+            0
+           </span>
           </div>
           <div>
            <b>
             Damage
            </b>
-           : 50/100/150/200
+           :
+           <span style="white-space: nowrap">
+            50/100/150/200
+           </span>
           </div>
           <div>
            <b>
             Armor Reduction
            </b>
-           : 2/4/6/8
+           :
+           <span style="white-space: nowrap">
+            2/4/6/8 (
+            <a href="/Talents" title="Talent">
+             <img alt="Talent" height="16" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/c/cd/Talent_tree_symbol.png/16px-Talent_tree_symbol.png?version=b4db4b31a2f9c215885be017c22a8b0c" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/c/cd/Talent_tree_symbol.png/24px-Talent_tree_symbol.png?version=b4db4b31a2f9c215885be017c22a8b0c 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/c/cd/Talent_tree_symbol.png/32px-Talent_tree_symbol.png?version=b4db4b31a2f9c215885be017c22a8b0c 2x" style="vertical-align: text-top" width="16"/>
+            </a>
+            10/12/14/16)
+           </span>
           </div>
           <div>
            <b>
             Debuff Duration
            </b>
-           : 10
+           :
+           <span style="white-space: nowrap">
+            10
+           </span>
           </div>
           <div>
            <b>
             Invis Duration
            </b>
-           : Permanent
+           :
+           <span style="white-space: nowrap">
+            Permanent
+           </span>
           </div>
-          <div style="display: inline-block; margin: 8px 0px 0px 50px; width: 190px; vertical-align: top;">
+          <div style="display: inline-block; margin: 8px 0px 0px 50px; width: 190px; vertical-align: top; word-wrap: break-word;">
            <span style="position: relative; top: -2px;">
             <a href="/Cooldown" title="Cooldown">
              <img alt="Cooldown symbol.png" height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/b/b7/Cooldown_symbol.png?version=7429ed9baf0f121e6ab3324bfdfad708" style="vertical-align: text-top" width="20"/>
@@ -1365,7 +1380,7 @@ document.head.appendChild(script);
            </span>
            6
           </div>
-          <div style="display: inline-block; margin: 8px 0px 0px; width: 190px; vertical-align: top;">
+          <div style="display: inline-block; margin: 8px 0px 0px; width: 190px; vertical-align: top; word-wrap: break-word;">
            <span style="position: relative; top: -2px;">
             <a href="/Mana" title="Mana">
              <img alt="Mana symbol.png" height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/f/f3/Mana_symbol.png?version=a81185ac577f9b52f2df06be91b6600c" style="vertical-align: text-top" width="20"/>
@@ -1375,12 +1390,14 @@ document.head.appendChild(script);
           </div>
           <div style="margin-top: 10px;">
            <b>
-            Modifiers
+            <span id="tooltip" style="cursor:help; border-bottom:1px dotted;" title="The displayed names are the intern names of the modifiers. Do not change them even if they don't match the ability name.">
+             Modifiers
+            </span>
            </b>
           </div>
           <div style="font-size: 85%; margin-left: 10px;">
            <div>
-            <img alt="Buff" height="16" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/c/c1/Modifier_buff_symbol.png/16px-Modifier_buff_symbol.png?version=97c71541b396c601c0ac22a73d1a7573" style="vertical-align: text-top" title="Buff" width="16"/>
+            <img alt="Buff" height="16" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/c/c1/Modifier_buff_symbol.png/16px-Modifier_buff_symbol.png?version=97c71541b396c601c0ac22a73d1a7573" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/c/c1/Modifier_buff_symbol.png/24px-Modifier_buff_symbol.png?version=97c71541b396c601c0ac22a73d1a7573 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/c/c1/Modifier_buff_symbol.png/32px-Modifier_buff_symbol.png?version=97c71541b396c601c0ac22a73d1a7573 2x" style="vertical-align: text-top" title="Buff" width="16"/>
             <span style="color:#1F631F;">
              <b>
               Meld:
@@ -1389,7 +1406,7 @@ document.head.appendChild(script);
             </span>
            </div>
            <div>
-            <img alt="Buff" height="16" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/c/c1/Modifier_buff_symbol.png/16px-Modifier_buff_symbol.png?version=97c71541b396c601c0ac22a73d1a7573" style="vertical-align: text-top" title="Buff" width="16"/>
+            <img alt="Buff" height="16" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/c/c1/Modifier_buff_symbol.png/16px-Modifier_buff_symbol.png?version=97c71541b396c601c0ac22a73d1a7573" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/c/c1/Modifier_buff_symbol.png/24px-Modifier_buff_symbol.png?version=97c71541b396c601c0ac22a73d1a7573 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/c/c1/Modifier_buff_symbol.png/32px-Modifier_buff_symbol.png?version=97c71541b396c601c0ac22a73d1a7573 2x" style="vertical-align: text-top" title="Buff" width="16"/>
             <span style="color:#1F631F;">
              <b>
               Meld Animation:
@@ -1398,7 +1415,7 @@ document.head.appendChild(script);
             </span>
            </div>
            <div>
-            <img alt="Debuff" height="16" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/1/1a/Modifier_debuff_symbol.png/16px-Modifier_debuff_symbol.png?version=5684dfbf37c3058c80b8495a4d0dc346" style="vertical-align: text-top" title="Debuff" width="16"/>
+            <img alt="Debuff" height="16" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/1/1a/Modifier_debuff_symbol.png/16px-Modifier_debuff_symbol.png?version=5684dfbf37c3058c80b8495a4d0dc346" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/1/1a/Modifier_debuff_symbol.png/24px-Modifier_debuff_symbol.png?version=5684dfbf37c3058c80b8495a4d0dc346 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/1/1a/Modifier_debuff_symbol.png/32px-Modifier_debuff_symbol.png?version=5684dfbf37c3058c80b8495a4d0dc346 2x" style="vertical-align: text-top" title="Debuff" width="16"/>
             <span style="color:#631F1F;">
              <b>
               Meld Armor:
@@ -1534,31 +1551,31 @@ document.head.appendChild(script);
            , be reduced or amplified by e.g.
            <span style="white-space: nowrap;">
             <a href="/Bane#Enfeeble" title="Bane#Enfeeble">
-             <img alt="Enfeeble icon.png" height="16" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/4/40/Enfeeble_icon.png/16px-Enfeeble_icon.png?version=b50009c6bec022f250fdd9fc6a821c4a" width="16"/>
+             <img alt="Enfeeble icon.png" height="16" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/4/40/Enfeeble_icon.png/16px-Enfeeble_icon.png?version=b50009c6bec022f250fdd9fc6a821c4a" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/4/40/Enfeeble_icon.png/24px-Enfeeble_icon.png?version=b50009c6bec022f250fdd9fc6a821c4a 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/4/40/Enfeeble_icon.png/32px-Enfeeble_icon.png?version=b50009c6bec022f250fdd9fc6a821c4a 2x" width="16"/>
             </a>
             <a href="/Bane#Enfeeble" title="Bane">
              Enfeeble
             </a>
            </span>
-           ​ or
+           or
            <span style="white-space: nowrap;">
             <a href="/Magnus#Empower" title="Magnus#Empower">
-             <img alt="Empower icon.png" height="16" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/7d/Empower_icon.png/16px-Empower_icon.png?version=4be9f39c9c3f1d49938c6413dc7237a1" width="16"/>
+             <img alt="Empower icon.png" height="16" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/7d/Empower_icon.png/16px-Empower_icon.png?version=4be9f39c9c3f1d49938c6413dc7237a1" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/7d/Empower_icon.png/24px-Empower_icon.png?version=4be9f39c9c3f1d49938c6413dc7237a1 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/7d/Empower_icon.png/32px-Empower_icon.png?version=4be9f39c9c3f1d49938c6413dc7237a1 2x" width="16"/>
             </a>
             <a href="/Magnus#Empower" title="Magnus">
              Empower
             </a>
            </span>
-           ​ and is not spilled by
+           and is not spilled by
            <span style="white-space: nowrap;">
             <a href="/Templar_Assassin#Psi_Blades" title="Templar Assassin#Psi Blades">
-             <img alt="Psi Blades icon.png" height="16" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/78/Psi_Blades_icon.png/16px-Psi_Blades_icon.png?version=681b65ff9651b6c3ad3aad7d559b5388" width="16"/>
+             <img alt="Psi Blades icon.png" height="16" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/78/Psi_Blades_icon.png/16px-Psi_Blades_icon.png?version=681b65ff9651b6c3ad3aad7d559b5388" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/78/Psi_Blades_icon.png/24px-Psi_Blades_icon.png?version=681b65ff9651b6c3ad3aad7d559b5388 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/78/Psi_Blades_icon.png/32px-Psi_Blades_icon.png?version=681b65ff9651b6c3ad3aad7d559b5388 2x" width="16"/>
             </a>
             <a href="/Templar_Assassin#Psi_Blades" title="Templar Assassin">
              Psi Blades
             </a>
            </span>
-           ​.
+           .
           </li>
          </ul>
          <ul>
@@ -1575,8 +1592,6 @@ document.head.appendChild(script);
        </div>
        <p>
         <br/>
-       </p>
-       <p>
         <span id="Psi_Blades">
         </span>
        </p>
@@ -1586,16 +1601,16 @@ document.head.appendChild(script);
           Psi Blades
           <div style="float:right;">
            <a href="/Unique_Attack_Modifier" title="Not a Unique Attack Modifier.">
-            <img alt="Not a Unique Attack Modifier." height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/8/8e/Uam_no_symbol.png/20px-Uam_no_symbol.png?version=b3b165d8f9d0aec242958ad7639a60fd" style="vertical-align: text-top" width="20"/>
+            <img alt="Not a Unique Attack Modifier." height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/8/8e/Uam_no_symbol.png/20px-Uam_no_symbol.png?version=b3b165d8f9d0aec242958ad7639a60fd" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/8/8e/Uam_no_symbol.png/30px-Uam_no_symbol.png?version=b3b165d8f9d0aec242958ad7639a60fd 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/8/8e/Uam_no_symbol.png/40px-Uam_no_symbol.png?version=b3b165d8f9d0aec242958ad7639a60fd 2x" style="vertical-align: text-top" width="20"/>
            </a>
            <a href="/Illusions" title="Can be used by illusions.">
-            <img alt="Can be used by illusions." height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/e/e2/Illusion_symbol.png/20px-Illusion_symbol.png?version=7a3a01543d327eccde768866533cbae2" style="vertical-align: text-top" width="20"/>
+            <img alt="Can be used by illusions." height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/e/e2/Illusion_symbol.png/20px-Illusion_symbol.png?version=7a3a01543d327eccde768866533cbae2" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/e/e2/Illusion_symbol.png/30px-Illusion_symbol.png?version=7a3a01543d327eccde768866533cbae2 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/e/e2/Illusion_symbol.png/40px-Illusion_symbol.png?version=7a3a01543d327eccde768866533cbae2 2x" style="vertical-align: text-top" width="20"/>
            </a>
            <a href="/Break" title="Disabled by Break.">
-            <img alt="Disabled by Break." height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/f/f9/Breakable_symbol.png/20px-Breakable_symbol.png?version=75c8c39d828694e4c795718ece243865" style="vertical-align: text-top" width="20"/>
+            <img alt="Disabled by Break." height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/f/f9/Breakable_symbol.png/20px-Breakable_symbol.png?version=75c8c39d828694e4c795718ece243865" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/f/f9/Breakable_symbol.png/30px-Breakable_symbol.png?version=75c8c39d828694e4c795718ece243865 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/f/f9/Breakable_symbol.png/40px-Breakable_symbol.png?version=75c8c39d828694e4c795718ece243865 2x" style="vertical-align: text-top" width="20"/>
            </a>
            <a href="/Spell_Immunity" title="Pierces spell immunity.">
-            <img alt="Pierces spell immunity." height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/0/0c/Spell_immunity_block_no_symbol.png/20px-Spell_immunity_block_no_symbol.png?version=8a9b499fbc92dda21de2b49951268177" style="vertical-align: text-top" width="20"/>
+            <img alt="Pierces spell immunity." height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/0/0c/Spell_immunity_block_no_symbol.png/20px-Spell_immunity_block_no_symbol.png?version=8a9b499fbc92dda21de2b49951268177" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/0/0c/Spell_immunity_block_no_symbol.png/30px-Spell_immunity_block_no_symbol.png?version=8a9b499fbc92dda21de2b49951268177 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/0/0c/Spell_immunity_block_no_symbol.png/40px-Spell_immunity_block_no_symbol.png?version=8a9b499fbc92dda21de2b49951268177 2x" style="vertical-align: text-top" width="20"/>
            </a>
            <span style="position:relative; top:-2px;">
             <a class="sm2_button" href="https://hydra-media.cursecdn.com/dota2.gamepedia.com/e/ed/Psi_Blades.mp3" title="Play">
@@ -1644,11 +1659,11 @@ document.head.appendChild(script);
              </b>
              <br/>
              <a href="/Damage_types#Pure" title="Damage types">
-              <b>
-               <span style="color:#D61107">
+              <span style="color:#D61107">
+               <b>
                 Pure
-               </span>
-              </b>
+               </b>
+              </span>
              </a>
             </div>
            </div>
@@ -1662,19 +1677,28 @@ document.head.appendChild(script);
            <b>
             Spill Range
            </b>
-           : 590/630/670/710
+           :
+           <span style="white-space: nowrap">
+            590/630/670/710
+           </span>
           </div>
           <div>
            <b>
             Spill Width
            </b>
-           : 75
+           :
+           <span style="white-space: nowrap">
+            75
+           </span>
           </div>
           <div>
            <b>
             Attack Range Bonus
            </b>
-           : 60/120/180/240
+           :
+           <span style="white-space: nowrap">
+            60/120/180/240
+           </span>
           </div>
           <div style="margin-top: 5px; padding-top: 2px; border-top: 1px solid #C1C1C1;">
            <i>
@@ -1798,11 +1822,11 @@ document.head.appendChild(script);
        <p>
         <br/>
        </p>
-       <table class="infobox" style="float:right; text-align:center; line-height: 1.5em; white-space: nowrap; font-size: 80%;">
+       <table class="infobox" style="text-align:center; line-height:1.5em; font-size:80%; white-space:nowrap;">
         <tr>
-         <th style="color:white; background-color:#B44335; font-size:112%;">
+         <th style="background-color:#B44335; font-size:112%;">
           <a href="/Psionic_Trap" title="Psionic Trap">
-           <span style="color:#FFFFFF;">
+           <span style="color:white;">
             Psionic Trap
            </span>
           </a>
@@ -1811,114 +1835,103 @@ document.head.appendChild(script);
         <tr>
          <td>
           <a class="image" href="/File:Templar_Assassin_Psionic_Trap_model.png">
-           <img alt="Templar Assassin Psionic Trap model.png" height="250" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/d/d9/Templar_Assassin_Psionic_Trap_model.png/250px-Templar_Assassin_Psionic_Trap_model.png?version=c4d496222f67e3d08b45fbcf3f2cbcf0" width="250"/>
+           <img alt="Templar Assassin Psionic Trap model.png" height="250" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/d/d9/Templar_Assassin_Psionic_Trap_model.png/250px-Templar_Assassin_Psionic_Trap_model.png?version=795e59324990e64c25a54b8c055271ce" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/d/d9/Templar_Assassin_Psionic_Trap_model.png/375px-Templar_Assassin_Psionic_Trap_model.png?version=795e59324990e64c25a54b8c055271ce 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/d/d9/Templar_Assassin_Psionic_Trap_model.png/500px-Templar_Assassin_Psionic_Trap_model.png?version=795e59324990e64c25a54b8c055271ce 2x" width="250"/>
           </a>
          </td>
         </tr>
         <tr>
-         <td class="images40pxwidth">
-          <div style="display:table; table-layout:fixed; width:100%;">
-           <div style="display:table-row">
-           </div>
-          </div>
+         <td style="border-top:1px solid black;">
          </td>
         </tr>
         <tr>
-         <th style="color:white;background-color:#64D74A" width="100%">
+         <td style="background:black;">
+          <a class="image" href="/File:Unknown_Unit_icon.png">
+           <img alt="Unknown Unit icon.png" height="72" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/5/5d/Unknown_Unit_icon.png?version=f2ed984345f683a8ee029ffdb5220380" width="128"/>
+          </a>
+         </td>
+        </tr>
+        <tr>
+         <th style="color:white; background-color:#64D74A;">
           Ward
          </th>
         </tr>
         <tr>
          <td>
-          <table class="oddrowsgray" style="width:100%; text-align:left; border-collapse:collapse; padding-left: 10px;">
+          <table class="oddrowsgray" style="width:100%; text-align:left; border-collapse:collapse;">
            <tr>
-            <td>
-             <b>
-              Level
-             </b>
-            </td>
+            <th>
+             Level
+            </th>
             <td>
              1
             </td>
            </tr>
            <tr>
-            <td>
-             <b>
-              Duration
-             </b>
-            </td>
-            <td>
+            <th>
+             Duration
+            </th>
+            <td style="white-space:normal;">
              Permanent
             </td>
            </tr>
            <tr>
-            <td>
-             <b>
-              <a href="/Health" title="Health">
-               Health
-              </a>
-             </b>
-            </td>
-            <td>
+            <th>
+             <a href="/Health" title="Health">
+              Health
+             </a>
+            </th>
+            <td style="white-space:normal;">
              100
             </td>
            </tr>
            <tr>
-            <td>
-             <b>
-              <a class="mw-redirect" href="/Health_regeneration" title="Health regeneration">
-               Health regeneration
-              </a>
-             </b>
-            </td>
+            <th>
+             <a class="mw-redirect" href="/Health_regeneration" title="Health regeneration">
+              Health regeneration
+             </a>
+            </th>
             <td>
              0.5
             </td>
            </tr>
            <tr>
-            <td>
-             <b>
-              <a href="/Armor" title="Armor">
-               Armor
-              </a>
-             </b>
-            </td>
-            <td>
+            <th>
+             <a href="/Armor" title="Armor">
+              Armor
+             </a>
+            </th>
+            <td style="white-space:normal;">
              <span id="tooltip" style="cursor:help; border-bottom:1px dotted;" title="Type: Basic">
               0
              </span>
             </td>
            </tr>
            <tr>
-            <td>
-             <b>
-              <a href="/Magic_resistance" title="Magic resistance">
-               Magic resistance
-              </a>
-             </b>
-            </td>
-            <td>
+            <th>
+             <a href="/Magic_resistance" title="Magic resistance">
+              Magic resistance
+             </a>
+            </th>
+            <td style="white-space:normal;">
              0 %
             </td>
            </tr>
            <tr>
-            <td>
-             <b>
-              Collision Size
-             </b>
-            </td>
+            <th>
+             <a href="/Collision_size" title="Collision size">
+              Collision size
+             </a>
+            </th>
             <td>
              8
             </td>
            </tr>
            <tr>
-            <td>
-             <b>
-              <a href="/Vision" title="Vision">
-               Vision Range
-              </a>
-             </b>
-            </td>
+            <th>
+             <a href="/Vision" title="Vision">
+              Vision range
+             </a>
+            </th>
             <td>
              <span id="tooltip" style="cursor:help; border-bottom:1px dotted;" title="During the day">
               400
@@ -1935,36 +1948,30 @@ document.head.appendChild(script);
             </td>
            </tr>
            <tr>
-            <td>
-             <b>
-              <a href="/Gold" title="Gold">
-               Bounty
-              </a>
-             </b>
-            </td>
-            <td>
+            <th>
+             <a href="/Gold" title="Gold">
+              Bounty
+             </a>
+            </th>
+            <td style="white-space:normal;">
              1
             </td>
            </tr>
            <tr>
-            <td>
-             <b>
-              <a href="/Experience" title="Experience">
-               Experience
-              </a>
-             </b>
-            </td>
+            <th>
+             <a href="/Experience" title="Experience">
+              Experience
+             </a>
+            </th>
             <td>
              0
             </td>
            </tr>
            <tr>
-            <td>
-             <b>
-              Notes
-             </b>
-            </td>
-            <td>
+            <th>
+             Notes
+            </th>
+            <td style="white-space:normal;">
              <a href="/Phased" title="Phased">
               Phased
              </a>
@@ -1975,23 +1982,21 @@ document.head.appendChild(script);
              <br/>
              <span style="white-space: nowrap;">
               <a href="/Psionic_Trap#Self_Trap" title="Psionic Trap#Self Trap">
-               <img alt="Self Trap (Psionic Trap) icon.png" height="16" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/7a/Self_Trap_%28Psionic_Trap%29_icon.png/16px-Self_Trap_%28Psionic_Trap%29_icon.png?version=77125133875fe4dd273671363af1cc68" width="16"/>
+               <img alt="Self Trap (Psionic Trap) icon.png" height="16" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/7a/Self_Trap_%28Psionic_Trap%29_icon.png/16px-Self_Trap_%28Psionic_Trap%29_icon.png?version=77125133875fe4dd273671363af1cc68" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/7a/Self_Trap_%28Psionic_Trap%29_icon.png/24px-Self_Trap_%28Psionic_Trap%29_icon.png?version=77125133875fe4dd273671363af1cc68 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/7a/Self_Trap_%28Psionic_Trap%29_icon.png/32px-Self_Trap_%28Psionic_Trap%29_icon.png?version=77125133875fe4dd273671363af1cc68 2x" width="16"/>
               </a>
               <a href="/Psionic_Trap#Self_Trap" title="Psionic Trap">
                Self Trap
               </a>
              </span>
-             ​
              <br/>
              <span style="white-space: nowrap;">
               <a href="/Psionic_Trap#Invisibility" title="Psionic Trap#Invisibility">
-               <img alt="Unknown icon.png" height="16" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/6/6b/Unknown_icon.png/16px-Unknown_icon.png?version=3523a16843e1e88d7848931decf09aaf" width="16"/>
+               <img alt="Unknown icon.png" height="16" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/6/6b/Unknown_icon.png/16px-Unknown_icon.png?version=3523a16843e1e88d7848931decf09aaf" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/6/6b/Unknown_icon.png/24px-Unknown_icon.png?version=3523a16843e1e88d7848931decf09aaf 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/6/6b/Unknown_icon.png/32px-Unknown_icon.png?version=3523a16843e1e88d7848931decf09aaf 2x" width="16"/>
               </a>
               <a href="/Psionic_Trap#Invisibility" title="Psionic Trap">
                Invisibility
               </a>
              </span>
-             ​
             </td>
            </tr>
           </table>
@@ -2008,7 +2013,7 @@ document.head.appendChild(script);
           Psionic Trap
           <div style="float:right;">
            <a href="/Spell_Immunity" title="Does not pierce spell immunity.">
-            <img alt="Does not pierce spell immunity." height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/9/9c/Spell_immunity_block_symbol.png/20px-Spell_immunity_block_symbol.png?version=7588eb7155b0b0ba78ae6c948c459858" style="vertical-align: text-top" width="20"/>
+            <img alt="Does not pierce spell immunity." height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/9/9c/Spell_immunity_block_symbol.png/20px-Spell_immunity_block_symbol.png?version=7588eb7155b0b0ba78ae6c948c459858" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/9/9c/Spell_immunity_block_symbol.png/30px-Spell_immunity_block_symbol.png?version=7588eb7155b0b0ba78ae6c948c459858 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/9/9c/Spell_immunity_block_symbol.png/40px-Spell_immunity_block_symbol.png?version=7588eb7155b0b0ba78ae6c948c459858 2x" style="vertical-align: text-top" width="20"/>
            </a>
            <span style="position:relative; top:-2px;">
             <a class="sm2_button" href="https://hydra-media.cursecdn.com/dota2.gamepedia.com/e/e0/Psionic_Trap.mp3" title="Play">
@@ -2072,39 +2077,57 @@ document.head.appendChild(script);
            <b>
             Cast Range
            </b>
-           : 2000
+           :
+           <span style="white-space: nowrap">
+            2000
+           </span>
           </div>
           <div>
            <b>
             Maximum Traps
            </b>
-           : 5/8/11
+           :
+           <span style="white-space: nowrap">
+            5/8/11
+           </span>
           </div>
           <div>
            <b>
             Min Move Speed Slow
            </b>
-           : 30%
+           :
+           <span style="white-space: nowrap">
+            30%
+           </span>
           </div>
           <div>
            <b>
             Max Move Speed Slow
            </b>
-           : 60%
+           :
+           <span style="white-space: nowrap">
+            60%
+           </span>
           </div>
           <div>
            <b>
             Slow Duration
            </b>
-           : 5
+           :
+           <span style="white-space: nowrap">
+            5
+           </span>
           </div>
           <div>
            <b>
             Trap Duration
            </b>
-           : Permanent
+           :
+           <span style="white-space: nowrap">
+            Permanent
+           </span>
           </div>
-          <div style="display: inline-block; margin: 8px 0px 0px 50px; width: 190px; vertical-align: top;">
+          <div style="display: inline-block; margin: 8px 0px 0px 50px; width: 190px; vertical-align: top; word-wrap: break-word;">
            <span style="position: relative; top: -2px;">
             <a href="/Cooldown" title="Cooldown">
              <img alt="Cooldown symbol.png" height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/b/b7/Cooldown_symbol.png?version=7429ed9baf0f121e6ab3324bfdfad708" style="vertical-align: text-top" width="20"/>
@@ -2112,7 +2135,7 @@ document.head.appendChild(script);
            </span>
            11/8/5
           </div>
-          <div style="display: inline-block; margin: 8px 0px 0px; width: 190px; vertical-align: top;">
+          <div style="display: inline-block; margin: 8px 0px 0px; width: 190px; vertical-align: top; word-wrap: break-word;">
            <span style="position: relative; top: -2px;">
             <a href="/Mana" title="Mana">
              <img alt="Mana symbol.png" height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/f/f3/Mana_symbol.png?version=a81185ac577f9b52f2df06be91b6600c" style="vertical-align: text-top" width="20"/>
@@ -2125,19 +2148,21 @@ document.head.appendChild(script);
           <div style="margin-left: 50px;">
            <span style="position: relative; top: -2px;">
             <a href="/Spell_Immunity" title="Does not pierce spell immunity.">
-             <img alt="Does not pierce spell immunity." height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/9/9c/Spell_immunity_block_symbol.png/20px-Spell_immunity_block_symbol.png?version=7588eb7155b0b0ba78ae6c948c459858" style="vertical-align: text-top" width="20"/>
+             <img alt="Does not pierce spell immunity." height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/9/9c/Spell_immunity_block_symbol.png/20px-Spell_immunity_block_symbol.png?version=7588eb7155b0b0ba78ae6c948c459858" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/9/9c/Spell_immunity_block_symbol.png/30px-Spell_immunity_block_symbol.png?version=7588eb7155b0b0ba78ae6c948c459858 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/9/9c/Spell_immunity_block_symbol.png/40px-Spell_immunity_block_symbol.png?version=7588eb7155b0b0ba78ae6c948c459858 2x" style="vertical-align: text-top" width="20"/>
             </a>
            </span>
            Slow persists if debuff was placed before spell immunity and when not dispelled.
           </div>
           <div style="margin-top: 10px;">
            <b>
-            Modifiers
+            <span id="tooltip" style="cursor:help; border-bottom:1px dotted;" title="The displayed names are the intern names of the modifiers. Do not change them even if they don't match the ability name.">
+             Modifiers
+            </span>
            </b>
           </div>
           <div style="font-size: 85%; margin-left: 10px;">
            <div>
-            <img alt="Debuff" height="16" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/1/1a/Modifier_debuff_symbol.png/16px-Modifier_debuff_symbol.png?version=5684dfbf37c3058c80b8495a4d0dc346" style="vertical-align: text-top" title="Debuff" width="16"/>
+            <img alt="Debuff" height="16" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/1/1a/Modifier_debuff_symbol.png/16px-Modifier_debuff_symbol.png?version=5684dfbf37c3058c80b8495a4d0dc346" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/1/1a/Modifier_debuff_symbol.png/24px-Modifier_debuff_symbol.png?version=5684dfbf37c3058c80b8495a4d0dc346 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/1/1a/Modifier_debuff_symbol.png/32px-Modifier_debuff_symbol.png?version=5684dfbf37c3058c80b8495a4d0dc346 2x" style="vertical-align: text-top" title="Debuff" width="16"/>
             <span style="color:#631F1F;">
              <b>
               Trap Slow:
@@ -2215,8 +2240,6 @@ document.head.appendChild(script);
        </div>
        <p>
         <br/>
-       </p>
-       <p>
         <span id="Trap">
         </span>
        </p>
@@ -2292,15 +2315,21 @@ document.head.appendChild(script);
            <b>
             Trap Search Radius
            </b>
-           : Global
+           :
+           <span style="white-space: nowrap">
+            Global
+           </span>
           </div>
           <div>
            <b>
             Slow Radius
            </b>
-           : 400
+           :
+           <span style="white-space: nowrap">
+            400
+           </span>
           </div>
-          <div style="display: inline-block; margin: 8px 0px 0px 50px; width: 370px; vertical-align: top;">
+          <div style="display: inline-block; margin: 8px 0px 0px 50px; width: 370px; vertical-align: top; word-wrap: break-word;">
            <span style="position: relative; top: -2px;">
             <a href="/Cooldown" title="Cooldown">
              <img alt="Cooldown symbol.png" height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/b/b7/Cooldown_symbol.png?version=7429ed9baf0f121e6ab3324bfdfad708" style="vertical-align: text-top" width="20"/>
@@ -2308,7 +2337,7 @@ document.head.appendChild(script);
            </span>
            0.5
           </div>
-          <div style="display: inline-block; margin: 8px 0px 0px; width: 10px; vertical-align: top;">
+          <div style="display: inline-block; margin: 8px 0px 0px; width: 10px; vertical-align: top; word-wrap: break-word;">
           </div>
          </div>
         </div>
@@ -2324,13 +2353,13 @@ document.head.appendChild(script);
            Trap is unlocked when
            <span style="white-space: nowrap;">
             <a href="/Templar_Assassin#Psionic_Trap" title="Templar Assassin#Psionic Trap">
-             <img alt="Psionic Trap icon.png" height="16" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/a/a7/Psionic_Trap_icon.png/16px-Psionic_Trap_icon.png?version=f593c170694414478fa2f7e5dba6b250" width="16"/>
+             <img alt="Psionic Trap icon.png" height="16" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/a/a7/Psionic_Trap_icon.png/16px-Psionic_Trap_icon.png?version=f593c170694414478fa2f7e5dba6b250" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/a/a7/Psionic_Trap_icon.png/24px-Psionic_Trap_icon.png?version=f593c170694414478fa2f7e5dba6b250 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/a/a7/Psionic_Trap_icon.png/32px-Psionic_Trap_icon.png?version=f593c170694414478fa2f7e5dba6b250 2x" width="16"/>
             </a>
             <a href="/Templar_Assassin#Psionic_Trap" title="Templar Assassin">
              Psionic Trap
             </a>
            </span>
-           ​ is learned.
+           is learned.
           </li>
          </ul>
          <ul>
@@ -2373,14 +2402,8 @@ document.head.appendChild(script);
          <span class="mw-editsection-bracket">
           [
          </span>
-         <a class="mw-editsection-visualeditor" href="/index.php?title=Templar_Assassin&amp;veaction=edit&amp;vesection=3" title="Edit section: Psionic Trap ability">
-          edit
-         </a>
-         <span class="mw-editsection-divider">
-          |
-         </span>
          <a href="/index.php?title=Templar_Assassin&amp;action=edit&amp;section=3" title="Edit section: Psionic Trap ability">
-          edit source
+          edit
          </a>
          <span class="mw-editsection-bracket">
           ]
@@ -2463,9 +2486,12 @@ document.head.appendChild(script);
            <b>
             Slow Radius
            </b>
-           : 400
+           :
+           <span style="white-space: nowrap">
+            400
+           </span>
           </div>
-          <div style="display: inline-block; margin: 8px 0px 0px 50px; width: 370px; vertical-align: top;">
+          <div style="display: inline-block; margin: 8px 0px 0px 50px; width: 370px; vertical-align: top; word-wrap: break-word;">
            <span style="position: relative; top: -2px;">
             <a href="/Cooldown" title="Cooldown">
              <img alt="Cooldown symbol.png" height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/b/b7/Cooldown_symbol.png?version=7429ed9baf0f121e6ab3324bfdfad708" style="vertical-align: text-top" width="20"/>
@@ -2473,7 +2499,7 @@ document.head.appendChild(script);
            </span>
            0.5
           </div>
-          <div style="display: inline-block; margin: 8px 0px 0px; width: 10px; vertical-align: top;">
+          <div style="display: inline-block; margin: 8px 0px 0px; width: 10px; vertical-align: top; word-wrap: break-word;">
           </div>
          </div>
         </div>
@@ -2511,14 +2537,8 @@ document.head.appendChild(script);
          <span class="mw-editsection-bracket">
           [
          </span>
-         <a class="mw-editsection-visualeditor" href="/index.php?title=Templar_Assassin&amp;veaction=edit&amp;vesection=4" title="Edit section: Talents">
-          edit
-         </a>
-         <span class="mw-editsection-divider">
-          |
-         </span>
          <a href="/index.php?title=Templar_Assassin&amp;action=edit&amp;section=4" title="Edit section: Talents">
-          edit source
+          edit
          </a>
          <span class="mw-editsection-bracket">
           ]
@@ -2544,13 +2564,13 @@ document.head.appendChild(script);
             +3
             <span style="white-space: nowrap;">
              <a href="/Templar_Assassin#Refraction" title="Templar Assassin#Refraction">
-              <img alt="Refraction icon.png" height="16" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/f/f9/Refraction_icon.png/16px-Refraction_icon.png?version=e1be03a2e0c0e0f32232d500dfa00a92" width="16"/>
+              <img alt="Refraction icon.png" height="16" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/f/f9/Refraction_icon.png/16px-Refraction_icon.png?version=e1be03a2e0c0e0f32232d500dfa00a92" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/f/f9/Refraction_icon.png/24px-Refraction_icon.png?version=e1be03a2e0c0e0f32232d500dfa00a92 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/f/f9/Refraction_icon.png/32px-Refraction_icon.png?version=e1be03a2e0c0e0f32232d500dfa00a92 2x" width="16"/>
              </a>
              <a href="/Templar_Assassin#Refraction" title="Templar Assassin">
               Refraction
              </a>
             </span>
-            ​ Instances
+            Instances
            </td>
            <td style="padding: 10px; background-color: #0c2a5a">
             <span style="color: white; font-size:13pt">
@@ -2560,7 +2580,16 @@ document.head.appendChild(script);
             </span>
            </td>
            <td width="240">
-            -30s Respawn Time
+            -8
+            <span style="white-space: nowrap;">
+             <a href="/Templar_Assassin#Meld" title="Templar Assassin#Meld">
+              <img alt="Meld icon.png" height="16" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/4/4d/Meld_icon.png/16px-Meld_icon.png?version=b73e5d718a42cad60a70c3f0898bd992" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/4/4d/Meld_icon.png/24px-Meld_icon.png?version=b73e5d718a42cad60a70c3f0898bd992 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/4/4d/Meld_icon.png/32px-Meld_icon.png?version=b73e5d718a42cad60a70c3f0898bd992 2x" width="16"/>
+             </a>
+             <a href="/Templar_Assassin#Meld" title="Templar Assassin">
+              Meld
+             </a>
+            </span>
+            Armor Reduction
            </td>
           </tr>
           <tr>
@@ -2575,7 +2604,7 @@ document.head.appendChild(script);
             </span>
            </td>
            <td width="240">
-            +250 Health
+            +275 Health
            </td>
           </tr>
           <tr>
@@ -2595,7 +2624,7 @@ document.head.appendChild(script);
           </tr>
           <tr>
            <td width="240">
-            +15 Movement Speed
+            +20 Movement Speed
            </td>
            <td style="padding: 10px; background-color: #3578e3">
             <span style="color: white; font-size:13pt">
@@ -2629,15 +2658,6 @@ document.head.appendChild(script);
            The attack damage is added as bonus attack damage, and therefore does not benefit illusions.
           </li>
          </ul>
-         <ul>
-          <li>
-           Gold granted from the talent is
-           <a class="mw-redirect" href="/Unreliable_gold" title="Unreliable gold">
-            unreliable gold
-           </a>
-           .
-          </li>
-         </ul>
         </div>
        </div>
       </div>
@@ -2655,14 +2675,8 @@ document.head.appendChild(script);
   <span class="mw-editsection-bracket">
    [
   </span>
-  <a class="mw-editsection-visualeditor" href="/index.php?title=Templar_Assassin&amp;veaction=edit&amp;vesection=5" title="Edit section: Recommended items">
-   edit
-  </a>
-  <span class="mw-editsection-divider">
-   |
-  </span>
   <a href="/index.php?title=Templar_Assassin&amp;action=edit&amp;section=5" title="Edit section: Recommended items">
-   edit source
+   edit
   </a>
   <span class="mw-editsection-bracket">
    ]
@@ -2678,7 +2692,7 @@ document.head.appendChild(script);
  <li>
   <span style="white-space:nowrap">
    <a href="/Tango" title="Tango">
-    <img alt="Tango icon.png" height="22" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/f/fd/Tango_icon.png/30px-Tango_icon.png?version=6ddcac461cbd98cc58e99a5f70d04a57" width="30"/>
+    <img alt="Tango icon.png" height="22" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/f/fd/Tango_icon.png/30px-Tango_icon.png?version=6ddcac461cbd98cc58e99a5f70d04a57" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/f/fd/Tango_icon.png/45px-Tango_icon.png?version=6ddcac461cbd98cc58e99a5f70d04a57 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/f/fd/Tango_icon.png/60px-Tango_icon.png?version=6ddcac461cbd98cc58e99a5f70d04a57 2x" width="30"/>
    </a>
    <a href="/Tango" title="Tango">
     Tango
@@ -2689,7 +2703,7 @@ document.head.appendChild(script);
  <li>
   <span style="white-space:nowrap">
    <a href="/Healing_Salve" title="Healing Salve">
-    <img alt="Healing Salve icon.png" height="22" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/3/36/Healing_Salve_icon.png/30px-Healing_Salve_icon.png?version=923f3249add1829368656d8a736b8545" width="30"/>
+    <img alt="Healing Salve icon.png" height="22" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/3/36/Healing_Salve_icon.png/30px-Healing_Salve_icon.png?version=923f3249add1829368656d8a736b8545" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/3/36/Healing_Salve_icon.png/45px-Healing_Salve_icon.png?version=923f3249add1829368656d8a736b8545 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/3/36/Healing_Salve_icon.png/60px-Healing_Salve_icon.png?version=923f3249add1829368656d8a736b8545 2x" width="30"/>
    </a>
    <a href="/Healing_Salve" title="Healing Salve">
     Healing Salve
@@ -2700,7 +2714,7 @@ document.head.appendChild(script);
  <li>
   <span style="white-space:nowrap">
    <a href="/Clarity" title="Clarity">
-    <img alt="Clarity icon.png" height="22" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/77/Clarity_icon.png/30px-Clarity_icon.png?version=90ef2ce15bfaac1794f60d51aa5183a1" width="30"/>
+    <img alt="Clarity icon.png" height="22" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/77/Clarity_icon.png/30px-Clarity_icon.png?version=90ef2ce15bfaac1794f60d51aa5183a1" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/77/Clarity_icon.png/45px-Clarity_icon.png?version=90ef2ce15bfaac1794f60d51aa5183a1 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/77/Clarity_icon.png/60px-Clarity_icon.png?version=90ef2ce15bfaac1794f60d51aa5183a1 2x" width="30"/>
    </a>
    <a href="/Clarity" title="Clarity">
     Clarity
@@ -2711,7 +2725,7 @@ document.head.appendChild(script);
  <li>
   <span style="white-space:nowrap">
    <a href="/Iron_Branch" title="Iron Branch">
-    <img alt="Iron Branch icon.png" height="22" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/a/a3/Iron_Branch_icon.png/30px-Iron_Branch_icon.png?version=fe283e2ed6e68366cffdf0a80ac1c5be" width="30"/>
+    <img alt="Iron Branch icon.png" height="22" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/a/a3/Iron_Branch_icon.png/30px-Iron_Branch_icon.png?version=fe283e2ed6e68366cffdf0a80ac1c5be" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/a/a3/Iron_Branch_icon.png/45px-Iron_Branch_icon.png?version=fe283e2ed6e68366cffdf0a80ac1c5be 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/a/a3/Iron_Branch_icon.png/60px-Iron_Branch_icon.png?version=fe283e2ed6e68366cffdf0a80ac1c5be 2x" width="30"/>
    </a>
    <a href="/Iron_Branch" title="Iron Branch">
     Iron Branch
@@ -2720,7 +2734,7 @@ document.head.appendChild(script);
   es give an overall cheap damage, health and mana boost and can be built into a
   <span style="white-space:nowrap">
    <a href="/Magic_Wand" title="Magic Wand">
-    <img alt="Magic Wand icon.png" height="15" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/74/Magic_Wand_icon.png/20px-Magic_Wand_icon.png?version=f901beee9f4fda615820b547b0d11fc8" width="20"/>
+    <img alt="Magic Wand icon.png" height="15" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/74/Magic_Wand_icon.png/20px-Magic_Wand_icon.png?version=f901beee9f4fda615820b547b0d11fc8" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/74/Magic_Wand_icon.png/30px-Magic_Wand_icon.png?version=f901beee9f4fda615820b547b0d11fc8 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/74/Magic_Wand_icon.png/40px-Magic_Wand_icon.png?version=f901beee9f4fda615820b547b0d11fc8 2x" width="20"/>
    </a>
    <a href="/Magic_Wand" title="Magic Wand">
     Magic Wand
@@ -2738,7 +2752,7 @@ document.head.appendChild(script);
  <li>
   <span style="white-space:nowrap">
    <a href="/Boots_of_Speed" title="Boots of Speed">
-    <img alt="Boots of Speed icon.png" height="22" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/9/97/Boots_of_Speed_icon.png/30px-Boots_of_Speed_icon.png?version=9321885327b320054df62171f8f89c2b" width="30"/>
+    <img alt="Boots of Speed icon.png" height="22" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/9/97/Boots_of_Speed_icon.png/30px-Boots_of_Speed_icon.png?version=9321885327b320054df62171f8f89c2b" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/9/97/Boots_of_Speed_icon.png/45px-Boots_of_Speed_icon.png?version=9321885327b320054df62171f8f89c2b 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/9/97/Boots_of_Speed_icon.png/60px-Boots_of_Speed_icon.png?version=9321885327b320054df62171f8f89c2b 2x" width="30"/>
    </a>
    <a href="/Boots_of_Speed" title="Boots of Speed">
     Boots of Speed
@@ -2749,7 +2763,7 @@ document.head.appendChild(script);
  <li>
   <span style="white-space:nowrap">
    <a href="/Bottle" title="Bottle">
-    <img alt="Bottle (Full) icon.png" height="22" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/f/fa/Bottle_%28Full%29_icon.png/30px-Bottle_%28Full%29_icon.png?version=89525519f7fa30d0f76eb68d32f8df0a" width="30"/>
+    <img alt="Bottle (Full) icon.png" height="22" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/f/fa/Bottle_%28Full%29_icon.png/30px-Bottle_%28Full%29_icon.png?version=89525519f7fa30d0f76eb68d32f8df0a" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/f/fa/Bottle_%28Full%29_icon.png/45px-Bottle_%28Full%29_icon.png?version=89525519f7fa30d0f76eb68d32f8df0a 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/f/fa/Bottle_%28Full%29_icon.png/60px-Bottle_%28Full%29_icon.png?version=89525519f7fa30d0f76eb68d32f8df0a 2x" width="30"/>
    </a>
    <a href="/Bottle" title="Bottle">
     Bottle
@@ -2760,16 +2774,16 @@ document.head.appendChild(script);
  <li>
   <span style="white-space:nowrap">
    <a href="/Blight_Stone" title="Blight Stone">
-    <img alt="Blight Stone icon.png" height="22" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/9/98/Blight_Stone_icon.png/30px-Blight_Stone_icon.png?version=03dc575dc7be2dfce1a6ef1433dd706d" width="30"/>
+    <img alt="Blight Stone icon.png" height="22" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/9/98/Blight_Stone_icon.png/30px-Blight_Stone_icon.png?version=03dc575dc7be2dfce1a6ef1433dd706d" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/9/98/Blight_Stone_icon.png/45px-Blight_Stone_icon.png?version=03dc575dc7be2dfce1a6ef1433dd706d 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/9/98/Blight_Stone_icon.png/60px-Blight_Stone_icon.png?version=03dc575dc7be2dfce1a6ef1433dd706d 2x" width="30"/>
    </a>
    <a href="/Blight_Stone" title="Blight Stone">
     Blight Stone
    </a>
   </span>
-  is very cost-effectivce early game item and will be upgraded later to
+  is very cost-effective early game item and will be upgraded later to
   <span style="white-space:nowrap">
    <a href="/Desolator" title="Desolator">
-    <img alt="Desolator icon.png" height="15" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/8/84/Desolator_icon.png/20px-Desolator_icon.png?version=d788075551de814dbb2d26d0cfc40335" width="20"/>
+    <img alt="Desolator icon.png" height="15" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/8/84/Desolator_icon.png/20px-Desolator_icon.png?version=d788075551de814dbb2d26d0cfc40335" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/8/84/Desolator_icon.png/30px-Desolator_icon.png?version=d788075551de814dbb2d26d0cfc40335 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/8/84/Desolator_icon.png/40px-Desolator_icon.png?version=d788075551de814dbb2d26d0cfc40335 2x" width="20"/>
    </a>
    <a href="/Desolator" title="Desolator">
     Desolator
@@ -2780,7 +2794,7 @@ document.head.appendChild(script);
  <li>
   <span style="white-space:nowrap">
    <a href="/Magic_Stick" title="Magic Stick">
-    <img alt="Magic Stick icon.png" height="22" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/5/59/Magic_Stick_icon.png/30px-Magic_Stick_icon.png?version=a5e1eacc06e3b794a3e54f965acf4d7c" width="30"/>
+    <img alt="Magic Stick icon.png" height="22" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/5/59/Magic_Stick_icon.png/30px-Magic_Stick_icon.png?version=a5e1eacc06e3b794a3e54f965acf4d7c" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/5/59/Magic_Stick_icon.png/45px-Magic_Stick_icon.png?version=a5e1eacc06e3b794a3e54f965acf4d7c 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/5/59/Magic_Stick_icon.png/60px-Magic_Stick_icon.png?version=a5e1eacc06e3b794a3e54f965acf4d7c 2x" width="30"/>
    </a>
    <a href="/Magic_Stick" title="Magic Stick">
     Magic Stick
@@ -2798,7 +2812,7 @@ document.head.appendChild(script);
  <li>
   <span style="white-space:nowrap">
    <a href="/Power_Treads" title="Power Treads">
-    <img alt="Power Treads icon.png" height="22" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/6/6b/Power_Treads_icon.png/30px-Power_Treads_icon.png?version=8a0928e0797b87663a27ee60823e5b18" width="30"/>
+    <img alt="Power Treads icon.png" height="22" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/6/6b/Power_Treads_icon.png/30px-Power_Treads_icon.png?version=8a0928e0797b87663a27ee60823e5b18" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/6/6b/Power_Treads_icon.png/45px-Power_Treads_icon.png?version=8a0928e0797b87663a27ee60823e5b18 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/6/6b/Power_Treads_icon.png/60px-Power_Treads_icon.png?version=8a0928e0797b87663a27ee60823e5b18 2x" width="30"/>
    </a>
    <a href="/Power_Treads" title="Power Treads">
     Power Treads
@@ -2807,7 +2821,7 @@ document.head.appendChild(script);
   are a good choice of boots upgrade for Templar Assassin, as it provides a bit of everything she needs: health, damage, attack speed and mana. If an aggressive approach is desired,
   <span style="white-space:nowrap">
    <a href="/Phase_Boots" title="Phase Boots">
-    <img alt="Phase Boots icon.png" height="15" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/9/98/Phase_Boots_icon.png/20px-Phase_Boots_icon.png?version=2035799e555f4a5ce0b58224c4a8dbcd" width="20"/>
+    <img alt="Phase Boots icon.png" height="15" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/9/98/Phase_Boots_icon.png/20px-Phase_Boots_icon.png?version=2035799e555f4a5ce0b58224c4a8dbcd" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/9/98/Phase_Boots_icon.png/30px-Phase_Boots_icon.png?version=2035799e555f4a5ce0b58224c4a8dbcd 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/9/98/Phase_Boots_icon.png/40px-Phase_Boots_icon.png?version=2035799e555f4a5ce0b58224c4a8dbcd 2x" width="20"/>
    </a>
    <a href="/Phase_Boots" title="Phase Boots">
     Phase Boots
@@ -2818,7 +2832,7 @@ document.head.appendChild(script);
  <li>
   <span style="white-space:nowrap">
    <a href="/Magic_Wand" title="Magic Wand">
-    <img alt="Magic Wand icon.png" height="22" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/74/Magic_Wand_icon.png/30px-Magic_Wand_icon.png?version=4a31a7c26c0a3e0338aa299b53df8d24" width="30"/>
+    <img alt="Magic Wand icon.png" height="22" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/74/Magic_Wand_icon.png/30px-Magic_Wand_icon.png?version=4a31a7c26c0a3e0338aa299b53df8d24" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/74/Magic_Wand_icon.png/45px-Magic_Wand_icon.png?version=4a31a7c26c0a3e0338aa299b53df8d24 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/74/Magic_Wand_icon.png/60px-Magic_Wand_icon.png?version=4a31a7c26c0a3e0338aa299b53df8d24 2x" width="30"/>
    </a>
    <a href="/Magic_Wand" title="Magic Wand">
     Magic Wand
@@ -2829,7 +2843,7 @@ document.head.appendChild(script);
  <li>
   <span style="white-space:nowrap">
    <a href="/Blink_Dagger" title="Blink Dagger">
-    <img alt="Blink Dagger icon.png" height="22" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/4/4c/Blink_Dagger_icon.png/30px-Blink_Dagger_icon.png?version=416e042e065e2f999cdda12d1208a97a" width="30"/>
+    <img alt="Blink Dagger icon.png" height="22" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/4/4c/Blink_Dagger_icon.png/30px-Blink_Dagger_icon.png?version=416e042e065e2f999cdda12d1208a97a" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/4/4c/Blink_Dagger_icon.png/45px-Blink_Dagger_icon.png?version=416e042e065e2f999cdda12d1208a97a 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/4/4c/Blink_Dagger_icon.png/60px-Blink_Dagger_icon.png?version=416e042e065e2f999cdda12d1208a97a 2x" width="30"/>
    </a>
    <a href="/Blink_Dagger" title="Blink Dagger">
     Blink Dagger
@@ -2844,7 +2858,7 @@ document.head.appendChild(script);
  <li>
   <span style="white-space:nowrap">
    <a href="/Desolator" title="Desolator">
-    <img alt="Desolator icon.png" height="22" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/8/84/Desolator_icon.png/30px-Desolator_icon.png?version=cd109e18dbfe71e90f00b54c7931c6c8" width="30"/>
+    <img alt="Desolator icon.png" height="22" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/8/84/Desolator_icon.png/30px-Desolator_icon.png?version=cd109e18dbfe71e90f00b54c7931c6c8" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/8/84/Desolator_icon.png/45px-Desolator_icon.png?version=cd109e18dbfe71e90f00b54c7931c6c8 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/8/84/Desolator_icon.png/60px-Desolator_icon.png?version=cd109e18dbfe71e90f00b54c7931c6c8 2x" width="30"/>
    </a>
    <a href="/Desolator" title="Desolator">
     Desolator
@@ -2855,7 +2869,7 @@ document.head.appendChild(script);
  <li>
   <span style="white-space:nowrap">
    <a href="/Town_Portal_Scroll" title="Town Portal Scroll">
-    <img alt="Town Portal Scroll icon.png" height="22" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/4/46/Town_Portal_Scroll_icon.png/30px-Town_Portal_Scroll_icon.png?version=9ea24933254e81afb8e601a9613f5244" width="30"/>
+    <img alt="Town Portal Scroll icon.png" height="22" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/4/46/Town_Portal_Scroll_icon.png/30px-Town_Portal_Scroll_icon.png?version=9ea24933254e81afb8e601a9613f5244" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/4/46/Town_Portal_Scroll_icon.png/45px-Town_Portal_Scroll_icon.png?version=9ea24933254e81afb8e601a9613f5244 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/4/46/Town_Portal_Scroll_icon.png/60px-Town_Portal_Scroll_icon.png?version=9ea24933254e81afb8e601a9613f5244 2x" width="30"/>
    </a>
    <a href="/Town_Portal_Scroll" title="Town Portal Scroll">
     Town Portal Scroll
@@ -2864,7 +2878,7 @@ document.head.appendChild(script);
   s are an item every hero should carry around, especially aggressive heroes like Templar Assassin. Combined with a
   <span style="white-space:nowrap">
    <a href="/Blink_Dagger" title="Blink Dagger">
-    <img alt="Blink Dagger icon.png" height="15" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/4/4c/Blink_Dagger_icon.png/20px-Blink_Dagger_icon.png?version=5e5c77df754652176e13ef200a71af7a" width="20"/>
+    <img alt="Blink Dagger icon.png" height="15" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/4/4c/Blink_Dagger_icon.png/20px-Blink_Dagger_icon.png?version=5e5c77df754652176e13ef200a71af7a" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/4/4c/Blink_Dagger_icon.png/30px-Blink_Dagger_icon.png?version=5e5c77df754652176e13ef200a71af7a 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/4/4c/Blink_Dagger_icon.png/40px-Blink_Dagger_icon.png?version=5e5c77df754652176e13ef200a71af7a 2x" width="20"/>
    </a>
    <a href="/Blink_Dagger" title="Blink Dagger">
     Blink Dagger
@@ -2882,7 +2896,7 @@ document.head.appendChild(script);
  <li>
   <span style="white-space:nowrap">
    <a href="/Black_King_Bar" title="Black King Bar">
-    <img alt="Black King Bar icon.png" height="22" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/72/Black_King_Bar_icon.png/30px-Black_King_Bar_icon.png?version=f8be2cb8d6d3f6716a950594ce082d80" width="30"/>
+    <img alt="Black King Bar icon.png" height="22" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/72/Black_King_Bar_icon.png/30px-Black_King_Bar_icon.png?version=f8be2cb8d6d3f6716a950594ce082d80" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/72/Black_King_Bar_icon.png/45px-Black_King_Bar_icon.png?version=f8be2cb8d6d3f6716a950594ce082d80 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/72/Black_King_Bar_icon.png/60px-Black_King_Bar_icon.png?version=f8be2cb8d6d3f6716a950594ce082d80 2x" width="30"/>
    </a>
    <a href="/Black_King_Bar" title="Black King Bar">
     Black King Bar
@@ -2893,7 +2907,7 @@ document.head.appendChild(script);
  <li>
   <span style="white-space:nowrap">
    <a href="/Assault_Cuirass" title="Assault Cuirass">
-    <img alt="Assault Cuirass icon.png" height="22" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/d/d3/Assault_Cuirass_icon.png/30px-Assault_Cuirass_icon.png?version=32dcc67eef4d3d22b768f37344ca46ee" width="30"/>
+    <img alt="Assault Cuirass icon.png" height="22" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/d/d3/Assault_Cuirass_icon.png/30px-Assault_Cuirass_icon.png?version=32dcc67eef4d3d22b768f37344ca46ee" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/d/d3/Assault_Cuirass_icon.png/45px-Assault_Cuirass_icon.png?version=32dcc67eef4d3d22b768f37344ca46ee 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/d/d3/Assault_Cuirass_icon.png/60px-Assault_Cuirass_icon.png?version=32dcc67eef4d3d22b768f37344ca46ee 2x" width="30"/>
    </a>
    <a href="/Assault_Cuirass" title="Assault Cuirass">
     Assault Cuirass
@@ -2902,7 +2916,7 @@ document.head.appendChild(script);
   , similar to
   <span style="white-space:nowrap">
    <a href="/Desolator" title="Desolator">
-    <img alt="Desolator icon.png" height="15" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/8/84/Desolator_icon.png/20px-Desolator_icon.png?version=d788075551de814dbb2d26d0cfc40335" width="20"/>
+    <img alt="Desolator icon.png" height="15" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/8/84/Desolator_icon.png/20px-Desolator_icon.png?version=d788075551de814dbb2d26d0cfc40335" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/8/84/Desolator_icon.png/30px-Desolator_icon.png?version=d788075551de814dbb2d26d0cfc40335 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/8/84/Desolator_icon.png/40px-Desolator_icon.png?version=d788075551de814dbb2d26d0cfc40335 2x" width="20"/>
    </a>
    <a href="/Desolator" title="Desolator">
     Desolator
@@ -2913,7 +2927,7 @@ document.head.appendChild(script);
  <li>
   <span style="white-space:nowrap">
    <a href="/Heart_of_Tarrasque" title="Heart of Tarrasque">
-    <img alt="Heart of Tarrasque icon.png" height="22" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/75/Heart_of_Tarrasque_icon.png/30px-Heart_of_Tarrasque_icon.png?version=19b3d1e73774fa01327db4bf3d79b92f" width="30"/>
+    <img alt="Heart of Tarrasque icon.png" height="22" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/75/Heart_of_Tarrasque_icon.png/30px-Heart_of_Tarrasque_icon.png?version=19b3d1e73774fa01327db4bf3d79b92f" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/75/Heart_of_Tarrasque_icon.png/45px-Heart_of_Tarrasque_icon.png?version=19b3d1e73774fa01327db4bf3d79b92f 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/75/Heart_of_Tarrasque_icon.png/60px-Heart_of_Tarrasque_icon.png?version=19b3d1e73774fa01327db4bf3d79b92f 2x" width="30"/>
    </a>
    <a href="/Heart_of_Tarrasque" title="Heart of Tarrasque">
     Heart of Tarrasque
@@ -2924,7 +2938,7 @@ document.head.appendChild(script);
  <li>
   <span style="white-space:nowrap">
    <a href="/Butterfly" title="Butterfly">
-    <img alt="Butterfly icon.png" height="22" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/2/28/Butterfly_icon.png/30px-Butterfly_icon.png?version=f1076a78206994a4de8f684e56ff138a" width="30"/>
+    <img alt="Butterfly icon.png" height="22" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/2/28/Butterfly_icon.png/30px-Butterfly_icon.png?version=f1076a78206994a4de8f684e56ff138a" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/2/28/Butterfly_icon.png/45px-Butterfly_icon.png?version=f1076a78206994a4de8f684e56ff138a 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/2/28/Butterfly_icon.png/60px-Butterfly_icon.png?version=f1076a78206994a4de8f684e56ff138a 2x" width="30"/>
    </a>
    <a href="/Butterfly" title="Butterfly">
     Butterfly
@@ -2935,7 +2949,7 @@ document.head.appendChild(script);
  <li>
   <span style="white-space:nowrap">
    <a href="/Manta_Style" title="Manta Style">
-    <img alt="Manta Style icon.png" height="22" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/8/84/Manta_Style_icon.png/30px-Manta_Style_icon.png?version=7171fd71a68fec2d5b0114f337a56602" width="30"/>
+    <img alt="Manta Style icon.png" height="22" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/8/84/Manta_Style_icon.png/30px-Manta_Style_icon.png?version=7171fd71a68fec2d5b0114f337a56602" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/8/84/Manta_Style_icon.png/45px-Manta_Style_icon.png?version=7171fd71a68fec2d5b0114f337a56602 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/8/84/Manta_Style_icon.png/60px-Manta_Style_icon.png?version=7171fd71a68fec2d5b0114f337a56602 2x" width="30"/>
    </a>
    <a href="/Manta_Style" title="Manta Style">
     Manta Style
@@ -2946,7 +2960,7 @@ document.head.appendChild(script);
  <li>
   <span style="white-space:nowrap">
    <a href="/Daedalus" title="Daedalus">
-    <img alt="Daedalus icon.png" height="22" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/2/24/Daedalus_icon.png/30px-Daedalus_icon.png?version=968d51f311d85a301c53f9aec728bfd0" width="30"/>
+    <img alt="Daedalus icon.png" height="22" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/2/24/Daedalus_icon.png/30px-Daedalus_icon.png?version=968d51f311d85a301c53f9aec728bfd0" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/2/24/Daedalus_icon.png/45px-Daedalus_icon.png?version=968d51f311d85a301c53f9aec728bfd0 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/2/24/Daedalus_icon.png/60px-Daedalus_icon.png?version=968d51f311d85a301c53f9aec728bfd0 2x" width="30"/>
    </a>
    <a href="/Daedalus" title="Daedalus">
     Daedalus
@@ -2957,7 +2971,7 @@ document.head.appendChild(script);
  <li>
   <span style="white-space:nowrap">
    <a href="/Dragon_Lance" title="Dragon Lance">
-    <img alt="Dragon Lance icon.png" height="22" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/d/db/Dragon_Lance_icon.png/30px-Dragon_Lance_icon.png?version=57bddf366274a17c84f225277e8b1ae8" width="30"/>
+    <img alt="Dragon Lance icon.png" height="22" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/d/db/Dragon_Lance_icon.png/30px-Dragon_Lance_icon.png?version=57bddf366274a17c84f225277e8b1ae8" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/d/db/Dragon_Lance_icon.png/45px-Dragon_Lance_icon.png?version=57bddf366274a17c84f225277e8b1ae8 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/d/db/Dragon_Lance_icon.png/60px-Dragon_Lance_icon.png?version=57bddf366274a17c84f225277e8b1ae8 2x" width="30"/>
    </a>
    <a href="/Dragon_Lance" title="Dragon Lance">
     Dragon Lance
@@ -2966,7 +2980,7 @@ document.head.appendChild(script);
   gives Lanaya higher range and a good amount of stats that she needs early-mid game: Strength for health and Agility for armor and damage. The increased attack range also allows Lanaya to perhaps skip a few points on Psi Blades and focus on maxing out Meld after Refraction instead. Afterward, it may be disassembled to be turned into a
   <span style="white-space:nowrap">
    <a href="/Black_King_Bar" title="Black King Bar">
-    <img alt="Black King Bar icon.png" height="15" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/72/Black_King_Bar_icon.png/20px-Black_King_Bar_icon.png?version=3b260e404db95d92a71ae02d60f6159b" width="20"/>
+    <img alt="Black King Bar icon.png" height="15" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/72/Black_King_Bar_icon.png/20px-Black_King_Bar_icon.png?version=3b260e404db95d92a71ae02d60f6159b" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/72/Black_King_Bar_icon.png/30px-Black_King_Bar_icon.png?version=3b260e404db95d92a71ae02d60f6159b 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/72/Black_King_Bar_icon.png/40px-Black_King_Bar_icon.png?version=3b260e404db95d92a71ae02d60f6159b 2x" width="20"/>
    </a>
    <a href="/Black_King_Bar" title="Black King Bar">
     Black King Bar
@@ -2975,7 +2989,7 @@ document.head.appendChild(script);
   , or kept and upgraded into
   <span style="white-space:nowrap">
    <a href="/Hurricane_Pike" title="Hurricane Pike">
-    <img alt="Hurricane Pike icon.png" height="15" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/1/13/Hurricane_Pike_icon.png/20px-Hurricane_Pike_icon.png?version=9020423beeaf284ebbd4b7cef35c628d" width="20"/>
+    <img alt="Hurricane Pike icon.png" height="15" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/1/13/Hurricane_Pike_icon.png/20px-Hurricane_Pike_icon.png?version=9020423beeaf284ebbd4b7cef35c628d" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/1/13/Hurricane_Pike_icon.png/30px-Hurricane_Pike_icon.png?version=9020423beeaf284ebbd4b7cef35c628d 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/1/13/Hurricane_Pike_icon.png/40px-Hurricane_Pike_icon.png?version=9020423beeaf284ebbd4b7cef35c628d 2x" width="20"/>
    </a>
    <a href="/Hurricane_Pike" title="Hurricane Pike">
     Hurricane Pike
@@ -2995,14 +3009,8 @@ document.head.appendChild(script);
   <span class="mw-editsection-bracket">
    [
   </span>
-  <a class="mw-editsection-visualeditor" href="/index.php?title=Templar_Assassin&amp;veaction=edit&amp;vesection=6" title="Edit section: Gameplay">
-   edit
-  </a>
-  <span class="mw-editsection-divider">
-   |
-  </span>
   <a href="/index.php?title=Templar_Assassin&amp;action=edit&amp;section=6" title="Edit section: Gameplay">
-   edit source
+   edit
   </a>
   <span class="mw-editsection-bracket">
    ]
@@ -3039,14 +3047,8 @@ document.head.appendChild(script);
   <span class="mw-editsection-bracket">
    [
   </span>
-  <a class="mw-editsection-visualeditor" href="/index.php?title=Templar_Assassin&amp;veaction=edit&amp;vesection=7" title="Edit section: Audio">
-   edit
-  </a>
-  <span class="mw-editsection-divider">
-   |
-  </span>
   <a href="/index.php?title=Templar_Assassin&amp;action=edit&amp;section=7" title="Edit section: Audio">
-   edit source
+   edit
   </a>
   <span class="mw-editsection-bracket">
    ]
@@ -3081,14 +3083,8 @@ document.head.appendChild(script);
   <span class="mw-editsection-bracket">
    [
   </span>
-  <a class="mw-editsection-visualeditor" href="/index.php?title=Templar_Assassin&amp;veaction=edit&amp;vesection=8" title="Edit section: History">
-   edit
-  </a>
-  <span class="mw-editsection-divider">
-   |
-  </span>
   <a href="/index.php?title=Templar_Assassin&amp;action=edit&amp;section=8" title="Edit section: History">
-   edit source
+   edit
   </a>
   <span class="mw-editsection-bracket">
    ]
@@ -3132,14 +3128,8 @@ document.head.appendChild(script);
   <span class="mw-editsection-bracket">
    [
   </span>
-  <a class="mw-editsection-visualeditor" href="/index.php?title=Templar_Assassin&amp;veaction=edit&amp;vesection=9" title="Edit section: Equipment">
-   edit
-  </a>
-  <span class="mw-editsection-divider">
-   |
-  </span>
   <a href="/index.php?title=Templar_Assassin&amp;action=edit&amp;section=9" title="Edit section: Equipment">
-   edit source
+   edit
   </a>
   <span class="mw-editsection-bracket">
    ]
@@ -3180,13 +3170,12 @@ document.head.appendChild(script);
       <span class="" style="font-size:110%;">
        <span style="white-space:nowrap">
         <a href="/Templar_Assassin" title="Templar Assassin">
-         <img alt="Templar Assassin icon.png" height="32" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/9/9c/Templar_Assassin_icon.png?version=5a55f734f8edc18788085c9b4d6e3f85" width="32"/>
+         <img alt="Templar Assassin minimap icon.png" height="32" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/6/6b/Templar_Assassin_minimap_icon.png?version=1f7317bcb10d60158b6b87d487cdfc7d" width="32"/>
         </a>
         <strong class="selflink">
          Templar Assassin
         </strong>
        </span>
-       ​
        <a href="/Equipment" title="Equipment">
         Equipment
        </a>
@@ -3211,7 +3200,7 @@ document.head.appendChild(script);
        <div class="cosmetic-label" style="width:200px;">
         <div style="box-shadow:0px 0px 2px 4px #8847ff;">
          <a href="/Clandestine_Trail" title="Clandestine Trail">
-          <img alt="Clandestine Trail" height="133" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/b/bc/Cosmetic_icon_Clandestine_Trail.png/200px-Cosmetic_icon_Clandestine_Trail.png?version=319e34dfa8315258cd634a659ea02242" width="200"/>
+          <img alt="Clandestine Trail" height="133" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/b/bc/Cosmetic_icon_Clandestine_Trail.png/200px-Cosmetic_icon_Clandestine_Trail.png?version=319e34dfa8315258cd634a659ea02242" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/b/bc/Cosmetic_icon_Clandestine_Trail.png/300px-Cosmetic_icon_Clandestine_Trail.png?version=319e34dfa8315258cd634a659ea02242 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/b/bc/Cosmetic_icon_Clandestine_Trail.png/400px-Cosmetic_icon_Clandestine_Trail.png?version=319e34dfa8315258cd634a659ea02242 2x" width="200"/>
          </a>
         </div>
         <a href="/Clandestine_Trail" title="Clandestine Trail">
@@ -3221,7 +3210,7 @@ document.head.appendChild(script);
        <div class="cosmetic-label" style="width:200px;">
         <div style="box-shadow:0px 0px 2px 4px #4b69ff;">
          <a href="/Concealed_Raven" title="Concealed Raven">
-          <img alt="Concealed Raven" height="133" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/a/aa/Cosmetic_icon_Concealed_Raven.png/200px-Cosmetic_icon_Concealed_Raven.png?version=a960e0977b8e0356225b973185e1f4c1" width="200"/>
+          <img alt="Concealed Raven" height="133" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/a/aa/Cosmetic_icon_Concealed_Raven.png/200px-Cosmetic_icon_Concealed_Raven.png?version=a960e0977b8e0356225b973185e1f4c1" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/a/aa/Cosmetic_icon_Concealed_Raven.png?version=a960e0977b8e0356225b973185e1f4c1 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/a/aa/Cosmetic_icon_Concealed_Raven.png?version=a960e0977b8e0356225b973185e1f4c1 2x" width="200"/>
          </a>
         </div>
         <a href="/Concealed_Raven" title="Concealed Raven">
@@ -3231,7 +3220,7 @@ document.head.appendChild(script);
        <div class="cosmetic-label" style="width:200px;">
         <div style="box-shadow:0px 0px 2px 4px #8847ff;">
          <a href="/Epitaphic_Bonds" title="Epitaphic Bonds">
-          <img alt="Epitaphic Bonds" height="133" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/9/9b/Cosmetic_icon_Epitaphic_Bonds.png/200px-Cosmetic_icon_Epitaphic_Bonds.png?version=957671e71f6b96e06a6e283c69e4a0aa" width="200"/>
+          <img alt="Epitaphic Bonds" height="133" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/9/9b/Cosmetic_icon_Epitaphic_Bonds.png/200px-Cosmetic_icon_Epitaphic_Bonds.png?version=957671e71f6b96e06a6e283c69e4a0aa" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/9/9b/Cosmetic_icon_Epitaphic_Bonds.png/300px-Cosmetic_icon_Epitaphic_Bonds.png?version=957671e71f6b96e06a6e283c69e4a0aa 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/9/9b/Cosmetic_icon_Epitaphic_Bonds.png/400px-Cosmetic_icon_Epitaphic_Bonds.png?version=957671e71f6b96e06a6e283c69e4a0aa 2x" width="200"/>
          </a>
         </div>
         <a href="/Epitaphic_Bonds" title="Epitaphic Bonds">
@@ -3241,7 +3230,7 @@ document.head.appendChild(script);
        <div class="cosmetic-label" style="width:200px;">
         <div style="box-shadow:0px 0px 2px 4px #4b69ff;">
          <a href="/Fluttering_Amethyst" title="Fluttering Amethyst">
-          <img alt="Fluttering Amethyst" height="133" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/8/84/Cosmetic_icon_Fluttering_Amethyst.png/200px-Cosmetic_icon_Fluttering_Amethyst.png?version=c93078b07e437a4c663d901ab2eefaf1" width="200"/>
+          <img alt="Fluttering Amethyst" height="133" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/8/84/Cosmetic_icon_Fluttering_Amethyst.png/200px-Cosmetic_icon_Fluttering_Amethyst.png?version=c93078b07e437a4c663d901ab2eefaf1" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/8/84/Cosmetic_icon_Fluttering_Amethyst.png/300px-Cosmetic_icon_Fluttering_Amethyst.png?version=c93078b07e437a4c663d901ab2eefaf1 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/8/84/Cosmetic_icon_Fluttering_Amethyst.png/400px-Cosmetic_icon_Fluttering_Amethyst.png?version=c93078b07e437a4c663d901ab2eefaf1 2x" width="200"/>
          </a>
         </div>
         <a href="/Fluttering_Amethyst" title="Fluttering Amethyst">
@@ -3251,7 +3240,7 @@ document.head.appendChild(script);
        <div class="cosmetic-label" style="width:200px;">
         <div style="box-shadow:0px 0px 2px 4px #4b69ff;">
          <a href="/Hidden_Flower" title="Hidden Flower">
-          <img alt="Hidden Flower" height="133" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/b/ba/Cosmetic_icon_Hidden_Flower.png/200px-Cosmetic_icon_Hidden_Flower.png?version=e2478923840223bc1466ffc434ac2aa3" width="200"/>
+          <img alt="Hidden Flower" height="133" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/b/ba/Cosmetic_icon_Hidden_Flower.png/200px-Cosmetic_icon_Hidden_Flower.png?version=e2478923840223bc1466ffc434ac2aa3" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/b/ba/Cosmetic_icon_Hidden_Flower.png/300px-Cosmetic_icon_Hidden_Flower.png?version=e2478923840223bc1466ffc434ac2aa3 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/b/ba/Cosmetic_icon_Hidden_Flower.png/400px-Cosmetic_icon_Hidden_Flower.png?version=e2478923840223bc1466ffc434ac2aa3 2x" width="200"/>
          </a>
         </div>
         <a href="/Hidden_Flower" title="Hidden Flower">
@@ -3261,7 +3250,7 @@ document.head.appendChild(script);
        <div class="cosmetic-label" style="width:200px;">
         <div style="box-shadow:0px 0px 2px 4px #4b69ff;">
          <a href="/Onyx_Lotus" title="Onyx Lotus">
-          <img alt="Onyx Lotus" height="133" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/2/2a/Cosmetic_icon_Onyx_Lotus.png/200px-Cosmetic_icon_Onyx_Lotus.png?version=f748fa4bcee0ea4d6d660044cc6be5ec" width="200"/>
+          <img alt="Onyx Lotus" height="133" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/2/2a/Cosmetic_icon_Onyx_Lotus.png/200px-Cosmetic_icon_Onyx_Lotus.png?version=f748fa4bcee0ea4d6d660044cc6be5ec" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/2/2a/Cosmetic_icon_Onyx_Lotus.png/300px-Cosmetic_icon_Onyx_Lotus.png?version=f748fa4bcee0ea4d6d660044cc6be5ec 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/2/2a/Cosmetic_icon_Onyx_Lotus.png/400px-Cosmetic_icon_Onyx_Lotus.png?version=f748fa4bcee0ea4d6d660044cc6be5ec 2x" width="200"/>
          </a>
         </div>
         <a href="/Onyx_Lotus" title="Onyx Lotus">
@@ -3271,7 +3260,7 @@ document.head.appendChild(script);
        <div class="cosmetic-label" style="width:200px;">
         <div style="box-shadow:0px 0px 2px 4px #8847ff;">
          <a href="/Province_of_the_Psion_Inquisitor" title="Province of the Psion Inquisitor">
-          <img alt="Province of the Psion Inquisitor" height="133" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/9/97/Cosmetic_icon_Province_of_the_Psion_Inquisitor.png/200px-Cosmetic_icon_Province_of_the_Psion_Inquisitor.png?version=abf69023fc40ec074cd8f31296de23d0" width="200"/>
+          <img alt="Province of the Psion Inquisitor" height="133" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/9/97/Cosmetic_icon_Province_of_the_Psion_Inquisitor.png/200px-Cosmetic_icon_Province_of_the_Psion_Inquisitor.png?version=abf69023fc40ec074cd8f31296de23d0" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/9/97/Cosmetic_icon_Province_of_the_Psion_Inquisitor.png/300px-Cosmetic_icon_Province_of_the_Psion_Inquisitor.png?version=abf69023fc40ec074cd8f31296de23d0 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/9/97/Cosmetic_icon_Province_of_the_Psion_Inquisitor.png/400px-Cosmetic_icon_Province_of_the_Psion_Inquisitor.png?version=abf69023fc40ec074cd8f31296de23d0 2x" width="200"/>
          </a>
         </div>
         <a href="/Province_of_the_Psion_Inquisitor" title="Province of the Psion Inquisitor">
@@ -3281,7 +3270,7 @@ document.head.appendChild(script);
        <div class="cosmetic-label" style="width:200px;">
         <div style="box-shadow:0px 0px 2px 4px #4b69ff;">
          <a href="/Redmoon_Assassin%27s_Secret_Set" title="Redmoon Assassin's Secret Set">
-          <img alt="Redmoon Assassin's Secret Set" height="133" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/77/Cosmetic_icon_Redmoon_Assassin%27s_Secret_Set.png/200px-Cosmetic_icon_Redmoon_Assassin%27s_Secret_Set.png?version=4b86d35c55d09d9bfd64aebcdcc93918" width="200"/>
+          <img alt="Redmoon Assassin's Secret Set" height="133" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/77/Cosmetic_icon_Redmoon_Assassin%27s_Secret_Set.png/200px-Cosmetic_icon_Redmoon_Assassin%27s_Secret_Set.png?version=4b86d35c55d09d9bfd64aebcdcc93918" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/77/Cosmetic_icon_Redmoon_Assassin%27s_Secret_Set.png/300px-Cosmetic_icon_Redmoon_Assassin%27s_Secret_Set.png?version=4b86d35c55d09d9bfd64aebcdcc93918 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/77/Cosmetic_icon_Redmoon_Assassin%27s_Secret_Set.png/400px-Cosmetic_icon_Redmoon_Assassin%27s_Secret_Set.png?version=4b86d35c55d09d9bfd64aebcdcc93918 2x" width="200"/>
          </a>
         </div>
         <a href="/Redmoon_Assassin%27s_Secret_Set" title="Redmoon Assassin's Secret Set">
@@ -3291,7 +3280,7 @@ document.head.appendChild(script);
        <div class="cosmetic-label" style="width:200px;">
         <div style="box-shadow:0px 0px 2px 4px #8847ff;">
          <a href="/Shadows_of_the_Wuxia" title="Shadows of the Wuxia">
-          <img alt="Shadows of the Wuxia" height="133" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/9/9e/Cosmetic_icon_Shadows_of_the_Wuxia.png/200px-Cosmetic_icon_Shadows_of_the_Wuxia.png?version=37c3332d4746bdc14ec3b23a8203e656" width="200"/>
+          <img alt="Shadows of the Wuxia" height="133" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/9/9e/Cosmetic_icon_Shadows_of_the_Wuxia.png/200px-Cosmetic_icon_Shadows_of_the_Wuxia.png?version=37c3332d4746bdc14ec3b23a8203e656" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/9/9e/Cosmetic_icon_Shadows_of_the_Wuxia.png/300px-Cosmetic_icon_Shadows_of_the_Wuxia.png?version=37c3332d4746bdc14ec3b23a8203e656 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/9/9e/Cosmetic_icon_Shadows_of_the_Wuxia.png/400px-Cosmetic_icon_Shadows_of_the_Wuxia.png?version=37c3332d4746bdc14ec3b23a8203e656 2x" width="200"/>
          </a>
         </div>
         <a href="/Shadows_of_the_Wuxia" title="Shadows of the Wuxia">
@@ -3301,7 +3290,7 @@ document.head.appendChild(script);
        <div class="cosmetic-label" style="width:200px;">
         <div style="box-shadow:0px 0px 2px 4px #4b69ff;">
          <a href="/The_Deadly_Nightshade_Set" title="The Deadly Nightshade Set">
-          <img alt="The Deadly Nightshade Set" height="133" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/3/34/Cosmetic_icon_The_Deadly_Nightshade_Set.png/200px-Cosmetic_icon_The_Deadly_Nightshade_Set.png?version=153d19661e6658deb1b1b7aab7e1fe80" width="200"/>
+          <img alt="The Deadly Nightshade Set" height="133" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/3/34/Cosmetic_icon_The_Deadly_Nightshade_Set.png/200px-Cosmetic_icon_The_Deadly_Nightshade_Set.png?version=153d19661e6658deb1b1b7aab7e1fe80" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/3/34/Cosmetic_icon_The_Deadly_Nightshade_Set.png/300px-Cosmetic_icon_The_Deadly_Nightshade_Set.png?version=153d19661e6658deb1b1b7aab7e1fe80 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/3/34/Cosmetic_icon_The_Deadly_Nightshade_Set.png/400px-Cosmetic_icon_The_Deadly_Nightshade_Set.png?version=153d19661e6658deb1b1b7aab7e1fe80 2x" width="200"/>
          </a>
         </div>
         <a href="/The_Deadly_Nightshade_Set" title="The Deadly Nightshade Set">
@@ -3311,7 +3300,7 @@ document.head.appendChild(script);
        <div class="cosmetic-label" style="width:200px;">
         <div style="box-shadow:0px 0px 2px 4px #5e98d9;">
          <a href="/The_Dreaded_Bravo_Set" title="The Dreaded Bravo Set">
-          <img alt="The Dreaded Bravo Set" height="133" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/8/85/Cosmetic_icon_The_Dreaded_Bravo_Set.png/200px-Cosmetic_icon_The_Dreaded_Bravo_Set.png?version=160e7a08b2e60e30b36df0e7778b27ae" width="200"/>
+          <img alt="The Dreaded Bravo Set" height="133" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/8/85/Cosmetic_icon_The_Dreaded_Bravo_Set.png/200px-Cosmetic_icon_The_Dreaded_Bravo_Set.png?version=160e7a08b2e60e30b36df0e7778b27ae" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/8/85/Cosmetic_icon_The_Dreaded_Bravo_Set.png/300px-Cosmetic_icon_The_Dreaded_Bravo_Set.png?version=160e7a08b2e60e30b36df0e7778b27ae 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/8/85/Cosmetic_icon_The_Dreaded_Bravo_Set.png/400px-Cosmetic_icon_The_Dreaded_Bravo_Set.png?version=160e7a08b2e60e30b36df0e7778b27ae 2x" width="200"/>
          </a>
         </div>
         <a href="/The_Dreaded_Bravo_Set" title="The Dreaded Bravo Set">
@@ -3321,7 +3310,7 @@ document.head.appendChild(script);
        <div class="cosmetic-label" style="width:200px;">
         <div style="box-shadow:0px 0px 2px 4px #8847ff;">
          <a href="/The_Third_Insight_Set" title="The Third Insight Set">
-          <img alt="The Third Insight Set" height="133" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/e/e8/Cosmetic_icon_The_Third_Insight_Set.png/200px-Cosmetic_icon_The_Third_Insight_Set.png?version=1198836f98223a3ce3b709ac3845aed7" width="200"/>
+          <img alt="The Third Insight Set" height="133" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/e/e8/Cosmetic_icon_The_Third_Insight_Set.png/200px-Cosmetic_icon_The_Third_Insight_Set.png?version=1198836f98223a3ce3b709ac3845aed7" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/e/e8/Cosmetic_icon_The_Third_Insight_Set.png/300px-Cosmetic_icon_The_Third_Insight_Set.png?version=1198836f98223a3ce3b709ac3845aed7 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/e/e8/Cosmetic_icon_The_Third_Insight_Set.png/400px-Cosmetic_icon_The_Third_Insight_Set.png?version=1198836f98223a3ce3b709ac3845aed7 2x" width="200"/>
          </a>
         </div>
         <a href="/The_Third_Insight_Set" title="The Third Insight Set">
@@ -3331,7 +3320,7 @@ document.head.appendChild(script);
        <div class="cosmetic-label" style="width:200px;">
         <div style="box-shadow:0px 0px 2px 4px #8847ff;">
          <a href="/The_Timekeeper" title="The Timekeeper">
-          <img alt="The Timekeeper" height="133" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/d/d8/Cosmetic_icon_The_Timekeeper.png/200px-Cosmetic_icon_The_Timekeeper.png?version=13d35754a1b0a7a6fb1ce7de781caa48" width="200"/>
+          <img alt="The Timekeeper" height="133" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/d/d8/Cosmetic_icon_The_Timekeeper.png/200px-Cosmetic_icon_The_Timekeeper.png?version=13d35754a1b0a7a6fb1ce7de781caa48" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/d/d8/Cosmetic_icon_The_Timekeeper.png/300px-Cosmetic_icon_The_Timekeeper.png?version=13d35754a1b0a7a6fb1ce7de781caa48 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/d/d8/Cosmetic_icon_The_Timekeeper.png/400px-Cosmetic_icon_The_Timekeeper.png?version=13d35754a1b0a7a6fb1ce7de781caa48 2x" width="200"/>
          </a>
         </div>
         <a href="/The_Timekeeper" title="The Timekeeper">
@@ -3341,7 +3330,7 @@ document.head.appendChild(script);
        <div class="cosmetic-label" style="width:200px;">
         <div style="box-shadow:0px 0px 2px 4px #4b69ff;">
          <a href="/Whispering_Dead_Set" title="Whispering Dead Set">
-          <img alt="Whispering Dead Set" height="133" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/2/2f/Cosmetic_icon_Whispering_Dead_Set.png/200px-Cosmetic_icon_Whispering_Dead_Set.png?version=b839ceedced9bce1f958b4bc67f88eff" width="200"/>
+          <img alt="Whispering Dead Set" height="133" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/2/2f/Cosmetic_icon_Whispering_Dead_Set.png/200px-Cosmetic_icon_Whispering_Dead_Set.png?version=b839ceedced9bce1f958b4bc67f88eff" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/2/2f/Cosmetic_icon_Whispering_Dead_Set.png/300px-Cosmetic_icon_Whispering_Dead_Set.png?version=b839ceedced9bce1f958b4bc67f88eff 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/2/2f/Cosmetic_icon_Whispering_Dead_Set.png/400px-Cosmetic_icon_Whispering_Dead_Set.png?version=b839ceedced9bce1f958b4bc67f88eff 2x" width="200"/>
          </a>
         </div>
         <a href="/Whispering_Dead_Set" title="Whispering Dead Set">
@@ -3364,7 +3353,7 @@ document.head.appendChild(script);
        <div class="cosmetic-label" style="width:110px;">
         <div style="box-shadow:0px 0px 2px 4px #b28a33;">
          <a href="/Focal_Resonance" title="Focal Resonance">
-          <img alt="Focal Resonance" height="73" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/76/Cosmetic_icon_Focal_Resonance.png/110px-Cosmetic_icon_Focal_Resonance.png?version=6722d412683b77e859f3fef5557e1f90" width="110"/>
+          <img alt="Focal Resonance" height="73" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/76/Cosmetic_icon_Focal_Resonance.png/110px-Cosmetic_icon_Focal_Resonance.png?version=6722d412683b77e859f3fef5557e1f90" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/76/Cosmetic_icon_Focal_Resonance.png/165px-Cosmetic_icon_Focal_Resonance.png?version=6722d412683b77e859f3fef5557e1f90 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/76/Cosmetic_icon_Focal_Resonance.png/220px-Cosmetic_icon_Focal_Resonance.png?version=6722d412683b77e859f3fef5557e1f90 2x" width="110"/>
          </a>
         </div>
         <a href="/Focal_Resonance" title="Focal Resonance">
@@ -3387,7 +3376,7 @@ document.head.appendChild(script);
        <div class="cosmetic-label" style="width:110px;">
         <div style="box-shadow:0px 0px 2px 4px #4b69ff;">
          <a href="/Charming_Assassin_Curls" title="Charming Assassin Curls">
-          <img alt="Charming Assassin Curls" height="73" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/1/1e/Cosmetic_icon_Charming_Assassin_Curls.png/110px-Cosmetic_icon_Charming_Assassin_Curls.png?version=271266b78047f8a5b8436e2a233c02fd" width="110"/>
+          <img alt="Charming Assassin Curls" height="73" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/1/1e/Cosmetic_icon_Charming_Assassin_Curls.png/110px-Cosmetic_icon_Charming_Assassin_Curls.png?version=271266b78047f8a5b8436e2a233c02fd" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/1/1e/Cosmetic_icon_Charming_Assassin_Curls.png/165px-Cosmetic_icon_Charming_Assassin_Curls.png?version=271266b78047f8a5b8436e2a233c02fd 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/1/1e/Cosmetic_icon_Charming_Assassin_Curls.png/220px-Cosmetic_icon_Charming_Assassin_Curls.png?version=271266b78047f8a5b8436e2a233c02fd 2x" width="110"/>
          </a>
         </div>
         <a href="/Charming_Assassin_Curls" title="Charming Assassin Curls">
@@ -3397,7 +3386,7 @@ document.head.appendChild(script);
        <div class="cosmetic-label" style="width:110px;">
         <div style="box-shadow:0px 0px 2px 4px #4b69ff;">
          <a href="/Heirloom_of_the_Temple_Priestess" title="Heirloom of the Temple Priestess">
-          <img alt="Heirloom of the Temple Priestess" height="73" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/a/a8/Heirloom_of_the_Temple_Priestess.png/110px-Heirloom_of_the_Temple_Priestess.png?version=badb974cb4935b563268b4df9abbb307" width="110"/>
+          <img alt="Heirloom of the Temple Priestess" height="73" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/a/a8/Heirloom_of_the_Temple_Priestess.png/110px-Heirloom_of_the_Temple_Priestess.png?version=badb974cb4935b563268b4df9abbb307" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/a/a8/Heirloom_of_the_Temple_Priestess.png/165px-Heirloom_of_the_Temple_Priestess.png?version=badb974cb4935b563268b4df9abbb307 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/a/a8/Heirloom_of_the_Temple_Priestess.png/220px-Heirloom_of_the_Temple_Priestess.png?version=badb974cb4935b563268b4df9abbb307 2x" width="110"/>
          </a>
         </div>
         <a href="/Heirloom_of_the_Temple_Priestess" title="Heirloom of the Temple Priestess">
@@ -3407,7 +3396,7 @@ document.head.appendChild(script);
        <div class="cosmetic-label" style="width:110px;">
         <div style="box-shadow:0px 0px 2px 4px #4b69ff;">
          <a href="/Style_of_the_Occult_Protector" title="Style of the Occult Protector">
-          <img alt="Style of the Occult Protector" height="73" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/7b/Cosmetic_icon_Style_of_the_Occult_Protector.png/110px-Cosmetic_icon_Style_of_the_Occult_Protector.png?version=12f3b9715154581d332ba3be0d936613" width="110"/>
+          <img alt="Style of the Occult Protector" height="73" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/7b/Cosmetic_icon_Style_of_the_Occult_Protector.png/110px-Cosmetic_icon_Style_of_the_Occult_Protector.png?version=12f3b9715154581d332ba3be0d936613" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/7b/Cosmetic_icon_Style_of_the_Occult_Protector.png/165px-Cosmetic_icon_Style_of_the_Occult_Protector.png?version=12f3b9715154581d332ba3be0d936613 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/7b/Cosmetic_icon_Style_of_the_Occult_Protector.png/220px-Cosmetic_icon_Style_of_the_Occult_Protector.png?version=12f3b9715154581d332ba3be0d936613 2x" width="110"/>
          </a>
         </div>
         <a href="/Style_of_the_Occult_Protector" title="Style of the Occult Protector">
@@ -3417,7 +3406,7 @@ document.head.appendChild(script);
        <div class="cosmetic-label" style="width:110px;">
         <div style="box-shadow:0px 0px 2px 4px #b0c3d9;">
          <a href="/Tail_of_the_Secret_Order" title="Tail of the Secret Order">
-          <img alt="Tail of the Secret Order" height="73" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/2/2d/Cosmetic_icon_Tail_of_the_Secret_Order.png/110px-Cosmetic_icon_Tail_of_the_Secret_Order.png?version=45df7f5fd5585772c9b34516a66e4401" width="110"/>
+          <img alt="Tail of the Secret Order" height="73" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/2/2d/Cosmetic_icon_Tail_of_the_Secret_Order.png/110px-Cosmetic_icon_Tail_of_the_Secret_Order.png?version=45df7f5fd5585772c9b34516a66e4401" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/2/2d/Cosmetic_icon_Tail_of_the_Secret_Order.png/165px-Cosmetic_icon_Tail_of_the_Secret_Order.png?version=45df7f5fd5585772c9b34516a66e4401 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/2/2d/Cosmetic_icon_Tail_of_the_Secret_Order.png/220px-Cosmetic_icon_Tail_of_the_Secret_Order.png?version=45df7f5fd5585772c9b34516a66e4401 2x" width="110"/>
          </a>
         </div>
         <a href="/Tail_of_the_Secret_Order" title="Tail of the Secret Order">
@@ -3440,7 +3429,7 @@ document.head.appendChild(script);
        <div class="cosmetic-label" style="width:110px;">
         <div style="box-shadow:0px 0px 2px 4px #4b69ff;">
          <a href="/Kinetic:_Epitaphic_Trap" title="Kinetic: Epitaphic Trap">
-          <img alt="Kinetic: Epitaphic Trap" height="73" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/0/04/Cosmetic_icon_Kinetic_Epitaphic_Trap.png/110px-Cosmetic_icon_Kinetic_Epitaphic_Trap.png?version=ef3b3b5c81a496250ff30a8396c5dc62" width="110"/>
+          <img alt="Kinetic: Epitaphic Trap" height="73" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/0/04/Cosmetic_icon_Kinetic_Epitaphic_Trap.png/110px-Cosmetic_icon_Kinetic_Epitaphic_Trap.png?version=ef3b3b5c81a496250ff30a8396c5dc62" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/0/04/Cosmetic_icon_Kinetic_Epitaphic_Trap.png/165px-Cosmetic_icon_Kinetic_Epitaphic_Trap.png?version=ef3b3b5c81a496250ff30a8396c5dc62 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/0/04/Cosmetic_icon_Kinetic_Epitaphic_Trap.png/220px-Cosmetic_icon_Kinetic_Epitaphic_Trap.png?version=ef3b3b5c81a496250ff30a8396c5dc62 2x" width="110"/>
          </a>
         </div>
         <a href="/Kinetic:_Epitaphic_Trap" title="Kinetic: Epitaphic Trap">
@@ -3462,14 +3451,8 @@ document.head.appendChild(script);
   <span class="mw-editsection-bracket">
    [
   </span>
-  <a class="mw-editsection-visualeditor" href="/index.php?title=Templar_Assassin&amp;veaction=edit&amp;vesection=10" title="Edit section: Trivia">
-   edit
-  </a>
-  <span class="mw-editsection-divider">
-   |
-  </span>
   <a href="/index.php?title=Templar_Assassin&amp;action=edit&amp;section=10" title="Edit section: Trivia">
-   edit source
+   edit
   </a>
   <span class="mw-editsection-bracket">
    ]
@@ -3507,14 +3490,8 @@ document.head.appendChild(script);
   <span class="mw-editsection-bracket">
    [
   </span>
-  <a class="mw-editsection-visualeditor" href="/index.php?title=Templar_Assassin&amp;veaction=edit&amp;vesection=11" title="Edit section: Gallery">
-   edit
-  </a>
-  <span class="mw-editsection-divider">
-   |
-  </span>
   <a href="/index.php?title=Templar_Assassin&amp;action=edit&amp;section=11" title="Edit section: Gallery">
-   edit source
+   edit
   </a>
   <span class="mw-editsection-bracket">
    ]
@@ -3527,7 +3504,7 @@ document.head.appendChild(script);
    <div class="thumb" style="width: 150px;">
     <div style="margin:43px auto;">
      <a class="image" href="/File:Lanaya_update_splash.jpeg">
-      <img alt="" height="64" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/1/12/Lanaya_update_splash.jpeg/120px-Lanaya_update_splash.jpeg?version=0fc18906c8dddfaf786557323c26d7c0" width="120"/>
+      <img alt="" height="64" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/1/12/Lanaya_update_splash.jpeg/120px-Lanaya_update_splash.jpeg?version=0fc18906c8dddfaf786557323c26d7c0" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/1/12/Lanaya_update_splash.jpeg/180px-Lanaya_update_splash.jpeg?version=0fc18906c8dddfaf786557323c26d7c0 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/1/12/Lanaya_update_splash.jpeg/240px-Lanaya_update_splash.jpeg?version=0fc18906c8dddfaf786557323c26d7c0 2x" width="120"/>
      </a>
     </div>
    </div>
@@ -3543,7 +3520,7 @@ document.head.appendChild(script);
    <div class="thumb" style="width: 150px;">
     <div style="margin:34px auto;">
      <a class="image" href="/File:Templar_Assassin_Concept_Art1.jpg">
-      <img alt="" height="82" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/6/6c/Templar_Assassin_Concept_Art1.jpg/120px-Templar_Assassin_Concept_Art1.jpg.png?version=742437f89152b6f909647b98c28e5118" width="120"/>
+      <img alt="" height="82" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/6/6c/Templar_Assassin_Concept_Art1.jpg/120px-Templar_Assassin_Concept_Art1.jpg.png?version=742437f89152b6f909647b98c28e5118" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/6/6c/Templar_Assassin_Concept_Art1.jpg/180px-Templar_Assassin_Concept_Art1.jpg.png?version=742437f89152b6f909647b98c28e5118 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/6/6c/Templar_Assassin_Concept_Art1.jpg/240px-Templar_Assassin_Concept_Art1.jpg.png?version=742437f89152b6f909647b98c28e5118 2x" width="120"/>
      </a>
     </div>
    </div>
@@ -3559,13 +3536,16 @@ document.head.appendChild(script);
    <div class="thumb" style="width: 150px;">
     <div style="margin:42.5px auto;">
      <a class="image" href="/File:Wraith_Night_5_Heroes.jpg">
-      <img alt="" height="65" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/a/ac/Wraith_Night_5_Heroes.jpg/120px-Wraith_Night_5_Heroes.jpg?version=27f5a68a0f43c9669eb65d6aff3e78b5" width="120"/>
+      <img alt="" height="65" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/a/ac/Wraith_Night_5_Heroes.jpg/120px-Wraith_Night_5_Heroes.jpg?version=27f5a68a0f43c9669eb65d6aff3e78b5" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/a/ac/Wraith_Night_5_Heroes.jpg/180px-Wraith_Night_5_Heroes.jpg?version=27f5a68a0f43c9669eb65d6aff3e78b5 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/a/ac/Wraith_Night_5_Heroes.jpg/240px-Wraith_Night_5_Heroes.jpg?version=27f5a68a0f43c9669eb65d6aff3e78b5 2x" width="120"/>
      </a>
     </div>
    </div>
    <div class="gallerytext">
     <p>
-     Wraith-Night artwork
+     <a class="mw-redirect" href="/Wraith-Night" title="Wraith-Night">
+      Wraith-Night
+     </a>
+     artwork
     </p>
    </div>
   </div>
@@ -3575,7 +3555,7 @@ document.head.appendChild(script);
    <div class="thumb" style="width: 150px;">
     <div style="margin:27px auto;">
      <a class="image" href="/File:Templar_Assassin_ability_icon_progress.png">
-      <img alt="" height="96" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/a/a4/Templar_Assassin_ability_icon_progress.png/120px-Templar_Assassin_ability_icon_progress.png?version=71b61e9b714c9cff18dd024b60108143" width="120"/>
+      <img alt="" height="96" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/a/a4/Templar_Assassin_ability_icon_progress.png/120px-Templar_Assassin_ability_icon_progress.png?version=71b61e9b714c9cff18dd024b60108143" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/a/a4/Templar_Assassin_ability_icon_progress.png/180px-Templar_Assassin_ability_icon_progress.png?version=71b61e9b714c9cff18dd024b60108143 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/a/a4/Templar_Assassin_ability_icon_progress.png/240px-Templar_Assassin_ability_icon_progress.png?version=71b61e9b714c9cff18dd024b60108143 2x" width="120"/>
      </a>
     </div>
    </div>
@@ -3591,7 +3571,7 @@ document.head.appendChild(script);
    <div class="thumb" style="width: 150px;">
     <div style="margin:15px auto;">
      <a class="image" href="/File:Templar_Assassin_hero_icon_progress.png">
-      <img alt="" height="120" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/c/c8/Templar_Assassin_hero_icon_progress.png/42px-Templar_Assassin_hero_icon_progress.png?version=f50ad0038056230d072007eafd13895c" width="42"/>
+      <img alt="" height="120" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/c/c8/Templar_Assassin_hero_icon_progress.png/42px-Templar_Assassin_hero_icon_progress.png?version=f50ad0038056230d072007eafd13895c" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/c/c8/Templar_Assassin_hero_icon_progress.png/64px-Templar_Assassin_hero_icon_progress.png?version=f50ad0038056230d072007eafd13895c 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/c/c8/Templar_Assassin_hero_icon_progress.png/85px-Templar_Assassin_hero_icon_progress.png?version=f50ad0038056230d072007eafd13895c 2x" width="42"/>
      </a>
     </div>
    </div>
@@ -3611,14 +3591,8 @@ document.head.appendChild(script);
   <span class="mw-editsection-bracket">
    [
   </span>
-  <a class="mw-editsection-visualeditor" href="/index.php?title=Templar_Assassin&amp;veaction=edit&amp;vesection=12" title="Edit section: References">
-   edit
-  </a>
-  <span class="mw-editsection-divider">
-   |
-  </span>
   <a href="/index.php?title=Templar_Assassin&amp;action=edit&amp;section=12" title="Edit section: References">
-   edit source
+   edit
   </a>
   <span class="mw-editsection-bracket">
    ]
@@ -3627,38 +3601,39 @@ document.head.appendChild(script);
 </h2>
 <!-- 
 NewPP limit report
-Cached time: 20170207215026
+Cached time: 20170608200637
 Cache expiry: 86400
 Dynamic content: false
 [SMW] In‐text annotation parser time: 0.001 seconds
-CPU time usage: 1.920 seconds
-Real time usage: 3.218 seconds
-Preprocessor visited node count: 17040/1000000
-Preprocessor generated node count: 63638/1000000
-Post‐expand include size: 171369/2097152 bytes
-Template argument size: 59569/2097152 bytes
-Highest expansion depth: 18/40
-Expensive parser function count: 0/99
+CPU time usage: 1.676 seconds
+Real time usage: 2.909 seconds
+Preprocessor visited node count: 10237/1000000
+Preprocessor generated node count: 56777/1000000
+Post‐expand include size: 159699/2097152 bytes
+Template argument size: 56075/2097152 bytes
+Highest expansion depth: 13/40
+Expensive parser function count: 1/99
+ExtLoops count: 32/1000
 -->
 <!-- 
 Transclusion expansion time report (%,ms,calls,template)
-100.00% 2651.836      1 - -total
- 37.07%  982.968      6 - Template:Ability
- 19.14%  507.645      1 - Template:Equipment_Templar_Assassin
- 19.05%  505.287      1 - Template:Equipment
- 18.90%  501.245      1 - Template:Navbox
- 18.51%  490.889     27 - Template:I
- 12.30%  326.235      1 - Template:Ability_wrapper
- 11.00%  291.651     20 - Template:Cosmetic
-  9.82%  260.347     27 - Template:Item_link
-  9.57%  253.869      1 - Template:Hero_infobox
+100.00% 2282.594      1 - -total
+ 36.77%  839.372      6 - Template:Ability
+ 19.52%  445.603      1 - Template:Equipment_Templar_Assassin
+ 19.41%  443.148      1 - Template:Equipment
+ 19.28%  440.007      1 - Template:Navbox
+ 12.41%  283.361      1 - Template:Hero_infobox
+ 12.38%  282.575     27 - Template:I
+ 12.29%  280.431     20 - Template:Cosmetic
+ 11.78%  268.949      1 - Template:Unit_infobox_wrapper
+ 11.65%  265.909      1 - Template:Unit_infobox
 -->
-<!-- Saved in parser cache with key dota2_gamepedia:pcache:idhash:1417-0!*!0!default!!en!5!* and timestamp 20170207215023 and revision id 1440169
+<!-- Saved in parser cache with key dota2_gamepedia:pcache:idhash:1417-0!*!0!default!!en!5!* and timestamp 20170608200634 and revision id 1533600
  -->
 <div class="printfooter">
  Retrieved from "
- <a dir="ltr" href="http://dota2.gamepedia.com/index.php?title=Templar_Assassin&amp;oldid=1440169">
-  http://dota2.gamepedia.com/index.php?title=Templar_Assassin&amp;oldid=1440169
+ <a dir="ltr" href="https://dota2.gamepedia.com/index.php?title=Templar_Assassin&amp;oldid=1533600">
+  https://dota2.gamepedia.com/index.php?title=Templar_Assassin&amp;oldid=1533600
  </a>
  "
 </div>
@@ -3712,7 +3687,7 @@ Transclusion expansion time report (%,ms,calls,template)
     (function() {
         var zergnet = document.createElement('script');
         zergnet.type = 'text/javascript'; zergnet.async = true;
-        zergnet.src = 'http://www.zergnet.com/zerg.js?id=42966';
+        zergnet.src = '//www.zergnet.com/zerg.js?id=42966';
         var znscr = document.getElementsByTagName('script')[0];
         znscr.parentNode.insertBefore(zergnet, znscr);
     })();
@@ -3802,19 +3777,19 @@ Transclusion expansion time report (%,ms,calls,template)
     </h3>
     <div class="menu">
      <div id="socialIconImages">
-      <a href="https://twitter.com/intent/tweet?text=Check+out+Templar+Assassin+on+Dota+2+Wiki+--&amp;via=CurseGamepedia&amp;url=http%3A%2F%2Fdota2.gamepedia.com%2FTemplar_Assassin" target="_blank">
+      <a href="https://twitter.com/intent/tweet?text=Check+out+Templar+Assassin+on+Dota+2+Wiki+--&amp;via=CurseGamepedia&amp;url=https%3A%2F%2Fdota2.gamepedia.com%2FTemplar_Assassin" target="_blank">
        <img src="/extensions/Social/images/square_icons/twitter.png"/>
       </a>
-      <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fdota2.gamepedia.com%2FTemplar_Assassin" target="_blank">
+      <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdota2.gamepedia.com%2FTemplar_Assassin" target="_blank">
        <img src="/extensions/Social/images/square_icons/facebook.png"/>
       </a>
-      <a href="https://plus.google.com/share?url=http%3A%2F%2Fdota2.gamepedia.com%2FTemplar_Assassin" target="_blank">
+      <a href="https://plus.google.com/share?url=https%3A%2F%2Fdota2.gamepedia.com%2FTemplar_Assassin" target="_blank">
        <img src="/extensions/Social/images/square_icons/googleplus.png"/>
       </a>
-      <a href="http://www.reddit.com/submit?url=http%3A%2F%2Fdota2.gamepedia.com%2FTemplar_Assassin&amp;title=Check+out+Templar+Assassin+on+Dota+2+Wiki+via+%40CurseGamepedia%3A+http%3A%2F%2Fdota2.gamepedia.com%2FTemplar_Assassin" target="_blank">
+      <a href="http://www.reddit.com/submit?url=https%3A%2F%2Fdota2.gamepedia.com%2FTemplar_Assassin&amp;title=Check+out+Templar+Assassin+on+Dota+2+Wiki+via+%40CurseGamepedia%3A+https%3A%2F%2Fdota2.gamepedia.com%2FTemplar_Assassin" target="_blank">
        <img src="/extensions/Social/images/square_icons/reddit.png"/>
       </a>
-      <a href="http://www.tumblr.com/share/link?url=http%3A%2F%2Fdota2.gamepedia.com%2FTemplar_Assassin&amp;name=Dota+2+Wiki&amp;description=Check+out+Templar+Assassin+on+Dota+2+Wiki+via+%3Ca+href%3D%22https%3A%2F%2Ftwitter.com%2FCurseGamepedia%22+target%3D%22_blank%22%3E%40CurseGamepedia%3C%2Fa%3E%3A+http%3A%2F%2Fdota2.gamepedia.com%2FTemplar_Assassin" target="_blank">
+      <a href="http://www.tumblr.com/share/link?url=https%3A%2F%2Fdota2.gamepedia.com%2FTemplar_Assassin&amp;name=Dota+2+Wiki&amp;description=Check+out+Templar+Assassin+on+Dota+2+Wiki+via+%3Ca+href%3D%22https%3A%2F%2Ftwitter.com%2FCurseGamepedia%22+target%3D%22_blank%22%3E%40CurseGamepedia%3C%2Fa%3E%3A+https%3A%2F%2Fdota2.gamepedia.com%2FTemplar_Assassin" target="_blank">
        <img src="/extensions/Social/images/square_icons/tumblr.png"/>
       </a>
      </div>
@@ -3834,17 +3809,10 @@ Transclusion expansion time report (%,ms,calls,template)
        </a>
       </span>
      </li>
-     <li id="ca-ve-edit">
-      <span>
-       <a accesskey="v" href="/index.php?title=Templar_Assassin&amp;veaction=edit" title="Edit this page [v]">
-        Edit
-       </a>
-      </span>
-     </li>
-     <li class=" collapsible" id="ca-edit">
+     <li id="ca-edit">
       <span>
        <a accesskey="e" href="/index.php?title=Templar_Assassin&amp;action=edit" title="Edit this page [e]">
-        Edit source
+        Edit
        </a>
       </span>
      </li>
@@ -4042,7 +4010,7 @@ Transclusion expansion time report (%,ms,calls,template)
       </a>
      </li>
      <li id="t-permalink">
-      <a href="/index.php?title=Templar_Assassin&amp;oldid=1440169" title="Permanent link to this revision of the page">
+      <a href="/index.php?title=Templar_Assassin&amp;oldid=1533600" title="Permanent link to this revision of the page">
        Permanent link
       </a>
      </li>
@@ -4206,12 +4174,41 @@ Transclusion expansion time report (%,ms,calls,template)
     </div>
    </div>
   </div>
+  <div aria-labelledby="p-lang-label" class="portal" id="p-lang" role="navigation">
+   <h3 id="p-lang-label">
+    In other languages
+   </h3>
+   <div class="body">
+    <ul>
+     <li class="interlanguage-link interwiki-de">
+      <a href="http://dota2-de.gamepedia.com/Templar_Assassin" hreflang="de" lang="de" title="Templar Assassin – Deutsch">
+       Deutsch
+      </a>
+     </li>
+     <li class="interlanguage-link interwiki-pt">
+      <a href="http://dota2-pt.gamepedia.com/Templar_Assassin" hreflang="pt" lang="pt" title="Templar Assassin – português">
+       Português
+      </a>
+     </li>
+     <li class="interlanguage-link interwiki-ru">
+      <a href="http://dota2-ru.gamepedia.com/Templar_Assassin" hreflang="ru" lang="ru" title="Templar Assassin – русский">
+       Русский
+      </a>
+     </li>
+     <li class="interlanguage-link interwiki-zh">
+      <a href="http://dota2-zh.gamepedia.com/%E5%9C%A3%E5%A0%82%E5%88%BA%E5%AE%A2" hreflang="zh" lang="zh" title="圣堂刺客 – 中文">
+       中文
+      </a>
+     </li>
+    </ul>
+   </div>
+  </div>
  </div>
 </div>
 <div id="footer" role="contentinfo">
  <ul id="footer-info">
   <li id="footer-info-lastmod">
-   This page was last modified on 14 January 2017, at 09:04.
+   This page was last modified on 8 June 2017, at 20:03.
   </li>
   <li id="footer-info-copyright">
    Content is available under
@@ -4295,8 +4292,8 @@ Transclusion expansion time report (%,ms,calls,template)
     </a>
    </li>
    <li>
-    <a class="advertise" href="https://ghostreconwildlands.gamepedia.com">
-     Ghost Recon
+    <a class="advertise" href="https://masseffectandromeda.gamepedia.com/Mass_Effect:_Andromeda_Wiki">
+     ME:Andromeda
     </a>
    </li>
   </ul>
@@ -4322,8 +4319,8 @@ Transclusion expansion time report (%,ms,calls,template)
     </a>
    </li>
    <li>
-    <a class="about" href="http://www.hearthpwn.com/guides/1480-how-to-get-cheaper-hearthstone-packs-buy-amazon">
-     HS Packs
+    <a class="advertise" href="https://masseffectandromeda.gamepedia.com/Skill">
+     ME:A Skills
     </a>
    </li>
   </ul>
@@ -4349,8 +4346,8 @@ Transclusion expansion time report (%,ms,calls,template)
     </a>
    </li>
    <li>
-    <a class="tos" href="https://forhonor.gamepedia.com">
-     For Honor
+    <a class="advertise" href="https://zelda.gamepedia.com/Main_Page">
+     Zelda Wiki
     </a>
    </li>
   </ul>
@@ -4406,8 +4403,5 @@ _comscore.push({ c1: "2", c2: "6035118" });
 				window.wikiTags = ["action","defense of the ancients","esports","free-to-play","free to play","ftp","game:dota 2","linux","mac","pc","rts","source","steam","valve"];
 </script>
 <script>
- (window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":83});});
-</script>
-<script type="text/javascript">
- window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"75f4858b7a","applicationID":"1909498","transactionName":"YlVXbREHWksEUkVdCVsfYEsKSV1WAVRJGhZdQA==","queueTime":0,"applicationTime":100,"atts":"ThJAG1kdSRRHUBMOHUhN","errorBeacon":"bam.nr-data.net","agent":""}
+ (window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":84});});
 </script>

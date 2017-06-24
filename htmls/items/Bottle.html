@@ -2,9 +2,6 @@
 <html class="client-nojs" dir="ltr" lang="en">
  <head>
   <meta charset="utf-8"/>
-  <script type="text/javascript">
-   (window.NREUM||(NREUM={})).loader_config={xpid:"UAcAUlNACQoAXVVbDw=="};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var o=e[n]={exports:{}};t[n][0].call(o.exports,function(e){var o=t[n][1][e];return r(o||e)},o,o.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({1:[function(t,e,n){function r(t){try{c.console&&console.log(t)}catch(e){}}var o,i=t("ee"),a=t(15),c={};try{o=localStorage.getItem("__nr_flags").split(","),console&&"function"==typeof console.log&&(c.console=!0,o.indexOf("dev")!==-1&&(c.dev=!0),o.indexOf("nr_dev")!==-1&&(c.nrDev=!0))}catch(s){}c.nrDev&&i.on("internal-error",function(t){r(t.stack)}),c.dev&&i.on("fn-err",function(t,e,n){r(n.stack)}),c.dev&&(r("NR AGENT IN DEVELOPMENT MODE"),r("flags: "+a(c,function(t,e){return t}).join(", ")))},{}],2:[function(t,e,n){function r(t,e,n,r,o){try{d?d-=1:i("err",[o||new UncaughtException(t,e,n)])}catch(c){try{i("ierr",[c,(new Date).getTime(),!0])}catch(s){}}return"function"==typeof f&&f.apply(this,a(arguments))}function UncaughtException(t,e,n){this.message=t||"Uncaught error with no additional information",this.sourceURL=e,this.line=n}function o(t){i("err",[t,(new Date).getTime()])}var i=t("handle"),a=t(16),c=t("ee"),s=t("loader"),f=window.onerror,u=!1,d=0;s.features.err=!0,t(1),window.onerror=r;try{throw new Error}catch(l){"stack"in l&&(t(8),t(7),"addEventListener"in window&&t(5),s.xhrWrappable&&t(9),u=!0)}c.on("fn-start",function(t,e,n){u&&(d+=1)}),c.on("fn-err",function(t,e,n){u&&(this.thrown=!0,o(n))}),c.on("fn-end",function(){u&&!this.thrown&&d>0&&(d-=1)}),c.on("internal-error",function(t){i("ierr",[t,(new Date).getTime(),!0])})},{}],3:[function(t,e,n){t("loader").features.ins=!0},{}],4:[function(t,e,n){function r(t){}if(window.performance&&window.performance.timing&&window.performance.getEntriesByType){var o=t("ee"),i=t("handle"),a=t(8),c=t(7),s="learResourceTimings",f="addEventListener",u="resourcetimingbufferfull",d="bstResource",l="resource",p="-start",h="-end",m="fn"+p,w="fn"+h,v="bstTimer",y="pushState";t("loader").features.stn=!0,t(6);var g=NREUM.o.EV;o.on(m,function(t,e){var n=t[0];n instanceof g&&(this.bstStart=Date.now())}),o.on(w,function(t,e){var n=t[0];n instanceof g&&i("bst",[n,e,this.bstStart,Date.now()])}),a.on(m,function(t,e,n){this.bstStart=Date.now(),this.bstType=n}),a.on(w,function(t,e){i(v,[e,this.bstStart,Date.now(),this.bstType])}),c.on(m,function(){this.bstStart=Date.now()}),c.on(w,function(t,e){i(v,[e,this.bstStart,Date.now(),"requestAnimationFrame"])}),o.on(y+p,function(t){this.time=Date.now(),this.startPath=location.pathname+location.hash}),o.on(y+h,function(t){i("bstHist",[location.pathname+location.hash,this.startPath,this.time])}),f in window.performance&&(window.performance["c"+s]?window.performance[f](u,function(t){i(d,[window.performance.getEntriesByType(l)]),window.performance["c"+s]()},!1):window.performance[f]("webkit"+u,function(t){i(d,[window.performance.getEntriesByType(l)]),window.performance["webkitC"+s]()},!1)),document[f]("scroll",r,{passive:!0}),document[f]("keypress",r,!1),document[f]("click",r,!1)}},{}],5:[function(t,e,n){function r(t){for(var e=t;e&&!e.hasOwnProperty(u);)e=Object.getPrototypeOf(e);e&&o(e)}function o(t){c.inPlace(t,[u,d],"-",i)}function i(t,e){return t[1]}var a=t("ee").get("events"),c=t(17)(a,!0),s=t("gos"),f=XMLHttpRequest,u="addEventListener",d="removeEventListener";e.exports=a,"getPrototypeOf"in Object?(r(document),r(window),r(f.prototype)):f.prototype.hasOwnProperty(u)&&(o(window),o(f.prototype)),a.on(u+"-start",function(t,e){var n=t[1],r=s(n,"nr@wrapped",function(){function t(){if("function"==typeof n.handleEvent)return n.handleEvent.apply(n,arguments)}var e={object:t,"function":n}[typeof n];return e?c(e,"fn-",null,e.name||"anonymous"):n});this.wrapped=t[1]=r}),a.on(d+"-start",function(t){t[1]=this.wrapped||t[1]})},{}],6:[function(t,e,n){var r=t("ee").get("history"),o=t(17)(r);e.exports=r,o.inPlace(window.history,["pushState","replaceState"],"-")},{}],7:[function(t,e,n){var r=t("ee").get("raf"),o=t(17)(r),i="equestAnimationFrame";e.exports=r,o.inPlace(window,["r"+i,"mozR"+i,"webkitR"+i,"msR"+i],"raf-"),r.on("raf-start",function(t){t[0]=o(t[0],"fn-")})},{}],8:[function(t,e,n){function r(t,e,n){t[0]=a(t[0],"fn-",null,n)}function o(t,e,n){this.method=n,this.timerDuration="number"==typeof t[1]?t[1]:0,t[0]=a(t[0],"fn-",this,n)}var i=t("ee").get("timer"),a=t(17)(i),c="setTimeout",s="setInterval",f="clearTimeout",u="-start",d="-";e.exports=i,a.inPlace(window,[c,"setImmediate"],c+d),a.inPlace(window,[s],s+d),a.inPlace(window,[f,"clearImmediate"],f+d),i.on(s+u,r),i.on(c+u,o)},{}],9:[function(t,e,n){function r(t,e){d.inPlace(e,["onreadystatechange"],"fn-",c)}function o(){var t=this,e=u.context(t);t.readyState>3&&!e.resolved&&(e.resolved=!0,u.emit("xhr-resolved",[],t)),d.inPlace(t,w,"fn-",c)}function i(t){v.push(t),h&&(g=-g,b.data=g)}function a(){for(var t=0;t<v.length;t++)r([],v[t]);v.length&&(v=[])}function c(t,e){return e}function s(t,e){for(var n in t)e[n]=t[n];return e}t(5);var f=t("ee"),u=f.get("xhr"),d=t(17)(u),l=NREUM.o,p=l.XHR,h=l.MO,m="readystatechange",w=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"],v=[];e.exports=u;var y=window.XMLHttpRequest=function(t){var e=new p(t);try{u.emit("new-xhr",[e],e),e.addEventListener(m,o,!1)}catch(n){try{u.emit("internal-error",[n])}catch(r){}}return e};if(s(p,y),y.prototype=p.prototype,d.inPlace(y.prototype,["open","send"],"-xhr-",c),u.on("send-xhr-start",function(t,e){r(t,e),i(e)}),u.on("open-xhr-start",r),h){var g=1,b=document.createTextNode(g);new h(a).observe(b,{characterData:!0})}else f.on("fn-end",function(t){t[0]&&t[0].type===m||a()})},{}],10:[function(t,e,n){function r(t){var e=this.params,n=this.metrics;if(!this.ended){this.ended=!0;for(var r=0;r<d;r++)t.removeEventListener(u[r],this.listener,!1);if(!e.aborted){if(n.duration=(new Date).getTime()-this.startTime,4===t.readyState){e.status=t.status;var i=o(t,this.lastSize);if(i&&(n.rxSize=i),this.sameOrigin){var a=t.getResponseHeader("X-NewRelic-App-Data");a&&(e.cat=a.split(", ").pop())}}else e.status=0;n.cbTime=this.cbTime,f.emit("xhr-done",[t],t),c("xhr",[e,n,this.startTime])}}}function o(t,e){var n=t.responseType;if("json"===n&&null!==e)return e;var r="arraybuffer"===n||"blob"===n||"json"===n?t.response:t.responseText;return h(r)}function i(t,e){var n=s(e),r=t.params;r.host=n.hostname+":"+n.port,r.pathname=n.pathname,t.sameOrigin=n.sameOrigin}var a=t("loader");if(a.xhrWrappable){var c=t("handle"),s=t(11),f=t("ee"),u=["load","error","abort","timeout"],d=u.length,l=t("id"),p=t(14),h=t(13),m=window.XMLHttpRequest;a.features.xhr=!0,t(9),f.on("new-xhr",function(t){var e=this;e.totalCbs=0,e.called=0,e.cbTime=0,e.end=r,e.ended=!1,e.xhrGuids={},e.lastSize=null,p&&(p>34||p<10)||window.opera||t.addEventListener("progress",function(t){e.lastSize=t.loaded},!1)}),f.on("open-xhr-start",function(t){this.params={method:t[0]},i(this,t[1]),this.metrics={}}),f.on("open-xhr-end",function(t,e){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&e.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid)}),f.on("send-xhr-start",function(t,e){var n=this.metrics,r=t[0],o=this;if(n&&r){var i=h(r);i&&(n.txSize=i)}this.startTime=(new Date).getTime(),this.listener=function(t){try{"abort"===t.type&&(o.params.aborted=!0),("load"!==t.type||o.called===o.totalCbs&&(o.onloadCalled||"function"!=typeof e.onload))&&o.end(e)}catch(n){try{f.emit("internal-error",[n])}catch(r){}}};for(var a=0;a<d;a++)e.addEventListener(u[a],this.listener,!1)}),f.on("xhr-cb-time",function(t,e,n){this.cbTime+=t,e?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof n.onload||this.end(n)}),f.on("xhr-load-added",function(t,e){var n=""+l(t)+!!e;this.xhrGuids&&!this.xhrGuids[n]&&(this.xhrGuids[n]=!0,this.totalCbs+=1)}),f.on("xhr-load-removed",function(t,e){var n=""+l(t)+!!e;this.xhrGuids&&this.xhrGuids[n]&&(delete this.xhrGuids[n],this.totalCbs-=1)}),f.on("addEventListener-end",function(t,e){e instanceof m&&"load"===t[0]&&f.emit("xhr-load-added",[t[1],t[2]],e)}),f.on("removeEventListener-end",function(t,e){e instanceof m&&"load"===t[0]&&f.emit("xhr-load-removed",[t[1],t[2]],e)}),f.on("fn-start",function(t,e,n){e instanceof m&&("onload"===n&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=(new Date).getTime()))}),f.on("fn-end",function(t,e){this.xhrCbStart&&f.emit("xhr-cb-time",[(new Date).getTime()-this.xhrCbStart,this.onload,e],e)})}},{}],11:[function(t,e,n){e.exports=function(t){var e=document.createElement("a"),n=window.location,r={};e.href=t,r.port=e.port;var o=e.href.split("://");!r.port&&o[1]&&(r.port=o[1].split("/")[0].split("@").pop().split(":")[1]),r.port&&"0"!==r.port||(r.port="https"===o[0]?"443":"80"),r.hostname=e.hostname||n.hostname,r.pathname=e.pathname,r.protocol=o[0],"/"!==r.pathname.charAt(0)&&(r.pathname="/"+r.pathname);var i=!e.protocol||":"===e.protocol||e.protocol===n.protocol,a=e.hostname===document.domain&&e.port===n.port;return r.sameOrigin=i&&(!e.hostname||a),r}},{}],12:[function(t,e,n){function r(){}function o(t,e,n){return function(){return i(t,[(new Date).getTime()].concat(c(arguments)),e?null:this,n),e?void 0:this}}var i=t("handle"),a=t(15),c=t(16),s=t("ee").get("tracer"),f=NREUM;"undefined"==typeof window.newrelic&&(newrelic=f);var u=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(u,function(t,e){f[e]=o(d+e,!0,"api")}),f.addPageAction=o(d+"addPageAction",!0),f.setCurrentRouteName=o(d+"routeName",!0),e.exports=newrelic,f.interaction=function(){return(new r).get()};var p=r.prototype={createTracer:function(t,e){var n={},r=this,o="function"==typeof e;return i(l+"tracer",[Date.now(),t,n],r),function(){if(s.emit((o?"":"no-")+"fn-start",[Date.now(),r,o],n),o)try{return e.apply(this,arguments)}finally{s.emit("fn-end",[Date.now()],n)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){p[e]=o(l+e)}),newrelic.noticeError=function(t){"string"==typeof t&&(t=new Error(t)),i("err",[t,(new Date).getTime()])}},{}],13:[function(t,e,n){e.exports=function(t){if("string"==typeof t&&t.length)return t.length;if("object"==typeof t){if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if(!("undefined"!=typeof FormData&&t instanceof FormData))try{return JSON.stringify(t).length}catch(e){return}}}},{}],14:[function(t,e,n){var r=0,o=navigator.userAgent.match(/Firefox[\/\s](\d+\.\d+)/);o&&(r=+o[1]),e.exports=r},{}],15:[function(t,e,n){function r(t,e){var n=[],r="",i=0;for(r in t)o.call(t,r)&&(n[i]=e(r,t[r]),i+=1);return n}var o=Object.prototype.hasOwnProperty;e.exports=r},{}],16:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,o=n-e||0,i=Array(o<0?0:o);++r<o;)i[r]=t[e+r];return i}e.exports=r},{}],17:[function(t,e,n){function r(t){return!(t&&t instanceof Function&&t.apply&&!t[a])}var o=t("ee"),i=t(16),a="nr@original",c=Object.prototype.hasOwnProperty,s=!1;e.exports=function(t,e){function n(t,e,n,o){function nrWrapper(){var r,a,c,s;try{a=this,r=i(arguments),c="function"==typeof n?n(r,a):n||{}}catch(f){l([f,"",[r,a,o],c])}u(e+"start",[r,a,o],c);try{return s=t.apply(a,r)}catch(d){throw u(e+"err",[r,a,d],c),d}finally{u(e+"end",[r,a,s],c)}}return r(t)?t:(e||(e=""),nrWrapper[a]=t,d(t,nrWrapper),nrWrapper)}function f(t,e,o,i){o||(o="");var a,c,s,f="-"===o.charAt(0);for(s=0;s<e.length;s++)c=e[s],a=t[c],r(a)||(t[c]=n(a,f?c+o:o,i,c))}function u(n,r,o){if(!s||e){var i=s;s=!0;try{t.emit(n,r,o)}catch(a){l([a,n,r,o])}s=i}}function d(t,e){if(Object.defineProperty&&Object.keys)try{var n=Object.keys(t);return n.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(r){l([r])}for(var o in t)c.call(t,o)&&(e[o]=t[o]);return e}function l(e){try{t.emit("internal-error",e)}catch(n){}}return t||(t=o),n.inPlace=f,n.flag=a,n}},{}],ee:[function(t,e,n){function r(){}function o(t){function e(t){return t&&t instanceof r?t:t?s(t,c,i):i()}function n(n,r,o){if(!l.aborted){t&&t(n,r,o);for(var i=e(o),a=h(n),c=a.length,s=0;s<c;s++)a[s].apply(i,r);var f=u[y[n]];return f&&f.push([g,n,r,i]),i}}function p(t,e){v[t]=h(t).concat(e)}function h(t){return v[t]||[]}function m(t){return d[t]=d[t]||o(n)}function w(t,e){f(t,function(t,n){e=e||"feature",y[n]=e,e in u||(u[e]=[])})}var v={},y={},g={on:p,emit:n,get:m,listeners:h,context:e,buffer:w,abort:a,aborted:!1};return g}function i(){return new r}function a(){(u.api||u.feature)&&(l.aborted=!0,u=l.backlog={})}var c="nr@context",s=t("gos"),f=t(15),u={},d={},l=e.exports=o();l.backlog=u},{}],gos:[function(t,e,n){function r(t,e,n){if(o.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return t[e]=r,r}var o=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){o.buffer([t],r),o.emit(t,e,n)}var o=t("ee").get("handle");e.exports=r,r.ee=o},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,i,function(){return o++})}var o=1,i="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!b++){var t=g.info=NREUM.info,e=d.getElementsByTagName("script")[0];if(setTimeout(f.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return f.abort();s(v,function(e,n){t[e]||(t[e]=n)}),c("mark",["onload",a()],null,"api");var n=d.createElement("script");n.src="https://"+t.agent,e.parentNode.insertBefore(n,e)}}function o(){"complete"===d.readyState&&i()}function i(){c("mark",["domContent",a()],null,"api")}function a(){return(new Date).getTime()}var c=t("handle"),s=t(15),f=t("ee"),u=window,d=u.document,l="addEventListener",p="attachEvent",h=u.XMLHttpRequest,m=h&&h.prototype;NREUM.o={ST:setTimeout,CT:clearTimeout,XHR:h,REQ:u.Request,EV:u.Event,PR:u.Promise,MO:u.MutationObserver},t(12);var w=""+location,v={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1016.min.js"},y=h&&m&&m[l]&&!/CriOS/.test(navigator.userAgent),g=e.exports={offset:a(),origin:w,features:{},xhrWrappable:y};d[l]?(d[l]("DOMContentLoaded",i,!1),u[l]("load",r,!1)):(d[p]("onreadystatechange",o),u[p]("onload",r)),c("mark",["firstbyte",a()],null,"api");var b=0},{}]},{},["loader",2,10,4,3]);
-  </script>
   <title>
    Bottle - Dota 2 Wiki
   </title>
@@ -12,7 +9,7 @@
    document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );
   </script>
   <script>
-   (window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Bottle","wgTitle":"Bottle","wgCurRevisionId":1438400,"wgRevisionId":1438400,"wgArticleId":753,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Items","Bought from Consumables"],"wgBreakFrames":true,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Bottle","wgRelevantArticleId":753,"wgRequestId":"43ef18f5eb06ae3c87261aee","wgIsProbablyEditable":true,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgPreferredVariant":"en","wgCollapsibleVectorEnabledModules":{"collapsiblenav":true,"experiments":true},"wgVisualEditor":{"pageLanguageCode":"en","pageLanguageDir":"ltr","usePageImages":true,"usePageDescriptions":false},"wgWikiEditorEnabledModules":{"toolbar":true,"dialogs":true,"preview":true,"publish":true},"wgCategoryTreePageCategoryOptions":"{\"mode\":0,\"hideprefix\":20,\"showcount\":true,\"namespaces\":false}","wgVisualEditorToolbarScrollOffset":0});mw.loader.implement("user.options",function($,jQuery,require,module){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function ( $, jQuery, require, module ) {
+   (window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Bottle","wgTitle":"Bottle","wgCurRevisionId":1530653,"wgRevisionId":1530653,"wgArticleId":753,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Items","Shop items"],"wgBreakFrames":true,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Bottle","wgRelevantArticleId":753,"wgRequestId":"7e2235fa307d82d6efeb7a15","wgIsProbablyEditable":true,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgPreferredVariant":"en","wgCollapsibleVectorEnabledModules":{"collapsiblenav":true,"experiments":true},"wgVisualEditor":{"pageLanguageCode":"en","pageLanguageDir":"ltr","usePageImages":true,"usePageDescriptions":false},"wgWikiEditorEnabledModules":{"toolbar":true,"dialogs":true,"preview":true,"publish":true},"wgCategoryTreePageCategoryOptions":"{\"mode\":0,\"hideprefix\":20,\"showcount\":true,\"namespaces\":false}","wgVisualEditorToolbarScrollOffset":0});mw.loader.implement("user.options",function($,jQuery,require,module){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function ( $, jQuery, require, module ) {
 mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/;
 
 });mw.loader.load(["ext.smw.style","mediawiki.page.startup","ext.siteGlobals","ext.bunnyears","ext.visualEditor.desktopArticleTarget.init","ext.hydraAuth.banners","skins.vector.js","skins.hydra.advertisements.js","skins.hydra.footer.js","ext.social"]);});
@@ -23,11 +20,11 @@ mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","cs
   <link href="/load.php?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=hydra" rel="stylesheet"/>
   <script async="" src="/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=hydra">
   </script>
-  <meta content="MediaWiki 1.27.1" name="generator"/>
+  <meta content="MediaWiki 1.27.3" name="generator"/>
   <meta content="Bottle" name="og:title"/>
   <meta content="website" name="og:type"/>
   <meta content="https://hydra-media.cursecdn.com/dota2.gamepedia.com/b/bc/Wiki.png" name="og:image"/>
-  <meta content="http://dota2.gamepedia.com/Bottle" name="og:url"/>
+  <meta content="https://dota2.gamepedia.com/Bottle" name="og:url"/>
   <meta content="Dota 2 Wiki" name="og:site_name"/>
   <meta name="description"/>
   <meta content="" name="keywords"/>
@@ -40,13 +37,13 @@ mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","cs
   <link href="/opensearch_desc.php" rel="search" title="Dota 2 Wiki (en)" type="application/opensearchdescription+xml"/>
   <link href="//dota2.gamepedia.com/api.php?action=rsd" rel="EditURI" type="application/rsd+xml"/>
   <link href="//creativecommons.org/licenses/by-nc-sa/3.0/" rel="copyright"/>
-  <link href="http://dota2.gamepedia.com/Bottle" rel="canonical"/>
+  <link href="https://dota2.gamepedia.com/Bottle" rel="canonical"/>
   <link href="dota2-de.gamepedia.com" hreflang="de" rel="alternate"/>
   <link href="dota2-ru.gamepedia.com" hreflang="ru" rel="alternate"/>
   <link href="dota2-pt.gamepedia.com" hreflang="pt" rel="alternate"/>
   <link href="dota2-zh.gamepedia.com" hreflang="zh" rel="alternate"/>
   <meta content="Gamepedia" itemprop="author"/>
-  <link href="https://stations.cursetech.com/be/bunnyears.min.css" rel="stylesheet" type="text/css"/>
+  <link href="https://stations.cursetech.com/be/bunnyears-1.1.min.css" rel="stylesheet" type="text/css"/>
  </head>
  <body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-Bottle rootpage-Bottle skin-hydra action-view site-dota2-gamepedia show-ads">
   <script type="application/ld+json">
@@ -81,8 +78,8 @@ mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","cs
 		"target": "https://dota2.gamepedia.com/index.php?title=Special:Search&search={search_term}",
 		"query-input": "required name=search_term"
 	},
-	"datePublished": "2017-01-09T22:44:26Z",
-	"dateModified": "2017-01-09T22:44:26Z",
+	"datePublished": "2017-05-31T12:49:11Z",
+	"dateModified": "2017-05-31T12:49:11Z",
 	"mainEntityOfPage": "https://dota2.gamepedia.com/Bottle"
 }
   </script>
@@ -124,7 +121,7 @@ mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","cs
 var script = document.createElement('script');
 var tstamp = new Date();
 script.id = 'factorem';
-script.src = 'http://cdm.cursecdn.com/js/gamepedia/cdmfactorem_min.js?misc=' + tstamp.getTime();;
+script.src = '//cdm.cursecdn.com/js/gamepedia/cdmfactorem_min.js?misc=' + tstamp.getTime();;
 script.async = true;
 script.type='text/javascript';
 document.head.appendChild(script);
@@ -133,10 +130,10 @@ document.head.appendChild(script);
    setTimeout(function(){if("undefined"!=typeof b2){var element=document.getElementById(b2);setTimeout(function(){element.parentNode.innerHTML='<div id="'+b2+'"></div>'},5000)}},20000)
   </script>
   <script>
-   setTimeout(function(){if("undefined"!=typeof b2){var element=document.getElementById(b3);setTimeout(function(){element.parentNode.innerHTML='<div id="'+b3+'"></div>'},5000)}},20000)
+   setTimeout(function(){if("undefined"!=typeof b3){var element=document.getElementById(b3);setTimeout(function(){element.parentNode.innerHTML='<div id="'+b3+'"></div>'},5000)}},20000)
   </script>
   <script>
-   setTimeout(function(){if("undefined"!=typeof b2){var element=document.getElementById(b6);setTimeout(function(){element.parentNode.innerHTML='<div id="'+b6+'"></div>'},5000)}},20000)
+   setTimeout(function(){if("undefined"!=typeof b6){var element=document.getElementById(b6);setTimeout(function(){element.parentNode.innerHTML='<div id="'+b6+'"></div>'},5000)}},20000)
   </script>
   <div id="netbar">
    <ul class="netbar-left">
@@ -231,8 +228,13 @@ document.head.appendChild(script);
         <tr>
          <td style="font-weight:bold;font-size:110%;background-color:#B44335;color:white;padding:3px 5px;">
           Bottle
-          <div style="float:right;">
-           <div style="background-color:white;display:inline-block;margin-left:5px;color:#B44335;padding-left:0.2em;padding-right:0.25em;">
+          <div style="float:right;text-align:center;">
+           <div style="background-color:white;display:inline-block;margin:0 2px;color:#B44335;padding:0 0.2em;">
+            <span id="tooltip" style="cursor:help; border-bottom:1px dotted;" title="Available at Base Shop">
+             B
+            </span>
+           </div>
+           <div style="background-color:white;display:inline-block;margin:0 2px;color:#B44335;padding:0 0.2em;">
             <span id="tooltip" style="cursor:help; border-bottom:1px dotted;" title="Available at Side Lane Shop">
              L
             </span>
@@ -276,7 +278,7 @@ document.head.appendChild(script);
          </td>
         </tr>
         <tr>
-         <td style="font-style:{italic;padding:6px 10px;">
+         <td style="font-style:italic;padding:6px 10px;">
           An old bottle that survived the ages, the contents placed inside become enchanted.
          </td>
         </tr>
@@ -285,7 +287,7 @@ document.head.appendChild(script);
           <div style="width:50%;display:inline-block;color:white;background-color:#A58B07;">
            Cost
            <br/>
-           660
+           650
           </div>
           <div style="width:50%;display:inline-block;color:white;background-color:#B44335;">
            Bought From
@@ -313,6 +315,16 @@ document.head.appendChild(script);
              <a href="#Regenerate">
               Regenerate
              </a>
+            </td>
+           </tr>
+           <tr>
+            <td>
+             <b>
+              Charges
+             </b>
+            </td>
+            <td>
+             3 / 1
             </td>
            </tr>
            <tr>
@@ -367,8 +379,8 @@ document.head.appendChild(script);
               </div>
              </div>
              <img alt="" height="10" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/c/c2/UsedIn0.png?version=9c87491372651536823010a791b8bdd2" width="246"/>
-             <a href="/Bottle" title="Bottle (660)">
-              <img alt="Bottle (660)" height="29" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/f/fa/Bottle_%28Full%29_icon.png/40px-Bottle_%28Full%29_icon.png?version=d941ba0bcb1c6e41c4ff21304559d9e8" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/f/fa/Bottle_%28Full%29_icon.png/60px-Bottle_%28Full%29_icon.png?version=d941ba0bcb1c6e41c4ff21304559d9e8 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/f/fa/Bottle_%28Full%29_icon.png/80px-Bottle_%28Full%29_icon.png?version=d941ba0bcb1c6e41c4ff21304559d9e8 2x" width="40"/>
+             <a href="/Bottle" title="Bottle (650)">
+              <img alt="Bottle (650)" height="29" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/f/fa/Bottle_%28Full%29_icon.png/40px-Bottle_%28Full%29_icon.png?version=d941ba0bcb1c6e41c4ff21304559d9e8" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/f/fa/Bottle_%28Full%29_icon.png/60px-Bottle_%28Full%29_icon.png?version=d941ba0bcb1c6e41c4ff21304559d9e8 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/f/fa/Bottle_%28Full%29_icon.png/80px-Bottle_%28Full%29_icon.png?version=d941ba0bcb1c6e41c4ff21304559d9e8 2x" width="40"/>
              </a>
              <img alt="" height="10" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/0/02/Components0.png?version=33e051ee0aeec69e1ce364bc54693b0a" width="246"/>
              <div style="display:table;table-layout:fixed;width:100%;text-align:center;">
@@ -398,7 +410,7 @@ document.head.appendChild(script);
         <a href="/Side_Lane_Shop" title="Side Lane Shop">
          Side Lane Shop
         </a>
-        . Bottles bought from the side lane shop start off with 1 charge, instead of 3.
+        . Bottles bought from the Side Lane Shop start off with  1 charge, instead of 3 .
        </p>
        <div class="toc" id="toc">
         <div id="toctitle">
@@ -477,14 +489,8 @@ document.head.appendChild(script);
          <span class="mw-editsection-bracket">
           [
          </span>
-         <a class="mw-editsection-visualeditor" href="/index.php?title=Bottle&amp;veaction=edit&amp;vesection=1" title="Edit section: Additional information">
-          edit
-         </a>
-         <span class="mw-editsection-divider">
-          |
-         </span>
          <a href="/index.php?title=Bottle&amp;action=edit&amp;section=1" title="Edit section: Additional information">
-          edit source
+          edit
          </a>
          <span class="mw-editsection-bracket">
           ]
@@ -517,14 +523,14 @@ document.head.appendChild(script);
            Rejuvenation Aura
           </a>
          </span>
-         ​.
+         .
         </li>
         <li>
          A Bottle slows
          <a href="/Couriers" title="Couriers">
           couriers
          </a>
-         which carry it by 30% if the Bottle is not full (3 charges). This effect stacks.
+         carrying it by 30% if the Bottle is not full (3 charges). This effect stacks.
         </li>
        </ul>
        <h2>
@@ -535,14 +541,8 @@ document.head.appendChild(script);
          <span class="mw-editsection-bracket">
           [
          </span>
-         <a class="mw-editsection-visualeditor" href="/index.php?title=Bottle&amp;veaction=edit&amp;vesection=2" title="Edit section: Abilities">
-          edit
-         </a>
-         <span class="mw-editsection-divider">
-          |
-         </span>
          <a href="/index.php?title=Bottle&amp;action=edit&amp;section=2" title="Edit section: Abilities">
-          edit source
+          edit
          </a>
          <span class="mw-editsection-bracket">
           ]
@@ -612,33 +612,48 @@ document.head.appendChild(script);
            <b>
             Cast Range
            </b>
-           : 600
+           :
+           <span style="white-space: nowrap">
+            600
+           </span>
           </div>
           <div>
            <b>
             Max Number of Charges
            </b>
-           : 3
+           :
+           <span style="white-space: nowrap">
+            3
+           </span>
           </div>
           <div>
            <b>
             Total Health Restored per Charge
            </b>
-           : 90
+           :
+           <span style="white-space: nowrap">
+            90
+           </span>
           </div>
           <div>
            <b>
             Total Mana Restored per Charge
            </b>
-           : 60
+           :
+           <span style="white-space: nowrap">
+            60
+           </span>
           </div>
           <div>
            <b>
             Duration
            </b>
-           : 2.5
+           :
+           <span style="white-space: nowrap">
+            2.5
+           </span>
           </div>
-          <div style="display: inline-block; margin: 8px 0px 0px 50px; width: 370px; vertical-align: top;">
+          <div style="display: inline-block; margin: 8px 0px 0px 50px; width: 370px; vertical-align: top; word-wrap: break-word;">
            <span style="position: relative; top: -2px;">
             <a href="/Cooldown" title="Cooldown">
              <img alt="Cooldown symbol.png" height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/b/b7/Cooldown_symbol.png?version=7429ed9baf0f121e6ab3324bfdfad708" style="vertical-align: text-top" width="20"/>
@@ -646,11 +661,13 @@ document.head.appendChild(script);
            </span>
            0.5
           </div>
-          <div style="display: inline-block; margin: 8px 0px 0px; width: 10px; vertical-align: top;">
+          <div style="display: inline-block; margin: 8px 0px 0px; width: 10px; vertical-align: top; word-wrap: break-word;">
           </div>
           <div style="margin-top: 10px;">
            <b>
-            Modifiers
+            <span id="tooltip" style="cursor:help; border-bottom:1px dotted;" title="The displayed names are the intern names of the modifiers. Do not change them even if they don't match the ability name.">
+             Modifiers
+            </span>
            </b>
           </div>
           <div style="font-size: 85%; margin-left: 10px;">
@@ -769,8 +786,6 @@ document.head.appendChild(script);
        </div>
        <p>
         <br/>
-       </p>
-       <p>
         <span id="Store_Rune">
         </span>
        </p>
@@ -826,15 +841,21 @@ document.head.appendChild(script);
            <b>
             Cast Range
            </b>
-           : 100
+           :
+           <span style="white-space: nowrap">
+            100
+           </span>
           </div>
           <div>
            <b>
             Max Rune Store Duration
            </b>
-           : 120
+           :
+           <span style="white-space: nowrap">
+            120
+           </span>
           </div>
-          <div style="display: inline-block; margin: 8px 0px 0px 50px; width: 370px; vertical-align: top;">
+          <div style="display: inline-block; margin: 8px 0px 0px 50px; width: 370px; vertical-align: top; word-wrap: break-word;">
            <span style="position: relative; top: -2px;">
             <a href="/Cooldown" title="Cooldown">
              <img alt="Cooldown symbol.png" height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/b/b7/Cooldown_symbol.png?version=7429ed9baf0f121e6ab3324bfdfad708" style="vertical-align: text-top" width="20"/>
@@ -842,7 +863,7 @@ document.head.appendChild(script);
            </span>
            0.5
           </div>
-          <div style="display: inline-block; margin: 8px 0px 0px; width: 10px; vertical-align: top;">
+          <div style="display: inline-block; margin: 8px 0px 0px; width: 10px; vertical-align: top; word-wrap: break-word;">
           </div>
          </div>
         </div>
@@ -855,11 +876,35 @@ document.head.appendChild(script);
          </p>
          <ul>
           <li>
-           A
+           If a hero collects a
            <a class="mw-redirect" href="/Rune" title="Rune">
             rune
            </a>
-           can be stored into the Bottle by making a right-click on the rune.
+           with a Bottle in their inventory, the rune is stored in the bottle instead of being activated normally.
+           <ul>
+            <li>
+             The bottle must be in the main inventory and not
+             <a class="mw-redirect" href="/Mute" title="Mute">
+              muted
+             </a>
+             for the rune to be stored away.
+            </li>
+           </ul>
+          </li>
+         </ul>
+         <ul>
+          <li>
+           While having a rune stored, Activating the Bottle activates the rune, instead of regenerating the user.
+          </li>
+         </ul>
+         <ul>
+          <li>
+           The stored rune can be activated at any time by using the Bottle, considering the holder is currently able to cast items.
+          </li>
+         </ul>
+         <ul>
+          <li>
+           Activating a Bounty rune refills the Bottle to 2 charges, and activating any other rune refills the bottle to 3 charges.
           </li>
          </ul>
          <ul>
@@ -870,7 +915,7 @@ document.head.appendChild(script);
              However, if it is a
              <span style="white-space:nowrap">
               <a href="/Bounty_Rune" title="Bounty Rune">
-               <img alt="Bounty Rune" height="16" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/f/f3/Rune_icon_Bounty.png/16px-Rune_icon_Bounty.png?version=9a5ed442bd0b02522061b2cd965000ac" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/f/f3/Rune_icon_Bounty.png/24px-Rune_icon_Bounty.png?version=9a5ed442bd0b02522061b2cd965000ac 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/f/f3/Rune_icon_Bounty.png?version=9a5ed442bd0b02522061b2cd965000ac 2x" width="16"/>
+               <img alt="Bounty Rune minimap icon.png" height="16" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/c/c9/Bounty_Rune_minimap_icon.png/16px-Bounty_Rune_minimap_icon.png?version=d5401faab8c02bc9aeebdaf1f547cf2f" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/c/c9/Bounty_Rune_minimap_icon.png/24px-Bounty_Rune_minimap_icon.png?version=d5401faab8c02bc9aeebdaf1f547cf2f 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/c/c9/Bounty_Rune_minimap_icon.png?version=d5401faab8c02bc9aeebdaf1f547cf2f 2x" width="16"/>
               </a>
               <a href="/Bounty_Rune" title="Bounty Rune">
                Bounty Rune
@@ -883,19 +928,25 @@ document.head.appendChild(script);
          </ul>
          <ul>
           <li>
+           Stored Runes will automatically activate after being stored for 2 minutes.
+           <ul>
+            <li>
+             The rune is preserved through death and respawning, but if the owner is dead when the rune expires, the rune is lost.
+            </li>
+           </ul>
+          </li>
+         </ul>
+         <ul>
+          <li>
            Only heroes and
            <span style="white-space:nowrap">
-            <a href="/Lone_Druid" title="Lone Druid">
-             <img alt="Lone Druid icon.png" height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/5/5d/Lone_Druid_icon.png/20px-Lone_Druid_icon.png?version=de36ad8893b37496a816a6a163b74a66" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/5/5d/Lone_Druid_icon.png/30px-Lone_Druid_icon.png?version=de36ad8893b37496a816a6a163b74a66 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/5/5d/Lone_Druid_icon.png?version=de36ad8893b37496a816a6a163b74a66 2x" width="20"/>
+            <a href="/Spirit_Bear" title="Spirit Bear">
+             <img alt="Lone Druid Spirit Bear icon.png" height="14" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/b/b1/Lone_Druid_Spirit_Bear_icon.png/24px-Lone_Druid_Spirit_Bear_icon.png?version=8ba24bf0e1f9e25b56caf843d8f68e55" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/b/b1/Lone_Druid_Spirit_Bear_icon.png/36px-Lone_Druid_Spirit_Bear_icon.png?version=8ba24bf0e1f9e25b56caf843d8f68e55 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/b/b1/Lone_Druid_Spirit_Bear_icon.png/48px-Lone_Druid_Spirit_Bear_icon.png?version=8ba24bf0e1f9e25b56caf843d8f68e55 2x" width="24"/>
             </a>
-            <a href="/Lone_Druid" title="Lone Druid">
-             Lone Druid
+            <a href="/Spirit_Bear" title="Spirit Bear">
+             Spirit Bear
             </a>
            </span>
-           ​'s
-           <a href="/Spirit_Bear" title="Spirit Bear">
-            Spirit Bear
-           </a>
            can store runes.
            <a href="/Illusions" title="Illusions">
             Illusions
@@ -923,22 +974,7 @@ document.head.appendChild(script);
          </ul>
          <ul>
           <li>
-           While having a rune stored, the Regenerate ability activates the rune, instead of regenerating the user.
-          </li>
-         </ul>
-         <ul>
-          <li>
-           The stored rune can be activated at any time by using the Bottle. Activating the rune fully refills the Bottle with 3 charges.
-           <ul>
-            <li>
-             When the stored rune is a Bounty Rune, the bottle gets filled with 2 charges, instead of 3.
-            </li>
-           </ul>
-          </li>
-         </ul>
-         <ul>
-          <li>
-           A Bottle with a rune stored cannot be dropped from the inventory.
+           A Bottle with a rune stored cannot be removed from the inventory.
           </li>
          </ul>
         </div>
@@ -954,14 +990,8 @@ document.head.appendChild(script);
          <span class="mw-editsection-bracket">
           [
          </span>
-         <a class="mw-editsection-visualeditor" href="/index.php?title=Bottle&amp;veaction=edit&amp;vesection=3" title="Edit section: Bottle states">
-          edit
-         </a>
-         <span class="mw-editsection-divider">
-          |
-         </span>
          <a href="/index.php?title=Bottle&amp;action=edit&amp;section=3" title="Edit section: Bottle states">
-          edit source
+          edit
          </a>
          <span class="mw-editsection-bracket">
           ]
@@ -994,6 +1024,16 @@ document.head.appendChild(script);
           </a>
          </td>
          <td>
+          <a class="image" href="/File:Bottle_(Bounty)_icon.png">
+           <img alt="Bottle (Bounty) icon.png" height="73" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/c/ce/Bottle_%28Bounty%29_icon.png?version=45fcb506236d15511b5d3aa6cf18d95c" width="100"/>
+          </a>
+         </td>
+         <td>
+          <a class="image" href="/File:Bottle_(Arcane)_icon.png">
+           <img alt="Bottle (Arcane) icon.png" height="73" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/1/1c/Bottle_%28Arcane%29_icon.png?version=288b025fdcd08c219ec1988d9c5ad6e2" width="100"/>
+          </a>
+         </td>
+         <td>
           <a class="image" href="/File:Bottle_(Double_Damage)_icon.png">
            <img alt="Bottle (Double Damage) icon.png" height="73" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/b/b4/Bottle_%28Double_Damage%29_icon.png?version=836cba7d156aa3f139bd518d803bd2a1" width="100"/>
           </a>
@@ -1016,16 +1056,6 @@ document.head.appendChild(script);
          <td>
           <a class="image" href="/File:Bottle_(Regeneration)_icon.png">
            <img alt="Bottle (Regeneration) icon.png" height="73" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/c/c4/Bottle_%28Regeneration%29_icon.png?version=aa58e89bcd8763d2c39baa1a6e8ecbe7" width="100"/>
-          </a>
-         </td>
-         <td>
-          <a class="image" href="/File:Bottle_(Bounty)_icon.png">
-           <img alt="Bottle (Bounty) icon.png" height="73" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/c/ce/Bottle_%28Bounty%29_icon.png?version=45fcb506236d15511b5d3aa6cf18d95c" width="100"/>
-          </a>
-         </td>
-         <td>
-          <a class="image" href="/File:Bottle_(Arcane)_icon.png">
-           <img alt="Bottle (Arcane) icon.png" height="73" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/1/1c/Bottle_%28Arcane%29_icon.png?version=288b025fdcd08c219ec1988d9c5ad6e2" width="100"/>
           </a>
          </td>
         </tr>
@@ -1052,6 +1082,16 @@ document.head.appendChild(script);
           Empty
          </td>
          <td>
+          Bounty
+          <br/>
+          Rune
+         </td>
+         <td>
+          Arcane
+          <br/>
+          Rune
+         </td>
+         <td>
           Double Damage
           <br/>
           Rune
@@ -1076,16 +1116,6 @@ document.head.appendChild(script);
           <br/>
           Rune
          </td>
-         <td>
-          Bounty
-          <br/>
-          Rune
-         </td>
-         <td>
-          Arcane
-          <br/>
-          Rune
-         </td>
         </tr>
        </table>
        <h2>
@@ -1096,14 +1126,8 @@ document.head.appendChild(script);
          <span class="mw-editsection-bracket">
           [
          </span>
-         <a class="mw-editsection-visualeditor" href="/index.php?title=Bottle&amp;veaction=edit&amp;vesection=4" title="Edit section: Recommended heroes">
-          edit
-         </a>
-         <span class="mw-editsection-divider">
-          |
-         </span>
          <a href="/index.php?title=Bottle&amp;action=edit&amp;section=4" title="Edit section: Recommended heroes">
-          edit source
+          edit
          </a>
          <span class="mw-editsection-bracket">
           ]
@@ -1121,147 +1145,135 @@ document.head.appendChild(script);
           <li>
            <span style="white-space:nowrap">
             <a href="/Pudge" title="Pudge">
-             <img alt="Pudge icon.png" height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/c/c0/Pudge_icon.png/20px-Pudge_icon.png?version=2368c673a9f40725d0e3df5399579292" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/c/c0/Pudge_icon.png/30px-Pudge_icon.png?version=2368c673a9f40725d0e3df5399579292 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/c/c0/Pudge_icon.png?version=2368c673a9f40725d0e3df5399579292 2x" width="20"/>
+             <img alt="Pudge minimap icon.png" height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/5/55/Pudge_minimap_icon.png/20px-Pudge_minimap_icon.png?version=b98479326579901d24d3e58d37401fad" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/5/55/Pudge_minimap_icon.png/30px-Pudge_minimap_icon.png?version=b98479326579901d24d3e58d37401fad 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/5/55/Pudge_minimap_icon.png?version=b98479326579901d24d3e58d37401fad 2x" width="20"/>
             </a>
             <a href="/Pudge" title="Pudge">
              Pudge
             </a>
            </span>
-           ​
           </li>
           <li>
            <span style="white-space:nowrap">
             <a href="/Tinker" title="Tinker">
-             <img alt="Tinker icon.png" height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/d/d1/Tinker_icon.png/20px-Tinker_icon.png?version=d7bb1f312446e28096f53774c7a0f420" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/d/d1/Tinker_icon.png/30px-Tinker_icon.png?version=d7bb1f312446e28096f53774c7a0f420 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/d/d1/Tinker_icon.png?version=d7bb1f312446e28096f53774c7a0f420 2x" width="20"/>
+             <img alt="Tinker minimap icon.png" height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/1/1b/Tinker_minimap_icon.png/20px-Tinker_minimap_icon.png?version=951a4d243922f3078fbcf771e069e4b6" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/1/1b/Tinker_minimap_icon.png/30px-Tinker_minimap_icon.png?version=951a4d243922f3078fbcf771e069e4b6 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/1/1b/Tinker_minimap_icon.png?version=951a4d243922f3078fbcf771e069e4b6 2x" width="20"/>
             </a>
             <a href="/Tinker" title="Tinker">
              Tinker
             </a>
            </span>
-           ​
           </li>
           <li>
            <span style="white-space:nowrap">
             <a href="/Storm_Spirit" title="Storm Spirit">
-             <img alt="Storm Spirit icon.png" height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/1/13/Storm_Spirit_icon.png/20px-Storm_Spirit_icon.png?version=b55c1c4d4671b0218148dda658eab4c1" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/1/13/Storm_Spirit_icon.png/30px-Storm_Spirit_icon.png?version=b55c1c4d4671b0218148dda658eab4c1 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/1/13/Storm_Spirit_icon.png?version=b55c1c4d4671b0218148dda658eab4c1 2x" width="20"/>
+             <img alt="Storm Spirit minimap icon.png" height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/d/d6/Storm_Spirit_minimap_icon.png/20px-Storm_Spirit_minimap_icon.png?version=3b855db456ae450de2fa27e9bf4a2757" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/d/d6/Storm_Spirit_minimap_icon.png/30px-Storm_Spirit_minimap_icon.png?version=3b855db456ae450de2fa27e9bf4a2757 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/d/d6/Storm_Spirit_minimap_icon.png?version=3b855db456ae450de2fa27e9bf4a2757 2x" width="20"/>
             </a>
             <a href="/Storm_Spirit" title="Storm Spirit">
              Storm Spirit
             </a>
            </span>
-           ​
           </li>
           <li>
            <span style="white-space:nowrap">
             <a href="/Ember_Spirit" title="Ember Spirit">
-             <img alt="Ember Spirit icon.png" height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/9/91/Ember_Spirit_icon.png/20px-Ember_Spirit_icon.png?version=547bf78f4d95155e6958870cd456f232" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/9/91/Ember_Spirit_icon.png/30px-Ember_Spirit_icon.png?version=547bf78f4d95155e6958870cd456f232 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/9/91/Ember_Spirit_icon.png?version=547bf78f4d95155e6958870cd456f232 2x" width="20"/>
+             <img alt="Ember Spirit minimap icon.png" height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/f/fc/Ember_Spirit_minimap_icon.png/20px-Ember_Spirit_minimap_icon.png?version=40326f4e6571a2d300c52a83578caf85" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/f/fc/Ember_Spirit_minimap_icon.png/30px-Ember_Spirit_minimap_icon.png?version=40326f4e6571a2d300c52a83578caf85 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/f/fc/Ember_Spirit_minimap_icon.png?version=40326f4e6571a2d300c52a83578caf85 2x" width="20"/>
             </a>
             <a href="/Ember_Spirit" title="Ember Spirit">
              Ember Spirit
             </a>
            </span>
-           ​
           </li>
           <li>
            <span style="white-space:nowrap">
             <a href="/Queen_of_Pain" title="Queen of Pain">
-             <img alt="Queen of Pain icon.png" height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/a/a1/Queen_of_Pain_icon.png/20px-Queen_of_Pain_icon.png?version=cb9689d2cf96fbebc5160b3891b38f6e" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/a/a1/Queen_of_Pain_icon.png/30px-Queen_of_Pain_icon.png?version=cb9689d2cf96fbebc5160b3891b38f6e 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/a/a1/Queen_of_Pain_icon.png?version=cb9689d2cf96fbebc5160b3891b38f6e 2x" width="20"/>
+             <img alt="Queen of Pain minimap icon.png" height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/0/0f/Queen_of_Pain_minimap_icon.png/20px-Queen_of_Pain_minimap_icon.png?version=b7a90527821df98e8bf3f50aa86d382b" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/0/0f/Queen_of_Pain_minimap_icon.png/30px-Queen_of_Pain_minimap_icon.png?version=b7a90527821df98e8bf3f50aa86d382b 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/0/0f/Queen_of_Pain_minimap_icon.png?version=b7a90527821df98e8bf3f50aa86d382b 2x" width="20"/>
             </a>
             <a href="/Queen_of_Pain" title="Queen of Pain">
              Queen of Pain
             </a>
            </span>
-           ​
           </li>
           <li>
            <span style="white-space:nowrap">
             <a href="/Puck" title="Puck">
-             <img alt="Puck icon.png" height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/1/13/Puck_icon.png/20px-Puck_icon.png?version=206116830588da1f302387ebd256ec44" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/1/13/Puck_icon.png/30px-Puck_icon.png?version=206116830588da1f302387ebd256ec44 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/1/13/Puck_icon.png?version=206116830588da1f302387ebd256ec44 2x" width="20"/>
+             <img alt="Puck minimap icon.png" height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/c/cf/Puck_minimap_icon.png/20px-Puck_minimap_icon.png?version=84afce6a95a24a273702b6398fb78583" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/c/cf/Puck_minimap_icon.png/30px-Puck_minimap_icon.png?version=84afce6a95a24a273702b6398fb78583 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/c/cf/Puck_minimap_icon.png?version=84afce6a95a24a273702b6398fb78583 2x" width="20"/>
             </a>
             <a href="/Puck" title="Puck">
              Puck
             </a>
            </span>
-           ​
           </li>
           <li>
            <span style="white-space:nowrap">
             <a href="/Zeus" title="Zeus">
-             <img alt="Zeus icon.png" height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/3/3f/Zeus_icon.png/20px-Zeus_icon.png?version=cdf864218fda923f2f47fc1c19a03028" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/3/3f/Zeus_icon.png/30px-Zeus_icon.png?version=cdf864218fda923f2f47fc1c19a03028 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/3/3f/Zeus_icon.png?version=cdf864218fda923f2f47fc1c19a03028 2x" width="20"/>
+             <img alt="Zeus minimap icon.png" height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/3/3a/Zeus_minimap_icon.png/20px-Zeus_minimap_icon.png?version=b51938d41d540a69ab235d65108db183" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/3/3a/Zeus_minimap_icon.png/30px-Zeus_minimap_icon.png?version=b51938d41d540a69ab235d65108db183 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/3/3a/Zeus_minimap_icon.png?version=b51938d41d540a69ab235d65108db183 2x" width="20"/>
             </a>
             <a href="/Zeus" title="Zeus">
              Zeus
             </a>
            </span>
-           ​
           </li>
           <li>
            <span style="white-space:nowrap">
             <a href="/Death_Prophet" title="Death Prophet">
-             <img alt="Death Prophet icon.png" height="21" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/d/d7/Death_Prophet_icon.png/20px-Death_Prophet_icon.png?version=2850e37e419120a5d5b116bfff0fed95" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/d/d7/Death_Prophet_icon.png?version=2850e37e419120a5d5b116bfff0fed95 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/d/d7/Death_Prophet_icon.png?version=2850e37e419120a5d5b116bfff0fed95 2x" width="20"/>
+             <img alt="Death Prophet minimap icon.png" height="21" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/5/5d/Death_Prophet_minimap_icon.png/20px-Death_Prophet_minimap_icon.png?version=b9adc1427423eafdf1d0db5f34af8bcb" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/5/5d/Death_Prophet_minimap_icon.png?version=b9adc1427423eafdf1d0db5f34af8bcb 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/5/5d/Death_Prophet_minimap_icon.png?version=b9adc1427423eafdf1d0db5f34af8bcb 2x" width="20"/>
             </a>
             <a href="/Death_Prophet" title="Death Prophet">
              Death Prophet
             </a>
            </span>
-           ​
           </li>
           <li>
            <span style="white-space:nowrap">
             <a href="/Shadow_Fiend" title="Shadow Fiend">
-             <img alt="Shadow Fiend icon.png" height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/3/36/Shadow_Fiend_icon.png/20px-Shadow_Fiend_icon.png?version=6910745de5e731e3655e3fb5ed59fc35" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/3/36/Shadow_Fiend_icon.png/30px-Shadow_Fiend_icon.png?version=6910745de5e731e3655e3fb5ed59fc35 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/3/36/Shadow_Fiend_icon.png?version=6910745de5e731e3655e3fb5ed59fc35 2x" width="20"/>
+             <img alt="Shadow Fiend minimap icon.png" height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/0/00/Shadow_Fiend_minimap_icon.png/20px-Shadow_Fiend_minimap_icon.png?version=cca8087fc4565fb1efcabce4389c4997" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/0/00/Shadow_Fiend_minimap_icon.png/30px-Shadow_Fiend_minimap_icon.png?version=cca8087fc4565fb1efcabce4389c4997 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/0/00/Shadow_Fiend_minimap_icon.png?version=cca8087fc4565fb1efcabce4389c4997 2x" width="20"/>
             </a>
             <a href="/Shadow_Fiend" title="Shadow Fiend">
              Shadow Fiend
             </a>
            </span>
-           ​
           </li>
           <li>
            <span style="white-space:nowrap">
             <a href="/Outworld_Devourer" title="Outworld Devourer">
-             <img alt="Outworld Devourer icon.png" height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/9/99/Outworld_Devourer_icon.png/20px-Outworld_Devourer_icon.png?version=f45cc2699b118c5c73402a6066b2724b" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/9/99/Outworld_Devourer_icon.png/30px-Outworld_Devourer_icon.png?version=f45cc2699b118c5c73402a6066b2724b 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/9/99/Outworld_Devourer_icon.png?version=f45cc2699b118c5c73402a6066b2724b 2x" width="20"/>
+             <img alt="Outworld Devourer minimap icon.png" height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/2/28/Outworld_Devourer_minimap_icon.png/20px-Outworld_Devourer_minimap_icon.png?version=3229dae5046c1df09a52d64201d5efc9" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/2/28/Outworld_Devourer_minimap_icon.png/30px-Outworld_Devourer_minimap_icon.png?version=3229dae5046c1df09a52d64201d5efc9 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/2/28/Outworld_Devourer_minimap_icon.png?version=3229dae5046c1df09a52d64201d5efc9 2x" width="20"/>
             </a>
             <a href="/Outworld_Devourer" title="Outworld Devourer">
              Outworld Devourer
             </a>
            </span>
-           ​
           </li>
           <li>
            <span style="white-space:nowrap">
             <a href="/Templar_Assassin" title="Templar Assassin">
-             <img alt="Templar Assassin icon.png" height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/9/9c/Templar_Assassin_icon.png/20px-Templar_Assassin_icon.png?version=cf5cdf453c7ef8fbfabef8590cde34f7" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/9/9c/Templar_Assassin_icon.png/30px-Templar_Assassin_icon.png?version=cf5cdf453c7ef8fbfabef8590cde34f7 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/9/9c/Templar_Assassin_icon.png?version=cf5cdf453c7ef8fbfabef8590cde34f7 2x" width="20"/>
+             <img alt="Templar Assassin minimap icon.png" height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/6/6b/Templar_Assassin_minimap_icon.png/20px-Templar_Assassin_minimap_icon.png?version=dc337ba657574ea584ab04cefe111130" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/6/6b/Templar_Assassin_minimap_icon.png/30px-Templar_Assassin_minimap_icon.png?version=dc337ba657574ea584ab04cefe111130 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/6/6b/Templar_Assassin_minimap_icon.png?version=dc337ba657574ea584ab04cefe111130 2x" width="20"/>
             </a>
             <a href="/Templar_Assassin" title="Templar Assassin">
              Templar Assassin
             </a>
            </span>
-           ​
           </li>
           <li>
            <span style="white-space:nowrap">
             <a href="/Magnus" title="Magnus">
-             <img alt="Magnus icon.png" height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/b/ba/Magnus_icon.png/20px-Magnus_icon.png?version=04292bd1bb51204135f4b6129cb6936e" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/b/ba/Magnus_icon.png/30px-Magnus_icon.png?version=04292bd1bb51204135f4b6129cb6936e 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/b/ba/Magnus_icon.png?version=04292bd1bb51204135f4b6129cb6936e 2x" width="20"/>
+             <img alt="Magnus minimap icon.png" height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/7f/Magnus_minimap_icon.png/20px-Magnus_minimap_icon.png?version=d51dfd5e91b642e2f514867e2978baa9" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/7f/Magnus_minimap_icon.png/30px-Magnus_minimap_icon.png?version=d51dfd5e91b642e2f514867e2978baa9 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/7/7f/Magnus_minimap_icon.png?version=d51dfd5e91b642e2f514867e2978baa9 2x" width="20"/>
             </a>
             <a href="/Magnus" title="Magnus">
              Magnus
             </a>
            </span>
-           ​
           </li>
          </ul>
         </li>
         <li>
          <span style="white-space:nowrap">
           <a href="/Io" title="Io">
-           <img alt="Io icon.png" height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/8/8d/Io_icon.png/20px-Io_icon.png?version=9e3d15820125c6fcbf2277b6cdf294f7" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/8/8d/Io_icon.png/30px-Io_icon.png?version=9e3d15820125c6fcbf2277b6cdf294f7 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/8/8d/Io_icon.png?version=9e3d15820125c6fcbf2277b6cdf294f7 2x" width="20"/>
+           <img alt="Io minimap icon.png" height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/8/86/Io_minimap_icon.png/20px-Io_minimap_icon.png?version=be73dc68699a04cceb1d7e1803a868e6" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/8/86/Io_minimap_icon.png/30px-Io_minimap_icon.png?version=be73dc68699a04cceb1d7e1803a868e6 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/8/86/Io_minimap_icon.png?version=be73dc68699a04cceb1d7e1803a868e6 2x" width="20"/>
           </a>
           <a href="/Io" title="Io">
            Io
           </a>
          </span>
-         ​ can use a Bottle to increase the healing to his allies with
+         can use a Bottle to increase the healing to his allies with
          <span style="white-space: nowrap;">
           <a href="/Io#Tether" title="Io#Tether">
            <img alt="Tether icon.png" height="16" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/0/02/Tether_icon.png/16px-Tether_icon.png?version=95937e2f1618ff510f13d89b48758da3" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/0/02/Tether_icon.png/24px-Tether_icon.png?version=95937e2f1618ff510f13d89b48758da3 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/0/02/Tether_icon.png/32px-Tether_icon.png?version=95937e2f1618ff510f13d89b48758da3 2x" width="16"/>
@@ -1270,7 +1282,7 @@ document.head.appendChild(script);
            Tether
           </a>
          </span>
-         ​.
+         .
         </li>
        </ul>
        <h2>
@@ -1281,14 +1293,8 @@ document.head.appendChild(script);
          <span class="mw-editsection-bracket">
           [
          </span>
-         <a class="mw-editsection-visualeditor" href="/index.php?title=Bottle&amp;veaction=edit&amp;vesection=5" title="Edit section: Tips">
-          edit
-         </a>
-         <span class="mw-editsection-divider">
-          |
-         </span>
          <a href="/index.php?title=Bottle&amp;action=edit&amp;section=5" title="Edit section: Tips">
-          edit source
+          edit
          </a>
          <span class="mw-editsection-bracket">
           ]
@@ -1317,7 +1323,7 @@ document.head.appendChild(script);
            Rejuvenation Aura
           </a>
          </span>
-         ​.
+         .
          <ul>
           <li>
            The aura's buff lingers for three seconds, so for a brief time after leaving the fountain, Bottles are still refilled.
@@ -1336,14 +1342,8 @@ document.head.appendChild(script);
          <span class="mw-editsection-bracket">
           [
          </span>
-         <a class="mw-editsection-visualeditor" href="/index.php?title=Bottle&amp;veaction=edit&amp;vesection=6" title="Edit section: Gallery">
-          edit
-         </a>
-         <span class="mw-editsection-divider">
-          |
-         </span>
          <a href="/index.php?title=Bottle&amp;action=edit&amp;section=6" title="Edit section: Gallery">
-          edit source
+          edit
          </a>
          <span class="mw-editsection-bracket">
           ]
@@ -2467,44 +2467,50 @@ document.head.appendChild(script);
  </a>
 </li>
 <li>
+ <a href="/Upgrader" title="Upgrader">
+  Upgrader
+ </a>
+</li>
+<li>
  <a href="/Arcane_Ring" title="Arcane Ring">
   Arcane Ring
  </a>
 </li>
 <!-- 
 NewPP limit report
-Cached time: 20170208012654
+Cached time: 20170609034400
 Cache expiry: 86400
 Dynamic content: false
-[SMW] In‐text annotation parser time: 0.001 seconds
-CPU time usage: 1.948 seconds
-Real time usage: 2.910 seconds
-Preprocessor visited node count: 21457/1000000
-Preprocessor generated node count: 43524/1000000
-Post‐expand include size: 105143/2097152 bytes
-Template argument size: 62775/2097152 bytes
-Highest expansion depth: 16/40
+[SMW] In‐text annotation parser time: 0.000 seconds
+CPU time usage: 0.688 seconds
+Real time usage: 1.288 seconds
+Preprocessor visited node count: 4046/1000000
+Preprocessor generated node count: 38462/1000000
+Post‐expand include size: 73039/2097152 bytes
+Template argument size: 44510/2097152 bytes
+Highest expansion depth: 11/40
 Expensive parser function count: 0/99
+ExtLoops count: 10/1000
 -->
 <!-- 
 Transclusion expansion time report (%,ms,calls,template)
-117.75% 3142.999      4 - Template:Navbox
-100.00% 2669.128      1 - -total
- 59.88% 1598.212      1 - Template:ItemNav
- 55.25% 1474.619    157 - Template:Item_link
- 45.79% 1222.151    159 - Template:Item_name
- 19.08%  509.222    367 - Template:If_lang
- 14.13%  377.149     14 - Template:H
- 13.53%  361.209      1 - Template:Item_infobox
-  9.82%  262.018      2 - Template:Ability
-  4.07%  108.745     14 - Template:Hero_link
+100.00% 1040.846      1 - -total
+ 31.34%  326.193      1 - Template:Item_infobox
+ 30.75%  320.084      2 - Template:Ability
+ 16.07%  167.239     13 - Template:H
+ 13.26%  138.053      4 - Template:Navbox
+  8.64%   89.968      1 - Template:ItemNav
+  6.11%   63.583      2 - Template:A
+  3.10%   32.253      1 - Template:Item
+  2.64%   27.446      1 - Template:U
+  1.42%   14.828      1 - Template:Ability_ID
 -->
-<!-- Saved in parser cache with key dota2_gamepedia:pcache:idhash:753-0!*!0!default!!en!5!* and timestamp 20170208012651 and revision id 1438400
+<!-- Saved in parser cache with key dota2_gamepedia:pcache:idhash:753-0!*!0!default!!en!5!* and timestamp 20170609034358 and revision id 1530653
  -->
 <div class="printfooter">
  Retrieved from "
- <a dir="ltr" href="http://dota2.gamepedia.com/index.php?title=Bottle&amp;oldid=1438400">
-  http://dota2.gamepedia.com/index.php?title=Bottle&amp;oldid=1438400
+ <a dir="ltr" href="https://dota2.gamepedia.com/index.php?title=Bottle&amp;oldid=1530653">
+  https://dota2.gamepedia.com/index.php?title=Bottle&amp;oldid=1530653
  </a>
  "
 </div>
@@ -2521,8 +2527,8 @@ Transclusion expansion time report (%,ms,calls,template)
     </a>
    </li>
    <li>
-    <a href="/Category:Bought_from_Consumables" title="Category:Bought from Consumables">
-     Bought from Consumables
+    <a href="/Category:Shop_items" title="Category:Shop items">
+     Shop items
     </a>
    </li>
   </ul>
@@ -2543,7 +2549,7 @@ Transclusion expansion time report (%,ms,calls,template)
     (function() {
         var zergnet = document.createElement('script');
         zergnet.type = 'text/javascript'; zergnet.async = true;
-        zergnet.src = 'http://www.zergnet.com/zerg.js?id=42966';
+        zergnet.src = '//www.zergnet.com/zerg.js?id=42966';
         var znscr = document.getElementsByTagName('script')[0];
         znscr.parentNode.insertBefore(zergnet, znscr);
     })();
@@ -2633,19 +2639,19 @@ Transclusion expansion time report (%,ms,calls,template)
     </h3>
     <div class="menu">
      <div id="socialIconImages">
-      <a href="https://twitter.com/intent/tweet?text=Check+out+Bottle+on+Dota+2+Wiki+--&amp;via=CurseGamepedia&amp;url=http%3A%2F%2Fdota2.gamepedia.com%2FBottle" target="_blank">
+      <a href="https://twitter.com/intent/tweet?text=Check+out+Bottle+on+Dota+2+Wiki+--&amp;via=CurseGamepedia&amp;url=https%3A%2F%2Fdota2.gamepedia.com%2FBottle" target="_blank">
        <img src="/extensions/Social/images/square_icons/twitter.png"/>
       </a>
-      <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fdota2.gamepedia.com%2FBottle" target="_blank">
+      <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdota2.gamepedia.com%2FBottle" target="_blank">
        <img src="/extensions/Social/images/square_icons/facebook.png"/>
       </a>
-      <a href="https://plus.google.com/share?url=http%3A%2F%2Fdota2.gamepedia.com%2FBottle" target="_blank">
+      <a href="https://plus.google.com/share?url=https%3A%2F%2Fdota2.gamepedia.com%2FBottle" target="_blank">
        <img src="/extensions/Social/images/square_icons/googleplus.png"/>
       </a>
-      <a href="http://www.reddit.com/submit?url=http%3A%2F%2Fdota2.gamepedia.com%2FBottle&amp;title=Check+out+Bottle+on+Dota+2+Wiki+via+%40CurseGamepedia%3A+http%3A%2F%2Fdota2.gamepedia.com%2FBottle" target="_blank">
+      <a href="http://www.reddit.com/submit?url=https%3A%2F%2Fdota2.gamepedia.com%2FBottle&amp;title=Check+out+Bottle+on+Dota+2+Wiki+via+%40CurseGamepedia%3A+https%3A%2F%2Fdota2.gamepedia.com%2FBottle" target="_blank">
        <img src="/extensions/Social/images/square_icons/reddit.png"/>
       </a>
-      <a href="http://www.tumblr.com/share/link?url=http%3A%2F%2Fdota2.gamepedia.com%2FBottle&amp;name=Dota+2+Wiki&amp;description=Check+out+Bottle+on+Dota+2+Wiki+via+%3Ca+href%3D%22https%3A%2F%2Ftwitter.com%2FCurseGamepedia%22+target%3D%22_blank%22%3E%40CurseGamepedia%3C%2Fa%3E%3A+http%3A%2F%2Fdota2.gamepedia.com%2FBottle" target="_blank">
+      <a href="http://www.tumblr.com/share/link?url=https%3A%2F%2Fdota2.gamepedia.com%2FBottle&amp;name=Dota+2+Wiki&amp;description=Check+out+Bottle+on+Dota+2+Wiki+via+%3Ca+href%3D%22https%3A%2F%2Ftwitter.com%2FCurseGamepedia%22+target%3D%22_blank%22%3E%40CurseGamepedia%3C%2Fa%3E%3A+https%3A%2F%2Fdota2.gamepedia.com%2FBottle" target="_blank">
        <img src="/extensions/Social/images/square_icons/tumblr.png"/>
       </a>
      </div>
@@ -2665,17 +2671,10 @@ Transclusion expansion time report (%,ms,calls,template)
        </a>
       </span>
      </li>
-     <li id="ca-ve-edit">
-      <span>
-       <a accesskey="v" href="/index.php?title=Bottle&amp;veaction=edit" title="Edit this page [v]">
-        Edit
-       </a>
-      </span>
-     </li>
-     <li class=" collapsible" id="ca-edit">
+     <li id="ca-edit">
       <span>
        <a accesskey="e" href="/index.php?title=Bottle&amp;action=edit" title="Edit this page [e]">
-        Edit source
+        Edit
        </a>
       </span>
      </li>
@@ -2873,7 +2872,7 @@ Transclusion expansion time report (%,ms,calls,template)
       </a>
      </li>
      <li id="t-permalink">
-      <a href="/index.php?title=Bottle&amp;oldid=1438400" title="Permanent link to this revision of the page">
+      <a href="/index.php?title=Bottle&amp;oldid=1530653" title="Permanent link to this revision of the page">
        Permanent link
       </a>
      </li>
@@ -3037,12 +3036,41 @@ Transclusion expansion time report (%,ms,calls,template)
     </div>
    </div>
   </div>
+  <div aria-labelledby="p-lang-label" class="portal" id="p-lang" role="navigation">
+   <h3 id="p-lang-label">
+    In other languages
+   </h3>
+   <div class="body">
+    <ul>
+     <li class="interlanguage-link interwiki-de">
+      <a href="http://dota2-de.gamepedia.com/Bottle" hreflang="de" lang="de" title="Bottle – Deutsch">
+       Deutsch
+      </a>
+     </li>
+     <li class="interlanguage-link interwiki-pt">
+      <a href="http://dota2-pt.gamepedia.com/Garrafa" hreflang="pt" lang="pt" title="Garrafa – português">
+       Português
+      </a>
+     </li>
+     <li class="interlanguage-link interwiki-ru">
+      <a href="http://dota2-ru.gamepedia.com/Bottle" hreflang="ru" lang="ru" title="Bottle – русский">
+       Русский
+      </a>
+     </li>
+     <li class="interlanguage-link interwiki-zh">
+      <a href="http://dota2-zh.gamepedia.com/%E9%AD%94%E7%93%B6" hreflang="zh" lang="zh" title="魔瓶 – 中文">
+       中文
+      </a>
+     </li>
+    </ul>
+   </div>
+  </div>
  </div>
 </div>
 <div id="footer" role="contentinfo">
  <ul id="footer-info">
   <li id="footer-info-lastmod">
-   This page was last modified on 9 January 2017, at 22:44.
+   This page was last modified on 31 May 2017, at 12:49.
   </li>
   <li id="footer-info-copyright">
    Content is available under
@@ -3126,8 +3154,8 @@ Transclusion expansion time report (%,ms,calls,template)
     </a>
    </li>
    <li>
-    <a class="advertise" href="https://ghostreconwildlands.gamepedia.com">
-     Ghost Recon
+    <a class="advertise" href="https://masseffectandromeda.gamepedia.com/Mass_Effect:_Andromeda_Wiki">
+     ME:Andromeda
     </a>
    </li>
   </ul>
@@ -3153,8 +3181,8 @@ Transclusion expansion time report (%,ms,calls,template)
     </a>
    </li>
    <li>
-    <a class="about" href="http://www.hearthpwn.com/guides/1480-how-to-get-cheaper-hearthstone-packs-buy-amazon">
-     HS Packs
+    <a class="advertise" href="https://masseffectandromeda.gamepedia.com/Skill">
+     ME:A Skills
     </a>
    </li>
   </ul>
@@ -3180,8 +3208,8 @@ Transclusion expansion time report (%,ms,calls,template)
     </a>
    </li>
    <li>
-    <a class="tos" href="https://forhonor.gamepedia.com">
-     For Honor
+    <a class="advertise" href="https://zelda.gamepedia.com/Main_Page">
+     Zelda Wiki
     </a>
    </li>
   </ul>
@@ -3237,8 +3265,5 @@ _comscore.push({ c1: "2", c2: "6035118" });
 				window.wikiTags = ["action","defense of the ancients","esports","free-to-play","free to play","ftp","game:dota 2","linux","mac","pc","rts","source","steam","valve"];
 </script>
 <script>
- (window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":139});});
-</script>
-<script type="text/javascript">
- window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"75f4858b7a","applicationID":"1909498","transactionName":"YlVXbREHWksEUkVdCVsfYEsKSV1WAVRJGhZdQA==","queueTime":0,"applicationTime":166,"atts":"ThJAG1kdSRRHUBMOHUhN","errorBeacon":"bam.nr-data.net","agent":""}
+ (window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":1404});});
 </script>

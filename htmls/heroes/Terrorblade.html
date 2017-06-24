@@ -2,9 +2,6 @@
 <html class="client-nojs" dir="ltr" lang="en">
  <head>
   <meta charset="utf-8"/>
-  <script type="text/javascript">
-   (window.NREUM||(NREUM={})).loader_config={xpid:"UAcAUlNACQoAXVVbDw=="};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var o=e[n]={exports:{}};t[n][0].call(o.exports,function(e){var o=t[n][1][e];return r(o||e)},o,o.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({1:[function(t,e,n){function r(t){try{c.console&&console.log(t)}catch(e){}}var o,i=t("ee"),a=t(15),c={};try{o=localStorage.getItem("__nr_flags").split(","),console&&"function"==typeof console.log&&(c.console=!0,o.indexOf("dev")!==-1&&(c.dev=!0),o.indexOf("nr_dev")!==-1&&(c.nrDev=!0))}catch(s){}c.nrDev&&i.on("internal-error",function(t){r(t.stack)}),c.dev&&i.on("fn-err",function(t,e,n){r(n.stack)}),c.dev&&(r("NR AGENT IN DEVELOPMENT MODE"),r("flags: "+a(c,function(t,e){return t}).join(", ")))},{}],2:[function(t,e,n){function r(t,e,n,r,o){try{d?d-=1:i("err",[o||new UncaughtException(t,e,n)])}catch(c){try{i("ierr",[c,(new Date).getTime(),!0])}catch(s){}}return"function"==typeof f&&f.apply(this,a(arguments))}function UncaughtException(t,e,n){this.message=t||"Uncaught error with no additional information",this.sourceURL=e,this.line=n}function o(t){i("err",[t,(new Date).getTime()])}var i=t("handle"),a=t(16),c=t("ee"),s=t("loader"),f=window.onerror,u=!1,d=0;s.features.err=!0,t(1),window.onerror=r;try{throw new Error}catch(l){"stack"in l&&(t(8),t(7),"addEventListener"in window&&t(5),s.xhrWrappable&&t(9),u=!0)}c.on("fn-start",function(t,e,n){u&&(d+=1)}),c.on("fn-err",function(t,e,n){u&&(this.thrown=!0,o(n))}),c.on("fn-end",function(){u&&!this.thrown&&d>0&&(d-=1)}),c.on("internal-error",function(t){i("ierr",[t,(new Date).getTime(),!0])})},{}],3:[function(t,e,n){t("loader").features.ins=!0},{}],4:[function(t,e,n){function r(t){}if(window.performance&&window.performance.timing&&window.performance.getEntriesByType){var o=t("ee"),i=t("handle"),a=t(8),c=t(7),s="learResourceTimings",f="addEventListener",u="resourcetimingbufferfull",d="bstResource",l="resource",p="-start",h="-end",m="fn"+p,w="fn"+h,v="bstTimer",y="pushState";t("loader").features.stn=!0,t(6);var g=NREUM.o.EV;o.on(m,function(t,e){var n=t[0];n instanceof g&&(this.bstStart=Date.now())}),o.on(w,function(t,e){var n=t[0];n instanceof g&&i("bst",[n,e,this.bstStart,Date.now()])}),a.on(m,function(t,e,n){this.bstStart=Date.now(),this.bstType=n}),a.on(w,function(t,e){i(v,[e,this.bstStart,Date.now(),this.bstType])}),c.on(m,function(){this.bstStart=Date.now()}),c.on(w,function(t,e){i(v,[e,this.bstStart,Date.now(),"requestAnimationFrame"])}),o.on(y+p,function(t){this.time=Date.now(),this.startPath=location.pathname+location.hash}),o.on(y+h,function(t){i("bstHist",[location.pathname+location.hash,this.startPath,this.time])}),f in window.performance&&(window.performance["c"+s]?window.performance[f](u,function(t){i(d,[window.performance.getEntriesByType(l)]),window.performance["c"+s]()},!1):window.performance[f]("webkit"+u,function(t){i(d,[window.performance.getEntriesByType(l)]),window.performance["webkitC"+s]()},!1)),document[f]("scroll",r,{passive:!0}),document[f]("keypress",r,!1),document[f]("click",r,!1)}},{}],5:[function(t,e,n){function r(t){for(var e=t;e&&!e.hasOwnProperty(u);)e=Object.getPrototypeOf(e);e&&o(e)}function o(t){c.inPlace(t,[u,d],"-",i)}function i(t,e){return t[1]}var a=t("ee").get("events"),c=t(17)(a,!0),s=t("gos"),f=XMLHttpRequest,u="addEventListener",d="removeEventListener";e.exports=a,"getPrototypeOf"in Object?(r(document),r(window),r(f.prototype)):f.prototype.hasOwnProperty(u)&&(o(window),o(f.prototype)),a.on(u+"-start",function(t,e){var n=t[1],r=s(n,"nr@wrapped",function(){function t(){if("function"==typeof n.handleEvent)return n.handleEvent.apply(n,arguments)}var e={object:t,"function":n}[typeof n];return e?c(e,"fn-",null,e.name||"anonymous"):n});this.wrapped=t[1]=r}),a.on(d+"-start",function(t){t[1]=this.wrapped||t[1]})},{}],6:[function(t,e,n){var r=t("ee").get("history"),o=t(17)(r);e.exports=r,o.inPlace(window.history,["pushState","replaceState"],"-")},{}],7:[function(t,e,n){var r=t("ee").get("raf"),o=t(17)(r),i="equestAnimationFrame";e.exports=r,o.inPlace(window,["r"+i,"mozR"+i,"webkitR"+i,"msR"+i],"raf-"),r.on("raf-start",function(t){t[0]=o(t[0],"fn-")})},{}],8:[function(t,e,n){function r(t,e,n){t[0]=a(t[0],"fn-",null,n)}function o(t,e,n){this.method=n,this.timerDuration="number"==typeof t[1]?t[1]:0,t[0]=a(t[0],"fn-",this,n)}var i=t("ee").get("timer"),a=t(17)(i),c="setTimeout",s="setInterval",f="clearTimeout",u="-start",d="-";e.exports=i,a.inPlace(window,[c,"setImmediate"],c+d),a.inPlace(window,[s],s+d),a.inPlace(window,[f,"clearImmediate"],f+d),i.on(s+u,r),i.on(c+u,o)},{}],9:[function(t,e,n){function r(t,e){d.inPlace(e,["onreadystatechange"],"fn-",c)}function o(){var t=this,e=u.context(t);t.readyState>3&&!e.resolved&&(e.resolved=!0,u.emit("xhr-resolved",[],t)),d.inPlace(t,w,"fn-",c)}function i(t){v.push(t),h&&(g=-g,b.data=g)}function a(){for(var t=0;t<v.length;t++)r([],v[t]);v.length&&(v=[])}function c(t,e){return e}function s(t,e){for(var n in t)e[n]=t[n];return e}t(5);var f=t("ee"),u=f.get("xhr"),d=t(17)(u),l=NREUM.o,p=l.XHR,h=l.MO,m="readystatechange",w=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"],v=[];e.exports=u;var y=window.XMLHttpRequest=function(t){var e=new p(t);try{u.emit("new-xhr",[e],e),e.addEventListener(m,o,!1)}catch(n){try{u.emit("internal-error",[n])}catch(r){}}return e};if(s(p,y),y.prototype=p.prototype,d.inPlace(y.prototype,["open","send"],"-xhr-",c),u.on("send-xhr-start",function(t,e){r(t,e),i(e)}),u.on("open-xhr-start",r),h){var g=1,b=document.createTextNode(g);new h(a).observe(b,{characterData:!0})}else f.on("fn-end",function(t){t[0]&&t[0].type===m||a()})},{}],10:[function(t,e,n){function r(t){var e=this.params,n=this.metrics;if(!this.ended){this.ended=!0;for(var r=0;r<d;r++)t.removeEventListener(u[r],this.listener,!1);if(!e.aborted){if(n.duration=(new Date).getTime()-this.startTime,4===t.readyState){e.status=t.status;var i=o(t,this.lastSize);if(i&&(n.rxSize=i),this.sameOrigin){var a=t.getResponseHeader("X-NewRelic-App-Data");a&&(e.cat=a.split(", ").pop())}}else e.status=0;n.cbTime=this.cbTime,f.emit("xhr-done",[t],t),c("xhr",[e,n,this.startTime])}}}function o(t,e){var n=t.responseType;if("json"===n&&null!==e)return e;var r="arraybuffer"===n||"blob"===n||"json"===n?t.response:t.responseText;return h(r)}function i(t,e){var n=s(e),r=t.params;r.host=n.hostname+":"+n.port,r.pathname=n.pathname,t.sameOrigin=n.sameOrigin}var a=t("loader");if(a.xhrWrappable){var c=t("handle"),s=t(11),f=t("ee"),u=["load","error","abort","timeout"],d=u.length,l=t("id"),p=t(14),h=t(13),m=window.XMLHttpRequest;a.features.xhr=!0,t(9),f.on("new-xhr",function(t){var e=this;e.totalCbs=0,e.called=0,e.cbTime=0,e.end=r,e.ended=!1,e.xhrGuids={},e.lastSize=null,p&&(p>34||p<10)||window.opera||t.addEventListener("progress",function(t){e.lastSize=t.loaded},!1)}),f.on("open-xhr-start",function(t){this.params={method:t[0]},i(this,t[1]),this.metrics={}}),f.on("open-xhr-end",function(t,e){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&e.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid)}),f.on("send-xhr-start",function(t,e){var n=this.metrics,r=t[0],o=this;if(n&&r){var i=h(r);i&&(n.txSize=i)}this.startTime=(new Date).getTime(),this.listener=function(t){try{"abort"===t.type&&(o.params.aborted=!0),("load"!==t.type||o.called===o.totalCbs&&(o.onloadCalled||"function"!=typeof e.onload))&&o.end(e)}catch(n){try{f.emit("internal-error",[n])}catch(r){}}};for(var a=0;a<d;a++)e.addEventListener(u[a],this.listener,!1)}),f.on("xhr-cb-time",function(t,e,n){this.cbTime+=t,e?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof n.onload||this.end(n)}),f.on("xhr-load-added",function(t,e){var n=""+l(t)+!!e;this.xhrGuids&&!this.xhrGuids[n]&&(this.xhrGuids[n]=!0,this.totalCbs+=1)}),f.on("xhr-load-removed",function(t,e){var n=""+l(t)+!!e;this.xhrGuids&&this.xhrGuids[n]&&(delete this.xhrGuids[n],this.totalCbs-=1)}),f.on("addEventListener-end",function(t,e){e instanceof m&&"load"===t[0]&&f.emit("xhr-load-added",[t[1],t[2]],e)}),f.on("removeEventListener-end",function(t,e){e instanceof m&&"load"===t[0]&&f.emit("xhr-load-removed",[t[1],t[2]],e)}),f.on("fn-start",function(t,e,n){e instanceof m&&("onload"===n&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=(new Date).getTime()))}),f.on("fn-end",function(t,e){this.xhrCbStart&&f.emit("xhr-cb-time",[(new Date).getTime()-this.xhrCbStart,this.onload,e],e)})}},{}],11:[function(t,e,n){e.exports=function(t){var e=document.createElement("a"),n=window.location,r={};e.href=t,r.port=e.port;var o=e.href.split("://");!r.port&&o[1]&&(r.port=o[1].split("/")[0].split("@").pop().split(":")[1]),r.port&&"0"!==r.port||(r.port="https"===o[0]?"443":"80"),r.hostname=e.hostname||n.hostname,r.pathname=e.pathname,r.protocol=o[0],"/"!==r.pathname.charAt(0)&&(r.pathname="/"+r.pathname);var i=!e.protocol||":"===e.protocol||e.protocol===n.protocol,a=e.hostname===document.domain&&e.port===n.port;return r.sameOrigin=i&&(!e.hostname||a),r}},{}],12:[function(t,e,n){function r(){}function o(t,e,n){return function(){return i(t,[(new Date).getTime()].concat(c(arguments)),e?null:this,n),e?void 0:this}}var i=t("handle"),a=t(15),c=t(16),s=t("ee").get("tracer"),f=NREUM;"undefined"==typeof window.newrelic&&(newrelic=f);var u=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(u,function(t,e){f[e]=o(d+e,!0,"api")}),f.addPageAction=o(d+"addPageAction",!0),f.setCurrentRouteName=o(d+"routeName",!0),e.exports=newrelic,f.interaction=function(){return(new r).get()};var p=r.prototype={createTracer:function(t,e){var n={},r=this,o="function"==typeof e;return i(l+"tracer",[Date.now(),t,n],r),function(){if(s.emit((o?"":"no-")+"fn-start",[Date.now(),r,o],n),o)try{return e.apply(this,arguments)}finally{s.emit("fn-end",[Date.now()],n)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){p[e]=o(l+e)}),newrelic.noticeError=function(t){"string"==typeof t&&(t=new Error(t)),i("err",[t,(new Date).getTime()])}},{}],13:[function(t,e,n){e.exports=function(t){if("string"==typeof t&&t.length)return t.length;if("object"==typeof t){if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if(!("undefined"!=typeof FormData&&t instanceof FormData))try{return JSON.stringify(t).length}catch(e){return}}}},{}],14:[function(t,e,n){var r=0,o=navigator.userAgent.match(/Firefox[\/\s](\d+\.\d+)/);o&&(r=+o[1]),e.exports=r},{}],15:[function(t,e,n){function r(t,e){var n=[],r="",i=0;for(r in t)o.call(t,r)&&(n[i]=e(r,t[r]),i+=1);return n}var o=Object.prototype.hasOwnProperty;e.exports=r},{}],16:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,o=n-e||0,i=Array(o<0?0:o);++r<o;)i[r]=t[e+r];return i}e.exports=r},{}],17:[function(t,e,n){function r(t){return!(t&&t instanceof Function&&t.apply&&!t[a])}var o=t("ee"),i=t(16),a="nr@original",c=Object.prototype.hasOwnProperty,s=!1;e.exports=function(t,e){function n(t,e,n,o){function nrWrapper(){var r,a,c,s;try{a=this,r=i(arguments),c="function"==typeof n?n(r,a):n||{}}catch(f){l([f,"",[r,a,o],c])}u(e+"start",[r,a,o],c);try{return s=t.apply(a,r)}catch(d){throw u(e+"err",[r,a,d],c),d}finally{u(e+"end",[r,a,s],c)}}return r(t)?t:(e||(e=""),nrWrapper[a]=t,d(t,nrWrapper),nrWrapper)}function f(t,e,o,i){o||(o="");var a,c,s,f="-"===o.charAt(0);for(s=0;s<e.length;s++)c=e[s],a=t[c],r(a)||(t[c]=n(a,f?c+o:o,i,c))}function u(n,r,o){if(!s||e){var i=s;s=!0;try{t.emit(n,r,o)}catch(a){l([a,n,r,o])}s=i}}function d(t,e){if(Object.defineProperty&&Object.keys)try{var n=Object.keys(t);return n.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(r){l([r])}for(var o in t)c.call(t,o)&&(e[o]=t[o]);return e}function l(e){try{t.emit("internal-error",e)}catch(n){}}return t||(t=o),n.inPlace=f,n.flag=a,n}},{}],ee:[function(t,e,n){function r(){}function o(t){function e(t){return t&&t instanceof r?t:t?s(t,c,i):i()}function n(n,r,o){if(!l.aborted){t&&t(n,r,o);for(var i=e(o),a=h(n),c=a.length,s=0;s<c;s++)a[s].apply(i,r);var f=u[y[n]];return f&&f.push([g,n,r,i]),i}}function p(t,e){v[t]=h(t).concat(e)}function h(t){return v[t]||[]}function m(t){return d[t]=d[t]||o(n)}function w(t,e){f(t,function(t,n){e=e||"feature",y[n]=e,e in u||(u[e]=[])})}var v={},y={},g={on:p,emit:n,get:m,listeners:h,context:e,buffer:w,abort:a,aborted:!1};return g}function i(){return new r}function a(){(u.api||u.feature)&&(l.aborted=!0,u=l.backlog={})}var c="nr@context",s=t("gos"),f=t(15),u={},d={},l=e.exports=o();l.backlog=u},{}],gos:[function(t,e,n){function r(t,e,n){if(o.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return t[e]=r,r}var o=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){o.buffer([t],r),o.emit(t,e,n)}var o=t("ee").get("handle");e.exports=r,r.ee=o},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,i,function(){return o++})}var o=1,i="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!b++){var t=g.info=NREUM.info,e=d.getElementsByTagName("script")[0];if(setTimeout(f.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return f.abort();s(v,function(e,n){t[e]||(t[e]=n)}),c("mark",["onload",a()],null,"api");var n=d.createElement("script");n.src="https://"+t.agent,e.parentNode.insertBefore(n,e)}}function o(){"complete"===d.readyState&&i()}function i(){c("mark",["domContent",a()],null,"api")}function a(){return(new Date).getTime()}var c=t("handle"),s=t(15),f=t("ee"),u=window,d=u.document,l="addEventListener",p="attachEvent",h=u.XMLHttpRequest,m=h&&h.prototype;NREUM.o={ST:setTimeout,CT:clearTimeout,XHR:h,REQ:u.Request,EV:u.Event,PR:u.Promise,MO:u.MutationObserver},t(12);var w=""+location,v={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1016.min.js"},y=h&&m&&m[l]&&!/CriOS/.test(navigator.userAgent),g=e.exports={offset:a(),origin:w,features:{},xhrWrappable:y};d[l]?(d[l]("DOMContentLoaded",i,!1),u[l]("load",r,!1)):(d[p]("onreadystatechange",o),u[p]("onload",r)),c("mark",["firstbyte",a()],null,"api");var b=0},{}]},{},["loader",2,10,4,3]);
-  </script>
   <title>
    Terrorblade - Dota 2 Wiki
   </title>
@@ -12,7 +9,7 @@
    document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );
   </script>
   <script>
-   (window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Terrorblade","wgTitle":"Terrorblade","wgCurRevisionId":1450335,"wgRevisionId":1450335,"wgArticleId":8724,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Heroes","Agility heroes","Melee heroes","Carries","Pushers","Nukers"],"wgBreakFrames":true,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Terrorblade","wgRelevantArticleId":8724,"wgRequestId":"5a67c872a4613362cf8dbd2c","wgIsProbablyEditable":true,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgPreferredVariant":"en","wgCollapsibleVectorEnabledModules":{"collapsiblenav":true,"experiments":true},"wgVisualEditor":{"pageLanguageCode":"en","pageLanguageDir":"ltr","usePageImages":true,"usePageDescriptions":false},"wgWikiEditorEnabledModules":{"toolbar":true,"dialogs":true,"preview":true,"publish":true},"wgCategoryTreePageCategoryOptions":"{\"mode\":0,\"hideprefix\":20,\"showcount\":true,\"namespaces\":false}","wgVisualEditorToolbarScrollOffset":0});mw.loader.implement("user.options",function($,jQuery,require,module){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function ( $, jQuery, require, module ) {
+   (window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Terrorblade","wgTitle":"Terrorblade","wgCurRevisionId":1533486,"wgRevisionId":1533486,"wgArticleId":8724,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Heroes","Agility heroes","Melee heroes","Carries","Pushers","Nukers"],"wgBreakFrames":true,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Terrorblade","wgRelevantArticleId":8724,"wgRequestId":"2485c542c48f917581e9e492","wgIsProbablyEditable":true,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgPreferredVariant":"en","wgCollapsibleVectorEnabledModules":{"collapsiblenav":true,"experiments":true},"wgVisualEditor":{"pageLanguageCode":"en","pageLanguageDir":"ltr","usePageImages":true,"usePageDescriptions":false},"wgWikiEditorEnabledModules":{"toolbar":true,"dialogs":true,"preview":true,"publish":true},"wgCategoryTreePageCategoryOptions":"{\"mode\":0,\"hideprefix\":20,\"showcount\":true,\"namespaces\":false}","wgVisualEditorToolbarScrollOffset":0});mw.loader.implement("user.options",function($,jQuery,require,module){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function ( $, jQuery, require, module ) {
 mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/;
 
 });mw.loader.load(["ext.smw.style","mediawiki.page.startup","ext.siteGlobals","ext.bunnyears","ext.visualEditor.desktopArticleTarget.init","ext.hydraAuth.banners","skins.vector.js","skins.hydra.advertisements.js","skins.hydra.footer.js","ext.social"]);});
@@ -23,11 +20,11 @@ mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","cs
   <link href="/load.php?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=hydra" rel="stylesheet"/>
   <script async="" src="/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=hydra">
   </script>
-  <meta content="MediaWiki 1.27.1" name="generator"/>
+  <meta content="MediaWiki 1.27.3" name="generator"/>
   <meta content="Terrorblade" name="og:title"/>
   <meta content="website" name="og:type"/>
   <meta content="https://hydra-media.cursecdn.com/dota2.gamepedia.com/b/bc/Wiki.png" name="og:image"/>
-  <meta content="http://dota2.gamepedia.com/Terrorblade" name="og:url"/>
+  <meta content="https://dota2.gamepedia.com/Terrorblade" name="og:url"/>
   <meta content="Dota 2 Wiki" name="og:site_name"/>
   <meta name="description"/>
   <meta content="" name="keywords"/>
@@ -40,13 +37,13 @@ mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","cs
   <link href="/opensearch_desc.php" rel="search" title="Dota 2 Wiki (en)" type="application/opensearchdescription+xml"/>
   <link href="//dota2.gamepedia.com/api.php?action=rsd" rel="EditURI" type="application/rsd+xml"/>
   <link href="//creativecommons.org/licenses/by-nc-sa/3.0/" rel="copyright"/>
-  <link href="http://dota2.gamepedia.com/Terrorblade" rel="canonical"/>
+  <link href="https://dota2.gamepedia.com/Terrorblade" rel="canonical"/>
   <link href="dota2-de.gamepedia.com" hreflang="de" rel="alternate"/>
   <link href="dota2-ru.gamepedia.com" hreflang="ru" rel="alternate"/>
   <link href="dota2-pt.gamepedia.com" hreflang="pt" rel="alternate"/>
   <link href="dota2-zh.gamepedia.com" hreflang="zh" rel="alternate"/>
   <meta content="Gamepedia" itemprop="author"/>
-  <link href="https://stations.cursetech.com/be/bunnyears.min.css" rel="stylesheet" type="text/css"/>
+  <link href="https://stations.cursetech.com/be/bunnyears-1.1.min.css" rel="stylesheet" type="text/css"/>
  </head>
  <body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-Terrorblade rootpage-Terrorblade skin-hydra action-view site-dota2-gamepedia show-ads">
   <script type="application/ld+json">
@@ -81,8 +78,8 @@ mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","cs
 		"target": "https://dota2.gamepedia.com/index.php?title=Special:Search&search={search_term}",
 		"query-input": "required name=search_term"
 	},
-	"datePublished": "2017-02-02T02:02:41Z",
-	"dateModified": "2017-02-02T02:02:41Z",
+	"datePublished": "2017-06-07T18:50:32Z",
+	"dateModified": "2017-06-07T18:50:32Z",
 	"mainEntityOfPage": "https://dota2.gamepedia.com/Terrorblade"
 }
   </script>
@@ -124,7 +121,7 @@ mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","cs
 var script = document.createElement('script');
 var tstamp = new Date();
 script.id = 'factorem';
-script.src = 'http://cdm.cursecdn.com/js/gamepedia/cdmfactorem_min.js?misc=' + tstamp.getTime();;
+script.src = '//cdm.cursecdn.com/js/gamepedia/cdmfactorem_min.js?misc=' + tstamp.getTime();;
 script.async = true;
 script.type='text/javascript';
 document.head.appendChild(script);
@@ -133,10 +130,10 @@ document.head.appendChild(script);
    setTimeout(function(){if("undefined"!=typeof b2){var element=document.getElementById(b2);setTimeout(function(){element.parentNode.innerHTML='<div id="'+b2+'"></div>'},5000)}},20000)
   </script>
   <script>
-   setTimeout(function(){if("undefined"!=typeof b2){var element=document.getElementById(b3);setTimeout(function(){element.parentNode.innerHTML='<div id="'+b3+'"></div>'},5000)}},20000)
+   setTimeout(function(){if("undefined"!=typeof b3){var element=document.getElementById(b3);setTimeout(function(){element.parentNode.innerHTML='<div id="'+b3+'"></div>'},5000)}},20000)
   </script>
   <script>
-   setTimeout(function(){if("undefined"!=typeof b2){var element=document.getElementById(b6);setTimeout(function(){element.parentNode.innerHTML='<div id="'+b6+'"></div>'},5000)}},20000)
+   setTimeout(function(){if("undefined"!=typeof b6){var element=document.getElementById(b6);setTimeout(function(){element.parentNode.innerHTML='<div id="'+b6+'"></div>'},5000)}},20000)
   </script>
   <div id="netbar">
    <ul class="netbar-left">
@@ -293,8 +290,8 @@ document.head.appendChild(script);
         </tr>
         <tr>
          <td colspan="4">
-          <a class="image" href="/File:Terrorblade.png">
-           <img alt="Terrorblade.png" height="144" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/7/72/Terrorblade.png?version=f6e1c9bf3a047688f014c4a2f77cdbe6" width="256"/>
+          <a class="image" href="/File:Terrorblade_icon.png">
+           <img alt="Terrorblade icon.png" height="144" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/5/52/Terrorblade_icon.png?version=be21150f81dd165346644d05844d4ad4" width="256"/>
           </a>
          </td>
         </tr>
@@ -304,17 +301,17 @@ document.head.appendChild(script);
            <tr>
             <th align="center" width="45">
              <a href="/Strength" title="Strength">
-              <img alt="Strength" height="40" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/7a/Strength_attribute_symbol.png/40px-Strength_attribute_symbol.png?version=79371ef0198db066c30dfa55b0e6b483" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/7a/Strength_attribute_symbol.png/60px-Strength_attribute_symbol.png?version=79371ef0198db066c30dfa55b0e6b483 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/7/7a/Strength_attribute_symbol.png?version=79371ef0198db066c30dfa55b0e6b483 2x" width="40"/>
+              <img alt="Strength attribute symbol.png" height="40" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/7a/Strength_attribute_symbol.png/40px-Strength_attribute_symbol.png?version=79371ef0198db066c30dfa55b0e6b483" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/7a/Strength_attribute_symbol.png/60px-Strength_attribute_symbol.png?version=79371ef0198db066c30dfa55b0e6b483 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/7/7a/Strength_attribute_symbol.png?version=79371ef0198db066c30dfa55b0e6b483 2x" width="40"/>
              </a>
              <br/>
              <b>
               15
              </b>
-             + 1.4
+             + 1.7
             </th>
             <th align="center" width="45">
              <a href="/Agility" title="Agility">
-              <img alt="Agility" height="40" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/72/Agility_primary_attribute_symbol.png/40px-Agility_primary_attribute_symbol.png?version=d62be6f497df32db012c4ddcf8153a1a" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/72/Agility_primary_attribute_symbol.png/60px-Agility_primary_attribute_symbol.png?version=d62be6f497df32db012c4ddcf8153a1a 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/7/72/Agility_primary_attribute_symbol.png?version=d62be6f497df32db012c4ddcf8153a1a 2x" width="40"/>
+              <img alt="Agility primary attribute symbol.png" height="40" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/72/Agility_primary_attribute_symbol.png/40px-Agility_primary_attribute_symbol.png?version=d62be6f497df32db012c4ddcf8153a1a" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/72/Agility_primary_attribute_symbol.png/60px-Agility_primary_attribute_symbol.png?version=d62be6f497df32db012c4ddcf8153a1a 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/7/72/Agility_primary_attribute_symbol.png?version=d62be6f497df32db012c4ddcf8153a1a 2x" width="40"/>
              </a>
              <br/>
              <b>
@@ -324,7 +321,7 @@ document.head.appendChild(script);
             </th>
             <th align="center" width="45">
              <a href="/Intelligence" title="Intelligence">
-              <img alt="Intelligence" height="40" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/5/56/Intelligence_attribute_symbol.png/40px-Intelligence_attribute_symbol.png?version=4040e46b05f05f761993086ea3d191f0" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/5/56/Intelligence_attribute_symbol.png/60px-Intelligence_attribute_symbol.png?version=4040e46b05f05f761993086ea3d191f0 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/5/56/Intelligence_attribute_symbol.png?version=4040e46b05f05f761993086ea3d191f0 2x" width="40"/>
+              <img alt="Intelligence attribute symbol.png" height="40" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/5/56/Intelligence_attribute_symbol.png/40px-Intelligence_attribute_symbol.png?version=4040e46b05f05f761993086ea3d191f0" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/5/56/Intelligence_attribute_symbol.png/60px-Intelligence_attribute_symbol.png?version=4040e46b05f05f761993086ea3d191f0 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/5/56/Intelligence_attribute_symbol.png?version=4040e46b05f05f761993086ea3d191f0 2x" width="40"/>
              </a>
              <br/>
              <b>
@@ -377,10 +374,10 @@ document.head.appendChild(script);
              500
             </td>
             <td>
-             880
+             960
             </td>
             <td>
-             1160
+             1300
             </td>
            </tr>
            <tr>
@@ -392,16 +389,16 @@ document.head.appendChild(script);
              </b>
             </td>
             <td>
-             2
+             1.75
             </td>
             <td>
-             2.45
+             2.65
             </td>
             <td>
-             3.04
+             4.08
             </td>
             <td>
-             3.46
+             5.1
             </td>
            </tr>
            <tr style="background:#ededed">
@@ -413,16 +410,16 @@ document.head.appendChild(script);
              </b>
             </td>
             <td>
-             50
+             75
             </td>
             <td>
-             278
+             284
             </td>
             <td>
-             566
+             548
             </td>
             <td>
-             782
+             746
             </td>
            </tr>
            <tr>
@@ -500,13 +497,13 @@ document.head.appendChild(script);
              0%
             </td>
             <td>
-             1.19%
+             1.36%
             </td>
             <td>
-             2.72%
+             3.11%
             </td>
             <td>
-             3.81%
+             4.36%
             </td>
            </tr>
            <tr>
@@ -688,7 +685,7 @@ document.head.appendChild(script);
         <a class="mw-redirect" href="/Carry" title="Carry">
          carry
         </a>
-        hero who is devastating in the later stages of the game. Terrorblade has the highest starting armor in the game, but is squishy due to his low health, meaning he needs strength items to be tanky enough to sustain damage to himself and his illusions. As also with all illusion-based heroes, he needs stat-based items in order to make his illusions powerful. He is known for casting Reflection, that which creates invulnerable illusions to all enemy Heroes for a few seconds. Conjure Image creates an illusion of Terrorblade that deals considerable damage in maxed level. Terrorblade can create up to 2 illusions, which together deal more damage than Terrorblade himself, effectively overpowering Terrorblade's Base Damage (but not the Bonus Damage). Metamorphosis is an unorthodox spell that transforms Terrorblade into a powerful ranged demon capable of wrecking havoc to his enemies with the bonus range and damage, but makes Terrorblade slower. This spell also makes illusions of Terrorblade transform into of his demonic form, but reverts back once it wanders too far away from Terrorblade and finally his ultimate, Sunder, is a very unique ability that swaps his health with a targeted hero, ally or enemy alike. This makes ganks on him incredibly risky since he can sunder a hero before making his move. With his 2 Illusion-based spells, 1 semi-ultimate and his ultimate, Terrorblade's skill set makes him a foe in the early game and is absolutely terrifying at the later stages of the game and is usually played as a hard carry.
+        hero who is devastating in the later stages of the game. Terrorblade has the highest starting armor in the game, but is squishy due to his low health, meaning he needs strength items to be tanky enough to sustain damage to himself and his illusions. As with all illusion-based heroes, he needs stat-based items in order to make his illusions powerful. He is known for casting Reflection, which creates invulnerable illusions of all nearby enemy Heroes for a few seconds. Conjure Image creates an illusion of Terrorblade that deals considerable damage at max level. Terrorblade can create up to two illusions, which together deal more damage than Terrorblade himself, effectively multiplying Terrorblade's Base Damage (but not his Bonus Damage). Metamorphosis is an unorthodox spell that transforms Terrorblade into a powerful ranged demon capable of wrecking havoc on his enemies with its bonus range and damage, but makes Terrorblade slower. This spell also makes illusions of Terrorblade transform into his demonic form, but they revert back once they wander too far away from Terrorblade. Finally his ultimate, Sunder, is a unique ability that swaps his health with a targeted hero, ally or enemy alike. This makes ganks on him incredibly risky since he can sunder a hero before finishing them off with a few attacks. With his two Illusion-based spells, the 'semi-ultimate' Metamorphosis and his ultimate, Sunder, Terrorblade's skill set makes him a strong foe in the early game and absolutely terrifying at the later stages of the game. He is usually played as a hard carry.
        </p>
        <div class="toc" id="toc">
         <div id="toctitle">
@@ -817,14 +814,8 @@ document.head.appendChild(script);
          <span class="mw-editsection-bracket">
           [
          </span>
-         <a class="mw-editsection-visualeditor" href="/index.php?title=Terrorblade&amp;veaction=edit&amp;vesection=1" title="Edit section: Bio">
-          edit
-         </a>
-         <span class="mw-editsection-divider">
-          |
-         </span>
          <a href="/index.php?title=Terrorblade&amp;action=edit&amp;section=1" title="Edit section: Bio">
-          edit source
+          edit
          </a>
          <span class="mw-editsection-bracket">
           ]
@@ -832,85 +823,80 @@ document.head.appendChild(script);
         </span>
        </h2>
        <div class="biobox" style="color:#333333;padding:8px;font-size:12px;">
-        <table style="background: none;">
+        <table cellspacing="4" style="background: none;">
          <tr>
-          <td valign="top">
-           <table cellspacing="4" style="background: none;">
-            <tr>
-             <td colspan="2" style="font-weight:bold;font-size:13px;text-align:center;">
-              <a href="/Terrorblade" title="Terrorblade">
-               <img alt="Terrorblade" height="32" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/5/52/Terrorblade_icon.png?version=4c453452725efb82834c36307d1bbf8d" width="32"/>
-              </a>
-              Terrorblade, the Demon Marauder
-             </td>
-            </tr>
-            <tr>
-             <td align="center" colspan="2">
-              <a class="sm2_button" href="https://hydra-media.cursecdn.com/dota2.gamepedia.com/6/68/Terr_spawn_03.mp3" title="Play">
-               Play
-              </a>
-              "The self-righteous shall choke on their sanctimony."
-             </td>
-            </tr>
-            <tr>
-             <td valign="top">
-              <b>
-               Role:
-              </b>
-             </td>
-             <td>
-              <a href="/Role#Carry" title="Carry">
-               <img alt="Carry" height="24" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/5/52/Pip_carry.png/24px-Pip_carry.png?version=7897014a7741857935320d543e26bcac" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/5/52/Pip_carry.png/36px-Pip_carry.png?version=7897014a7741857935320d543e26bcac 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/5/52/Pip_carry.png/48px-Pip_carry.png?version=7897014a7741857935320d543e26bcac 2x" width="24"/>
-              </a>
-              <a href="/Role#Carry" title="Role">
-               Carry
-              </a>
-              /
-              <a href="/Role#Pusher" title="Pusher">
-               <img alt="Pusher" height="24" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/1/1e/Pip_pusher.png/24px-Pip_pusher.png?version=41957ab12983b0cea2a71c4b6c24022a" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/1/1e/Pip_pusher.png/36px-Pip_pusher.png?version=41957ab12983b0cea2a71c4b6c24022a 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/1/1e/Pip_pusher.png/48px-Pip_pusher.png?version=41957ab12983b0cea2a71c4b6c24022a 2x" width="24"/>
-              </a>
-              <a href="/Role#Pusher" title="Role">
-               Pusher
-              </a>
-              /
-              <a href="/Role#Nuker" title="Nuker">
-               <img alt="Nuker" height="24" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/0/04/Pip_ganker.png/24px-Pip_ganker.png?version=f403b95dc688f11a6af39e1110731b4d" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/0/04/Pip_ganker.png/36px-Pip_ganker.png?version=f403b95dc688f11a6af39e1110731b4d 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/0/04/Pip_ganker.png/48px-Pip_ganker.png?version=f403b95dc688f11a6af39e1110731b4d 2x" width="24"/>
-              </a>
-              <a href="/Role#Nuker" title="Role">
-               Nuker
-              </a>
-             </td>
-            </tr>
-            <tr>
-             <td valign="top">
-              <b>
-               Lore:
-              </b>
-             </td>
-             <td>
-              <i>
-               Terrorblade is the demon marauder--an outlaw hellion whom even other demons fear. A cosmic iconoclast, he stole from the Demon Lords, ignored the codified rites that should have bound his behavior, and broke every law of the seven Infernal Regions. For his crimes, he was taught this lesson: even Hell has a hell. A short, brutal trial ensued, with many dead on all sides, and he was finally incarcerated in Foulfell, a hidden dimension where demonkind imprison their own.
-              </i>
-              <p>
-               But Foulfell is no normal prison. In this dark mirror of reality, demons are sentenced to gaze eternally into the twisted reflection of their own souls. But instead of suffering, Terrorblade made himself master of his own reflected worst self--a raging, thieving demon of unimaginable power. With his inner beast under sway, he destroyed the fractal prison walls and burst free to turn his terror loose upon all creation.
-              </p>
-             </td>
-            </tr>
-            <tr>
-             <td valign="top">
-              <b>
-               Voice:
-              </b>
-             </td>
-             <td>
-              David Sobolov (
-              <a href="/Terrorblade/Responses" title="Terrorblade/Responses">
-               Responses
-              </a>
-              )
-             </td>
-            </tr>
-           </table>
+          <td colspan="2" style="font-weight: bold; font-size: 13px; text-align: center;">
+           <a href="/Terrorblade" title="Terrorblade">
+            <img alt="Terrorblade" height="32" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/7/72/Terrorblade_minimap_icon.png?version=482d3a844161164626eea9c573c4d30a" width="32"/>
+           </a>
+           Terrorblade, the Demon Marauder
+          </td>
+         </tr>
+         <tr>
+          <td colspan="2" style="text-align: center;">
+           <a class="sm2_button" href="https://hydra-media.cursecdn.com/dota2.gamepedia.com/6/68/Terr_spawn_03.mp3" title="Play">
+            Play
+           </a>
+           "The self-righteous shall choke on their sanctimony."
+          </td>
+         </tr>
+         <tr>
+          <td>
+           <b>
+            Role:
+           </b>
+          </td>
+          <td>
+           <a href="/Role#Carry" title="Carry">
+            <img alt="Carry" height="24" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/5/52/Pip_carry.png/24px-Pip_carry.png?version=7897014a7741857935320d543e26bcac" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/5/52/Pip_carry.png/36px-Pip_carry.png?version=7897014a7741857935320d543e26bcac 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/5/52/Pip_carry.png/48px-Pip_carry.png?version=7897014a7741857935320d543e26bcac 2x" width="24"/>
+           </a>
+           <a href="/Role#Carry" title="Role">
+            Carry
+           </a>
+           /
+           <a href="/Role#Pusher" title="Pusher">
+            <img alt="Pusher" height="24" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/1/1e/Pip_pusher.png/24px-Pip_pusher.png?version=41957ab12983b0cea2a71c4b6c24022a" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/1/1e/Pip_pusher.png/36px-Pip_pusher.png?version=41957ab12983b0cea2a71c4b6c24022a 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/1/1e/Pip_pusher.png/48px-Pip_pusher.png?version=41957ab12983b0cea2a71c4b6c24022a 2x" width="24"/>
+           </a>
+           <a href="/Role#Pusher" title="Role">
+            Pusher
+           </a>
+           /
+           <a href="/Role#Nuker" title="Nuker">
+            <img alt="Nuker" height="24" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/0/04/Pip_ganker.png/24px-Pip_ganker.png?version=f403b95dc688f11a6af39e1110731b4d" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/0/04/Pip_ganker.png/36px-Pip_ganker.png?version=f403b95dc688f11a6af39e1110731b4d 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/0/04/Pip_ganker.png/48px-Pip_ganker.png?version=f403b95dc688f11a6af39e1110731b4d 2x" width="24"/>
+           </a>
+           <a href="/Role#Nuker" title="Role">
+            Nuker
+           </a>
+          </td>
+         </tr>
+         <tr>
+          <td style="vertical-align: top;">
+           <b>
+            <a href="/Terrorblade/Lore" title="Terrorblade/Lore">
+             Lore
+            </a>
+            :
+           </b>
+          </td>
+          <td style="font-style: italic;">
+           Terrorblade is the demon marauder--an outlaw hellion whom even other demons fear. A cosmic iconoclast, he stole from the Demon Lords, ignored the codified rites that should have bound his behavior, and broke every law of the seven Infernal Regions. For his crimes, he was taught this lesson: even Hell has a hell. A short, brutal trial ensued, with many dead on all sides, and he was finally incarcerated in Foulfell, a hidden dimension where demonkind imprison their own.
+           <p>
+            But Foulfell is no normal prison. In this dark mirror of reality, demons are sentenced to gaze eternally into the twisted reflection of their own souls. But instead of suffering, Terrorblade made himself master of his own reflected worst self--a raging, thieving demon of unimaginable power. With his inner beast under sway, he destroyed the fractal prison walls and burst free to turn his terror loose upon all creation.
+           </p>
+          </td>
+         </tr>
+         <tr>
+          <td>
+           <b>
+            Voice:
+           </b>
+          </td>
+          <td>
+           David Sobolov (
+           <a href="/Terrorblade/Responses" title="Terrorblade/Responses">
+            Responses
+           </a>
+           )
           </td>
          </tr>
         </table>
@@ -923,14 +909,8 @@ document.head.appendChild(script);
          <span class="mw-editsection-bracket">
           [
          </span>
-         <a class="mw-editsection-visualeditor" href="/index.php?title=Terrorblade&amp;veaction=edit&amp;vesection=2" title="Edit section: Abilities">
-          edit
-         </a>
-         <span class="mw-editsection-divider">
-          |
-         </span>
          <a href="/index.php?title=Terrorblade&amp;action=edit&amp;section=2" title="Edit section: Abilities">
-          edit source
+          edit
          </a>
          <span class="mw-editsection-bracket">
           ]
@@ -1018,33 +998,48 @@ document.head.appendChild(script);
            <b>
             Radius
            </b>
-           : 900
+           :
+           <span style="white-space: nowrap">
+            900
+           </span>
           </div>
           <div>
            <b>
             Move Speed Slow
            </b>
-           : 25%
+           :
+           <span style="white-space: nowrap">
+            25%
+           </span>
           </div>
           <div>
            <b>
             Attack Speed Slow
            </b>
-           : 25
+           :
+           <span style="white-space: nowrap">
+            25
+           </span>
           </div>
           <div>
            <b>
             Illusion Damage Dealt
            </b>
-           : 40%/60%/80%/100%
+           :
+           <span style="white-space: nowrap">
+            40%/60%/80%/100%
+           </span>
           </div>
           <div>
            <b>
             Duration
            </b>
-           : 2.5/3.5/4.5/5.5
+           :
+           <span style="white-space: nowrap">
+            2.5/3.5/4.5/5.5
+           </span>
           </div>
-          <div style="display: inline-block; margin: 8px 0px 0px 50px; width: 190px; vertical-align: top;">
+          <div style="display: inline-block; margin: 8px 0px 0px 50px; width: 190px; vertical-align: top; word-wrap: break-word;">
            <span style="position: relative; top: -2px;">
             <a href="/Cooldown" title="Cooldown">
              <img alt="Cooldown symbol.png" height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/b/b7/Cooldown_symbol.png?version=7429ed9baf0f121e6ab3324bfdfad708" style="vertical-align: text-top" width="20"/>
@@ -1052,7 +1047,7 @@ document.head.appendChild(script);
            </span>
            22/20/18/16
           </div>
-          <div style="display: inline-block; margin: 8px 0px 0px; width: 190px; vertical-align: top;">
+          <div style="display: inline-block; margin: 8px 0px 0px; width: 190px; vertical-align: top; word-wrap: break-word;">
            <span style="position: relative; top: -2px;">
             <a href="/Mana" title="Mana">
              <img alt="Mana symbol.png" height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/f/f3/Mana_symbol.png?version=a81185ac577f9b52f2df06be91b6600c" style="vertical-align: text-top" width="20"/>
@@ -1072,7 +1067,9 @@ document.head.appendChild(script);
           </div>
           <div style="margin-top: 10px;">
            <b>
-            Modifiers
+            <span id="tooltip" style="cursor:help; border-bottom:1px dotted;" title="The displayed names are the intern names of the modifiers. Do not change them even if they don't match the ability name.">
+             Modifiers
+            </span>
            </b>
           </div>
           <div style="font-size: 85%; margin-left: 10px;">
@@ -1150,7 +1147,7 @@ document.head.appendChild(script);
            <a class="mw-redirect" href="/Fog_of_War" title="Fog of War">
             Fog of War
            </a>
-           . Though they need vision to attack.
+           . However, they need vision to attack.
           </li>
          </ul>
          <ul>
@@ -1192,15 +1189,13 @@ document.head.appendChild(script);
              Metamorphosis
             </a>
            </span>
-           ​.
+           .
           </li>
          </ul>
         </div>
        </div>
        <p>
         <br/>
-       </p>
-       <p>
         <span id="Conjure_Image">
         </span>
        </p>
@@ -1271,27 +1266,39 @@ document.head.appendChild(script);
            <b>
             Number of Illusions
            </b>
-           : 1
+           :
+           <span style="white-space: nowrap">
+            1
+           </span>
           </div>
           <div>
            <b>
             Illusion Damage Dealt
            </b>
-           : 30%/40%/50%/60%
+           :
+           <span style="white-space: nowrap">
+            30%/40%/50%/60%
+           </span>
           </div>
           <div>
            <b>
             Illusion Damage Taken
            </b>
-           : 400%
+           :
+           <span style="white-space: nowrap">
+            400%
+           </span>
           </div>
           <div>
            <b>
             Duration
            </b>
-           : 34
+           :
+           <span style="white-space: nowrap">
+            34
+           </span>
           </div>
-          <div style="display: inline-block; margin: 8px 0px 0px 50px; width: 190px; vertical-align: top;">
+          <div style="display: inline-block; margin: 8px 0px 0px 50px; width: 190px; vertical-align: top; word-wrap: break-word;">
            <span style="position: relative; top: -2px;">
             <a href="/Cooldown" title="Cooldown">
              <img alt="Cooldown symbol.png" height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/b/b7/Cooldown_symbol.png?version=7429ed9baf0f121e6ab3324bfdfad708" style="vertical-align: text-top" width="20"/>
@@ -1299,7 +1306,7 @@ document.head.appendChild(script);
            </span>
            16
           </div>
-          <div style="display: inline-block; margin: 8px 0px 0px; width: 190px; vertical-align: top;">
+          <div style="display: inline-block; margin: 8px 0px 0px; width: 190px; vertical-align: top; word-wrap: break-word;">
            <span style="position: relative; top: -2px;">
             <a href="/Mana" title="Mana">
              <img alt="Mana symbol.png" height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/f/f3/Mana_symbol.png?version=a81185ac577f9b52f2df06be91b6600c" style="vertical-align: text-top" width="20"/>
@@ -1337,7 +1344,7 @@ document.head.appendChild(script);
              Metamorphosis
             </a>
            </span>
-           ​, the illusions are only in ranged form when staying within range.
+           , the illusions are only in ranged form when staying within range.
           </li>
          </ul>
          <ul>
@@ -1365,15 +1372,13 @@ document.head.appendChild(script);
              Metamorphosis
             </a>
            </span>
-           ​.
+           .
           </li>
          </ul>
         </div>
        </div>
        <p>
         <br/>
-       </p>
-       <p>
         <span id="Metamorphosis">
         </span>
        </p>
@@ -1455,39 +1460,57 @@ document.head.appendChild(script);
            <b>
             Transformation Time
            </b>
-           : 0.35
+           :
+           <span style="white-space: nowrap">
+            0.35
+           </span>
           </div>
           <div>
            <b>
             Illusion Radius
            </b>
-           : 900
+           :
+           <span style="white-space: nowrap">
+            900
+           </span>
           </div>
           <div>
            <b>
             Attack Damage Bonus
            </b>
-           : 20/40/60/80
+           :
+           <span style="white-space: nowrap">
+            20/40/60/80
+           </span>
           </div>
           <div>
            <b>
             Attack Range Bonus
            </b>
-           : 400
+           :
+           <span style="white-space: nowrap">
+            400
+           </span>
           </div>
           <div>
            <b>
             Move Speed Loss
            </b>
-           : 25
+           :
+           <span style="white-space: nowrap">
+            30
+           </span>
           </div>
           <div>
            <b>
             Duration
            </b>
-           : 40/44/48/52
+           :
+           <span style="white-space: nowrap">
+            40/44/48/52
+           </span>
           </div>
-          <div style="display: inline-block; margin: 8px 0px 0px 50px; width: 190px; vertical-align: top;">
+          <div style="display: inline-block; margin: 8px 0px 0px 50px; width: 190px; vertical-align: top; word-wrap: break-word;">
            <span style="position: relative; top: -2px;">
             <a href="/Cooldown" title="Cooldown">
              <img alt="Cooldown symbol.png" height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/b/b7/Cooldown_symbol.png?version=7429ed9baf0f121e6ab3324bfdfad708" style="vertical-align: text-top" width="20"/>
@@ -1495,7 +1518,7 @@ document.head.appendChild(script);
            </span>
            140
           </div>
-          <div style="display: inline-block; margin: 8px 0px 0px; width: 190px; vertical-align: top;">
+          <div style="display: inline-block; margin: 8px 0px 0px; width: 190px; vertical-align: top; word-wrap: break-word;">
            <span style="position: relative; top: -2px;">
             <a href="/Mana" title="Mana">
              <img alt="Mana symbol.png" height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/f/f3/Mana_symbol.png?version=a81185ac577f9b52f2df06be91b6600c" style="vertical-align: text-top" width="20"/>
@@ -1505,7 +1528,9 @@ document.head.appendChild(script);
           </div>
           <div style="margin-top: 10px;">
            <b>
-            Modifiers
+            <span id="tooltip" style="cursor:help; border-bottom:1px dotted;" title="The displayed names are the intern names of the modifiers. Do not change them even if they don't match the ability name.">
+             Modifiers
+            </span>
            </b>
           </div>
           <div style="font-size: 85%; margin-left: 10px;">
@@ -1592,11 +1617,11 @@ document.head.appendChild(script);
            <a href="/Attack_range" title="Attack range">
             attack range
            </a>
-           to 550 and decreases
+           to 550 and reduces
            <a href="/Movement_speed" title="Movement speed">
             movement speed
            </a>
-           to 290.
+           to 285.
           </li>
          </ul>
          <ul>
@@ -1629,7 +1654,7 @@ document.head.appendChild(script);
              Reflection
             </a>
            </span>
-           ​.
+           .
           </li>
          </ul>
          <ul>
@@ -1651,8 +1676,6 @@ document.head.appendChild(script);
        </div>
        <p>
         <br/>
-       </p>
-       <p>
         <span id="Sunder">
         </span>
        </p>
@@ -1740,27 +1763,36 @@ document.head.appendChild(script);
            <b>
             Cast Range
            </b>
-           : 550
+           :
+           <span style="white-space: nowrap">
+            550
+           </span>
           </div>
           <div>
            <b>
             Minimum Health
            </b>
-           : 25%
+           :
+           <span style="white-space: nowrap">
+            25%
+           </span>
           </div>
-          <div style="display: inline-block; margin: 8px 0px 0px 50px; width: 190px; vertical-align: top;">
+          <div style="display: inline-block; margin: 8px 0px 0px 50px; width: 190px; vertical-align: top; word-wrap: break-word;">
            <span style="position: relative; top: -2px;">
             <a href="/Cooldown" title="Cooldown">
              <img alt="Cooldown symbol.png" height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/b/b7/Cooldown_symbol.png?version=7429ed9baf0f121e6ab3324bfdfad708" style="vertical-align: text-top" width="20"/>
             </a>
            </span>
-           120/80/40 (
-           <a href="/Talents" title="Talent">
-            <img alt="Talent" height="16" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/c/cd/Talent_tree_symbol.png/16px-Talent_tree_symbol.png?version=b4db4b31a2f9c215885be017c22a8b0c" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/c/cd/Talent_tree_symbol.png/24px-Talent_tree_symbol.png?version=b4db4b31a2f9c215885be017c22a8b0c 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/c/cd/Talent_tree_symbol.png/32px-Talent_tree_symbol.png?version=b4db4b31a2f9c215885be017c22a8b0c 2x" style="vertical-align: text-top" width="16"/>
-           </a>
-           90/50/10)
+           120/80/40
+           <span style="white-space: nowrap">
+            (
+            <a href="/Talents" title="Talent">
+             <img alt="Talent" height="16" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/c/cd/Talent_tree_symbol.png/16px-Talent_tree_symbol.png?version=b4db4b31a2f9c215885be017c22a8b0c" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/c/cd/Talent_tree_symbol.png/24px-Talent_tree_symbol.png?version=b4db4b31a2f9c215885be017c22a8b0c 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/c/cd/Talent_tree_symbol.png/32px-Talent_tree_symbol.png?version=b4db4b31a2f9c215885be017c22a8b0c 2x" style="vertical-align: text-top" width="16"/>
+            </a>
+            90/50/10)
+           </span>
           </div>
-          <div style="display: inline-block; margin: 8px 0px 0px; width: 190px; vertical-align: top;">
+          <div style="display: inline-block; margin: 8px 0px 0px; width: 190px; vertical-align: top; word-wrap: break-word;">
            <span style="position: relative; top: -2px;">
             <a href="/Mana" title="Mana">
              <img alt="Mana symbol.png" height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/f/f3/Mana_symbol.png?version=a81185ac577f9b52f2df06be91b6600c" style="vertical-align: text-top" width="20"/>
@@ -1803,39 +1835,38 @@ document.head.appendChild(script);
          </ul>
          <ul>
           <li>
-           Sunder directly manipulates Terrorblade's and his target's health, so it has no interaction with on-damage effects.
-           <ul>
-            <li>
-             Few examples:
-             <span style="white-space: nowrap;">
-              <a href="/Ancient_Apparition#Ice_Blast" title="Ancient Apparition#Ice Blast">
-               <img alt="Ice Blast icon.png" height="16" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/f/f4/Ice_Blast_icon.png/16px-Ice_Blast_icon.png?version=7acf615c099c253d36bf1cb410d62793" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/f/f4/Ice_Blast_icon.png/24px-Ice_Blast_icon.png?version=7acf615c099c253d36bf1cb410d62793 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/f/f4/Ice_Blast_icon.png/32px-Ice_Blast_icon.png?version=7acf615c099c253d36bf1cb410d62793 2x" width="16"/>
-              </a>
-              <a href="/Ancient_Apparition#Ice_Blast" title="Ancient Apparition">
-               Ice Blast
-              </a>
-             </span>
-             ​,
-             <span style="white-space:nowrap">
-              <a href="/Blade_Mail" title="Blade Mail">
-               <img alt="Blade Mail icon.png" height="15" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/1/18/Blade_Mail_icon.png/20px-Blade_Mail_icon.png?version=1cd63c6607e44771a213838e9a659cf1" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/1/18/Blade_Mail_icon.png/30px-Blade_Mail_icon.png?version=1cd63c6607e44771a213838e9a659cf1 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/1/18/Blade_Mail_icon.png/40px-Blade_Mail_icon.png?version=1cd63c6607e44771a213838e9a659cf1 2x" width="20"/>
-              </a>
-              <a href="/Blade_Mail" title="Blade Mail">
-               Blade Mail
-              </a>
-             </span>
-             ,
-             <span style="white-space: nowrap;">
-              <a href="/Abaddon#Borrowed_Time" title="Abaddon#Borrowed Time">
-               <img alt="Borrowed Time icon.png" height="16" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/78/Borrowed_Time_icon.png/16px-Borrowed_Time_icon.png?version=616145143e19b6451e3c3bc5ce681a01" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/78/Borrowed_Time_icon.png/24px-Borrowed_Time_icon.png?version=616145143e19b6451e3c3bc5ce681a01 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/78/Borrowed_Time_icon.png/32px-Borrowed_Time_icon.png?version=616145143e19b6451e3c3bc5ce681a01 2x" width="16"/>
-              </a>
-              <a href="/Abaddon#Borrowed_Time" title="Abaddon">
-               Borrowed Time
-              </a>
-             </span>
-             ​ are fully ignored.
-            </li>
-           </ul>
+           Sunder directly manipulates Terrorblade's and his target's health, so it fully ignores
+           <a class="mw-redirect" href="/On-damage_effects" title="On-damage effects">
+            on-damage effects
+           </a>
+           (e.g.
+           <span style="white-space: nowrap;">
+            <a href="/Ancient_Apparition#Ice_Blast" title="Ancient Apparition#Ice Blast">
+             <img alt="Ice Blast icon.png" height="16" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/f/f4/Ice_Blast_icon.png/16px-Ice_Blast_icon.png?version=7acf615c099c253d36bf1cb410d62793" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/f/f4/Ice_Blast_icon.png/24px-Ice_Blast_icon.png?version=7acf615c099c253d36bf1cb410d62793 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/f/f4/Ice_Blast_icon.png/32px-Ice_Blast_icon.png?version=7acf615c099c253d36bf1cb410d62793 2x" width="16"/>
+            </a>
+            <a href="/Ancient_Apparition#Ice_Blast" title="Ancient Apparition">
+             Ice Blast
+            </a>
+           </span>
+           ,
+           <span style="white-space: nowrap;">
+            <a href="/Abaddon#Borrowed_Time" title="Abaddon#Borrowed Time">
+             <img alt="Borrowed Time icon.png" height="16" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/78/Borrowed_Time_icon.png/16px-Borrowed_Time_icon.png?version=616145143e19b6451e3c3bc5ce681a01" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/78/Borrowed_Time_icon.png/24px-Borrowed_Time_icon.png?version=616145143e19b6451e3c3bc5ce681a01 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/78/Borrowed_Time_icon.png/32px-Borrowed_Time_icon.png?version=616145143e19b6451e3c3bc5ce681a01 2x" width="16"/>
+            </a>
+            <a href="/Abaddon#Borrowed_Time" title="Abaddon">
+             Borrowed Time
+            </a>
+           </span>
+           and
+           <span style="white-space:nowrap">
+            <a href="/Blade_Mail" title="Blade Mail">
+             <img alt="Blade Mail icon.png" height="15" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/1/18/Blade_Mail_icon.png/20px-Blade_Mail_icon.png?version=1cd63c6607e44771a213838e9a659cf1" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/1/18/Blade_Mail_icon.png/30px-Blade_Mail_icon.png?version=1cd63c6607e44771a213838e9a659cf1 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/1/18/Blade_Mail_icon.png/40px-Blade_Mail_icon.png?version=1cd63c6607e44771a213838e9a659cf1 2x" width="20"/>
+            </a>
+            <a href="/Blade_Mail" title="Blade Mail">
+             Blade Mail
+            </a>
+           </span>
+           ).
           </li>
          </ul>
          <ul>
@@ -1849,7 +1880,7 @@ document.head.appendChild(script);
              Metamorphosis
             </a>
            </span>
-           ​.
+           .
           </li>
          </ul>
         </div>
@@ -1865,14 +1896,8 @@ document.head.appendChild(script);
          <span class="mw-editsection-bracket">
           [
          </span>
-         <a class="mw-editsection-visualeditor" href="/index.php?title=Terrorblade&amp;veaction=edit&amp;vesection=3" title="Edit section: Talents">
-          edit
-         </a>
-         <span class="mw-editsection-divider">
-          |
-         </span>
          <a href="/index.php?title=Terrorblade&amp;action=edit&amp;section=3" title="Edit section: Talents">
-          edit source
+          edit
          </a>
          <span class="mw-editsection-bracket">
           ]
@@ -1904,7 +1929,7 @@ document.head.appendChild(script);
               Sunder
              </a>
             </span>
-            ​ Cooldown
+            Cooldown
            </td>
            <td style="padding: 10px; background-color: #0c2a5a">
             <span style="color: white; font-size:13pt">
@@ -1919,7 +1944,7 @@ document.head.appendChild(script);
           </tr>
           <tr>
            <td width="240">
-            +15 Movement Speed
+            +25 Movement Speed
            </td>
            <td style="padding: 10px; background-color: #15499d">
             <span style="color: white; font-size:13pt">
@@ -1942,7 +1967,7 @@ document.head.appendChild(script);
           </tr>
           <tr>
            <td width="240">
-            +175 Health
+            +200 Health
            </td>
            <td style="padding: 10px; background-color: #1c5eca">
             <span style="color: white; font-size:13pt">
@@ -1976,1551 +2001,1461 @@ document.head.appendChild(script);
          <b>
           Notes:
          </b>
-        </div>
-       </div>
-       <ul>
-        <li>
-         The health regen is added as a bonus and does not benefit illusions.
-        </li>
-        <li>
-         The attack damage is added as bonus attack damage, and therefore does not benefit illusions.
-        </li>
-        <li>
-         Upgrading health increases maximum health capacity and keeps the current health percentage.
-        </li>
-       </ul>
-       <p>
-        <br/>
-       </p>
-       <h2>
-        <span class="mw-headline" id="Recommended_items">
-         Recommended items
-        </span>
-        <span class="mw-editsection">
-         <span class="mw-editsection-bracket">
-          [
-         </span>
-         <a class="mw-editsection-visualeditor" href="/index.php?title=Terrorblade&amp;veaction=edit&amp;vesection=4" title="Edit section: Recommended items">
-          edit
-         </a>
-         <span class="mw-editsection-divider">
-          |
-         </span>
-         <a href="/index.php?title=Terrorblade&amp;action=edit&amp;section=4" title="Edit section: Recommended items">
-          edit source
-         </a>
-         <span class="mw-editsection-bracket">
-          ]
-         </span>
-        </span>
-       </h2>
-       <p>
-        <b>
-         Starting items:
-        </b>
-       </p>
-       <ul>
-        <li>
-         <span style="white-space:nowrap">
-          <a href="/Tango" title="Tango">
-           <img alt="Tango icon.png" height="22" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/f/fd/Tango_icon.png/30px-Tango_icon.png?version=6ddcac461cbd98cc58e99a5f70d04a57" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/f/fd/Tango_icon.png/45px-Tango_icon.png?version=6ddcac461cbd98cc58e99a5f70d04a57 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/f/fd/Tango_icon.png/60px-Tango_icon.png?version=6ddcac461cbd98cc58e99a5f70d04a57 2x" width="30"/>
-          </a>
-          <a href="/Tango" title="Tango">
-           Tango
-          </a>
-         </span>
-         and
-         <span style="white-space:nowrap">
-          <a href="/Healing_Salve" title="Healing Salve">
-           <img alt="Healing Salve icon.png" height="22" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/3/36/Healing_Salve_icon.png/30px-Healing_Salve_icon.png?version=923f3249add1829368656d8a736b8545" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/3/36/Healing_Salve_icon.png/45px-Healing_Salve_icon.png?version=923f3249add1829368656d8a736b8545 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/3/36/Healing_Salve_icon.png/60px-Healing_Salve_icon.png?version=923f3249add1829368656d8a736b8545 2x" width="30"/>
-          </a>
-          <a href="/Healing_Salve" title="Healing Salve">
-           Healing Salve
-          </a>
-         </span>
-         both provide needed health regeneration during the laning phase.
-        </li>
-        <li>
-         <span style="white-space:nowrap">
-          <a href="/Slippers_of_Agility" title="Slippers of Agility">
-           <img alt="Slippers of Agility icon.png" height="22" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/5/5c/Slippers_of_Agility_icon.png/30px-Slippers_of_Agility_icon.png?version=e7af64fce0ce6441d6c7ca88777a53ec" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/5/5c/Slippers_of_Agility_icon.png/45px-Slippers_of_Agility_icon.png?version=e7af64fce0ce6441d6c7ca88777a53ec 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/5/5c/Slippers_of_Agility_icon.png/60px-Slippers_of_Agility_icon.png?version=e7af64fce0ce6441d6c7ca88777a53ec 2x" width="30"/>
-          </a>
-          <a href="/Slippers_of_Agility" title="Slippers of Agility">
-           Slippers of Agility
-          </a>
-         </span>
-         help Terrorblade last hit and deny easier and build into a
-         <span style="white-space:nowrap">
-          <a href="/Ring_of_Aquila" title="Ring of Aquila">
-           <img alt="Ring of Aquila (Active) icon.png" height="15" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/3/3f/Ring_of_Aquila_%28Active%29_icon.png/20px-Ring_of_Aquila_%28Active%29_icon.png?version=7b99fb4e9196eafa2e54b9fea4ad0e77" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/3/3f/Ring_of_Aquila_%28Active%29_icon.png/30px-Ring_of_Aquila_%28Active%29_icon.png?version=7b99fb4e9196eafa2e54b9fea4ad0e77 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/3/3f/Ring_of_Aquila_%28Active%29_icon.png/40px-Ring_of_Aquila_%28Active%29_icon.png?version=7b99fb4e9196eafa2e54b9fea4ad0e77 2x" width="20"/>
-          </a>
-          <a href="/Ring_of_Aquila" title="Ring of Aquila">
-           Ring of Aquila
-          </a>
-         </span>
-         .
-        </li>
-        <li>
-         <span style="white-space:nowrap">
-          <a href="/Stout_Shield" title="Stout Shield">
-           <img alt="Stout Shield icon.png" height="22" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/0/01/Stout_Shield_icon.png/30px-Stout_Shield_icon.png?version=9edbfc8c6caead89362d029d4085d58a" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/0/01/Stout_Shield_icon.png/45px-Stout_Shield_icon.png?version=9edbfc8c6caead89362d029d4085d58a 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/0/01/Stout_Shield_icon.png/60px-Stout_Shield_icon.png?version=9edbfc8c6caead89362d029d4085d58a 2x" width="30"/>
-          </a>
-          <a href="/Stout_Shield" title="Stout Shield">
-           Stout Shield
-          </a>
-         </span>
-         along with Terrorblade's high base armor help reduce the amount of damage he might take from harassment and creeps while laning.
-        </li>
-       </ul>
-       <p>
-        <b>
-         Early-game items:
-        </b>
-       </p>
-       <ul>
-        <li>
-         <span style="white-space:nowrap">
-          <a href="/Bracer" title="Bracer">
-           <img alt="Bracer icon.png" height="22" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/6/6e/Bracer_icon.png/30px-Bracer_icon.png?version=27530944bafd39270ab9e6a05dfbb2d6" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/6/6e/Bracer_icon.png/45px-Bracer_icon.png?version=27530944bafd39270ab9e6a05dfbb2d6 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/6/6e/Bracer_icon.png/60px-Bracer_icon.png?version=27530944bafd39270ab9e6a05dfbb2d6 2x" width="30"/>
-          </a>
-          <a href="/Bracer" title="Bracer">
-           Bracer
-          </a>
-         </span>
-         makes Terrorblade slightly tankier early on and later builds into a
-         <span style="white-space:nowrap">
-          <a href="/Drum_of_Endurance" title="Drum of Endurance">
-           <img alt="Drum of Endurance icon.png" height="15" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/9/91/Drum_of_Endurance_icon.png/20px-Drum_of_Endurance_icon.png?version=893ed34a6f20de7d7d637d5cf0110165" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/9/91/Drum_of_Endurance_icon.png/30px-Drum_of_Endurance_icon.png?version=893ed34a6f20de7d7d637d5cf0110165 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/9/91/Drum_of_Endurance_icon.png/40px-Drum_of_Endurance_icon.png?version=893ed34a6f20de7d7d637d5cf0110165 2x" width="20"/>
-          </a>
-          <a href="/Drum_of_Endurance" title="Drum of Endurance">
-           Drum of Endurance
-          </a>
-         </span>
-         .
-        </li>
-        <li>
-         <span style="white-space:nowrap">
-          <a href="/Ring_of_Aquila" title="Ring of Aquila">
-           <img alt="Ring of Aquila (Active) icon.png" height="22" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/3/3f/Ring_of_Aquila_%28Active%29_icon.png/30px-Ring_of_Aquila_%28Active%29_icon.png?version=d9e1851149c0f51e8fc985ee1504740c" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/3/3f/Ring_of_Aquila_%28Active%29_icon.png/45px-Ring_of_Aquila_%28Active%29_icon.png?version=d9e1851149c0f51e8fc985ee1504740c 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/3/3f/Ring_of_Aquila_%28Active%29_icon.png/60px-Ring_of_Aquila_%28Active%29_icon.png?version=d9e1851149c0f51e8fc985ee1504740c 2x" width="30"/>
-          </a>
-          <a href="/Ring_of_Aquila" title="Ring of Aquila">
-           Ring of Aquila
-          </a>
-         </span>
-         provides minor stats, some armor as well as much needed mana regen.
-        </li>
-       </ul>
-       <p>
-        <b>
-         Core items:
-        </b>
-       </p>
-       <ul>
-        <li>
-         <span style="white-space:nowrap">
-          <a href="/Power_Treads" title="Power Treads">
-           <img alt="Power Treads icon.png" height="22" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/6/6b/Power_Treads_icon.png/30px-Power_Treads_icon.png?version=8a0928e0797b87663a27ee60823e5b18" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/6/6b/Power_Treads_icon.png/45px-Power_Treads_icon.png?version=8a0928e0797b87663a27ee60823e5b18 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/6/6b/Power_Treads_icon.png/60px-Power_Treads_icon.png?version=8a0928e0797b87663a27ee60823e5b18 2x" width="30"/>
-          </a>
-          <a href="/Power_Treads" title="Power Treads">
-           Power Treads
-          </a>
-         </span>
-         provide attack speed and some strength, both of which are needed on Terrorblade.
-        </li>
-        <li>
-         <span style="white-space:nowrap">
-          <a href="/Drum_of_Endurance" title="Drum of Endurance">
-           <img alt="Drum of Endurance icon.png" height="22" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/9/91/Drum_of_Endurance_icon.png/30px-Drum_of_Endurance_icon.png?version=61e72016b26666f978ef124acee87911" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/9/91/Drum_of_Endurance_icon.png/45px-Drum_of_Endurance_icon.png?version=61e72016b26666f978ef124acee87911 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/9/91/Drum_of_Endurance_icon.png/60px-Drum_of_Endurance_icon.png?version=61e72016b26666f978ef124acee87911 2x" width="30"/>
-          </a>
-          <a href="/Drum_of_Endurance" title="Drum of Endurance">
-           Drum of Endurance
-          </a>
-         </span>
-         provides a solid attribute bonus, while the movement and attack speed aura benefits both you and illusions you create from Terrorblade.
-        </li>
-        <li>
-         <span style="white-space:nowrap">
-          <a href="/Sange_and_Yasha" title="Sange and Yasha">
-           <img alt="Sange and Yasha icon.png" height="22" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/b/b4/Sange_and_Yasha_icon.png/30px-Sange_and_Yasha_icon.png?version=ea679e01a75a7acfc3752ec13bacdced" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/b/b4/Sange_and_Yasha_icon.png/45px-Sange_and_Yasha_icon.png?version=ea679e01a75a7acfc3752ec13bacdced 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/b/b4/Sange_and_Yasha_icon.png/60px-Sange_and_Yasha_icon.png?version=ea679e01a75a7acfc3752ec13bacdced 2x" width="30"/>
-          </a>
-          <a href="/Sange_and_Yasha" title="Sange and Yasha">
-           Sange and Yasha
-          </a>
-         </span>
-         provides great all around benefits for Terrorblade and his illusions.
-        </li>
-        <li>
-         <span style="white-space:nowrap">
-          <a href="/Dragon_Lance" title="Dragon Lance">
-           <img alt="Dragon Lance icon.png" height="22" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/d/db/Dragon_Lance_icon.png/30px-Dragon_Lance_icon.png?version=57bddf366274a17c84f225277e8b1ae8" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/d/db/Dragon_Lance_icon.png/45px-Dragon_Lance_icon.png?version=57bddf366274a17c84f225277e8b1ae8 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/d/db/Dragon_Lance_icon.png/60px-Dragon_Lance_icon.png?version=57bddf366274a17c84f225277e8b1ae8 2x" width="30"/>
-          </a>
-          <a href="/Dragon_Lance" title="Dragon Lance">
-           Dragon Lance
-          </a>
-         </span>
-         greatly increases Terrorblade's range in Metamorphosis. The range also helps Terrorblade and his illusions to hit towers from a safer distance.
-        </li>
-       </ul>
-       <p>
-        <b>
-         Situational items:
-        </b>
-       </p>
-       <ul>
-        <li>
-         <span style="white-space:nowrap">
-          <a href="/Manta_Style" title="Manta Style">
-           <img alt="Manta Style icon.png" height="22" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/8/84/Manta_Style_icon.png/30px-Manta_Style_icon.png?version=7171fd71a68fec2d5b0114f337a56602" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/8/84/Manta_Style_icon.png/45px-Manta_Style_icon.png?version=7171fd71a68fec2d5b0114f337a56602 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/8/84/Manta_Style_icon.png/60px-Manta_Style_icon.png?version=7171fd71a68fec2d5b0114f337a56602 2x" width="30"/>
-          </a>
-          <a href="/Manta_Style" title="Manta Style">
-           Manta Style
-          </a>
-         </span>
-         is a great complement to Terrorblade as it allows you to have up to 4 illusions at once.
-        </li>
-        <li>
-         <span style="white-space:nowrap">
-          <a href="/Butterfly" title="Butterfly">
-           <img alt="Butterfly icon.png" height="22" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/2/28/Butterfly_icon.png/30px-Butterfly_icon.png?version=f1076a78206994a4de8f684e56ff138a" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/2/28/Butterfly_icon.png/45px-Butterfly_icon.png?version=f1076a78206994a4de8f684e56ff138a 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/2/28/Butterfly_icon.png/60px-Butterfly_icon.png?version=f1076a78206994a4de8f684e56ff138a 2x" width="30"/>
-          </a>
-          <a href="/Butterfly" title="Butterfly">
-           Butterfly
-          </a>
-         </span>
-         provides the 2nd most agility of any item. Illusions also benefit from the evasion.
-        </li>
-        <li>
-         <span style="white-space:nowrap">
-          <a href="/Radiance" title="Radiance">
-           <img alt="Radiance (Active) icon.png" height="22" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/d/df/Radiance_%28Active%29_icon.png/30px-Radiance_%28Active%29_icon.png?version=95acbd372defb1905118c64919f78202" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/d/df/Radiance_%28Active%29_icon.png/45px-Radiance_%28Active%29_icon.png?version=95acbd372defb1905118c64919f78202 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/d/df/Radiance_%28Active%29_icon.png/60px-Radiance_%28Active%29_icon.png?version=95acbd372defb1905118c64919f78202 2x" width="30"/>
-          </a>
-          <a href="/Radiance" title="Radiance">
-           Radiance
-          </a>
-         </span>
-         provides a lot of damage and the Radiance aura can accelerate Terrorblade's farm and increase his ability to push. Illusions carry the Radiance aura, although the aura does not stack from multiple sources.
-        </li>
-        <li>
-         <span style="white-space:nowrap">
-          <a href="/Shadow_Blade" title="Shadow Blade">
-           <img alt="Shadow Blade icon.png" height="22" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/0/0f/Shadow_Blade_icon.png/30px-Shadow_Blade_icon.png?version=0a69432573a18312685d3cbb85c91cff" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/0/0f/Shadow_Blade_icon.png/45px-Shadow_Blade_icon.png?version=0a69432573a18312685d3cbb85c91cff 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/0/0f/Shadow_Blade_icon.png/60px-Shadow_Blade_icon.png?version=0a69432573a18312685d3cbb85c91cff 2x" width="30"/>
-          </a>
-          <a href="/Shadow_Blade" title="Shadow Blade">
-           Shadow Blade
-          </a>
-         </span>
-         is a great initiation and escape item, which also allows you to get close enough to your enemy and use Sunder with minimal risk. It also provides great damage and attack speed, both good attributes in all stages of the game.
-        </li>
-        <li>
-         <span style="white-space:nowrap">
-          <a href="/Helm_of_the_Dominator" title="Helm of the Dominator">
-           <img alt="Helm of the Dominator icon.png" height="22" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/9/97/Helm_of_the_Dominator_icon.png/30px-Helm_of_the_Dominator_icon.png?version=02878b74908d39caf56f8edbdedfece3" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/9/97/Helm_of_the_Dominator_icon.png/45px-Helm_of_the_Dominator_icon.png?version=02878b74908d39caf56f8edbdedfece3 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/9/97/Helm_of_the_Dominator_icon.png/60px-Helm_of_the_Dominator_icon.png?version=02878b74908d39caf56f8edbdedfece3 2x" width="30"/>
-          </a>
-          <a href="/Helm_of_the_Dominator" title="Helm of the Dominator">
-           Helm of the Dominator
-          </a>
-         </span>
-         is useful to keep Terrorblade alive in teamfights.
-        </li>
-        <li>
-         <span style="white-space:nowrap">
-          <a href="/Boots_of_Travel" title="Boots of Travel">
-           <img alt="Boots of Travel 1 icon.png" height="22" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/6/6d/Boots_of_Travel_1_icon.png/30px-Boots_of_Travel_1_icon.png?version=8ae16e23541021fe24e3dac127ffae8d" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/6/6d/Boots_of_Travel_1_icon.png/45px-Boots_of_Travel_1_icon.png?version=8ae16e23541021fe24e3dac127ffae8d 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/6/6d/Boots_of_Travel_1_icon.png/60px-Boots_of_Travel_1_icon.png?version=8ae16e23541021fe24e3dac127ffae8d 2x" width="30"/>
-          </a>
-          <a href="/Boots_of_Travel" title="Boots of Travel">
-           Boots of Travel
-          </a>
-         </span>
-         can be purchased early to help Terrorblade split push.
-        </li>
-        <li>
-         <span style="white-space:nowrap">
-          <a href="/Black_King_Bar" title="Black King Bar">
-           <img alt="Black King Bar icon.png" height="22" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/72/Black_King_Bar_icon.png/30px-Black_King_Bar_icon.png?version=f8be2cb8d6d3f6716a950594ce082d80" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/72/Black_King_Bar_icon.png/45px-Black_King_Bar_icon.png?version=f8be2cb8d6d3f6716a950594ce082d80 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/72/Black_King_Bar_icon.png/60px-Black_King_Bar_icon.png?version=f8be2cb8d6d3f6716a950594ce082d80 2x" width="30"/>
-          </a>
-          <a href="/Black_King_Bar" title="Black King Bar">
-           Black King Bar
-          </a>
-         </span>
-         is the standard choice against multiple disablers.
-        </li>
-        <li>
-         <span style="white-space:nowrap">
-          <a href="/Eye_of_Skadi" title="Eye of Skadi">
-           <img alt="Eye of Skadi icon.png" height="22" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/1/1e/Eye_of_Skadi_icon.png/30px-Eye_of_Skadi_icon.png?version=85213d6d5978aaa1fecfc32775dc04fe" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/1/1e/Eye_of_Skadi_icon.png/45px-Eye_of_Skadi_icon.png?version=85213d6d5978aaa1fecfc32775dc04fe 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/1/1e/Eye_of_Skadi_icon.png/60px-Eye_of_Skadi_icon.png?version=85213d6d5978aaa1fecfc32775dc04fe 2x" width="30"/>
-          </a>
-          <a href="/Eye_of_Skadi" title="Eye of Skadi">
-           Eye of Skadi
-          </a>
-         </span>
-         's attack and movement slow stacks nicely with your Terrorblade, and can bring enemy heroes to a halt.
-        </li>
-        <li>
-         <span style="white-space:nowrap">
-          <a href="/Heart_of_Tarrasque" title="Heart of Tarrasque">
-           <img alt="Heart of Tarrasque icon.png" height="22" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/75/Heart_of_Tarrasque_icon.png/30px-Heart_of_Tarrasque_icon.png?version=19b3d1e73774fa01327db4bf3d79b92f" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/75/Heart_of_Tarrasque_icon.png/45px-Heart_of_Tarrasque_icon.png?version=19b3d1e73774fa01327db4bf3d79b92f 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/75/Heart_of_Tarrasque_icon.png/60px-Heart_of_Tarrasque_icon.png?version=19b3d1e73774fa01327db4bf3d79b92f 2x" width="30"/>
-          </a>
-          <a href="/Heart_of_Tarrasque" title="Heart of Tarrasque">
-           Heart of Tarrasque
-          </a>
-         </span>
-         gives you a massive health bonus, which is well needed as Terrorblade's strength growth is one of the weakest in the entire game, and a powerful regeneration.
-        </li>
-       </ul>
-       <p>
-        <br/>
-       </p>
-       <h2>
-        <span class="mw-headline" id="Gameplay">
-         Gameplay
-        </span>
-        <span class="mw-editsection">
-         <span class="mw-editsection-bracket">
-          [
-         </span>
-         <a class="mw-editsection-visualeditor" href="/index.php?title=Terrorblade&amp;veaction=edit&amp;vesection=5" title="Edit section: Gameplay">
-          edit
-         </a>
-         <span class="mw-editsection-divider">
-          |
-         </span>
-         <a href="/index.php?title=Terrorblade&amp;action=edit&amp;section=5" title="Edit section: Gameplay">
-          edit source
-         </a>
-         <span class="mw-editsection-bracket">
-          ]
-         </span>
-        </span>
-       </h2>
-       <div class="infostripe gradient_gameplay">
-        <div>
-         <a href="/Terrorblade/Guide" title="Terrorblade/Guide">
-          <img alt="Guide icon.png" height="128" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/8/89/Guide_icon.png?version=c1bc57e350e539230810d6f08abac63e" width="128"/>
-         </a>
-         <br/>
-         <a href="/Terrorblade/Guide" title="Terrorblade/Guide">
-          Strategy &amp; Tips
-         </a>
-        </div>
-        <div>
-         <a href="/Terrorblade/Counters" title="Terrorblade/Counters">
-          <img alt="Counters icon.png" height="128" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/d/d4/Counters_icon.png?version=4d68c7b618c63296726dc1f94dfc5b3e" width="128"/>
-         </a>
-         <br/>
-         <a href="/Terrorblade/Counters" title="Terrorblade/Counters">
-          Counters &amp;
-          <br/>
-          Matchups
-         </a>
-        </div>
-       </div>
-       <h2>
-        <span class="mw-headline" id="Audio">
-         Audio
-        </span>
-        <span class="mw-editsection">
-         <span class="mw-editsection-bracket">
-          [
-         </span>
-         <a class="mw-editsection-visualeditor" href="/index.php?title=Terrorblade&amp;veaction=edit&amp;vesection=6" title="Edit section: Audio">
-          edit
-         </a>
-         <span class="mw-editsection-divider">
-          |
-         </span>
-         <a href="/index.php?title=Terrorblade&amp;action=edit&amp;section=6" title="Edit section: Audio">
-          edit source
-         </a>
-         <span class="mw-editsection-bracket">
-          ]
-         </span>
-        </span>
-       </h2>
-       <div class="infostripe gradient_audio">
-        <div>
-         <a href="/Terrorblade/Responses" title="Terrorblade/Responses">
-          <img alt="Responses icon.png" height="128" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/f/f0/Responses_icon.png?version=1172f49574d4199cc093352be89e798d" width="128"/>
-         </a>
-         <br/>
-         <a href="/Terrorblade/Responses" title="Terrorblade/Responses">
-          Responses
-         </a>
-        </div>
-        <div>
-         <a href="/Terrorblade/Sounds" title="Terrorblade/Sounds">
-          <img alt="Sounds icon.png" height="128" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/a/a3/Sounds_icon.png?version=3b4503d6f0ad7b5bc001f4c91451e84c" width="128"/>
-         </a>
-         <br/>
-         <a href="/Terrorblade/Sounds" title="Terrorblade/Sounds">
-          Sounds
-         </a>
-        </div>
-       </div>
-       <h2>
-        <span class="mw-headline" id="History">
-         History
-        </span>
-        <span class="mw-editsection">
-         <span class="mw-editsection-bracket">
-          [
-         </span>
-         <a class="mw-editsection-visualeditor" href="/index.php?title=Terrorblade&amp;veaction=edit&amp;vesection=7" title="Edit section: History">
-          edit
-         </a>
-         <span class="mw-editsection-divider">
-          |
-         </span>
-         <a href="/index.php?title=Terrorblade&amp;action=edit&amp;section=7" title="Edit section: History">
-          edit source
-         </a>
-         <span class="mw-editsection-bracket">
-          ]
-         </span>
-        </span>
-       </h2>
-       <div class="infostripe gradient_history">
-        <div>
-         <a href="/Terrorblade/Lore" title="Terrorblade/Lore">
-          <img alt="Lore icon.png" height="128" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/8/82/Lore_icon.png?version=e38f088dab25b6e1613e15ad0a5b1b8b" width="128"/>
-         </a>
-         <br/>
-         <a href="/Terrorblade/Lore" title="Terrorblade/Lore">
-          Lore
-         </a>
-        </div>
-        <div>
-         <a href="/Terrorblade/Old_Abilities" title="Terrorblade/Old Abilities">
-          <img alt="Old Abilities icon.png" height="128" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/d/d1/Old_Abilities_icon.png?version=485781f590ed8c56151e42ca514f8ae6" width="128"/>
-         </a>
-         <br/>
-         <a href="/Terrorblade/Old_Abilities" title="Terrorblade/Old Abilities">
-          Old Abilities
-         </a>
-        </div>
-        <div>
-         <a href="/Terrorblade/Changelogs" title="Terrorblade/Changelogs">
-          <img alt="Changelogs icon.png" height="128" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/c/c6/Changelogs_icon.png?version=8f73f302de0374321f8e1e226e6353a1" width="128"/>
-         </a>
-         <br/>
-         <a href="/Terrorblade/Changelogs" title="Terrorblade/Changelogs">
-          Changelogs
-         </a>
-        </div>
-       </div>
-       <h2>
-        <span class="mw-headline" id="Equipment">
-         Equipment
-        </span>
-        <span class="mw-editsection">
-         <span class="mw-editsection-bracket">
-          [
-         </span>
-         <a class="mw-editsection-visualeditor" href="/index.php?title=Terrorblade&amp;veaction=edit&amp;vesection=8" title="Edit section: Equipment">
-          edit
-         </a>
-         <span class="mw-editsection-divider">
-          |
-         </span>
-         <a href="/index.php?title=Terrorblade&amp;action=edit&amp;section=8" title="Edit section: Equipment">
-          edit source
-         </a>
-         <span class="mw-editsection-bracket">
-          ]
-         </span>
-        </span>
-       </h2>
-       <table cellspacing="0" class="navbox" style=";text-align:center;">
-        <tr>
-         <td style="padding:2px;">
-          <table cellspacing="0" class="nowraplinks mw-collapsible" style="width:100%;background:transparent;color:inherit;;">
-           <tr>
-            <th class="navbox-title" colspan="2" style=";height: 32px;">
-             <span style="float:left;width:6em;text-align:left;">
-              <div class="noprint plainlinks navbar" style="background:none; padding:0; font-weight:normal;;height: 32px;;background:none transparent;border:none;font-size:100%;; font-size:xx-small;">
-               <a class="external text" href="//dota2.gamepedia.com/Template:Equipment_Terrorblade" rel="noreferrer noopener" target="_blank">
-                <span style=";height: 32px;;background:none transparent;border:none;font-size:100%;" title="View this template">
-                 v
-                </span>
-               </a>
-               <span style="font-size:80%;">
-                •
-               </span>
-               <a class="external text" href="//dota2.gamepedia.com/Template_talk:Equipment_Terrorblade" rel="noreferrer noopener" target="_blank">
-                <span style=";height: 32px;;background:none transparent;border:none;font-size:100%;" title="Discuss this template">
-                 d
-                </span>
-               </a>
-               <span style="font-size:80%;">
-                •
-               </span>
-               <a class="external text" href="//dota2.gamepedia.com/index.php?title=Template:Equipment_Terrorblade&amp;action=edit" rel="noreferrer noopener" target="_blank">
-                <span style=";height: 32px;;background:none transparent;border:none;font-size:100%;;" title="Edit this template">
-                 e
-                </span>
-               </a>
-              </div>
-             </span>
-             <span class="" style="font-size:110%;">
-              <span style="white-space:nowrap">
-               <a href="/Terrorblade" title="Terrorblade">
-                <img alt="Terrorblade icon.png" height="32" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/5/52/Terrorblade_icon.png?version=4c453452725efb82834c36307d1bbf8d" width="32"/>
-               </a>
-               <strong class="selflink">
-                Terrorblade
-               </strong>
-              </span>
-              ​
-              <a href="/Equipment" title="Equipment">
-               Equipment
-              </a>
-              <small>
-               <a href="/Terrorblade/Equipment" title="Terrorblade/Equipment">
-                (expand sets)
-               </a>
-              </small>
-             </span>
-            </th>
-           </tr>
-           <tr style="height:2px;">
-            <td>
-            </td>
-           </tr>
-           <tr>
-            <td class="navbox-group" style=";text-align: center;background: #FFBAE8;">
-             Sets
-            </td>
-            <td class="navbox-list navbox-odd" style="text-align:left;border-left-width:2px;border-left-style:solid;width:100%;padding:0px;;;background: #FFE0FF;">
-             <div style="padding:0em 0.25em">
-              <div class="cosmetic-label" style="width:200px;">
-               <div style="box-shadow:0px 0px 2px 4px #4b69ff;">
-                <a href="/Baleful_Hollow" title="Baleful Hollow">
-                 <img alt="Baleful Hollow" height="133" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/d/d9/Cosmetic_icon_Baleful_Hollow.png/200px-Cosmetic_icon_Baleful_Hollow.png?version=5bc711804c9a79b8691661eaa64094df" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/d/d9/Cosmetic_icon_Baleful_Hollow.png/300px-Cosmetic_icon_Baleful_Hollow.png?version=5bc711804c9a79b8691661eaa64094df 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/d/d9/Cosmetic_icon_Baleful_Hollow.png/400px-Cosmetic_icon_Baleful_Hollow.png?version=5bc711804c9a79b8691661eaa64094df 2x" width="200"/>
-                </a>
-               </div>
-               <a href="/Baleful_Hollow" title="Baleful Hollow">
-                Baleful Hollow
-               </a>
-              </div>
-              <div class="cosmetic-label" style="width:200px;">
-               <div style="box-shadow:0px 0px 2px 4px #4b69ff;">
-                <a href="/Eternal_Purgatory" title="Eternal Purgatory">
-                 <img alt="Eternal Purgatory" height="133" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/d/d7/Cosmetic_icon_Eternal_Purgatory.png/200px-Cosmetic_icon_Eternal_Purgatory.png?version=8c34cb29d4ad9d3b62b359e29d825c6a" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/d/d7/Cosmetic_icon_Eternal_Purgatory.png/300px-Cosmetic_icon_Eternal_Purgatory.png?version=8c34cb29d4ad9d3b62b359e29d825c6a 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/d/d7/Cosmetic_icon_Eternal_Purgatory.png/400px-Cosmetic_icon_Eternal_Purgatory.png?version=8c34cb29d4ad9d3b62b359e29d825c6a 2x" width="200"/>
-                </a>
-               </div>
-               <a href="/Eternal_Purgatory" title="Eternal Purgatory">
-                Eternal Purgatory
-               </a>
-              </div>
-              <div class="cosmetic-label" style="width:200px;">
-               <div style="box-shadow:0px 0px 2px 4px #4b69ff;">
-                <a href="/Marauder%27s_Reflection" title="Marauder's Reflection">
-                 <img alt="Marauder's Reflection" height="133" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/d/d3/Cosmetic_icon_Marauder%27s_Reflection.png/200px-Cosmetic_icon_Marauder%27s_Reflection.png?version=422743cb9e6857b60908b7129a506a03" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/d/d3/Cosmetic_icon_Marauder%27s_Reflection.png/300px-Cosmetic_icon_Marauder%27s_Reflection.png?version=422743cb9e6857b60908b7129a506a03 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/d/d3/Cosmetic_icon_Marauder%27s_Reflection.png/400px-Cosmetic_icon_Marauder%27s_Reflection.png?version=422743cb9e6857b60908b7129a506a03 2x" width="200"/>
-                </a>
-               </div>
-               <a href="/Marauder%27s_Reflection" title="Marauder's Reflection">
-                Marauder's Reflection
-               </a>
-              </div>
-             </div>
-            </td>
-           </tr>
-           <tr style="height:2px">
-            <td>
-            </td>
-           </tr>
-           <tr>
-            <td class="navbox-group" style=";text-align: center;">
-             Head
-            </td>
-            <td class="navbox-list navbox-even" style="text-align:left;border-left-width:2px;border-left-style:solid;width:100%;padding:0px;;;">
-             <div style="padding:0em 0.25em">
-              <div class="cosmetic-label" style="width:110px;">
-               <div style="box-shadow:0px 0px 2px 4px #ade55c;">
-                <a href="/Fractal_Horns_of_Inner_Abysm" title="Fractal Horns of Inner Abysm">
-                 <img alt="Fractal Horns of Inner Abysm" height="73" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/a/a8/Cosmetic_icon_Fractal_Horns_of_Inner_Abysm.png/110px-Cosmetic_icon_Fractal_Horns_of_Inner_Abysm.png?version=2461d2505751a86576199c1d1f43682e" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/a/a8/Cosmetic_icon_Fractal_Horns_of_Inner_Abysm.png/165px-Cosmetic_icon_Fractal_Horns_of_Inner_Abysm.png?version=2461d2505751a86576199c1d1f43682e 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/a/a8/Cosmetic_icon_Fractal_Horns_of_Inner_Abysm.png/220px-Cosmetic_icon_Fractal_Horns_of_Inner_Abysm.png?version=2461d2505751a86576199c1d1f43682e 2x" width="110"/>
-                </a>
-               </div>
-               <a href="/Fractal_Horns_of_Inner_Abysm" title="Fractal Horns of Inner Abysm">
-                Fractal Horns of Inner Abysm
-               </a>
-              </div>
-             </div>
-            </td>
-           </tr>
-          </table>
-         </td>
-        </tr>
-       </table>
-       <h2>
-        <span class="mw-headline" id="Trivia">
-         Trivia
-        </span>
-        <span class="mw-editsection">
-         <span class="mw-editsection-bracket">
-          [
-         </span>
-         <a class="mw-editsection-visualeditor" href="/index.php?title=Terrorblade&amp;veaction=edit&amp;vesection=9" title="Edit section: Trivia">
-          edit
-         </a>
-         <span class="mw-editsection-divider">
-          |
-         </span>
-         <a href="/index.php?title=Terrorblade&amp;action=edit&amp;section=9" title="Edit section: Trivia">
-          edit source
-         </a>
-         <span class="mw-editsection-bracket">
-          ]
-         </span>
-        </span>
-       </h2>
-       <ul>
-        <li>
-         In DotA, Terrorblade and
-         <span style="white-space:nowrap">
-          <a href="/Anti-Mage" title="Anti-Mage">
-           <img alt="Anti-Mage icon.png" height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/8/8e/Anti-Mage_icon.png/20px-Anti-Mage_icon.png?version=3f92403918dd511670b503355a00dd2e" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/8/8e/Anti-Mage_icon.png/30px-Anti-Mage_icon.png?version=3f92403918dd511670b503355a00dd2e 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/8/8e/Anti-Mage_icon.png?version=3f92403918dd511670b503355a00dd2e 2x" width="20"/>
-          </a>
-          <a href="/Anti-Mage" title="Anti-Mage">
-           Anti-Mage
-          </a>
-         </span>
-         ​ were brothers. This was to be kept in Dota 2 based on certain responses Anti-Mage made in Terrorblade's presence, but upon Terrorblade's release, these relations were severed and thus the lines went unused.
-        </li>
-        <li>
-         Terrorblade's title in DotA was Soul Keeper. Unlike other name changes, this one does not appear to be related to copyright issues with Blizzard. It is speculated that the name was changed to avoid conflicting abbreviations with
-         <span style="white-space:nowrap">
-          <a href="/Sand_King" title="Sand King">
-           <img alt="Sand King icon.png" height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/79/Sand_King_icon.png/20px-Sand_King_icon.png?version=47239682cfcde8892b4f7287bf0b7ab9" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/79/Sand_King_icon.png/30px-Sand_King_icon.png?version=47239682cfcde8892b4f7287bf0b7ab9 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/7/79/Sand_King_icon.png?version=47239682cfcde8892b4f7287bf0b7ab9 2x" width="20"/>
-          </a>
-          <a href="/Sand_King" title="Sand King">
-           Sand King
-          </a>
-         </span>
-         ​.
          <ul>
           <li>
-           Another reason could be that the title "Soul Keeper" doesn't fit him anymore, since only one ability could be associated with souls. In earlier versions, he had a second ability called "Soul Steal", which was similar to
-           <span style="white-space:nowrap">
-            <a href="/Pugna" title="Pugna">
-             <img alt="Pugna icon.png" height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/c/cd/Pugna_icon.png/20px-Pugna_icon.png?version=333c6109722b626ce1bb246e4c233306" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/c/cd/Pugna_icon.png/30px-Pugna_icon.png?version=333c6109722b626ce1bb246e4c233306 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/c/cd/Pugna_icon.png?version=333c6109722b626ce1bb246e4c233306 2x" width="20"/>
-            </a>
-            <a href="/Pugna" title="Pugna">
-             Pugna
-            </a>
-           </span>
-           ​'s
-           <span style="white-space: nowrap;">
-            <a href="/Pugna#Life_Drain" title="Pugna#Life Drain">
-             <img alt="Life Drain icon.png" height="16" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/a/a7/Life_Drain_icon.png/16px-Life_Drain_icon.png?version=01d60cc527c8c01af1cb436e0d58cfc2" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/a/a7/Life_Drain_icon.png/24px-Life_Drain_icon.png?version=01d60cc527c8c01af1cb436e0d58cfc2 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/a/a7/Life_Drain_icon.png/32px-Life_Drain_icon.png?version=01d60cc527c8c01af1cb436e0d58cfc2 2x" width="16"/>
-            </a>
-            <a href="/Pugna#Life_Drain" title="Pugna">
-             Life Drain
-            </a>
-           </span>
-           ​, but without channeling.
+           The health regen is added as a bonus and does not benefit illusions.
+          </li>
+          <li>
+           The attack damage is added as bonus attack damage, and therefore does not benefit illusions.
+          </li>
+          <li>
+           Upgrading health increases maximum health capacity and keeps the current health percentage.
           </li>
          </ul>
-        </li>
-        <li>
-         In-game, Terrorblade constantly leaves flaming footprints wherever he goes, similar to his DotA hero model, Illidan Stormrage (a prominent
-         <i>
-          Warcraft
-         </i>
-         <a class="external text" href="http://wowpedia.org/Illidan_Stormrage" rel="noreferrer noopener" target="_blank">
-          character
-         </a>
-         ). These can be seen by enemies, but stop being rendered once he's out of their vision, meaning that one cannot track down an enemy Terrorblade that goes invisible or enters the Fog of War on the basis of his footprints.
-        </li>
-       </ul>
-       <h2>
-        <span class="mw-headline" id="Gallery">
-         Gallery
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+ </body>
+</html>
+<h2>
+ <span class="mw-headline" id="Recommended_items">
+  Recommended items
+ </span>
+ <span class="mw-editsection">
+  <span class="mw-editsection-bracket">
+   [
+  </span>
+  <a href="/index.php?title=Terrorblade&amp;action=edit&amp;section=4" title="Edit section: Recommended items">
+   edit
+  </a>
+  <span class="mw-editsection-bracket">
+   ]
+  </span>
+ </span>
+</h2>
+<p>
+ <b>
+  Starting items:
+ </b>
+</p>
+<ul>
+ <li>
+  <span style="white-space:nowrap">
+   <a href="/Tango" title="Tango">
+    <img alt="Tango icon.png" height="22" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/f/fd/Tango_icon.png/30px-Tango_icon.png?version=6ddcac461cbd98cc58e99a5f70d04a57" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/f/fd/Tango_icon.png/45px-Tango_icon.png?version=6ddcac461cbd98cc58e99a5f70d04a57 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/f/fd/Tango_icon.png/60px-Tango_icon.png?version=6ddcac461cbd98cc58e99a5f70d04a57 2x" width="30"/>
+   </a>
+   <a href="/Tango" title="Tango">
+    Tango
+   </a>
+  </span>
+  and
+  <span style="white-space:nowrap">
+   <a href="/Healing_Salve" title="Healing Salve">
+    <img alt="Healing Salve icon.png" height="22" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/3/36/Healing_Salve_icon.png/30px-Healing_Salve_icon.png?version=923f3249add1829368656d8a736b8545" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/3/36/Healing_Salve_icon.png/45px-Healing_Salve_icon.png?version=923f3249add1829368656d8a736b8545 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/3/36/Healing_Salve_icon.png/60px-Healing_Salve_icon.png?version=923f3249add1829368656d8a736b8545 2x" width="30"/>
+   </a>
+   <a href="/Healing_Salve" title="Healing Salve">
+    Healing Salve
+   </a>
+  </span>
+  both provide needed health regeneration during the laning phase.
+ </li>
+ <li>
+  2
+  <span style="white-space:nowrap">
+   <a href="/Slippers_of_Agility" title="Slippers of Agility">
+    <img alt="Slippers of Agility icon.png" height="22" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/5/5c/Slippers_of_Agility_icon.png/30px-Slippers_of_Agility_icon.png?version=e7af64fce0ce6441d6c7ca88777a53ec" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/5/5c/Slippers_of_Agility_icon.png/45px-Slippers_of_Agility_icon.png?version=e7af64fce0ce6441d6c7ca88777a53ec 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/5/5c/Slippers_of_Agility_icon.png/60px-Slippers_of_Agility_icon.png?version=e7af64fce0ce6441d6c7ca88777a53ec 2x" width="30"/>
+   </a>
+   <a href="/Slippers_of_Agility" title="Slippers of Agility">
+    Slippers of Agility
+   </a>
+  </span>
+  help Terrorblade last hit and deny easier and build into a
+  <span style="white-space:nowrap">
+   <a href="/Poor_Man%27s_Shield" title="Poor Man's Shield">
+    <img alt="Poor Man's Shield icon.png" height="15" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/1/11/Poor_Man%27s_Shield_icon.png/20px-Poor_Man%27s_Shield_icon.png?version=9888cb7260d9e0dac823c0d0341bca49" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/1/11/Poor_Man%27s_Shield_icon.png/30px-Poor_Man%27s_Shield_icon.png?version=9888cb7260d9e0dac823c0d0341bca49 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/1/11/Poor_Man%27s_Shield_icon.png/40px-Poor_Man%27s_Shield_icon.png?version=9888cb7260d9e0dac823c0d0341bca49 2x" width="20"/>
+   </a>
+   <a href="/Poor_Man%27s_Shield" title="Poor Man's Shield">
+    Poor Man's Shield
+   </a>
+  </span>
+  in the side shop.
+ </li>
+</ul>
+<p>
+ <b>
+  Early-game items:
+ </b>
+</p>
+<ul>
+ <li>
+  <span style="white-space:nowrap">
+   <a href="/Poor_Man%27s_Shield" title="Poor Man's Shield">
+    <img alt="Poor Man's Shield icon.png" height="22" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/1/11/Poor_Man%27s_Shield_icon.png/30px-Poor_Man%27s_Shield_icon.png?version=cd8b5c6111b5cb91f83825d4c4d36a80" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/1/11/Poor_Man%27s_Shield_icon.png/45px-Poor_Man%27s_Shield_icon.png?version=cd8b5c6111b5cb91f83825d4c4d36a80 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/1/11/Poor_Man%27s_Shield_icon.png/60px-Poor_Man%27s_Shield_icon.png?version=cd8b5c6111b5cb91f83825d4c4d36a80 2x" width="30"/>
+   </a>
+   <a href="/Poor_Man%27s_Shield" title="Poor Man's Shield">
+    Poor Man's Shield
+   </a>
+  </span>
+  helps mitigate his vulnerability to harassment when in his melee state.
+ </li>
+ <li>
+  <span style="white-space:nowrap">
+   <a href="/Ring_of_Aquila" title="Ring of Aquila">
+    <img alt="Ring of Aquila (Active) icon.png" height="22" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/3/3f/Ring_of_Aquila_%28Active%29_icon.png/30px-Ring_of_Aquila_%28Active%29_icon.png?version=d9e1851149c0f51e8fc985ee1504740c" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/3/3f/Ring_of_Aquila_%28Active%29_icon.png/45px-Ring_of_Aquila_%28Active%29_icon.png?version=d9e1851149c0f51e8fc985ee1504740c 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/3/3f/Ring_of_Aquila_%28Active%29_icon.png/60px-Ring_of_Aquila_%28Active%29_icon.png?version=d9e1851149c0f51e8fc985ee1504740c 2x" width="30"/>
+   </a>
+   <a href="/Ring_of_Aquila" title="Ring of Aquila">
+    Ring of Aquila
+   </a>
+  </span>
+  provides minor stats, some armor as well as much needed mana regen.
+ </li>
+</ul>
+<p>
+ <b>
+  Core items:
+ </b>
+</p>
+<ul>
+ <li>
+  <span style="white-space:nowrap">
+   <a href="/Power_Treads" title="Power Treads">
+    <img alt="Power Treads icon.png" height="22" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/6/6b/Power_Treads_icon.png/30px-Power_Treads_icon.png?version=8a0928e0797b87663a27ee60823e5b18" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/6/6b/Power_Treads_icon.png/45px-Power_Treads_icon.png?version=8a0928e0797b87663a27ee60823e5b18 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/6/6b/Power_Treads_icon.png/60px-Power_Treads_icon.png?version=8a0928e0797b87663a27ee60823e5b18 2x" width="30"/>
+   </a>
+   <a href="/Power_Treads" title="Power Treads">
+    Power Treads
+   </a>
+  </span>
+  provide attack speed and raw stats, both of which are needed to buff up his illusions.
+ </li>
+ <li>
+  <span style="white-space:nowrap">
+   <a href="/Dragon_Lance" title="Dragon Lance">
+    <img alt="Dragon Lance icon.png" height="22" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/d/db/Dragon_Lance_icon.png/30px-Dragon_Lance_icon.png?version=57bddf366274a17c84f225277e8b1ae8" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/d/db/Dragon_Lance_icon.png/45px-Dragon_Lance_icon.png?version=57bddf366274a17c84f225277e8b1ae8 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/d/db/Dragon_Lance_icon.png/60px-Dragon_Lance_icon.png?version=57bddf366274a17c84f225277e8b1ae8 2x" width="30"/>
+   </a>
+   <a href="/Dragon_Lance" title="Dragon Lance">
+    Dragon Lance
+   </a>
+  </span>
+  greatly increases Terrorblade's range in Metamorphosis. The range also helps Terrorblade and his illusions to hit towers from a safer distance. The item can either be upgraded into hurricane pike for more mobility, or later dismantled to build bkb and yasha.
+ </li>
+</ul>
+<ul>
+ <li>
+  <span style="white-space:nowrap">
+   <a href="/Manta_Style" title="Manta Style">
+    <img alt="Manta Style icon.png" height="22" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/8/84/Manta_Style_icon.png/30px-Manta_Style_icon.png?version=7171fd71a68fec2d5b0114f337a56602" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/8/84/Manta_Style_icon.png/45px-Manta_Style_icon.png?version=7171fd71a68fec2d5b0114f337a56602 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/8/84/Manta_Style_icon.png/60px-Manta_Style_icon.png?version=7171fd71a68fec2d5b0114f337a56602 2x" width="30"/>
+   </a>
+   <a href="/Manta_Style" title="Manta Style">
+    Manta Style
+   </a>
+  </span>
+  is a great complement to Terrorblade as it allows you to have even more illusions. A unique benefit is the fact that he can get stronger illusions and a shorter cooldown if he uses the item while in melee form, and then cast metamorphosis to get ranged illusion
+ </li>
+</ul>
+<ul>
+ <li>
+  <span style="white-space:nowrap">
+   <a href="/Black_King_Bar" title="Black King Bar">
+    <img alt="Black King Bar icon.png" height="22" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/72/Black_King_Bar_icon.png/30px-Black_King_Bar_icon.png?version=f8be2cb8d6d3f6716a950594ce082d80" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/72/Black_King_Bar_icon.png/45px-Black_King_Bar_icon.png?version=f8be2cb8d6d3f6716a950594ce082d80 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/72/Black_King_Bar_icon.png/60px-Black_King_Bar_icon.png?version=f8be2cb8d6d3f6716a950594ce082d80 2x" width="30"/>
+   </a>
+   <a href="/Black_King_Bar" title="Black King Bar">
+    Black King Bar
+   </a>
+  </span>
+  is vital for teamfights to prevent him from being stunned or silenced when his HP is low enough to warrant casting Sunder.
+ </li>
+</ul>
+<p>
+ <b>
+  Situational items:
+ </b>
+</p>
+<ul>
+ <li>
+  <span style="white-space:nowrap">
+   <a href="/Sange_and_Yasha" title="Sange and Yasha">
+    <img alt="Sange and Yasha icon.png" height="22" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/b/b4/Sange_and_Yasha_icon.png/30px-Sange_and_Yasha_icon.png?version=ea679e01a75a7acfc3752ec13bacdced" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/b/b4/Sange_and_Yasha_icon.png/45px-Sange_and_Yasha_icon.png?version=ea679e01a75a7acfc3752ec13bacdced 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/b/b4/Sange_and_Yasha_icon.png/60px-Sange_and_Yasha_icon.png?version=ea679e01a75a7acfc3752ec13bacdced 2x" width="30"/>
+   </a>
+   <a href="/Sange_and_Yasha" title="Sange and Yasha">
+    Sange and Yasha
+   </a>
+  </span>
+  provides great all around benefits for Terrorblade and his illusions.
+ </li>
+ <li>
+  <span style="white-space:nowrap">
+   <a href="/Butterfly" title="Butterfly">
+    <img alt="Butterfly icon.png" height="22" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/2/28/Butterfly_icon.png/30px-Butterfly_icon.png?version=f1076a78206994a4de8f684e56ff138a" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/2/28/Butterfly_icon.png/45px-Butterfly_icon.png?version=f1076a78206994a4de8f684e56ff138a 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/2/28/Butterfly_icon.png/60px-Butterfly_icon.png?version=f1076a78206994a4de8f684e56ff138a 2x" width="30"/>
+   </a>
+   <a href="/Butterfly" title="Butterfly">
+    Butterfly
+   </a>
+  </span>
+  provides the 2nd most agility of any item. Illusions also benefit from the evasion.
+ </li>
+ <li>
+  <span style="white-space:nowrap">
+   <a href="/Radiance" title="Radiance">
+    <img alt="Radiance (Active) icon.png" height="22" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/d/df/Radiance_%28Active%29_icon.png/30px-Radiance_%28Active%29_icon.png?version=95acbd372defb1905118c64919f78202" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/d/df/Radiance_%28Active%29_icon.png/45px-Radiance_%28Active%29_icon.png?version=95acbd372defb1905118c64919f78202 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/d/df/Radiance_%28Active%29_icon.png/60px-Radiance_%28Active%29_icon.png?version=95acbd372defb1905118c64919f78202 2x" width="30"/>
+   </a>
+   <a href="/Radiance" title="Radiance">
+    Radiance
+   </a>
+  </span>
+  provides a lot of damage and the Radiance aura can accelerate Terrorblade's farm and increase his ability to push. Illusions carry the Radiance aura, although the aura does not stack from multiple sources.
+ </li>
+ <li>
+  <span style="white-space:nowrap">
+   <a href="/Shadow_Blade" title="Shadow Blade">
+    <img alt="Shadow Blade icon.png" height="22" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/0/0f/Shadow_Blade_icon.png/30px-Shadow_Blade_icon.png?version=0a69432573a18312685d3cbb85c91cff" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/0/0f/Shadow_Blade_icon.png/45px-Shadow_Blade_icon.png?version=0a69432573a18312685d3cbb85c91cff 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/0/0f/Shadow_Blade_icon.png/60px-Shadow_Blade_icon.png?version=0a69432573a18312685d3cbb85c91cff 2x" width="30"/>
+   </a>
+   <a href="/Shadow_Blade" title="Shadow Blade">
+    Shadow Blade
+   </a>
+  </span>
+  is a great initiation and escape item, which also allows you to get close enough to your enemy and use Sunder with minimal risk. It also provides great damage and attack speed, both good attributes in all stages of the game.
+ </li>
+ <li>
+  <span style="white-space:nowrap">
+   <a href="/Helm_of_the_Dominator" title="Helm of the Dominator">
+    <img alt="Helm of the Dominator icon.png" height="22" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/9/97/Helm_of_the_Dominator_icon.png/30px-Helm_of_the_Dominator_icon.png?version=02878b74908d39caf56f8edbdedfece3" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/9/97/Helm_of_the_Dominator_icon.png/45px-Helm_of_the_Dominator_icon.png?version=02878b74908d39caf56f8edbdedfece3 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/9/97/Helm_of_the_Dominator_icon.png/60px-Helm_of_the_Dominator_icon.png?version=02878b74908d39caf56f8edbdedfece3 2x" width="30"/>
+   </a>
+   <a href="/Helm_of_the_Dominator" title="Helm of the Dominator">
+    Helm of the Dominator
+   </a>
+  </span>
+  is useful to keep Terrorblade alive in teamfights.
+ </li>
+ <li>
+  <span style="white-space:nowrap">
+   <a href="/Boots_of_Travel" title="Boots of Travel">
+    <img alt="Boots of Travel 1 icon.png" height="22" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/6/6d/Boots_of_Travel_1_icon.png/30px-Boots_of_Travel_1_icon.png?version=8ae16e23541021fe24e3dac127ffae8d" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/6/6d/Boots_of_Travel_1_icon.png/45px-Boots_of_Travel_1_icon.png?version=8ae16e23541021fe24e3dac127ffae8d 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/6/6d/Boots_of_Travel_1_icon.png/60px-Boots_of_Travel_1_icon.png?version=8ae16e23541021fe24e3dac127ffae8d 2x" width="30"/>
+   </a>
+   <a href="/Boots_of_Travel" title="Boots of Travel">
+    Boots of Travel
+   </a>
+  </span>
+  can be purchased early to help Terrorblade split push.
+ </li>
+ <li>
+  <span style="white-space:nowrap">
+   <a href="/Eye_of_Skadi" title="Eye of Skadi">
+    <img alt="Eye of Skadi icon.png" height="22" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/1/1e/Eye_of_Skadi_icon.png/30px-Eye_of_Skadi_icon.png?version=85213d6d5978aaa1fecfc32775dc04fe" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/1/1e/Eye_of_Skadi_icon.png/45px-Eye_of_Skadi_icon.png?version=85213d6d5978aaa1fecfc32775dc04fe 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/1/1e/Eye_of_Skadi_icon.png/60px-Eye_of_Skadi_icon.png?version=85213d6d5978aaa1fecfc32775dc04fe 2x" width="30"/>
+   </a>
+   <a href="/Eye_of_Skadi" title="Eye of Skadi">
+    Eye of Skadi
+   </a>
+  </span>
+  's gives a large amount of stats which help bulk up his illusions, and its attack and movement speed slow works nicely with Metamorphosis, bringing enemy heroes to a halt.
+ </li>
+ <li>
+  <span style="white-space:nowrap">
+   <a href="/Heart_of_Tarrasque" title="Heart of Tarrasque">
+    <img alt="Heart of Tarrasque icon.png" height="22" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/75/Heart_of_Tarrasque_icon.png/30px-Heart_of_Tarrasque_icon.png?version=19b3d1e73774fa01327db4bf3d79b92f" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/75/Heart_of_Tarrasque_icon.png/45px-Heart_of_Tarrasque_icon.png?version=19b3d1e73774fa01327db4bf3d79b92f 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/75/Heart_of_Tarrasque_icon.png/60px-Heart_of_Tarrasque_icon.png?version=19b3d1e73774fa01327db4bf3d79b92f 2x" width="30"/>
+   </a>
+   <a href="/Heart_of_Tarrasque" title="Heart of Tarrasque">
+    Heart of Tarrasque
+   </a>
+  </span>
+  gives you a massive health bonus, which is well needed as Terrorblade's strength growth is one of the weakest in the entire game, and a powerful regeneration.
+ </li>
+</ul>
+<p>
+ <br/>
+</p>
+<h2>
+ <span class="mw-headline" id="Gameplay">
+  Gameplay
+ </span>
+ <span class="mw-editsection">
+  <span class="mw-editsection-bracket">
+   [
+  </span>
+  <a href="/index.php?title=Terrorblade&amp;action=edit&amp;section=5" title="Edit section: Gameplay">
+   edit
+  </a>
+  <span class="mw-editsection-bracket">
+   ]
+  </span>
+ </span>
+</h2>
+<div class="infostripe gradient_gameplay">
+ <div>
+  <a href="/Terrorblade/Guide" title="Terrorblade/Guide">
+   <img alt="Guide icon.png" height="128" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/8/89/Guide_icon.png?version=c1bc57e350e539230810d6f08abac63e" width="128"/>
+  </a>
+  <br/>
+  <a href="/Terrorblade/Guide" title="Terrorblade/Guide">
+   Strategy &amp; Tips
+  </a>
+ </div>
+ <div>
+  <a href="/Terrorblade/Counters" title="Terrorblade/Counters">
+   <img alt="Counters icon.png" height="128" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/d/d4/Counters_icon.png?version=4d68c7b618c63296726dc1f94dfc5b3e" width="128"/>
+  </a>
+  <br/>
+  <a href="/Terrorblade/Counters" title="Terrorblade/Counters">
+   Counters &amp;
+   <br/>
+   Matchups
+  </a>
+ </div>
+</div>
+<h2>
+ <span class="mw-headline" id="Audio">
+  Audio
+ </span>
+ <span class="mw-editsection">
+  <span class="mw-editsection-bracket">
+   [
+  </span>
+  <a href="/index.php?title=Terrorblade&amp;action=edit&amp;section=6" title="Edit section: Audio">
+   edit
+  </a>
+  <span class="mw-editsection-bracket">
+   ]
+  </span>
+ </span>
+</h2>
+<div class="infostripe gradient_audio">
+ <div>
+  <a href="/Terrorblade/Responses" title="Terrorblade/Responses">
+   <img alt="Responses icon.png" height="128" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/f/f0/Responses_icon.png?version=1172f49574d4199cc093352be89e798d" width="128"/>
+  </a>
+  <br/>
+  <a href="/Terrorblade/Responses" title="Terrorblade/Responses">
+   Responses
+  </a>
+ </div>
+ <div>
+  <a href="/Terrorblade/Sounds" title="Terrorblade/Sounds">
+   <img alt="Sounds icon.png" height="128" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/a/a3/Sounds_icon.png?version=3b4503d6f0ad7b5bc001f4c91451e84c" width="128"/>
+  </a>
+  <br/>
+  <a href="/Terrorblade/Sounds" title="Terrorblade/Sounds">
+   Sounds
+  </a>
+ </div>
+</div>
+<h2>
+ <span class="mw-headline" id="History">
+  History
+ </span>
+ <span class="mw-editsection">
+  <span class="mw-editsection-bracket">
+   [
+  </span>
+  <a href="/index.php?title=Terrorblade&amp;action=edit&amp;section=7" title="Edit section: History">
+   edit
+  </a>
+  <span class="mw-editsection-bracket">
+   ]
+  </span>
+ </span>
+</h2>
+<div class="infostripe gradient_history">
+ <div>
+  <a href="/Terrorblade/Lore" title="Terrorblade/Lore">
+   <img alt="Lore icon.png" height="128" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/8/82/Lore_icon.png?version=e38f088dab25b6e1613e15ad0a5b1b8b" width="128"/>
+  </a>
+  <br/>
+  <a href="/Terrorblade/Lore" title="Terrorblade/Lore">
+   Lore
+  </a>
+ </div>
+ <div>
+  <a href="/Terrorblade/Old_Abilities" title="Terrorblade/Old Abilities">
+   <img alt="Old Abilities icon.png" height="128" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/d/d1/Old_Abilities_icon.png?version=485781f590ed8c56151e42ca514f8ae6" width="128"/>
+  </a>
+  <br/>
+  <a href="/Terrorblade/Old_Abilities" title="Terrorblade/Old Abilities">
+   Old Abilities
+  </a>
+ </div>
+ <div>
+  <a href="/Terrorblade/Changelogs" title="Terrorblade/Changelogs">
+   <img alt="Changelogs icon.png" height="128" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/c/c6/Changelogs_icon.png?version=8f73f302de0374321f8e1e226e6353a1" width="128"/>
+  </a>
+  <br/>
+  <a href="/Terrorblade/Changelogs" title="Terrorblade/Changelogs">
+   Changelogs
+  </a>
+ </div>
+</div>
+<h2>
+ <span class="mw-headline" id="Equipment">
+  Equipment
+ </span>
+ <span class="mw-editsection">
+  <span class="mw-editsection-bracket">
+   [
+  </span>
+  <a href="/index.php?title=Terrorblade&amp;action=edit&amp;section=8" title="Edit section: Equipment">
+   edit
+  </a>
+  <span class="mw-editsection-bracket">
+   ]
+  </span>
+ </span>
+</h2>
+<table cellspacing="0" class="navbox" style=";text-align:center;">
+ <tr>
+  <td style="padding:2px;">
+   <table cellspacing="0" class="nowraplinks mw-collapsible" style="width:100%;background:transparent;color:inherit;;">
+    <tr>
+     <th class="navbox-title" colspan="2" style=";height: 32px;">
+      <span style="float:left;width:6em;text-align:left;">
+       <div class="noprint plainlinks navbar" style="background:none; padding:0; font-weight:normal;;height: 32px;;background:none transparent;border:none;font-size:100%;; font-size:xx-small;">
+        <a class="external text" href="//dota2.gamepedia.com/Template:Equipment_Terrorblade" rel="noreferrer noopener" target="_blank">
+         <span style=";height: 32px;;background:none transparent;border:none;font-size:100%;" title="View this template">
+          v
+         </span>
+        </a>
+        <span style="font-size:80%;">
+         •
         </span>
-        <span class="mw-editsection">
-         <span class="mw-editsection-bracket">
-          [
+        <a class="external text" href="//dota2.gamepedia.com/Template_talk:Equipment_Terrorblade" rel="noreferrer noopener" target="_blank">
+         <span style=";height: 32px;;background:none transparent;border:none;font-size:100%;" title="Discuss this template">
+          d
          </span>
-         <a class="mw-editsection-visualeditor" href="/index.php?title=Terrorblade&amp;veaction=edit&amp;vesection=10" title="Edit section: Gallery">
-          edit
-         </a>
-         <span class="mw-editsection-divider">
-          |
-         </span>
-         <a href="/index.php?title=Terrorblade&amp;action=edit&amp;section=10" title="Edit section: Gallery">
-          edit source
-         </a>
-         <span class="mw-editsection-bracket">
-          ]
-         </span>
+        </a>
+        <span style="font-size:80%;">
+         •
         </span>
-       </h2>
-       <ul class="gallery mw-gallery-traditional">
-        <li class="gallerybox" style="width: 155px">
-         <div style="width: 155px">
-          <div class="thumb" style="width: 150px;">
-           <div style="margin:35px auto;">
-            <a class="image" href="/File:Terrorblade_model.jpg">
-             <img alt="" height="80" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/8/88/Terrorblade_model.jpg/120px-Terrorblade_model.jpg?version=a817205e07aa87ee4b710c7be1516d8f" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/8/88/Terrorblade_model.jpg/180px-Terrorblade_model.jpg?version=a817205e07aa87ee4b710c7be1516d8f 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/8/88/Terrorblade_model.jpg/240px-Terrorblade_model.jpg?version=a817205e07aa87ee4b710c7be1516d8f 2x" width="120"/>
-            </a>
-           </div>
-          </div>
-          <div class="gallerytext">
-           <p>
-            Model
-           </p>
-          </div>
-         </div>
-        </li>
-        <li class="gallerybox" style="width: 155px">
-         <div style="width: 155px">
-          <div class="thumb" style="width: 150px;">
-           <div style="margin:48.5px auto;">
-            <a class="image" href="/File:Terrorblade_Metamorphosis_model.jpg">
-             <img alt="" height="53" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/c/ca/Terrorblade_Metamorphosis_model.jpg/120px-Terrorblade_Metamorphosis_model.jpg?version=c7cc11376fa8fa6610632206eb275e46" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/c/ca/Terrorblade_Metamorphosis_model.jpg/180px-Terrorblade_Metamorphosis_model.jpg?version=c7cc11376fa8fa6610632206eb275e46 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/c/ca/Terrorblade_Metamorphosis_model.jpg/240px-Terrorblade_Metamorphosis_model.jpg?version=c7cc11376fa8fa6610632206eb275e46 2x" width="120"/>
-            </a>
-           </div>
-          </div>
-          <div class="gallerytext">
-           <p>
-            Metamorphosis model
-           </p>
-          </div>
-         </div>
-        </li>
-        <li class="gallerybox" style="width: 155px">
-         <div style="width: 155px">
-          <div class="thumb" style="width: 150px;">
-           <div style="margin:31px auto;">
-            <a class="image" href="/File:Keyart_terrorblade.jpg">
-             <img alt="" height="88" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/9/9d/Keyart_terrorblade.jpg/120px-Keyart_terrorblade.jpg?version=ffe13156fe6fc691e679a571c732bc8d" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/9/9d/Keyart_terrorblade.jpg/180px-Keyart_terrorblade.jpg?version=ffe13156fe6fc691e679a571c732bc8d 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/9/9d/Keyart_terrorblade.jpg/240px-Keyart_terrorblade.jpg?version=ffe13156fe6fc691e679a571c732bc8d 2x" width="120"/>
-            </a>
-           </div>
-          </div>
-          <div class="gallerytext">
-           <p>
-            Announcement artwork
-           </p>
-          </div>
-         </div>
-        </li>
-       </ul>
-       <h2>
-        <span class="mw-headline" id="References">
-         References
-        </span>
-        <span class="mw-editsection">
-         <span class="mw-editsection-bracket">
-          [
+        <a class="external text" href="//dota2.gamepedia.com/index.php?title=Template:Equipment_Terrorblade&amp;action=edit" rel="noreferrer noopener" target="_blank">
+         <span style=";height: 32px;;background:none transparent;border:none;font-size:100%;;" title="Edit this template">
+          e
          </span>
-         <a class="mw-editsection-visualeditor" href="/index.php?title=Terrorblade&amp;veaction=edit&amp;vesection=11" title="Edit section: References">
-          edit
+        </a>
+       </div>
+      </span>
+      <span class="" style="font-size:110%;">
+       <span style="white-space:nowrap">
+        <a href="/Terrorblade" title="Terrorblade">
+         <img alt="Terrorblade minimap icon.png" height="32" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/7/72/Terrorblade_minimap_icon.png?version=482d3a844161164626eea9c573c4d30a" width="32"/>
+        </a>
+        <strong class="selflink">
+         Terrorblade
+        </strong>
+       </span>
+       <a href="/Equipment" title="Equipment">
+        Equipment
+       </a>
+       <small>
+        <a href="/Terrorblade/Equipment" title="Terrorblade/Equipment">
+         (expand sets)
+        </a>
+       </small>
+      </span>
+     </th>
+    </tr>
+    <tr style="height:2px;">
+     <td>
+     </td>
+    </tr>
+    <tr>
+     <td class="navbox-group" style=";text-align: center;background: #FFBAE8;">
+      Sets
+     </td>
+     <td class="navbox-list navbox-odd" style="text-align:left;border-left-width:2px;border-left-style:solid;width:100%;padding:0px;;;background: #FFE0FF;">
+      <div style="padding:0em 0.25em">
+       <div class="cosmetic-label" style="width:200px;">
+        <div style="box-shadow:0px 0px 2px 4px #4b69ff;">
+         <a href="/Baleful_Hollow" title="Baleful Hollow">
+          <img alt="Baleful Hollow" height="133" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/d/d9/Cosmetic_icon_Baleful_Hollow.png/200px-Cosmetic_icon_Baleful_Hollow.png?version=5bc711804c9a79b8691661eaa64094df" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/d/d9/Cosmetic_icon_Baleful_Hollow.png/300px-Cosmetic_icon_Baleful_Hollow.png?version=5bc711804c9a79b8691661eaa64094df 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/d/d9/Cosmetic_icon_Baleful_Hollow.png/400px-Cosmetic_icon_Baleful_Hollow.png?version=5bc711804c9a79b8691661eaa64094df 2x" width="200"/>
          </a>
-         <span class="mw-editsection-divider">
-          |
-         </span>
-         <a href="/index.php?title=Terrorblade&amp;action=edit&amp;section=11" title="Edit section: References">
-          edit source
+        </div>
+        <a href="/Baleful_Hollow" title="Baleful Hollow">
+         Baleful Hollow
+        </a>
+       </div>
+       <div class="cosmetic-label" style="width:200px;">
+        <div style="box-shadow:0px 0px 2px 4px #4b69ff;">
+         <a href="/Eternal_Purgatory" title="Eternal Purgatory">
+          <img alt="Eternal Purgatory" height="133" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/d/d7/Cosmetic_icon_Eternal_Purgatory.png/200px-Cosmetic_icon_Eternal_Purgatory.png?version=8c34cb29d4ad9d3b62b359e29d825c6a" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/d/d7/Cosmetic_icon_Eternal_Purgatory.png/300px-Cosmetic_icon_Eternal_Purgatory.png?version=8c34cb29d4ad9d3b62b359e29d825c6a 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/d/d7/Cosmetic_icon_Eternal_Purgatory.png/400px-Cosmetic_icon_Eternal_Purgatory.png?version=8c34cb29d4ad9d3b62b359e29d825c6a 2x" width="200"/>
          </a>
-         <span class="mw-editsection-bracket">
-          ]
-         </span>
-        </span>
-       </h2>
-       <!-- 
+        </div>
+        <a href="/Eternal_Purgatory" title="Eternal Purgatory">
+         Eternal Purgatory
+        </a>
+       </div>
+       <div class="cosmetic-label" style="width:200px;">
+        <div style="box-shadow:0px 0px 2px 4px #4b69ff;">
+         <a href="/Marauder%27s_Reflection" title="Marauder's Reflection">
+          <img alt="Marauder's Reflection" height="133" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/d/d3/Cosmetic_icon_Marauder%27s_Reflection.png/200px-Cosmetic_icon_Marauder%27s_Reflection.png?version=422743cb9e6857b60908b7129a506a03" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/d/d3/Cosmetic_icon_Marauder%27s_Reflection.png/300px-Cosmetic_icon_Marauder%27s_Reflection.png?version=422743cb9e6857b60908b7129a506a03 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/d/d3/Cosmetic_icon_Marauder%27s_Reflection.png/400px-Cosmetic_icon_Marauder%27s_Reflection.png?version=422743cb9e6857b60908b7129a506a03 2x" width="200"/>
+         </a>
+        </div>
+        <a href="/Marauder%27s_Reflection" title="Marauder's Reflection">
+         Marauder's Reflection
+        </a>
+       </div>
+      </div>
+     </td>
+    </tr>
+    <tr style="height:2px">
+     <td>
+     </td>
+    </tr>
+    <tr>
+     <td class="navbox-group" style=";text-align: center;">
+      Head
+     </td>
+     <td class="navbox-list navbox-even" style="text-align:left;border-left-width:2px;border-left-style:solid;width:100%;padding:0px;;;">
+      <div style="padding:0em 0.25em">
+       <div class="cosmetic-label" style="width:110px;">
+        <div style="box-shadow:0px 0px 2px 4px #ade55c;">
+         <a href="/Fractal_Horns_of_Inner_Abysm" title="Fractal Horns of Inner Abysm">
+          <img alt="Fractal Horns of Inner Abysm" height="73" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/a/a8/Cosmetic_icon_Fractal_Horns_of_Inner_Abysm.png/110px-Cosmetic_icon_Fractal_Horns_of_Inner_Abysm.png?version=2461d2505751a86576199c1d1f43682e" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/a/a8/Cosmetic_icon_Fractal_Horns_of_Inner_Abysm.png/165px-Cosmetic_icon_Fractal_Horns_of_Inner_Abysm.png?version=2461d2505751a86576199c1d1f43682e 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/a/a8/Cosmetic_icon_Fractal_Horns_of_Inner_Abysm.png/220px-Cosmetic_icon_Fractal_Horns_of_Inner_Abysm.png?version=2461d2505751a86576199c1d1f43682e 2x" width="110"/>
+         </a>
+        </div>
+        <a href="/Fractal_Horns_of_Inner_Abysm" title="Fractal Horns of Inner Abysm">
+         Fractal Horns of Inner Abysm
+        </a>
+       </div>
+      </div>
+     </td>
+    </tr>
+   </table>
+  </td>
+ </tr>
+</table>
+<h2>
+ <span class="mw-headline" id="Trivia">
+  Trivia
+ </span>
+ <span class="mw-editsection">
+  <span class="mw-editsection-bracket">
+   [
+  </span>
+  <a href="/index.php?title=Terrorblade&amp;action=edit&amp;section=9" title="Edit section: Trivia">
+   edit
+  </a>
+  <span class="mw-editsection-bracket">
+   ]
+  </span>
+ </span>
+</h2>
+<ul>
+ <li>
+  In DotA, Terrorblade and
+  <span style="white-space:nowrap">
+   <a href="/Anti-Mage" title="Anti-Mage">
+    <img alt="Anti-Mage minimap icon.png" height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/3/30/Anti-Mage_minimap_icon.png/20px-Anti-Mage_minimap_icon.png?version=4257beeffc8a1dc894815feff74da67d" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/3/30/Anti-Mage_minimap_icon.png/30px-Anti-Mage_minimap_icon.png?version=4257beeffc8a1dc894815feff74da67d 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/3/30/Anti-Mage_minimap_icon.png?version=4257beeffc8a1dc894815feff74da67d 2x" width="20"/>
+   </a>
+   <a href="/Anti-Mage" title="Anti-Mage">
+    Anti-Mage
+   </a>
+  </span>
+  were brothers. This was to be kept in Dota 2 based on certain responses Anti-Mage made in Terrorblade's presence, but upon Terrorblade's release, these relations were severed and thus the lines went unused.
+ </li>
+ <li>
+  Terrorblade's title in DotA was Soul Keeper. Unlike other name changes, this one does not appear to be related to copyright issues with Blizzard. A possible reason could be that the title "Soul Keeper" doesn't fit him anymore, since only one ability could be associated with souls.
+ </li>
+ <li>
+  In-game, Terrorblade constantly leaves flaming footprints wherever he goes, similar to his DotA hero model, Illidan Stormrage (a prominent
+  <i>
+   Warcraft
+  </i>
+  <a class="external text" href="http://wowpedia.org/Illidan_Stormrage" rel="noreferrer noopener" target="_blank">
+   character
+  </a>
+  ). These can be seen by enemies, but stop being rendered once he's out of their vision, meaning that one cannot track down an enemy Terrorblade that goes invisible or enters the Fog of War on the basis of his footprints.
+ </li>
+</ul>
+<h2>
+ <span class="mw-headline" id="Gallery">
+  Gallery
+ </span>
+ <span class="mw-editsection">
+  <span class="mw-editsection-bracket">
+   [
+  </span>
+  <a href="/index.php?title=Terrorblade&amp;action=edit&amp;section=10" title="Edit section: Gallery">
+   edit
+  </a>
+  <span class="mw-editsection-bracket">
+   ]
+  </span>
+ </span>
+</h2>
+<ul class="gallery mw-gallery-traditional">
+ <li class="gallerybox" style="width: 155px">
+  <div style="width: 155px">
+   <div class="thumb" style="width: 150px;">
+    <div style="margin:35px auto;">
+     <a class="image" href="/File:Terrorblade_model.jpg">
+      <img alt="" height="80" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/8/88/Terrorblade_model.jpg/120px-Terrorblade_model.jpg?version=a817205e07aa87ee4b710c7be1516d8f" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/8/88/Terrorblade_model.jpg/180px-Terrorblade_model.jpg?version=a817205e07aa87ee4b710c7be1516d8f 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/8/88/Terrorblade_model.jpg/240px-Terrorblade_model.jpg?version=a817205e07aa87ee4b710c7be1516d8f 2x" width="120"/>
+     </a>
+    </div>
+   </div>
+   <div class="gallerytext">
+    <p>
+     Model
+    </p>
+   </div>
+  </div>
+ </li>
+ <li class="gallerybox" style="width: 155px">
+  <div style="width: 155px">
+   <div class="thumb" style="width: 150px;">
+    <div style="margin:48.5px auto;">
+     <a class="image" href="/File:Terrorblade_Metamorphosis_model.jpg">
+      <img alt="" height="53" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/c/ca/Terrorblade_Metamorphosis_model.jpg/120px-Terrorblade_Metamorphosis_model.jpg?version=c7cc11376fa8fa6610632206eb275e46" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/c/ca/Terrorblade_Metamorphosis_model.jpg/180px-Terrorblade_Metamorphosis_model.jpg?version=c7cc11376fa8fa6610632206eb275e46 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/c/ca/Terrorblade_Metamorphosis_model.jpg/240px-Terrorblade_Metamorphosis_model.jpg?version=c7cc11376fa8fa6610632206eb275e46 2x" width="120"/>
+     </a>
+    </div>
+   </div>
+   <div class="gallerytext">
+    <p>
+     Metamorphosis model
+    </p>
+   </div>
+  </div>
+ </li>
+ <li class="gallerybox" style="width: 155px">
+  <div style="width: 155px">
+   <div class="thumb" style="width: 150px;">
+    <div style="margin:31px auto;">
+     <a class="image" href="/File:Keyart_terrorblade.jpg">
+      <img alt="" height="88" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/9/9d/Keyart_terrorblade.jpg/120px-Keyart_terrorblade.jpg?version=ffe13156fe6fc691e679a571c732bc8d" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/9/9d/Keyart_terrorblade.jpg/180px-Keyart_terrorblade.jpg?version=ffe13156fe6fc691e679a571c732bc8d 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/9/9d/Keyart_terrorblade.jpg/240px-Keyart_terrorblade.jpg?version=ffe13156fe6fc691e679a571c732bc8d 2x" width="120"/>
+     </a>
+    </div>
+   </div>
+   <div class="gallerytext">
+    <p>
+     Announcement artwork
+    </p>
+   </div>
+  </div>
+ </li>
+</ul>
+<h2>
+ <span class="mw-headline" id="References">
+  References
+ </span>
+ <span class="mw-editsection">
+  <span class="mw-editsection-bracket">
+   [
+  </span>
+  <a href="/index.php?title=Terrorblade&amp;action=edit&amp;section=11" title="Edit section: References">
+   edit
+  </a>
+  <span class="mw-editsection-bracket">
+   ]
+  </span>
+ </span>
+</h2>
+<!-- 
 NewPP limit report
-Cached time: 20170207215445
+Cached time: 20170609000230
 Cache expiry: 86400
 Dynamic content: false
 [SMW] In‐text annotation parser time: 0.001 seconds
-CPU time usage: 1.340 seconds
-Real time usage: 2.418 seconds
-Preprocessor visited node count: 12036/1000000
-Preprocessor generated node count: 54234/1000000
-Post‐expand include size: 106998/2097152 bytes
-Template argument size: 33023/2097152 bytes
-Highest expansion depth: 18/40
-Expensive parser function count: 0/99
+CPU time usage: 1.104 seconds
+Real time usage: 2.009 seconds
+Preprocessor visited node count: 6479/1000000
+Preprocessor generated node count: 47678/1000000
+Post‐expand include size: 97913/2097152 bytes
+Template argument size: 30953/2097152 bytes
+Highest expansion depth: 13/40
+Expensive parser function count: 1/99
+ExtLoops count: 26/1000
 -->
-       <!-- 
+<!-- 
 Transclusion expansion time report (%,ms,calls,template)
-100.00% 1900.913      1 - -total
- 40.22%  764.612      4 - Template:Ability
- 19.22%  365.355     23 - Template:I
- 13.98%  265.676      1 - Template:Hero_infobox
- 13.04%  247.907      1 - Template:Equipment_Terrorblade
- 12.92%  245.564      1 - Template:Equipment
- 12.65%  240.555      1 - Template:Navbox
-  9.99%  189.991      9 - Template:A
-  9.87%  187.537     23 - Template:Item_link
-  7.70%  146.449     23 - Template:Item_name
+100.00% 1555.204      1 - -total
+ 42.85%  666.405      4 - Template:Ability
+ 17.93%  278.785      1 - Template:Hero_infobox
+ 15.72%  244.499     20 - Template:I
+ 14.53%  225.909      1 - Template:Equipment_Terrorblade
+ 14.31%  222.534      1 - Template:Equipment
+ 14.04%  218.311      1 - Template:Navbox
+ 11.07%  172.180      8 - Template:A
+  4.50%   70.061      4 - Template:Cosmetic
+  3.98%   61.939      1 - Template:Talents
 -->
-       <!-- Saved in parser cache with key dota2_gamepedia:pcache:idhash:8724-0!*!0!default!!en!5!* and timestamp 20170207215442 and revision id 1450335
+<!-- Saved in parser cache with key dota2_gamepedia:pcache:idhash:8724-0!*!0!default!!en!5!* and timestamp 20170609000228 and revision id 1533486
  -->
-      </div>
-      <div class="printfooter">
-       Retrieved from "
-       <a dir="ltr" href="http://dota2.gamepedia.com/index.php?title=Terrorblade&amp;oldid=1450335">
-        http://dota2.gamepedia.com/index.php?title=Terrorblade&amp;oldid=1450335
-       </a>
-       "
-      </div>
-      <div class="catlinks" data-mw="interface" id="catlinks">
-       <div class="mw-normal-catlinks" id="mw-normal-catlinks">
-        <a href="/Special:Categories" title="Special:Categories">
-         Categories
-        </a>
-        :
-        <ul>
-         <li>
-          <a href="/Category:Heroes" title="Category:Heroes">
-           Heroes
-          </a>
-         </li>
-         <li>
-          <a href="/Category:Agility_heroes" title="Category:Agility heroes">
-           Agility heroes
-          </a>
-         </li>
-         <li>
-          <a href="/Category:Melee_heroes" title="Category:Melee heroes">
-           Melee heroes
-          </a>
-         </li>
-         <li>
-          <a href="/Category:Carries" title="Category:Carries">
-           Carries
-          </a>
-         </li>
-         <li>
-          <a href="/Category:Pushers" title="Category:Pushers">
-           Pushers
-          </a>
-         </li>
-         <li>
-          <a href="/Category:Nukers" title="Category:Nukers">
-           Nukers
-          </a>
-         </li>
-        </ul>
-       </div>
-      </div>
-      <div class="visualClear">
-      </div>
-     </div>
-     <div id="siderail">
-      <div id="atfmrec">
-       <div id="cdm-zone-02">
-       </div>
-      </div>
-      <div id="zergnetsiderail_container">
-       <div id="zzergnetsiderail">
-        <div id="zergnet-widget-42966">
-        </div>
-        <script language="javascript" type="text/javascript">
-         (function() {
+<div class="printfooter">
+ Retrieved from "
+ <a dir="ltr" href="https://dota2.gamepedia.com/index.php?title=Terrorblade&amp;oldid=1533486">
+  https://dota2.gamepedia.com/index.php?title=Terrorblade&amp;oldid=1533486
+ </a>
+ "
+</div>
+<div class="catlinks" data-mw="interface" id="catlinks">
+ <div class="mw-normal-catlinks" id="mw-normal-catlinks">
+  <a href="/Special:Categories" title="Special:Categories">
+   Categories
+  </a>
+  :
+  <ul>
+   <li>
+    <a href="/Category:Heroes" title="Category:Heroes">
+     Heroes
+    </a>
+   </li>
+   <li>
+    <a href="/Category:Agility_heroes" title="Category:Agility heroes">
+     Agility heroes
+    </a>
+   </li>
+   <li>
+    <a href="/Category:Melee_heroes" title="Category:Melee heroes">
+     Melee heroes
+    </a>
+   </li>
+   <li>
+    <a href="/Category:Carries" title="Category:Carries">
+     Carries
+    </a>
+   </li>
+   <li>
+    <a href="/Category:Pushers" title="Category:Pushers">
+     Pushers
+    </a>
+   </li>
+   <li>
+    <a href="/Category:Nukers" title="Category:Nukers">
+     Nukers
+    </a>
+   </li>
+  </ul>
+ </div>
+</div>
+<div class="visualClear">
+</div>
+<div id="siderail">
+ <div id="atfmrec">
+  <div id="cdm-zone-02">
+  </div>
+ </div>
+ <div id="zergnetsiderail_container">
+  <div id="zzergnetsiderail">
+   <div id="zergnet-widget-42966">
+   </div>
+   <script language="javascript" type="text/javascript">
+    (function() {
         var zergnet = document.createElement('script');
         zergnet.type = 'text/javascript'; zergnet.async = true;
-        zergnet.src = 'http://www.zergnet.com/zerg.js?id=42966';
+        zergnet.src = '//www.zergnet.com/zerg.js?id=42966';
         var znscr = document.getElementsByTagName('script')[0];
         znscr.parentNode.insertBefore(zergnet, znscr);
     })();
-        </script>
-       </div>
-      </div>
-      <div id="gp-pro-upsell">
-       <a href="https://www.gamepedia.com/pro">
-        <img src="http://dota2.gamepedia.com/skins/Hydra/images/gppro/gpproupsellshort.png"/>
-       </a>
-      </div>
-      <div id="btfmrec">
-       <div id="cdm-zone-06">
-       </div>
-      </div>
-     </div>
-     <div class="visualClear">
-     </div>
-     <div id="zergnetContainer">
-      <div id="zergnet_container">
-       <div id="zergnet-widget-42964">
-       </div>
-       <script language="javascript" type="text/javascript">
-        (function() {
+   </script>
+  </div>
+ </div>
+ <div id="gp-pro-upsell">
+  <a href="https://www.gamepedia.com/pro">
+   <img src="http://dota2.gamepedia.com/skins/Hydra/images/gppro/gpproupsellshort.png"/>
+  </a>
+ </div>
+ <div id="btfmrec">
+  <div id="cdm-zone-06">
+  </div>
+ </div>
+</div>
+<div class="visualClear">
+</div>
+<div id="zergnetContainer">
+ <div id="zergnet_container">
+  <div id="zergnet-widget-42964">
+  </div>
+  <script language="javascript" type="text/javascript">
+   (function() {
         var zergnet = document.createElement('script');
         zergnet.type = 'text/javascript'; zergnet.async = true;
         zergnet.src = 'http://www.zergnet.com/zerg.js?id=42964';
         var znscr = document.getElementsByTagName('script')[0];
         znscr.parentNode.insertBefore(zergnet, znscr);
     })();
-       </script>
-       <script async="" src="//s.ntv.io/serve/load.js" type="text/javascript">
-       </script>
-      </div>
-     </div>
-     <div id="btflb">
-      <div id="cdm-zone-04">
-      </div>
-     </div>
-    </div>
-    <div id="mw-navigation">
-     <h2>
-      Navigation menu
-     </h2>
-     <div id="mw-head">
-      <div id="left-navigation">
-       <div aria-labelledby="p-namespaces-label" class="vectorTabs" id="p-namespaces" role="navigation">
-        <h3 id="p-namespaces-label">
-         Namespaces
-        </h3>
-        <ul>
-         <li class="selected" id="ca-nstab-main">
-          <span>
-           <a accesskey="c" href="/Terrorblade" title="View the content page [c]">
-            Page
-           </a>
-          </span>
-         </li>
-         <li id="ca-talk">
-          <span>
-           <a accesskey="t" href="/Talk:Terrorblade" rel="discussion" title="Discussion about the content page [t]">
-            Discussion
-           </a>
-          </span>
-         </li>
-        </ul>
-       </div>
-       <div aria-labelledby="p-variants-label" class="vectorMenu emptyPortlet" id="p-variants" role="navigation">
-        <h3 id="p-variants-label">
-         <span>
-          Variants
-         </span>
-         <a href="#">
-         </a>
-        </h3>
-        <div class="menu">
-         <ul>
-         </ul>
-        </div>
-       </div>
-       <div aria-labelledby="p-sharing-label" class="vectorMenu" id="p-sharing" role="navigation">
-        <h3 id="p-sharing-label">
-         <span>
-          Share
-         </span>
-         <a href="#">
-         </a>
-        </h3>
-        <div class="menu">
-         <div id="socialIconImages">
-          <a href="https://twitter.com/intent/tweet?text=Check+out+Terrorblade+on+Dota+2+Wiki+--&amp;via=CurseGamepedia&amp;url=http%3A%2F%2Fdota2.gamepedia.com%2FTerrorblade" target="_blank">
-           <img src="/extensions/Social/images/square_icons/twitter.png"/>
-          </a>
-          <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fdota2.gamepedia.com%2FTerrorblade" target="_blank">
-           <img src="/extensions/Social/images/square_icons/facebook.png"/>
-          </a>
-          <a href="https://plus.google.com/share?url=http%3A%2F%2Fdota2.gamepedia.com%2FTerrorblade" target="_blank">
-           <img src="/extensions/Social/images/square_icons/googleplus.png"/>
-          </a>
-          <a href="http://www.reddit.com/submit?url=http%3A%2F%2Fdota2.gamepedia.com%2FTerrorblade&amp;title=Check+out+Terrorblade+on+Dota+2+Wiki+via+%40CurseGamepedia%3A+http%3A%2F%2Fdota2.gamepedia.com%2FTerrorblade" target="_blank">
-           <img src="/extensions/Social/images/square_icons/reddit.png"/>
-          </a>
-          <a href="http://www.tumblr.com/share/link?url=http%3A%2F%2Fdota2.gamepedia.com%2FTerrorblade&amp;name=Dota+2+Wiki&amp;description=Check+out+Terrorblade+on+Dota+2+Wiki+via+%3Ca+href%3D%22https%3A%2F%2Ftwitter.com%2FCurseGamepedia%22+target%3D%22_blank%22%3E%40CurseGamepedia%3C%2Fa%3E%3A+http%3A%2F%2Fdota2.gamepedia.com%2FTerrorblade" target="_blank">
-           <img src="/extensions/Social/images/square_icons/tumblr.png"/>
-          </a>
-         </div>
-        </div>
-       </div>
-      </div>
-      <div id="right-navigation">
-       <div aria-labelledby="p-views-label" class="vectorTabs" id="p-views" role="navigation">
-        <h3 id="p-views-label">
-         Views
-        </h3>
-        <ul>
-         <li class="selected" id="ca-view">
-          <span>
-           <a href="/Terrorblade">
-            View
-           </a>
-          </span>
-         </li>
-         <li id="ca-ve-edit">
-          <span>
-           <a accesskey="v" href="/index.php?title=Terrorblade&amp;veaction=edit" title="Edit this page [v]">
-            Edit
-           </a>
-          </span>
-         </li>
-         <li class=" collapsible" id="ca-edit">
-          <span>
-           <a accesskey="e" href="/index.php?title=Terrorblade&amp;action=edit" title="Edit this page [e]">
-            Edit source
-           </a>
-          </span>
-         </li>
-         <li class="collapsible" id="ca-history">
-          <span>
-           <a accesskey="h" href="/index.php?title=Terrorblade&amp;action=history" title="Past revisions of this page [h]">
-            History
-           </a>
-          </span>
-         </li>
-        </ul>
-       </div>
-       <div aria-labelledby="p-cactions-label" class="vectorMenu emptyPortlet" id="p-cactions" role="navigation">
-        <h3 id="p-cactions-label">
-         <span>
-          More
-         </span>
-         <a href="#">
-         </a>
-        </h3>
-        <div class="menu">
-         <ul>
-         </ul>
-        </div>
-       </div>
-       <div id="p-search" role="search">
-        <h3>
-         <label for="searchInput">
-          Search
-         </label>
-        </h3>
-        <form action="/index.php" id="searchform">
-         <div id="simpleSearch">
-          <input accesskey="f" id="searchInput" name="search" placeholder="Search" title="Search Dota 2 Wiki [f]" type="search"/>
-          <input name="title" type="hidden" value="Special:Search"/>
-          <input class="searchButton mw-fallbackSearchButton" id="mw-searchButton" name="fulltext" title="Search the pages for this text" type="submit" value="Search"/>
-          <input class="searchButton" id="searchButton" name="go" title="Go to a page with this exact name if it exists" type="submit" value="Go"/>
-         </div>
-        </form>
-       </div>
-      </div>
-     </div>
-     <div id="mw-panel">
-      <div id="p-logo" role="banner">
-       <a class="mw-wiki-logo" href="/Dota_2_Wiki" title="Visit the main page">
+  </script>
+  <script async="" src="//s.ntv.io/serve/load.js" type="text/javascript">
+  </script>
+ </div>
+</div>
+<div id="btflb">
+ <div id="cdm-zone-04">
+ </div>
+</div>
+<div id="mw-navigation">
+ <h2>
+  Navigation menu
+ </h2>
+ <div id="mw-head">
+  <div id="left-navigation">
+   <div aria-labelledby="p-namespaces-label" class="vectorTabs" id="p-namespaces" role="navigation">
+    <h3 id="p-namespaces-label">
+     Namespaces
+    </h3>
+    <ul>
+     <li class="selected" id="ca-nstab-main">
+      <span>
+       <a accesskey="c" href="/Terrorblade" title="View the content page [c]">
+        Page
        </a>
-      </div>
-      <div aria-labelledby="p-navigation-label" class="portal" id="p-navigation" role="navigation">
-       <h3 id="p-navigation-label">
-        Navigation
-       </h3>
-       <div class="body">
-        <ul>
-         <li id="n-mainpage-description">
-          <a accesskey="z" href="/Dota_2_Wiki" title="Visit the main page [z]">
-           Main page
-          </a>
-         </li>
-         <li id="n-Heroes">
-          <a href="/Heroes">
-           Heroes
-          </a>
-         </li>
-         <li id="n-Items">
-          <a href="/Items">
-           Items
-          </a>
-         </li>
-         <li id="n-Mechanics">
-          <a href="/Mechanics">
-           Mechanics
-          </a>
-         </li>
-         <li id="n-Creeps">
-          <a href="/Creeps">
-           Creeps
-          </a>
-         </li>
-         <li id="n-Buildings">
-          <a href="/Buildings">
-           Buildings
-          </a>
-         </li>
-         <li id="n-Runes">
-          <a href="/Runes">
-           Runes
-          </a>
-         </li>
-         <li id="n-Minimap">
-          <a href="/Minimap">
-           Minimap
-          </a>
-         </li>
-         <li id="n-Game-modes">
-          <a href="/Game_Modes">
-           Game modes
-          </a>
-         </li>
-         <li id="n-Events">
-          <a href="/Events">
-           Events
-          </a>
-         </li>
-         <li id="n-Patches">
-          <a href="/Patches">
-           Patches
-          </a>
-         </li>
-         <li id="n-Versions">
-          <a href="/Versions">
-           Versions
-          </a>
-         </li>
-         <li id="n-Console">
-          <a href="/List_of_Console_Commands">
-           Console
-          </a>
-         </li>
-         <li id="n-Hero-stats-table">
-          <a href="/Table_of_hero_attributes">
-           Hero stats table
-          </a>
-         </li>
-        </ul>
-       </div>
-      </div>
-      <div aria-labelledby="p-Cosmetics-label" class="portal" id="p-Cosmetics" role="navigation">
-       <h3 id="p-Cosmetics-label">
-        Cosmetics
-       </h3>
-       <div class="body">
-        <ul>
-         <li id="n-Equipment">
-          <a href="/Equipment">
-           Equipment
-          </a>
-         </li>
-         <li id="n-Gems">
-          <a href="/Gems">
-           Gems
-          </a>
-         </li>
-         <li id="n-Couriers">
-          <a href="/Custom_Courier">
-           Couriers
-          </a>
-         </li>
-         <li id="n-Wards">
-          <a href="/Custom_Wards">
-           Wards
-          </a>
-         </li>
-         <li id="n-HUD-Skins">
-          <a href="/HUD_Skins">
-           HUD Skins
-          </a>
-         </li>
-         <li id="n-Music">
-          <a href="/Music">
-           Music
-          </a>
-         </li>
-         <li id="n-Emoticons">
-          <a href="/Emoticons">
-           Emoticons
-          </a>
-         </li>
-        </ul>
-       </div>
-      </div>
-      <div aria-labelledby="p-tb-label" class="portal" id="p-tb" role="navigation">
-       <h3 id="p-tb-label">
-        Tools
-       </h3>
-       <div class="body">
-        <ul>
-         <li id="t-whatlinkshere">
-          <a accesskey="j" href="/Special:WhatLinksHere/Terrorblade" title="A list of all wiki pages that link here [j]">
-           What links here
-          </a>
-         </li>
-         <li id="t-recentchangeslinked">
-          <a accesskey="k" href="/Special:RecentChangesLinked/Terrorblade" title="Recent changes in pages linked from this page [k]">
-           Related changes
-          </a>
-         </li>
-         <li id="t-specialpages">
-          <a accesskey="q" href="/Special:SpecialPages" title="A list of all special pages [q]">
-           Special pages
-          </a>
-         </li>
-         <li id="t-print">
-          <a accesskey="p" href="/index.php?title=Terrorblade&amp;printable=yes" rel="alternate" title="Printable version of this page [p]">
-           Printable version
-          </a>
-         </li>
-         <li id="t-permalink">
-          <a href="/index.php?title=Terrorblade&amp;oldid=1450335" title="Permanent link to this revision of the page">
-           Permanent link
-          </a>
-         </li>
-         <li id="t-info">
-          <a href="/index.php?title=Terrorblade&amp;action=info" title="More information about this page">
-           Page information
-          </a>
-         </li>
-         <li id="t-smwbrowselink">
-          <a href="/Special:Browse/Terrorblade" rel="smw-browse">
-           Browse properties
-          </a>
-         </li>
-        </ul>
-       </div>
-      </div>
-      <div aria-labelledby="p-Wiki_Links-label" class="portal" id="p-Wiki_Links" role="navigation">
-       <h3 id="p-Wiki_Links-label">
-        Wiki Links
-       </h3>
-       <div class="body">
-        <ul>
-         <li id="n-Discussion">
-          <a href="/Dota_2_Wiki:Discussion">
-           Discussion
-          </a>
-         </li>
-         <li id="n-Twitter">
-          <a href="https://twitter.com/dota2wiki" rel="nofollow" target="_blank">
-           Twitter
-          </a>
-         </li>
-         <li id="n-Steam-Group">
-          <a href="http://steamcommunity.com/groups/dota2wiki" rel="nofollow" target="_blank">
-           Steam Group
-          </a>
-         </li>
-         <li id="n-IRC-channel">
-          <a href="/Dota_2_Wiki:IRC">
-           IRC channel
-          </a>
-         </li>
-         <li id="n-Translate">
-          <a href="/Help:Language_translation">
-           Translate
-          </a>
-         </li>
-         <li id="n-recentchanges">
-          <a accesskey="r" href="/Special:RecentChanges" title="A list of recent changes in the wiki [r]">
-           Recent changes
-          </a>
-         </li>
-        </ul>
-       </div>
-      </div>
-      <div aria-labelledby="p-Official_Links-label" class="portal" id="p-Official_Links" role="navigation">
-       <h3 id="p-Official_Links-label">
-        Official Links
-       </h3>
-       <div class="body">
-        <ul>
-         <li id="n-Blog">
-          <a href="http://blog.dota2.com" rel="nofollow" target="_blank">
-           Blog
-          </a>
-         </li>
-         <li id="n-Store">
-          <a href="http://www.dota2.com/store/" rel="nofollow" target="_blank">
-           Store
-          </a>
-         </li>
-         <li id="n-Steam-Hub">
-          <a href="http://steamcommunity.com/app/570" rel="nofollow" target="_blank">
-           Steam Hub
-          </a>
-         </li>
-         <li id="n-Twitter">
-          <a href="http://twitter.com/#!/dota2" rel="nofollow" target="_blank">
-           Twitter
-          </a>
-         </li>
-         <li id="n-Facebook">
-          <a href="http://www.facebook.com/pages/Dota-2/106876872711112" rel="nofollow" target="_blank">
-           Facebook
-          </a>
-         </li>
-        </ul>
-       </div>
-      </div>
-      <div aria-labelledby="p-Gamepedia-label" class="portal" id="p-Gamepedia" role="navigation">
-       <h3 id="p-Gamepedia-label">
-        Gamepedia
-       </h3>
-       <div class="body">
-        <ul>
-         <li id="n-Forums">
-          <a href="http://gamepedia.com/forums" target="_blank">
-           Forums
-          </a>
-         </li>
-         <li id="n-Help">
-          <a href="http://help.gamepedia.com" target="_blank">
-           Help
-          </a>
-         </li>
-         <li id="n-Contact">
-          <a href="http://help.gamepedia.com/How_To_Contact_Gamepedia" target="_blank">
-           Contact
-          </a>
-         </li>
-        </ul>
-       </div>
-      </div>
-      <div aria-labelledby="p-Partners-label" class="portal" id="p-Partners" role="navigation">
-       <h3 id="p-Partners-label">
-        Partners
-       </h3>
-       <div class="body">
-        <ul>
-         <li id="n-Abios-Gaming">
-          <a href="http://abiosgaming.com" target="_blank">
-           Abios Gaming
-          </a>
-         </li>
-         <li id="n-PlayDota-Reborn">
-          <a href="https://forums.playdota.com/" rel="nofollow" target="_blank">
-           PlayDota Reborn
-          </a>
-         </li>
-         <li id="n-Dota-2-Reddit">
-          <a href="https://www.reddit.com/r/DotA2" rel="nofollow" target="_blank">
-           Dota 2 Reddit
-          </a>
-         </li>
-        </ul>
-       </div>
-      </div>
-      <div aria-labelledby="p-socialProfiles-label" class="portal" id="p-socialProfiles" role="navigation">
-       <h3 id="p-socialProfiles-label">
-       </h3>
-       <div class="body">
-        <div class="socialSidebar">
-         <script type="text/javascript">
-          document.getElementById('p-socialProfiles').className = 'portal persistent';
-         </script>
-         <div class="socialLink twitter">
-          <a href="https://twitter.com/CurseGamepedia" target="_blank">
-           <img src="/extensions/Social/images/square_icons/twitter.png"/>
-          </a>
-         </div>
-         <div class="socialLink facebook">
-          <a href="https://www.facebook.com/CurseGamepedia" target="_blank">
-           <img src="/extensions/Social/images/square_icons/facebook.png"/>
-          </a>
-         </div>
-         <div class="socialLink twitch">
-          <a href="https://www.twitch.tv/curseentertainment/videos/all" target="_blank">
-           <img src="/extensions/Social/images/square_icons/twitch.png"/>
-          </a>
-         </div>
-        </div>
-       </div>
-      </div>
-     </div>
-    </div>
-    <div id="footer" role="contentinfo">
-     <ul id="footer-info">
-      <li id="footer-info-lastmod">
-       This page was last modified on 2 February 2017, at 02:02.
-      </li>
-      <li id="footer-info-copyright">
-       Content is available under
-       <a class="external" href="//creativecommons.org/licenses/by-nc-sa/3.0/" rel="nofollow">
-        CC BY-NC-SA 3.0
+      </span>
+     </li>
+     <li id="ca-talk">
+      <span>
+       <a accesskey="t" href="/Talk:Terrorblade" rel="discussion" title="Discussion about the content page [t]">
+        Discussion
        </a>
-       unless otherwise noted.
-       <br/>
-       Dota 2 content and materials are trademarks and copyrights of Valve or its licensors. All rights reserved.
-       <br/>
-       This site is a part of Curse, Inc. and is not affiliated with Valve.
-      </li>
+      </span>
+     </li>
+    </ul>
+   </div>
+   <div aria-labelledby="p-variants-label" class="vectorMenu emptyPortlet" id="p-variants" role="navigation">
+    <h3 id="p-variants-label">
+     <span>
+      Variants
+     </span>
+     <a href="#">
+     </a>
+    </h3>
+    <div class="menu">
+     <ul>
      </ul>
-     <ul id="footer-places">
-      <li id="footer-places-about">
-       <a href="/Dota_2_Wiki:About" title="Dota 2 Wiki:About">
-        About Dota 2 Wiki
-       </a>
-      </li>
-      <li id="footer-places-disclaimer">
-       <a href="/Dota_2_Wiki:General_disclaimer" title="Dota 2 Wiki:General disclaimer">
-        Disclaimers
-       </a>
-      </li>
-      <li id="footer-places-mobileview">
-       <a class="noprint stopMobileRedirectToggle" href="//dota2.gamepedia.com/index.php?title=Terrorblade&amp;mobileaction=toggle_view_mobile">
-        Mobile view
-       </a>
-      </li>
-     </ul>
-     <ul class="noprint" id="footer-icons">
-      <li id="footer-copyrightico">
-       <a href="//creativecommons.org/licenses/by-nc-sa/3.0/">
-        <img alt="CC BY-NC-SA 3.0" height="31" src="//i.creativecommons.org/l/by-nc-sa/3.0/88x31.png" width="88"/>
-       </a>
-      </li>
-      <li id="footer-poweredbyico">
-       <a href="//www.mediawiki.org/">
-        <img alt="Powered by MediaWiki" height="31" src="/resources/assets/poweredby_mediawiki_88x31.png" srcset="/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /resources/assets/poweredby_mediawiki_176x62.png 2x" width="88"/>
-       </a>
-       <a href="https://help.gamepedia.com/What_is_Hydra">
-        <img alt="Powered by Hydra" height="31" src="/skins/Hydra/images/icons/poweredbyhydra.png" width="88"/>
-       </a>
-       <a href="https://www.semantic-mediawiki.org/wiki/Semantic_MediaWiki">
-        <img alt="Powered by Semantic MediaWiki" height="31" src="/extensions/SemanticMediaWiki/includes/../res/images/smw_button.png" width="88"/>
-       </a>
-      </li>
-     </ul>
-     <div style="clear:both">
-     </div>
     </div>
    </div>
-   <div id="footer-push">
+   <div aria-labelledby="p-sharing-label" class="vectorMenu" id="p-sharing" role="navigation">
+    <h3 id="p-sharing-label">
+     <span>
+      Share
+     </span>
+     <a href="#">
+     </a>
+    </h3>
+    <div class="menu">
+     <div id="socialIconImages">
+      <a href="https://twitter.com/intent/tweet?text=Check+out+Terrorblade+on+Dota+2+Wiki+--&amp;via=CurseGamepedia&amp;url=https%3A%2F%2Fdota2.gamepedia.com%2FTerrorblade" target="_blank">
+       <img src="/extensions/Social/images/square_icons/twitter.png"/>
+      </a>
+      <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdota2.gamepedia.com%2FTerrorblade" target="_blank">
+       <img src="/extensions/Social/images/square_icons/facebook.png"/>
+      </a>
+      <a href="https://plus.google.com/share?url=https%3A%2F%2Fdota2.gamepedia.com%2FTerrorblade" target="_blank">
+       <img src="/extensions/Social/images/square_icons/googleplus.png"/>
+      </a>
+      <a href="http://www.reddit.com/submit?url=https%3A%2F%2Fdota2.gamepedia.com%2FTerrorblade&amp;title=Check+out+Terrorblade+on+Dota+2+Wiki+via+%40CurseGamepedia%3A+https%3A%2F%2Fdota2.gamepedia.com%2FTerrorblade" target="_blank">
+       <img src="/extensions/Social/images/square_icons/reddit.png"/>
+      </a>
+      <a href="http://www.tumblr.com/share/link?url=https%3A%2F%2Fdota2.gamepedia.com%2FTerrorblade&amp;name=Dota+2+Wiki&amp;description=Check+out+Terrorblade+on+Dota+2+Wiki+via+%3Ca+href%3D%22https%3A%2F%2Ftwitter.com%2FCurseGamepedia%22+target%3D%22_blank%22%3E%40CurseGamepedia%3C%2Fa%3E%3A+https%3A%2F%2Fdota2.gamepedia.com%2FTerrorblade" target="_blank">
+       <img src="/extensions/Social/images/square_icons/tumblr.png"/>
+      </a>
+     </div>
+    </div>
    </div>
   </div>
-  <script>
-   (window.RLQ=window.RLQ||[]).push(function(){mw.loader.state({"user":"ready","user.groups":"ready"});mw.loader.load(["ext.wfSoundManager2Button","ext.smw.tooltips","mediawiki.toc","mediawiki.action.view.postEdit","site","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","ext.collapsiblevector.collapsibleNav","ext.visualEditor.targetLoader"]);});
-  </script>
-  <footer class="show-ads" id="footer" role="complimentary">
-   <div class="footer-links">
-    <a class="curse" href="http://www.gamepedia.com">
-     Gamepedia powered by Curse
-    </a>
-    <ul class="social">
-     <li>
-      <a class="fb" href="https://www.facebook.com/CurseGamepedia">
-       Facebook
+  <div id="right-navigation">
+   <div aria-labelledby="p-views-label" class="vectorTabs" id="p-views" role="navigation">
+    <h3 id="p-views-label">
+     Views
+    </h3>
+    <ul>
+     <li class="selected" id="ca-view">
+      <span>
+       <a href="/Terrorblade">
+        View
+       </a>
+      </span>
+     </li>
+     <li id="ca-edit">
+      <span>
+       <a accesskey="e" href="/index.php?title=Terrorblade&amp;action=edit" title="Edit this page [e]">
+        Edit
+       </a>
+      </span>
+     </li>
+     <li class="collapsible" id="ca-history">
+      <span>
+       <a accesskey="h" href="/index.php?title=Terrorblade&amp;action=history" title="Past revisions of this page [h]">
+        History
+       </a>
+      </span>
+     </li>
+    </ul>
+   </div>
+   <div aria-labelledby="p-cactions-label" class="vectorMenu emptyPortlet" id="p-cactions" role="navigation">
+    <h3 id="p-cactions-label">
+     <span>
+      More
+     </span>
+     <a href="#">
+     </a>
+    </h3>
+    <div class="menu">
+     <ul>
+     </ul>
+    </div>
+   </div>
+   <div id="p-search" role="search">
+    <h3>
+     <label for="searchInput">
+      Search
+     </label>
+    </h3>
+    <form action="/index.php" id="searchform">
+     <div id="simpleSearch">
+      <input accesskey="f" id="searchInput" name="search" placeholder="Search" title="Search Dota 2 Wiki [f]" type="search"/>
+      <input name="title" type="hidden" value="Special:Search"/>
+      <input class="searchButton mw-fallbackSearchButton" id="mw-searchButton" name="fulltext" title="Search the pages for this text" type="submit" value="Search"/>
+      <input class="searchButton" id="searchButton" name="go" title="Go to a page with this exact name if it exists" type="submit" value="Go"/>
+     </div>
+    </form>
+   </div>
+  </div>
+ </div>
+ <div id="mw-panel">
+  <div id="p-logo" role="banner">
+   <a class="mw-wiki-logo" href="/Dota_2_Wiki" title="Visit the main page">
+   </a>
+  </div>
+  <div aria-labelledby="p-navigation-label" class="portal" id="p-navigation" role="navigation">
+   <h3 id="p-navigation-label">
+    Navigation
+   </h3>
+   <div class="body">
+    <ul>
+     <li id="n-mainpage-description">
+      <a accesskey="z" href="/Dota_2_Wiki" title="Visit the main page [z]">
+       Main page
       </a>
      </li>
-     <li>
-      <a class="tw" href="https://twitter.com/CurseGamepedia">
+     <li id="n-Heroes">
+      <a href="/Heroes">
+       Heroes
+      </a>
+     </li>
+     <li id="n-Items">
+      <a href="/Items">
+       Items
+      </a>
+     </li>
+     <li id="n-Mechanics">
+      <a href="/Mechanics">
+       Mechanics
+      </a>
+     </li>
+     <li id="n-Creeps">
+      <a href="/Creeps">
+       Creeps
+      </a>
+     </li>
+     <li id="n-Buildings">
+      <a href="/Buildings">
+       Buildings
+      </a>
+     </li>
+     <li id="n-Runes">
+      <a href="/Runes">
+       Runes
+      </a>
+     </li>
+     <li id="n-Minimap">
+      <a href="/Minimap">
+       Minimap
+      </a>
+     </li>
+     <li id="n-Game-modes">
+      <a href="/Game_Modes">
+       Game modes
+      </a>
+     </li>
+     <li id="n-Events">
+      <a href="/Events">
+       Events
+      </a>
+     </li>
+     <li id="n-Patches">
+      <a href="/Patches">
+       Patches
+      </a>
+     </li>
+     <li id="n-Versions">
+      <a href="/Versions">
+       Versions
+      </a>
+     </li>
+     <li id="n-Console">
+      <a href="/List_of_Console_Commands">
+       Console
+      </a>
+     </li>
+     <li id="n-Hero-stats-table">
+      <a href="/Table_of_hero_attributes">
+       Hero stats table
+      </a>
+     </li>
+    </ul>
+   </div>
+  </div>
+  <div aria-labelledby="p-Cosmetics-label" class="portal" id="p-Cosmetics" role="navigation">
+   <h3 id="p-Cosmetics-label">
+    Cosmetics
+   </h3>
+   <div class="body">
+    <ul>
+     <li id="n-Equipment">
+      <a href="/Equipment">
+       Equipment
+      </a>
+     </li>
+     <li id="n-Gems">
+      <a href="/Gems">
+       Gems
+      </a>
+     </li>
+     <li id="n-Couriers">
+      <a href="/Custom_Courier">
+       Couriers
+      </a>
+     </li>
+     <li id="n-Wards">
+      <a href="/Custom_Wards">
+       Wards
+      </a>
+     </li>
+     <li id="n-HUD-Skins">
+      <a href="/HUD_Skins">
+       HUD Skins
+      </a>
+     </li>
+     <li id="n-Music">
+      <a href="/Music">
+       Music
+      </a>
+     </li>
+     <li id="n-Emoticons">
+      <a href="/Emoticons">
+       Emoticons
+      </a>
+     </li>
+    </ul>
+   </div>
+  </div>
+  <div aria-labelledby="p-tb-label" class="portal" id="p-tb" role="navigation">
+   <h3 id="p-tb-label">
+    Tools
+   </h3>
+   <div class="body">
+    <ul>
+     <li id="t-whatlinkshere">
+      <a accesskey="j" href="/Special:WhatLinksHere/Terrorblade" title="A list of all wiki pages that link here [j]">
+       What links here
+      </a>
+     </li>
+     <li id="t-recentchangeslinked">
+      <a accesskey="k" href="/Special:RecentChangesLinked/Terrorblade" title="Recent changes in pages linked from this page [k]">
+       Related changes
+      </a>
+     </li>
+     <li id="t-specialpages">
+      <a accesskey="q" href="/Special:SpecialPages" title="A list of all special pages [q]">
+       Special pages
+      </a>
+     </li>
+     <li id="t-print">
+      <a accesskey="p" href="/index.php?title=Terrorblade&amp;printable=yes" rel="alternate" title="Printable version of this page [p]">
+       Printable version
+      </a>
+     </li>
+     <li id="t-permalink">
+      <a href="/index.php?title=Terrorblade&amp;oldid=1533486" title="Permanent link to this revision of the page">
+       Permanent link
+      </a>
+     </li>
+     <li id="t-info">
+      <a href="/index.php?title=Terrorblade&amp;action=info" title="More information about this page">
+       Page information
+      </a>
+     </li>
+     <li id="t-smwbrowselink">
+      <a href="/Special:Browse/Terrorblade" rel="smw-browse">
+       Browse properties
+      </a>
+     </li>
+    </ul>
+   </div>
+  </div>
+  <div aria-labelledby="p-Wiki_Links-label" class="portal" id="p-Wiki_Links" role="navigation">
+   <h3 id="p-Wiki_Links-label">
+    Wiki Links
+   </h3>
+   <div class="body">
+    <ul>
+     <li id="n-Discussion">
+      <a href="/Dota_2_Wiki:Discussion">
+       Discussion
+      </a>
+     </li>
+     <li id="n-Twitter">
+      <a href="https://twitter.com/dota2wiki" rel="nofollow" target="_blank">
        Twitter
       </a>
      </li>
-     <li>
-      <a class="yt" href="http://youtube.com/CurseEntertainment">
-       Youtube
+     <li id="n-Steam-Group">
+      <a href="http://steamcommunity.com/groups/dota2wiki" rel="nofollow" target="_blank">
+       Steam Group
       </a>
      </li>
-     <li>
-      <a class="nl" href="http://help.gamepedia.com/How_To_Contact_Gamepedia">
-       Contact Us
+     <li id="n-IRC-channel">
+      <a href="/Dota_2_Wiki:IRC">
+       IRC channel
       </a>
      </li>
-     <li>
-      <a class="advertise" href="https://ghostreconwildlands.gamepedia.com">
-       Ghost Recon
+     <li id="n-Translate">
+      <a href="/Help:Language_translation">
+       Translate
+      </a>
+     </li>
+     <li id="n-recentchanges">
+      <a accesskey="r" href="/Special:RecentChanges" title="A list of recent changes in the wiki [r]">
+       Recent changes
       </a>
      </li>
     </ul>
-    <ul class="you">
-     <li>
-      <a class="sign-in" href="/index.php?title=Special:UserLogin&amp;returnto=Terrorblade" id="login-link">
-       Sign In
+   </div>
+  </div>
+  <div aria-labelledby="p-Official_Links-label" class="portal" id="p-Official_Links" role="navigation">
+   <h3 id="p-Official_Links-label">
+    Official Links
+   </h3>
+   <div class="body">
+    <ul>
+     <li id="n-Blog">
+      <a href="http://blog.dota2.com" rel="nofollow" target="_blank">
+       Blog
       </a>
      </li>
-     <li>
-      <a class="register" href="/index.php?title=Special:CreateAccount&amp;returnto=Terrorblade" id="register-link">
-       Register
+     <li id="n-Store">
+      <a href="http://www.dota2.com/store/" rel="nofollow" target="_blank">
+       Store
       </a>
      </li>
-     <li>
-      <a class="careers" href="http://www.curseinc.com/careers">
-       Careers
+     <li id="n-Steam-Hub">
+      <a href="http://steamcommunity.com/app/570" rel="nofollow" target="_blank">
+       Steam Hub
       </a>
      </li>
-     <li>
-      <a class="help" href="http://support.gamepedia.com/">
+     <li id="n-Twitter">
+      <a href="http://twitter.com/#!/dota2" rel="nofollow" target="_blank">
+       Twitter
+      </a>
+     </li>
+     <li id="n-Facebook">
+      <a href="http://www.facebook.com/pages/Dota-2/106876872711112" rel="nofollow" target="_blank">
+       Facebook
+      </a>
+     </li>
+    </ul>
+   </div>
+  </div>
+  <div aria-labelledby="p-Gamepedia-label" class="portal" id="p-Gamepedia" role="navigation">
+   <h3 id="p-Gamepedia-label">
+    Gamepedia
+   </h3>
+   <div class="body">
+    <ul>
+     <li id="n-Forums">
+      <a href="http://gamepedia.com/forums" target="_blank">
+       Forums
+      </a>
+     </li>
+     <li id="n-Help">
+      <a href="http://help.gamepedia.com" target="_blank">
        Help
       </a>
      </li>
-     <li>
-      <a class="about" href="http://www.hearthpwn.com/guides/1480-how-to-get-cheaper-hearthstone-packs-buy-amazon">
-       HS Packs
+     <li id="n-Contact">
+      <a href="http://help.gamepedia.com/How_To_Contact_Gamepedia" target="_blank">
+       Contact
       </a>
      </li>
     </ul>
-    <ul class="more">
-     <li>
-      <a class="about" href="http://www.curseinc.com/">
-       About Curse
-      </a>
-     </li>
-     <li>
-      <a class="advertise" href="http://www.curseinc.com/audience">
-       Advertise
-      </a>
-     </li>
-     <li>
-      <a class="tos" href="http://www.curse.com/terms">
-       Terms of Service
-      </a>
-     </li>
-     <li>
-      <a class="privacy-policy" href="http://www.curse.com/privacy">
-       Privacy Policy
-      </a>
-     </li>
-     <li>
-      <a class="tos" href="https://forhonor.gamepedia.com">
-       For Honor
-      </a>
-     </li>
-    </ul>
-    <span class="copyright">
-     Copyright 2005-2017, Curse Inc.
-    </span>
    </div>
-   <div class="ad-placement ad-main-med-rect-footer">
-    <div id="cdm-zone-03">
+  </div>
+  <div aria-labelledby="p-Partners-label" class="portal" id="p-Partners" role="navigation">
+   <h3 id="p-Partners-label">
+    Partners
+   </h3>
+   <div class="body">
+    <ul>
+     <li id="n-Abios-Gaming">
+      <a href="http://abiosgaming.com" target="_blank">
+       Abios Gaming
+      </a>
+     </li>
+     <li id="n-PlayDota-Reborn">
+      <a href="https://forums.playdota.com/" rel="nofollow" target="_blank">
+       PlayDota Reborn
+      </a>
+     </li>
+     <li id="n-Dota-2-Reddit">
+      <a href="https://www.reddit.com/r/DotA2" rel="nofollow" target="_blank">
+       Dota 2 Reddit
+      </a>
+     </li>
+    </ul>
+   </div>
+  </div>
+  <div aria-labelledby="p-socialProfiles-label" class="portal" id="p-socialProfiles" role="navigation">
+   <h3 id="p-socialProfiles-label">
+   </h3>
+   <div class="body">
+    <div class="socialSidebar">
+     <script type="text/javascript">
+      document.getElementById('p-socialProfiles').className = 'portal persistent';
+     </script>
+     <div class="socialLink twitter">
+      <a href="https://twitter.com/CurseGamepedia" target="_blank">
+       <img src="/extensions/Social/images/square_icons/twitter.png"/>
+      </a>
+     </div>
+     <div class="socialLink facebook">
+      <a href="https://www.facebook.com/CurseGamepedia" target="_blank">
+       <img src="/extensions/Social/images/square_icons/facebook.png"/>
+      </a>
+     </div>
+     <div class="socialLink twitch">
+      <a href="https://www.twitch.tv/curseentertainment/videos/all" target="_blank">
+       <img src="/extensions/Social/images/square_icons/twitch.png"/>
+      </a>
+     </div>
     </div>
    </div>
-  </footer>
-  <!-- Begin comScore -->
-  <script>
-   var _comscore = _comscore || [];
+  </div>
+  <div aria-labelledby="p-lang-label" class="portal" id="p-lang" role="navigation">
+   <h3 id="p-lang-label">
+    In other languages
+   </h3>
+   <div class="body">
+    <ul>
+     <li class="interlanguage-link interwiki-de">
+      <a href="http://dota2-de.gamepedia.com/Terrorblade" hreflang="de" lang="de" title="Terrorblade – Deutsch">
+       Deutsch
+      </a>
+     </li>
+     <li class="interlanguage-link interwiki-pt">
+      <a href="http://dota2-pt.gamepedia.com/Terrorblade" hreflang="pt" lang="pt" title="Terrorblade – português">
+       Português
+      </a>
+     </li>
+     <li class="interlanguage-link interwiki-ru">
+      <a href="http://dota2-ru.gamepedia.com/Terrorblade" hreflang="ru" lang="ru" title="Terrorblade – русский">
+       Русский
+      </a>
+     </li>
+     <li class="interlanguage-link interwiki-zh">
+      <a href="http://dota2-zh.gamepedia.com/%E6%81%90%E6%80%96%E5%88%A9%E5%88%83" hreflang="zh" lang="zh" title="恐怖利刃 – 中文">
+       中文
+      </a>
+     </li>
+    </ul>
+   </div>
+  </div>
+ </div>
+</div>
+<div id="footer" role="contentinfo">
+ <ul id="footer-info">
+  <li id="footer-info-lastmod">
+   This page was last modified on 7 June 2017, at 18:50.
+  </li>
+  <li id="footer-info-copyright">
+   Content is available under
+   <a class="external" href="//creativecommons.org/licenses/by-nc-sa/3.0/" rel="nofollow">
+    CC BY-NC-SA 3.0
+   </a>
+   unless otherwise noted.
+   <br/>
+   Dota 2 content and materials are trademarks and copyrights of Valve or its licensors. All rights reserved.
+   <br/>
+   This site is a part of Curse, Inc. and is not affiliated with Valve.
+  </li>
+ </ul>
+ <ul id="footer-places">
+  <li id="footer-places-about">
+   <a href="/Dota_2_Wiki:About" title="Dota 2 Wiki:About">
+    About Dota 2 Wiki
+   </a>
+  </li>
+  <li id="footer-places-disclaimer">
+   <a href="/Dota_2_Wiki:General_disclaimer" title="Dota 2 Wiki:General disclaimer">
+    Disclaimers
+   </a>
+  </li>
+  <li id="footer-places-mobileview">
+   <a class="noprint stopMobileRedirectToggle" href="//dota2.gamepedia.com/index.php?title=Terrorblade&amp;mobileaction=toggle_view_mobile">
+    Mobile view
+   </a>
+  </li>
+ </ul>
+ <ul class="noprint" id="footer-icons">
+  <li id="footer-copyrightico">
+   <a href="//creativecommons.org/licenses/by-nc-sa/3.0/">
+    <img alt="CC BY-NC-SA 3.0" height="31" src="//i.creativecommons.org/l/by-nc-sa/3.0/88x31.png" width="88"/>
+   </a>
+  </li>
+  <li id="footer-poweredbyico">
+   <a href="//www.mediawiki.org/">
+    <img alt="Powered by MediaWiki" height="31" src="/resources/assets/poweredby_mediawiki_88x31.png" srcset="/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /resources/assets/poweredby_mediawiki_176x62.png 2x" width="88"/>
+   </a>
+   <a href="https://help.gamepedia.com/What_is_Hydra">
+    <img alt="Powered by Hydra" height="31" src="/skins/Hydra/images/icons/poweredbyhydra.png" width="88"/>
+   </a>
+   <a href="https://www.semantic-mediawiki.org/wiki/Semantic_MediaWiki">
+    <img alt="Powered by Semantic MediaWiki" height="31" src="/extensions/SemanticMediaWiki/includes/../res/images/smw_button.png" width="88"/>
+   </a>
+  </li>
+ </ul>
+ <div style="clear:both">
+ </div>
+</div>
+<div id="footer-push">
+</div>
+<script>
+ (window.RLQ=window.RLQ||[]).push(function(){mw.loader.state({"user":"ready","user.groups":"ready"});mw.loader.load(["ext.wfSoundManager2Button","ext.smw.tooltips","mediawiki.toc","mediawiki.action.view.postEdit","site","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","ext.collapsiblevector.collapsibleNav","ext.visualEditor.targetLoader"]);});
+</script>
+<footer class="show-ads" id="footer" role="complimentary">
+ <div class="footer-links">
+  <a class="curse" href="http://www.gamepedia.com">
+   Gamepedia powered by Curse
+  </a>
+  <ul class="social">
+   <li>
+    <a class="fb" href="https://www.facebook.com/CurseGamepedia">
+     Facebook
+    </a>
+   </li>
+   <li>
+    <a class="tw" href="https://twitter.com/CurseGamepedia">
+     Twitter
+    </a>
+   </li>
+   <li>
+    <a class="yt" href="http://youtube.com/CurseEntertainment">
+     Youtube
+    </a>
+   </li>
+   <li>
+    <a class="nl" href="http://help.gamepedia.com/How_To_Contact_Gamepedia">
+     Contact Us
+    </a>
+   </li>
+   <li>
+    <a class="advertise" href="https://masseffectandromeda.gamepedia.com/Mass_Effect:_Andromeda_Wiki">
+     ME:Andromeda
+    </a>
+   </li>
+  </ul>
+  <ul class="you">
+   <li>
+    <a class="sign-in" href="/index.php?title=Special:UserLogin&amp;returnto=Terrorblade" id="login-link">
+     Sign In
+    </a>
+   </li>
+   <li>
+    <a class="register" href="/index.php?title=Special:CreateAccount&amp;returnto=Terrorblade" id="register-link">
+     Register
+    </a>
+   </li>
+   <li>
+    <a class="careers" href="http://www.curseinc.com/careers">
+     Careers
+    </a>
+   </li>
+   <li>
+    <a class="help" href="http://support.gamepedia.com/">
+     Help
+    </a>
+   </li>
+   <li>
+    <a class="advertise" href="https://masseffectandromeda.gamepedia.com/Skill">
+     ME:A Skills
+    </a>
+   </li>
+  </ul>
+  <ul class="more">
+   <li>
+    <a class="about" href="http://www.curseinc.com/">
+     About Curse
+    </a>
+   </li>
+   <li>
+    <a class="advertise" href="http://www.curseinc.com/audience">
+     Advertise
+    </a>
+   </li>
+   <li>
+    <a class="tos" href="http://www.curse.com/terms">
+     Terms of Service
+    </a>
+   </li>
+   <li>
+    <a class="privacy-policy" href="http://www.curse.com/privacy">
+     Privacy Policy
+    </a>
+   </li>
+   <li>
+    <a class="advertise" href="https://zelda.gamepedia.com/Main_Page">
+     Zelda Wiki
+    </a>
+   </li>
+  </ul>
+  <span class="copyright">
+   Copyright 2005-2017, Curse Inc.
+  </span>
+ </div>
+ <div class="ad-placement ad-main-med-rect-footer">
+  <div id="cdm-zone-03">
+  </div>
+ </div>
+</footer>
+<!-- Begin comScore -->
+<script>
+ var _comscore = _comscore || [];
 _comscore.push({ c1: "2", c2: "6035118" });
 (function() {
 	var s = document.createElement("script"), el = document.getElementsByTagName("script")[0]; s.async = true;
 	s.src = (document.location.protocol == "https:" ? "https://sb" : "http://b") + ".scorecardresearch.com/beacon.js";
 	el.parentNode.insertBefore(s, el);
 })();
-  </script>
-  <noscript>
-   <img src="http://b.scorecardresearch.com/p?c1=2&amp;c2=6035118&amp;cv=2.0&amp;cj=1"/>
-  </noscript>
-  <!-- End comScore -->
-  <!-- Begin Nielsen -->
-  <script type="text/javascript">
-   (function () {
+</script>
+<noscript>
+ <img src="http://b.scorecardresearch.com/p?c1=2&amp;c2=6035118&amp;cv=2.0&amp;cj=1"/>
+</noscript>
+<!-- End comScore -->
+<!-- Begin Nielsen -->
+<script type="text/javascript">
+ (function () {
 	var d = new Image(1, 1);
 	d.onerror = d.onload = function () {
 		d.onerror = d.onload = null;
 	};
 	d.src = ["//secure-us.imrworldwide.com/cgi-bin/m?ci=us-603339h&cg=0&cc=1&si=", escape(window.location.href), "&rp=", escape(document.referrer), "&ts=compact&rnd=", (new Date()).getTime()].join('');
 })();
-  </script>
-  <noscript>
-   <div>
-    <img alt="" height="1" src="//secure-us.imrworldwide.com/cgi-bin/m?ci=us-603339h&amp;cg=0&amp;cc=1&amp;ts=noscript" width="1"/>
-   </div>
-  </noscript>
-  <!-- End Nielsen -->
-  <script async="async" src="https://cdm.cursecdn.com/js/landscape/landscape_min.js" type="text/javascript">
-  </script>
-  <div id="cdm-zone-end">
-  </div>
-  <!-- Start PubMP -->
-  <script src="//ads.pubmatic.com/AdServer/js/showad.js#PIX&amp;ptask=DSP&amp;SPug=1" type="text/javascript">
-  </script>
-  <!-- End PubMP -->
-  <script type="text/javascript">
-   window.genreCategory = 'MOBA';
+</script>
+<noscript>
+ <div>
+  <img alt="" height="1" src="//secure-us.imrworldwide.com/cgi-bin/m?ci=us-603339h&amp;cg=0&amp;cc=1&amp;ts=noscript" width="1"/>
+ </div>
+</noscript>
+<!-- End Nielsen -->
+<script async="async" src="https://cdm.cursecdn.com/js/landscape/landscape_min.js" type="text/javascript">
+</script>
+<div id="cdm-zone-end">
+</div>
+<!-- Start PubMP -->
+<script src="//ads.pubmatic.com/AdServer/js/showad.js#PIX&amp;ptask=DSP&amp;SPug=1" type="text/javascript">
+</script>
+<!-- End PubMP -->
+<script type="text/javascript">
+ window.genreCategory = 'MOBA';
 				window.wikiTags = ["action","defense of the ancients","esports","free-to-play","free to play","ftp","game:dota 2","linux","mac","pc","rts","source","steam","valve"];
-  </script>
-  <script>
-   (window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":70});});
-  </script>
-  <script type="text/javascript">
-   window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"75f4858b7a","applicationID":"1909498","transactionName":"YlVXbREHWksEUkVdCVsfYEsKSV1WAVRJGhZdQA==","queueTime":0,"applicationTime":84,"atts":"ThJAG1kdSRRHUBMOHUhN","errorBeacon":"bam.nr-data.net","agent":""}
-  </script>
- </body>
-</html>
+</script>
+<script>
+ (window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":141});});
+</script>

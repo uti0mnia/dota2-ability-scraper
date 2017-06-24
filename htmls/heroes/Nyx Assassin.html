@@ -2,9 +2,6 @@
 <html class="client-nojs" dir="ltr" lang="en">
  <head>
   <meta charset="utf-8"/>
-  <script type="text/javascript">
-   (window.NREUM||(NREUM={})).loader_config={xpid:"UAcAUlNACQoAXVVbDw=="};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var o=e[n]={exports:{}};t[n][0].call(o.exports,function(e){var o=t[n][1][e];return r(o||e)},o,o.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({1:[function(t,e,n){function r(t){try{c.console&&console.log(t)}catch(e){}}var o,i=t("ee"),a=t(15),c={};try{o=localStorage.getItem("__nr_flags").split(","),console&&"function"==typeof console.log&&(c.console=!0,o.indexOf("dev")!==-1&&(c.dev=!0),o.indexOf("nr_dev")!==-1&&(c.nrDev=!0))}catch(s){}c.nrDev&&i.on("internal-error",function(t){r(t.stack)}),c.dev&&i.on("fn-err",function(t,e,n){r(n.stack)}),c.dev&&(r("NR AGENT IN DEVELOPMENT MODE"),r("flags: "+a(c,function(t,e){return t}).join(", ")))},{}],2:[function(t,e,n){function r(t,e,n,r,o){try{d?d-=1:i("err",[o||new UncaughtException(t,e,n)])}catch(c){try{i("ierr",[c,(new Date).getTime(),!0])}catch(s){}}return"function"==typeof f&&f.apply(this,a(arguments))}function UncaughtException(t,e,n){this.message=t||"Uncaught error with no additional information",this.sourceURL=e,this.line=n}function o(t){i("err",[t,(new Date).getTime()])}var i=t("handle"),a=t(16),c=t("ee"),s=t("loader"),f=window.onerror,u=!1,d=0;s.features.err=!0,t(1),window.onerror=r;try{throw new Error}catch(l){"stack"in l&&(t(8),t(7),"addEventListener"in window&&t(5),s.xhrWrappable&&t(9),u=!0)}c.on("fn-start",function(t,e,n){u&&(d+=1)}),c.on("fn-err",function(t,e,n){u&&(this.thrown=!0,o(n))}),c.on("fn-end",function(){u&&!this.thrown&&d>0&&(d-=1)}),c.on("internal-error",function(t){i("ierr",[t,(new Date).getTime(),!0])})},{}],3:[function(t,e,n){t("loader").features.ins=!0},{}],4:[function(t,e,n){function r(t){}if(window.performance&&window.performance.timing&&window.performance.getEntriesByType){var o=t("ee"),i=t("handle"),a=t(8),c=t(7),s="learResourceTimings",f="addEventListener",u="resourcetimingbufferfull",d="bstResource",l="resource",p="-start",h="-end",m="fn"+p,w="fn"+h,v="bstTimer",y="pushState";t("loader").features.stn=!0,t(6);var g=NREUM.o.EV;o.on(m,function(t,e){var n=t[0];n instanceof g&&(this.bstStart=Date.now())}),o.on(w,function(t,e){var n=t[0];n instanceof g&&i("bst",[n,e,this.bstStart,Date.now()])}),a.on(m,function(t,e,n){this.bstStart=Date.now(),this.bstType=n}),a.on(w,function(t,e){i(v,[e,this.bstStart,Date.now(),this.bstType])}),c.on(m,function(){this.bstStart=Date.now()}),c.on(w,function(t,e){i(v,[e,this.bstStart,Date.now(),"requestAnimationFrame"])}),o.on(y+p,function(t){this.time=Date.now(),this.startPath=location.pathname+location.hash}),o.on(y+h,function(t){i("bstHist",[location.pathname+location.hash,this.startPath,this.time])}),f in window.performance&&(window.performance["c"+s]?window.performance[f](u,function(t){i(d,[window.performance.getEntriesByType(l)]),window.performance["c"+s]()},!1):window.performance[f]("webkit"+u,function(t){i(d,[window.performance.getEntriesByType(l)]),window.performance["webkitC"+s]()},!1)),document[f]("scroll",r,{passive:!0}),document[f]("keypress",r,!1),document[f]("click",r,!1)}},{}],5:[function(t,e,n){function r(t){for(var e=t;e&&!e.hasOwnProperty(u);)e=Object.getPrototypeOf(e);e&&o(e)}function o(t){c.inPlace(t,[u,d],"-",i)}function i(t,e){return t[1]}var a=t("ee").get("events"),c=t(17)(a,!0),s=t("gos"),f=XMLHttpRequest,u="addEventListener",d="removeEventListener";e.exports=a,"getPrototypeOf"in Object?(r(document),r(window),r(f.prototype)):f.prototype.hasOwnProperty(u)&&(o(window),o(f.prototype)),a.on(u+"-start",function(t,e){var n=t[1],r=s(n,"nr@wrapped",function(){function t(){if("function"==typeof n.handleEvent)return n.handleEvent.apply(n,arguments)}var e={object:t,"function":n}[typeof n];return e?c(e,"fn-",null,e.name||"anonymous"):n});this.wrapped=t[1]=r}),a.on(d+"-start",function(t){t[1]=this.wrapped||t[1]})},{}],6:[function(t,e,n){var r=t("ee").get("history"),o=t(17)(r);e.exports=r,o.inPlace(window.history,["pushState","replaceState"],"-")},{}],7:[function(t,e,n){var r=t("ee").get("raf"),o=t(17)(r),i="equestAnimationFrame";e.exports=r,o.inPlace(window,["r"+i,"mozR"+i,"webkitR"+i,"msR"+i],"raf-"),r.on("raf-start",function(t){t[0]=o(t[0],"fn-")})},{}],8:[function(t,e,n){function r(t,e,n){t[0]=a(t[0],"fn-",null,n)}function o(t,e,n){this.method=n,this.timerDuration="number"==typeof t[1]?t[1]:0,t[0]=a(t[0],"fn-",this,n)}var i=t("ee").get("timer"),a=t(17)(i),c="setTimeout",s="setInterval",f="clearTimeout",u="-start",d="-";e.exports=i,a.inPlace(window,[c,"setImmediate"],c+d),a.inPlace(window,[s],s+d),a.inPlace(window,[f,"clearImmediate"],f+d),i.on(s+u,r),i.on(c+u,o)},{}],9:[function(t,e,n){function r(t,e){d.inPlace(e,["onreadystatechange"],"fn-",c)}function o(){var t=this,e=u.context(t);t.readyState>3&&!e.resolved&&(e.resolved=!0,u.emit("xhr-resolved",[],t)),d.inPlace(t,w,"fn-",c)}function i(t){v.push(t),h&&(g=-g,b.data=g)}function a(){for(var t=0;t<v.length;t++)r([],v[t]);v.length&&(v=[])}function c(t,e){return e}function s(t,e){for(var n in t)e[n]=t[n];return e}t(5);var f=t("ee"),u=f.get("xhr"),d=t(17)(u),l=NREUM.o,p=l.XHR,h=l.MO,m="readystatechange",w=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"],v=[];e.exports=u;var y=window.XMLHttpRequest=function(t){var e=new p(t);try{u.emit("new-xhr",[e],e),e.addEventListener(m,o,!1)}catch(n){try{u.emit("internal-error",[n])}catch(r){}}return e};if(s(p,y),y.prototype=p.prototype,d.inPlace(y.prototype,["open","send"],"-xhr-",c),u.on("send-xhr-start",function(t,e){r(t,e),i(e)}),u.on("open-xhr-start",r),h){var g=1,b=document.createTextNode(g);new h(a).observe(b,{characterData:!0})}else f.on("fn-end",function(t){t[0]&&t[0].type===m||a()})},{}],10:[function(t,e,n){function r(t){var e=this.params,n=this.metrics;if(!this.ended){this.ended=!0;for(var r=0;r<d;r++)t.removeEventListener(u[r],this.listener,!1);if(!e.aborted){if(n.duration=(new Date).getTime()-this.startTime,4===t.readyState){e.status=t.status;var i=o(t,this.lastSize);if(i&&(n.rxSize=i),this.sameOrigin){var a=t.getResponseHeader("X-NewRelic-App-Data");a&&(e.cat=a.split(", ").pop())}}else e.status=0;n.cbTime=this.cbTime,f.emit("xhr-done",[t],t),c("xhr",[e,n,this.startTime])}}}function o(t,e){var n=t.responseType;if("json"===n&&null!==e)return e;var r="arraybuffer"===n||"blob"===n||"json"===n?t.response:t.responseText;return h(r)}function i(t,e){var n=s(e),r=t.params;r.host=n.hostname+":"+n.port,r.pathname=n.pathname,t.sameOrigin=n.sameOrigin}var a=t("loader");if(a.xhrWrappable){var c=t("handle"),s=t(11),f=t("ee"),u=["load","error","abort","timeout"],d=u.length,l=t("id"),p=t(14),h=t(13),m=window.XMLHttpRequest;a.features.xhr=!0,t(9),f.on("new-xhr",function(t){var e=this;e.totalCbs=0,e.called=0,e.cbTime=0,e.end=r,e.ended=!1,e.xhrGuids={},e.lastSize=null,p&&(p>34||p<10)||window.opera||t.addEventListener("progress",function(t){e.lastSize=t.loaded},!1)}),f.on("open-xhr-start",function(t){this.params={method:t[0]},i(this,t[1]),this.metrics={}}),f.on("open-xhr-end",function(t,e){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&e.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid)}),f.on("send-xhr-start",function(t,e){var n=this.metrics,r=t[0],o=this;if(n&&r){var i=h(r);i&&(n.txSize=i)}this.startTime=(new Date).getTime(),this.listener=function(t){try{"abort"===t.type&&(o.params.aborted=!0),("load"!==t.type||o.called===o.totalCbs&&(o.onloadCalled||"function"!=typeof e.onload))&&o.end(e)}catch(n){try{f.emit("internal-error",[n])}catch(r){}}};for(var a=0;a<d;a++)e.addEventListener(u[a],this.listener,!1)}),f.on("xhr-cb-time",function(t,e,n){this.cbTime+=t,e?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof n.onload||this.end(n)}),f.on("xhr-load-added",function(t,e){var n=""+l(t)+!!e;this.xhrGuids&&!this.xhrGuids[n]&&(this.xhrGuids[n]=!0,this.totalCbs+=1)}),f.on("xhr-load-removed",function(t,e){var n=""+l(t)+!!e;this.xhrGuids&&this.xhrGuids[n]&&(delete this.xhrGuids[n],this.totalCbs-=1)}),f.on("addEventListener-end",function(t,e){e instanceof m&&"load"===t[0]&&f.emit("xhr-load-added",[t[1],t[2]],e)}),f.on("removeEventListener-end",function(t,e){e instanceof m&&"load"===t[0]&&f.emit("xhr-load-removed",[t[1],t[2]],e)}),f.on("fn-start",function(t,e,n){e instanceof m&&("onload"===n&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=(new Date).getTime()))}),f.on("fn-end",function(t,e){this.xhrCbStart&&f.emit("xhr-cb-time",[(new Date).getTime()-this.xhrCbStart,this.onload,e],e)})}},{}],11:[function(t,e,n){e.exports=function(t){var e=document.createElement("a"),n=window.location,r={};e.href=t,r.port=e.port;var o=e.href.split("://");!r.port&&o[1]&&(r.port=o[1].split("/")[0].split("@").pop().split(":")[1]),r.port&&"0"!==r.port||(r.port="https"===o[0]?"443":"80"),r.hostname=e.hostname||n.hostname,r.pathname=e.pathname,r.protocol=o[0],"/"!==r.pathname.charAt(0)&&(r.pathname="/"+r.pathname);var i=!e.protocol||":"===e.protocol||e.protocol===n.protocol,a=e.hostname===document.domain&&e.port===n.port;return r.sameOrigin=i&&(!e.hostname||a),r}},{}],12:[function(t,e,n){function r(){}function o(t,e,n){return function(){return i(t,[(new Date).getTime()].concat(c(arguments)),e?null:this,n),e?void 0:this}}var i=t("handle"),a=t(15),c=t(16),s=t("ee").get("tracer"),f=NREUM;"undefined"==typeof window.newrelic&&(newrelic=f);var u=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(u,function(t,e){f[e]=o(d+e,!0,"api")}),f.addPageAction=o(d+"addPageAction",!0),f.setCurrentRouteName=o(d+"routeName",!0),e.exports=newrelic,f.interaction=function(){return(new r).get()};var p=r.prototype={createTracer:function(t,e){var n={},r=this,o="function"==typeof e;return i(l+"tracer",[Date.now(),t,n],r),function(){if(s.emit((o?"":"no-")+"fn-start",[Date.now(),r,o],n),o)try{return e.apply(this,arguments)}finally{s.emit("fn-end",[Date.now()],n)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){p[e]=o(l+e)}),newrelic.noticeError=function(t){"string"==typeof t&&(t=new Error(t)),i("err",[t,(new Date).getTime()])}},{}],13:[function(t,e,n){e.exports=function(t){if("string"==typeof t&&t.length)return t.length;if("object"==typeof t){if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if(!("undefined"!=typeof FormData&&t instanceof FormData))try{return JSON.stringify(t).length}catch(e){return}}}},{}],14:[function(t,e,n){var r=0,o=navigator.userAgent.match(/Firefox[\/\s](\d+\.\d+)/);o&&(r=+o[1]),e.exports=r},{}],15:[function(t,e,n){function r(t,e){var n=[],r="",i=0;for(r in t)o.call(t,r)&&(n[i]=e(r,t[r]),i+=1);return n}var o=Object.prototype.hasOwnProperty;e.exports=r},{}],16:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,o=n-e||0,i=Array(o<0?0:o);++r<o;)i[r]=t[e+r];return i}e.exports=r},{}],17:[function(t,e,n){function r(t){return!(t&&t instanceof Function&&t.apply&&!t[a])}var o=t("ee"),i=t(16),a="nr@original",c=Object.prototype.hasOwnProperty,s=!1;e.exports=function(t,e){function n(t,e,n,o){function nrWrapper(){var r,a,c,s;try{a=this,r=i(arguments),c="function"==typeof n?n(r,a):n||{}}catch(f){l([f,"",[r,a,o],c])}u(e+"start",[r,a,o],c);try{return s=t.apply(a,r)}catch(d){throw u(e+"err",[r,a,d],c),d}finally{u(e+"end",[r,a,s],c)}}return r(t)?t:(e||(e=""),nrWrapper[a]=t,d(t,nrWrapper),nrWrapper)}function f(t,e,o,i){o||(o="");var a,c,s,f="-"===o.charAt(0);for(s=0;s<e.length;s++)c=e[s],a=t[c],r(a)||(t[c]=n(a,f?c+o:o,i,c))}function u(n,r,o){if(!s||e){var i=s;s=!0;try{t.emit(n,r,o)}catch(a){l([a,n,r,o])}s=i}}function d(t,e){if(Object.defineProperty&&Object.keys)try{var n=Object.keys(t);return n.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(r){l([r])}for(var o in t)c.call(t,o)&&(e[o]=t[o]);return e}function l(e){try{t.emit("internal-error",e)}catch(n){}}return t||(t=o),n.inPlace=f,n.flag=a,n}},{}],ee:[function(t,e,n){function r(){}function o(t){function e(t){return t&&t instanceof r?t:t?s(t,c,i):i()}function n(n,r,o){if(!l.aborted){t&&t(n,r,o);for(var i=e(o),a=h(n),c=a.length,s=0;s<c;s++)a[s].apply(i,r);var f=u[y[n]];return f&&f.push([g,n,r,i]),i}}function p(t,e){v[t]=h(t).concat(e)}function h(t){return v[t]||[]}function m(t){return d[t]=d[t]||o(n)}function w(t,e){f(t,function(t,n){e=e||"feature",y[n]=e,e in u||(u[e]=[])})}var v={},y={},g={on:p,emit:n,get:m,listeners:h,context:e,buffer:w,abort:a,aborted:!1};return g}function i(){return new r}function a(){(u.api||u.feature)&&(l.aborted=!0,u=l.backlog={})}var c="nr@context",s=t("gos"),f=t(15),u={},d={},l=e.exports=o();l.backlog=u},{}],gos:[function(t,e,n){function r(t,e,n){if(o.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return t[e]=r,r}var o=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){o.buffer([t],r),o.emit(t,e,n)}var o=t("ee").get("handle");e.exports=r,r.ee=o},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,i,function(){return o++})}var o=1,i="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!b++){var t=g.info=NREUM.info,e=d.getElementsByTagName("script")[0];if(setTimeout(f.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return f.abort();s(v,function(e,n){t[e]||(t[e]=n)}),c("mark",["onload",a()],null,"api");var n=d.createElement("script");n.src="https://"+t.agent,e.parentNode.insertBefore(n,e)}}function o(){"complete"===d.readyState&&i()}function i(){c("mark",["domContent",a()],null,"api")}function a(){return(new Date).getTime()}var c=t("handle"),s=t(15),f=t("ee"),u=window,d=u.document,l="addEventListener",p="attachEvent",h=u.XMLHttpRequest,m=h&&h.prototype;NREUM.o={ST:setTimeout,CT:clearTimeout,XHR:h,REQ:u.Request,EV:u.Event,PR:u.Promise,MO:u.MutationObserver},t(12);var w=""+location,v={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1016.min.js"},y=h&&m&&m[l]&&!/CriOS/.test(navigator.userAgent),g=e.exports={offset:a(),origin:w,features:{},xhrWrappable:y};d[l]?(d[l]("DOMContentLoaded",i,!1),u[l]("load",r,!1)):(d[p]("onreadystatechange",o),u[p]("onload",r)),c("mark",["firstbyte",a()],null,"api");var b=0},{}]},{},["loader",2,10,4,3]);
-  </script>
   <title>
    Nyx Assassin - Dota 2 Wiki
   </title>
@@ -12,7 +9,7 @@
    document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );
   </script>
   <script>
-   (window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Nyx_Assassin","wgTitle":"Nyx Assassin","wgCurRevisionId":1445245,"wgRevisionId":1445245,"wgArticleId":8148,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Heroes","Agility heroes","Melee heroes","Disablers","Nukers","Initiators","Escape"],"wgBreakFrames":true,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Nyx_Assassin","wgRelevantArticleId":8148,"wgRequestId":"1b8de6f3310a167c9071d933","wgIsProbablyEditable":true,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgPreferredVariant":"en","wgCollapsibleVectorEnabledModules":{"collapsiblenav":true,"experiments":true},"wgVisualEditor":{"pageLanguageCode":"en","pageLanguageDir":"ltr","usePageImages":true,"usePageDescriptions":false},"wgWikiEditorEnabledModules":{"toolbar":true,"dialogs":true,"preview":true,"publish":true},"wgCategoryTreePageCategoryOptions":"{\"mode\":0,\"hideprefix\":20,\"showcount\":true,\"namespaces\":false}","wgVisualEditorToolbarScrollOffset":0});mw.loader.implement("user.options",function($,jQuery,require,module){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function ( $, jQuery, require, module ) {
+   (window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Nyx_Assassin","wgTitle":"Nyx Assassin","wgCurRevisionId":1533483,"wgRevisionId":1533483,"wgArticleId":8148,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Heroes","Agility heroes","Melee heroes","Disablers","Nukers","Initiators","Escape"],"wgBreakFrames":true,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Nyx_Assassin","wgRelevantArticleId":8148,"wgRequestId":"d677cbd0c1ebb9b2fc69bc36","wgIsProbablyEditable":true,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgPreferredVariant":"en","wgCollapsibleVectorEnabledModules":{"collapsiblenav":true,"experiments":true},"wgVisualEditor":{"pageLanguageCode":"en","pageLanguageDir":"ltr","usePageImages":true,"usePageDescriptions":false},"wgWikiEditorEnabledModules":{"toolbar":true,"dialogs":true,"preview":true,"publish":true},"wgCategoryTreePageCategoryOptions":"{\"mode\":0,\"hideprefix\":20,\"showcount\":true,\"namespaces\":false}","wgVisualEditorToolbarScrollOffset":0});mw.loader.implement("user.options",function($,jQuery,require,module){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function ( $, jQuery, require, module ) {
 mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/;
 
 });mw.loader.load(["ext.smw.style","mediawiki.page.startup","ext.siteGlobals","ext.bunnyears","ext.visualEditor.desktopArticleTarget.init","ext.hydraAuth.banners","skins.vector.js","skins.hydra.advertisements.js","skins.hydra.footer.js","ext.social"]);});
@@ -23,11 +20,11 @@ mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","cs
   <link href="/load.php?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=hydra" rel="stylesheet"/>
   <script async="" src="/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=hydra">
   </script>
-  <meta content="MediaWiki 1.27.1" name="generator"/>
+  <meta content="MediaWiki 1.27.3" name="generator"/>
   <meta content="Nyx Assassin" name="og:title"/>
   <meta content="website" name="og:type"/>
   <meta content="https://hydra-media.cursecdn.com/dota2.gamepedia.com/b/bc/Wiki.png" name="og:image"/>
-  <meta content="http://dota2.gamepedia.com/Nyx_Assassin" name="og:url"/>
+  <meta content="https://dota2.gamepedia.com/Nyx_Assassin" name="og:url"/>
   <meta content="Dota 2 Wiki" name="og:site_name"/>
   <meta name="description"/>
   <meta content="" name="keywords"/>
@@ -40,13 +37,13 @@ mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","cs
   <link href="/opensearch_desc.php" rel="search" title="Dota 2 Wiki (en)" type="application/opensearchdescription+xml"/>
   <link href="//dota2.gamepedia.com/api.php?action=rsd" rel="EditURI" type="application/rsd+xml"/>
   <link href="//creativecommons.org/licenses/by-nc-sa/3.0/" rel="copyright"/>
-  <link href="http://dota2.gamepedia.com/Nyx_Assassin" rel="canonical"/>
+  <link href="https://dota2.gamepedia.com/Nyx_Assassin" rel="canonical"/>
   <link href="dota2-de.gamepedia.com" hreflang="de" rel="alternate"/>
   <link href="dota2-ru.gamepedia.com" hreflang="ru" rel="alternate"/>
   <link href="dota2-pt.gamepedia.com" hreflang="pt" rel="alternate"/>
   <link href="dota2-zh.gamepedia.com" hreflang="zh" rel="alternate"/>
   <meta content="Gamepedia" itemprop="author"/>
-  <link href="https://stations.cursetech.com/be/bunnyears.min.css" rel="stylesheet" type="text/css"/>
+  <link href="https://stations.cursetech.com/be/bunnyears-1.1.min.css" rel="stylesheet" type="text/css"/>
  </head>
  <body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-Nyx_Assassin rootpage-Nyx_Assassin skin-hydra action-view site-dota2-gamepedia show-ads">
   <script type="application/ld+json">
@@ -81,8 +78,8 @@ mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","cs
 		"target": "https://dota2.gamepedia.com/index.php?title=Special:Search&search={search_term}",
 		"query-input": "required name=search_term"
 	},
-	"datePublished": "2017-01-22T07:38:19Z",
-	"dateModified": "2017-01-22T07:38:19Z",
+	"datePublished": "2017-06-07T18:47:31Z",
+	"dateModified": "2017-06-07T18:47:31Z",
 	"mainEntityOfPage": "https://dota2.gamepedia.com/Nyx_Assassin"
 }
   </script>
@@ -124,7 +121,7 @@ mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","cs
 var script = document.createElement('script');
 var tstamp = new Date();
 script.id = 'factorem';
-script.src = 'http://cdm.cursecdn.com/js/gamepedia/cdmfactorem_min.js?misc=' + tstamp.getTime();;
+script.src = '//cdm.cursecdn.com/js/gamepedia/cdmfactorem_min.js?misc=' + tstamp.getTime();;
 script.async = true;
 script.type='text/javascript';
 document.head.appendChild(script);
@@ -133,10 +130,10 @@ document.head.appendChild(script);
    setTimeout(function(){if("undefined"!=typeof b2){var element=document.getElementById(b2);setTimeout(function(){element.parentNode.innerHTML='<div id="'+b2+'"></div>'},5000)}},20000)
   </script>
   <script>
-   setTimeout(function(){if("undefined"!=typeof b2){var element=document.getElementById(b3);setTimeout(function(){element.parentNode.innerHTML='<div id="'+b3+'"></div>'},5000)}},20000)
+   setTimeout(function(){if("undefined"!=typeof b3){var element=document.getElementById(b3);setTimeout(function(){element.parentNode.innerHTML='<div id="'+b3+'"></div>'},5000)}},20000)
   </script>
   <script>
-   setTimeout(function(){if("undefined"!=typeof b2){var element=document.getElementById(b6);setTimeout(function(){element.parentNode.innerHTML='<div id="'+b6+'"></div>'},5000)}},20000)
+   setTimeout(function(){if("undefined"!=typeof b6){var element=document.getElementById(b6);setTimeout(function(){element.parentNode.innerHTML='<div id="'+b6+'"></div>'},5000)}},20000)
   </script>
   <div id="netbar">
    <ul class="netbar-left">
@@ -286,6 +283,13 @@ document.head.appendChild(script);
          </td>
          <td style="border-bottom: 2px solid #A3B1BF; width: 3px;">
          </td>
+         <td style="padding: 0.5em; background-color: #d7e6f4; line-height: 0.95em; border: 1px solid #A3B1BF; border-bottom: solid 2px #A3B1BF; width: 20px;">
+          <a href="/Nyx_Assassin/Bugs" title="Nyx Assassin/Bugs">
+           Known Bugs
+          </a>
+         </td>
+         <td style="border-bottom: 2px solid #A3B1BF; width: 3px;">
+         </td>
          <td style="border-bottom:2px solid #A3B1BF" width="3000">
          </td>
         </tr>
@@ -300,8 +304,8 @@ document.head.appendChild(script);
         </tr>
         <tr>
          <td colspan="4">
-          <a class="image" href="/File:Nyx_Assassin.png">
-           <img alt="Nyx Assassin.png" height="144" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/9/9e/Nyx_Assassin.png?version=92c70108e18e0fb21bb607edeb7e907b" width="256"/>
+          <a class="image" href="/File:Nyx_Assassin_icon.png">
+           <img alt="Nyx Assassin icon.png" height="144" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/f/fa/Nyx_Assassin_icon.png?version=406b8e562bc6f0d4f2acd29355fc5626" width="256"/>
           </a>
          </td>
         </tr>
@@ -311,17 +315,17 @@ document.head.appendChild(script);
            <tr>
             <th align="center" width="45">
              <a href="/Strength" title="Strength">
-              <img alt="Strength" height="40" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/7a/Strength_attribute_symbol.png/40px-Strength_attribute_symbol.png?version=79371ef0198db066c30dfa55b0e6b483" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/7a/Strength_attribute_symbol.png/60px-Strength_attribute_symbol.png?version=79371ef0198db066c30dfa55b0e6b483 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/7/7a/Strength_attribute_symbol.png?version=79371ef0198db066c30dfa55b0e6b483 2x" width="40"/>
+              <img alt="Strength attribute symbol.png" height="40" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/7a/Strength_attribute_symbol.png/40px-Strength_attribute_symbol.png?version=79371ef0198db066c30dfa55b0e6b483" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/7a/Strength_attribute_symbol.png/60px-Strength_attribute_symbol.png?version=79371ef0198db066c30dfa55b0e6b483 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/7/7a/Strength_attribute_symbol.png?version=79371ef0198db066c30dfa55b0e6b483 2x" width="40"/>
              </a>
              <br/>
              <b>
               18
              </b>
-             + 2
+             + 2.3
             </th>
             <th align="center" width="45">
              <a href="/Agility" title="Agility">
-              <img alt="Agility" height="40" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/72/Agility_primary_attribute_symbol.png/40px-Agility_primary_attribute_symbol.png?version=d62be6f497df32db012c4ddcf8153a1a" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/72/Agility_primary_attribute_symbol.png/60px-Agility_primary_attribute_symbol.png?version=d62be6f497df32db012c4ddcf8153a1a 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/7/72/Agility_primary_attribute_symbol.png?version=d62be6f497df32db012c4ddcf8153a1a 2x" width="40"/>
+              <img alt="Agility primary attribute symbol.png" height="40" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/72/Agility_primary_attribute_symbol.png/40px-Agility_primary_attribute_symbol.png?version=d62be6f497df32db012c4ddcf8153a1a" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/72/Agility_primary_attribute_symbol.png/60px-Agility_primary_attribute_symbol.png?version=d62be6f497df32db012c4ddcf8153a1a 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/7/72/Agility_primary_attribute_symbol.png?version=d62be6f497df32db012c4ddcf8153a1a 2x" width="40"/>
              </a>
              <br/>
              <b>
@@ -331,7 +335,7 @@ document.head.appendChild(script);
             </th>
             <th align="center" width="45">
              <a href="/Intelligence" title="Intelligence">
-              <img alt="Intelligence" height="40" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/5/56/Intelligence_attribute_symbol.png/40px-Intelligence_attribute_symbol.png?version=4040e46b05f05f761993086ea3d191f0" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/5/56/Intelligence_attribute_symbol.png/60px-Intelligence_attribute_symbol.png?version=4040e46b05f05f761993086ea3d191f0 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/5/56/Intelligence_attribute_symbol.png?version=4040e46b05f05f761993086ea3d191f0 2x" width="40"/>
+              <img alt="Intelligence attribute symbol.png" height="40" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/5/56/Intelligence_attribute_symbol.png/40px-Intelligence_attribute_symbol.png?version=4040e46b05f05f761993086ea3d191f0" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/5/56/Intelligence_attribute_symbol.png/60px-Intelligence_attribute_symbol.png?version=4040e46b05f05f761993086ea3d191f0 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/5/56/Intelligence_attribute_symbol.png?version=4040e46b05f05f761993086ea3d191f0 2x" width="40"/>
              </a>
              <br/>
              <b>
@@ -384,10 +388,10 @@ document.head.appendChild(script);
              560
             </td>
             <td>
-             1120
+             1200
             </td>
             <td>
-             1520
+             1660
             </td>
            </tr>
            <tr>
@@ -399,16 +403,16 @@ document.head.appendChild(script);
              </b>
             </td>
             <td>
-             3.5
+             3.25
             </td>
             <td>
-             4.04
+             4.33
             </td>
             <td>
-             4.88
+             6.26
             </td>
             <td>
-             5.48
+             7.64
             </td>
            </tr>
            <tr style="background:#ededed">
@@ -420,16 +424,16 @@ document.head.appendChild(script);
              </b>
             </td>
             <td>
-             50
+             75
             </td>
             <td>
-             266
+             273
             </td>
             <td>
-             614
+             592
             </td>
             <td>
-             866
+             823
             </td>
            </tr>
            <tr>
@@ -507,13 +511,13 @@ document.head.appendChild(script);
              0%
             </td>
             <td>
-             1.13%
+             1.29%
             </td>
             <td>
-             2.96%
+             3.39%
             </td>
             <td>
-             4.28%
+             4.89%
             </td>
            </tr>
            <tr>
@@ -838,14 +842,8 @@ document.head.appendChild(script);
          <span class="mw-editsection-bracket">
           [
          </span>
-         <a class="mw-editsection-visualeditor" href="/index.php?title=Nyx_Assassin&amp;veaction=edit&amp;vesection=1" title="Edit section: Bio">
-          edit
-         </a>
-         <span class="mw-editsection-divider">
-          |
-         </span>
          <a href="/index.php?title=Nyx_Assassin&amp;action=edit&amp;section=1" title="Edit section: Bio">
-          edit source
+          edit
          </a>
          <span class="mw-editsection-bracket">
           ]
@@ -853,92 +851,87 @@ document.head.appendChild(script);
         </span>
        </h2>
        <div class="biobox" style="color:#333333;padding:8px;font-size:12px;">
-        <table style="background: none;">
+        <table cellspacing="4" style="background: none;">
          <tr>
-          <td valign="top">
-           <table cellspacing="4" style="background: none;">
-            <tr>
-             <td colspan="2" style="font-weight:bold;font-size:13px;text-align:center;">
-              <a href="/Nyx_Assassin" title="Nyx Assassin">
-               <img alt="Nyx Assassin" height="32" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/f/fa/Nyx_Assassin_icon.png?version=a5dd13048b14da478bdc590d11f24106" width="32"/>
-              </a>
-              Nyx Assassin
-             </td>
-            </tr>
-            <tr>
-             <td align="center" colspan="2">
-              <a class="sm2_button" href="https://hydra-media.cursecdn.com/dota2.gamepedia.com/0/02/Nyx_rare_04.mp3" title="Play">
-               Play
-              </a>
-              "The blessing of Nyx gives me all the purpose I require."
-             </td>
-            </tr>
-            <tr>
-             <td valign="top">
-              <b>
-               Role:
-              </b>
-             </td>
-             <td>
-              <a href="/Role#Disabler" title="Disabler">
-               <img alt="Disabler" height="24" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/c/c3/Pip_disabler.png/24px-Pip_disabler.png?version=340edcbcd7b35f85bea7d18c802ed99c" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/c/c3/Pip_disabler.png/36px-Pip_disabler.png?version=340edcbcd7b35f85bea7d18c802ed99c 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/c/c3/Pip_disabler.png/48px-Pip_disabler.png?version=340edcbcd7b35f85bea7d18c802ed99c 2x" width="24"/>
-              </a>
-              <a href="/Role#Disabler" title="Role">
-               Disabler
-              </a>
-              /
-              <a href="/Role#Nuker" title="Nuker">
-               <img alt="Nuker" height="24" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/0/04/Pip_ganker.png/24px-Pip_ganker.png?version=f403b95dc688f11a6af39e1110731b4d" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/0/04/Pip_ganker.png/36px-Pip_ganker.png?version=f403b95dc688f11a6af39e1110731b4d 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/0/04/Pip_ganker.png/48px-Pip_ganker.png?version=f403b95dc688f11a6af39e1110731b4d 2x" width="24"/>
-              </a>
-              <a href="/Role#Nuker" title="Role">
-               Nuker
-              </a>
-              /
-              <a href="/Role#Initiator" title="Initiator">
-               <img alt="Initiator" height="24" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/2/25/Pip_initiator.png/24px-Pip_initiator.png?version=dd8026b54598cb0f1095f87db539ce5c" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/2/25/Pip_initiator.png/36px-Pip_initiator.png?version=dd8026b54598cb0f1095f87db539ce5c 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/2/25/Pip_initiator.png/48px-Pip_initiator.png?version=dd8026b54598cb0f1095f87db539ce5c 2x" width="24"/>
-              </a>
-              <a href="/Role#Initiator" title="Role">
-               Initiator
-              </a>
-              /
-              <a href="/Role#Escape" title="Escape">
-               <img alt="Escape" height="24" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/d/d3/Pip_tank.png/24px-Pip_tank.png?version=5d8ccf7b704ff54ffe6c2a65a3861423" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/d/d3/Pip_tank.png/36px-Pip_tank.png?version=5d8ccf7b704ff54ffe6c2a65a3861423 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/d/d3/Pip_tank.png/48px-Pip_tank.png?version=5d8ccf7b704ff54ffe6c2a65a3861423 2x" width="24"/>
-              </a>
-              <a href="/Role#Escape" title="Role">
-               Escape
-              </a>
-             </td>
-            </tr>
-            <tr>
-             <td valign="top">
-              <b>
-               Lore:
-              </b>
-             </td>
-             <td>
-              <i>
-               Deep in the Archive of Ultimyr, shelved between scholarly treatises on dragon cladistics and books of untranslatable spells, there is an ancient tome of entomological curiosities. Compiled by scholars, the book describes the telepathic talents of the zealot scarab, a strange species of social insect with abilities unique to all the seven planes.
-              </i>
-              <p>
-               Unlike most grubs of his colony, Nyx Assassin did not arise from metamorphosis with the plodding thoughts and blunted appendages common to the worker caste of his kind. For his was a special transformation, guided by the grace of Nyx. He was the chosen one, selected from the many and anointed with an extract of the queen goddess herself. Not all survive the dark blessing of the queen’s chamber, but he emerged with a penetrating mind, and dagger-like claws–his razor sharp mandibles raking the air while his thoughts projected directly into the minds of those around him. Of all zealot scarabs, he alone was selected for the highest calling. After his metamorphosis, he was reborn, by grace of Nyx, with abilities which shaped him for one thing and one thing only: to kill in the name of his goddess.
-              </p>
-             </td>
-            </tr>
-            <tr>
-             <td valign="top">
-              <b>
-               Voice:
-              </b>
-             </td>
-             <td>
-              Dempsey Pappion (
-              <a href="/Nyx_Assassin/Responses" title="Nyx Assassin/Responses">
-               Responses
-              </a>
-              )
-             </td>
-            </tr>
-           </table>
+          <td colspan="2" style="font-weight: bold; font-size: 13px; text-align: center;">
+           <a href="/Nyx_Assassin" title="Nyx Assassin">
+            <img alt="Nyx Assassin" height="32" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/a/aa/Nyx_Assassin_minimap_icon.png?version=12bd24f880627dd58dd39aa32320a3bc" width="32"/>
+           </a>
+           Nyx Assassin
+          </td>
+         </tr>
+         <tr>
+          <td colspan="2" style="text-align: center;">
+           <a class="sm2_button" href="https://hydra-media.cursecdn.com/dota2.gamepedia.com/0/02/Nyx_rare_04.mp3" title="Play">
+            Play
+           </a>
+           "The blessing of Nyx gives me all the purpose I require."
+          </td>
+         </tr>
+         <tr>
+          <td>
+           <b>
+            Role:
+           </b>
+          </td>
+          <td>
+           <a href="/Role#Disabler" title="Disabler">
+            <img alt="Disabler" height="24" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/c/c3/Pip_disabler.png/24px-Pip_disabler.png?version=340edcbcd7b35f85bea7d18c802ed99c" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/c/c3/Pip_disabler.png/36px-Pip_disabler.png?version=340edcbcd7b35f85bea7d18c802ed99c 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/c/c3/Pip_disabler.png/48px-Pip_disabler.png?version=340edcbcd7b35f85bea7d18c802ed99c 2x" width="24"/>
+           </a>
+           <a href="/Role#Disabler" title="Role">
+            Disabler
+           </a>
+           /
+           <a href="/Role#Nuker" title="Nuker">
+            <img alt="Nuker" height="24" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/0/04/Pip_ganker.png/24px-Pip_ganker.png?version=f403b95dc688f11a6af39e1110731b4d" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/0/04/Pip_ganker.png/36px-Pip_ganker.png?version=f403b95dc688f11a6af39e1110731b4d 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/0/04/Pip_ganker.png/48px-Pip_ganker.png?version=f403b95dc688f11a6af39e1110731b4d 2x" width="24"/>
+           </a>
+           <a href="/Role#Nuker" title="Role">
+            Nuker
+           </a>
+           /
+           <a href="/Role#Initiator" title="Initiator">
+            <img alt="Initiator" height="24" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/2/25/Pip_initiator.png/24px-Pip_initiator.png?version=dd8026b54598cb0f1095f87db539ce5c" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/2/25/Pip_initiator.png/36px-Pip_initiator.png?version=dd8026b54598cb0f1095f87db539ce5c 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/2/25/Pip_initiator.png/48px-Pip_initiator.png?version=dd8026b54598cb0f1095f87db539ce5c 2x" width="24"/>
+           </a>
+           <a href="/Role#Initiator" title="Role">
+            Initiator
+           </a>
+           /
+           <a href="/Role#Escape" title="Escape">
+            <img alt="Escape" height="24" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/d/d3/Pip_tank.png/24px-Pip_tank.png?version=5d8ccf7b704ff54ffe6c2a65a3861423" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/d/d3/Pip_tank.png/36px-Pip_tank.png?version=5d8ccf7b704ff54ffe6c2a65a3861423 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/d/d3/Pip_tank.png/48px-Pip_tank.png?version=5d8ccf7b704ff54ffe6c2a65a3861423 2x" width="24"/>
+           </a>
+           <a href="/Role#Escape" title="Role">
+            Escape
+           </a>
+          </td>
+         </tr>
+         <tr>
+          <td style="vertical-align: top;">
+           <b>
+            <a href="/Nyx_Assassin/Lore" title="Nyx Assassin/Lore">
+             Lore
+            </a>
+            :
+           </b>
+          </td>
+          <td style="font-style: italic;">
+           Deep in the Archive of Ultimyr, shelved between scholarly treatises on dragon cladistics and books of untranslatable spells, there is an ancient tome of entomological curiosities. Compiled by scholars, the book describes the telepathic talents of the zealot scarab, a strange species of social insect with abilities unique to all the seven planes.
+           <p>
+            Unlike most grubs of his colony, Nyx Assassin did not arise from metamorphosis with the plodding thoughts and blunted appendages common to the worker caste of his kind. For his was a special transformation, guided by the grace of Nyx. He was the chosen one, selected from the many and anointed with an extract of the queen goddess herself. Not all survive the dark blessing of the queen’s chamber, but he emerged with a penetrating mind, and dagger-like claws–his razor sharp mandibles raking the air while his thoughts projected directly into the minds of those around him. Of all zealot scarabs, he alone was selected for the highest calling. After his metamorphosis, he was reborn, by grace of Nyx, with abilities which shaped him for one thing and one thing only: to kill in the name of his goddess.
+           </p>
+          </td>
+         </tr>
+         <tr>
+          <td>
+           <b>
+            Voice:
+           </b>
+          </td>
+          <td>
+           Dempsey Pappion (
+           <a href="/Nyx_Assassin/Responses" title="Nyx Assassin/Responses">
+            Responses
+           </a>
+           )
           </td>
          </tr>
         </table>
@@ -951,14 +944,8 @@ document.head.appendChild(script);
          <span class="mw-editsection-bracket">
           [
          </span>
-         <a class="mw-editsection-visualeditor" href="/index.php?title=Nyx_Assassin&amp;veaction=edit&amp;vesection=2" title="Edit section: Abilities">
-          edit
-         </a>
-         <span class="mw-editsection-divider">
-          |
-         </span>
          <a href="/index.php?title=Nyx_Assassin&amp;action=edit&amp;section=2" title="Edit section: Abilities">
-          edit source
+          edit
          </a>
          <span class="mw-editsection-bracket">
           ]
@@ -1024,11 +1011,11 @@ document.head.appendChild(script);
              </b>
              <br/>
              <a href="/Damage_types#Magical" title="Damage types">
-              <b>
-               <span style="color:#3F56AD">
+              <span style="color:#3F56AD">
+               <b>
                 Magical
-               </span>
-              </b>
+               </b>
+              </span>
              </a>
             </div>
            </div>
@@ -1055,41 +1042,60 @@ document.head.appendChild(script);
            <b>
             Cast Range
            </b>
-           : 700
+           :
+           <span style="white-space: nowrap">
+            700
+           </span>
           </div>
           <div>
            <b>
             Spikes Travel Distance
            </b>
-           : 700
+           :
+           <span style="white-space: nowrap">
+            700
+           </span>
           </div>
           <div>
            <b>
             Spikes Radius
            </b>
-           : 125
+           :
+           <span style="white-space: nowrap">
+            125
+           </span>
           </div>
           <div>
            <b>
             Damage
            </b>
-           : 80/140/200/260
+           :
+           <span style="white-space: nowrap">
+            80/140/200/260 (
+            <a href="/Talents" title="Talent">
+             <img alt="Talent" height="16" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/c/cd/Talent_tree_symbol.png/16px-Talent_tree_symbol.png?version=b4db4b31a2f9c215885be017c22a8b0c" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/c/cd/Talent_tree_symbol.png/24px-Talent_tree_symbol.png?version=b4db4b31a2f9c215885be017c22a8b0c 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/c/cd/Talent_tree_symbol.png/32px-Talent_tree_symbol.png?version=b4db4b31a2f9c215885be017c22a8b0c 2x" style="vertical-align: text-top" width="16"/>
+            </a>
+            130/190/250/310)
+           </span>
           </div>
           <div>
            <b>
             Stun Duration
            </b>
-           : 1.6/2/2.4/2.8
+           :
+           <span style="white-space: nowrap">
+            1.6/2/2.4/2.8
+           </span>
           </div>
-          <div style="display: inline-block; margin: 8px 0px 0px 50px; width: 190px; vertical-align: top;">
+          <div style="display: inline-block; margin: 8px 0px 0px 50px; width: 190px; vertical-align: top; word-wrap: break-word;">
            <span style="position: relative; top: -2px;">
             <a href="/Cooldown" title="Cooldown">
              <img alt="Cooldown symbol.png" height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/b/b7/Cooldown_symbol.png?version=7429ed9baf0f121e6ab3324bfdfad708" style="vertical-align: text-top" width="20"/>
             </a>
            </span>
-           13
+           14
           </div>
-          <div style="display: inline-block; margin: 8px 0px 0px; width: 190px; vertical-align: top;">
+          <div style="display: inline-block; margin: 8px 0px 0px; width: 190px; vertical-align: top; word-wrap: break-word;">
            <span style="position: relative; top: -2px;">
             <a href="/Mana" title="Mana">
              <img alt="Mana symbol.png" height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/f/f3/Mana_symbol.png?version=a81185ac577f9b52f2df06be91b6600c" style="vertical-align: text-top" width="20"/>
@@ -1109,7 +1115,9 @@ document.head.appendChild(script);
           </div>
           <div style="margin-top: 10px;">
            <b>
-            Modifiers
+            <span id="tooltip" style="cursor:help; border-bottom:1px dotted;" title="The displayed names are the intern names of the modifiers. Do not change them even if they don't match the ability name.">
+             Modifiers
+            </span>
            </b>
           </div>
           <div style="font-size: 85%; margin-left: 10px;">
@@ -1177,7 +1185,7 @@ document.head.appendChild(script);
              Burrow
             </a>
            </span>
-           ​ed, the cast range and travel distance increase to 1225, and the cooldown falls to 7 seconds.
+           ed, the cast range and travel distance increase to 1225, and the cooldown falls to 7 seconds.
           </li>
          </ul>
          <ul>
@@ -1198,8 +1206,6 @@ document.head.appendChild(script);
        </div>
        <p>
         <br/>
-       </p>
-       <p>
         <span id="Mana_Burn">
         </span>
        </p>
@@ -1263,11 +1269,11 @@ document.head.appendChild(script);
              </b>
              <br/>
              <a href="/Damage_types#Magical" title="Damage types">
-              <b>
-               <span style="color:#3F56AD">
+              <span style="color:#3F56AD">
+               <b>
                 Magical
-               </span>
-              </b>
+               </b>
+              </span>
              </a>
             </div>
            </div>
@@ -1294,21 +1300,30 @@ document.head.appendChild(script);
            <b>
             Cast Range
            </b>
-           : 600
+           :
+           <span style="white-space: nowrap">
+            600
+           </span>
           </div>
           <div>
            <b>
             Mana Burned per Intelligence
            </b>
-           : 3.5/4/4.5/5
+           :
+           <span style="white-space: nowrap">
+            3.5/4/4.5/5
+           </span>
           </div>
           <div>
            <b>
             Mana Burned as Damage
            </b>
-           : 100%
+           :
+           <span style="white-space: nowrap">
+            100%
+           </span>
           </div>
-          <div style="display: inline-block; margin: 8px 0px 0px 50px; width: 190px; vertical-align: top;">
+          <div style="display: inline-block; margin: 8px 0px 0px 50px; width: 190px; vertical-align: top; word-wrap: break-word;">
            <span style="position: relative; top: -2px;">
             <a href="/Cooldown" title="Cooldown">
              <img alt="Cooldown symbol.png" height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/b/b7/Cooldown_symbol.png?version=7429ed9baf0f121e6ab3324bfdfad708" style="vertical-align: text-top" width="20"/>
@@ -1316,7 +1331,7 @@ document.head.appendChild(script);
            </span>
            28/20/12/4
           </div>
-          <div style="display: inline-block; margin: 8px 0px 0px; width: 190px; vertical-align: top;">
+          <div style="display: inline-block; margin: 8px 0px 0px; width: 190px; vertical-align: top; word-wrap: break-word;">
            <span style="position: relative; top: -2px;">
             <a href="/Mana" title="Mana">
              <img alt="Mana symbol.png" height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/f/f3/Mana_symbol.png?version=a81185ac577f9b52f2df06be91b6600c" style="vertical-align: text-top" width="20"/>
@@ -1386,15 +1401,13 @@ document.head.appendChild(script);
              Burrow
             </a>
            </span>
-           ​ed, the cast range increases to 1050.
+           ed, the cast range increases to 1050.
           </li>
          </ul>
         </div>
        </div>
        <p>
         <br/>
-       </p>
-       <p>
         <span id="Spiked_Carapace">
         </span>
        </p>
@@ -1453,11 +1466,11 @@ document.head.appendChild(script);
              </b>
              <br/>
              <a href="/Damage_types#Pure" title="Damage types">
-              <b>
-               <span style="color:#D61107">
+              <span style="color:#D61107">
+               <b>
                 Pure
-               </span>
-              </b>
+               </b>
+              </span>
              </a>
             </div>
            </div>
@@ -1486,39 +1499,51 @@ document.head.appendChild(script);
            <b>
             Burrow Stun Radius
            </b>
-           : 300
+           :
+           <span style="white-space: nowrap">
+            300
+           </span>
           </div>
           <div>
            <b>
             Damage Reflected
            </b>
-           : 100% (
-           <a href="/Talents" title="Talent">
-            <img alt="Talent" height="16" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/c/cd/Talent_tree_symbol.png/16px-Talent_tree_symbol.png?version=b4db4b31a2f9c215885be017c22a8b0c" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/c/cd/Talent_tree_symbol.png/24px-Talent_tree_symbol.png?version=b4db4b31a2f9c215885be017c22a8b0c 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/c/cd/Talent_tree_symbol.png/32px-Talent_tree_symbol.png?version=b4db4b31a2f9c215885be017c22a8b0c 2x" style="vertical-align: text-top" width="16"/>
-           </a>
-           200%)
+           :
+           <span style="white-space: nowrap">
+            100% (
+            <a href="/Talents" title="Talent">
+             <img alt="Talent" height="16" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/c/cd/Talent_tree_symbol.png/16px-Talent_tree_symbol.png?version=b4db4b31a2f9c215885be017c22a8b0c" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/c/cd/Talent_tree_symbol.png/24px-Talent_tree_symbol.png?version=b4db4b31a2f9c215885be017c22a8b0c 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/c/cd/Talent_tree_symbol.png/32px-Talent_tree_symbol.png?version=b4db4b31a2f9c215885be017c22a8b0c 2x" style="vertical-align: text-top" width="16"/>
+            </a>
+            200%)
+           </span>
           </div>
           <div>
            <b>
             Carapace Duration
            </b>
-           : 2.25
+           :
+           <span style="white-space: nowrap">
+            2.25
+           </span>
           </div>
           <div>
            <b>
             Stun Duration
            </b>
-           : 0.6/1.2/1.8/2.4
+           :
+           <span style="white-space: nowrap">
+            0.6/1.2/1.8/2.4
+           </span>
           </div>
-          <div style="display: inline-block; margin: 8px 0px 0px 50px; width: 190px; vertical-align: top;">
+          <div style="display: inline-block; margin: 8px 0px 0px 50px; width: 190px; vertical-align: top; word-wrap: break-word;">
            <span style="position: relative; top: -2px;">
             <a href="/Cooldown" title="Cooldown">
              <img alt="Cooldown symbol.png" height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/b/b7/Cooldown_symbol.png?version=7429ed9baf0f121e6ab3324bfdfad708" style="vertical-align: text-top" width="20"/>
             </a>
            </span>
-           22/18/14/10
+           25/20/15/10
           </div>
-          <div style="display: inline-block; margin: 8px 0px 0px; width: 190px; vertical-align: top;">
+          <div style="display: inline-block; margin: 8px 0px 0px; width: 190px; vertical-align: top; word-wrap: break-word;">
            <span style="position: relative; top: -2px;">
             <a href="/Mana" title="Mana">
              <img alt="Mana symbol.png" height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/f/f3/Mana_symbol.png?version=a81185ac577f9b52f2df06be91b6600c" style="vertical-align: text-top" width="20"/>
@@ -1528,7 +1553,9 @@ document.head.appendChild(script);
           </div>
           <div style="margin-top: 10px;">
            <b>
-            Modifiers
+            <span id="tooltip" style="cursor:help; border-bottom:1px dotted;" title="The displayed names are the intern names of the modifiers. Do not change them even if they don't match the ability name.">
+             Modifiers
+            </span>
            </b>
           </div>
           <div style="font-size: 85%; margin-left: 10px;">
@@ -1585,7 +1612,7 @@ document.head.appendChild(script);
              Vendetta
             </a>
            </span>
-           ​, without breaking the
+           , without breaking the
            <a href="/Invisibility" title="Invisibility">
             invisibility
            </a>
@@ -1605,9 +1632,9 @@ document.head.appendChild(script);
            </a>
            and reflects after all reductions, causing several
            <a href="/Damage_manipulation#Preventing_on-damage_effects" title="Damage manipulation">
-            on-damage effects
+            on-damage effects to not trigger
            </a>
-           to not trigger.
+           .
           </li>
          </ul>
          <ul>
@@ -1621,7 +1648,7 @@ document.head.appendChild(script);
              Aphotic Shield
             </a>
            </span>
-           ​ and
+           and
            <span style="white-space: nowrap;">
             <a href="/Treant_Protector#Living_Armor" title="Treant Protector#Living Armor">
              <img alt="Living Armor icon.png" height="16" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/b/b8/Living_Armor_icon.png/16px-Living_Armor_icon.png?version=e346cc718c2541aac83ee1eb0b0c7850" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/b/b8/Living_Armor_icon.png/24px-Living_Armor_icon.png?version=e346cc718c2541aac83ee1eb0b0c7850 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/b/b8/Living_Armor_icon.png/32px-Living_Armor_icon.png?version=e346cc718c2541aac83ee1eb0b0c7850 2x" width="16"/>
@@ -1630,7 +1657,7 @@ document.head.appendChild(script);
              Living Armor
             </a>
            </span>
-           ​, but lower than
+           , but lower than
            <span style="white-space: nowrap;">
             <a href="/Oracle#False_Promise" title="Oracle#False Promise">
              <img alt="False Promise icon.png" height="16" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/f/f0/False_Promise_icon.png/16px-False_Promise_icon.png?version=816b8983e94cc40151b924cdb06b0314" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/f/f0/False_Promise_icon.png/24px-False_Promise_icon.png?version=816b8983e94cc40151b924cdb06b0314 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/f/f0/False_Promise_icon.png/32px-False_Promise_icon.png?version=816b8983e94cc40151b924cdb06b0314 2x" width="16"/>
@@ -1639,7 +1666,7 @@ document.head.appendChild(script);
              False Promise
             </a>
            </span>
-           ​. However, it still reflects and stuns when combined with False Promise.
+           . However, it still reflects and stuns when combined with False Promise.
           </li>
          </ul>
          <ul>
@@ -1690,7 +1717,7 @@ document.head.appendChild(script);
              Burrow
             </a>
            </span>
-           ​ed, the spell immediately applies its stun to all enemies within its radius.
+           ed, the spell immediately applies its stun to all enemies within its radius.
            <ul>
             <li>
              Since Spiked Carapace has no base damage, hit units are not damaged upon cast.
@@ -1708,8 +1735,6 @@ document.head.appendChild(script);
        </div>
        <p>
         <br/>
-       </p>
-       <p>
         <span id="Vendetta">
         </span>
        </p>
@@ -1768,11 +1793,11 @@ document.head.appendChild(script);
              </b>
              <br/>
              <a href="/Damage_types#Physical" title="Damage types">
-              <b>
-               <span style="color:#71A9EA">
+              <span style="color:#71A9EA">
+               <b>
                 Physical
-               </span>
-              </b>
+               </b>
+              </span>
              </a>
             </div>
            </div>
@@ -1799,27 +1824,39 @@ document.head.appendChild(script);
            <b>
             Fade Time
            </b>
-           : 0
+           :
+           <span style="white-space: nowrap">
+            0
+           </span>
           </div>
           <div>
            <b>
             Damage
            </b>
-           : 250/400/550
+           :
+           <span style="white-space: nowrap">
+            250/400/550
+           </span>
           </div>
           <div>
            <b>
             Move Speed Bonus
            </b>
-           : 16%/18%/20%
+           :
+           <span style="white-space: nowrap">
+            16%/18%/20%
+           </span>
           </div>
           <div>
            <b>
             Duration
            </b>
-           : 40/50/60
+           :
+           <span style="white-space: nowrap">
+            40/50/60
+           </span>
           </div>
-          <div style="display: inline-block; margin: 8px 0px 0px 50px; width: 190px; vertical-align: top;">
+          <div style="display: inline-block; margin: 8px 0px 0px 50px; width: 190px; vertical-align: top; word-wrap: break-word;">
            <span style="position: relative; top: -2px;">
             <a href="/Cooldown" title="Cooldown">
              <img alt="Cooldown symbol.png" height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/b/b7/Cooldown_symbol.png?version=7429ed9baf0f121e6ab3324bfdfad708" style="vertical-align: text-top" width="20"/>
@@ -1827,7 +1864,7 @@ document.head.appendChild(script);
            </span>
            70/60/50
           </div>
-          <div style="display: inline-block; margin: 8px 0px 0px; width: 190px; vertical-align: top;">
+          <div style="display: inline-block; margin: 8px 0px 0px; width: 190px; vertical-align: top; word-wrap: break-word;">
            <span style="position: relative; top: -2px;">
             <a href="/Mana" title="Mana">
              <img alt="Mana symbol.png" height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/f/f3/Mana_symbol.png?version=a81185ac577f9b52f2df06be91b6600c" style="vertical-align: text-top" width="20"/>
@@ -1847,7 +1884,9 @@ document.head.appendChild(script);
           </div>
           <div style="margin-top: 10px;">
            <b>
-            Modifiers
+            <span id="tooltip" style="cursor:help; border-bottom:1px dotted;" title="The displayed names are the intern names of the modifiers. Do not change them even if they don't match the ability name.">
+             Modifiers
+            </span>
            </b>
           </div>
           <div style="font-size: 85%; margin-left: 10px;">
@@ -1912,7 +1951,7 @@ document.head.appendChild(script);
                Enfeeble
               </a>
              </span>
-             ​ or
+             or
              <span style="white-space: nowrap;">
               <a href="/Magnus#Empower" title="Magnus#Empower">
                <img alt="Empower icon.png" height="16" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/7d/Empower_icon.png/16px-Empower_icon.png?version=4be9f39c9c3f1d49938c6413dc7237a1" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/7d/Empower_icon.png/24px-Empower_icon.png?version=4be9f39c9c3f1d49938c6413dc7237a1 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/7d/Empower_icon.png/32px-Empower_icon.png?version=4be9f39c9c3f1d49938c6413dc7237a1 2x" width="16"/>
@@ -1921,7 +1960,7 @@ document.head.appendChild(script);
                Empower
               </a>
              </span>
-             ​.
+             .
             </li>
             <li>
              This also means that Nyx cannot
@@ -1995,8 +2034,6 @@ document.head.appendChild(script);
        </div>
        <p>
         <br/>
-       </p>
-       <p>
         <span id="Burrow">
         </span>
        </p>
@@ -2078,45 +2115,66 @@ document.head.appendChild(script);
            <b>
             Fade Time
            </b>
-           : 0
+           :
+           <span style="white-space: nowrap">
+            0
+           </span>
           </div>
           <div>
            <b>
             Max Health/Mana Regenerated per Second
            </b>
-           : 1.5%
+           :
+           <span style="white-space: nowrap">
+            1.5%
+           </span>
           </div>
           <div>
            <b>
             Incoming Damage Reduction
            </b>
-           : 40%
+           :
+           <span style="white-space: nowrap">
+            40%
+           </span>
           </div>
           <div>
            <b>
             Impale Cast/Travel Range Increase
            </b>
-           : 450
+           :
+           <span style="white-space: nowrap">
+            450
+           </span>
           </div>
           <div>
            <b>
             Impale Cooldown Reduction
            </b>
-           : 6
+           :
+           <span style="white-space: nowrap">
+            7
+           </span>
           </div>
           <div>
            <b>
             Mana Burn Cast Range Increase
            </b>
-           : 300
+           :
+           <span style="white-space: nowrap">
+            300
+           </span>
           </div>
           <div>
            <b>
             Spiked Carapace Radius
            </b>
-           : 300
+           :
+           <span style="white-space: nowrap">
+            300
+           </span>
           </div>
-          <div style="display: inline-block; margin: 8px 0px 0px 50px; width: 370px; vertical-align: top;">
+          <div style="display: inline-block; margin: 8px 0px 0px 50px; width: 370px; vertical-align: top; word-wrap: break-word;">
            <span style="position: relative; top: -2px;">
             <a href="/Cooldown" title="Cooldown">
              <img alt="Cooldown symbol.png" height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/b/b7/Cooldown_symbol.png?version=7429ed9baf0f121e6ab3324bfdfad708" style="vertical-align: text-top" width="20"/>
@@ -2124,11 +2182,13 @@ document.head.appendChild(script);
            </span>
            0
           </div>
-          <div style="display: inline-block; margin: 8px 0px 0px; width: 10px; vertical-align: top;">
+          <div style="display: inline-block; margin: 8px 0px 0px; width: 10px; vertical-align: top; word-wrap: break-word;">
           </div>
           <div style="margin-top: 10px;">
            <b>
-            Modifiers
+            <span id="tooltip" style="cursor:help; border-bottom:1px dotted;" title="The displayed names are the intern names of the modifiers. Do not change them even if they don't match the ability name.">
+             Modifiers
+            </span>
            </b>
           </div>
           <div style="font-size: 85%; margin-left: 10px;">
@@ -2216,7 +2276,7 @@ document.head.appendChild(script);
              Vendetta
             </a>
            </span>
-           ​.
+           .
           </li>
          </ul>
          <ul>
@@ -2233,8 +2293,6 @@ document.head.appendChild(script);
        </div>
        <p>
         <br/>
-       </p>
-       <p>
         <span id="Unburrow">
         </span>
        </p>
@@ -2306,7 +2364,7 @@ document.head.appendChild(script);
             0
            </span>
           </div>
-          <div style="display: inline-block; margin: 8px 0px 0px 50px; width: 370px; vertical-align: top;">
+          <div style="display: inline-block; margin: 8px 0px 0px 50px; width: 370px; vertical-align: top; word-wrap: break-word;">
            <span style="position: relative; top: -2px;">
             <a href="/Cooldown" title="Cooldown">
              <img alt="Cooldown symbol.png" height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/b/b7/Cooldown_symbol.png?version=7429ed9baf0f121e6ab3324bfdfad708" style="vertical-align: text-top" width="20"/>
@@ -2314,7 +2372,7 @@ document.head.appendChild(script);
            </span>
            0
           </div>
-          <div style="display: inline-block; margin: 8px 0px 0px; width: 10px; vertical-align: top;">
+          <div style="display: inline-block; margin: 8px 0px 0px; width: 10px; vertical-align: top; word-wrap: break-word;">
           </div>
           <div style="margin-top: 5px; padding-top: 2px; border-top: 1px solid #C1C1C1;">
            <i>
@@ -2341,7 +2399,7 @@ document.head.appendChild(script);
              Burrow
             </a>
            </span>
-           ​ until used or death.
+           until used or death.
           </li>
          </ul>
          <ul>
@@ -2385,14 +2443,8 @@ document.head.appendChild(script);
          <span class="mw-editsection-bracket">
           [
          </span>
-         <a class="mw-editsection-visualeditor" href="/index.php?title=Nyx_Assassin&amp;veaction=edit&amp;vesection=3" title="Edit section: Talents">
-          edit
-         </a>
-         <span class="mw-editsection-divider">
-          |
-         </span>
          <a href="/index.php?title=Nyx_Assassin&amp;action=edit&amp;section=3" title="Edit section: Talents">
-          edit source
+          edit
          </a>
          <span class="mw-editsection-bracket">
           ]
@@ -2424,7 +2476,7 @@ document.head.appendChild(script);
               Spiked Carapace
              </a>
             </span>
-            ​ Damage
+            Damage
            </td>
            <td style="padding: 10px; background-color: #0c2a5a">
             <span style="color: white; font-size:13pt">
@@ -2439,7 +2491,15 @@ document.head.appendChild(script);
           </tr>
           <tr>
            <td width="240">
-            +15% Magic Resistance
+            +40
+            <span style="white-space:nowrap">
+             <a href="/Agility" title="Agility">
+              <img alt="Agility attribute symbol.png" height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/2/2d/Agility_attribute_symbol.png/20px-Agility_attribute_symbol.png?version=54dc66ca918b2fd5701479d9b91c9a89" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/2/2d/Agility_attribute_symbol.png/30px-Agility_attribute_symbol.png?version=54dc66ca918b2fd5701479d9b91c9a89 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/2/2d/Agility_attribute_symbol.png/40px-Agility_attribute_symbol.png?version=54dc66ca918b2fd5701479d9b91c9a89 2x" width="20"/>
+             </a>
+             <a href="/Agility" title="Agility">
+              Agility
+             </a>
+            </span>
            </td>
            <td style="padding: 10px; background-color: #15499d">
             <span style="color: white; font-size:13pt">
@@ -2454,15 +2514,16 @@ document.head.appendChild(script);
           </tr>
           <tr>
            <td width="240">
-            +10
-            <span style="white-space:nowrap">
-             <a href="/Strength" title="Strength">
-              <img alt="Strength attribute symbol.png" height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/7a/Strength_attribute_symbol.png/20px-Strength_attribute_symbol.png?version=64e80a13f4b239d9924059648cad28e1" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/7a/Strength_attribute_symbol.png/30px-Strength_attribute_symbol.png?version=64e80a13f4b239d9924059648cad28e1 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/7a/Strength_attribute_symbol.png/40px-Strength_attribute_symbol.png?version=64e80a13f4b239d9924059648cad28e1 2x" width="20"/>
+            +50
+            <span style="white-space: nowrap;">
+             <a href="/Nyx_Assassin#Impale" title="Nyx Assassin#Impale">
+              <img alt="Impale icon.png" height="16" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/2/2f/Impale_icon.png/16px-Impale_icon.png?version=95512844900f0e37160c511484eceabe" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/2/2f/Impale_icon.png/24px-Impale_icon.png?version=95512844900f0e37160c511484eceabe 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/2/2f/Impale_icon.png/32px-Impale_icon.png?version=95512844900f0e37160c511484eceabe 2x" width="16"/>
              </a>
-             <a href="/Strength" title="Strength">
-              Strength
+             <a href="/Nyx_Assassin#Impale" title="Nyx Assassin">
+              Impale
              </a>
             </span>
+            Damage
            </td>
            <td style="padding: 10px; background-color: #1c5eca">
             <span style="color: white; font-size:13pt">
@@ -2472,15 +2533,7 @@ document.head.appendChild(script);
             </span>
            </td>
            <td width="240">
-            +25
-            <span style="white-space:nowrap">
-             <a href="/Agility" title="Agility">
-              <img alt="Agility attribute symbol.png" height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/2/2d/Agility_attribute_symbol.png/20px-Agility_attribute_symbol.png?version=54dc66ca918b2fd5701479d9b91c9a89" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/2/2d/Agility_attribute_symbol.png/30px-Agility_attribute_symbol.png?version=54dc66ca918b2fd5701479d9b91c9a89 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/2/2d/Agility_attribute_symbol.png/40px-Agility_attribute_symbol.png?version=54dc66ca918b2fd5701479d9b91c9a89 2x" width="20"/>
-             </a>
-             <a href="/Agility" title="Agility">
-              Agility
-             </a>
-            </span>
+            +12% Magic Resistance
            </td>
           </tr>
           <tr>
@@ -2534,7 +2587,7 @@ document.head.appendChild(script);
              Spiked Carapace
             </a>
            </span>
-           ​ increases the damage
+           increases the damage
            <i>
             to
            </i>
@@ -2562,14 +2615,8 @@ document.head.appendChild(script);
   <span class="mw-editsection-bracket">
    [
   </span>
-  <a class="mw-editsection-visualeditor" href="/index.php?title=Nyx_Assassin&amp;veaction=edit&amp;vesection=4" title="Edit section: Recommended items">
-   edit
-  </a>
-  <span class="mw-editsection-divider">
-   |
-  </span>
   <a href="/index.php?title=Nyx_Assassin&amp;action=edit&amp;section=4" title="Edit section: Recommended items">
-   edit source
+   edit
   </a>
   <span class="mw-editsection-bracket">
    ]
@@ -2583,37 +2630,6 @@ document.head.appendChild(script);
  :
 </p>
 <ul>
- <li>
-  <span style="white-space:nowrap">
-   <a href="/Circlet" title="Circlet">
-    <img alt="Circlet icon.png" height="22" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/2/28/Circlet_icon.png/30px-Circlet_icon.png?version=d53fb15b34c6360ef44c066b3a4e7173" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/2/28/Circlet_icon.png/45px-Circlet_icon.png?version=d53fb15b34c6360ef44c066b3a4e7173 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/2/28/Circlet_icon.png/60px-Circlet_icon.png?version=d53fb15b34c6360ef44c066b3a4e7173 2x" width="30"/>
-   </a>
-   <a href="/Circlet" title="Circlet">
-    Circlet
-   </a>
-  </span>
-  and
-  <span style="white-space:nowrap">
-   <a href="/Mantle_of_Intelligence" title="Mantle of Intelligence">
-    <img alt="Mantle of Intelligence icon.png" height="22" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/c/cf/Mantle_of_Intelligence_icon.png/30px-Mantle_of_Intelligence_icon.png?version=1e2a3cf038a3924ecd02d104464001ba" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/c/cf/Mantle_of_Intelligence_icon.png/45px-Mantle_of_Intelligence_icon.png?version=1e2a3cf038a3924ecd02d104464001ba 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/c/cf/Mantle_of_Intelligence_icon.png/60px-Mantle_of_Intelligence_icon.png?version=1e2a3cf038a3924ecd02d104464001ba 2x" width="30"/>
-   </a>
-   <a href="/Mantle_of_Intelligence" title="Mantle of Intelligence">
-    Mantle of Intelligence
-   </a>
-  </span>
-  provide Nyx Assassin with basic attributes, particularly to his intelligence to boost his mana pool so that he is able to cast his spells more easily. Both components can build directly into a Null Talisman.
- </li>
- <li>
-  <span style="white-space:nowrap">
-   <a href="/Clarity" title="Clarity">
-    <img alt="Clarity icon.png" height="22" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/77/Clarity_icon.png/30px-Clarity_icon.png?version=90ef2ce15bfaac1794f60d51aa5183a1" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/77/Clarity_icon.png/45px-Clarity_icon.png?version=90ef2ce15bfaac1794f60d51aa5183a1 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/77/Clarity_icon.png/60px-Clarity_icon.png?version=90ef2ce15bfaac1794f60d51aa5183a1 2x" width="30"/>
-   </a>
-   <a href="/Clarity" title="Clarity">
-    Clarity
-   </a>
-  </span>
-  allows Nyx Assassin to replenish his mana pool in-lane, crucial since most of his spells will consume almost half his base mana pool with a single cast. Having the mana to continue casting gives Nyx Assassin more chances to use his disables to score kills.
- </li>
  <li>
   <span style="white-space:nowrap">
    <a href="/Tango" title="Tango">
@@ -2633,6 +2649,17 @@ document.head.appendChild(script);
    </a>
   </span>
   give Nyx Assassin basic health sustain, allowing him to continue laning despite enemy harass.
+ </li>
+ <li>
+  <span style="white-space:nowrap">
+   <a href="/Poor_Man%27s_Shield" title="Poor Man's Shield">
+    <img alt="Poor Man's Shield icon.png" height="22" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/1/11/Poor_Man%27s_Shield_icon.png/30px-Poor_Man%27s_Shield_icon.png?version=cd8b5c6111b5cb91f83825d4c4d36a80" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/1/11/Poor_Man%27s_Shield_icon.png/45px-Poor_Man%27s_Shield_icon.png?version=cd8b5c6111b5cb91f83825d4c4d36a80 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/1/11/Poor_Man%27s_Shield_icon.png/60px-Poor_Man%27s_Shield_icon.png?version=cd8b5c6111b5cb91f83825d4c4d36a80 2x" width="30"/>
+   </a>
+   <a href="/Poor_Man%27s_Shield" title="Poor Man's Shield">
+    Poor Man's Shield
+   </a>
+  </span>
+  improves Nyx Assassins resistance to attacks by reducing their damage by 20, as well as almost a full point of armor. This helps withstanding enemy hero harass in the offlane, and potentially trading hits with them. Because Nyx Assassin is an agility hero, it also gives 6 damage and attack speed, making last hitting easier.
  </li>
 </ul>
 <p>
@@ -2660,47 +2687,8 @@ document.head.appendChild(script);
     Impale
    </a>
   </span>
-  ​ on a gank target.
+  on a gank target.
  </li>
- <li>
-  <span style="white-space:nowrap">
-   <a href="/Null_Talisman" title="Null Talisman">
-    <img alt="Null Talisman icon.png" height="22" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/9/90/Null_Talisman_icon.png/30px-Null_Talisman_icon.png?version=8b3e677e19033869e375ec8fde04a3af" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/9/90/Null_Talisman_icon.png/45px-Null_Talisman_icon.png?version=8b3e677e19033869e375ec8fde04a3af 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/9/90/Null_Talisman_icon.png/60px-Null_Talisman_icon.png?version=8b3e677e19033869e375ec8fde04a3af 2x" width="30"/>
-   </a>
-   <a href="/Null_Talisman" title="Null Talisman">
-    Null Talisman
-   </a>
-  </span>
-  provides a good spread of attributes, particularly boosting Nyx Assassin's intelligence to give him more mana. It can be upgraded directly into a
-  <span style="white-space:nowrap">
-   <a href="/Dagon" title="Dagon">
-    <img alt="Dagon 1 icon.png" height="15" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/b/bc/Dagon_1_icon.png/20px-Dagon_1_icon.png?version=5eb0fc1b5f406c61f4b80ac98d5fb634" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/b/bc/Dagon_1_icon.png/30px-Dagon_1_icon.png?version=5eb0fc1b5f406c61f4b80ac98d5fb634 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/b/bc/Dagon_1_icon.png/40px-Dagon_1_icon.png?version=5eb0fc1b5f406c61f4b80ac98d5fb634 2x" width="20"/>
-   </a>
-   <a href="/Dagon" title="Dagon">
-    Dagon
-   </a>
-  </span>
-  if needed.
- </li>
- <li>
-  <span style="white-space:nowrap">
-   <a href="/Urn_of_Shadows" title="Urn of Shadows">
-    <img alt="Urn of Shadows icon.png" height="22" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/5/58/Urn_of_Shadows_icon.png/30px-Urn_of_Shadows_icon.png?version=f148d5013a96945f3465554a63d984e5" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/5/58/Urn_of_Shadows_icon.png/45px-Urn_of_Shadows_icon.png?version=f148d5013a96945f3465554a63d984e5 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/5/58/Urn_of_Shadows_icon.png/60px-Urn_of_Shadows_icon.png?version=f148d5013a96945f3465554a63d984e5 2x" width="30"/>
-   </a>
-   <a href="/Urn_of_Shadows" title="Urn of Shadows">
-    Urn of Shadows
-   </a>
-  </span>
-  is important to get early on Nyx Assassin, as he can easily get charges from successful ganks. It provides strength for more HP, as well as mana regen for sustaining his mana pool. The charges can be used to restore any HP lost during a gank, or can be used to add more damage to a future gank to increase the odds of success.
- </li>
-</ul>
-<p>
- <b>
-  Core items
- </b>
- :
-</p>
-<ul>
  <li>
   <span style="white-space:nowrap">
    <a href="/Arcane_Boots" title="Arcane Boots">
@@ -2714,14 +2702,53 @@ document.head.appendChild(script);
  </li>
  <li>
   <span style="white-space:nowrap">
-   <a href="/Dagon" title="Dagon">
-    <img alt="Dagon 1 icon.png" height="22" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/b/bc/Dagon_1_icon.png/30px-Dagon_1_icon.png?version=2cf1365db77a57460450c820c8eb4923" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/b/bc/Dagon_1_icon.png/45px-Dagon_1_icon.png?version=2cf1365db77a57460450c820c8eb4923 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/b/bc/Dagon_1_icon.png/60px-Dagon_1_icon.png?version=2cf1365db77a57460450c820c8eb4923 2x" width="30"/>
+   <a href="/Ring_of_Health" title="Ring of Health">
+    <img alt="Ring of Health icon.png" height="22" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/2/29/Ring_of_Health_icon.png/30px-Ring_of_Health_icon.png?version=a69bcd2045005074fe5a4da41b02f179" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/2/29/Ring_of_Health_icon.png/45px-Ring_of_Health_icon.png?version=a69bcd2045005074fe5a4da41b02f179 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/2/29/Ring_of_Health_icon.png/60px-Ring_of_Health_icon.png?version=a69bcd2045005074fe5a4da41b02f179 2x" width="30"/>
    </a>
-   <a href="/Dagon" title="Dagon">
-    Dagon
+   <a href="/Ring_of_Health" title="Ring of Health">
+    Ring of Health
    </a>
   </span>
-  greatly boosts Nyx Assassin's burst alpha, giving him much more kill potential. The item boosts his intelligence, allowing him to more easily cast his spells, while the active can be added on top of Impale and
+  Gives Nyx Assassin extra health regeneration, paired with Arcane Boots and an occasional shrine usage allows to almost never go back to base. The item builds into Aether Lens later on.
+ </li>
+</ul>
+<p>
+ <b>
+  Core items
+ </b>
+ :
+</p>
+<ul>
+ <li>
+  <span style="white-space:nowrap">
+   <a href="/Aghanim%27s_Scepter" title="Aghanim's Scepter">
+    <img alt="Aghanim's Scepter icon.png" height="22" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/0/07/Aghanim%27s_Scepter_icon.png/30px-Aghanim%27s_Scepter_icon.png?version=edd1c0d7d3c00a8233897e53a0011edd" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/0/07/Aghanim%27s_Scepter_icon.png/45px-Aghanim%27s_Scepter_icon.png?version=edd1c0d7d3c00a8233897e53a0011edd 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/0/07/Aghanim%27s_Scepter_icon.png/60px-Aghanim%27s_Scepter_icon.png?version=edd1c0d7d3c00a8233897e53a0011edd 2x" width="30"/>
+   </a>
+   <a href="/Aghanim%27s_Scepter" title="Aghanim's Scepter">
+    Aghanim's Scepter
+   </a>
+  </span>
+  unlocks Burrow, which can give Nyx Assassin's team a strong advantage when sieging or defending, by improving Impale, Mana Burn and Spiked Carapace abilities - reducing their cooldown and increasing cast range. The burrow ability also significantly boosts Nyx's Health and Mana regeneration, allowing to disassemble the Arcane Boots and use Energy Booster part for Aether Lens.
+ </li>
+ <li>
+  <span style="white-space:nowrap">
+   <a href="/Aether_Lens" title="Aether Lens">
+    <img alt="Aether Lens icon.png" height="22" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/d/d4/Aether_Lens_icon.png/30px-Aether_Lens_icon.png?version=959ff95448a5590e5488cc6f4dea98f2" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/d/d4/Aether_Lens_icon.png/45px-Aether_Lens_icon.png?version=959ff95448a5590e5488cc6f4dea98f2 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/d/d4/Aether_Lens_icon.png/60px-Aether_Lens_icon.png?version=959ff95448a5590e5488cc6f4dea98f2 2x" width="30"/>
+   </a>
+   <a href="/Aether_Lens" title="Aether Lens">
+    Aether Lens
+   </a>
+  </span>
+  improves cast range on
+  <span style="white-space: nowrap;">
+   <a href="/Nyx_Assassin#Impale" title="Nyx Assassin#Impale">
+    <img alt="Impale icon.png" height="16" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/2/2f/Impale_icon.png/16px-Impale_icon.png?version=95512844900f0e37160c511484eceabe" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/2/2f/Impale_icon.png/24px-Impale_icon.png?version=95512844900f0e37160c511484eceabe 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/2/2f/Impale_icon.png/32px-Impale_icon.png?version=95512844900f0e37160c511484eceabe 2x" width="16"/>
+   </a>
+   <a href="/Nyx_Assassin#Impale" title="Nyx Assassin">
+    Impale
+   </a>
+  </span>
+  and
   <span style="white-space: nowrap;">
    <a href="/Nyx_Assassin#Mana_Burn" title="Nyx Assassin#Mana Burn">
     <img alt="Mana Burn icon.png" height="16" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/b/b6/Mana_Burn_icon.png/16px-Mana_Burn_icon.png?version=344f76272d482910ea15724a0e953446" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/b/b6/Mana_Burn_icon.png/24px-Mana_Burn_icon.png?version=344f76272d482910ea15724a0e953446 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/b/b6/Mana_Burn_icon.png/32px-Mana_Burn_icon.png?version=344f76272d482910ea15724a0e953446 2x" width="16"/>
@@ -2730,7 +2757,16 @@ document.head.appendChild(script);
     Mana Burn
    </a>
   </span>
-  ​ to deal tremendous burst damage to a single target to secure a kill.
+  and any active single target items Nyx has (like Eul's Scepter and Dagon), as well as slightly boosts their damage. It synergises greatly with
+  <span style="white-space: nowrap;">
+   <a href="/Nyx_Assassin#Burrow" title="Nyx Assassin#Burrow">
+    <img alt="Burrow icon.png" height="16" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/b/b8/Burrow_icon.png/16px-Burrow_icon.png?version=6e75dc25bb4e38d98096d57a0b1fa158" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/b/b8/Burrow_icon.png/24px-Burrow_icon.png?version=6e75dc25bb4e38d98096d57a0b1fa158 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/b/b8/Burrow_icon.png/32px-Burrow_icon.png?version=6e75dc25bb4e38d98096d57a0b1fa158 2x" width="16"/>
+   </a>
+   <a href="/Nyx_Assassin#Burrow" title="Nyx Assassin">
+    Burrow
+   </a>
+  </span>
+  , which also improves abilities cast range, providing a whooping 1570 units maximum range on Impale and 1370 on Mana Burn. This
  </li>
  <li>
   <span style="white-space:nowrap">
@@ -2750,7 +2786,19 @@ document.head.appendChild(script);
     Vendetta
    </a>
   </span>
-  ​ means that global positioning is key for allowing him to capitalize on any opportunities to secure kills.
+  means that global positioning is key for allowing him to capitalize on any opportunities to secure kills.
+ </li>
+ <li>
+  An occasional mid-game
+  <span style="white-space:nowrap">
+   <a href="/Clarity" title="Clarity">
+    <img alt="Clarity icon.png" height="22" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/77/Clarity_icon.png/30px-Clarity_icon.png?version=90ef2ce15bfaac1794f60d51aa5183a1" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/77/Clarity_icon.png/45px-Clarity_icon.png?version=90ef2ce15bfaac1794f60d51aa5183a1 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/77/Clarity_icon.png/60px-Clarity_icon.png?version=90ef2ce15bfaac1794f60d51aa5183a1 2x" width="30"/>
+   </a>
+   <a href="/Clarity" title="Clarity">
+    Clarity
+   </a>
+  </span>
+  brought together with other items allows Nyx Assassin to replenish his mana pool while not fighting, which is crucial since most of his spells will consume almost half his base mana pool with a single cast. Having the mana to continue casting gives Nyx Assassin more chances to use his disables to score kills.
  </li>
 </ul>
 <p>
@@ -2760,6 +2808,17 @@ document.head.appendChild(script);
  :
 </p>
 <ul>
+ <li>
+  <span style="white-space:nowrap">
+   <a href="/Eul%27s_Scepter_of_Divinity" title="Eul's Scepter of Divinity">
+    <img alt="Eul's Scepter of Divinity icon.png" height="22" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/8/80/Eul%27s_Scepter_of_Divinity_icon.png/30px-Eul%27s_Scepter_of_Divinity_icon.png?version=d017146c9df0d36680d0ce570eca7ca8" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/8/80/Eul%27s_Scepter_of_Divinity_icon.png/45px-Eul%27s_Scepter_of_Divinity_icon.png?version=d017146c9df0d36680d0ce570eca7ca8 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/8/80/Eul%27s_Scepter_of_Divinity_icon.png/60px-Eul%27s_Scepter_of_Divinity_icon.png?version=d017146c9df0d36680d0ce570eca7ca8 2x" width="30"/>
+   </a>
+   <a href="/Eul%27s_Scepter_of_Divinity" title="Eul's Scepter of Divinity">
+    Eul's Scepter of Divinity
+   </a>
+  </span>
+  is a strong casting item that boosts Nyx Assassin's ability to roam and gank. The increased intelligence and mana regen help to sustain his spell casting, ensuring that he doesn't have to return to base to replenish mana, and the increased movement speed gives him more mobility for hunting down enemies. The cyclone can be used to dispel debuffs from Nyx Assassin while providing temporary invulnerability, or can be cast on an enemy as a further disable or to guarantee an Impale land.
+ </li>
  <li>
   <span style="white-space:nowrap">
    <a href="/Blink_Dagger" title="Blink Dagger">
@@ -2778,7 +2837,27 @@ document.head.appendChild(script);
     Spiked Carapace
    </a>
   </span>
-  ​ can be used to prevent enemy initiating nukes from putting it on cooldown.
+  can be used to prevent enemy initiating nukes from putting it on cooldown.
+ </li>
+ <li>
+  <span style="white-space:nowrap">
+   <a href="/Dagon" title="Dagon">
+    <img alt="Dagon 1 icon.png" height="22" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/b/bc/Dagon_1_icon.png/30px-Dagon_1_icon.png?version=2cf1365db77a57460450c820c8eb4923" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/b/bc/Dagon_1_icon.png/45px-Dagon_1_icon.png?version=2cf1365db77a57460450c820c8eb4923 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/b/bc/Dagon_1_icon.png/60px-Dagon_1_icon.png?version=2cf1365db77a57460450c820c8eb4923 2x" width="30"/>
+   </a>
+   <a href="/Dagon" title="Dagon">
+    Dagon
+   </a>
+  </span>
+  greatly boosts Nyx Assassin's burst ability, giving him much more kill potential. The item boosts his intelligence, allowing him to more easily cast his spells, while the active can be added on top of Impale and
+  <span style="white-space: nowrap;">
+   <a href="/Nyx_Assassin#Mana_Burn" title="Nyx Assassin#Mana Burn">
+    <img alt="Mana Burn icon.png" height="16" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/b/b6/Mana_Burn_icon.png/16px-Mana_Burn_icon.png?version=344f76272d482910ea15724a0e953446" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/b/b6/Mana_Burn_icon.png/24px-Mana_Burn_icon.png?version=344f76272d482910ea15724a0e953446 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/b/b6/Mana_Burn_icon.png/32px-Mana_Burn_icon.png?version=344f76272d482910ea15724a0e953446 2x" width="16"/>
+   </a>
+   <a href="/Nyx_Assassin#Mana_Burn" title="Nyx Assassin">
+    Mana Burn
+   </a>
+  </span>
+  to deal tremendous burst damage to a single target to secure a kill.
  </li>
  <li>
   <span style="white-space:nowrap">
@@ -2798,7 +2877,7 @@ document.head.appendChild(script);
     Burrow
    </a>
   </span>
-  ​.
+  .
  </li>
  <li>
   <span style="white-space:nowrap">
@@ -2810,17 +2889,6 @@ document.head.appendChild(script);
    </a>
   </span>
   gives Nyx Assassin an instant ranged hard disable, useful in many situations. As well, it gives him stats across the board, particularly improving his intelligence for more mana and providing powerful scaling mana regen to allow him to roam independently.
- </li>
- <li>
-  <span style="white-space:nowrap">
-   <a href="/Drum_of_Endurance" title="Drum of Endurance">
-    <img alt="Drum of Endurance icon.png" height="22" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/9/91/Drum_of_Endurance_icon.png/30px-Drum_of_Endurance_icon.png?version=61e72016b26666f978ef124acee87911" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/9/91/Drum_of_Endurance_icon.png/45px-Drum_of_Endurance_icon.png?version=61e72016b26666f978ef124acee87911 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/9/91/Drum_of_Endurance_icon.png/60px-Drum_of_Endurance_icon.png?version=61e72016b26666f978ef124acee87911 2x" width="30"/>
-   </a>
-   <a href="/Drum_of_Endurance" title="Drum of Endurance">
-    Drum of Endurance
-   </a>
-  </span>
-  is a useful stat booster that is easy to build. It gives Nyx Assassin all-around attributes, improving his HP, attack damage and mana. The aura can be very useful, as it boosts Nyx Assassin's movement speed, allowing him to chase down enemies more quickly.
  </li>
  <li>
   <span style="white-space:nowrap">
@@ -2868,17 +2936,6 @@ document.head.appendChild(script);
  </li>
  <li>
   <span style="white-space:nowrap">
-   <a href="/Stout_Shield" title="Stout Shield">
-    <img alt="Stout Shield icon.png" height="22" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/0/01/Stout_Shield_icon.png/30px-Stout_Shield_icon.png?version=9edbfc8c6caead89362d029d4085d58a" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/0/01/Stout_Shield_icon.png/45px-Stout_Shield_icon.png?version=9edbfc8c6caead89362d029d4085d58a 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/0/01/Stout_Shield_icon.png/60px-Stout_Shield_icon.png?version=9edbfc8c6caead89362d029d4085d58a 2x" width="30"/>
-   </a>
-   <a href="/Stout_Shield" title="Stout Shield">
-    Stout Shield
-   </a>
-  </span>
-  can greatly increase Nyx Assassin's resistance against harass damage when off-laning. Along with his innate HP regen, the damage block can keep his HP full and able to continue gaining gold and experience.
- </li>
- <li>
-  <span style="white-space:nowrap">
    <a href="/Bottle" title="Bottle">
     <img alt="Bottle (Full) icon.png" height="22" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/f/fa/Bottle_%28Full%29_icon.png/30px-Bottle_%28Full%29_icon.png?version=89525519f7fa30d0f76eb68d32f8df0a" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/f/fa/Bottle_%28Full%29_icon.png/45px-Bottle_%28Full%29_icon.png?version=89525519f7fa30d0f76eb68d32f8df0a 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/f/fa/Bottle_%28Full%29_icon.png/60px-Bottle_%28Full%29_icon.png?version=89525519f7fa30d0f76eb68d32f8df0a 2x" width="30"/>
    </a>
@@ -2890,14 +2947,14 @@ document.head.appendChild(script);
  </li>
  <li>
   <span style="white-space:nowrap">
-   <a href="/Ring_of_Aquila" title="Ring of Aquila">
-    <img alt="Ring of Aquila (Active) icon.png" height="22" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/3/3f/Ring_of_Aquila_%28Active%29_icon.png/30px-Ring_of_Aquila_%28Active%29_icon.png?version=d9e1851149c0f51e8fc985ee1504740c" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/3/3f/Ring_of_Aquila_%28Active%29_icon.png/45px-Ring_of_Aquila_%28Active%29_icon.png?version=d9e1851149c0f51e8fc985ee1504740c 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/3/3f/Ring_of_Aquila_%28Active%29_icon.png/60px-Ring_of_Aquila_%28Active%29_icon.png?version=d9e1851149c0f51e8fc985ee1504740c 2x" width="30"/>
+   <a href="/Ring_of_Basilius" title="Ring of Basilius">
+    <img alt="Ring of Basilius (Active) icon.png" height="22" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/2/26/Ring_of_Basilius_%28Active%29_icon.png/30px-Ring_of_Basilius_%28Active%29_icon.png?version=fdf04ed69de1c27f3c7dec08a4c26dc3" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/2/26/Ring_of_Basilius_%28Active%29_icon.png/45px-Ring_of_Basilius_%28Active%29_icon.png?version=fdf04ed69de1c27f3c7dec08a4c26dc3 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/2/26/Ring_of_Basilius_%28Active%29_icon.png/60px-Ring_of_Basilius_%28Active%29_icon.png?version=fdf04ed69de1c27f3c7dec08a4c26dc3 2x" width="30"/>
    </a>
-   <a href="/Ring_of_Aquila" title="Ring of Aquila">
-    Ring of Aquila
+   <a href="/Ring_of_Basilius" title="Ring of Basilius">
+    Ring of Basilius
    </a>
   </span>
-  provides Nyx Assassin with an assortment of attributes, as well as increasing his armor and providing some mana regen. It is a good cheap stat-booster that helps to sustain his mana pool.
+  provides Nyx Assassin with a boost armor, damage and mana regeneration. It is a good cheap laning item, that is especially good when laning together with another hero. Can be disassembled later to use the Sage's Mask in Eul's Scepter or Urn of Shadows, for example.
  </li>
  <li>
   <span style="white-space:nowrap">
@@ -2920,17 +2977,6 @@ document.head.appendChild(script);
    </a>
   </span>
   is an unorthodox utility item to build on Nyx Assassin, but can be useful in certain situations. The ability to summon minions to assist him during ganks can increase the odds of getting a kill, and upgrading to level 3 Necronomicon provides True Sight that can debilitate an enemy's chances of using invisibility spells to escape. It also provides teamfight contribution, adding damage output on top of Nyx Assassin's disables and nukes.
- </li>
- <li>
-  <span style="white-space:nowrap">
-   <a href="/Eul%27s_Scepter_of_Divinity" title="Eul's Scepter of Divinity">
-    <img alt="Eul's Scepter of Divinity icon.png" height="22" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/8/80/Eul%27s_Scepter_of_Divinity_icon.png/30px-Eul%27s_Scepter_of_Divinity_icon.png?version=d017146c9df0d36680d0ce570eca7ca8" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/8/80/Eul%27s_Scepter_of_Divinity_icon.png/45px-Eul%27s_Scepter_of_Divinity_icon.png?version=d017146c9df0d36680d0ce570eca7ca8 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/8/80/Eul%27s_Scepter_of_Divinity_icon.png/60px-Eul%27s_Scepter_of_Divinity_icon.png?version=d017146c9df0d36680d0ce570eca7ca8 2x" width="30"/>
-   </a>
-   <a href="/Eul%27s_Scepter_of_Divinity" title="Eul's Scepter of Divinity">
-    Eul's Scepter of Divinity
-   </a>
-  </span>
-  is a strong casting item that boosts Nyx Assassin's ability to roam and gank. The increased intelligence and mana regen help to sustain his spell casting, ensuring that he doesn't have to return to base to replenish mana, and the increased movement speed gives him more mobility for hunting down enemies. The cyclone can be used to dispel debuffs from Nyx Assassin while providing temporary invulnerability, or can be cast on an enemy as a further disable.
  </li>
  <li>
   <span style="white-space:nowrap">
@@ -2965,17 +3011,6 @@ document.head.appendChild(script);
   </span>
   provides Nyx Assassin with a soft disable that can greatly improve his ability to gank and kill enemies. By silencing an enemy during a gank, Nyx Assassin can prevent them from casting retaliatory disables to get away; as well, his high burst damage can take advantage of the burn damage at the end of the silence to increase the odds of getting a kill during a gank. The item also provides increased intelligence and mana regen, further improving Nyx Assassin's ability to roam independently.
  </li>
- <li>
-  <span style="white-space:nowrap">
-   <a href="/Aghanim%27s_Scepter" title="Aghanim's Scepter">
-    <img alt="Aghanim's Scepter icon.png" height="22" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/0/07/Aghanim%27s_Scepter_icon.png/30px-Aghanim%27s_Scepter_icon.png?version=edd1c0d7d3c00a8233897e53a0011edd" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/0/07/Aghanim%27s_Scepter_icon.png/45px-Aghanim%27s_Scepter_icon.png?version=edd1c0d7d3c00a8233897e53a0011edd 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/0/07/Aghanim%27s_Scepter_icon.png/60px-Aghanim%27s_Scepter_icon.png?version=edd1c0d7d3c00a8233897e53a0011edd 2x" width="30"/>
-   </a>
-   <a href="/Aghanim%27s_Scepter" title="Aghanim's Scepter">
-    Aghanim's Scepter
-   </a>
-  </span>
-  unlocks Burrow, which can give Nyx Assassin a strong tactical advantage against certain enemies. It also improves his overall attributes, aiding in his survivability and buffing up his mana pool.
- </li>
 </ul>
 <h2>
  <span class="mw-headline" id="Gameplay">
@@ -2985,14 +3020,8 @@ document.head.appendChild(script);
   <span class="mw-editsection-bracket">
    [
   </span>
-  <a class="mw-editsection-visualeditor" href="/index.php?title=Nyx_Assassin&amp;veaction=edit&amp;vesection=5" title="Edit section: Gameplay">
-   edit
-  </a>
-  <span class="mw-editsection-divider">
-   |
-  </span>
   <a href="/index.php?title=Nyx_Assassin&amp;action=edit&amp;section=5" title="Edit section: Gameplay">
-   edit source
+   edit
   </a>
   <span class="mw-editsection-bracket">
    ]
@@ -3029,14 +3058,8 @@ document.head.appendChild(script);
   <span class="mw-editsection-bracket">
    [
   </span>
-  <a class="mw-editsection-visualeditor" href="/index.php?title=Nyx_Assassin&amp;veaction=edit&amp;vesection=6" title="Edit section: Audio">
-   edit
-  </a>
-  <span class="mw-editsection-divider">
-   |
-  </span>
   <a href="/index.php?title=Nyx_Assassin&amp;action=edit&amp;section=6" title="Edit section: Audio">
-   edit source
+   edit
   </a>
   <span class="mw-editsection-bracket">
    ]
@@ -3071,14 +3094,8 @@ document.head.appendChild(script);
   <span class="mw-editsection-bracket">
    [
   </span>
-  <a class="mw-editsection-visualeditor" href="/index.php?title=Nyx_Assassin&amp;veaction=edit&amp;vesection=7" title="Edit section: History">
-   edit
-  </a>
-  <span class="mw-editsection-divider">
-   |
-  </span>
   <a href="/index.php?title=Nyx_Assassin&amp;action=edit&amp;section=7" title="Edit section: History">
-   edit source
+   edit
   </a>
   <span class="mw-editsection-bracket">
    ]
@@ -3122,14 +3139,8 @@ document.head.appendChild(script);
   <span class="mw-editsection-bracket">
    [
   </span>
-  <a class="mw-editsection-visualeditor" href="/index.php?title=Nyx_Assassin&amp;veaction=edit&amp;vesection=8" title="Edit section: Equipment">
-   edit
-  </a>
-  <span class="mw-editsection-divider">
-   |
-  </span>
   <a href="/index.php?title=Nyx_Assassin&amp;action=edit&amp;section=8" title="Edit section: Equipment">
-   edit source
+   edit
   </a>
   <span class="mw-editsection-bracket">
    ]
@@ -3170,13 +3181,12 @@ document.head.appendChild(script);
       <span class="" style="font-size:110%;">
        <span style="white-space:nowrap">
         <a href="/Nyx_Assassin" title="Nyx Assassin">
-         <img alt="Nyx Assassin icon.png" height="32" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/f/fa/Nyx_Assassin_icon.png?version=a5dd13048b14da478bdc590d11f24106" width="32"/>
+         <img alt="Nyx Assassin minimap icon.png" height="32" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/a/aa/Nyx_Assassin_minimap_icon.png?version=12bd24f880627dd58dd39aa32320a3bc" width="32"/>
         </a>
         <strong class="selflink">
          Nyx Assassin
         </strong>
        </span>
-       ​
        <a href="/Equipment" title="Equipment">
         Equipment
        </a>
@@ -3201,7 +3211,7 @@ document.head.appendChild(script);
        <div class="cosmetic-label" style="width:200px;">
         <div style="box-shadow:0px 0px 2px 4px #4b69ff;">
          <a href="/Alpha_Predator_Set" title="Alpha Predator Set">
-          <img alt="Alpha Predator Set" height="133" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/a/aa/Cosmetic_icon_Alpha_Predator_Set.png/200px-Cosmetic_icon_Alpha_Predator_Set.png?version=fc4dc979b9e2fd0688253d5ac3d6822a" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/a/aa/Cosmetic_icon_Alpha_Predator_Set.png/300px-Cosmetic_icon_Alpha_Predator_Set.png?version=fc4dc979b9e2fd0688253d5ac3d6822a 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/a/aa/Cosmetic_icon_Alpha_Predator_Set.png/400px-Cosmetic_icon_Alpha_Predator_Set.png?version=fc4dc979b9e2fd0688253d5ac3d6822a 2x" width="200"/>
+          <img alt="Alpha Predator Set" height="133" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/c/cb/Cosmetic_icon_Alpha_Predator.png/200px-Cosmetic_icon_Alpha_Predator.png?version=8e83cff1ba4da5b70bb4de540b8fb11b" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/c/cb/Cosmetic_icon_Alpha_Predator.png/300px-Cosmetic_icon_Alpha_Predator.png?version=8e83cff1ba4da5b70bb4de540b8fb11b 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/c/cb/Cosmetic_icon_Alpha_Predator.png/400px-Cosmetic_icon_Alpha_Predator.png?version=8e83cff1ba4da5b70bb4de540b8fb11b 2x" width="200"/>
          </a>
         </div>
         <a href="/Alpha_Predator_Set" title="Alpha Predator Set">
@@ -3216,6 +3226,16 @@ document.head.appendChild(script);
         </div>
         <a href="/Carapace_of_the_Hidden_Hive_Set" title="Carapace of the Hidden Hive Set">
          Carapace of the Hidden Hive Set
+        </a>
+       </div>
+       <div class="cosmetic-label" style="width:200px;">
+        <div style="box-shadow:0px 0px 2px 4px #8847ff;">
+         <a href="/Chitinous_Stalker" title="Chitinous Stalker">
+          <img alt="Chitinous Stalker" height="133" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/9/97/Cosmetic_icon_Chitinous_Stalker.png/200px-Cosmetic_icon_Chitinous_Stalker.png?version=779294c115ec062d6e67de6bb9d8524c" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/9/97/Cosmetic_icon_Chitinous_Stalker.png/300px-Cosmetic_icon_Chitinous_Stalker.png?version=779294c115ec062d6e67de6bb9d8524c 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/9/97/Cosmetic_icon_Chitinous_Stalker.png/400px-Cosmetic_icon_Chitinous_Stalker.png?version=779294c115ec062d6e67de6bb9d8524c 2x" width="200"/>
+         </a>
+        </div>
+        <a href="/Chitinous_Stalker" title="Chitinous Stalker">
+         Chitinous Stalker
         </a>
        </div>
        <div class="cosmetic-label" style="width:200px;">
@@ -3276,6 +3296,16 @@ document.head.appendChild(script);
         </div>
         <a href="/Sacred_Orb_Set" title="Sacred Orb Set">
          Sacred Orb Set
+        </a>
+       </div>
+       <div class="cosmetic-label" style="width:200px;">
+        <div style="box-shadow:0px 0px 2px 4px #8847ff;">
+         <a href="/Sect_of_Kaktos" title="Sect of Kaktos">
+          <img alt="Sect of Kaktos" height="133" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/6/6d/Cosmetic_icon_Sect_of_Kaktos.png/200px-Cosmetic_icon_Sect_of_Kaktos.png?version=d85bf1adfbc1442e30d6a05e99b83fb7" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/6/6d/Cosmetic_icon_Sect_of_Kaktos.png/300px-Cosmetic_icon_Sect_of_Kaktos.png?version=d85bf1adfbc1442e30d6a05e99b83fb7 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/6/6d/Cosmetic_icon_Sect_of_Kaktos.png/400px-Cosmetic_icon_Sect_of_Kaktos.png?version=d85bf1adfbc1442e30d6a05e99b83fb7 2x" width="200"/>
+         </a>
+        </div>
+        <a href="/Sect_of_Kaktos" title="Sect of Kaktos">
+         Sect of Kaktos
         </a>
        </div>
        <div class="cosmetic-label" style="width:200px;">
@@ -3389,14 +3419,8 @@ document.head.appendChild(script);
   <span class="mw-editsection-bracket">
    [
   </span>
-  <a class="mw-editsection-visualeditor" href="/index.php?title=Nyx_Assassin&amp;veaction=edit&amp;vesection=9" title="Edit section: Trivia">
-   edit
-  </a>
-  <span class="mw-editsection-divider">
-   |
-  </span>
   <a href="/index.php?title=Nyx_Assassin&amp;action=edit&amp;section=9" title="Edit section: Trivia">
-   edit source
+   edit
   </a>
   <span class="mw-editsection-bracket">
    ]
@@ -3431,14 +3455,8 @@ document.head.appendChild(script);
   <span class="mw-editsection-bracket">
    [
   </span>
-  <a class="mw-editsection-visualeditor" href="/index.php?title=Nyx_Assassin&amp;veaction=edit&amp;vesection=10" title="Edit section: Gallery">
-   edit
-  </a>
-  <span class="mw-editsection-divider">
-   |
-  </span>
   <a href="/index.php?title=Nyx_Assassin&amp;action=edit&amp;section=10" title="Edit section: Gallery">
-   edit source
+   edit
   </a>
   <span class="mw-editsection-bracket">
    ]
@@ -3533,38 +3551,39 @@ document.head.appendChild(script);
 </ul>
 <!-- 
 NewPP limit report
-Cached time: 20170207214755
+Cached time: 20170608231950
 Cache expiry: 86400
 Dynamic content: false
-[SMW] In‐text annotation parser time: 0.000 seconds
-CPU time usage: 1.568 seconds
-Real time usage: 2.777 seconds
-Preprocessor visited node count: 17680/1000000
-Preprocessor generated node count: 55548/1000000
-Post‐expand include size: 152999/2097152 bytes
-Template argument size: 56708/2097152 bytes
-Highest expansion depth: 18/40
-Expensive parser function count: 0/99
+[SMW] In‐text annotation parser time: 0.001 seconds
+CPU time usage: 1.656 seconds
+Real time usage: 2.793 seconds
+Preprocessor visited node count: 10081/1000000
+Preprocessor generated node count: 49271/1000000
+Post‐expand include size: 145750/2097152 bytes
+Template argument size: 55844/2097152 bytes
+Highest expansion depth: 13/40
+Expensive parser function count: 1/99
+ExtLoops count: 35/1000
 -->
 <!-- 
 Transclusion expansion time report (%,ms,calls,template)
-100.00% 2193.612      1 - -total
- 39.90%  875.283      6 - Template:Ability
- 22.94%  503.188     33 - Template:I
- 17.78%  390.103      1 - Template:Equipment_Nyx_Assassin
- 17.66%  387.398      1 - Template:Equipment
- 17.48%  383.389      1 - Template:Navbox
- 13.69%  300.258     18 - Template:A
- 11.68%  256.189     33 - Template:Item_link
-  9.83%  215.680      1 - Template:Hero_infobox
-  9.47%  207.820    198 - Template:If_lang
+100.00% 2181.396      1 - -total
+ 41.18%  898.371      6 - Template:Ability
+ 19.63%  428.122     22 - Template:A
+ 19.31%  421.130      1 - Template:Equipment_Nyx_Assassin
+ 19.19%  418.710      1 - Template:Equipment
+ 19.03%  415.044      1 - Template:Navbox
+ 13.92%  303.576     29 - Template:I
+ 12.42%  270.857      1 - Template:Hero_infobox
+ 11.85%  258.540     17 - Template:Cosmetic
+  6.42%  140.130     17 - Template:Cosmetic_icon
 -->
-<!-- Saved in parser cache with key dota2_gamepedia:pcache:idhash:8148-0!*!0!default!!en!5!* and timestamp 20170207214753 and revision id 1445245
+<!-- Saved in parser cache with key dota2_gamepedia:pcache:idhash:8148-0!*!0!default!!en!5!* and timestamp 20170608231947 and revision id 1533483
  -->
 <div class="printfooter">
  Retrieved from "
- <a dir="ltr" href="http://dota2.gamepedia.com/index.php?title=Nyx_Assassin&amp;oldid=1445245">
-  http://dota2.gamepedia.com/index.php?title=Nyx_Assassin&amp;oldid=1445245
+ <a dir="ltr" href="https://dota2.gamepedia.com/index.php?title=Nyx_Assassin&amp;oldid=1533483">
+  https://dota2.gamepedia.com/index.php?title=Nyx_Assassin&amp;oldid=1533483
  </a>
  "
 </div>
@@ -3628,7 +3647,7 @@ Transclusion expansion time report (%,ms,calls,template)
     (function() {
         var zergnet = document.createElement('script');
         zergnet.type = 'text/javascript'; zergnet.async = true;
-        zergnet.src = 'http://www.zergnet.com/zerg.js?id=42966';
+        zergnet.src = '//www.zergnet.com/zerg.js?id=42966';
         var znscr = document.getElementsByTagName('script')[0];
         znscr.parentNode.insertBefore(zergnet, znscr);
     })();
@@ -3718,19 +3737,19 @@ Transclusion expansion time report (%,ms,calls,template)
     </h3>
     <div class="menu">
      <div id="socialIconImages">
-      <a href="https://twitter.com/intent/tweet?text=Check+out+Nyx+Assassin+on+Dota+2+Wiki+--&amp;via=CurseGamepedia&amp;url=http%3A%2F%2Fdota2.gamepedia.com%2FNyx_Assassin" target="_blank">
+      <a href="https://twitter.com/intent/tweet?text=Check+out+Nyx+Assassin+on+Dota+2+Wiki+--&amp;via=CurseGamepedia&amp;url=https%3A%2F%2Fdota2.gamepedia.com%2FNyx_Assassin" target="_blank">
        <img src="/extensions/Social/images/square_icons/twitter.png"/>
       </a>
-      <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fdota2.gamepedia.com%2FNyx_Assassin" target="_blank">
+      <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdota2.gamepedia.com%2FNyx_Assassin" target="_blank">
        <img src="/extensions/Social/images/square_icons/facebook.png"/>
       </a>
-      <a href="https://plus.google.com/share?url=http%3A%2F%2Fdota2.gamepedia.com%2FNyx_Assassin" target="_blank">
+      <a href="https://plus.google.com/share?url=https%3A%2F%2Fdota2.gamepedia.com%2FNyx_Assassin" target="_blank">
        <img src="/extensions/Social/images/square_icons/googleplus.png"/>
       </a>
-      <a href="http://www.reddit.com/submit?url=http%3A%2F%2Fdota2.gamepedia.com%2FNyx_Assassin&amp;title=Check+out+Nyx+Assassin+on+Dota+2+Wiki+via+%40CurseGamepedia%3A+http%3A%2F%2Fdota2.gamepedia.com%2FNyx_Assassin" target="_blank">
+      <a href="http://www.reddit.com/submit?url=https%3A%2F%2Fdota2.gamepedia.com%2FNyx_Assassin&amp;title=Check+out+Nyx+Assassin+on+Dota+2+Wiki+via+%40CurseGamepedia%3A+https%3A%2F%2Fdota2.gamepedia.com%2FNyx_Assassin" target="_blank">
        <img src="/extensions/Social/images/square_icons/reddit.png"/>
       </a>
-      <a href="http://www.tumblr.com/share/link?url=http%3A%2F%2Fdota2.gamepedia.com%2FNyx_Assassin&amp;name=Dota+2+Wiki&amp;description=Check+out+Nyx+Assassin+on+Dota+2+Wiki+via+%3Ca+href%3D%22https%3A%2F%2Ftwitter.com%2FCurseGamepedia%22+target%3D%22_blank%22%3E%40CurseGamepedia%3C%2Fa%3E%3A+http%3A%2F%2Fdota2.gamepedia.com%2FNyx_Assassin" target="_blank">
+      <a href="http://www.tumblr.com/share/link?url=https%3A%2F%2Fdota2.gamepedia.com%2FNyx_Assassin&amp;name=Dota+2+Wiki&amp;description=Check+out+Nyx+Assassin+on+Dota+2+Wiki+via+%3Ca+href%3D%22https%3A%2F%2Ftwitter.com%2FCurseGamepedia%22+target%3D%22_blank%22%3E%40CurseGamepedia%3C%2Fa%3E%3A+https%3A%2F%2Fdota2.gamepedia.com%2FNyx_Assassin" target="_blank">
        <img src="/extensions/Social/images/square_icons/tumblr.png"/>
       </a>
      </div>
@@ -3750,17 +3769,10 @@ Transclusion expansion time report (%,ms,calls,template)
        </a>
       </span>
      </li>
-     <li id="ca-ve-edit">
-      <span>
-       <a accesskey="v" href="/index.php?title=Nyx_Assassin&amp;veaction=edit" title="Edit this page [v]">
-        Edit
-       </a>
-      </span>
-     </li>
-     <li class=" collapsible" id="ca-edit">
+     <li id="ca-edit">
       <span>
        <a accesskey="e" href="/index.php?title=Nyx_Assassin&amp;action=edit" title="Edit this page [e]">
-        Edit source
+        Edit
        </a>
       </span>
      </li>
@@ -3958,7 +3970,7 @@ Transclusion expansion time report (%,ms,calls,template)
       </a>
      </li>
      <li id="t-permalink">
-      <a href="/index.php?title=Nyx_Assassin&amp;oldid=1445245" title="Permanent link to this revision of the page">
+      <a href="/index.php?title=Nyx_Assassin&amp;oldid=1533483" title="Permanent link to this revision of the page">
        Permanent link
       </a>
      </li>
@@ -4122,12 +4134,41 @@ Transclusion expansion time report (%,ms,calls,template)
     </div>
    </div>
   </div>
+  <div aria-labelledby="p-lang-label" class="portal" id="p-lang" role="navigation">
+   <h3 id="p-lang-label">
+    In other languages
+   </h3>
+   <div class="body">
+    <ul>
+     <li class="interlanguage-link interwiki-de">
+      <a href="http://dota2-de.gamepedia.com/Nyx_Assassin" hreflang="de" lang="de" title="Nyx Assassin – Deutsch">
+       Deutsch
+      </a>
+     </li>
+     <li class="interlanguage-link interwiki-pt">
+      <a href="http://dota2-pt.gamepedia.com/Nyx_Assassin" hreflang="pt" lang="pt" title="Nyx Assassin – português">
+       Português
+      </a>
+     </li>
+     <li class="interlanguage-link interwiki-ru">
+      <a href="http://dota2-ru.gamepedia.com/Nyx_Assassin" hreflang="ru" lang="ru" title="Nyx Assassin – русский">
+       Русский
+      </a>
+     </li>
+     <li class="interlanguage-link interwiki-zh">
+      <a href="http://dota2-zh.gamepedia.com/%E5%8F%B8%E5%A4%9C%E5%88%BA%E5%AE%A2" hreflang="zh" lang="zh" title="司夜刺客 – 中文">
+       中文
+      </a>
+     </li>
+    </ul>
+   </div>
+  </div>
  </div>
 </div>
 <div id="footer" role="contentinfo">
  <ul id="footer-info">
   <li id="footer-info-lastmod">
-   This page was last modified on 22 January 2017, at 07:38.
+   This page was last modified on 7 June 2017, at 18:47.
   </li>
   <li id="footer-info-copyright">
    Content is available under
@@ -4211,8 +4252,8 @@ Transclusion expansion time report (%,ms,calls,template)
     </a>
    </li>
    <li>
-    <a class="advertise" href="https://ghostreconwildlands.gamepedia.com">
-     Ghost Recon
+    <a class="advertise" href="https://masseffectandromeda.gamepedia.com/Mass_Effect:_Andromeda_Wiki">
+     ME:Andromeda
     </a>
    </li>
   </ul>
@@ -4238,8 +4279,8 @@ Transclusion expansion time report (%,ms,calls,template)
     </a>
    </li>
    <li>
-    <a class="about" href="http://www.hearthpwn.com/guides/1480-how-to-get-cheaper-hearthstone-packs-buy-amazon">
-     HS Packs
+    <a class="advertise" href="https://masseffectandromeda.gamepedia.com/Skill">
+     ME:A Skills
     </a>
    </li>
   </ul>
@@ -4265,8 +4306,8 @@ Transclusion expansion time report (%,ms,calls,template)
     </a>
    </li>
    <li>
-    <a class="tos" href="https://forhonor.gamepedia.com">
-     For Honor
+    <a class="advertise" href="https://zelda.gamepedia.com/Main_Page">
+     Zelda Wiki
     </a>
    </li>
   </ul>
@@ -4322,8 +4363,5 @@ _comscore.push({ c1: "2", c2: "6035118" });
 				window.wikiTags = ["action","defense of the ancients","esports","free-to-play","free to play","ftp","game:dota 2","linux","mac","pc","rts","source","steam","valve"];
 </script>
 <script>
- (window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":2909});});
-</script>
-<script type="text/javascript">
- window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"75f4858b7a","applicationID":"1909498","transactionName":"YlVXbREHWksEUkVdCVsfYEsKSV1WAVRJGhZdQA==","queueTime":0,"applicationTime":2922,"atts":"ThJAG1kdSRRHUBMOHUhN","errorBeacon":"bam.nr-data.net","agent":""}
+ (window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":129});});
 </script>

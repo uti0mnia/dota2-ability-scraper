@@ -2,9 +2,6 @@
 <html class="client-nojs" dir="ltr" lang="en">
  <head>
   <meta charset="utf-8"/>
-  <script type="text/javascript">
-   (window.NREUM||(NREUM={})).loader_config={xpid:"UAcAUlNACQoAXVVbDw=="};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var o=e[n]={exports:{}};t[n][0].call(o.exports,function(e){var o=t[n][1][e];return r(o||e)},o,o.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({1:[function(t,e,n){function r(t){try{c.console&&console.log(t)}catch(e){}}var o,i=t("ee"),a=t(15),c={};try{o=localStorage.getItem("__nr_flags").split(","),console&&"function"==typeof console.log&&(c.console=!0,o.indexOf("dev")!==-1&&(c.dev=!0),o.indexOf("nr_dev")!==-1&&(c.nrDev=!0))}catch(s){}c.nrDev&&i.on("internal-error",function(t){r(t.stack)}),c.dev&&i.on("fn-err",function(t,e,n){r(n.stack)}),c.dev&&(r("NR AGENT IN DEVELOPMENT MODE"),r("flags: "+a(c,function(t,e){return t}).join(", ")))},{}],2:[function(t,e,n){function r(t,e,n,r,o){try{d?d-=1:i("err",[o||new UncaughtException(t,e,n)])}catch(c){try{i("ierr",[c,(new Date).getTime(),!0])}catch(s){}}return"function"==typeof f&&f.apply(this,a(arguments))}function UncaughtException(t,e,n){this.message=t||"Uncaught error with no additional information",this.sourceURL=e,this.line=n}function o(t){i("err",[t,(new Date).getTime()])}var i=t("handle"),a=t(16),c=t("ee"),s=t("loader"),f=window.onerror,u=!1,d=0;s.features.err=!0,t(1),window.onerror=r;try{throw new Error}catch(l){"stack"in l&&(t(8),t(7),"addEventListener"in window&&t(5),s.xhrWrappable&&t(9),u=!0)}c.on("fn-start",function(t,e,n){u&&(d+=1)}),c.on("fn-err",function(t,e,n){u&&(this.thrown=!0,o(n))}),c.on("fn-end",function(){u&&!this.thrown&&d>0&&(d-=1)}),c.on("internal-error",function(t){i("ierr",[t,(new Date).getTime(),!0])})},{}],3:[function(t,e,n){t("loader").features.ins=!0},{}],4:[function(t,e,n){function r(t){}if(window.performance&&window.performance.timing&&window.performance.getEntriesByType){var o=t("ee"),i=t("handle"),a=t(8),c=t(7),s="learResourceTimings",f="addEventListener",u="resourcetimingbufferfull",d="bstResource",l="resource",p="-start",h="-end",m="fn"+p,w="fn"+h,v="bstTimer",y="pushState";t("loader").features.stn=!0,t(6);var g=NREUM.o.EV;o.on(m,function(t,e){var n=t[0];n instanceof g&&(this.bstStart=Date.now())}),o.on(w,function(t,e){var n=t[0];n instanceof g&&i("bst",[n,e,this.bstStart,Date.now()])}),a.on(m,function(t,e,n){this.bstStart=Date.now(),this.bstType=n}),a.on(w,function(t,e){i(v,[e,this.bstStart,Date.now(),this.bstType])}),c.on(m,function(){this.bstStart=Date.now()}),c.on(w,function(t,e){i(v,[e,this.bstStart,Date.now(),"requestAnimationFrame"])}),o.on(y+p,function(t){this.time=Date.now(),this.startPath=location.pathname+location.hash}),o.on(y+h,function(t){i("bstHist",[location.pathname+location.hash,this.startPath,this.time])}),f in window.performance&&(window.performance["c"+s]?window.performance[f](u,function(t){i(d,[window.performance.getEntriesByType(l)]),window.performance["c"+s]()},!1):window.performance[f]("webkit"+u,function(t){i(d,[window.performance.getEntriesByType(l)]),window.performance["webkitC"+s]()},!1)),document[f]("scroll",r,{passive:!0}),document[f]("keypress",r,!1),document[f]("click",r,!1)}},{}],5:[function(t,e,n){function r(t){for(var e=t;e&&!e.hasOwnProperty(u);)e=Object.getPrototypeOf(e);e&&o(e)}function o(t){c.inPlace(t,[u,d],"-",i)}function i(t,e){return t[1]}var a=t("ee").get("events"),c=t(17)(a,!0),s=t("gos"),f=XMLHttpRequest,u="addEventListener",d="removeEventListener";e.exports=a,"getPrototypeOf"in Object?(r(document),r(window),r(f.prototype)):f.prototype.hasOwnProperty(u)&&(o(window),o(f.prototype)),a.on(u+"-start",function(t,e){var n=t[1],r=s(n,"nr@wrapped",function(){function t(){if("function"==typeof n.handleEvent)return n.handleEvent.apply(n,arguments)}var e={object:t,"function":n}[typeof n];return e?c(e,"fn-",null,e.name||"anonymous"):n});this.wrapped=t[1]=r}),a.on(d+"-start",function(t){t[1]=this.wrapped||t[1]})},{}],6:[function(t,e,n){var r=t("ee").get("history"),o=t(17)(r);e.exports=r,o.inPlace(window.history,["pushState","replaceState"],"-")},{}],7:[function(t,e,n){var r=t("ee").get("raf"),o=t(17)(r),i="equestAnimationFrame";e.exports=r,o.inPlace(window,["r"+i,"mozR"+i,"webkitR"+i,"msR"+i],"raf-"),r.on("raf-start",function(t){t[0]=o(t[0],"fn-")})},{}],8:[function(t,e,n){function r(t,e,n){t[0]=a(t[0],"fn-",null,n)}function o(t,e,n){this.method=n,this.timerDuration="number"==typeof t[1]?t[1]:0,t[0]=a(t[0],"fn-",this,n)}var i=t("ee").get("timer"),a=t(17)(i),c="setTimeout",s="setInterval",f="clearTimeout",u="-start",d="-";e.exports=i,a.inPlace(window,[c,"setImmediate"],c+d),a.inPlace(window,[s],s+d),a.inPlace(window,[f,"clearImmediate"],f+d),i.on(s+u,r),i.on(c+u,o)},{}],9:[function(t,e,n){function r(t,e){d.inPlace(e,["onreadystatechange"],"fn-",c)}function o(){var t=this,e=u.context(t);t.readyState>3&&!e.resolved&&(e.resolved=!0,u.emit("xhr-resolved",[],t)),d.inPlace(t,w,"fn-",c)}function i(t){v.push(t),h&&(g=-g,b.data=g)}function a(){for(var t=0;t<v.length;t++)r([],v[t]);v.length&&(v=[])}function c(t,e){return e}function s(t,e){for(var n in t)e[n]=t[n];return e}t(5);var f=t("ee"),u=f.get("xhr"),d=t(17)(u),l=NREUM.o,p=l.XHR,h=l.MO,m="readystatechange",w=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"],v=[];e.exports=u;var y=window.XMLHttpRequest=function(t){var e=new p(t);try{u.emit("new-xhr",[e],e),e.addEventListener(m,o,!1)}catch(n){try{u.emit("internal-error",[n])}catch(r){}}return e};if(s(p,y),y.prototype=p.prototype,d.inPlace(y.prototype,["open","send"],"-xhr-",c),u.on("send-xhr-start",function(t,e){r(t,e),i(e)}),u.on("open-xhr-start",r),h){var g=1,b=document.createTextNode(g);new h(a).observe(b,{characterData:!0})}else f.on("fn-end",function(t){t[0]&&t[0].type===m||a()})},{}],10:[function(t,e,n){function r(t){var e=this.params,n=this.metrics;if(!this.ended){this.ended=!0;for(var r=0;r<d;r++)t.removeEventListener(u[r],this.listener,!1);if(!e.aborted){if(n.duration=(new Date).getTime()-this.startTime,4===t.readyState){e.status=t.status;var i=o(t,this.lastSize);if(i&&(n.rxSize=i),this.sameOrigin){var a=t.getResponseHeader("X-NewRelic-App-Data");a&&(e.cat=a.split(", ").pop())}}else e.status=0;n.cbTime=this.cbTime,f.emit("xhr-done",[t],t),c("xhr",[e,n,this.startTime])}}}function o(t,e){var n=t.responseType;if("json"===n&&null!==e)return e;var r="arraybuffer"===n||"blob"===n||"json"===n?t.response:t.responseText;return h(r)}function i(t,e){var n=s(e),r=t.params;r.host=n.hostname+":"+n.port,r.pathname=n.pathname,t.sameOrigin=n.sameOrigin}var a=t("loader");if(a.xhrWrappable){var c=t("handle"),s=t(11),f=t("ee"),u=["load","error","abort","timeout"],d=u.length,l=t("id"),p=t(14),h=t(13),m=window.XMLHttpRequest;a.features.xhr=!0,t(9),f.on("new-xhr",function(t){var e=this;e.totalCbs=0,e.called=0,e.cbTime=0,e.end=r,e.ended=!1,e.xhrGuids={},e.lastSize=null,p&&(p>34||p<10)||window.opera||t.addEventListener("progress",function(t){e.lastSize=t.loaded},!1)}),f.on("open-xhr-start",function(t){this.params={method:t[0]},i(this,t[1]),this.metrics={}}),f.on("open-xhr-end",function(t,e){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&e.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid)}),f.on("send-xhr-start",function(t,e){var n=this.metrics,r=t[0],o=this;if(n&&r){var i=h(r);i&&(n.txSize=i)}this.startTime=(new Date).getTime(),this.listener=function(t){try{"abort"===t.type&&(o.params.aborted=!0),("load"!==t.type||o.called===o.totalCbs&&(o.onloadCalled||"function"!=typeof e.onload))&&o.end(e)}catch(n){try{f.emit("internal-error",[n])}catch(r){}}};for(var a=0;a<d;a++)e.addEventListener(u[a],this.listener,!1)}),f.on("xhr-cb-time",function(t,e,n){this.cbTime+=t,e?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof n.onload||this.end(n)}),f.on("xhr-load-added",function(t,e){var n=""+l(t)+!!e;this.xhrGuids&&!this.xhrGuids[n]&&(this.xhrGuids[n]=!0,this.totalCbs+=1)}),f.on("xhr-load-removed",function(t,e){var n=""+l(t)+!!e;this.xhrGuids&&this.xhrGuids[n]&&(delete this.xhrGuids[n],this.totalCbs-=1)}),f.on("addEventListener-end",function(t,e){e instanceof m&&"load"===t[0]&&f.emit("xhr-load-added",[t[1],t[2]],e)}),f.on("removeEventListener-end",function(t,e){e instanceof m&&"load"===t[0]&&f.emit("xhr-load-removed",[t[1],t[2]],e)}),f.on("fn-start",function(t,e,n){e instanceof m&&("onload"===n&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=(new Date).getTime()))}),f.on("fn-end",function(t,e){this.xhrCbStart&&f.emit("xhr-cb-time",[(new Date).getTime()-this.xhrCbStart,this.onload,e],e)})}},{}],11:[function(t,e,n){e.exports=function(t){var e=document.createElement("a"),n=window.location,r={};e.href=t,r.port=e.port;var o=e.href.split("://");!r.port&&o[1]&&(r.port=o[1].split("/")[0].split("@").pop().split(":")[1]),r.port&&"0"!==r.port||(r.port="https"===o[0]?"443":"80"),r.hostname=e.hostname||n.hostname,r.pathname=e.pathname,r.protocol=o[0],"/"!==r.pathname.charAt(0)&&(r.pathname="/"+r.pathname);var i=!e.protocol||":"===e.protocol||e.protocol===n.protocol,a=e.hostname===document.domain&&e.port===n.port;return r.sameOrigin=i&&(!e.hostname||a),r}},{}],12:[function(t,e,n){function r(){}function o(t,e,n){return function(){return i(t,[(new Date).getTime()].concat(c(arguments)),e?null:this,n),e?void 0:this}}var i=t("handle"),a=t(15),c=t(16),s=t("ee").get("tracer"),f=NREUM;"undefined"==typeof window.newrelic&&(newrelic=f);var u=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(u,function(t,e){f[e]=o(d+e,!0,"api")}),f.addPageAction=o(d+"addPageAction",!0),f.setCurrentRouteName=o(d+"routeName",!0),e.exports=newrelic,f.interaction=function(){return(new r).get()};var p=r.prototype={createTracer:function(t,e){var n={},r=this,o="function"==typeof e;return i(l+"tracer",[Date.now(),t,n],r),function(){if(s.emit((o?"":"no-")+"fn-start",[Date.now(),r,o],n),o)try{return e.apply(this,arguments)}finally{s.emit("fn-end",[Date.now()],n)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){p[e]=o(l+e)}),newrelic.noticeError=function(t){"string"==typeof t&&(t=new Error(t)),i("err",[t,(new Date).getTime()])}},{}],13:[function(t,e,n){e.exports=function(t){if("string"==typeof t&&t.length)return t.length;if("object"==typeof t){if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if(!("undefined"!=typeof FormData&&t instanceof FormData))try{return JSON.stringify(t).length}catch(e){return}}}},{}],14:[function(t,e,n){var r=0,o=navigator.userAgent.match(/Firefox[\/\s](\d+\.\d+)/);o&&(r=+o[1]),e.exports=r},{}],15:[function(t,e,n){function r(t,e){var n=[],r="",i=0;for(r in t)o.call(t,r)&&(n[i]=e(r,t[r]),i+=1);return n}var o=Object.prototype.hasOwnProperty;e.exports=r},{}],16:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,o=n-e||0,i=Array(o<0?0:o);++r<o;)i[r]=t[e+r];return i}e.exports=r},{}],17:[function(t,e,n){function r(t){return!(t&&t instanceof Function&&t.apply&&!t[a])}var o=t("ee"),i=t(16),a="nr@original",c=Object.prototype.hasOwnProperty,s=!1;e.exports=function(t,e){function n(t,e,n,o){function nrWrapper(){var r,a,c,s;try{a=this,r=i(arguments),c="function"==typeof n?n(r,a):n||{}}catch(f){l([f,"",[r,a,o],c])}u(e+"start",[r,a,o],c);try{return s=t.apply(a,r)}catch(d){throw u(e+"err",[r,a,d],c),d}finally{u(e+"end",[r,a,s],c)}}return r(t)?t:(e||(e=""),nrWrapper[a]=t,d(t,nrWrapper),nrWrapper)}function f(t,e,o,i){o||(o="");var a,c,s,f="-"===o.charAt(0);for(s=0;s<e.length;s++)c=e[s],a=t[c],r(a)||(t[c]=n(a,f?c+o:o,i,c))}function u(n,r,o){if(!s||e){var i=s;s=!0;try{t.emit(n,r,o)}catch(a){l([a,n,r,o])}s=i}}function d(t,e){if(Object.defineProperty&&Object.keys)try{var n=Object.keys(t);return n.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(r){l([r])}for(var o in t)c.call(t,o)&&(e[o]=t[o]);return e}function l(e){try{t.emit("internal-error",e)}catch(n){}}return t||(t=o),n.inPlace=f,n.flag=a,n}},{}],ee:[function(t,e,n){function r(){}function o(t){function e(t){return t&&t instanceof r?t:t?s(t,c,i):i()}function n(n,r,o){if(!l.aborted){t&&t(n,r,o);for(var i=e(o),a=h(n),c=a.length,s=0;s<c;s++)a[s].apply(i,r);var f=u[y[n]];return f&&f.push([g,n,r,i]),i}}function p(t,e){v[t]=h(t).concat(e)}function h(t){return v[t]||[]}function m(t){return d[t]=d[t]||o(n)}function w(t,e){f(t,function(t,n){e=e||"feature",y[n]=e,e in u||(u[e]=[])})}var v={},y={},g={on:p,emit:n,get:m,listeners:h,context:e,buffer:w,abort:a,aborted:!1};return g}function i(){return new r}function a(){(u.api||u.feature)&&(l.aborted=!0,u=l.backlog={})}var c="nr@context",s=t("gos"),f=t(15),u={},d={},l=e.exports=o();l.backlog=u},{}],gos:[function(t,e,n){function r(t,e,n){if(o.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return t[e]=r,r}var o=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){o.buffer([t],r),o.emit(t,e,n)}var o=t("ee").get("handle");e.exports=r,r.ee=o},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,i,function(){return o++})}var o=1,i="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!b++){var t=g.info=NREUM.info,e=d.getElementsByTagName("script")[0];if(setTimeout(f.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return f.abort();s(v,function(e,n){t[e]||(t[e]=n)}),c("mark",["onload",a()],null,"api");var n=d.createElement("script");n.src="https://"+t.agent,e.parentNode.insertBefore(n,e)}}function o(){"complete"===d.readyState&&i()}function i(){c("mark",["domContent",a()],null,"api")}function a(){return(new Date).getTime()}var c=t("handle"),s=t(15),f=t("ee"),u=window,d=u.document,l="addEventListener",p="attachEvent",h=u.XMLHttpRequest,m=h&&h.prototype;NREUM.o={ST:setTimeout,CT:clearTimeout,XHR:h,REQ:u.Request,EV:u.Event,PR:u.Promise,MO:u.MutationObserver},t(12);var w=""+location,v={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1016.min.js"},y=h&&m&&m[l]&&!/CriOS/.test(navigator.userAgent),g=e.exports={offset:a(),origin:w,features:{},xhrWrappable:y};d[l]?(d[l]("DOMContentLoaded",i,!1),u[l]("load",r,!1)):(d[p]("onreadystatechange",o),u[p]("onload",r)),c("mark",["firstbyte",a()],null,"api");var b=0},{}]},{},["loader",2,10,4,3]);
-  </script>
   <title>
    Stout Shield - Dota 2 Wiki
   </title>
@@ -12,7 +9,7 @@
    document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );
   </script>
   <script>
-   (window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Stout_Shield","wgTitle":"Stout Shield","wgCurRevisionId":1434199,"wgRevisionId":1434199,"wgArticleId":1006,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Items","Bought from Armaments"],"wgBreakFrames":true,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Stout_Shield","wgRelevantArticleId":1006,"wgRequestId":"a79b3f106d264b64ab38912b","wgIsProbablyEditable":true,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgPreferredVariant":"en","wgCollapsibleVectorEnabledModules":{"collapsiblenav":true,"experiments":true},"wgVisualEditor":{"pageLanguageCode":"en","pageLanguageDir":"ltr","usePageImages":true,"usePageDescriptions":false},"wgWikiEditorEnabledModules":{"toolbar":true,"dialogs":true,"preview":true,"publish":true},"wgCategoryTreePageCategoryOptions":"{\"mode\":0,\"hideprefix\":20,\"showcount\":true,\"namespaces\":false}","wgVisualEditorToolbarScrollOffset":0});mw.loader.implement("user.options",function($,jQuery,require,module){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function ( $, jQuery, require, module ) {
+   (window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Stout_Shield","wgTitle":"Stout Shield","wgCurRevisionId":1512051,"wgRevisionId":1512051,"wgArticleId":1006,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Items","Shop items"],"wgBreakFrames":true,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Stout_Shield","wgRelevantArticleId":1006,"wgRequestId":"90becfba3a9bcfc493f61719","wgIsProbablyEditable":true,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgPreferredVariant":"en","wgCollapsibleVectorEnabledModules":{"collapsiblenav":true,"experiments":true},"wgVisualEditor":{"pageLanguageCode":"en","pageLanguageDir":"ltr","usePageImages":true,"usePageDescriptions":false},"wgWikiEditorEnabledModules":{"toolbar":true,"dialogs":true,"preview":true,"publish":true},"wgCategoryTreePageCategoryOptions":"{\"mode\":0,\"hideprefix\":20,\"showcount\":true,\"namespaces\":false}","wgVisualEditorToolbarScrollOffset":0});mw.loader.implement("user.options",function($,jQuery,require,module){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function ( $, jQuery, require, module ) {
 mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/;
 
 });mw.loader.load(["ext.smw.style","mediawiki.page.startup","ext.siteGlobals","ext.bunnyears","ext.visualEditor.desktopArticleTarget.init","ext.hydraAuth.banners","skins.vector.js","skins.hydra.advertisements.js","skins.hydra.footer.js","ext.social"]);});
@@ -23,11 +20,11 @@ mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","cs
   <link href="/load.php?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=hydra" rel="stylesheet"/>
   <script async="" src="/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=hydra">
   </script>
-  <meta content="MediaWiki 1.27.1" name="generator"/>
+  <meta content="MediaWiki 1.27.3" name="generator"/>
   <meta content="Stout Shield" name="og:title"/>
   <meta content="website" name="og:type"/>
   <meta content="https://hydra-media.cursecdn.com/dota2.gamepedia.com/b/bc/Wiki.png" name="og:image"/>
-  <meta content="http://dota2.gamepedia.com/Stout_Shield" name="og:url"/>
+  <meta content="https://dota2.gamepedia.com/Stout_Shield" name="og:url"/>
   <meta content="Dota 2 Wiki" name="og:site_name"/>
   <meta name="description"/>
   <meta content="" name="keywords"/>
@@ -40,13 +37,13 @@ mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","cs
   <link href="/opensearch_desc.php" rel="search" title="Dota 2 Wiki (en)" type="application/opensearchdescription+xml"/>
   <link href="//dota2.gamepedia.com/api.php?action=rsd" rel="EditURI" type="application/rsd+xml"/>
   <link href="//creativecommons.org/licenses/by-nc-sa/3.0/" rel="copyright"/>
-  <link href="http://dota2.gamepedia.com/Stout_Shield" rel="canonical"/>
+  <link href="https://dota2.gamepedia.com/Stout_Shield" rel="canonical"/>
   <link href="dota2-de.gamepedia.com" hreflang="de" rel="alternate"/>
   <link href="dota2-ru.gamepedia.com" hreflang="ru" rel="alternate"/>
   <link href="dota2-pt.gamepedia.com" hreflang="pt" rel="alternate"/>
   <link href="dota2-zh.gamepedia.com" hreflang="zh" rel="alternate"/>
   <meta content="Gamepedia" itemprop="author"/>
-  <link href="https://stations.cursetech.com/be/bunnyears.min.css" rel="stylesheet" type="text/css"/>
+  <link href="https://stations.cursetech.com/be/bunnyears-1.1.min.css" rel="stylesheet" type="text/css"/>
  </head>
  <body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-Stout_Shield rootpage-Stout_Shield skin-hydra action-view site-dota2-gamepedia show-ads">
   <script type="application/ld+json">
@@ -81,8 +78,8 @@ mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","cs
 		"target": "https://dota2.gamepedia.com/index.php?title=Special:Search&search={search_term}",
 		"query-input": "required name=search_term"
 	},
-	"datePublished": "2017-01-08T17:25:39Z",
-	"dateModified": "2017-01-08T17:25:39Z",
+	"datePublished": "2017-05-15T07:52:10Z",
+	"dateModified": "2017-05-15T07:52:10Z",
 	"mainEntityOfPage": "https://dota2.gamepedia.com/Stout_Shield"
 }
   </script>
@@ -124,7 +121,7 @@ mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","cs
 var script = document.createElement('script');
 var tstamp = new Date();
 script.id = 'factorem';
-script.src = 'http://cdm.cursecdn.com/js/gamepedia/cdmfactorem_min.js?misc=' + tstamp.getTime();;
+script.src = '//cdm.cursecdn.com/js/gamepedia/cdmfactorem_min.js?misc=' + tstamp.getTime();;
 script.async = true;
 script.type='text/javascript';
 document.head.appendChild(script);
@@ -133,10 +130,10 @@ document.head.appendChild(script);
    setTimeout(function(){if("undefined"!=typeof b2){var element=document.getElementById(b2);setTimeout(function(){element.parentNode.innerHTML='<div id="'+b2+'"></div>'},5000)}},20000)
   </script>
   <script>
-   setTimeout(function(){if("undefined"!=typeof b2){var element=document.getElementById(b3);setTimeout(function(){element.parentNode.innerHTML='<div id="'+b3+'"></div>'},5000)}},20000)
+   setTimeout(function(){if("undefined"!=typeof b3){var element=document.getElementById(b3);setTimeout(function(){element.parentNode.innerHTML='<div id="'+b3+'"></div>'},5000)}},20000)
   </script>
   <script>
-   setTimeout(function(){if("undefined"!=typeof b2){var element=document.getElementById(b6);setTimeout(function(){element.parentNode.innerHTML='<div id="'+b6+'"></div>'},5000)}},20000)
+   setTimeout(function(){if("undefined"!=typeof b6){var element=document.getElementById(b6);setTimeout(function(){element.parentNode.innerHTML='<div id="'+b6+'"></div>'},5000)}},20000)
   </script>
   <div id="netbar">
    <ul class="netbar-left">
@@ -231,8 +228,13 @@ document.head.appendChild(script);
         <tr>
          <td style="font-weight:bold;font-size:110%;background-color:#B44335;color:white;padding:3px 5px;">
           Stout Shield
-          <div style="float:right;">
-           <div style="background-color:white;display:inline-block;margin-left:5px;color:#B44335;padding-left:0.2em;padding-right:0.25em;">
+          <div style="float:right;text-align:center;">
+           <div style="background-color:white;display:inline-block;margin:0 2px;color:#B44335;padding:0 0.2em;">
+            <span id="tooltip" style="cursor:help; border-bottom:1px dotted;" title="Available at Base Shop">
+             B
+            </span>
+           </div>
+           <div style="background-color:white;display:inline-block;margin:0 2px;color:#B44335;padding:0 0.2em;">
             <span id="tooltip" style="cursor:help; border-bottom:1px dotted;" title="Available at Side Lane Shop">
              L
             </span>
@@ -256,7 +258,7 @@ document.head.appendChild(script);
          </td>
         </tr>
         <tr>
-         <td style="font-style:{italic;padding:6px 10px;">
+         <td style="font-style:italic;padding:6px 10px;">
           One man's wine barrel bottom is another man's shield.
          </td>
         </tr>
@@ -422,9 +424,19 @@ document.head.appendChild(script);
           </ul>
          </li>
          <li class="toclevel-1 tocsection-4">
-          <a href="#Gallery">
+          <a href="#Tips">
            <span class="tocnumber">
             3
+           </span>
+           <span class="toctext">
+            Tips
+           </span>
+          </a>
+         </li>
+         <li class="toclevel-1 tocsection-5">
+          <a href="#Gallery">
+           <span class="tocnumber">
+            4
            </span>
            <span class="toctext">
             Gallery
@@ -441,14 +453,8 @@ document.head.appendChild(script);
          <span class="mw-editsection-bracket">
           [
          </span>
-         <a class="mw-editsection-visualeditor" href="/index.php?title=Stout_Shield&amp;veaction=edit&amp;vesection=1" title="Edit section: Ability">
-          edit
-         </a>
-         <span class="mw-editsection-divider">
-          |
-         </span>
          <a href="/index.php?title=Stout_Shield&amp;action=edit&amp;section=1" title="Edit section: Ability">
-          edit source
+          edit
          </a>
          <span class="mw-editsection-bracket">
           ]
@@ -506,19 +512,28 @@ document.head.appendChild(script);
            <b>
             Proc Chance
            </b>
-           : 50%
+           :
+           <span style="white-space: nowrap">
+            50%
+           </span>
           </div>
           <div>
            <b>
             Blocked Damage (Melee)
            </b>
-           : 16
+           :
+           <span style="white-space: nowrap">
+            16
+           </span>
           </div>
           <div>
            <b>
             Blocked Damage (Ranged)
            </b>
-           : 8
+           :
+           <span style="white-space: nowrap">
+            8
+           </span>
           </div>
          </div>
         </div>
@@ -544,7 +559,7 @@ document.head.appendChild(script);
              Plague Ward
             </a>
            </span>
-           ​,
+           ,
            <span style="white-space: nowrap;">
             <a href="/Shadow_Shaman#Mass_Serpent_Ward" title="Shadow Shaman#Mass Serpent Ward">
              <img alt="Mass Serpent Ward icon.png" height="16" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/5/5e/Mass_Serpent_Ward_icon.png/16px-Mass_Serpent_Ward_icon.png?version=40ad3dc3e57e4ae992584ce13e72e1a5" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/5/5e/Mass_Serpent_Ward_icon.png/24px-Mass_Serpent_Ward_icon.png?version=40ad3dc3e57e4ae992584ce13e72e1a5 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/5/5e/Mass_Serpent_Ward_icon.png/32px-Mass_Serpent_Ward_icon.png?version=40ad3dc3e57e4ae992584ce13e72e1a5 2x" width="16"/>
@@ -553,7 +568,7 @@ document.head.appendChild(script);
              Mass Serpent Ward
             </a>
            </span>
-           ​,
+           ,
            <span style="white-space: nowrap;">
             <a href="/Witch_Doctor#Death_Ward" title="Witch Doctor#Death Ward">
              <img alt="Death Ward icon.png" height="16" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/c/cf/Death_Ward_icon.png/16px-Death_Ward_icon.png?version=1829b3ab7a084aa7d390c7860076cf88" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/c/cf/Death_Ward_icon.png/24px-Death_Ward_icon.png?version=1829b3ab7a084aa7d390c7860076cf88 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/c/cf/Death_Ward_icon.png/32px-Death_Ward_icon.png?version=1829b3ab7a084aa7d390c7860076cf88 2x" width="16"/>
@@ -562,7 +577,7 @@ document.head.appendChild(script);
              Death Ward
             </a>
            </span>
-           ​).
+           ).
           </li>
          </ul>
          <ul>
@@ -576,7 +591,7 @@ document.head.appendChild(script);
              Moon Glaive
             </a>
            </span>
-           ​ and
+           and
            <span style="white-space: nowrap;">
             <a href="/Weaver#The_Swarm" title="Weaver#The Swarm">
              <img alt="The Swarm icon.png" height="16" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/7e/The_Swarm_icon.png/16px-The_Swarm_icon.png?version=9c247dc80be1f536ba84112472d9b719" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/7e/The_Swarm_icon.png/24px-The_Swarm_icon.png?version=9c247dc80be1f536ba84112472d9b719 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/7e/The_Swarm_icon.png/32px-The_Swarm_icon.png?version=9c247dc80be1f536ba84112472d9b719 2x" width="16"/>
@@ -585,7 +600,7 @@ document.head.appendChild(script);
              The Swarm
             </a>
            </span>
-           ​.
+           .
           </li>
          </ul>
          <ul>
@@ -619,24 +634,18 @@ document.head.appendChild(script);
          <span class="mw-editsection-bracket">
           [
          </span>
-         <a class="mw-editsection-visualeditor" href="/index.php?title=Stout_Shield&amp;veaction=edit&amp;vesection=2" title="Edit section: Recommended heroes">
-          edit
-         </a>
-         <span class="mw-editsection-divider">
-          |
-         </span>
          <a href="/index.php?title=Stout_Shield&amp;action=edit&amp;section=2" title="Edit section: Recommended heroes">
-          edit source
+          edit
          </a>
          <span class="mw-editsection-bracket">
           ]
          </span>
         </span>
        </h2>
-       <div style="margin:7px 5px 0px;vertical-align:center;text-align:center;display:inline-block;line-height:normal;width:80px;">
-        <div style="margin-bottom: 5px;box-shadow:0px 0px 2px 4px gold;">
+       <div style="margin:7px 5px 0px; vertical-align:center; text-align:center; display:inline-block; line-height:normal; width:80px;">
+        <div style="margin-bottom:5px; box-shadow:0px 0px 2px 4px gold;">
          <a href="/Axe" title="Axe">
-          <img alt="Axe.png" height="45" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/f/fb/Axe.png/80px-Axe.png?version=214e016409489af23030fb0f7b5ca912" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/f/fb/Axe.png/120px-Axe.png?version=214e016409489af23030fb0f7b5ca912 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/f/fb/Axe.png/160px-Axe.png?version=214e016409489af23030fb0f7b5ca912 2x" width="80"/>
+          <img alt="Axe icon.png" height="45" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/2/23/Axe_icon.png/80px-Axe_icon.png?version=3dd837d35d8d3b2f4769d6a24f2f8f07" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/2/23/Axe_icon.png/120px-Axe_icon.png?version=3dd837d35d8d3b2f4769d6a24f2f8f07 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/2/23/Axe_icon.png/160px-Axe_icon.png?version=3dd837d35d8d3b2f4769d6a24f2f8f07 2x" width="80"/>
          </a>
         </div>
        </div>
@@ -652,10 +661,10 @@ document.head.appendChild(script);
          Axe's high natural health regeneration combined with Stout Shield makes him much tougher in lane, especially after picking up another health regeneration item.
         </li>
        </ul>
-       <div style="margin:7px 5px 0px;vertical-align:center;text-align:center;display:inline-block;line-height:normal;width:80px;">
-        <div style="margin-bottom: 5px;box-shadow:0px 0px 2px 4px gold;">
+       <div style="margin:7px 5px 0px; vertical-align:center; text-align:center; display:inline-block; line-height:normal; width:80px;">
+        <div style="margin-bottom:5px; box-shadow:0px 0px 2px 4px gold;">
          <a href="/Spirit_Breaker" title="Spirit Breaker">
-          <img alt="Spirit Breaker.png" height="45" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/8/82/Spirit_Breaker.png/80px-Spirit_Breaker.png?version=8bb016a358417095fb6384eb56fb7d9a" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/8/82/Spirit_Breaker.png/120px-Spirit_Breaker.png?version=8bb016a358417095fb6384eb56fb7d9a 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/8/82/Spirit_Breaker.png/160px-Spirit_Breaker.png?version=8bb016a358417095fb6384eb56fb7d9a 2x" width="80"/>
+          <img alt="Spirit Breaker icon.png" height="45" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/d/df/Spirit_Breaker_icon.png/80px-Spirit_Breaker_icon.png?version=19bf115a2c2ce951c1e1bcb47558b552" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/d/df/Spirit_Breaker_icon.png/120px-Spirit_Breaker_icon.png?version=19bf115a2c2ce951c1e1bcb47558b552 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/d/df/Spirit_Breaker_icon.png/160px-Spirit_Breaker_icon.png?version=19bf115a2c2ce951c1e1bcb47558b552 2x" width="80"/>
          </a>
         </div>
        </div>
@@ -671,10 +680,10 @@ document.head.appendChild(script);
          Stout Shield's damage block keeps Spirit Breaker alive when charging into enemy lines, where he often takes damage from multiple sources.
         </li>
        </ul>
-       <div style="margin:7px 5px 0px;vertical-align:center;text-align:center;display:inline-block;line-height:normal;width:80px;">
-        <div style="margin-bottom: 5px;box-shadow:0px 0px 2px 4px gold;">
+       <div style="margin:7px 5px 0px; vertical-align:center; text-align:center; display:inline-block; line-height:normal; width:80px;">
+        <div style="margin-bottom:5px; box-shadow:0px 0px 2px 4px gold;">
          <a href="/Timbersaw" title="Timbersaw">
-          <img alt="Timbersaw.png" height="45" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/8/81/Timbersaw.png/80px-Timbersaw.png?version=1dbcd5111cd2ab724aa12f6b9f3236b2" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/8/81/Timbersaw.png/120px-Timbersaw.png?version=1dbcd5111cd2ab724aa12f6b9f3236b2 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/8/81/Timbersaw.png/160px-Timbersaw.png?version=1dbcd5111cd2ab724aa12f6b9f3236b2 2x" width="80"/>
+          <img alt="Timbersaw icon.png" height="45" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/9/9a/Timbersaw_icon.png/80px-Timbersaw_icon.png?version=d80c59bd0a5ab49a3dad9a76a28996b1" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/9/9a/Timbersaw_icon.png/120px-Timbersaw_icon.png?version=d80c59bd0a5ab49a3dad9a76a28996b1 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/9/9a/Timbersaw_icon.png/160px-Timbersaw_icon.png?version=d80c59bd0a5ab49a3dad9a76a28996b1 2x" width="80"/>
          </a>
         </div>
        </div>
@@ -695,13 +704,13 @@ document.head.appendChild(script);
            Reactive Armor
           </a>
          </span>
-         ​ still triggers after Stout Shield's damage block, making Timbersaw extremely resilient in lane.
+         still triggers after Stout Shield's damage block, making Timbersaw extremely resilient in lane.
         </li>
        </ul>
-       <div style="margin:7px 5px 0px;vertical-align:center;text-align:center;display:inline-block;line-height:normal;width:80px;">
-        <div style="margin-bottom: 5px;box-shadow:0px 0px 2px 4px gold;">
+       <div style="margin:7px 5px 0px; vertical-align:center; text-align:center; display:inline-block; line-height:normal; width:80px;">
+        <div style="margin-bottom:5px; box-shadow:0px 0px 2px 4px gold;">
          <a href="/Ursa" title="Ursa">
-          <img alt="Ursa.png" height="45" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/a/a6/Ursa.png/80px-Ursa.png?version=3798375394f80285eaec797e26b0ff34" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/a/a6/Ursa.png/120px-Ursa.png?version=3798375394f80285eaec797e26b0ff34 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/a/a6/Ursa.png/160px-Ursa.png?version=3798375394f80285eaec797e26b0ff34 2x" width="80"/>
+          <img alt="Ursa icon.png" height="45" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/4/40/Ursa_icon.png/80px-Ursa_icon.png?version=bf0358b5a329d2150e5069de403a5c98" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/4/40/Ursa_icon.png/120px-Ursa_icon.png?version=bf0358b5a329d2150e5069de403a5c98 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/4/40/Ursa_icon.png/160px-Ursa_icon.png?version=bf0358b5a329d2150e5069de403a5c98 2x" width="80"/>
          </a>
         </div>
        </div>
@@ -725,14 +734,8 @@ document.head.appendChild(script);
          <span class="mw-editsection-bracket">
           [
          </span>
-         <a class="mw-editsection-visualeditor" href="/index.php?title=Stout_Shield&amp;veaction=edit&amp;vesection=3" title="Edit section: Others">
-          edit
-         </a>
-         <span class="mw-editsection-divider">
-          |
-         </span>
          <a href="/index.php?title=Stout_Shield&amp;action=edit&amp;section=3" title="Edit section: Others">
-          edit source
+          edit
          </a>
          <span class="mw-editsection-bracket">
           ]
@@ -746,136 +749,154 @@ document.head.appendChild(script);
           <li>
            <span style="white-space:nowrap">
             <a href="/Chaos_Knight" title="Chaos Knight">
-             <img alt="Chaos Knight icon.png" height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/f/fe/Chaos_Knight_icon.png/20px-Chaos_Knight_icon.png?version=104c8d024870b18914f9b9c6e89de06d" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/f/fe/Chaos_Knight_icon.png/30px-Chaos_Knight_icon.png?version=104c8d024870b18914f9b9c6e89de06d 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/f/fe/Chaos_Knight_icon.png?version=104c8d024870b18914f9b9c6e89de06d 2x" width="20"/>
+             <img alt="Chaos Knight minimap icon.png" height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/9/9f/Chaos_Knight_minimap_icon.png/20px-Chaos_Knight_minimap_icon.png?version=37d58f2409841256e2470babc9cf6212" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/9/9f/Chaos_Knight_minimap_icon.png/30px-Chaos_Knight_minimap_icon.png?version=37d58f2409841256e2470babc9cf6212 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/9/9f/Chaos_Knight_minimap_icon.png?version=37d58f2409841256e2470babc9cf6212 2x" width="20"/>
             </a>
             <a href="/Chaos_Knight" title="Chaos Knight">
              Chaos Knight
             </a>
            </span>
-           ​
           </li>
           <li>
            <span style="white-space:nowrap">
             <a href="/Riki" title="Riki">
-             <img alt="Riki icon.png" height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/7d/Riki_icon.png/20px-Riki_icon.png?version=68b5462f915004f3b20688d2bb8bc50b" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/7d/Riki_icon.png/30px-Riki_icon.png?version=68b5462f915004f3b20688d2bb8bc50b 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/7/7d/Riki_icon.png?version=68b5462f915004f3b20688d2bb8bc50b 2x" width="20"/>
+             <img alt="Riki minimap icon.png" height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/a/a4/Riki_minimap_icon.png/20px-Riki_minimap_icon.png?version=835267a05d6483368a1f055c8531ceca" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/a/a4/Riki_minimap_icon.png/30px-Riki_minimap_icon.png?version=835267a05d6483368a1f055c8531ceca 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/a/a4/Riki_minimap_icon.png?version=835267a05d6483368a1f055c8531ceca 2x" width="20"/>
             </a>
             <a href="/Riki" title="Riki">
              Riki
             </a>
            </span>
-           ​
           </li>
           <li>
            <span style="white-space:nowrap">
             <a href="/Sven" title="Sven">
-             <img alt="Sven icon.png" height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/1/1b/Sven_icon.png/20px-Sven_icon.png?version=2fa5408042d00a6d7081157d3d94de2b" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/1/1b/Sven_icon.png/30px-Sven_icon.png?version=2fa5408042d00a6d7081157d3d94de2b 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/1/1b/Sven_icon.png?version=2fa5408042d00a6d7081157d3d94de2b 2x" width="20"/>
+             <img alt="Sven minimap icon.png" height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/1/1c/Sven_minimap_icon.png/20px-Sven_minimap_icon.png?version=69d97a1d8ce1ad6dad21eb7c3d7bdc0f" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/1/1c/Sven_minimap_icon.png/30px-Sven_minimap_icon.png?version=69d97a1d8ce1ad6dad21eb7c3d7bdc0f 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/1/1c/Sven_minimap_icon.png?version=69d97a1d8ce1ad6dad21eb7c3d7bdc0f 2x" width="20"/>
             </a>
             <a href="/Sven" title="Sven">
              Sven
             </a>
            </span>
-           ​
           </li>
           <li>
            <span style="white-space:nowrap">
             <a href="/Juggernaut" title="Juggernaut">
-             <img alt="Juggernaut icon.png" height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/0/03/Juggernaut_icon.png/20px-Juggernaut_icon.png?version=4bc30f346ca51b4bf74464f465036066" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/0/03/Juggernaut_icon.png/30px-Juggernaut_icon.png?version=4bc30f346ca51b4bf74464f465036066 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/0/03/Juggernaut_icon.png?version=4bc30f346ca51b4bf74464f465036066 2x" width="20"/>
+             <img alt="Juggernaut minimap icon.png" height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/b/b2/Juggernaut_minimap_icon.png/20px-Juggernaut_minimap_icon.png?version=4c86ed7ab16ef61b297c40883ff29c45" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/b/b2/Juggernaut_minimap_icon.png/30px-Juggernaut_minimap_icon.png?version=4c86ed7ab16ef61b297c40883ff29c45 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/b/b2/Juggernaut_minimap_icon.png?version=4c86ed7ab16ef61b297c40883ff29c45 2x" width="20"/>
             </a>
             <a href="/Juggernaut" title="Juggernaut">
              Juggernaut
             </a>
            </span>
-           ​
           </li>
           <li>
            <span style="white-space:nowrap">
             <a href="/Slark" title="Slark">
-             <img alt="Slark icon.png" height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/a/aa/Slark_icon.png/20px-Slark_icon.png?version=081d21703d74c2cbd73f76802f9511c4" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/a/aa/Slark_icon.png/30px-Slark_icon.png?version=081d21703d74c2cbd73f76802f9511c4 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/a/aa/Slark_icon.png?version=081d21703d74c2cbd73f76802f9511c4 2x" width="20"/>
+             <img alt="Slark minimap icon.png" height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/1/1c/Slark_minimap_icon.png/20px-Slark_minimap_icon.png?version=5de44e062852aa44be0cdb2e8bfca469" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/1/1c/Slark_minimap_icon.png/30px-Slark_minimap_icon.png?version=5de44e062852aa44be0cdb2e8bfca469 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/1/1c/Slark_minimap_icon.png?version=5de44e062852aa44be0cdb2e8bfca469 2x" width="20"/>
             </a>
             <a href="/Slark" title="Slark">
              Slark
             </a>
            </span>
-           ​
           </li>
           <li>
            <span style="white-space:nowrap">
             <a href="/Anti-Mage" title="Anti-Mage">
-             <img alt="Anti-Mage icon.png" height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/8/8e/Anti-Mage_icon.png/20px-Anti-Mage_icon.png?version=3f92403918dd511670b503355a00dd2e" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/8/8e/Anti-Mage_icon.png/30px-Anti-Mage_icon.png?version=3f92403918dd511670b503355a00dd2e 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/8/8e/Anti-Mage_icon.png?version=3f92403918dd511670b503355a00dd2e 2x" width="20"/>
+             <img alt="Anti-Mage minimap icon.png" height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/3/30/Anti-Mage_minimap_icon.png/20px-Anti-Mage_minimap_icon.png?version=4257beeffc8a1dc894815feff74da67d" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/3/30/Anti-Mage_minimap_icon.png/30px-Anti-Mage_minimap_icon.png?version=4257beeffc8a1dc894815feff74da67d 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/3/30/Anti-Mage_minimap_icon.png?version=4257beeffc8a1dc894815feff74da67d 2x" width="20"/>
             </a>
             <a href="/Anti-Mage" title="Anti-Mage">
              Anti-Mage
             </a>
            </span>
-           ​
           </li>
           <li>
            <span style="white-space:nowrap">
             <a href="/Monkey_King" title="Monkey King">
-             <img alt="Monkey King icon.png" height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/7b/Monkey_King_icon.png/20px-Monkey_King_icon.png?version=59e5233cc9057afb20ad8b2b9fa35f24" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/7b/Monkey_King_icon.png/30px-Monkey_King_icon.png?version=59e5233cc9057afb20ad8b2b9fa35f24 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/7/7b/Monkey_King_icon.png?version=59e5233cc9057afb20ad8b2b9fa35f24 2x" width="20"/>
+             <img alt="Monkey King minimap icon.png" height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/76/Monkey_King_minimap_icon.png/20px-Monkey_King_minimap_icon.png?version=2320449a99659a03e7ebccfa17b20b8c" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/76/Monkey_King_minimap_icon.png/30px-Monkey_King_minimap_icon.png?version=2320449a99659a03e7ebccfa17b20b8c 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/7/76/Monkey_King_minimap_icon.png?version=2320449a99659a03e7ebccfa17b20b8c 2x" width="20"/>
             </a>
             <a href="/Monkey_King" title="Monkey King">
              Monkey King
             </a>
            </span>
-           ​
           </li>
           <li>
            <span style="white-space:nowrap">
             <a href="/Lifestealer" title="Lifestealer">
-             <img alt="Lifestealer icon.png" height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/2/2b/Lifestealer_icon.png/20px-Lifestealer_icon.png?version=d01f07d24afa940b4234bbd791572606" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/2/2b/Lifestealer_icon.png/30px-Lifestealer_icon.png?version=d01f07d24afa940b4234bbd791572606 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/2/2b/Lifestealer_icon.png?version=d01f07d24afa940b4234bbd791572606 2x" width="20"/>
+             <img alt="Lifestealer minimap icon.png" height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/74/Lifestealer_minimap_icon.png/20px-Lifestealer_minimap_icon.png?version=81512ea0b418009a5aa3fe1ba3009bf0" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/74/Lifestealer_minimap_icon.png/30px-Lifestealer_minimap_icon.png?version=81512ea0b418009a5aa3fe1ba3009bf0 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/7/74/Lifestealer_minimap_icon.png?version=81512ea0b418009a5aa3fe1ba3009bf0 2x" width="20"/>
             </a>
             <a href="/Lifestealer" title="Lifestealer">
              Lifestealer
             </a>
            </span>
-           ​
           </li>
           <li>
            <span style="white-space:nowrap">
             <a href="/Troll_Warlord" title="Troll Warlord">
-             <img alt="Troll Warlord icon.png" height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/f/f0/Troll_Warlord_icon.png/20px-Troll_Warlord_icon.png?version=f8fc764b7894f16f60e4352dfa5e4409" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/f/f0/Troll_Warlord_icon.png/30px-Troll_Warlord_icon.png?version=f8fc764b7894f16f60e4352dfa5e4409 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/f/f0/Troll_Warlord_icon.png?version=f8fc764b7894f16f60e4352dfa5e4409 2x" width="20"/>
+             <img alt="Troll Warlord minimap icon.png" height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/a/a2/Troll_Warlord_minimap_icon.png/20px-Troll_Warlord_minimap_icon.png?version=ed497b76f730bd28c3fa5df58ec7c6e3" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/a/a2/Troll_Warlord_minimap_icon.png/30px-Troll_Warlord_minimap_icon.png?version=ed497b76f730bd28c3fa5df58ec7c6e3 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/a/a2/Troll_Warlord_minimap_icon.png?version=ed497b76f730bd28c3fa5df58ec7c6e3 2x" width="20"/>
             </a>
             <a href="/Troll_Warlord" title="Troll Warlord">
              Troll Warlord
             </a>
            </span>
-           ​
           </li>
           <li>
            <span style="white-space:nowrap">
             <a href="/Bloodseeker" title="Bloodseeker">
-             <img alt="Bloodseeker icon.png" height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/5/56/Bloodseeker_icon.png/20px-Bloodseeker_icon.png?version=1534568d9a048c4f917efd3656ef4e29" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/5/56/Bloodseeker_icon.png/30px-Bloodseeker_icon.png?version=1534568d9a048c4f917efd3656ef4e29 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/5/56/Bloodseeker_icon.png?version=1534568d9a048c4f917efd3656ef4e29 2x" width="20"/>
+             <img alt="Bloodseeker minimap icon.png" height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/5/57/Bloodseeker_minimap_icon.png/20px-Bloodseeker_minimap_icon.png?version=17fb220669f01d9319647c9a2f230d97" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/5/57/Bloodseeker_minimap_icon.png/30px-Bloodseeker_minimap_icon.png?version=17fb220669f01d9319647c9a2f230d97 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/5/57/Bloodseeker_minimap_icon.png?version=17fb220669f01d9319647c9a2f230d97 2x" width="20"/>
             </a>
             <a href="/Bloodseeker" title="Bloodseeker">
              Bloodseeker
             </a>
            </span>
-           ​
           </li>
           <li>
            <span style="white-space:nowrap">
             <a href="/Dragon_Knight" title="Dragon Knight">
-             <img alt="Dragon Knight icon.png" height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/5/59/Dragon_Knight_icon.png/20px-Dragon_Knight_icon.png?version=616010ec5fdded86141850a2dc7c21fe" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/5/59/Dragon_Knight_icon.png/30px-Dragon_Knight_icon.png?version=616010ec5fdded86141850a2dc7c21fe 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/5/59/Dragon_Knight_icon.png?version=616010ec5fdded86141850a2dc7c21fe 2x" width="20"/>
+             <img alt="Dragon Knight minimap icon.png" height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/2/21/Dragon_Knight_minimap_icon.png/20px-Dragon_Knight_minimap_icon.png?version=58bcea2e3b6976e6ea1d7a44860e2cb6" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/2/21/Dragon_Knight_minimap_icon.png/30px-Dragon_Knight_minimap_icon.png?version=58bcea2e3b6976e6ea1d7a44860e2cb6 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/2/21/Dragon_Knight_minimap_icon.png?version=58bcea2e3b6976e6ea1d7a44860e2cb6 2x" width="20"/>
             </a>
             <a href="/Dragon_Knight" title="Dragon Knight">
              Dragon Knight
             </a>
            </span>
-           ​
           </li>
           <li>
            <span style="white-space:nowrap">
             <a href="/Alchemist" title="Alchemist">
-             <img alt="Alchemist icon.png" height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/f/fe/Alchemist_icon.png/20px-Alchemist_icon.png?version=7b7e5e311fe2ae7bdfb3127b7343a8d4" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/f/fe/Alchemist_icon.png/30px-Alchemist_icon.png?version=7b7e5e311fe2ae7bdfb3127b7343a8d4 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/f/fe/Alchemist_icon.png?version=7b7e5e311fe2ae7bdfb3127b7343a8d4 2x" width="20"/>
+             <img alt="Alchemist minimap icon.png" height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/1/1e/Alchemist_minimap_icon.png/20px-Alchemist_minimap_icon.png?version=2cc8e58823cbf1829c1d588da74708c0" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/1/1e/Alchemist_minimap_icon.png/30px-Alchemist_minimap_icon.png?version=2cc8e58823cbf1829c1d588da74708c0 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/1/1e/Alchemist_minimap_icon.png?version=2cc8e58823cbf1829c1d588da74708c0 2x" width="20"/>
             </a>
             <a href="/Alchemist" title="Alchemist">
              Alchemist
             </a>
            </span>
-           ​
           </li>
          </ul>
+        </li>
+       </ul>
+       <h2>
+        <span class="mw-headline" id="Tips">
+         Tips
+        </span>
+        <span class="mw-editsection">
+         <span class="mw-editsection-bracket">
+          [
+         </span>
+         <a href="/index.php?title=Stout_Shield&amp;action=edit&amp;section=4" title="Edit section: Tips">
+          edit
+         </a>
+         <span class="mw-editsection-bracket">
+          ]
+         </span>
+        </span>
+       </h2>
+       <ul>
+        <li>
+         Useful for tanking creep attacks as a melee hero, and more effective than a
+         <span style="white-space:nowrap">
+          <a href="/Ring_of_Protection" title="Ring of Protection">
+           <img alt="Ring of Protection icon.png" height="15" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/3/3b/Ring_of_Protection_icon.png/20px-Ring_of_Protection_icon.png?version=d84ea98300dc61e291159492f22385f1" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/3/3b/Ring_of_Protection_icon.png/30px-Ring_of_Protection_icon.png?version=d84ea98300dc61e291159492f22385f1 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/3/3b/Ring_of_Protection_icon.png/40px-Ring_of_Protection_icon.png?version=d84ea98300dc61e291159492f22385f1 2x" width="20"/>
+          </a>
+          <a href="/Ring_of_Protection" title="Ring of Protection">
+           Ring of Protection
+          </a>
+         </span>
+         against enemy physical attacks in the early game.
         </li>
        </ul>
        <h2>
@@ -886,14 +907,8 @@ document.head.appendChild(script);
          <span class="mw-editsection-bracket">
           [
          </span>
-         <a class="mw-editsection-visualeditor" href="/index.php?title=Stout_Shield&amp;veaction=edit&amp;vesection=4" title="Edit section: Gallery">
+         <a href="/index.php?title=Stout_Shield&amp;action=edit&amp;section=5" title="Edit section: Gallery">
           edit
-         </a>
-         <span class="mw-editsection-divider">
-          |
-         </span>
-         <a href="/index.php?title=Stout_Shield&amp;action=edit&amp;section=4" title="Edit section: Gallery">
-          edit source
          </a>
          <span class="mw-editsection-bracket">
           ]
@@ -1985,44 +2000,50 @@ document.head.appendChild(script);
  </a>
 </li>
 <li>
+ <a href="/Upgrader" title="Upgrader">
+  Upgrader
+ </a>
+</li>
+<li>
  <a href="/Arcane_Ring" title="Arcane Ring">
   Arcane Ring
  </a>
 </li>
 <!-- 
 NewPP limit report
-Cached time: 20170208014821
+Cached time: 20170609032807
 Cache expiry: 86400
 Dynamic content: false
 [SMW] In‐text annotation parser time: 0.000 seconds
-CPU time usage: 1.704 seconds
-Real time usage: 2.815 seconds
-Preprocessor visited node count: 21058/1000000
-Preprocessor generated node count: 42653/1000000
-Post‐expand include size: 103444/2097152 bytes
-Template argument size: 56104/2097152 bytes
-Highest expansion depth: 16/40
+CPU time usage: 0.684 seconds
+Real time usage: 1.214 seconds
+Preprocessor visited node count: 3362/1000000
+Preprocessor generated node count: 37781/1000000
+Post‐expand include size: 63206/2097152 bytes
+Template argument size: 36836/2097152 bytes
+Highest expansion depth: 9/40
 Expensive parser function count: 0/99
+ExtLoops count: 3/1000
 -->
 <!-- 
 Transclusion expansion time report (%,ms,calls,template)
-126.26% 3237.189      4 - Template:Navbox
-100.00% 2563.885      1 - -total
- 63.93% 1639.183      1 - Template:ItemNav
- 59.47% 1524.857    157 - Template:Item_link
- 51.55% 1321.700    161 - Template:Item_name
- 18.18%  466.118    381 - Template:If_lang
- 14.09%  361.241      1 - Template:Item_infobox
- 11.31%  290.083     12 - Template:H
-  7.02%  180.095      1 - Template:Ability
-  3.96%  101.584      6 - Template:A
+100.00%  972.907      1 - -total
+ 39.50%  384.305      1 - Template:Item_infobox
+ 27.84%  270.890      1 - Template:Ability
+ 17.53%  170.547      6 - Template:A
+ 15.35%  149.333     12 - Template:H
+ 14.54%  141.413      4 - Template:Navbox
+  9.44%   91.821      1 - Template:ItemNav
+  8.83%   85.935      3 - Template:Item
+  2.20%   21.382      1 - Template:Anchor
+  2.19%   21.300      1 - Template:Tabber
 -->
-<!-- Saved in parser cache with key dota2_gamepedia:pcache:idhash:1006-0!*!0!default!!en!5!* and timestamp 20170208014819 and revision id 1434199
+<!-- Saved in parser cache with key dota2_gamepedia:pcache:idhash:1006-0!*!0!default!!en!5!* and timestamp 20170609032806 and revision id 1512051
  -->
 <div class="printfooter">
  Retrieved from "
- <a dir="ltr" href="http://dota2.gamepedia.com/index.php?title=Stout_Shield&amp;oldid=1434199">
-  http://dota2.gamepedia.com/index.php?title=Stout_Shield&amp;oldid=1434199
+ <a dir="ltr" href="https://dota2.gamepedia.com/index.php?title=Stout_Shield&amp;oldid=1512051">
+  https://dota2.gamepedia.com/index.php?title=Stout_Shield&amp;oldid=1512051
  </a>
  "
 </div>
@@ -2039,8 +2060,8 @@ Transclusion expansion time report (%,ms,calls,template)
     </a>
    </li>
    <li>
-    <a href="/Category:Bought_from_Armaments" title="Category:Bought from Armaments">
-     Bought from Armaments
+    <a href="/Category:Shop_items" title="Category:Shop items">
+     Shop items
     </a>
    </li>
   </ul>
@@ -2061,7 +2082,7 @@ Transclusion expansion time report (%,ms,calls,template)
     (function() {
         var zergnet = document.createElement('script');
         zergnet.type = 'text/javascript'; zergnet.async = true;
-        zergnet.src = 'http://www.zergnet.com/zerg.js?id=42966';
+        zergnet.src = '//www.zergnet.com/zerg.js?id=42966';
         var znscr = document.getElementsByTagName('script')[0];
         znscr.parentNode.insertBefore(zergnet, znscr);
     })();
@@ -2151,19 +2172,19 @@ Transclusion expansion time report (%,ms,calls,template)
     </h3>
     <div class="menu">
      <div id="socialIconImages">
-      <a href="https://twitter.com/intent/tweet?text=Check+out+Stout+Shield+on+Dota+2+Wiki+--&amp;via=CurseGamepedia&amp;url=http%3A%2F%2Fdota2.gamepedia.com%2FStout_Shield" target="_blank">
+      <a href="https://twitter.com/intent/tweet?text=Check+out+Stout+Shield+on+Dota+2+Wiki+--&amp;via=CurseGamepedia&amp;url=https%3A%2F%2Fdota2.gamepedia.com%2FStout_Shield" target="_blank">
        <img src="/extensions/Social/images/square_icons/twitter.png"/>
       </a>
-      <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fdota2.gamepedia.com%2FStout_Shield" target="_blank">
+      <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdota2.gamepedia.com%2FStout_Shield" target="_blank">
        <img src="/extensions/Social/images/square_icons/facebook.png"/>
       </a>
-      <a href="https://plus.google.com/share?url=http%3A%2F%2Fdota2.gamepedia.com%2FStout_Shield" target="_blank">
+      <a href="https://plus.google.com/share?url=https%3A%2F%2Fdota2.gamepedia.com%2FStout_Shield" target="_blank">
        <img src="/extensions/Social/images/square_icons/googleplus.png"/>
       </a>
-      <a href="http://www.reddit.com/submit?url=http%3A%2F%2Fdota2.gamepedia.com%2FStout_Shield&amp;title=Check+out+Stout+Shield+on+Dota+2+Wiki+via+%40CurseGamepedia%3A+http%3A%2F%2Fdota2.gamepedia.com%2FStout_Shield" target="_blank">
+      <a href="http://www.reddit.com/submit?url=https%3A%2F%2Fdota2.gamepedia.com%2FStout_Shield&amp;title=Check+out+Stout+Shield+on+Dota+2+Wiki+via+%40CurseGamepedia%3A+https%3A%2F%2Fdota2.gamepedia.com%2FStout_Shield" target="_blank">
        <img src="/extensions/Social/images/square_icons/reddit.png"/>
       </a>
-      <a href="http://www.tumblr.com/share/link?url=http%3A%2F%2Fdota2.gamepedia.com%2FStout_Shield&amp;name=Dota+2+Wiki&amp;description=Check+out+Stout+Shield+on+Dota+2+Wiki+via+%3Ca+href%3D%22https%3A%2F%2Ftwitter.com%2FCurseGamepedia%22+target%3D%22_blank%22%3E%40CurseGamepedia%3C%2Fa%3E%3A+http%3A%2F%2Fdota2.gamepedia.com%2FStout_Shield" target="_blank">
+      <a href="http://www.tumblr.com/share/link?url=https%3A%2F%2Fdota2.gamepedia.com%2FStout_Shield&amp;name=Dota+2+Wiki&amp;description=Check+out+Stout+Shield+on+Dota+2+Wiki+via+%3Ca+href%3D%22https%3A%2F%2Ftwitter.com%2FCurseGamepedia%22+target%3D%22_blank%22%3E%40CurseGamepedia%3C%2Fa%3E%3A+https%3A%2F%2Fdota2.gamepedia.com%2FStout_Shield" target="_blank">
        <img src="/extensions/Social/images/square_icons/tumblr.png"/>
       </a>
      </div>
@@ -2183,17 +2204,10 @@ Transclusion expansion time report (%,ms,calls,template)
        </a>
       </span>
      </li>
-     <li id="ca-ve-edit">
-      <span>
-       <a accesskey="v" href="/index.php?title=Stout_Shield&amp;veaction=edit" title="Edit this page [v]">
-        Edit
-       </a>
-      </span>
-     </li>
-     <li class=" collapsible" id="ca-edit">
+     <li id="ca-edit">
       <span>
        <a accesskey="e" href="/index.php?title=Stout_Shield&amp;action=edit" title="Edit this page [e]">
-        Edit source
+        Edit
        </a>
       </span>
      </li>
@@ -2391,7 +2405,7 @@ Transclusion expansion time report (%,ms,calls,template)
       </a>
      </li>
      <li id="t-permalink">
-      <a href="/index.php?title=Stout_Shield&amp;oldid=1434199" title="Permanent link to this revision of the page">
+      <a href="/index.php?title=Stout_Shield&amp;oldid=1512051" title="Permanent link to this revision of the page">
        Permanent link
       </a>
      </li>
@@ -2555,12 +2569,41 @@ Transclusion expansion time report (%,ms,calls,template)
     </div>
    </div>
   </div>
+  <div aria-labelledby="p-lang-label" class="portal" id="p-lang" role="navigation">
+   <h3 id="p-lang-label">
+    In other languages
+   </h3>
+   <div class="body">
+    <ul>
+     <li class="interlanguage-link interwiki-de">
+      <a href="http://dota2-de.gamepedia.com/Stout_Shield" hreflang="de" lang="de" title="Stout Shield – Deutsch">
+       Deutsch
+      </a>
+     </li>
+     <li class="interlanguage-link interwiki-pt">
+      <a href="http://dota2-pt.gamepedia.com/Escudo_Robusto" hreflang="pt" lang="pt" title="Escudo Robusto – português">
+       Português
+      </a>
+     </li>
+     <li class="interlanguage-link interwiki-ru">
+      <a href="http://dota2-ru.gamepedia.com/Stout_Shield" hreflang="ru" lang="ru" title="Stout Shield – русский">
+       Русский
+      </a>
+     </li>
+     <li class="interlanguage-link interwiki-zh">
+      <a href="http://dota2-zh.gamepedia.com/%E5%9C%86%E7%9B%BE" hreflang="zh" lang="zh" title="圆盾 – 中文">
+       中文
+      </a>
+     </li>
+    </ul>
+   </div>
+  </div>
  </div>
 </div>
 <div id="footer" role="contentinfo">
  <ul id="footer-info">
   <li id="footer-info-lastmod">
-   This page was last modified on 8 January 2017, at 17:25.
+   This page was last modified on 15 May 2017, at 07:52.
   </li>
   <li id="footer-info-copyright">
    Content is available under
@@ -2644,8 +2687,8 @@ Transclusion expansion time report (%,ms,calls,template)
     </a>
    </li>
    <li>
-    <a class="advertise" href="https://ghostreconwildlands.gamepedia.com">
-     Ghost Recon
+    <a class="advertise" href="https://masseffectandromeda.gamepedia.com/Mass_Effect:_Andromeda_Wiki">
+     ME:Andromeda
     </a>
    </li>
   </ul>
@@ -2671,8 +2714,8 @@ Transclusion expansion time report (%,ms,calls,template)
     </a>
    </li>
    <li>
-    <a class="about" href="http://www.hearthpwn.com/guides/1480-how-to-get-cheaper-hearthstone-packs-buy-amazon">
-     HS Packs
+    <a class="advertise" href="https://masseffectandromeda.gamepedia.com/Skill">
+     ME:A Skills
     </a>
    </li>
   </ul>
@@ -2698,8 +2741,8 @@ Transclusion expansion time report (%,ms,calls,template)
     </a>
    </li>
    <li>
-    <a class="tos" href="https://forhonor.gamepedia.com">
-     For Honor
+    <a class="advertise" href="https://zelda.gamepedia.com/Main_Page">
+     Zelda Wiki
     </a>
    </li>
   </ul>
@@ -2756,7 +2799,4 @@ _comscore.push({ c1: "2", c2: "6035118" });
 </script>
 <script>
  (window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":77});});
-</script>
-<script type="text/javascript">
- window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"75f4858b7a","applicationID":"1909498","transactionName":"YlVXbREHWksEUkVdCVsfYEsKSV1WAVRJGhZdQA==","queueTime":0,"applicationTime":93,"atts":"ThJAG1kdSRRHUBMOHUhN","errorBeacon":"bam.nr-data.net","agent":""}
 </script>

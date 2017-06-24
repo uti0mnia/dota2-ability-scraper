@@ -2,9 +2,6 @@
 <html class="client-nojs" dir="ltr" lang="en">
  <head>
   <meta charset="utf-8"/>
-  <script type="text/javascript">
-   (window.NREUM||(NREUM={})).loader_config={xpid:"UAcAUlNACQoAXVVbDw=="};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var o=e[n]={exports:{}};t[n][0].call(o.exports,function(e){var o=t[n][1][e];return r(o||e)},o,o.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({1:[function(t,e,n){function r(t){try{c.console&&console.log(t)}catch(e){}}var o,i=t("ee"),a=t(15),c={};try{o=localStorage.getItem("__nr_flags").split(","),console&&"function"==typeof console.log&&(c.console=!0,o.indexOf("dev")!==-1&&(c.dev=!0),o.indexOf("nr_dev")!==-1&&(c.nrDev=!0))}catch(s){}c.nrDev&&i.on("internal-error",function(t){r(t.stack)}),c.dev&&i.on("fn-err",function(t,e,n){r(n.stack)}),c.dev&&(r("NR AGENT IN DEVELOPMENT MODE"),r("flags: "+a(c,function(t,e){return t}).join(", ")))},{}],2:[function(t,e,n){function r(t,e,n,r,o){try{d?d-=1:i("err",[o||new UncaughtException(t,e,n)])}catch(c){try{i("ierr",[c,(new Date).getTime(),!0])}catch(s){}}return"function"==typeof f&&f.apply(this,a(arguments))}function UncaughtException(t,e,n){this.message=t||"Uncaught error with no additional information",this.sourceURL=e,this.line=n}function o(t){i("err",[t,(new Date).getTime()])}var i=t("handle"),a=t(16),c=t("ee"),s=t("loader"),f=window.onerror,u=!1,d=0;s.features.err=!0,t(1),window.onerror=r;try{throw new Error}catch(l){"stack"in l&&(t(8),t(7),"addEventListener"in window&&t(5),s.xhrWrappable&&t(9),u=!0)}c.on("fn-start",function(t,e,n){u&&(d+=1)}),c.on("fn-err",function(t,e,n){u&&(this.thrown=!0,o(n))}),c.on("fn-end",function(){u&&!this.thrown&&d>0&&(d-=1)}),c.on("internal-error",function(t){i("ierr",[t,(new Date).getTime(),!0])})},{}],3:[function(t,e,n){t("loader").features.ins=!0},{}],4:[function(t,e,n){function r(t){}if(window.performance&&window.performance.timing&&window.performance.getEntriesByType){var o=t("ee"),i=t("handle"),a=t(8),c=t(7),s="learResourceTimings",f="addEventListener",u="resourcetimingbufferfull",d="bstResource",l="resource",p="-start",h="-end",m="fn"+p,w="fn"+h,v="bstTimer",y="pushState";t("loader").features.stn=!0,t(6);var g=NREUM.o.EV;o.on(m,function(t,e){var n=t[0];n instanceof g&&(this.bstStart=Date.now())}),o.on(w,function(t,e){var n=t[0];n instanceof g&&i("bst",[n,e,this.bstStart,Date.now()])}),a.on(m,function(t,e,n){this.bstStart=Date.now(),this.bstType=n}),a.on(w,function(t,e){i(v,[e,this.bstStart,Date.now(),this.bstType])}),c.on(m,function(){this.bstStart=Date.now()}),c.on(w,function(t,e){i(v,[e,this.bstStart,Date.now(),"requestAnimationFrame"])}),o.on(y+p,function(t){this.time=Date.now(),this.startPath=location.pathname+location.hash}),o.on(y+h,function(t){i("bstHist",[location.pathname+location.hash,this.startPath,this.time])}),f in window.performance&&(window.performance["c"+s]?window.performance[f](u,function(t){i(d,[window.performance.getEntriesByType(l)]),window.performance["c"+s]()},!1):window.performance[f]("webkit"+u,function(t){i(d,[window.performance.getEntriesByType(l)]),window.performance["webkitC"+s]()},!1)),document[f]("scroll",r,{passive:!0}),document[f]("keypress",r,!1),document[f]("click",r,!1)}},{}],5:[function(t,e,n){function r(t){for(var e=t;e&&!e.hasOwnProperty(u);)e=Object.getPrototypeOf(e);e&&o(e)}function o(t){c.inPlace(t,[u,d],"-",i)}function i(t,e){return t[1]}var a=t("ee").get("events"),c=t(17)(a,!0),s=t("gos"),f=XMLHttpRequest,u="addEventListener",d="removeEventListener";e.exports=a,"getPrototypeOf"in Object?(r(document),r(window),r(f.prototype)):f.prototype.hasOwnProperty(u)&&(o(window),o(f.prototype)),a.on(u+"-start",function(t,e){var n=t[1],r=s(n,"nr@wrapped",function(){function t(){if("function"==typeof n.handleEvent)return n.handleEvent.apply(n,arguments)}var e={object:t,"function":n}[typeof n];return e?c(e,"fn-",null,e.name||"anonymous"):n});this.wrapped=t[1]=r}),a.on(d+"-start",function(t){t[1]=this.wrapped||t[1]})},{}],6:[function(t,e,n){var r=t("ee").get("history"),o=t(17)(r);e.exports=r,o.inPlace(window.history,["pushState","replaceState"],"-")},{}],7:[function(t,e,n){var r=t("ee").get("raf"),o=t(17)(r),i="equestAnimationFrame";e.exports=r,o.inPlace(window,["r"+i,"mozR"+i,"webkitR"+i,"msR"+i],"raf-"),r.on("raf-start",function(t){t[0]=o(t[0],"fn-")})},{}],8:[function(t,e,n){function r(t,e,n){t[0]=a(t[0],"fn-",null,n)}function o(t,e,n){this.method=n,this.timerDuration="number"==typeof t[1]?t[1]:0,t[0]=a(t[0],"fn-",this,n)}var i=t("ee").get("timer"),a=t(17)(i),c="setTimeout",s="setInterval",f="clearTimeout",u="-start",d="-";e.exports=i,a.inPlace(window,[c,"setImmediate"],c+d),a.inPlace(window,[s],s+d),a.inPlace(window,[f,"clearImmediate"],f+d),i.on(s+u,r),i.on(c+u,o)},{}],9:[function(t,e,n){function r(t,e){d.inPlace(e,["onreadystatechange"],"fn-",c)}function o(){var t=this,e=u.context(t);t.readyState>3&&!e.resolved&&(e.resolved=!0,u.emit("xhr-resolved",[],t)),d.inPlace(t,w,"fn-",c)}function i(t){v.push(t),h&&(g=-g,b.data=g)}function a(){for(var t=0;t<v.length;t++)r([],v[t]);v.length&&(v=[])}function c(t,e){return e}function s(t,e){for(var n in t)e[n]=t[n];return e}t(5);var f=t("ee"),u=f.get("xhr"),d=t(17)(u),l=NREUM.o,p=l.XHR,h=l.MO,m="readystatechange",w=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"],v=[];e.exports=u;var y=window.XMLHttpRequest=function(t){var e=new p(t);try{u.emit("new-xhr",[e],e),e.addEventListener(m,o,!1)}catch(n){try{u.emit("internal-error",[n])}catch(r){}}return e};if(s(p,y),y.prototype=p.prototype,d.inPlace(y.prototype,["open","send"],"-xhr-",c),u.on("send-xhr-start",function(t,e){r(t,e),i(e)}),u.on("open-xhr-start",r),h){var g=1,b=document.createTextNode(g);new h(a).observe(b,{characterData:!0})}else f.on("fn-end",function(t){t[0]&&t[0].type===m||a()})},{}],10:[function(t,e,n){function r(t){var e=this.params,n=this.metrics;if(!this.ended){this.ended=!0;for(var r=0;r<d;r++)t.removeEventListener(u[r],this.listener,!1);if(!e.aborted){if(n.duration=(new Date).getTime()-this.startTime,4===t.readyState){e.status=t.status;var i=o(t,this.lastSize);if(i&&(n.rxSize=i),this.sameOrigin){var a=t.getResponseHeader("X-NewRelic-App-Data");a&&(e.cat=a.split(", ").pop())}}else e.status=0;n.cbTime=this.cbTime,f.emit("xhr-done",[t],t),c("xhr",[e,n,this.startTime])}}}function o(t,e){var n=t.responseType;if("json"===n&&null!==e)return e;var r="arraybuffer"===n||"blob"===n||"json"===n?t.response:t.responseText;return h(r)}function i(t,e){var n=s(e),r=t.params;r.host=n.hostname+":"+n.port,r.pathname=n.pathname,t.sameOrigin=n.sameOrigin}var a=t("loader");if(a.xhrWrappable){var c=t("handle"),s=t(11),f=t("ee"),u=["load","error","abort","timeout"],d=u.length,l=t("id"),p=t(14),h=t(13),m=window.XMLHttpRequest;a.features.xhr=!0,t(9),f.on("new-xhr",function(t){var e=this;e.totalCbs=0,e.called=0,e.cbTime=0,e.end=r,e.ended=!1,e.xhrGuids={},e.lastSize=null,p&&(p>34||p<10)||window.opera||t.addEventListener("progress",function(t){e.lastSize=t.loaded},!1)}),f.on("open-xhr-start",function(t){this.params={method:t[0]},i(this,t[1]),this.metrics={}}),f.on("open-xhr-end",function(t,e){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&e.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid)}),f.on("send-xhr-start",function(t,e){var n=this.metrics,r=t[0],o=this;if(n&&r){var i=h(r);i&&(n.txSize=i)}this.startTime=(new Date).getTime(),this.listener=function(t){try{"abort"===t.type&&(o.params.aborted=!0),("load"!==t.type||o.called===o.totalCbs&&(o.onloadCalled||"function"!=typeof e.onload))&&o.end(e)}catch(n){try{f.emit("internal-error",[n])}catch(r){}}};for(var a=0;a<d;a++)e.addEventListener(u[a],this.listener,!1)}),f.on("xhr-cb-time",function(t,e,n){this.cbTime+=t,e?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof n.onload||this.end(n)}),f.on("xhr-load-added",function(t,e){var n=""+l(t)+!!e;this.xhrGuids&&!this.xhrGuids[n]&&(this.xhrGuids[n]=!0,this.totalCbs+=1)}),f.on("xhr-load-removed",function(t,e){var n=""+l(t)+!!e;this.xhrGuids&&this.xhrGuids[n]&&(delete this.xhrGuids[n],this.totalCbs-=1)}),f.on("addEventListener-end",function(t,e){e instanceof m&&"load"===t[0]&&f.emit("xhr-load-added",[t[1],t[2]],e)}),f.on("removeEventListener-end",function(t,e){e instanceof m&&"load"===t[0]&&f.emit("xhr-load-removed",[t[1],t[2]],e)}),f.on("fn-start",function(t,e,n){e instanceof m&&("onload"===n&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=(new Date).getTime()))}),f.on("fn-end",function(t,e){this.xhrCbStart&&f.emit("xhr-cb-time",[(new Date).getTime()-this.xhrCbStart,this.onload,e],e)})}},{}],11:[function(t,e,n){e.exports=function(t){var e=document.createElement("a"),n=window.location,r={};e.href=t,r.port=e.port;var o=e.href.split("://");!r.port&&o[1]&&(r.port=o[1].split("/")[0].split("@").pop().split(":")[1]),r.port&&"0"!==r.port||(r.port="https"===o[0]?"443":"80"),r.hostname=e.hostname||n.hostname,r.pathname=e.pathname,r.protocol=o[0],"/"!==r.pathname.charAt(0)&&(r.pathname="/"+r.pathname);var i=!e.protocol||":"===e.protocol||e.protocol===n.protocol,a=e.hostname===document.domain&&e.port===n.port;return r.sameOrigin=i&&(!e.hostname||a),r}},{}],12:[function(t,e,n){function r(){}function o(t,e,n){return function(){return i(t,[(new Date).getTime()].concat(c(arguments)),e?null:this,n),e?void 0:this}}var i=t("handle"),a=t(15),c=t(16),s=t("ee").get("tracer"),f=NREUM;"undefined"==typeof window.newrelic&&(newrelic=f);var u=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(u,function(t,e){f[e]=o(d+e,!0,"api")}),f.addPageAction=o(d+"addPageAction",!0),f.setCurrentRouteName=o(d+"routeName",!0),e.exports=newrelic,f.interaction=function(){return(new r).get()};var p=r.prototype={createTracer:function(t,e){var n={},r=this,o="function"==typeof e;return i(l+"tracer",[Date.now(),t,n],r),function(){if(s.emit((o?"":"no-")+"fn-start",[Date.now(),r,o],n),o)try{return e.apply(this,arguments)}finally{s.emit("fn-end",[Date.now()],n)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){p[e]=o(l+e)}),newrelic.noticeError=function(t){"string"==typeof t&&(t=new Error(t)),i("err",[t,(new Date).getTime()])}},{}],13:[function(t,e,n){e.exports=function(t){if("string"==typeof t&&t.length)return t.length;if("object"==typeof t){if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if(!("undefined"!=typeof FormData&&t instanceof FormData))try{return JSON.stringify(t).length}catch(e){return}}}},{}],14:[function(t,e,n){var r=0,o=navigator.userAgent.match(/Firefox[\/\s](\d+\.\d+)/);o&&(r=+o[1]),e.exports=r},{}],15:[function(t,e,n){function r(t,e){var n=[],r="",i=0;for(r in t)o.call(t,r)&&(n[i]=e(r,t[r]),i+=1);return n}var o=Object.prototype.hasOwnProperty;e.exports=r},{}],16:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,o=n-e||0,i=Array(o<0?0:o);++r<o;)i[r]=t[e+r];return i}e.exports=r},{}],17:[function(t,e,n){function r(t){return!(t&&t instanceof Function&&t.apply&&!t[a])}var o=t("ee"),i=t(16),a="nr@original",c=Object.prototype.hasOwnProperty,s=!1;e.exports=function(t,e){function n(t,e,n,o){function nrWrapper(){var r,a,c,s;try{a=this,r=i(arguments),c="function"==typeof n?n(r,a):n||{}}catch(f){l([f,"",[r,a,o],c])}u(e+"start",[r,a,o],c);try{return s=t.apply(a,r)}catch(d){throw u(e+"err",[r,a,d],c),d}finally{u(e+"end",[r,a,s],c)}}return r(t)?t:(e||(e=""),nrWrapper[a]=t,d(t,nrWrapper),nrWrapper)}function f(t,e,o,i){o||(o="");var a,c,s,f="-"===o.charAt(0);for(s=0;s<e.length;s++)c=e[s],a=t[c],r(a)||(t[c]=n(a,f?c+o:o,i,c))}function u(n,r,o){if(!s||e){var i=s;s=!0;try{t.emit(n,r,o)}catch(a){l([a,n,r,o])}s=i}}function d(t,e){if(Object.defineProperty&&Object.keys)try{var n=Object.keys(t);return n.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(r){l([r])}for(var o in t)c.call(t,o)&&(e[o]=t[o]);return e}function l(e){try{t.emit("internal-error",e)}catch(n){}}return t||(t=o),n.inPlace=f,n.flag=a,n}},{}],ee:[function(t,e,n){function r(){}function o(t){function e(t){return t&&t instanceof r?t:t?s(t,c,i):i()}function n(n,r,o){if(!l.aborted){t&&t(n,r,o);for(var i=e(o),a=h(n),c=a.length,s=0;s<c;s++)a[s].apply(i,r);var f=u[y[n]];return f&&f.push([g,n,r,i]),i}}function p(t,e){v[t]=h(t).concat(e)}function h(t){return v[t]||[]}function m(t){return d[t]=d[t]||o(n)}function w(t,e){f(t,function(t,n){e=e||"feature",y[n]=e,e in u||(u[e]=[])})}var v={},y={},g={on:p,emit:n,get:m,listeners:h,context:e,buffer:w,abort:a,aborted:!1};return g}function i(){return new r}function a(){(u.api||u.feature)&&(l.aborted=!0,u=l.backlog={})}var c="nr@context",s=t("gos"),f=t(15),u={},d={},l=e.exports=o();l.backlog=u},{}],gos:[function(t,e,n){function r(t,e,n){if(o.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return t[e]=r,r}var o=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){o.buffer([t],r),o.emit(t,e,n)}var o=t("ee").get("handle");e.exports=r,r.ee=o},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,i,function(){return o++})}var o=1,i="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!b++){var t=g.info=NREUM.info,e=d.getElementsByTagName("script")[0];if(setTimeout(f.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return f.abort();s(v,function(e,n){t[e]||(t[e]=n)}),c("mark",["onload",a()],null,"api");var n=d.createElement("script");n.src="https://"+t.agent,e.parentNode.insertBefore(n,e)}}function o(){"complete"===d.readyState&&i()}function i(){c("mark",["domContent",a()],null,"api")}function a(){return(new Date).getTime()}var c=t("handle"),s=t(15),f=t("ee"),u=window,d=u.document,l="addEventListener",p="attachEvent",h=u.XMLHttpRequest,m=h&&h.prototype;NREUM.o={ST:setTimeout,CT:clearTimeout,XHR:h,REQ:u.Request,EV:u.Event,PR:u.Promise,MO:u.MutationObserver},t(12);var w=""+location,v={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1016.min.js"},y=h&&m&&m[l]&&!/CriOS/.test(navigator.userAgent),g=e.exports={offset:a(),origin:w,features:{},xhrWrappable:y};d[l]?(d[l]("DOMContentLoaded",i,!1),u[l]("load",r,!1)):(d[p]("onreadystatechange",o),u[p]("onload",r)),c("mark",["firstbyte",a()],null,"api");var b=0},{}]},{},["loader",2,10,4,3]);
-  </script>
   <title>
    Earth Spirit - Dota 2 Wiki
   </title>
@@ -12,7 +9,7 @@
    document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );
   </script>
   <script>
-   (window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Earth_Spirit","wgTitle":"Earth Spirit","wgCurRevisionId":1445560,"wgRevisionId":1445560,"wgArticleId":83980,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Heroes","Strength heroes","Melee heroes","Nukers","Escape","Disablers","Initiators","Durable"],"wgBreakFrames":true,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Earth_Spirit","wgRelevantArticleId":83980,"wgRequestId":"eae8f095bb23520d56a404d6","wgIsProbablyEditable":true,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgPreferredVariant":"en","wgCollapsibleVectorEnabledModules":{"collapsiblenav":true,"experiments":true},"wgVisualEditor":{"pageLanguageCode":"en","pageLanguageDir":"ltr","usePageImages":true,"usePageDescriptions":false},"wgWikiEditorEnabledModules":{"toolbar":true,"dialogs":true,"preview":true,"publish":true},"wgCategoryTreePageCategoryOptions":"{\"mode\":0,\"hideprefix\":20,\"showcount\":true,\"namespaces\":false}","wgVisualEditorToolbarScrollOffset":0});mw.loader.implement("user.options",function($,jQuery,require,module){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function ( $, jQuery, require, module ) {
+   (window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Earth_Spirit","wgTitle":"Earth Spirit","wgCurRevisionId":1526641,"wgRevisionId":1526641,"wgArticleId":83980,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Heroes","Strength heroes","Melee heroes","Nukers","Escape","Disablers","Initiators","Durable"],"wgBreakFrames":true,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Earth_Spirit","wgRelevantArticleId":83980,"wgRequestId":"74cc6311be997a73dacc9768","wgIsProbablyEditable":true,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgPreferredVariant":"en","wgCollapsibleVectorEnabledModules":{"collapsiblenav":true,"experiments":true},"wgVisualEditor":{"pageLanguageCode":"en","pageLanguageDir":"ltr","usePageImages":true,"usePageDescriptions":false},"wgWikiEditorEnabledModules":{"toolbar":true,"dialogs":true,"preview":true,"publish":true},"wgCategoryTreePageCategoryOptions":"{\"mode\":0,\"hideprefix\":20,\"showcount\":true,\"namespaces\":false}","wgVisualEditorToolbarScrollOffset":0});mw.loader.implement("user.options",function($,jQuery,require,module){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function ( $, jQuery, require, module ) {
 mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/;
 
 });mw.loader.load(["ext.smw.style","mediawiki.page.startup","ext.siteGlobals","ext.bunnyears","ext.visualEditor.desktopArticleTarget.init","ext.hydraAuth.banners","skins.vector.js","skins.hydra.advertisements.js","skins.hydra.footer.js","ext.social"]);});
@@ -23,11 +20,11 @@ mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","cs
   <link href="/load.php?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=hydra" rel="stylesheet"/>
   <script async="" src="/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=hydra">
   </script>
-  <meta content="MediaWiki 1.27.1" name="generator"/>
+  <meta content="MediaWiki 1.27.3" name="generator"/>
   <meta content="Earth Spirit" name="og:title"/>
   <meta content="website" name="og:type"/>
   <meta content="https://hydra-media.cursecdn.com/dota2.gamepedia.com/b/bc/Wiki.png" name="og:image"/>
-  <meta content="http://dota2.gamepedia.com/Earth_Spirit" name="og:url"/>
+  <meta content="https://dota2.gamepedia.com/Earth_Spirit" name="og:url"/>
   <meta content="Dota 2 Wiki" name="og:site_name"/>
   <meta name="description"/>
   <meta content="" name="keywords"/>
@@ -40,13 +37,13 @@ mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","cs
   <link href="/opensearch_desc.php" rel="search" title="Dota 2 Wiki (en)" type="application/opensearchdescription+xml"/>
   <link href="//dota2.gamepedia.com/api.php?action=rsd" rel="EditURI" type="application/rsd+xml"/>
   <link href="//creativecommons.org/licenses/by-nc-sa/3.0/" rel="copyright"/>
-  <link href="http://dota2.gamepedia.com/Earth_Spirit" rel="canonical"/>
+  <link href="https://dota2.gamepedia.com/Earth_Spirit" rel="canonical"/>
   <link href="dota2-de.gamepedia.com" hreflang="de" rel="alternate"/>
   <link href="dota2-ru.gamepedia.com" hreflang="ru" rel="alternate"/>
   <link href="dota2-pt.gamepedia.com" hreflang="pt" rel="alternate"/>
   <link href="dota2-zh.gamepedia.com" hreflang="zh" rel="alternate"/>
   <meta content="Gamepedia" itemprop="author"/>
-  <link href="https://stations.cursetech.com/be/bunnyears.min.css" rel="stylesheet" type="text/css"/>
+  <link href="https://stations.cursetech.com/be/bunnyears-1.1.min.css" rel="stylesheet" type="text/css"/>
  </head>
  <body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-Earth_Spirit rootpage-Earth_Spirit skin-hydra action-view site-dota2-gamepedia show-ads">
   <script type="application/ld+json">
@@ -81,8 +78,8 @@ mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","cs
 		"target": "https://dota2.gamepedia.com/index.php?title=Special:Search&search={search_term}",
 		"query-input": "required name=search_term"
 	},
-	"datePublished": "2017-01-22T21:47:56Z",
-	"dateModified": "2017-01-22T21:47:56Z",
+	"datePublished": "2017-05-23T19:03:15Z",
+	"dateModified": "2017-05-23T19:03:15Z",
 	"mainEntityOfPage": "https://dota2.gamepedia.com/Earth_Spirit"
 }
   </script>
@@ -124,7 +121,7 @@ mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","cs
 var script = document.createElement('script');
 var tstamp = new Date();
 script.id = 'factorem';
-script.src = 'http://cdm.cursecdn.com/js/gamepedia/cdmfactorem_min.js?misc=' + tstamp.getTime();;
+script.src = '//cdm.cursecdn.com/js/gamepedia/cdmfactorem_min.js?misc=' + tstamp.getTime();;
 script.async = true;
 script.type='text/javascript';
 document.head.appendChild(script);
@@ -133,10 +130,10 @@ document.head.appendChild(script);
    setTimeout(function(){if("undefined"!=typeof b2){var element=document.getElementById(b2);setTimeout(function(){element.parentNode.innerHTML='<div id="'+b2+'"></div>'},5000)}},20000)
   </script>
   <script>
-   setTimeout(function(){if("undefined"!=typeof b2){var element=document.getElementById(b3);setTimeout(function(){element.parentNode.innerHTML='<div id="'+b3+'"></div>'},5000)}},20000)
+   setTimeout(function(){if("undefined"!=typeof b3){var element=document.getElementById(b3);setTimeout(function(){element.parentNode.innerHTML='<div id="'+b3+'"></div>'},5000)}},20000)
   </script>
   <script>
-   setTimeout(function(){if("undefined"!=typeof b2){var element=document.getElementById(b6);setTimeout(function(){element.parentNode.innerHTML='<div id="'+b6+'"></div>'},5000)}},20000)
+   setTimeout(function(){if("undefined"!=typeof b6){var element=document.getElementById(b6);setTimeout(function(){element.parentNode.innerHTML='<div id="'+b6+'"></div>'},5000)}},20000)
   </script>
   <div id="netbar">
    <ul class="netbar-left">
@@ -279,6 +276,13 @@ document.head.appendChild(script);
          </td>
          <td style="border-bottom: 2px solid #A3B1BF; width: 3px;">
          </td>
+         <td style="padding: 0.5em; background-color: #d7e6f4; line-height: 0.95em; border: 1px solid #A3B1BF; border-bottom: solid 2px #A3B1BF; width: 20px;">
+          <a href="/Earth_Spirit/Bugs" title="Earth Spirit/Bugs">
+           Known Bugs
+          </a>
+         </td>
+         <td style="border-bottom: 2px solid #A3B1BF; width: 3px;">
+         </td>
          <td style="border-bottom:2px solid #A3B1BF" width="3000">
          </td>
         </tr>
@@ -293,8 +297,8 @@ document.head.appendChild(script);
         </tr>
         <tr>
          <td colspan="4">
-          <a class="image" href="/File:Earth_Spirit.png">
-           <img alt="Earth Spirit.png" height="144" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/4/40/Earth_Spirit.png?version=f082d011b144a5daaf90d36bbbb71b05" width="256"/>
+          <a class="image" href="/File:Earth_Spirit_icon.png">
+           <img alt="Earth Spirit icon.png" height="144" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/b/be/Earth_Spirit_icon.png?version=c602dd107870a26f3bcf4cc294c6f2f9" width="256"/>
           </a>
          </td>
         </tr>
@@ -304,17 +308,17 @@ document.head.appendChild(script);
            <tr>
             <th align="center" width="45">
              <a href="/Strength" title="Strength">
-              <img alt="Strength" height="40" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/a/a3/Strength_primary_attribute_symbol.png/40px-Strength_primary_attribute_symbol.png?version=274549a76d8ff80bb74928cf3a3a720c" width="40"/>
+              <img alt="Strength primary attribute symbol.png" height="40" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/a/a3/Strength_primary_attribute_symbol.png/40px-Strength_primary_attribute_symbol.png?version=274549a76d8ff80bb74928cf3a3a720c" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/a/a3/Strength_primary_attribute_symbol.png/60px-Strength_primary_attribute_symbol.png?version=274549a76d8ff80bb74928cf3a3a720c 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/a/a3/Strength_primary_attribute_symbol.png?version=274549a76d8ff80bb74928cf3a3a720c 2x" width="40"/>
              </a>
              <br/>
              <b>
               21
              </b>
-             + 2.9
+             + 3.2
             </th>
             <th align="center" width="45">
              <a href="/Agility" title="Agility">
-              <img alt="Agility" height="40" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/2/2d/Agility_attribute_symbol.png/40px-Agility_attribute_symbol.png?version=366b1f8f1bc09dbc72aac21691851193" width="40"/>
+              <img alt="Agility attribute symbol.png" height="40" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/2/2d/Agility_attribute_symbol.png/40px-Agility_attribute_symbol.png?version=366b1f8f1bc09dbc72aac21691851193" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/2/2d/Agility_attribute_symbol.png/60px-Agility_attribute_symbol.png?version=366b1f8f1bc09dbc72aac21691851193 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/2/2d/Agility_attribute_symbol.png?version=366b1f8f1bc09dbc72aac21691851193 2x" width="40"/>
              </a>
              <br/>
              <b>
@@ -324,7 +328,7 @@ document.head.appendChild(script);
             </th>
             <th align="center" width="45">
              <a href="/Intelligence" title="Intelligence">
-              <img alt="Intelligence" height="40" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/5/56/Intelligence_attribute_symbol.png/40px-Intelligence_attribute_symbol.png?version=4040e46b05f05f761993086ea3d191f0" width="40"/>
+              <img alt="Intelligence attribute symbol.png" height="40" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/5/56/Intelligence_attribute_symbol.png/40px-Intelligence_attribute_symbol.png?version=4040e46b05f05f761993086ea3d191f0" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/5/56/Intelligence_attribute_symbol.png/60px-Intelligence_attribute_symbol.png?version=4040e46b05f05f761993086ea3d191f0 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/5/56/Intelligence_attribute_symbol.png?version=4040e46b05f05f761993086ea3d191f0 2x" width="40"/>
              </a>
              <br/>
              <b>
@@ -377,10 +381,10 @@ document.head.appendChild(script);
              620
             </td>
             <td>
-             1420
+             1500
             </td>
             <td>
-             2000
+             2140
             </td>
            </tr>
            <tr>
@@ -392,16 +396,16 @@ document.head.appendChild(script);
              </b>
             </td>
             <td>
-             0.25
+             0
             </td>
             <td>
-             0.88
+             1.26
             </td>
             <td>
-             2.1
+             3.95
             </td>
             <td>
-             2.97
+             5.87
             </td>
            </tr>
            <tr style="background:#ededed">
@@ -413,16 +417,16 @@ document.head.appendChild(script);
              </b>
             </td>
             <td>
-             50
+             75
             </td>
             <td>
-             266
+             273
             </td>
             <td>
-             614
+             592
             </td>
             <td>
-             866
+             823
             </td>
            </tr>
            <tr>
@@ -461,10 +465,10 @@ document.head.appendChild(script);
              46‒56
             </td>
             <td>
-             86‒96
+             90‒100
             </td>
             <td>
-             115‒125
+             122‒132
             </td>
            </tr>
            <tr>
@@ -500,13 +504,13 @@ document.head.appendChild(script);
              0%
             </td>
             <td>
-             1.13%
+             1.29%
             </td>
             <td>
-             2.96%
+             3.39%
             </td>
             <td>
-             4.28%
+             4.89%
             </td>
            </tr>
            <tr>
@@ -547,7 +551,7 @@ document.head.appendChild(script);
              </b>
             </td>
             <td>
-             295
+             290
             </td>
            </tr>
            <tr>
@@ -844,14 +848,8 @@ document.head.appendChild(script);
          <span class="mw-editsection-bracket">
           [
          </span>
-         <a class="mw-editsection-visualeditor" href="/index.php?title=Earth_Spirit&amp;veaction=edit&amp;vesection=1" title="Edit section: Bio">
-          edit
-         </a>
-         <span class="mw-editsection-divider">
-          |
-         </span>
          <a href="/index.php?title=Earth_Spirit&amp;action=edit&amp;section=1" title="Edit section: Bio">
-          edit source
+          edit
          </a>
          <span class="mw-editsection-bracket">
           ]
@@ -859,99 +857,94 @@ document.head.appendChild(script);
         </span>
        </h2>
        <div class="biobox" style="color:#333333;padding:8px;font-size:12px;">
-        <table style="background: none;">
+        <table cellspacing="4" style="background: none;">
          <tr>
-          <td valign="top">
-           <table cellspacing="4" style="background: none;">
-            <tr>
-             <td colspan="2" style="font-weight:bold;font-size:13px;text-align:center;">
-              <a href="/Earth_Spirit" title="Earth Spirit">
-               <img alt="Earth Spirit" height="32" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/b/be/Earth_Spirit_icon.png?version=2b7bae03fbd27e9a5b8baee0a63e1bdb" width="32"/>
-              </a>
-              Kaolin, the Earth Spirit
-             </td>
-            </tr>
-            <tr>
-             <td align="center" colspan="2">
-              <a class="sm2_button" href="https://hydra-media.cursecdn.com/dota2.gamepedia.com/7/72/Earthspi_battlebegins_01.mp3" title="Play">
-               Play
-              </a>
-              "Through conflict, one's nature is revealed."
-             </td>
-            </tr>
-            <tr>
-             <td valign="top">
-              <b>
-               Role:
-              </b>
-             </td>
-             <td>
-              <a href="/Role#Nuker" title="Nuker">
-               <img alt="Nuker" height="24" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/0/04/Pip_ganker.png/24px-Pip_ganker.png?version=f403b95dc688f11a6af39e1110731b4d" width="24"/>
-              </a>
-              <a href="/Role#Nuker" title="Role">
-               Nuker
-              </a>
-              /
-              <a href="/Role#Escape" title="Escape">
-               <img alt="Escape" height="24" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/d/d3/Pip_tank.png/24px-Pip_tank.png?version=5d8ccf7b704ff54ffe6c2a65a3861423" width="24"/>
-              </a>
-              <a href="/Role#Escape" title="Role">
-               Escape
-              </a>
-              /
-              <a href="/Role#Disabler" title="Disabler">
-               <img alt="Disabler" height="24" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/c/c3/Pip_disabler.png/24px-Pip_disabler.png?version=340edcbcd7b35f85bea7d18c802ed99c" width="24"/>
-              </a>
-              <a href="/Role#Disabler" title="Role">
-               Disabler
-              </a>
-              /
-              <a href="/Role#Initiator" title="Initiator">
-               <img alt="Initiator" height="24" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/2/25/Pip_initiator.png/24px-Pip_initiator.png?version=dd8026b54598cb0f1095f87db539ce5c" width="24"/>
-              </a>
-              <a href="/Role#Initiator" title="Role">
-               Initiator
-              </a>
-              /
-              <a href="/Role#Durable" title="Durable">
-               <img alt="Durable" height="24" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/d/d3/Pip_tank.png/24px-Pip_tank.png?version=5d8ccf7b704ff54ffe6c2a65a3861423" width="24"/>
-              </a>
-              <a href="/Role#Durable" title="Role">
-               Durable
-              </a>
-             </td>
-            </tr>
-            <tr>
-             <td valign="top">
-              <b>
-               Lore:
-              </b>
-             </td>
-             <td>
-              <i>
-               Deep amid the Upland crags and cliffs there runs a seam of sacred jade long foresworn by highland miners. From this rare material, the likeness of the great general Kaolin was carved and buried at the head of a stone funerary army ten thousand strong--a force of soldiers and holy men, jesters and acrobats, carved by craftsmen and entombed for millennia in the dark embrace of the Earth.
-              </i>
-              <p>
-               What the craftsmen had not known was that within the strange seam of jade flowed the spirit of the Earth itself--an elemental force at one with the planet. When the force within the carved jade found itself cut off from the life's blood of the world, it gathered its strength over the course of a thousand years and dug itself free and into the light. Now the great Kaolin Earth Spirit strides the Upland roads, fighting for the spirit of the Earth; and in times of need calls forth remnants of his buried army still locked in the loving embrace of the soil.
-              </p>
-             </td>
-            </tr>
-            <tr>
-             <td valign="top">
-              <b>
-               Voice:
-              </b>
-             </td>
-             <td>
-              Nolan North (
-              <a href="/Earth_Spirit/Responses" title="Earth Spirit/Responses">
-               Responses
-              </a>
-              )
-             </td>
-            </tr>
-           </table>
+          <td colspan="2" style="font-weight: bold; font-size: 13px; text-align: center;">
+           <a href="/Earth_Spirit" title="Earth Spirit">
+            <img alt="Earth Spirit" height="32" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/1/1f/Earth_Spirit_minimap_icon.png?version=78f158ed2fd5f4bc90e197923614565b" width="32"/>
+           </a>
+           Kaolin, the Earth Spirit
+          </td>
+         </tr>
+         <tr>
+          <td colspan="2" style="text-align: center;">
+           <a class="sm2_button" href="https://hydra-media.cursecdn.com/dota2.gamepedia.com/7/72/Earthspi_battlebegins_01.mp3" title="Play">
+            Play
+           </a>
+           "Through conflict, one's nature is revealed."
+          </td>
+         </tr>
+         <tr>
+          <td>
+           <b>
+            Role:
+           </b>
+          </td>
+          <td>
+           <a href="/Role#Nuker" title="Nuker">
+            <img alt="Nuker" height="24" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/0/04/Pip_ganker.png/24px-Pip_ganker.png?version=f403b95dc688f11a6af39e1110731b4d" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/0/04/Pip_ganker.png/36px-Pip_ganker.png?version=f403b95dc688f11a6af39e1110731b4d 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/0/04/Pip_ganker.png/48px-Pip_ganker.png?version=f403b95dc688f11a6af39e1110731b4d 2x" width="24"/>
+           </a>
+           <a href="/Role#Nuker" title="Role">
+            Nuker
+           </a>
+           /
+           <a href="/Role#Escape" title="Escape">
+            <img alt="Escape" height="24" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/d/d3/Pip_tank.png/24px-Pip_tank.png?version=5d8ccf7b704ff54ffe6c2a65a3861423" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/d/d3/Pip_tank.png/36px-Pip_tank.png?version=5d8ccf7b704ff54ffe6c2a65a3861423 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/d/d3/Pip_tank.png/48px-Pip_tank.png?version=5d8ccf7b704ff54ffe6c2a65a3861423 2x" width="24"/>
+           </a>
+           <a href="/Role#Escape" title="Role">
+            Escape
+           </a>
+           /
+           <a href="/Role#Disabler" title="Disabler">
+            <img alt="Disabler" height="24" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/c/c3/Pip_disabler.png/24px-Pip_disabler.png?version=340edcbcd7b35f85bea7d18c802ed99c" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/c/c3/Pip_disabler.png/36px-Pip_disabler.png?version=340edcbcd7b35f85bea7d18c802ed99c 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/c/c3/Pip_disabler.png/48px-Pip_disabler.png?version=340edcbcd7b35f85bea7d18c802ed99c 2x" width="24"/>
+           </a>
+           <a href="/Role#Disabler" title="Role">
+            Disabler
+           </a>
+           /
+           <a href="/Role#Initiator" title="Initiator">
+            <img alt="Initiator" height="24" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/2/25/Pip_initiator.png/24px-Pip_initiator.png?version=dd8026b54598cb0f1095f87db539ce5c" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/2/25/Pip_initiator.png/36px-Pip_initiator.png?version=dd8026b54598cb0f1095f87db539ce5c 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/2/25/Pip_initiator.png/48px-Pip_initiator.png?version=dd8026b54598cb0f1095f87db539ce5c 2x" width="24"/>
+           </a>
+           <a href="/Role#Initiator" title="Role">
+            Initiator
+           </a>
+           /
+           <a href="/Role#Durable" title="Durable">
+            <img alt="Durable" height="24" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/d/d3/Pip_tank.png/24px-Pip_tank.png?version=5d8ccf7b704ff54ffe6c2a65a3861423" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/d/d3/Pip_tank.png/36px-Pip_tank.png?version=5d8ccf7b704ff54ffe6c2a65a3861423 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/d/d3/Pip_tank.png/48px-Pip_tank.png?version=5d8ccf7b704ff54ffe6c2a65a3861423 2x" width="24"/>
+           </a>
+           <a href="/Role#Durable" title="Role">
+            Durable
+           </a>
+          </td>
+         </tr>
+         <tr>
+          <td style="vertical-align: top;">
+           <b>
+            <a href="/Earth_Spirit/Lore" title="Earth Spirit/Lore">
+             Lore
+            </a>
+            :
+           </b>
+          </td>
+          <td style="font-style: italic;">
+           Deep amid the Upland crags and cliffs there runs a seam of sacred jade long foresworn by highland miners. From this rare material, the likeness of the great general Kaolin was carved and buried at the head of a stone funerary army ten thousand strong--a force of soldiers and holy men, jesters and acrobats, carved by craftsmen and entombed for millennia in the dark embrace of the Earth.
+           <p>
+            What the craftsmen had not known was that within the strange seam of jade flowed the spirit of the Earth itself--an elemental force at one with the planet. When the force within the carved jade found itself cut off from the life's blood of the world, it gathered its strength over the course of a thousand years and dug itself free and into the light. Now the great Kaolin Earth Spirit strides the Upland roads, fighting for the spirit of the Earth; and in times of need calls forth remnants of his buried army still locked in the loving embrace of the soil.
+           </p>
+          </td>
+         </tr>
+         <tr>
+          <td>
+           <b>
+            Voice:
+           </b>
+          </td>
+          <td>
+           Nolan North (
+           <a href="/Earth_Spirit/Responses" title="Earth Spirit/Responses">
+            Responses
+           </a>
+           )
           </td>
          </tr>
         </table>
@@ -964,14 +957,8 @@ document.head.appendChild(script);
          <span class="mw-editsection-bracket">
           [
          </span>
-         <a class="mw-editsection-visualeditor" href="/index.php?title=Earth_Spirit&amp;veaction=edit&amp;vesection=2" title="Edit section: Abilities">
-          edit
-         </a>
-         <span class="mw-editsection-divider">
-          |
-         </span>
          <a href="/index.php?title=Earth_Spirit&amp;action=edit&amp;section=2" title="Edit section: Abilities">
-          edit source
+          edit
          </a>
          <span class="mw-editsection-bracket">
           ]
@@ -988,10 +975,10 @@ document.head.appendChild(script);
           Boulder Smash
           <div style="float:right;">
            <a href="/Linken%27s_Sphere" title="Partially blocked by Linken's Sphere.">
-            <img alt="Partially blocked by Linken's Sphere." height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/e/ea/Spell_block_partial_symbol.png/20px-Spell_block_partial_symbol.png?version=26cd9313a8228e5b4390b8d942cb1f16" style="vertical-align: text-top" width="20"/>
+            <img alt="Partially blocked by Linken's Sphere." height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/e/ea/Spell_block_partial_symbol.png/20px-Spell_block_partial_symbol.png?version=26cd9313a8228e5b4390b8d942cb1f16" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/e/ea/Spell_block_partial_symbol.png/30px-Spell_block_partial_symbol.png?version=26cd9313a8228e5b4390b8d942cb1f16 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/e/ea/Spell_block_partial_symbol.png/40px-Spell_block_partial_symbol.png?version=26cd9313a8228e5b4390b8d942cb1f16 2x" style="vertical-align: text-top" width="20"/>
            </a>
            <a href="/Spell_Immunity" title="Partially pierces spell immunity.">
-            <img alt="Partially pierces spell immunity." height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/5/59/Spell_immunity_block_partial_symbol.png/20px-Spell_immunity_block_partial_symbol.png?version=923f604c1ecd2a88b6b5a2bf6e32b59e" style="vertical-align: text-top" width="20"/>
+            <img alt="Partially pierces spell immunity." height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/5/59/Spell_immunity_block_partial_symbol.png/20px-Spell_immunity_block_partial_symbol.png?version=923f604c1ecd2a88b6b5a2bf6e32b59e" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/5/59/Spell_immunity_block_partial_symbol.png/30px-Spell_immunity_block_partial_symbol.png?version=923f604c1ecd2a88b6b5a2bf6e32b59e 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/5/59/Spell_immunity_block_partial_symbol.png/40px-Spell_immunity_block_partial_symbol.png?version=923f604c1ecd2a88b6b5a2bf6e32b59e 2x" style="vertical-align: text-top" width="20"/>
            </a>
            <span style="position:relative; top:-2px;">
             <a class="sm2_button" href="https://hydra-media.cursecdn.com/dota2.gamepedia.com/0/0b/Boulder_Smash.mp3" title="Play">
@@ -1044,11 +1031,11 @@ document.head.appendChild(script);
              </b>
              <br/>
              <a href="/Damage_types#Magical" title="Damage types">
-              <b>
-               <span style="color:#3F56AD">
+              <span style="color:#3F56AD">
+               <b>
                 Magical
-               </span>
-              </b>
+               </b>
+              </span>
              </a>
             </div>
            </div>
@@ -1075,51 +1062,75 @@ document.head.appendChild(script);
            <b>
             Unit Cast Range
            </b>
-           : 150
+           :
+           <span style="white-space: nowrap">
+            150
+           </span>
           </div>
           <div>
            <b>
             Stone Cast Range
            </b>
-           : 160
+           :
+           <span style="white-space: nowrap">
+            160
+           </span>
           </div>
           <div>
            <b>
             Damage &amp; Stun Radius
            </b>
-           : 160
+           :
+           <span style="white-space: nowrap">
+            160
+           </span>
           </div>
           <div>
            <b>
             Damage
            </b>
-           : 50/100/150/200
+           :
+           <span style="white-space: nowrap">
+            50/100/150/200
+           </span>
           </div>
           <div>
            <b>
             Knockback Speed
            </b>
-           : 900
+           :
+           <span style="white-space: nowrap">
+            900
+           </span>
           </div>
           <div>
            <b>
             Unit Knockback Distance
            </b>
-           : 480/600/680/800
+           :
+           <span style="white-space: nowrap">
+            480/600/680/800
+           </span>
           </div>
           <div>
            <b>
             Stone Knockback Distance
            </b>
-           : 2000
+           :
+           <span style="white-space: nowrap">
+            2000
+           </span>
           </div>
           <div>
            <b>
             Stone Stun Duration
            </b>
-           : 0.75/1.25/1.75/2.25
+           :
+           <span style="white-space: nowrap">
+            0.75/1.25/1.75/2.25
+           </span>
           </div>
-          <div style="display: inline-block; margin: 8px 0px 0px 50px; width: 190px; vertical-align: top;">
+          <div style="display: inline-block; margin: 8px 0px 0px 50px; width: 190px; vertical-align: top; word-wrap: break-word;">
            <span style="position: relative; top: -2px;">
             <a href="/Cooldown" title="Cooldown">
              <img alt="Cooldown symbol.png" height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/b/b7/Cooldown_symbol.png?version=7429ed9baf0f121e6ab3324bfdfad708" style="vertical-align: text-top" width="20"/>
@@ -1127,7 +1138,7 @@ document.head.appendChild(script);
            </span>
            22/18/14/10
           </div>
-          <div style="display: inline-block; margin: 8px 0px 0px; width: 190px; vertical-align: top;">
+          <div style="display: inline-block; margin: 8px 0px 0px; width: 190px; vertical-align: top; word-wrap: break-word;">
            <span style="position: relative; top: -2px;">
             <a href="/Mana" title="Mana">
              <img alt="Mana symbol.png" height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/f/f3/Mana_symbol.png?version=a81185ac577f9b52f2df06be91b6600c" style="vertical-align: text-top" width="20"/>
@@ -1140,7 +1151,7 @@ document.head.appendChild(script);
           <div style="margin-left: 50px;">
            <span style="position: relative; top: -2px;">
             <a href="/Spell_Immunity" title="Partially pierces spell immunity.">
-             <img alt="Partially pierces spell immunity." height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/5/59/Spell_immunity_block_partial_symbol.png/20px-Spell_immunity_block_partial_symbol.png?version=923f604c1ecd2a88b6b5a2bf6e32b59e" style="vertical-align: text-top" width="20"/>
+             <img alt="Partially pierces spell immunity." height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/5/59/Spell_immunity_block_partial_symbol.png/20px-Spell_immunity_block_partial_symbol.png?version=923f604c1ecd2a88b6b5a2bf6e32b59e" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/5/59/Spell_immunity_block_partial_symbol.png/30px-Spell_immunity_block_partial_symbol.png?version=923f604c1ecd2a88b6b5a2bf6e32b59e 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/5/59/Spell_immunity_block_partial_symbol.png/40px-Spell_immunity_block_partial_symbol.png?version=923f604c1ecd2a88b6b5a2bf6e32b59e 2x" style="vertical-align: text-top" width="20"/>
             </a>
            </span>
            Cannot target spell immune units. Does not attempt to damage or stun spell immune enemies. Can target spell immune units under the effect of Enchant Remnant.
@@ -1148,33 +1159,26 @@ document.head.appendChild(script);
           <div style="margin-left: 50px;">
            <span style="position: relative; top: -2px;">
             <a href="/Linken%27s_Sphere" title="Partially blocked by Linken's Sphere.">
-             <img alt="Partially blocked by Linken's Sphere." height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/e/ea/Spell_block_partial_symbol.png/20px-Spell_block_partial_symbol.png?version=26cd9313a8228e5b4390b8d942cb1f16" style="vertical-align: text-top" width="20"/>
+             <img alt="Partially blocked by Linken's Sphere." height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/e/ea/Spell_block_partial_symbol.png/20px-Spell_block_partial_symbol.png?version=26cd9313a8228e5b4390b8d942cb1f16" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/e/ea/Spell_block_partial_symbol.png/30px-Spell_block_partial_symbol.png?version=26cd9313a8228e5b4390b8d942cb1f16 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/e/ea/Spell_block_partial_symbol.png/40px-Spell_block_partial_symbol.png?version=26cd9313a8228e5b4390b8d942cb1f16 2x" style="vertical-align: text-top" width="20"/>
             </a>
            </span>
            Blocked fully only when primary target.
           </div>
           <div style="margin-top: 10px;">
            <b>
-            Modifiers
+            <span id="tooltip" style="cursor:help; border-bottom:1px dotted;" title="The displayed names are the intern names of the modifiers. Do not change them even if they don't match the ability name.">
+             Modifiers
+            </span>
            </b>
           </div>
           <div style="font-size: 85%; margin-left: 10px;">
            <div>
-            <img alt="Buff or Debuff, based on the target's alliance" height="16" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/9/95/Modifier_both_symbol.png/16px-Modifier_both_symbol.png?version=32214f64f119872b58e8c55220d7b620" style="vertical-align: text-top" title="Buff or Debuff, based on the target's alliance" width="16"/>
-            <span style="color:#63631F;">
+            <img alt="Buff or Debuff, based on the target's alliance" height="16" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/9/95/Modifier_both_symbol.png/16px-Modifier_both_symbol.png?version=32214f64f119872b58e8c55220d7b620" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/9/95/Modifier_both_symbol.png/24px-Modifier_both_symbol.png?version=32214f64f119872b58e8c55220d7b620 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/9/95/Modifier_both_symbol.png/32px-Modifier_both_symbol.png?version=32214f64f119872b58e8c55220d7b620 2x" style="vertical-align: text-top" title="Buff or Debuff, based on the target's alliance" width="16"/>
+            <span style="color:#C3C34F;">
              <b>
               Boulder Smash:
              </b>
              Undispellable.
-            </span>
-           </div>
-           <div>
-            <img alt="Debuff" height="16" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/1/1a/Modifier_debuff_symbol.png/16px-Modifier_debuff_symbol.png?version=5684dfbf37c3058c80b8495a4d0dc346" style="vertical-align: text-top" title="Debuff" width="16"/>
-            <span style="color:#631F1F;">
-             <b>
-              Stunned:
-             </b>
-             Dispellable with strong dispels.
             </span>
            </div>
           </div>
@@ -1311,31 +1315,31 @@ document.head.appendChild(script);
            Unlike Geomagnetic Grip, Boulder Smash can smash units inside
            <span style="white-space: nowrap;">
             <a href="/Faceless_Void#Chronosphere" title="Faceless Void#Chronosphere">
-             <img alt="Chronosphere icon.png" height="16" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/b/bf/Chronosphere_icon.png/16px-Chronosphere_icon.png?version=474c2ac46a97172926de861045f4e836" width="16"/>
+             <img alt="Chronosphere icon.png" height="16" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/b/bf/Chronosphere_icon.png/16px-Chronosphere_icon.png?version=474c2ac46a97172926de861045f4e836" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/b/bf/Chronosphere_icon.png/24px-Chronosphere_icon.png?version=474c2ac46a97172926de861045f4e836 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/b/bf/Chronosphere_icon.png/32px-Chronosphere_icon.png?version=474c2ac46a97172926de861045f4e836 2x" width="16"/>
             </a>
             <a href="/Faceless_Void#Chronosphere" title="Faceless Void">
              Chronosphere
             </a>
            </span>
-           ​ and
+           and
            <span style="white-space: nowrap;">
             <a href="/Enigma#Black_Hole" title="Enigma#Black Hole">
-             <img alt="Black Hole icon.png" height="16" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/b/b8/Black_Hole_icon.png/16px-Black_Hole_icon.png?version=d74085e9852176bce7372262d5aa58a9" width="16"/>
+             <img alt="Black Hole icon.png" height="16" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/b/b8/Black_Hole_icon.png/16px-Black_Hole_icon.png?version=d74085e9852176bce7372262d5aa58a9" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/b/b8/Black_Hole_icon.png/24px-Black_Hole_icon.png?version=d74085e9852176bce7372262d5aa58a9 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/b/b8/Black_Hole_icon.png/32px-Black_Hole_icon.png?version=d74085e9852176bce7372262d5aa58a9 2x" width="16"/>
             </a>
             <a href="/Enigma#Black_Hole" title="Enigma">
              Black Hole
             </a>
            </span>
-           ​ and during
+           and during
            <span style="white-space: nowrap;">
             <a href="/Legion_Commander#Duel" title="Legion Commander#Duel">
-             <img alt="Duel icon.png" height="16" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/b/ba/Duel_icon.png/16px-Duel_icon.png?version=682bbf063cee30a22af28124e7961f22" width="16"/>
+             <img alt="Duel icon.png" height="16" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/b/ba/Duel_icon.png/16px-Duel_icon.png?version=682bbf063cee30a22af28124e7961f22" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/b/ba/Duel_icon.png/24px-Duel_icon.png?version=682bbf063cee30a22af28124e7961f22 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/b/ba/Duel_icon.png/32px-Duel_icon.png?version=682bbf063cee30a22af28124e7961f22 2x" width="16"/>
             </a>
             <a href="/Legion_Commander#Duel" title="Legion Commander">
              Duel
             </a>
            </span>
-           ​.
+           .
           </li>
          </ul>
          <ul>
@@ -1356,8 +1360,6 @@ document.head.appendChild(script);
        </div>
        <p>
         <br/>
-       </p>
-       <p>
         <span id="Rolling_Boulder">
         </span>
        </p>
@@ -1367,7 +1369,7 @@ document.head.appendChild(script);
           Rolling Boulder
           <div style="float:right;">
            <a href="/Spell_Immunity" title="Pierces spell immunity.">
-            <img alt="Pierces spell immunity." height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/0/0c/Spell_immunity_block_no_symbol.png/20px-Spell_immunity_block_no_symbol.png?version=8a9b499fbc92dda21de2b49951268177" style="vertical-align: text-top" width="20"/>
+            <img alt="Pierces spell immunity." height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/0/0c/Spell_immunity_block_no_symbol.png/20px-Spell_immunity_block_no_symbol.png?version=8a9b499fbc92dda21de2b49951268177" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/0/0c/Spell_immunity_block_no_symbol.png/30px-Spell_immunity_block_no_symbol.png?version=8a9b499fbc92dda21de2b49951268177 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/0/0c/Spell_immunity_block_no_symbol.png/40px-Spell_immunity_block_no_symbol.png?version=8a9b499fbc92dda21de2b49951268177 2x" style="vertical-align: text-top" width="20"/>
            </a>
            <span style="position:relative; top:-2px;">
             <a class="sm2_button" href="https://hydra-media.cursecdn.com/dota2.gamepedia.com/4/42/Rolling_Boulder.mp3" title="Play">
@@ -1416,11 +1418,11 @@ document.head.appendChild(script);
              </b>
              <br/>
              <a href="/Damage_types#Magical" title="Damage types">
-              <b>
-               <span style="color:#3F56AD">
+              <span style="color:#3F56AD">
+               <b>
                 Magical
-               </span>
-              </b>
+               </b>
+              </span>
              </a>
             </div>
            </div>
@@ -1447,55 +1449,79 @@ document.head.appendChild(script);
            <b>
             Cast Range
            </b>
-           : 3000
+           :
+           <span style="white-space: nowrap">
+            3000
+           </span>
           </div>
           <div>
            <b>
             Effect &amp; Collision Radius
            </b>
-           : 150
+           :
+           <span style="white-space: nowrap">
+            150
+           </span>
           </div>
           <div>
            <b>
             Effect Delay
            </b>
-           : 0.6
+           :
+           <span style="white-space: nowrap">
+            0.6
+           </span>
           </div>
           <div>
            <b>
             Default Roll Distance
            </b>
-           : 800
+           :
+           <span style="white-space: nowrap">
+            800
+           </span>
           </div>
           <div>
            <b>
             Stone Roll Distance
            </b>
-           : 1600
+           :
+           <span style="white-space: nowrap">
+            1600
+           </span>
           </div>
           <div>
            <b>
             Damage
            </b>
-           : 100 (
-           <a href="/Talents" title="Talent">
-            <img alt="Talent" height="16" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/c/cd/Talent_tree_symbol.png/16px-Talent_tree_symbol.png?version=b4db4b31a2f9c215885be017c22a8b0c" style="vertical-align: text-top" width="16"/>
-           </a>
-           400)
+           :
+           <span style="white-space: nowrap">
+            100 (
+            <a href="/Talents" title="Talent">
+             <img alt="Talent" height="16" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/c/cd/Talent_tree_symbol.png/16px-Talent_tree_symbol.png?version=b4db4b31a2f9c215885be017c22a8b0c" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/c/cd/Talent_tree_symbol.png/24px-Talent_tree_symbol.png?version=b4db4b31a2f9c215885be017c22a8b0c 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/c/cd/Talent_tree_symbol.png/32px-Talent_tree_symbol.png?version=b4db4b31a2f9c215885be017c22a8b0c 2x" style="vertical-align: text-top" width="16"/>
+            </a>
+            400)
+           </span>
           </div>
           <div>
            <b>
             Stone Move Speed Slow
            </b>
-           : 80%
+           :
+           <span style="white-space: nowrap">
+            80%
+           </span>
           </div>
           <div>
            <b>
             Stone Slow Duration
            </b>
-           : 1.4/1.6/1.8/2
+           :
+           <span style="white-space: nowrap">
+            0.8/1.2/1.6/2
+           </span>
           </div>
-          <div style="display: inline-block; margin: 8px 0px 0px 50px; width: 190px; vertical-align: top;">
+          <div style="display: inline-block; margin: 8px 0px 0px 50px; width: 190px; vertical-align: top; word-wrap: break-word;">
            <span style="position: relative; top: -2px;">
             <a href="/Cooldown" title="Cooldown">
              <img alt="Cooldown symbol.png" height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/b/b7/Cooldown_symbol.png?version=7429ed9baf0f121e6ab3324bfdfad708" style="vertical-align: text-top" width="20"/>
@@ -1503,7 +1529,7 @@ document.head.appendChild(script);
            </span>
            16/12/8/4
           </div>
-          <div style="display: inline-block; margin: 8px 0px 0px; width: 190px; vertical-align: top;">
+          <div style="display: inline-block; margin: 8px 0px 0px; width: 190px; vertical-align: top; word-wrap: break-word;">
            <span style="position: relative; top: -2px;">
             <a href="/Mana" title="Mana">
              <img alt="Mana symbol.png" height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/f/f3/Mana_symbol.png?version=a81185ac577f9b52f2df06be91b6600c" style="vertical-align: text-top" width="20"/>
@@ -1516,19 +1542,21 @@ document.head.appendChild(script);
           <div style="margin-left: 50px;">
            <span style="position: relative; top: -2px;">
             <a href="/Spell_Immunity" title="Pierces spell immunity.">
-             <img alt="Pierces spell immunity." height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/0/0c/Spell_immunity_block_no_symbol.png/20px-Spell_immunity_block_no_symbol.png?version=8a9b499fbc92dda21de2b49951268177" style="vertical-align: text-top" width="20"/>
+             <img alt="Pierces spell immunity." height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/0/0c/Spell_immunity_block_no_symbol.png/20px-Spell_immunity_block_no_symbol.png?version=8a9b499fbc92dda21de2b49951268177" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/0/0c/Spell_immunity_block_no_symbol.png/30px-Spell_immunity_block_no_symbol.png?version=8a9b499fbc92dda21de2b49951268177 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/0/0c/Spell_immunity_block_no_symbol.png/40px-Spell_immunity_block_no_symbol.png?version=8a9b499fbc92dda21de2b49951268177 2x" style="vertical-align: text-top" width="20"/>
             </a>
            </span>
            Collides with, attempts to damage, and slows spell immune enemies.
           </div>
           <div style="margin-top: 10px;">
            <b>
-            Modifiers
+            <span id="tooltip" style="cursor:help; border-bottom:1px dotted;" title="The displayed names are the intern names of the modifiers. Do not change them even if they don't match the ability name.">
+             Modifiers
+            </span>
            </b>
           </div>
           <div style="font-size: 85%; margin-left: 10px;">
            <div>
-            <img alt="Buff" height="16" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/c/c1/Modifier_buff_symbol.png/16px-Modifier_buff_symbol.png?version=97c71541b396c601c0ac22a73d1a7573" style="vertical-align: text-top" title="Buff" width="16"/>
+            <img alt="Buff" height="16" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/c/c1/Modifier_buff_symbol.png/16px-Modifier_buff_symbol.png?version=97c71541b396c601c0ac22a73d1a7573" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/c/c1/Modifier_buff_symbol.png/24px-Modifier_buff_symbol.png?version=97c71541b396c601c0ac22a73d1a7573 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/c/c1/Modifier_buff_symbol.png/32px-Modifier_buff_symbol.png?version=97c71541b396c601c0ac22a73d1a7573 2x" style="vertical-align: text-top" title="Buff" width="16"/>
             <span style="color:#1F631F;">
              <b>
               Rolling Boulder Caster:
@@ -1537,7 +1565,7 @@ document.head.appendChild(script);
             </span>
            </div>
            <div>
-            <img alt="Debuff" height="16" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/1/1a/Modifier_debuff_symbol.png/16px-Modifier_debuff_symbol.png?version=5684dfbf37c3058c80b8495a4d0dc346" style="vertical-align: text-top" title="Debuff" width="16"/>
+            <img alt="Debuff" height="16" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/1/1a/Modifier_debuff_symbol.png/16px-Modifier_debuff_symbol.png?version=5684dfbf37c3058c80b8495a4d0dc346" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/1/1a/Modifier_debuff_symbol.png/24px-Modifier_debuff_symbol.png?version=5684dfbf37c3058c80b8495a4d0dc346 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/1/1a/Modifier_debuff_symbol.png/32px-Modifier_debuff_symbol.png?version=5684dfbf37c3058c80b8495a4d0dc346 2x" style="vertical-align: text-top" title="Debuff" width="16"/>
             <span style="color:#631F1F;">
              <b>
               Rolling Boulder Slow:
@@ -1675,8 +1703,6 @@ document.head.appendChild(script);
        </div>
        <p>
         <br/>
-       </p>
-       <p>
         <span id="Geomagnetic_Grip">
         </span>
        </p>
@@ -1686,10 +1712,10 @@ document.head.appendChild(script);
           Geomagnetic Grip
           <div style="float:right;">
            <a href="/Linken%27s_Sphere" title="Not blocked by Linken's Sphere.">
-            <img alt="Not blocked by Linken's Sphere." height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/4/4c/Spell_block_no_symbol.png/20px-Spell_block_no_symbol.png?version=82511f6a101263e448930a689197e955" style="vertical-align: text-top" width="20"/>
+            <img alt="Not blocked by Linken's Sphere." height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/4/4c/Spell_block_no_symbol.png/20px-Spell_block_no_symbol.png?version=82511f6a101263e448930a689197e955" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/4/4c/Spell_block_no_symbol.png/30px-Spell_block_no_symbol.png?version=82511f6a101263e448930a689197e955 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/4/4c/Spell_block_no_symbol.png/40px-Spell_block_no_symbol.png?version=82511f6a101263e448930a689197e955 2x" style="vertical-align: text-top" width="20"/>
            </a>
            <a href="/Spell_Immunity" title="Partially pierces spell immunity.">
-            <img alt="Partially pierces spell immunity." height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/5/59/Spell_immunity_block_partial_symbol.png/20px-Spell_immunity_block_partial_symbol.png?version=923f604c1ecd2a88b6b5a2bf6e32b59e" style="vertical-align: text-top" width="20"/>
+            <img alt="Partially pierces spell immunity." height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/5/59/Spell_immunity_block_partial_symbol.png/20px-Spell_immunity_block_partial_symbol.png?version=923f604c1ecd2a88b6b5a2bf6e32b59e" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/5/59/Spell_immunity_block_partial_symbol.png/30px-Spell_immunity_block_partial_symbol.png?version=923f604c1ecd2a88b6b5a2bf6e32b59e 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/5/59/Spell_immunity_block_partial_symbol.png/40px-Spell_immunity_block_partial_symbol.png?version=923f604c1ecd2a88b6b5a2bf6e32b59e 2x" style="vertical-align: text-top" width="20"/>
            </a>
            <span style="position:relative; top:-2px;">
             <a class="sm2_button" href="https://hydra-media.cursecdn.com/dota2.gamepedia.com/1/15/Frozen_Sigil_cast.mp3" title="Play">
@@ -1734,7 +1760,7 @@ document.head.appendChild(script);
               Affects
              </b>
              <br/>
-             Allies / Enemies
+             Enemies / Allies
             </div>
             <div style="display: inline-block; width: 32%; vertical-align: top;">
              <b>
@@ -1742,11 +1768,11 @@ document.head.appendChild(script);
              </b>
              <br/>
              <a href="/Damage_types#Magical" title="Damage types">
-              <b>
-               <span style="color:#3F56AD">
+              <span style="color:#3F56AD">
+               <b>
                 Magical
-               </span>
-              </b>
+               </b>
+              </span>
              </a>
             </div>
            </div>
@@ -1773,39 +1799,57 @@ document.head.appendChild(script);
            <b>
             Cast Range
            </b>
-           : 1100
+           :
+           <span style="white-space: nowrap">
+            1100
+           </span>
           </div>
           <div>
            <b>
             Effect Radius
            </b>
-           : 180
+           :
+           <span style="white-space: nowrap">
+            180
+           </span>
           </div>
           <div>
            <b>
             Stone Damage
            </b>
-           : 50/100/150/200
+           :
+           <span style="white-space: nowrap">
+            50/100/150/200
+           </span>
           </div>
           <div>
            <b>
             Stone Pull Speed
            </b>
-           : 1000
+           :
+           <span style="white-space: nowrap">
+            1000
+           </span>
           </div>
           <div>
            <b>
             Unit Pull Speed
            </b>
-           : 600
+           :
+           <span style="white-space: nowrap">
+            600
+           </span>
           </div>
           <div>
            <b>
             Silence Duration
            </b>
-           : 2.5/3/3.5/4
+           :
+           <span style="white-space: nowrap">
+            2.5/3/3.5/4
+           </span>
           </div>
-          <div style="display: inline-block; margin: 8px 0px 0px 50px; width: 190px; vertical-align: top;">
+          <div style="display: inline-block; margin: 8px 0px 0px 50px; width: 190px; vertical-align: top; word-wrap: break-word;">
            <span style="position: relative; top: -2px;">
             <a href="/Cooldown" title="Cooldown">
              <img alt="Cooldown symbol.png" height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/b/b7/Cooldown_symbol.png?version=7429ed9baf0f121e6ab3324bfdfad708" style="vertical-align: text-top" width="20"/>
@@ -1813,7 +1857,7 @@ document.head.appendChild(script);
            </span>
            13
           </div>
-          <div style="display: inline-block; margin: 8px 0px 0px; width: 190px; vertical-align: top;">
+          <div style="display: inline-block; margin: 8px 0px 0px; width: 190px; vertical-align: top; word-wrap: break-word;">
            <span style="position: relative; top: -2px;">
             <a href="/Mana" title="Mana">
              <img alt="Mana symbol.png" height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/f/f3/Mana_symbol.png?version=a81185ac577f9b52f2df06be91b6600c" style="vertical-align: text-top" width="20"/>
@@ -1825,16 +1869,8 @@ document.head.appendChild(script);
           </div>
           <div style="margin-left: 50px;">
            <span style="position: relative; top: -2px;">
-            <a href="/Aghanim%27s_Scepter" title="Upgradable by Aghanim's Scepter.">
-             <img alt="Upgradable by Aghanim's Scepter." height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/73/Aghanim%27s_Scepter_symbol.png/20px-Aghanim%27s_Scepter_symbol.png?version=d829eda2dfcb5c0078dd83220a3299dc" style="vertical-align: text-top" width="20"/>
-            </a>
-           </span>
-           Allows Geomagnetic Grip to pull allied heroes.
-          </div>
-          <div style="margin-left: 50px;">
-           <span style="position: relative; top: -2px;">
             <a href="/Spell_Immunity" title="Partially pierces spell immunity.">
-             <img alt="Partially pierces spell immunity." height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/5/59/Spell_immunity_block_partial_symbol.png/20px-Spell_immunity_block_partial_symbol.png?version=923f604c1ecd2a88b6b5a2bf6e32b59e" style="vertical-align: text-top" width="20"/>
+             <img alt="Partially pierces spell immunity." height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/5/59/Spell_immunity_block_partial_symbol.png/20px-Spell_immunity_block_partial_symbol.png?version=923f604c1ecd2a88b6b5a2bf6e32b59e" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/5/59/Spell_immunity_block_partial_symbol.png/30px-Spell_immunity_block_partial_symbol.png?version=923f604c1ecd2a88b6b5a2bf6e32b59e 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/5/59/Spell_immunity_block_partial_symbol.png/40px-Spell_immunity_block_partial_symbol.png?version=923f604c1ecd2a88b6b5a2bf6e32b59e 2x" style="vertical-align: text-top" width="20"/>
             </a>
            </span>
            Cannot target spell immune units. Does not attempt to damage or silence spell immune enemies. Can target spell immune units under the effect of Enchant Remnant. Silence persists if debuff was placed before spell immunity and when not dispelled.
@@ -1842,42 +1878,35 @@ document.head.appendChild(script);
           <div style="margin-left: 50px;">
            <span style="position: relative; top: -2px;">
             <a href="/Linken%27s_Sphere" title="Not blocked by Linken's Sphere.">
-             <img alt="Not blocked by Linken's Sphere." height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/4/4c/Spell_block_no_symbol.png/20px-Spell_block_no_symbol.png?version=82511f6a101263e448930a689197e955" style="vertical-align: text-top" width="20"/>
+             <img alt="Not blocked by Linken's Sphere." height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/4/4c/Spell_block_no_symbol.png/20px-Spell_block_no_symbol.png?version=82511f6a101263e448930a689197e955" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/4/4c/Spell_block_no_symbol.png/30px-Spell_block_no_symbol.png?version=82511f6a101263e448930a689197e955 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/4/4c/Spell_block_no_symbol.png/40px-Spell_block_no_symbol.png?version=82511f6a101263e448930a689197e955 2x" style="vertical-align: text-top" width="20"/>
             </a>
            </span>
            Not blocked when cast on an enemy hero affected by
            <span style="white-space: nowrap;">
             <a href="/Earth_Spirit#Enchant_Remnant" title="Earth Spirit#Enchant Remnant">
-             <img alt="Enchant Remnant icon.png" height="16" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/74/Enchant_Remnant_icon.png/16px-Enchant_Remnant_icon.png?version=80a8fcae4e9681f0d4fba94662f86513" width="16"/>
+             <img alt="Enchant Remnant icon.png" height="16" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/74/Enchant_Remnant_icon.png/16px-Enchant_Remnant_icon.png?version=80a8fcae4e9681f0d4fba94662f86513" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/74/Enchant_Remnant_icon.png/24px-Enchant_Remnant_icon.png?version=80a8fcae4e9681f0d4fba94662f86513 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/74/Enchant_Remnant_icon.png/32px-Enchant_Remnant_icon.png?version=80a8fcae4e9681f0d4fba94662f86513 2x" width="16"/>
             </a>
             <a href="/Earth_Spirit#Enchant_Remnant" title="Earth Spirit">
              Enchant Remnant
             </a>
            </span>
-           ​.
+           .
           </div>
           <div style="margin-top: 10px;">
            <b>
-            Modifiers
+            <span id="tooltip" style="cursor:help; border-bottom:1px dotted;" title="The displayed names are the intern names of the modifiers. Do not change them even if they don't match the ability name.">
+             Modifiers
+            </span>
            </b>
           </div>
           <div style="font-size: 85%; margin-left: 10px;">
            <div>
-            <img alt="Buff or Debuff, based on the target's alliance" height="16" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/9/95/Modifier_both_symbol.png/16px-Modifier_both_symbol.png?version=32214f64f119872b58e8c55220d7b620" style="vertical-align: text-top" title="Buff or Debuff, based on the target's alliance" width="16"/>
-            <span style="color:#63631F;">
+            <img alt="Buff or Debuff, based on the target's alliance" height="16" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/9/95/Modifier_both_symbol.png/16px-Modifier_both_symbol.png?version=32214f64f119872b58e8c55220d7b620" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/9/95/Modifier_both_symbol.png/24px-Modifier_both_symbol.png?version=32214f64f119872b58e8c55220d7b620 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/9/95/Modifier_both_symbol.png/32px-Modifier_both_symbol.png?version=32214f64f119872b58e8c55220d7b620 2x" style="vertical-align: text-top" title="Buff or Debuff, based on the target's alliance" width="16"/>
+            <span style="color:#C3C34F;">
              <b>
               Geomagnetic Grip:
              </b>
              Dispellable with strong dispels.
-            </span>
-           </div>
-           <div>
-            <img alt="Debuff" height="16" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/1/1a/Modifier_debuff_symbol.png/16px-Modifier_debuff_symbol.png?version=5684dfbf37c3058c80b8495a4d0dc346" style="vertical-align: text-top" title="Debuff" width="16"/>
-            <span style="color:#631F1F;">
-             <b>
-              Geomagnetic Grip debuff:
-             </b>
-             Dispellable with any dispel.
             </span>
            </div>
           </div>
@@ -1907,7 +1936,7 @@ document.head.appendChild(script);
          </ul>
          <ul>
           <li>
-           In order to pull a unit, it has to be targeted directly. Cannot target allied heroes, unless it is upgraded. Treats
+           In order to pull a unit, it has to be targeted directly. Cannot target allied heroes, unless the required talent is chosen. Treats
            <a class="mw-redirect" href="/Creep-heroes" title="Creep-heroes">
             creep-heroes
            </a>
@@ -1946,40 +1975,40 @@ document.head.appendChild(script);
            Geomagnetic Grip does not pull the target if it is affected by
            <span style="white-space: nowrap;">
             <a href="/Faceless_Void#Chronosphere" title="Faceless Void#Chronosphere">
-             <img alt="Chronosphere icon.png" height="16" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/b/bf/Chronosphere_icon.png/16px-Chronosphere_icon.png?version=474c2ac46a97172926de861045f4e836" width="16"/>
+             <img alt="Chronosphere icon.png" height="16" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/b/bf/Chronosphere_icon.png/16px-Chronosphere_icon.png?version=474c2ac46a97172926de861045f4e836" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/b/bf/Chronosphere_icon.png/24px-Chronosphere_icon.png?version=474c2ac46a97172926de861045f4e836 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/b/bf/Chronosphere_icon.png/32px-Chronosphere_icon.png?version=474c2ac46a97172926de861045f4e836 2x" width="16"/>
             </a>
             <a href="/Faceless_Void#Chronosphere" title="Faceless Void">
              Chronosphere
             </a>
            </span>
-           ​,
+           ,
            <span style="white-space: nowrap;">
             <a href="/Enigma#Black_Hole" title="Enigma#Black Hole">
-             <img alt="Black Hole icon.png" height="16" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/b/b8/Black_Hole_icon.png/16px-Black_Hole_icon.png?version=d74085e9852176bce7372262d5aa58a9" width="16"/>
+             <img alt="Black Hole icon.png" height="16" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/b/b8/Black_Hole_icon.png/16px-Black_Hole_icon.png?version=d74085e9852176bce7372262d5aa58a9" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/b/b8/Black_Hole_icon.png/24px-Black_Hole_icon.png?version=d74085e9852176bce7372262d5aa58a9 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/b/b8/Black_Hole_icon.png/32px-Black_Hole_icon.png?version=d74085e9852176bce7372262d5aa58a9 2x" width="16"/>
             </a>
             <a href="/Enigma#Black_Hole" title="Enigma">
              Black Hole
             </a>
            </span>
-           ​,
+           ,
            <span style="white-space: nowrap;">
             <a href="/Batrider#Flaming_Lasso" title="Batrider#Flaming Lasso">
-             <img alt="Flaming Lasso icon.png" height="16" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/9/9e/Flaming_Lasso_icon.png/16px-Flaming_Lasso_icon.png?version=acfd099441f0551fd7be8ab8bb527bb3" width="16"/>
+             <img alt="Flaming Lasso icon.png" height="16" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/9/9e/Flaming_Lasso_icon.png/16px-Flaming_Lasso_icon.png?version=acfd099441f0551fd7be8ab8bb527bb3" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/9/9e/Flaming_Lasso_icon.png/24px-Flaming_Lasso_icon.png?version=acfd099441f0551fd7be8ab8bb527bb3 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/9/9e/Flaming_Lasso_icon.png/32px-Flaming_Lasso_icon.png?version=acfd099441f0551fd7be8ab8bb527bb3 2x" width="16"/>
             </a>
             <a href="/Batrider#Flaming_Lasso" title="Batrider">
              Flaming Lasso
             </a>
            </span>
-           ​ or
+           or
            <span style="white-space: nowrap;">
             <a href="/Legion_Commander#Duel" title="Legion Commander#Duel">
-             <img alt="Duel icon.png" height="16" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/b/ba/Duel_icon.png/16px-Duel_icon.png?version=682bbf063cee30a22af28124e7961f22" width="16"/>
+             <img alt="Duel icon.png" height="16" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/b/ba/Duel_icon.png/16px-Duel_icon.png?version=682bbf063cee30a22af28124e7961f22" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/b/ba/Duel_icon.png/24px-Duel_icon.png?version=682bbf063cee30a22af28124e7961f22 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/b/ba/Duel_icon.png/32px-Duel_icon.png?version=682bbf063cee30a22af28124e7961f22 2x" width="16"/>
             </a>
             <a href="/Legion_Commander#Duel" title="Legion Commander">
              Duel
             </a>
            </span>
-           ​.
+           .
           </li>
          </ul>
          <ul>
@@ -1987,13 +2016,13 @@ document.head.appendChild(script);
            When cast on allies or Stone Remnants affected by
            <span style="white-space: nowrap;">
             <a href="/Earth_Spirit#Boulder_Smash" title="Earth Spirit#Boulder Smash">
-             <img alt="Boulder Smash icon.png" height="16" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/5/54/Boulder_Smash_icon.png/16px-Boulder_Smash_icon.png?version=abc65332aa6da41e7276788e13351071" width="16"/>
+             <img alt="Boulder Smash icon.png" height="16" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/5/54/Boulder_Smash_icon.png/16px-Boulder_Smash_icon.png?version=abc65332aa6da41e7276788e13351071" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/5/54/Boulder_Smash_icon.png/24px-Boulder_Smash_icon.png?version=abc65332aa6da41e7276788e13351071 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/5/54/Boulder_Smash_icon.png/32px-Boulder_Smash_icon.png?version=abc65332aa6da41e7276788e13351071 2x" width="16"/>
             </a>
             <a href="/Earth_Spirit#Boulder_Smash" title="Earth Spirit">
              Boulder Smash
             </a>
            </span>
-           ​, the smash gets canceled out by the grip.
+           , the smash gets canceled out by the grip.
           </li>
          </ul>
          <ul>
@@ -2007,15 +2036,13 @@ document.head.appendChild(script);
            <a href="/Trees" title="Trees">
             trees
            </a>
-           within 200 radius around allied heroes during the pull.
+           within 200 radius around the targeted unit during the pull.
           </li>
          </ul>
         </div>
        </div>
        <p>
         <br/>
-       </p>
-       <p>
         <span id="Stone_Remnant">
         </span>
        </p>
@@ -2086,27 +2113,39 @@ document.head.appendChild(script);
            <b>
             Cast Range
            </b>
-           : 1100
+           :
+           <span style="white-space: nowrap">
+            1100
+           </span>
           </div>
           <div>
            <b>
             Max Charges
            </b>
-           : 6
+           :
+           <span style="white-space: nowrap">
+            6
+           </span>
           </div>
           <div>
            <b>
             Remnant Duration
            </b>
-           : 120
+           :
+           <span style="white-space: nowrap">
+            120
+           </span>
           </div>
           <div>
            <b>
             Charge Replenish Time
            </b>
-           : 30
+           :
+           <span style="white-space: nowrap">
+            30
+           </span>
           </div>
-          <div style="display: inline-block; margin: 8px 0px 0px 50px; width: 370px; vertical-align: top;">
+          <div style="display: inline-block; margin: 8px 0px 0px 50px; width: 370px; vertical-align: top; word-wrap: break-word;">
            <span style="position: relative; top: -2px;">
             <a href="/Cooldown" title="Cooldown">
              <img alt="Cooldown symbol.png" height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/b/b7/Cooldown_symbol.png?version=7429ed9baf0f121e6ab3324bfdfad708" style="vertical-align: text-top" width="20"/>
@@ -2114,7 +2153,7 @@ document.head.appendChild(script);
            </span>
            0
           </div>
-          <div style="display: inline-block; margin: 8px 0px 0px; width: 10px; vertical-align: top;">
+          <div style="display: inline-block; margin: 8px 0px 0px; width: 10px; vertical-align: top; word-wrap: break-word;">
           </div>
           <div style="margin-top: 5px; padding-top: 2px; border-top: 1px solid #C1C1C1;">
            <i>
@@ -2174,13 +2213,13 @@ document.head.appendChild(script);
            An enemy
            <span style="white-space:nowrap">
             <a href="/Rubick" title="Rubick">
-             <img alt="Rubick icon.png" height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/8/8a/Rubick_icon.png/20px-Rubick_icon.png?version=03dc7ad31edce28d13d6e03fe2bcf0ea" width="20"/>
+             <img alt="Rubick minimap icon.png" height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/6/61/Rubick_minimap_icon.png/20px-Rubick_minimap_icon.png?version=624cd2b0359403052534f6b7f01e3c04" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/6/61/Rubick_minimap_icon.png/30px-Rubick_minimap_icon.png?version=624cd2b0359403052534f6b7f01e3c04 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/6/61/Rubick_minimap_icon.png?version=624cd2b0359403052534f6b7f01e3c04 2x" width="20"/>
             </a>
             <a href="/Rubick" title="Rubick">
              Rubick
             </a>
            </span>
-           ​ can make use of the same remnants when stealing and using one of Earth Spirit's spells.
+           can make use of the same remnants when stealing and using one of Earth Spirit's spells.
           </li>
          </ul>
          <ul>
@@ -2200,37 +2239,35 @@ document.head.appendChild(script);
              Stone Remnants being smashed by
              <span style="white-space: nowrap;">
               <a href="/Earth_Spirit#Boulder_Smash" title="Earth Spirit#Boulder Smash">
-               <img alt="Boulder Smash icon.png" height="16" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/5/54/Boulder_Smash_icon.png/16px-Boulder_Smash_icon.png?version=abc65332aa6da41e7276788e13351071" width="16"/>
+               <img alt="Boulder Smash icon.png" height="16" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/5/54/Boulder_Smash_icon.png/16px-Boulder_Smash_icon.png?version=abc65332aa6da41e7276788e13351071" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/5/54/Boulder_Smash_icon.png/24px-Boulder_Smash_icon.png?version=abc65332aa6da41e7276788e13351071 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/5/54/Boulder_Smash_icon.png/32px-Boulder_Smash_icon.png?version=abc65332aa6da41e7276788e13351071 2x" width="16"/>
               </a>
               <a href="/Earth_Spirit#Boulder_Smash" title="Earth Spirit">
                Boulder Smash
               </a>
              </span>
-             ​
             </li>
             <li>
              Stone Remnants being consumed by
              <span style="white-space: nowrap;">
               <a href="/Earth_Spirit#Rolling_Boulder" title="Earth Spirit#Rolling Boulder">
-               <img alt="Rolling Boulder icon.png" height="16" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/0/09/Rolling_Boulder_icon.png/16px-Rolling_Boulder_icon.png?version=662a6e2a023d7adb6107343be234d100" width="16"/>
+               <img alt="Rolling Boulder icon.png" height="16" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/0/09/Rolling_Boulder_icon.png/16px-Rolling_Boulder_icon.png?version=662a6e2a023d7adb6107343be234d100" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/0/09/Rolling_Boulder_icon.png/24px-Rolling_Boulder_icon.png?version=662a6e2a023d7adb6107343be234d100 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/0/09/Rolling_Boulder_icon.png/32px-Rolling_Boulder_icon.png?version=662a6e2a023d7adb6107343be234d100 2x" width="16"/>
               </a>
               <a href="/Earth_Spirit#Rolling_Boulder" title="Earth Spirit">
                Rolling Boulder
               </a>
              </span>
-             ​ to roll farther
+             to roll farther
             </li>
             <li>
              Stone Remnants being pulled by
              <span style="white-space: nowrap;">
               <a href="/Earth_Spirit#Geomagnetic_Grip" title="Earth Spirit#Geomagnetic Grip">
-               <img alt="Geomagnetic Grip icon.png" height="16" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/e/e8/Geomagnetic_Grip_icon.png/16px-Geomagnetic_Grip_icon.png?version=4aa1c655407e7afff07391fbc8988b72" width="16"/>
+               <img alt="Geomagnetic Grip icon.png" height="16" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/e/e8/Geomagnetic_Grip_icon.png/16px-Geomagnetic_Grip_icon.png?version=4aa1c655407e7afff07391fbc8988b72" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/e/e8/Geomagnetic_Grip_icon.png/24px-Geomagnetic_Grip_icon.png?version=4aa1c655407e7afff07391fbc8988b72 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/e/e8/Geomagnetic_Grip_icon.png/32px-Geomagnetic_Grip_icon.png?version=4aa1c655407e7afff07391fbc8988b72 2x" width="16"/>
               </a>
               <a href="/Earth_Spirit#Geomagnetic_Grip" title="Earth Spirit">
                Geomagnetic Grip
               </a>
              </span>
-             ​
             </li>
            </ul>
           </li>
@@ -2239,8 +2276,6 @@ document.head.appendChild(script);
        </div>
        <p>
         <br/>
-       </p>
-       <p>
         <span id="Magnetize">
         </span>
        </p>
@@ -2250,7 +2285,7 @@ document.head.appendChild(script);
           Magnetize
           <div style="float:right;">
            <a href="/Spell_Immunity" title="Partially pierces spell immunity.">
-            <img alt="Partially pierces spell immunity." height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/5/59/Spell_immunity_block_partial_symbol.png/20px-Spell_immunity_block_partial_symbol.png?version=923f604c1ecd2a88b6b5a2bf6e32b59e" style="vertical-align: text-top" width="20"/>
+            <img alt="Partially pierces spell immunity." height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/5/59/Spell_immunity_block_partial_symbol.png/20px-Spell_immunity_block_partial_symbol.png?version=923f604c1ecd2a88b6b5a2bf6e32b59e" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/5/59/Spell_immunity_block_partial_symbol.png/30px-Spell_immunity_block_partial_symbol.png?version=923f604c1ecd2a88b6b5a2bf6e32b59e 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/5/59/Spell_immunity_block_partial_symbol.png/40px-Spell_immunity_block_partial_symbol.png?version=923f604c1ecd2a88b6b5a2bf6e32b59e 2x" style="vertical-align: text-top" width="20"/>
            </a>
            <span style="position:relative; top:-2px;">
             <a class="sm2_button" href="https://hydra-media.cursecdn.com/dota2.gamepedia.com/8/82/Magnetize.mp3" title="Play">
@@ -2299,11 +2334,11 @@ document.head.appendChild(script);
              </b>
              <br/>
              <a href="/Damage_types#Magical" title="Damage types">
-              <b>
-               <span style="color:#3F56AD">
+              <span style="color:#3F56AD">
+               <b>
                 Magical
-               </span>
-              </b>
+               </b>
+              </span>
              </a>
             </div>
            </div>
@@ -2330,33 +2365,48 @@ document.head.appendChild(script);
            <b>
             Radius
            </b>
-           : 300
+           :
+           <span style="white-space: nowrap">
+            300
+           </span>
           </div>
           <div>
            <b>
             Stone Search Radius
            </b>
-           : 400
+           :
+           <span style="white-space: nowrap">
+            400
+           </span>
           </div>
           <div>
            <b>
             Stone Refresh Radius
            </b>
-           : 600
+           :
+           <span style="white-space: nowrap">
+            600
+           </span>
           </div>
           <div>
            <b>
             Damage per Second
            </b>
-           : 50/75/100
+           :
+           <span style="white-space: nowrap">
+            50/75/100
+           </span>
           </div>
           <div>
            <b>
             Duration
            </b>
-           : 6
+           :
+           <span style="white-space: nowrap">
+            6
+           </span>
           </div>
-          <div style="display: inline-block; margin: 8px 0px 0px 50px; width: 190px; vertical-align: top;">
+          <div style="display: inline-block; margin: 8px 0px 0px 50px; width: 190px; vertical-align: top; word-wrap: break-word;">
            <span style="position: relative; top: -2px;">
             <a href="/Cooldown" title="Cooldown">
              <img alt="Cooldown symbol.png" height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/b/b7/Cooldown_symbol.png?version=7429ed9baf0f121e6ab3324bfdfad708" style="vertical-align: text-top" width="20"/>
@@ -2364,7 +2414,7 @@ document.head.appendChild(script);
            </span>
            100/90/80
           </div>
-          <div style="display: inline-block; margin: 8px 0px 0px; width: 190px; vertical-align: top;">
+          <div style="display: inline-block; margin: 8px 0px 0px; width: 190px; vertical-align: top; word-wrap: break-word;">
            <span style="position: relative; top: -2px;">
             <a href="/Mana" title="Mana">
              <img alt="Mana symbol.png" height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/f/f3/Mana_symbol.png?version=a81185ac577f9b52f2df06be91b6600c" style="vertical-align: text-top" width="20"/>
@@ -2377,7 +2427,7 @@ document.head.appendChild(script);
           <div style="margin-left: 50px;">
            <span style="position: relative; top: -2px;">
             <a href="/Aghanim%27s_Scepter" title="Upgradable by Aghanim's Scepter.">
-             <img alt="Upgradable by Aghanim's Scepter." height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/73/Aghanim%27s_Scepter_symbol.png/20px-Aghanim%27s_Scepter_symbol.png?version=d829eda2dfcb5c0078dd83220a3299dc" style="vertical-align: text-top" width="20"/>
+             <img alt="Upgradable by Aghanim's Scepter." height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/73/Aghanim%27s_Scepter_symbol.png/20px-Aghanim%27s_Scepter_symbol.png?version=d829eda2dfcb5c0078dd83220a3299dc" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/73/Aghanim%27s_Scepter_symbol.png/30px-Aghanim%27s_Scepter_symbol.png?version=d829eda2dfcb5c0078dd83220a3299dc 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/73/Aghanim%27s_Scepter_symbol.png/40px-Aghanim%27s_Scepter_symbol.png?version=d829eda2dfcb5c0078dd83220a3299dc 2x" style="vertical-align: text-top" width="20"/>
             </a>
            </span>
            Grants the Enchant Remnant ability.
@@ -2385,19 +2435,21 @@ document.head.appendChild(script);
           <div style="margin-left: 50px;">
            <span style="position: relative; top: -2px;">
             <a href="/Spell_Immunity" title="Partially pierces spell immunity.">
-             <img alt="Partially pierces spell immunity." height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/5/59/Spell_immunity_block_partial_symbol.png/20px-Spell_immunity_block_partial_symbol.png?version=923f604c1ecd2a88b6b5a2bf6e32b59e" style="vertical-align: text-top" width="20"/>
+             <img alt="Partially pierces spell immunity." height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/5/59/Spell_immunity_block_partial_symbol.png/20px-Spell_immunity_block_partial_symbol.png?version=923f604c1ecd2a88b6b5a2bf6e32b59e" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/5/59/Spell_immunity_block_partial_symbol.png/30px-Spell_immunity_block_partial_symbol.png?version=923f604c1ecd2a88b6b5a2bf6e32b59e 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/5/59/Spell_immunity_block_partial_symbol.png/40px-Spell_immunity_block_partial_symbol.png?version=923f604c1ecd2a88b6b5a2bf6e32b59e 2x" style="vertical-align: text-top" width="20"/>
             </a>
            </span>
            Places debuff on and attempts to damage spell immune enemies. Can spread to and refresh debuff on spell immune enemies. Does not silence or slow spell immune enemies when another magnetized enemy is hit by Rolling Boulder or Geomagnetic Grip.
           </div>
           <div style="margin-top: 10px;">
            <b>
-            Modifiers
+            <span id="tooltip" style="cursor:help; border-bottom:1px dotted;" title="The displayed names are the intern names of the modifiers. Do not change them even if they don't match the ability name.">
+             Modifiers
+            </span>
            </b>
           </div>
           <div style="font-size: 85%; margin-left: 10px;">
            <div>
-            <img alt="Debuff" height="16" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/1/1a/Modifier_debuff_symbol.png/16px-Modifier_debuff_symbol.png?version=5684dfbf37c3058c80b8495a4d0dc346" style="vertical-align: text-top" title="Debuff" width="16"/>
+            <img alt="Debuff" height="16" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/1/1a/Modifier_debuff_symbol.png/16px-Modifier_debuff_symbol.png?version=5684dfbf37c3058c80b8495a4d0dc346" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/1/1a/Modifier_debuff_symbol.png/24px-Modifier_debuff_symbol.png?version=5684dfbf37c3058c80b8495a4d0dc346 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/1/1a/Modifier_debuff_symbol.png/32px-Modifier_debuff_symbol.png?version=5684dfbf37c3058c80b8495a4d0dc346 2x" style="vertical-align: text-top" title="Debuff" width="16"/>
             <span style="color:#631F1F;">
              <b>
               Magnetize:
@@ -2486,7 +2538,7 @@ document.head.appendChild(script);
            Once purchased, Earth Spirit cannot drop or sell his
            <span style="white-space:nowrap">
             <a href="/Aghanim%27s_Scepter" title="Aghanim's Scepter">
-             <img alt="Aghanim's Scepter icon.png" height="15" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/0/07/Aghanim%27s_Scepter_icon.png/20px-Aghanim%27s_Scepter_icon.png?version=43732a02c1d1daeca8a103486e85aeb0" width="20"/>
+             <img alt="Aghanim's Scepter icon.png" height="15" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/0/07/Aghanim%27s_Scepter_icon.png/20px-Aghanim%27s_Scepter_icon.png?version=43732a02c1d1daeca8a103486e85aeb0" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/0/07/Aghanim%27s_Scepter_icon.png/30px-Aghanim%27s_Scepter_icon.png?version=43732a02c1d1daeca8a103486e85aeb0 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/0/07/Aghanim%27s_Scepter_icon.png/40px-Aghanim%27s_Scepter_icon.png?version=43732a02c1d1daeca8a103486e85aeb0 2x" width="20"/>
             </a>
             <a href="/Aghanim%27s_Scepter" title="Aghanim's Scepter">
              Aghanim's Scepter
@@ -2499,8 +2551,6 @@ document.head.appendChild(script);
        </div>
        <p>
         <br/>
-       </p>
-       <p>
         <span id="Enchant_Remnant">
         </span>
        </p>
@@ -2510,10 +2560,10 @@ document.head.appendChild(script);
           Enchant Remnant
           <div style="float:right;">
            <a href="/Linken%27s_Sphere" title="Blocked by Linken's Sphere.">
-            <img alt="Blocked by Linken's Sphere." height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/72/Spell_block_symbol.png/20px-Spell_block_symbol.png?version=b767728c632ebe4ef05893d2da7d2488" style="vertical-align: text-top" width="20"/>
+            <img alt="Blocked by Linken's Sphere." height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/72/Spell_block_symbol.png/20px-Spell_block_symbol.png?version=b767728c632ebe4ef05893d2da7d2488" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/72/Spell_block_symbol.png/30px-Spell_block_symbol.png?version=b767728c632ebe4ef05893d2da7d2488 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/72/Spell_block_symbol.png/40px-Spell_block_symbol.png?version=b767728c632ebe4ef05893d2da7d2488 2x" style="vertical-align: text-top" width="20"/>
            </a>
            <a href="/Spell_Immunity" title="Partially pierces spell immunity.">
-            <img alt="Partially pierces spell immunity." height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/5/59/Spell_immunity_block_partial_symbol.png/20px-Spell_immunity_block_partial_symbol.png?version=923f604c1ecd2a88b6b5a2bf6e32b59e" style="vertical-align: text-top" width="20"/>
+            <img alt="Partially pierces spell immunity." height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/5/59/Spell_immunity_block_partial_symbol.png/20px-Spell_immunity_block_partial_symbol.png?version=923f604c1ecd2a88b6b5a2bf6e32b59e" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/5/59/Spell_immunity_block_partial_symbol.png/30px-Spell_immunity_block_partial_symbol.png?version=923f604c1ecd2a88b6b5a2bf6e32b59e 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/5/59/Spell_immunity_block_partial_symbol.png/40px-Spell_immunity_block_partial_symbol.png?version=923f604c1ecd2a88b6b5a2bf6e32b59e 2x" style="vertical-align: text-top" width="20"/>
            </a>
            <span style="position:relative; top:-2px;">
             <a class="sm2_button" href="https://hydra-media.cursecdn.com/dota2.gamepedia.com/4/4a/Enchant_Remnant.mp3" title="Play">
@@ -2568,11 +2618,11 @@ document.head.appendChild(script);
              </b>
              <br/>
              <a href="/Damage_types#Magical" title="Damage types">
-              <b>
-               <span style="color:#3F56AD">
+              <span style="color:#3F56AD">
+               <b>
                 Magical
-               </span>
-              </b>
+               </b>
+              </span>
              </a>
             </div>
            </div>
@@ -2599,27 +2649,39 @@ document.head.appendChild(script);
            <b>
             Cast Range
            </b>
-           : 125
+           :
+           <span style="white-space: nowrap">
+            125
+           </span>
           </div>
           <div>
            <b>
             Damage Radius
            </b>
-           : 300
+           :
+           <span style="white-space: nowrap">
+            300
+           </span>
           </div>
           <div>
            <b>
             Damage
            </b>
-           : 300
+           :
+           <span style="white-space: nowrap">
+            300
+           </span>
           </div>
           <div>
            <b>
             Duration
            </b>
-           : 3
+           :
+           <span style="white-space: nowrap">
+            3
+           </span>
           </div>
-          <div style="display: inline-block; margin: 8px 0px 0px 50px; width: 190px; vertical-align: top;">
+          <div style="display: inline-block; margin: 8px 0px 0px 50px; width: 190px; vertical-align: top; word-wrap: break-word;">
            <span style="position: relative; top: -2px;">
             <a href="/Cooldown" title="Cooldown">
              <img alt="Cooldown symbol.png" height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/b/b7/Cooldown_symbol.png?version=7429ed9baf0f121e6ab3324bfdfad708" style="vertical-align: text-top" width="20"/>
@@ -2627,7 +2689,7 @@ document.head.appendChild(script);
            </span>
            45
           </div>
-          <div style="display: inline-block; margin: 8px 0px 0px; width: 190px; vertical-align: top;">
+          <div style="display: inline-block; margin: 8px 0px 0px; width: 190px; vertical-align: top; word-wrap: break-word;">
            <span style="position: relative; top: -2px;">
             <a href="/Mana" title="Mana">
              <img alt="Mana symbol.png" height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/f/f3/Mana_symbol.png?version=a81185ac577f9b52f2df06be91b6600c" style="vertical-align: text-top" width="20"/>
@@ -2640,7 +2702,7 @@ document.head.appendChild(script);
           <div style="margin-left: 50px;">
            <span style="position: relative; top: -2px;">
             <a href="/Spell_Immunity" title="Partially pierces spell immunity.">
-             <img alt="Partially pierces spell immunity." height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/5/59/Spell_immunity_block_partial_symbol.png/20px-Spell_immunity_block_partial_symbol.png?version=923f604c1ecd2a88b6b5a2bf6e32b59e" style="vertical-align: text-top" width="20"/>
+             <img alt="Partially pierces spell immunity." height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/5/59/Spell_immunity_block_partial_symbol.png/20px-Spell_immunity_block_partial_symbol.png?version=923f604c1ecd2a88b6b5a2bf6e32b59e" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/5/59/Spell_immunity_block_partial_symbol.png/30px-Spell_immunity_block_partial_symbol.png?version=923f604c1ecd2a88b6b5a2bf6e32b59e 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/5/59/Spell_immunity_block_partial_symbol.png/40px-Spell_immunity_block_partial_symbol.png?version=923f604c1ecd2a88b6b5a2bf6e32b59e 2x" style="vertical-align: text-top" width="20"/>
             </a>
            </span>
            Can be cast on spell immune allies
@@ -2649,12 +2711,14 @@ document.head.appendChild(script);
           </div>
           <div style="margin-top: 10px;">
            <b>
-            Modifiers
+            <span id="tooltip" style="cursor:help; border-bottom:1px dotted;" title="The displayed names are the intern names of the modifiers. Do not change them even if they don't match the ability name.">
+             Modifiers
+            </span>
            </b>
           </div>
           <div style="font-size: 85%; margin-left: 10px;">
            <div>
-            <img alt="Debuff" height="16" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/1/1a/Modifier_debuff_symbol.png/16px-Modifier_debuff_symbol.png?version=5684dfbf37c3058c80b8495a4d0dc346" style="vertical-align: text-top" title="Debuff" width="16"/>
+            <img alt="Debuff" height="16" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/1/1a/Modifier_debuff_symbol.png/16px-Modifier_debuff_symbol.png?version=5684dfbf37c3058c80b8495a4d0dc346" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/1/1a/Modifier_debuff_symbol.png/24px-Modifier_debuff_symbol.png?version=5684dfbf37c3058c80b8495a4d0dc346 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/1/1a/Modifier_debuff_symbol.png/32px-Modifier_debuff_symbol.png?version=5684dfbf37c3058c80b8495a4d0dc346 2x" style="vertical-align: text-top" title="Debuff" width="16"/>
             <span style="color:#631F1F;">
              <b>
               Petrify:
@@ -2682,7 +2746,7 @@ document.head.appendChild(script);
            Requires
            <span style="white-space:nowrap">
             <a href="/Aghanim%27s_Scepter" title="Aghanim's Scepter">
-             <img alt="Aghanim's Scepter icon.png" height="15" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/0/07/Aghanim%27s_Scepter_icon.png/20px-Aghanim%27s_Scepter_icon.png?version=43732a02c1d1daeca8a103486e85aeb0" width="20"/>
+             <img alt="Aghanim's Scepter icon.png" height="15" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/0/07/Aghanim%27s_Scepter_icon.png/20px-Aghanim%27s_Scepter_icon.png?version=43732a02c1d1daeca8a103486e85aeb0" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/0/07/Aghanim%27s_Scepter_icon.png/30px-Aghanim%27s_Scepter_icon.png?version=43732a02c1d1daeca8a103486e85aeb0 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/0/07/Aghanim%27s_Scepter_icon.png/40px-Aghanim%27s_Scepter_icon.png?version=43732a02c1d1daeca8a103486e85aeb0 2x" width="20"/>
             </a>
             <a href="/Aghanim%27s_Scepter" title="Aghanim's Scepter">
              Aghanim's Scepter
@@ -2720,13 +2784,13 @@ document.head.appendChild(script);
             <li>
              <span style="white-space: nowrap;">
               <a href="/Earth_Spirit#Boulder_Smash" title="Earth Spirit#Boulder Smash">
-               <img alt="Boulder Smash icon.png" height="16" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/5/54/Boulder_Smash_icon.png/16px-Boulder_Smash_icon.png?version=abc65332aa6da41e7276788e13351071" width="16"/>
+               <img alt="Boulder Smash icon.png" height="16" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/5/54/Boulder_Smash_icon.png/16px-Boulder_Smash_icon.png?version=abc65332aa6da41e7276788e13351071" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/5/54/Boulder_Smash_icon.png/24px-Boulder_Smash_icon.png?version=abc65332aa6da41e7276788e13351071 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/5/54/Boulder_Smash_icon.png/32px-Boulder_Smash_icon.png?version=abc65332aa6da41e7276788e13351071 2x" width="16"/>
               </a>
               <a href="/Earth_Spirit#Boulder_Smash" title="Earth Spirit">
                Boulder Smash
               </a>
              </span>
-             ​: Enchanted heroes are knocked back for 2000 distance and
+             : Enchanted heroes are knocked back for 2000 distance and
              <a href="/Stun" title="Stun">
               stun
              </a>
@@ -2735,35 +2799,35 @@ document.head.appendChild(script);
             <li>
              <span style="white-space: nowrap;">
               <a href="/Earth_Spirit#Rolling_Boulder" title="Earth Spirit#Rolling Boulder">
-               <img alt="Rolling Boulder icon.png" height="16" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/0/09/Rolling_Boulder_icon.png/16px-Rolling_Boulder_icon.png?version=662a6e2a023d7adb6107343be234d100" width="16"/>
+               <img alt="Rolling Boulder icon.png" height="16" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/0/09/Rolling_Boulder_icon.png/16px-Rolling_Boulder_icon.png?version=662a6e2a023d7adb6107343be234d100" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/0/09/Rolling_Boulder_icon.png/24px-Rolling_Boulder_icon.png?version=662a6e2a023d7adb6107343be234d100 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/0/09/Rolling_Boulder_icon.png/32px-Rolling_Boulder_icon.png?version=662a6e2a023d7adb6107343be234d100 2x" width="16"/>
               </a>
               <a href="/Earth_Spirit#Rolling_Boulder" title="Earth Spirit">
                Rolling Boulder
               </a>
              </span>
-             ​: Enchanted heroes boost the rolling. Earth Spirit does not collide with them and ends the enchantment early.
+             : Enchanted heroes boost the rolling. Earth Spirit does not collide with them and ends the enchantment early.
             </li>
             <li>
              <span style="white-space: nowrap;">
               <a href="/Earth_Spirit#Geomagnetic_Grip" title="Earth Spirit#Geomagnetic Grip">
-               <img alt="Geomagnetic Grip icon.png" height="16" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/e/e8/Geomagnetic_Grip_icon.png/16px-Geomagnetic_Grip_icon.png?version=4aa1c655407e7afff07391fbc8988b72" width="16"/>
+               <img alt="Geomagnetic Grip icon.png" height="16" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/e/e8/Geomagnetic_Grip_icon.png/16px-Geomagnetic_Grip_icon.png?version=4aa1c655407e7afff07391fbc8988b72" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/e/e8/Geomagnetic_Grip_icon.png/24px-Geomagnetic_Grip_icon.png?version=4aa1c655407e7afff07391fbc8988b72 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/e/e8/Geomagnetic_Grip_icon.png/32px-Geomagnetic_Grip_icon.png?version=4aa1c655407e7afff07391fbc8988b72 2x" width="16"/>
               </a>
               <a href="/Earth_Spirit#Geomagnetic_Grip" title="Earth Spirit">
                Geomagnetic Grip
               </a>
              </span>
-             ​: Enchanted heroes are pulled at a speed of 1000 and apply the damage. Can pull enchanted enemies.
+             : Enchanted heroes are pulled at a speed of 1000 and apply the damage. Can pull enchanted enemies.
             </li>
             <li>
              <span style="white-space: nowrap;">
               <a href="/Earth_Spirit#Magnetize" title="Earth Spirit#Magnetize">
-               <img alt="Magnetize icon.png" height="16" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/8/82/Magnetize_icon.png/16px-Magnetize_icon.png?version=0d0bc645afe9e6286d5df048560052d0" width="16"/>
+               <img alt="Magnetize icon.png" height="16" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/8/82/Magnetize_icon.png/16px-Magnetize_icon.png?version=0d0bc645afe9e6286d5df048560052d0" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/8/82/Magnetize_icon.png/24px-Magnetize_icon.png?version=0d0bc645afe9e6286d5df048560052d0 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/8/82/Magnetize_icon.png/32px-Magnetize_icon.png?version=0d0bc645afe9e6286d5df048560052d0 2x" width="16"/>
               </a>
               <a href="/Earth_Spirit#Magnetize" title="Earth Spirit">
                Magnetize
               </a>
              </span>
-             ​: Enchanted heroes receive, refresh and spread Magnetize when within its stone search radius.
+             : Enchanted heroes receive, refresh and spread Magnetize when within its stone search radius.
             </li>
            </ul>
           </li>
@@ -2801,14 +2865,8 @@ document.head.appendChild(script);
          <span class="mw-editsection-bracket">
           [
          </span>
-         <a class="mw-editsection-visualeditor" href="/index.php?title=Earth_Spirit&amp;veaction=edit&amp;vesection=3" title="Edit section: Talents">
-          edit
-         </a>
-         <span class="mw-editsection-divider">
-          |
-         </span>
          <a href="/index.php?title=Earth_Spirit&amp;action=edit&amp;section=3" title="Edit section: Talents">
-          edit source
+          edit
          </a>
          <span class="mw-editsection-bracket">
           ]
@@ -2834,13 +2892,13 @@ document.head.appendChild(script);
             +300
             <span style="white-space: nowrap;">
              <a href="/Earth_Spirit#Rolling_Boulder" title="Earth Spirit#Rolling Boulder">
-              <img alt="Rolling Boulder icon.png" height="16" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/0/09/Rolling_Boulder_icon.png/16px-Rolling_Boulder_icon.png?version=662a6e2a023d7adb6107343be234d100" width="16"/>
+              <img alt="Rolling Boulder icon.png" height="16" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/0/09/Rolling_Boulder_icon.png/16px-Rolling_Boulder_icon.png?version=662a6e2a023d7adb6107343be234d100" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/0/09/Rolling_Boulder_icon.png/24px-Rolling_Boulder_icon.png?version=662a6e2a023d7adb6107343be234d100 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/0/09/Rolling_Boulder_icon.png/32px-Rolling_Boulder_icon.png?version=662a6e2a023d7adb6107343be234d100 2x" width="16"/>
              </a>
              <a href="/Earth_Spirit#Rolling_Boulder" title="Earth Spirit">
               Rolling Boulder
              </a>
             </span>
-            ​ Damage
+            Damage
            </td>
            <td style="padding: 10px; background-color: #0c2a5a">
             <span style="color: white; font-size:13pt">
@@ -2850,7 +2908,15 @@ document.head.appendChild(script);
             </span>
            </td>
            <td width="240">
-            -35s Respawn Time
+            <span style="white-space: nowrap;">
+             <a href="/Earth_Spirit#Geomagnetic_Grip" title="Earth Spirit#Geomagnetic Grip">
+              <img alt="Geomagnetic Grip icon.png" height="16" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/e/e8/Geomagnetic_Grip_icon.png/16px-Geomagnetic_Grip_icon.png?version=4aa1c655407e7afff07391fbc8988b72" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/e/e8/Geomagnetic_Grip_icon.png/24px-Geomagnetic_Grip_icon.png?version=4aa1c655407e7afff07391fbc8988b72 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/e/e8/Geomagnetic_Grip_icon.png/32px-Geomagnetic_Grip_icon.png?version=4aa1c655407e7afff07391fbc8988b72 2x" width="16"/>
+             </a>
+             <a href="/Earth_Spirit#Geomagnetic_Grip" title="Earth Spirit">
+              Geomagnetic Grip
+             </a>
+            </span>
+            Targets Allies
            </td>
           </tr>
           <tr>
@@ -2898,7 +2964,7 @@ document.head.appendChild(script);
             +10
             <span style="white-space:nowrap">
              <a href="/Intelligence" title="Intelligence">
-              <img alt="Intelligence attribute symbol.png" height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/5/56/Intelligence_attribute_symbol.png/20px-Intelligence_attribute_symbol.png?version=e9fd51efae65a42538a13108e548b0f3" width="20"/>
+              <img alt="Intelligence attribute symbol.png" height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/5/56/Intelligence_attribute_symbol.png/20px-Intelligence_attribute_symbol.png?version=e9fd51efae65a42538a13108e548b0f3" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/5/56/Intelligence_attribute_symbol.png/30px-Intelligence_attribute_symbol.png?version=e9fd51efae65a42538a13108e548b0f3 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/5/56/Intelligence_attribute_symbol.png/40px-Intelligence_attribute_symbol.png?version=e9fd51efae65a42538a13108e548b0f3 2x" width="20"/>
              </a>
              <a href="/Intelligence" title="Intelligence">
               Intelligence
@@ -2927,11 +2993,6 @@ document.head.appendChild(script);
            Upgrading health increases maximum health capacity and keeps the current health percentage.
           </li>
          </ul>
-         <ul>
-          <li>
-           Respawn reductions cannot reduce respawn time below 1 second.
-          </li>
-         </ul>
         </div>
        </div>
       </div>
@@ -2949,14 +3010,8 @@ document.head.appendChild(script);
   <span class="mw-editsection-bracket">
    [
   </span>
-  <a class="mw-editsection-visualeditor" href="/index.php?title=Earth_Spirit&amp;veaction=edit&amp;vesection=4" title="Edit section: Recommended items">
-   edit
-  </a>
-  <span class="mw-editsection-divider">
-   |
-  </span>
   <a href="/index.php?title=Earth_Spirit&amp;action=edit&amp;section=4" title="Edit section: Recommended items">
-   edit source
+   edit
   </a>
   <span class="mw-editsection-bracket">
    ]
@@ -2972,7 +3027,7 @@ document.head.appendChild(script);
  <li>
   <span style="white-space:nowrap">
    <a href="/Healing_Salve" title="Healing Salve">
-    <img alt="Healing Salve icon.png" height="22" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/3/36/Healing_Salve_icon.png/30px-Healing_Salve_icon.png?version=923f3249add1829368656d8a736b8545" width="30"/>
+    <img alt="Healing Salve icon.png" height="22" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/3/36/Healing_Salve_icon.png/30px-Healing_Salve_icon.png?version=923f3249add1829368656d8a736b8545" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/3/36/Healing_Salve_icon.png/45px-Healing_Salve_icon.png?version=923f3249add1829368656d8a736b8545 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/3/36/Healing_Salve_icon.png/60px-Healing_Salve_icon.png?version=923f3249add1829368656d8a736b8545 2x" width="30"/>
    </a>
    <a href="/Healing_Salve" title="Healing Salve">
     Healing Salve
@@ -2981,7 +3036,7 @@ document.head.appendChild(script);
   and
   <span style="white-space:nowrap">
    <a href="/Tango" title="Tango">
-    <img alt="Tango icon.png" height="22" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/f/fd/Tango_icon.png/30px-Tango_icon.png?version=6ddcac461cbd98cc58e99a5f70d04a57" width="30"/>
+    <img alt="Tango icon.png" height="22" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/f/fd/Tango_icon.png/30px-Tango_icon.png?version=6ddcac461cbd98cc58e99a5f70d04a57" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/f/fd/Tango_icon.png/45px-Tango_icon.png?version=6ddcac461cbd98cc58e99a5f70d04a57 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/f/fd/Tango_icon.png/60px-Tango_icon.png?version=6ddcac461cbd98cc58e99a5f70d04a57 2x" width="30"/>
    </a>
    <a href="/Tango" title="Tango">
     Tango
@@ -2992,7 +3047,7 @@ document.head.appendChild(script);
  <li>
   <span style="white-space:nowrap">
    <a href="/Clarity" title="Clarity">
-    <img alt="Clarity icon.png" height="22" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/77/Clarity_icon.png/30px-Clarity_icon.png?version=90ef2ce15bfaac1794f60d51aa5183a1" width="30"/>
+    <img alt="Clarity icon.png" height="22" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/77/Clarity_icon.png/30px-Clarity_icon.png?version=90ef2ce15bfaac1794f60d51aa5183a1" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/77/Clarity_icon.png/45px-Clarity_icon.png?version=90ef2ce15bfaac1794f60d51aa5183a1 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/77/Clarity_icon.png/60px-Clarity_icon.png?version=90ef2ce15bfaac1794f60d51aa5183a1 2x" width="30"/>
    </a>
    <a href="/Clarity" title="Clarity">
     Clarity
@@ -3001,18 +3056,18 @@ document.head.appendChild(script);
   potions will help Earth Spirit to cast his spells more often to make a bigger impact in the early game, as he is limited more by his mana pool than by the number of
   <span style="white-space: nowrap;">
    <a href="/Earth_Spirit#Stone_Remnant" title="Earth Spirit#Stone Remnant">
-    <img alt="Stone Remnant icon.png" height="16" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/7d/Stone_Remnant_icon.png/16px-Stone_Remnant_icon.png?version=37c28a44f9e04a474056243bed724698" width="16"/>
+    <img alt="Stone Remnant icon.png" height="16" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/7d/Stone_Remnant_icon.png/16px-Stone_Remnant_icon.png?version=37c28a44f9e04a474056243bed724698" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/7d/Stone_Remnant_icon.png/24px-Stone_Remnant_icon.png?version=37c28a44f9e04a474056243bed724698 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/7d/Stone_Remnant_icon.png/32px-Stone_Remnant_icon.png?version=37c28a44f9e04a474056243bed724698 2x" width="16"/>
    </a>
    <a href="/Earth_Spirit#Stone_Remnant" title="Earth Spirit">
     Stone Remnant
    </a>
   </span>
-  ​s he has.
+  s he has.
  </li>
  <li>
   <span style="white-space:nowrap">
    <a href="/Iron_Branch" title="Iron Branch">
-    <img alt="Iron Branch icon.png" height="22" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/a/a3/Iron_Branch_icon.png/30px-Iron_Branch_icon.png?version=fe283e2ed6e68366cffdf0a80ac1c5be" width="30"/>
+    <img alt="Iron Branch icon.png" height="22" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/a/a3/Iron_Branch_icon.png/30px-Iron_Branch_icon.png?version=fe283e2ed6e68366cffdf0a80ac1c5be" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/a/a3/Iron_Branch_icon.png/45px-Iron_Branch_icon.png?version=fe283e2ed6e68366cffdf0a80ac1c5be 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/a/a3/Iron_Branch_icon.png/60px-Iron_Branch_icon.png?version=fe283e2ed6e68366cffdf0a80ac1c5be 2x" width="30"/>
    </a>
    <a href="/Iron_Branch" title="Iron Branch">
     Iron Branch
@@ -3023,7 +3078,7 @@ document.head.appendChild(script);
  <li>
   <span style="white-space:nowrap">
    <a href="/Stout_Shield" title="Stout Shield">
-    <img alt="Stout Shield icon.png" height="22" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/0/01/Stout_Shield_icon.png/30px-Stout_Shield_icon.png?version=9edbfc8c6caead89362d029d4085d58a" width="30"/>
+    <img alt="Stout Shield icon.png" height="22" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/0/01/Stout_Shield_icon.png/30px-Stout_Shield_icon.png?version=9edbfc8c6caead89362d029d4085d58a" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/0/01/Stout_Shield_icon.png/45px-Stout_Shield_icon.png?version=9edbfc8c6caead89362d029d4085d58a 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/0/01/Stout_Shield_icon.png/60px-Stout_Shield_icon.png?version=9edbfc8c6caead89362d029d4085d58a 2x" width="30"/>
    </a>
    <a href="/Stout_Shield" title="Stout Shield">
     Stout Shield
@@ -3041,7 +3096,7 @@ document.head.appendChild(script);
  <li>
   <span style="white-space:nowrap">
    <a href="/Boots_of_Speed" title="Boots of Speed">
-    <img alt="Boots of Speed icon.png" height="22" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/9/97/Boots_of_Speed_icon.png/30px-Boots_of_Speed_icon.png?version=9321885327b320054df62171f8f89c2b" width="30"/>
+    <img alt="Boots of Speed icon.png" height="22" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/9/97/Boots_of_Speed_icon.png/30px-Boots_of_Speed_icon.png?version=9321885327b320054df62171f8f89c2b" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/9/97/Boots_of_Speed_icon.png/45px-Boots_of_Speed_icon.png?version=9321885327b320054df62171f8f89c2b 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/9/97/Boots_of_Speed_icon.png/60px-Boots_of_Speed_icon.png?version=9321885327b320054df62171f8f89c2b 2x" width="30"/>
    </a>
    <a href="/Boots_of_Speed" title="Boots of Speed">
     Boots of Speed
@@ -3052,7 +3107,7 @@ document.head.appendChild(script);
  <li>
   <span style="white-space:nowrap">
    <a href="/Magic_Stick" title="Magic Stick">
-    <img alt="Magic Stick icon.png" height="22" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/5/59/Magic_Stick_icon.png/30px-Magic_Stick_icon.png?version=a5e1eacc06e3b794a3e54f965acf4d7c" width="30"/>
+    <img alt="Magic Stick icon.png" height="22" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/5/59/Magic_Stick_icon.png/30px-Magic_Stick_icon.png?version=a5e1eacc06e3b794a3e54f965acf4d7c" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/5/59/Magic_Stick_icon.png/45px-Magic_Stick_icon.png?version=a5e1eacc06e3b794a3e54f965acf4d7c 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/5/59/Magic_Stick_icon.png/60px-Magic_Stick_icon.png?version=a5e1eacc06e3b794a3e54f965acf4d7c 2x" width="30"/>
    </a>
    <a href="/Magic_Stick" title="Magic Stick">
     Magic Stick
@@ -3063,7 +3118,7 @@ document.head.appendChild(script);
  <li>
   <span style="white-space:nowrap">
    <a href="/Bottle" title="Bottle">
-    <img alt="Bottle (Full) icon.png" height="22" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/f/fa/Bottle_%28Full%29_icon.png/30px-Bottle_%28Full%29_icon.png?version=89525519f7fa30d0f76eb68d32f8df0a" width="30"/>
+    <img alt="Bottle (Full) icon.png" height="22" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/f/fa/Bottle_%28Full%29_icon.png/30px-Bottle_%28Full%29_icon.png?version=89525519f7fa30d0f76eb68d32f8df0a" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/f/fa/Bottle_%28Full%29_icon.png/45px-Bottle_%28Full%29_icon.png?version=89525519f7fa30d0f76eb68d32f8df0a 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/f/fa/Bottle_%28Full%29_icon.png/60px-Bottle_%28Full%29_icon.png?version=89525519f7fa30d0f76eb68d32f8df0a 2x" width="30"/>
    </a>
    <a href="/Bottle" title="Bottle">
     Bottle
@@ -3081,7 +3136,7 @@ document.head.appendChild(script);
  <li>
   <span style="white-space:nowrap">
    <a href="/Force_Staff" title="Force Staff">
-    <img alt="Force Staff icon.png" height="22" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/a/a2/Force_Staff_icon.png/30px-Force_Staff_icon.png?version=4b4fd6bc701197339ca6e3395dc26e1b" width="30"/>
+    <img alt="Force Staff icon.png" height="22" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/a/a2/Force_Staff_icon.png/30px-Force_Staff_icon.png?version=4b4fd6bc701197339ca6e3395dc26e1b" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/a/a2/Force_Staff_icon.png/45px-Force_Staff_icon.png?version=4b4fd6bc701197339ca6e3395dc26e1b 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/a/a2/Force_Staff_icon.png/60px-Force_Staff_icon.png?version=4b4fd6bc701197339ca6e3395dc26e1b 2x" width="30"/>
    </a>
    <a href="/Force_Staff" title="Force Staff">
     Force Staff
@@ -3092,7 +3147,7 @@ document.head.appendChild(script);
  <li>
   <span style="white-space:nowrap">
    <a href="/Magic_Wand" title="Magic Wand">
-    <img alt="Magic Wand icon.png" height="22" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/74/Magic_Wand_icon.png/30px-Magic_Wand_icon.png?version=4a31a7c26c0a3e0338aa299b53df8d24" width="30"/>
+    <img alt="Magic Wand icon.png" height="22" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/74/Magic_Wand_icon.png/30px-Magic_Wand_icon.png?version=4a31a7c26c0a3e0338aa299b53df8d24" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/74/Magic_Wand_icon.png/45px-Magic_Wand_icon.png?version=4a31a7c26c0a3e0338aa299b53df8d24 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/74/Magic_Wand_icon.png/60px-Magic_Wand_icon.png?version=4a31a7c26c0a3e0338aa299b53df8d24 2x" width="30"/>
    </a>
    <a href="/Magic_Wand" title="Magic Wand">
     Magic Wand
@@ -3103,7 +3158,7 @@ document.head.appendChild(script);
  <li>
   <span style="white-space:nowrap">
    <a href="/Urn_of_Shadows" title="Urn of Shadows">
-    <img alt="Urn of Shadows icon.png" height="22" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/5/58/Urn_of_Shadows_icon.png/30px-Urn_of_Shadows_icon.png?version=f148d5013a96945f3465554a63d984e5" width="30"/>
+    <img alt="Urn of Shadows icon.png" height="22" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/5/58/Urn_of_Shadows_icon.png/30px-Urn_of_Shadows_icon.png?version=f148d5013a96945f3465554a63d984e5" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/5/58/Urn_of_Shadows_icon.png/45px-Urn_of_Shadows_icon.png?version=f148d5013a96945f3465554a63d984e5 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/5/58/Urn_of_Shadows_icon.png/60px-Urn_of_Shadows_icon.png?version=f148d5013a96945f3465554a63d984e5 2x" width="30"/>
    </a>
    <a href="/Urn_of_Shadows" title="Urn of Shadows">
     Urn of Shadows
@@ -3114,7 +3169,7 @@ document.head.appendChild(script);
  <li>
   <span style="white-space:nowrap">
    <a href="/Town_Portal_Scroll" title="Town Portal Scroll">
-    <img alt="Town Portal Scroll icon.png" height="22" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/4/46/Town_Portal_Scroll_icon.png/30px-Town_Portal_Scroll_icon.png?version=9ea24933254e81afb8e601a9613f5244" width="30"/>
+    <img alt="Town Portal Scroll icon.png" height="22" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/4/46/Town_Portal_Scroll_icon.png/30px-Town_Portal_Scroll_icon.png?version=9ea24933254e81afb8e601a9613f5244" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/4/46/Town_Portal_Scroll_icon.png/45px-Town_Portal_Scroll_icon.png?version=9ea24933254e81afb8e601a9613f5244 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/4/46/Town_Portal_Scroll_icon.png/60px-Town_Portal_Scroll_icon.png?version=9ea24933254e81afb8e601a9613f5244 2x" width="30"/>
    </a>
    <a href="/Town_Portal_Scroll" title="Town Portal Scroll">
     Town Portal Scroll
@@ -3132,7 +3187,7 @@ document.head.appendChild(script);
  <li>
   <span style="white-space:nowrap">
    <a href="/Arcane_Boots" title="Arcane Boots">
-    <img alt="Arcane Boots icon.png" height="22" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/b/be/Arcane_Boots_icon.png/30px-Arcane_Boots_icon.png?version=792da920ffb2341084aedca7ff21b1c3" width="30"/>
+    <img alt="Arcane Boots icon.png" height="22" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/b/be/Arcane_Boots_icon.png/30px-Arcane_Boots_icon.png?version=792da920ffb2341084aedca7ff21b1c3" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/b/be/Arcane_Boots_icon.png/45px-Arcane_Boots_icon.png?version=792da920ffb2341084aedca7ff21b1c3 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/b/be/Arcane_Boots_icon.png/60px-Arcane_Boots_icon.png?version=792da920ffb2341084aedca7ff21b1c3 2x" width="30"/>
    </a>
    <a href="/Arcane_Boots" title="Arcane Boots">
     Arcane Boots
@@ -3143,7 +3198,7 @@ document.head.appendChild(script);
  <li>
   <span style="white-space:nowrap">
    <a href="/Veil_of_Discord" title="Veil of Discord">
-    <img alt="Veil of Discord icon.png" height="22" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/f/f2/Veil_of_Discord_icon.png/30px-Veil_of_Discord_icon.png?version=014a8352384791e99737dfa0d3ee603b" width="30"/>
+    <img alt="Veil of Discord icon.png" height="22" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/f/f2/Veil_of_Discord_icon.png/30px-Veil_of_Discord_icon.png?version=014a8352384791e99737dfa0d3ee603b" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/f/f2/Veil_of_Discord_icon.png/45px-Veil_of_Discord_icon.png?version=014a8352384791e99737dfa0d3ee603b 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/f/f2/Veil_of_Discord_icon.png/60px-Veil_of_Discord_icon.png?version=014a8352384791e99737dfa0d3ee603b 2x" width="30"/>
    </a>
    <a href="/Veil_of_Discord" title="Veil of Discord">
     Veil of Discord
@@ -3152,18 +3207,18 @@ document.head.appendChild(script);
   is helpful if your team has multiple spell casters. It provides a large amount of intelligence to improve Earth Spirit's mana pool, and the extra armor is very useful as he often gets right in the middle of battles when initiating. The 25% magic resistance reduction on enemies works well with all of Earth Spirit's spells, but synergizes best with his ultimate,
   <span style="white-space: nowrap;">
    <a href="/Earth_Spirit#Magnetize" title="Earth Spirit#Magnetize">
-    <img alt="Magnetize icon.png" height="16" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/8/82/Magnetize_icon.png/16px-Magnetize_icon.png?version=0d0bc645afe9e6286d5df048560052d0" width="16"/>
+    <img alt="Magnetize icon.png" height="16" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/8/82/Magnetize_icon.png/16px-Magnetize_icon.png?version=0d0bc645afe9e6286d5df048560052d0" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/8/82/Magnetize_icon.png/24px-Magnetize_icon.png?version=0d0bc645afe9e6286d5df048560052d0 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/8/82/Magnetize_icon.png/32px-Magnetize_icon.png?version=0d0bc645afe9e6286d5df048560052d0 2x" width="16"/>
    </a>
    <a href="/Earth_Spirit#Magnetize" title="Earth Spirit">
     Magnetize
    </a>
   </span>
-  ​, as Magic Weakness' long debuff duration can stay in place throughout refreshing Magnetize on enemies.
+  , as Magic Weakness' long debuff duration can stay in place throughout refreshing Magnetize on enemies.
  </li>
  <li>
   <span style="white-space:nowrap">
    <a href="/Heaven%27s_Halberd" title="Heaven's Halberd">
-    <img alt="Heaven's Halberd icon.png" height="22" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/c/c6/Heaven%27s_Halberd_icon.png/30px-Heaven%27s_Halberd_icon.png?version=8e52dc9bceaaa3a077eb81fef57c1be3" width="30"/>
+    <img alt="Heaven's Halberd icon.png" height="22" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/c/c6/Heaven%27s_Halberd_icon.png/30px-Heaven%27s_Halberd_icon.png?version=8e52dc9bceaaa3a077eb81fef57c1be3" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/c/c6/Heaven%27s_Halberd_icon.png/45px-Heaven%27s_Halberd_icon.png?version=8e52dc9bceaaa3a077eb81fef57c1be3 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/c/c6/Heaven%27s_Halberd_icon.png/60px-Heaven%27s_Halberd_icon.png?version=8e52dc9bceaaa3a077eb81fef57c1be3 2x" width="30"/>
    </a>
    <a href="/Heaven%27s_Halberd" title="Heaven's Halberd">
     Heaven's Halberd
@@ -3174,7 +3229,7 @@ document.head.appendChild(script);
  <li>
   <span style="white-space:nowrap">
    <a href="/Pipe_of_Insight" title="Pipe of Insight">
-    <img alt="Pipe of Insight icon.png" height="22" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/76/Pipe_of_Insight_icon.png/30px-Pipe_of_Insight_icon.png?version=0ff44576e987ca97365cc596a2631734" width="30"/>
+    <img alt="Pipe of Insight icon.png" height="22" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/76/Pipe_of_Insight_icon.png/30px-Pipe_of_Insight_icon.png?version=0ff44576e987ca97365cc596a2631734" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/76/Pipe_of_Insight_icon.png/45px-Pipe_of_Insight_icon.png?version=0ff44576e987ca97365cc596a2631734 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/76/Pipe_of_Insight_icon.png/60px-Pipe_of_Insight_icon.png?version=0ff44576e987ca97365cc596a2631734 2x" width="30"/>
    </a>
    <a href="/Pipe_of_Insight" title="Pipe of Insight">
     Pipe of Insight
@@ -3185,7 +3240,7 @@ document.head.appendChild(script);
  <li>
   <span style="white-space:nowrap">
    <a href="/Heart_of_Tarrasque" title="Heart of Tarrasque">
-    <img alt="Heart of Tarrasque icon.png" height="22" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/75/Heart_of_Tarrasque_icon.png/30px-Heart_of_Tarrasque_icon.png?version=19b3d1e73774fa01327db4bf3d79b92f" width="30"/>
+    <img alt="Heart of Tarrasque icon.png" height="22" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/75/Heart_of_Tarrasque_icon.png/30px-Heart_of_Tarrasque_icon.png?version=19b3d1e73774fa01327db4bf3d79b92f" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/75/Heart_of_Tarrasque_icon.png/45px-Heart_of_Tarrasque_icon.png?version=19b3d1e73774fa01327db4bf3d79b92f 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/75/Heart_of_Tarrasque_icon.png/60px-Heart_of_Tarrasque_icon.png?version=19b3d1e73774fa01327db4bf3d79b92f 2x" width="30"/>
    </a>
    <a href="/Heart_of_Tarrasque" title="Heart of Tarrasque">
     Heart of Tarrasque
@@ -3196,7 +3251,7 @@ document.head.appendChild(script);
  <li>
   <span style="white-space:nowrap">
    <a href="/Scythe_of_Vyse" title="Scythe of Vyse">
-    <img alt="Scythe of Vyse icon.png" height="22" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/5/54/Scythe_of_Vyse_icon.png/30px-Scythe_of_Vyse_icon.png?version=4b7cfa4d61a26a25558d4832d27ea1fa" width="30"/>
+    <img alt="Scythe of Vyse icon.png" height="22" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/5/54/Scythe_of_Vyse_icon.png/30px-Scythe_of_Vyse_icon.png?version=4b7cfa4d61a26a25558d4832d27ea1fa" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/5/54/Scythe_of_Vyse_icon.png/45px-Scythe_of_Vyse_icon.png?version=4b7cfa4d61a26a25558d4832d27ea1fa 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/5/54/Scythe_of_Vyse_icon.png/60px-Scythe_of_Vyse_icon.png?version=4b7cfa4d61a26a25558d4832d27ea1fa 2x" width="30"/>
    </a>
    <a href="/Scythe_of_Vyse" title="Scythe of Vyse">
     Scythe of Vyse
@@ -3207,7 +3262,7 @@ document.head.appendChild(script);
  <li>
   <span style="white-space:nowrap">
    <a href="/Blade_Mail" title="Blade Mail">
-    <img alt="Blade Mail icon.png" height="22" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/1/18/Blade_Mail_icon.png/30px-Blade_Mail_icon.png?version=83c9442a17d8ab0fa8b50387bea0d70d" width="30"/>
+    <img alt="Blade Mail icon.png" height="22" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/1/18/Blade_Mail_icon.png/30px-Blade_Mail_icon.png?version=83c9442a17d8ab0fa8b50387bea0d70d" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/1/18/Blade_Mail_icon.png/45px-Blade_Mail_icon.png?version=83c9442a17d8ab0fa8b50387bea0d70d 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/1/18/Blade_Mail_icon.png/60px-Blade_Mail_icon.png?version=83c9442a17d8ab0fa8b50387bea0d70d 2x" width="30"/>
    </a>
    <a href="/Blade_Mail" title="Blade Mail">
     Blade Mail
@@ -3218,7 +3273,7 @@ document.head.appendChild(script);
  <li>
   <span style="white-space:nowrap">
    <a href="/Shiva%27s_Guard" title="Shiva's Guard">
-    <img alt="Shiva's Guard icon.png" height="22" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/b/b6/Shiva%27s_Guard_icon.png/30px-Shiva%27s_Guard_icon.png?version=199ed4dd8d31e3e09468f46c752bf7bf" width="30"/>
+    <img alt="Shiva's Guard icon.png" height="22" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/b/b6/Shiva%27s_Guard_icon.png/30px-Shiva%27s_Guard_icon.png?version=199ed4dd8d31e3e09468f46c752bf7bf" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/b/b6/Shiva%27s_Guard_icon.png/45px-Shiva%27s_Guard_icon.png?version=199ed4dd8d31e3e09468f46c752bf7bf 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/b/b6/Shiva%27s_Guard_icon.png/60px-Shiva%27s_Guard_icon.png?version=199ed4dd8d31e3e09468f46c752bf7bf 2x" width="30"/>
    </a>
    <a href="/Shiva%27s_Guard" title="Shiva's Guard">
     Shiva's Guard
@@ -3227,18 +3282,18 @@ document.head.appendChild(script);
   greatly increases Earth Spirit's physical survivability as well as the size of his mana pool. The active ability can be used in conjunction with initiating a teamfight with
   <span style="white-space: nowrap;">
    <a href="/Earth_Spirit#Rolling_Boulder" title="Earth Spirit#Rolling Boulder">
-    <img alt="Rolling Boulder icon.png" height="16" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/0/09/Rolling_Boulder_icon.png/16px-Rolling_Boulder_icon.png?version=662a6e2a023d7adb6107343be234d100" width="16"/>
+    <img alt="Rolling Boulder icon.png" height="16" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/0/09/Rolling_Boulder_icon.png/16px-Rolling_Boulder_icon.png?version=662a6e2a023d7adb6107343be234d100" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/0/09/Rolling_Boulder_icon.png/24px-Rolling_Boulder_icon.png?version=662a6e2a023d7adb6107343be234d100 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/0/09/Rolling_Boulder_icon.png/32px-Rolling_Boulder_icon.png?version=662a6e2a023d7adb6107343be234d100 2x" width="16"/>
    </a>
    <a href="/Earth_Spirit#Rolling_Boulder" title="Earth Spirit">
     Rolling Boulder
    </a>
   </span>
-  ​, as you can apply the blast to the entire enemy team almost instantly, slowing them down enough to catch them all with Magnetize.
+  , as you can apply the blast to the entire enemy team almost instantly, slowing them down enough to catch them all with Magnetize.
  </li>
  <li>
   <span style="white-space:nowrap">
    <a href="/Blink_Dagger" title="Blink Dagger">
-    <img alt="Blink Dagger icon.png" height="22" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/4/4c/Blink_Dagger_icon.png/30px-Blink_Dagger_icon.png?version=416e042e065e2f999cdda12d1208a97a" width="30"/>
+    <img alt="Blink Dagger icon.png" height="22" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/4/4c/Blink_Dagger_icon.png/30px-Blink_Dagger_icon.png?version=416e042e065e2f999cdda12d1208a97a" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/4/4c/Blink_Dagger_icon.png/45px-Blink_Dagger_icon.png?version=416e042e065e2f999cdda12d1208a97a 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/4/4c/Blink_Dagger_icon.png/60px-Blink_Dagger_icon.png?version=416e042e065e2f999cdda12d1208a97a 2x" width="30"/>
    </a>
    <a href="/Blink_Dagger" title="Blink Dagger">
     Blink Dagger
@@ -3253,7 +3308,7 @@ document.head.appendChild(script);
  <li>
   <span style="white-space:nowrap">
    <a href="/Mekansm" title="Mekansm">
-    <img alt="Mekansm icon.png" height="22" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/f/f7/Mekansm_icon.png/30px-Mekansm_icon.png?version=1b61342ae4b10a3286d0259e8f6ff22b" width="30"/>
+    <img alt="Mekansm icon.png" height="22" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/f/f7/Mekansm_icon.png/30px-Mekansm_icon.png?version=1b61342ae4b10a3286d0259e8f6ff22b" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/f/f7/Mekansm_icon.png/45px-Mekansm_icon.png?version=1b61342ae4b10a3286d0259e8f6ff22b 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/f/f7/Mekansm_icon.png/60px-Mekansm_icon.png?version=1b61342ae4b10a3286d0259e8f6ff22b 2x" width="30"/>
    </a>
    <a href="/Mekansm" title="Mekansm">
     Mekansm
@@ -3264,7 +3319,7 @@ document.head.appendChild(script);
  <li>
   <span style="white-space:nowrap">
    <a href="/Aghanim%27s_Scepter" title="Aghanim's Scepter">
-    <img alt="Aghanim's Scepter icon.png" height="22" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/0/07/Aghanim%27s_Scepter_icon.png/30px-Aghanim%27s_Scepter_icon.png?version=edd1c0d7d3c00a8233897e53a0011edd" width="30"/>
+    <img alt="Aghanim's Scepter icon.png" height="22" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/0/07/Aghanim%27s_Scepter_icon.png/30px-Aghanim%27s_Scepter_icon.png?version=edd1c0d7d3c00a8233897e53a0011edd" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/0/07/Aghanim%27s_Scepter_icon.png/45px-Aghanim%27s_Scepter_icon.png?version=edd1c0d7d3c00a8233897e53a0011edd 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/0/07/Aghanim%27s_Scepter_icon.png/60px-Aghanim%27s_Scepter_icon.png?version=edd1c0d7d3c00a8233897e53a0011edd 2x" width="30"/>
    </a>
    <a href="/Aghanim%27s_Scepter" title="Aghanim's Scepter">
     Aghanim's Scepter
@@ -3273,27 +3328,18 @@ document.head.appendChild(script);
   unlocks a new ability,
   <span style="white-space: nowrap;">
    <a href="/Earth_Spirit#Enchant_Remnant" title="Earth Spirit#Enchant Remnant">
-    <img alt="Enchant Remnant icon.png" height="16" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/74/Enchant_Remnant_icon.png/16px-Enchant_Remnant_icon.png?version=80a8fcae4e9681f0d4fba94662f86513" width="16"/>
+    <img alt="Enchant Remnant icon.png" height="16" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/74/Enchant_Remnant_icon.png/16px-Enchant_Remnant_icon.png?version=80a8fcae4e9681f0d4fba94662f86513" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/74/Enchant_Remnant_icon.png/24px-Enchant_Remnant_icon.png?version=80a8fcae4e9681f0d4fba94662f86513 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/74/Enchant_Remnant_icon.png/32px-Enchant_Remnant_icon.png?version=80a8fcae4e9681f0d4fba94662f86513 2x" width="16"/>
    </a>
    <a href="/Earth_Spirit#Enchant_Remnant" title="Earth Spirit">
     Enchant Remnant
    </a>
   </span>
-  ​, which greatly increases Earth Spirit's ability to disable enemies, save teammates, and initiate during teamfights and ganks. It also augments
-  <span style="white-space: nowrap;">
-   <a href="/Earth_Spirit#Geomagnetic_Grip" title="Earth Spirit#Geomagnetic Grip">
-    <img alt="Geomagnetic Grip icon.png" height="16" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/e/e8/Geomagnetic_Grip_icon.png/16px-Geomagnetic_Grip_icon.png?version=4aa1c655407e7afff07391fbc8988b72" width="16"/>
-   </a>
-   <a href="/Earth_Spirit#Geomagnetic_Grip" title="Earth Spirit">
-    Geomagnetic Grip
-   </a>
-  </span>
-  ​ so that it can be cast on allied heroes.
+  , which greatly increases Earth Spirit's ability to disable enemies, save teammates, and initiate during teamfights and ganks.
  </li>
  <li>
   <span style="white-space:nowrap">
    <a href="/Orb_of_Venom" title="Orb of Venom">
-    <img alt="Orb of Venom icon.png" height="22" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/3/35/Orb_of_Venom_icon.png/30px-Orb_of_Venom_icon.png?version=106f3a49fbbe70712b165577d1a908e4" width="30"/>
+    <img alt="Orb of Venom icon.png" height="22" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/3/35/Orb_of_Venom_icon.png/30px-Orb_of_Venom_icon.png?version=106f3a49fbbe70712b165577d1a908e4" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/3/35/Orb_of_Venom_icon.png/45px-Orb_of_Venom_icon.png?version=106f3a49fbbe70712b165577d1a908e4 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/3/35/Orb_of_Venom_icon.png/60px-Orb_of_Venom_icon.png?version=106f3a49fbbe70712b165577d1a908e4 2x" width="30"/>
    </a>
    <a href="/Orb_of_Venom" title="Orb of Venom">
     Orb of Venom
@@ -3304,7 +3350,7 @@ document.head.appendChild(script);
  <li>
   <span style="white-space:nowrap">
    <a href="/Glimmer_Cape" title="Glimmer Cape">
-    <img alt="Glimmer Cape icon.png" height="22" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/c/ce/Glimmer_Cape_icon.png/30px-Glimmer_Cape_icon.png?version=d7dc9dea9b04d5c9832a8e3f176a39ab" width="30"/>
+    <img alt="Glimmer Cape icon.png" height="22" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/c/ce/Glimmer_Cape_icon.png/30px-Glimmer_Cape_icon.png?version=d7dc9dea9b04d5c9832a8e3f176a39ab" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/c/ce/Glimmer_Cape_icon.png/45px-Glimmer_Cape_icon.png?version=d7dc9dea9b04d5c9832a8e3f176a39ab 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/c/ce/Glimmer_Cape_icon.png/60px-Glimmer_Cape_icon.png?version=d7dc9dea9b04d5c9832a8e3f176a39ab 2x" width="30"/>
    </a>
    <a href="/Glimmer_Cape" title="Glimmer Cape">
     Glimmer Cape
@@ -3315,7 +3361,7 @@ document.head.appendChild(script);
  <li>
   <span style="white-space:nowrap">
    <a href="/Aether_Lens" title="Aether Lens">
-    <img alt="Aether Lens icon.png" height="22" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/d/d4/Aether_Lens_icon.png/30px-Aether_Lens_icon.png?version=959ff95448a5590e5488cc6f4dea98f2" width="30"/>
+    <img alt="Aether Lens icon.png" height="22" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/d/d4/Aether_Lens_icon.png/30px-Aether_Lens_icon.png?version=959ff95448a5590e5488cc6f4dea98f2" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/d/d4/Aether_Lens_icon.png/45px-Aether_Lens_icon.png?version=959ff95448a5590e5488cc6f4dea98f2 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/d/d4/Aether_Lens_icon.png/60px-Aether_Lens_icon.png?version=959ff95448a5590e5488cc6f4dea98f2 2x" width="30"/>
    </a>
    <a href="/Aether_Lens" title="Aether Lens">
     Aether Lens
@@ -3326,7 +3372,7 @@ document.head.appendChild(script);
  <li>
   <span style="white-space:nowrap">
    <a href="/Eul%27s_Scepter_of_Divinity" title="Eul's Scepter of Divinity">
-    <img alt="Eul's Scepter of Divinity icon.png" height="22" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/8/80/Eul%27s_Scepter_of_Divinity_icon.png/30px-Eul%27s_Scepter_of_Divinity_icon.png?version=d017146c9df0d36680d0ce570eca7ca8" width="30"/>
+    <img alt="Eul's Scepter of Divinity icon.png" height="22" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/8/80/Eul%27s_Scepter_of_Divinity_icon.png/30px-Eul%27s_Scepter_of_Divinity_icon.png?version=d017146c9df0d36680d0ce570eca7ca8" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/8/80/Eul%27s_Scepter_of_Divinity_icon.png/45px-Eul%27s_Scepter_of_Divinity_icon.png?version=d017146c9df0d36680d0ce570eca7ca8 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/8/80/Eul%27s_Scepter_of_Divinity_icon.png/60px-Eul%27s_Scepter_of_Divinity_icon.png?version=d017146c9df0d36680d0ce570eca7ca8 2x" width="30"/>
    </a>
    <a href="/Eul%27s_Scepter_of_Divinity" title="Eul's Scepter of Divinity">
     Eul's Scepter of Divinity
@@ -3341,7 +3387,7 @@ document.head.appendChild(script);
  <li>
   <span style="white-space:nowrap">
    <a href="/Solar_Crest" title="Solar Crest">
-    <img alt="Solar Crest icon.png" height="22" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/3/36/Solar_Crest_icon.png/30px-Solar_Crest_icon.png?version=c1111e9e2d0a49081e02a6a1c2fee472" width="30"/>
+    <img alt="Solar Crest icon.png" height="22" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/3/36/Solar_Crest_icon.png/30px-Solar_Crest_icon.png?version=c1111e9e2d0a49081e02a6a1c2fee472" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/3/36/Solar_Crest_icon.png/45px-Solar_Crest_icon.png?version=c1111e9e2d0a49081e02a6a1c2fee472 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/3/36/Solar_Crest_icon.png/60px-Solar_Crest_icon.png?version=c1111e9e2d0a49081e02a6a1c2fee472 2x" width="30"/>
    </a>
    <a href="/Solar_Crest" title="Solar Crest">
     Solar Crest
@@ -3352,7 +3398,7 @@ document.head.appendChild(script);
  <li>
   <span style="white-space:nowrap">
    <a href="/Crimson_Guard" title="Crimson Guard">
-    <img alt="Crimson Guard icon.png" height="22" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/70/Crimson_Guard_icon.png/30px-Crimson_Guard_icon.png?version=17020d6e411cecba5a3901102dbcd382" width="30"/>
+    <img alt="Crimson Guard icon.png" height="22" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/70/Crimson_Guard_icon.png/30px-Crimson_Guard_icon.png?version=17020d6e411cecba5a3901102dbcd382" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/70/Crimson_Guard_icon.png/45px-Crimson_Guard_icon.png?version=17020d6e411cecba5a3901102dbcd382 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/70/Crimson_Guard_icon.png/60px-Crimson_Guard_icon.png?version=17020d6e411cecba5a3901102dbcd382 2x" width="30"/>
    </a>
    <a href="/Crimson_Guard" title="Crimson Guard">
     Crimson Guard
@@ -3363,7 +3409,7 @@ document.head.appendChild(script);
  <li>
   <span style="white-space:nowrap">
    <a href="/Lotus_Orb" title="Lotus Orb">
-    <img alt="Lotus Orb icon.png" height="22" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/c/c8/Lotus_Orb_icon.png/30px-Lotus_Orb_icon.png?version=cbebcd291490377c8028b404b7837b0d" width="30"/>
+    <img alt="Lotus Orb icon.png" height="22" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/c/c8/Lotus_Orb_icon.png/30px-Lotus_Orb_icon.png?version=cbebcd291490377c8028b404b7837b0d" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/c/c8/Lotus_Orb_icon.png/45px-Lotus_Orb_icon.png?version=cbebcd291490377c8028b404b7837b0d 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/c/c8/Lotus_Orb_icon.png/60px-Lotus_Orb_icon.png?version=cbebcd291490377c8028b404b7837b0d 2x" width="30"/>
    </a>
    <a href="/Lotus_Orb" title="Lotus Orb">
     Lotus Orb
@@ -3374,7 +3420,7 @@ document.head.appendChild(script);
  <li>
   <span style="white-space:nowrap">
    <a href="/Guardian_Greaves" title="Guardian Greaves">
-    <img alt="Guardian Greaves icon.png" height="22" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/9/94/Guardian_Greaves_icon.png/30px-Guardian_Greaves_icon.png?version=b71f31cb2c8b8f2ef5c49c67e3cab586" width="30"/>
+    <img alt="Guardian Greaves icon.png" height="22" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/9/94/Guardian_Greaves_icon.png/30px-Guardian_Greaves_icon.png?version=b71f31cb2c8b8f2ef5c49c67e3cab586" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/9/94/Guardian_Greaves_icon.png/45px-Guardian_Greaves_icon.png?version=b71f31cb2c8b8f2ef5c49c67e3cab586 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/9/94/Guardian_Greaves_icon.png/60px-Guardian_Greaves_icon.png?version=b71f31cb2c8b8f2ef5c49c67e3cab586 2x" width="30"/>
    </a>
    <a href="/Guardian_Greaves" title="Guardian Greaves">
     Guardian Greaves
@@ -3391,14 +3437,8 @@ document.head.appendChild(script);
   <span class="mw-editsection-bracket">
    [
   </span>
-  <a class="mw-editsection-visualeditor" href="/index.php?title=Earth_Spirit&amp;veaction=edit&amp;vesection=5" title="Edit section: Gameplay">
-   edit
-  </a>
-  <span class="mw-editsection-divider">
-   |
-  </span>
   <a href="/index.php?title=Earth_Spirit&amp;action=edit&amp;section=5" title="Edit section: Gameplay">
-   edit source
+   edit
   </a>
   <span class="mw-editsection-bracket">
    ]
@@ -3435,14 +3475,8 @@ document.head.appendChild(script);
   <span class="mw-editsection-bracket">
    [
   </span>
-  <a class="mw-editsection-visualeditor" href="/index.php?title=Earth_Spirit&amp;veaction=edit&amp;vesection=6" title="Edit section: Audio">
-   edit
-  </a>
-  <span class="mw-editsection-divider">
-   |
-  </span>
   <a href="/index.php?title=Earth_Spirit&amp;action=edit&amp;section=6" title="Edit section: Audio">
-   edit source
+   edit
   </a>
   <span class="mw-editsection-bracket">
    ]
@@ -3477,14 +3511,8 @@ document.head.appendChild(script);
   <span class="mw-editsection-bracket">
    [
   </span>
-  <a class="mw-editsection-visualeditor" href="/index.php?title=Earth_Spirit&amp;veaction=edit&amp;vesection=7" title="Edit section: History">
-   edit
-  </a>
-  <span class="mw-editsection-divider">
-   |
-  </span>
   <a href="/index.php?title=Earth_Spirit&amp;action=edit&amp;section=7" title="Edit section: History">
-   edit source
+   edit
   </a>
   <span class="mw-editsection-bracket">
    ]
@@ -3528,14 +3556,8 @@ document.head.appendChild(script);
   <span class="mw-editsection-bracket">
    [
   </span>
-  <a class="mw-editsection-visualeditor" href="/index.php?title=Earth_Spirit&amp;veaction=edit&amp;vesection=8" title="Edit section: Equipment">
-   edit
-  </a>
-  <span class="mw-editsection-divider">
-   |
-  </span>
   <a href="/index.php?title=Earth_Spirit&amp;action=edit&amp;section=8" title="Edit section: Equipment">
-   edit source
+   edit
   </a>
   <span class="mw-editsection-bracket">
    ]
@@ -3576,13 +3598,12 @@ document.head.appendChild(script);
       <span class="" style="font-size:110%;">
        <span style="white-space:nowrap">
         <a href="/Earth_Spirit" title="Earth Spirit">
-         <img alt="Earth Spirit icon.png" height="32" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/b/be/Earth_Spirit_icon.png?version=2b7bae03fbd27e9a5b8baee0a63e1bdb" width="32"/>
+         <img alt="Earth Spirit minimap icon.png" height="32" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/1/1f/Earth_Spirit_minimap_icon.png?version=78f158ed2fd5f4bc90e197923614565b" width="32"/>
         </a>
         <strong class="selflink">
          Earth Spirit
         </strong>
        </span>
-       ​
        <a href="/Equipment" title="Equipment">
         Equipment
        </a>
@@ -3607,7 +3628,7 @@ document.head.appendChild(script);
        <div class="cosmetic-label" style="width:200px;">
         <div style="box-shadow:0px 0px 2px 4px #4b69ff;">
          <a href="/Bedrock_Serenity" title="Bedrock Serenity">
-          <img alt="Bedrock Serenity" height="133" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/b/bc/Cosmetic_icon_Bedrock_Serenity.png/200px-Cosmetic_icon_Bedrock_Serenity.png?version=dc1b657142383baffe370724637a61f3" width="200"/>
+          <img alt="Bedrock Serenity" height="133" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/b/bc/Cosmetic_icon_Bedrock_Serenity.png/200px-Cosmetic_icon_Bedrock_Serenity.png?version=881d3526779cc4df159f8addeee8dc17" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/b/bc/Cosmetic_icon_Bedrock_Serenity.png/300px-Cosmetic_icon_Bedrock_Serenity.png?version=881d3526779cc4df159f8addeee8dc17 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/b/bc/Cosmetic_icon_Bedrock_Serenity.png/400px-Cosmetic_icon_Bedrock_Serenity.png?version=881d3526779cc4df159f8addeee8dc17 2x" width="200"/>
          </a>
         </div>
         <a href="/Bedrock_Serenity" title="Bedrock Serenity">
@@ -3617,7 +3638,7 @@ document.head.appendChild(script);
        <div class="cosmetic-label" style="width:200px;">
         <div style="box-shadow:0px 0px 2px 4px #8847ff;">
          <a href="/Strength_of_the_Demon_Stone_Set" title="Strength of the Demon Stone Set">
-          <img alt="Strength of the Demon Stone Set" height="133" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/3/3f/Cosmetic_icon_Strength_of_the_Demon_Stone_Set.png/200px-Cosmetic_icon_Strength_of_the_Demon_Stone_Set.png?version=2a4ecc1e508b756290c099426350c8a5" width="200"/>
+          <img alt="Strength of the Demon Stone Set" height="133" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/3/3f/Cosmetic_icon_Strength_of_the_Demon_Stone_Set.png/200px-Cosmetic_icon_Strength_of_the_Demon_Stone_Set.png?version=2a4ecc1e508b756290c099426350c8a5" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/3/3f/Cosmetic_icon_Strength_of_the_Demon_Stone_Set.png/300px-Cosmetic_icon_Strength_of_the_Demon_Stone_Set.png?version=2a4ecc1e508b756290c099426350c8a5 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/3/3f/Cosmetic_icon_Strength_of_the_Demon_Stone_Set.png/400px-Cosmetic_icon_Strength_of_the_Demon_Stone_Set.png?version=2a4ecc1e508b756290c099426350c8a5 2x" width="200"/>
          </a>
         </div>
         <a href="/Strength_of_the_Demon_Stone_Set" title="Strength of the Demon Stone Set">
@@ -3625,9 +3646,19 @@ document.head.appendChild(script);
         </a>
        </div>
        <div class="cosmetic-label" style="width:200px;">
+        <div style="box-shadow:0px 0px 2px 4px #4b69ff;">
+         <a href="/The_Jade_General" title="The Jade General">
+          <img alt="The Jade General" height="133" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/b/b1/Cosmetic_icon_The_Jade_General.png/200px-Cosmetic_icon_The_Jade_General.png?version=9b532172a62ae99bb791b5176267ca2c" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/b/b1/Cosmetic_icon_The_Jade_General.png/300px-Cosmetic_icon_The_Jade_General.png?version=9b532172a62ae99bb791b5176267ca2c 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/b/b1/Cosmetic_icon_The_Jade_General.png/400px-Cosmetic_icon_The_Jade_General.png?version=9b532172a62ae99bb791b5176267ca2c 2x" width="200"/>
+         </a>
+        </div>
+        <a href="/The_Jade_General" title="The Jade General">
+         The Jade General
+        </a>
+       </div>
+       <div class="cosmetic-label" style="width:200px;">
         <div style="box-shadow:0px 0px 2px 4px #8847ff;">
          <a href="/Vanquishing_Demons_General" title="Vanquishing Demons General">
-          <img alt="Vanquishing Demons General" height="133" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/9/90/Cosmetic_icon_Vanquishing_Demons_General.png/200px-Cosmetic_icon_Vanquishing_Demons_General.png?version=bd17b40976cd01a2c1a110aa8250d3ea" width="200"/>
+          <img alt="Vanquishing Demons General" height="133" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/9/90/Cosmetic_icon_Vanquishing_Demons_General.png/200px-Cosmetic_icon_Vanquishing_Demons_General.png?version=bd17b40976cd01a2c1a110aa8250d3ea" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/9/90/Cosmetic_icon_Vanquishing_Demons_General.png/300px-Cosmetic_icon_Vanquishing_Demons_General.png?version=bd17b40976cd01a2c1a110aa8250d3ea 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/9/90/Cosmetic_icon_Vanquishing_Demons_General.png/400px-Cosmetic_icon_Vanquishing_Demons_General.png?version=bd17b40976cd01a2c1a110aa8250d3ea 2x" width="200"/>
          </a>
         </div>
         <a href="/Vanquishing_Demons_General" title="Vanquishing Demons General">
@@ -3650,7 +3681,7 @@ document.head.appendChild(script);
        <div class="cosmetic-label" style="width:110px;">
         <div style="box-shadow:0px 0px 2px 4px #4b69ff;">
          <a href="/Demon_Vanquisher" title="Demon Vanquisher">
-          <img alt="Demon Vanquisher" height="73" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/3/30/Cosmetic_icon_Demon_Vanquisher.png/110px-Cosmetic_icon_Demon_Vanquisher.png?version=83bda27dd9a054410592d8d970998722" width="110"/>
+          <img alt="Demon Vanquisher" height="73" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/3/30/Cosmetic_icon_Demon_Vanquisher.png/110px-Cosmetic_icon_Demon_Vanquisher.png?version=83bda27dd9a054410592d8d970998722" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/3/30/Cosmetic_icon_Demon_Vanquisher.png/165px-Cosmetic_icon_Demon_Vanquisher.png?version=83bda27dd9a054410592d8d970998722 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/3/30/Cosmetic_icon_Demon_Vanquisher.png/220px-Cosmetic_icon_Demon_Vanquisher.png?version=83bda27dd9a054410592d8d970998722 2x" width="110"/>
          </a>
         </div>
         <a href="/Demon_Vanquisher" title="Demon Vanquisher">
@@ -3660,7 +3691,7 @@ document.head.appendChild(script);
        <div class="cosmetic-label" style="width:110px;">
         <div style="box-shadow:0px 0px 2px 4px #b28a33;">
          <a href="/Jade_Reckoning" title="Jade Reckoning">
-          <img alt="Jade Reckoning" height="73" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/a/ac/Cosmetic_icon_Jade_Reckoning.png/110px-Cosmetic_icon_Jade_Reckoning.png?version=390e2f904c18cad296fd6f8521b364bc" width="110"/>
+          <img alt="Jade Reckoning" height="73" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/a/ac/Cosmetic_icon_Jade_Reckoning.png/110px-Cosmetic_icon_Jade_Reckoning.png?version=390e2f904c18cad296fd6f8521b364bc" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/a/ac/Cosmetic_icon_Jade_Reckoning.png/165px-Cosmetic_icon_Jade_Reckoning.png?version=390e2f904c18cad296fd6f8521b364bc 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/a/ac/Cosmetic_icon_Jade_Reckoning.png/220px-Cosmetic_icon_Jade_Reckoning.png?version=390e2f904c18cad296fd6f8521b364bc 2x" width="110"/>
          </a>
         </div>
         <a href="/Jade_Reckoning" title="Jade Reckoning">
@@ -3670,7 +3701,7 @@ document.head.appendChild(script);
        <div class="cosmetic-label" style="width:110px;">
         <div style="box-shadow:0px 0px 2px 4px #4b69ff;">
          <a href="/Stone_Dragon_Soul" title="Stone Dragon Soul">
-          <img alt="Stone Dragon Soul" height="73" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/c/c9/Cosmetic_icon_Stone_Dragon_Soul.png/110px-Cosmetic_icon_Stone_Dragon_Soul.png?version=ef077a1815d9bbe954a16c8279b23007" width="110"/>
+          <img alt="Stone Dragon Soul" height="73" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/c/c9/Cosmetic_icon_Stone_Dragon_Soul.png/110px-Cosmetic_icon_Stone_Dragon_Soul.png?version=ef077a1815d9bbe954a16c8279b23007" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/c/c9/Cosmetic_icon_Stone_Dragon_Soul.png/165px-Cosmetic_icon_Stone_Dragon_Soul.png?version=ef077a1815d9bbe954a16c8279b23007 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/c/c9/Cosmetic_icon_Stone_Dragon_Soul.png/220px-Cosmetic_icon_Stone_Dragon_Soul.png?version=ef077a1815d9bbe954a16c8279b23007 2x" width="110"/>
          </a>
         </div>
         <a href="/Stone_Dragon_Soul" title="Stone Dragon Soul">
@@ -3692,14 +3723,8 @@ document.head.appendChild(script);
   <span class="mw-editsection-bracket">
    [
   </span>
-  <a class="mw-editsection-visualeditor" href="/index.php?title=Earth_Spirit&amp;veaction=edit&amp;vesection=9" title="Edit section: Trivia">
-   edit
-  </a>
-  <span class="mw-editsection-divider">
-   |
-  </span>
   <a href="/index.php?title=Earth_Spirit&amp;action=edit&amp;section=9" title="Edit section: Trivia">
-   edit source
+   edit
   </a>
   <span class="mw-editsection-bracket">
    ]
@@ -3711,31 +3736,31 @@ document.head.appendChild(script);
   Like
   <span style="white-space:nowrap">
    <a href="/Brewmaster" title="Brewmaster">
-    <img alt="Brewmaster icon.png" height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/1/1e/Brewmaster_icon.png/20px-Brewmaster_icon.png?version=ec5284408989969e46e2cac3da765922" width="20"/>
+    <img alt="Brewmaster minimap icon.png" height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/9/9b/Brewmaster_minimap_icon.png/20px-Brewmaster_minimap_icon.png?version=d7d502850d4f3a690617c025d402568b" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/9/9b/Brewmaster_minimap_icon.png/30px-Brewmaster_minimap_icon.png?version=d7d502850d4f3a690617c025d402568b 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/9/9b/Brewmaster_minimap_icon.png?version=d7d502850d4f3a690617c025d402568b 2x" width="20"/>
    </a>
    <a href="/Brewmaster" title="Brewmaster">
     Brewmaster
    </a>
   </span>
-  ​,
+  ,
   <span style="white-space:nowrap">
    <a href="/Storm_Spirit" title="Storm Spirit">
-    <img alt="Storm Spirit icon.png" height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/1/13/Storm_Spirit_icon.png/20px-Storm_Spirit_icon.png?version=b55c1c4d4671b0218148dda658eab4c1" width="20"/>
+    <img alt="Storm Spirit minimap icon.png" height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/d/d6/Storm_Spirit_minimap_icon.png/20px-Storm_Spirit_minimap_icon.png?version=3b855db456ae450de2fa27e9bf4a2757" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/d/d6/Storm_Spirit_minimap_icon.png/30px-Storm_Spirit_minimap_icon.png?version=3b855db456ae450de2fa27e9bf4a2757 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/d/d6/Storm_Spirit_minimap_icon.png?version=3b855db456ae450de2fa27e9bf4a2757 2x" width="20"/>
    </a>
    <a href="/Storm_Spirit" title="Storm Spirit">
     Storm Spirit
    </a>
   </span>
-  ​ and
+  and
   <span style="white-space:nowrap">
    <a href="/Ember_Spirit" title="Ember Spirit">
-    <img alt="Ember Spirit icon.png" height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/9/91/Ember_Spirit_icon.png/20px-Ember_Spirit_icon.png?version=547bf78f4d95155e6958870cd456f232" width="20"/>
+    <img alt="Ember Spirit minimap icon.png" height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/f/fc/Ember_Spirit_minimap_icon.png/20px-Ember_Spirit_minimap_icon.png?version=40326f4e6571a2d300c52a83578caf85" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/f/fc/Ember_Spirit_minimap_icon.png/30px-Ember_Spirit_minimap_icon.png?version=40326f4e6571a2d300c52a83578caf85 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/f/fc/Ember_Spirit_minimap_icon.png?version=40326f4e6571a2d300c52a83578caf85 2x" width="20"/>
    </a>
    <a href="/Ember_Spirit" title="Ember Spirit">
     Ember Spirit
    </a>
   </span>
-  ​, Earth Spirit was a Pandaren in DotA. However, he was re-skinned to avoid copyright issues with
+  , Earth Spirit was a Pandaren in DotA. However, he was re-skinned to avoid copyright issues with
   <i>
    Blizzard Entertainment
   </i>
@@ -3798,14 +3823,8 @@ document.head.appendChild(script);
   <span class="mw-editsection-bracket">
    [
   </span>
-  <a class="mw-editsection-visualeditor" href="/index.php?title=Earth_Spirit&amp;veaction=edit&amp;vesection=10" title="Edit section: Gallery">
-   edit
-  </a>
-  <span class="mw-editsection-divider">
-   |
-  </span>
   <a href="/index.php?title=Earth_Spirit&amp;action=edit&amp;section=10" title="Edit section: Gallery">
-   edit source
+   edit
   </a>
   <span class="mw-editsection-bracket">
    ]
@@ -3818,7 +3837,7 @@ document.head.appendChild(script);
    <div class="thumb" style="width: 150px;">
     <div style="margin:15px auto;">
      <a class="image" href="/File:Earth_Spirit_Concept_Art1.jpg">
-      <img alt="" height="120" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/c/c8/Earth_Spirit_Concept_Art1.jpg/110px-Earth_Spirit_Concept_Art1.jpg.png?version=dd44c899966195537efce90696a7596a" width="110"/>
+      <img alt="" height="120" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/c/c8/Earth_Spirit_Concept_Art1.jpg/110px-Earth_Spirit_Concept_Art1.jpg.png?version=dd44c899966195537efce90696a7596a" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/c/c8/Earth_Spirit_Concept_Art1.jpg/164px-Earth_Spirit_Concept_Art1.jpg.png?version=dd44c899966195537efce90696a7596a 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/c/c8/Earth_Spirit_Concept_Art1.jpg/219px-Earth_Spirit_Concept_Art1.jpg.png?version=dd44c899966195537efce90696a7596a 2x" width="110"/>
      </a>
     </div>
    </div>
@@ -3834,7 +3853,7 @@ document.head.appendChild(script);
    <div class="thumb" style="width: 150px;">
     <div style="margin:15px auto;">
      <a class="image" href="/File:Earth_Spirit_Concept_Art2.jpg">
-      <img alt="" height="120" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/5/5b/Earth_Spirit_Concept_Art2.jpg/117px-Earth_Spirit_Concept_Art2.jpg.png?version=4899651aff10af7912dcc2f77b09fed7" width="117"/>
+      <img alt="" height="120" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/5/5b/Earth_Spirit_Concept_Art2.jpg/117px-Earth_Spirit_Concept_Art2.jpg.png?version=4899651aff10af7912dcc2f77b09fed7" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/5/5b/Earth_Spirit_Concept_Art2.jpg/175px-Earth_Spirit_Concept_Art2.jpg.png?version=4899651aff10af7912dcc2f77b09fed7 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/5/5b/Earth_Spirit_Concept_Art2.jpg/234px-Earth_Spirit_Concept_Art2.jpg.png?version=4899651aff10af7912dcc2f77b09fed7 2x" width="117"/>
      </a>
     </div>
    </div>
@@ -3850,7 +3869,7 @@ document.head.appendChild(script);
    <div class="thumb" style="width: 150px;">
     <div style="margin:15px auto;">
      <a class="image" href="/File:Earth_Spirit_Concept_Art3.jpg">
-      <img alt="" height="120" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/3/37/Earth_Spirit_Concept_Art3.jpg/120px-Earth_Spirit_Concept_Art3.jpg.png?version=3c46a11b81ad70174bf94c58221544b8" width="120"/>
+      <img alt="" height="120" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/3/37/Earth_Spirit_Concept_Art3.jpg/120px-Earth_Spirit_Concept_Art3.jpg.png?version=3c46a11b81ad70174bf94c58221544b8" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/3/37/Earth_Spirit_Concept_Art3.jpg/180px-Earth_Spirit_Concept_Art3.jpg.png?version=3c46a11b81ad70174bf94c58221544b8 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/3/37/Earth_Spirit_Concept_Art3.jpg/240px-Earth_Spirit_Concept_Art3.jpg.png?version=3c46a11b81ad70174bf94c58221544b8 2x" width="120"/>
      </a>
     </div>
    </div>
@@ -3866,7 +3885,7 @@ document.head.appendChild(script);
    <div class="thumb" style="width: 150px;">
     <div style="margin:35px auto;">
      <a class="image" href="/File:Stone_Remnant.png">
-      <img alt="" height="80" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/a/a7/Stone_Remnant.png/120px-Stone_Remnant.png?version=4a4b44ead9bf72929ed03a503a337572" width="120"/>
+      <img alt="" height="80" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/a/a7/Stone_Remnant.png/120px-Stone_Remnant.png?version=4a4b44ead9bf72929ed03a503a337572" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/a/a7/Stone_Remnant.png/180px-Stone_Remnant.png?version=4a4b44ead9bf72929ed03a503a337572 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/a/a7/Stone_Remnant.png/240px-Stone_Remnant.png?version=4a4b44ead9bf72929ed03a503a337572 2x" width="120"/>
      </a>
     </div>
    </div>
@@ -3882,7 +3901,7 @@ document.head.appendChild(script);
    <div class="thumb" style="width: 150px;">
     <div style="margin:51px auto;">
      <a class="image" href="/File:Earth_Spirit_ability_icon_progress.png">
-      <img alt="" height="48" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/71/Earth_Spirit_ability_icon_progress.png/120px-Earth_Spirit_ability_icon_progress.png?version=12f37f7309fc0a48472bc48df0880fb4" width="120"/>
+      <img alt="" height="48" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/71/Earth_Spirit_ability_icon_progress.png/120px-Earth_Spirit_ability_icon_progress.png?version=12f37f7309fc0a48472bc48df0880fb4" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/71/Earth_Spirit_ability_icon_progress.png/180px-Earth_Spirit_ability_icon_progress.png?version=12f37f7309fc0a48472bc48df0880fb4 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/71/Earth_Spirit_ability_icon_progress.png/240px-Earth_Spirit_ability_icon_progress.png?version=12f37f7309fc0a48472bc48df0880fb4 2x" width="120"/>
      </a>
     </div>
    </div>
@@ -3902,7 +3921,7 @@ document.head.appendChild(script);
    <div class="thumb" style="width: 150px;">
     <div style="margin:15px auto;">
      <a class="image" href="/File:Earth_Spirit_hero_icon_progress.png">
-      <img alt="" height="120" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/d/d3/Earth_Spirit_hero_icon_progress.png/106px-Earth_Spirit_hero_icon_progress.png?version=c97724017d844bf230c32343991d3177" width="106"/>
+      <img alt="" height="120" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/d/d3/Earth_Spirit_hero_icon_progress.png/106px-Earth_Spirit_hero_icon_progress.png?version=c97724017d844bf230c32343991d3177" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/d/d3/Earth_Spirit_hero_icon_progress.png/159px-Earth_Spirit_hero_icon_progress.png?version=c97724017d844bf230c32343991d3177 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/d/d3/Earth_Spirit_hero_icon_progress.png/212px-Earth_Spirit_hero_icon_progress.png?version=c97724017d844bf230c32343991d3177 2x" width="106"/>
      </a>
     </div>
    </div>
@@ -3922,14 +3941,8 @@ document.head.appendChild(script);
   <span class="mw-editsection-bracket">
    [
   </span>
-  <a class="mw-editsection-visualeditor" href="/index.php?title=Earth_Spirit&amp;veaction=edit&amp;vesection=11" title="Edit section: References">
-   edit
-  </a>
-  <span class="mw-editsection-divider">
-   |
-  </span>
   <a href="/index.php?title=Earth_Spirit&amp;action=edit&amp;section=11" title="Edit section: References">
-   edit source
+   edit
   </a>
   <span class="mw-editsection-bracket">
    ]
@@ -3938,38 +3951,39 @@ document.head.appendChild(script);
 </h2>
 <!-- 
 NewPP limit report
-Cached time: 20170207214726
+Cached time: 20170608190012
 Cache expiry: 86400
 Dynamic content: false
 [SMW] In‐text annotation parser time: 0.001 seconds
-CPU time usage: 1.760 seconds
-Real time usage: 2.913 seconds
-Preprocessor visited node count: 17723/1000000
-Preprocessor generated node count: 56066/1000000
-Post‐expand include size: 162064/2097152 bytes
-Template argument size: 68878/2097152 bytes
-Highest expansion depth: 18/40
-Expensive parser function count: 0/99
+CPU time usage: 2.420 seconds
+Real time usage: 3.974 seconds
+Preprocessor visited node count: 9959/1000000
+Preprocessor generated node count: 49653/1000000
+Post‐expand include size: 151295/2097152 bytes
+Template argument size: 67903/2097152 bytes
+Highest expansion depth: 13/40
+Expensive parser function count: 1/99
+ExtLoops count: 47/1000
 -->
 <!-- 
 Transclusion expansion time report (%,ms,calls,template)
-100.00% 2274.293      1 - -total
- 44.07% 1002.181      6 - Template:Ability
- 23.34%  530.863     33 - Template:I
- 15.67%  356.478     22 - Template:A
- 12.19%  277.343      1 - Template:Equipment_Earth_Spirit
- 12.08%  274.699      1 - Template:Equipment
- 11.82%  268.870      1 - Template:Navbox
- 11.77%  267.718     33 - Template:Item_link
-  9.31%  211.643    191 - Template:If_lang
-  9.24%  210.122     33 - Template:Item_name
+100.00% 3132.445      1 - -total
+ 50.25% 1574.003      6 - Template:Ability
+ 21.42%  671.115     22 - Template:A
+ 15.62%  489.415     33 - Template:I
+ 12.14%  380.260      1 - Template:Hero_infobox
+ 11.38%  356.481      1 - Template:Equipment_Earth_Spirit
+ 11.23%  351.849      1 - Template:Equipment
+ 11.05%  346.055      1 - Template:Navbox
+  4.41%  138.066      7 - Template:Cosmetic
+  2.96%   92.743     26 - Template:Color
 -->
-<!-- Saved in parser cache with key dota2_gamepedia:pcache:idhash:83980-0!*!0!default!!en!5!* and timestamp 20170207214723 and revision id 1445560
+<!-- Saved in parser cache with key dota2_gamepedia:pcache:idhash:83980-0!*!0!default!!en!5!* and timestamp 20170608190008 and revision id 1526641
  -->
 <div class="printfooter">
  Retrieved from "
- <a dir="ltr" href="http://dota2.gamepedia.com/index.php?title=Earth_Spirit&amp;oldid=1445560">
-  http://dota2.gamepedia.com/index.php?title=Earth_Spirit&amp;oldid=1445560
+ <a dir="ltr" href="https://dota2.gamepedia.com/index.php?title=Earth_Spirit&amp;oldid=1526641">
+  https://dota2.gamepedia.com/index.php?title=Earth_Spirit&amp;oldid=1526641
  </a>
  "
 </div>
@@ -4038,7 +4052,7 @@ Transclusion expansion time report (%,ms,calls,template)
     (function() {
         var zergnet = document.createElement('script');
         zergnet.type = 'text/javascript'; zergnet.async = true;
-        zergnet.src = 'http://www.zergnet.com/zerg.js?id=42966';
+        zergnet.src = '//www.zergnet.com/zerg.js?id=42966';
         var znscr = document.getElementsByTagName('script')[0];
         znscr.parentNode.insertBefore(zergnet, znscr);
     })();
@@ -4128,19 +4142,19 @@ Transclusion expansion time report (%,ms,calls,template)
     </h3>
     <div class="menu">
      <div id="socialIconImages">
-      <a href="https://twitter.com/intent/tweet?text=Check+out+Earth+Spirit+on+Dota+2+Wiki+--&amp;via=CurseGamepedia&amp;url=http%3A%2F%2Fdota2.gamepedia.com%2FEarth_Spirit" target="_blank">
+      <a href="https://twitter.com/intent/tweet?text=Check+out+Earth+Spirit+on+Dota+2+Wiki+--&amp;via=CurseGamepedia&amp;url=https%3A%2F%2Fdota2.gamepedia.com%2FEarth_Spirit" target="_blank">
        <img src="/extensions/Social/images/square_icons/twitter.png"/>
       </a>
-      <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fdota2.gamepedia.com%2FEarth_Spirit" target="_blank">
+      <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdota2.gamepedia.com%2FEarth_Spirit" target="_blank">
        <img src="/extensions/Social/images/square_icons/facebook.png"/>
       </a>
-      <a href="https://plus.google.com/share?url=http%3A%2F%2Fdota2.gamepedia.com%2FEarth_Spirit" target="_blank">
+      <a href="https://plus.google.com/share?url=https%3A%2F%2Fdota2.gamepedia.com%2FEarth_Spirit" target="_blank">
        <img src="/extensions/Social/images/square_icons/googleplus.png"/>
       </a>
-      <a href="http://www.reddit.com/submit?url=http%3A%2F%2Fdota2.gamepedia.com%2FEarth_Spirit&amp;title=Check+out+Earth+Spirit+on+Dota+2+Wiki+via+%40CurseGamepedia%3A+http%3A%2F%2Fdota2.gamepedia.com%2FEarth_Spirit" target="_blank">
+      <a href="http://www.reddit.com/submit?url=https%3A%2F%2Fdota2.gamepedia.com%2FEarth_Spirit&amp;title=Check+out+Earth+Spirit+on+Dota+2+Wiki+via+%40CurseGamepedia%3A+https%3A%2F%2Fdota2.gamepedia.com%2FEarth_Spirit" target="_blank">
        <img src="/extensions/Social/images/square_icons/reddit.png"/>
       </a>
-      <a href="http://www.tumblr.com/share/link?url=http%3A%2F%2Fdota2.gamepedia.com%2FEarth_Spirit&amp;name=Dota+2+Wiki&amp;description=Check+out+Earth+Spirit+on+Dota+2+Wiki+via+%3Ca+href%3D%22https%3A%2F%2Ftwitter.com%2FCurseGamepedia%22+target%3D%22_blank%22%3E%40CurseGamepedia%3C%2Fa%3E%3A+http%3A%2F%2Fdota2.gamepedia.com%2FEarth_Spirit" target="_blank">
+      <a href="http://www.tumblr.com/share/link?url=https%3A%2F%2Fdota2.gamepedia.com%2FEarth_Spirit&amp;name=Dota+2+Wiki&amp;description=Check+out+Earth+Spirit+on+Dota+2+Wiki+via+%3Ca+href%3D%22https%3A%2F%2Ftwitter.com%2FCurseGamepedia%22+target%3D%22_blank%22%3E%40CurseGamepedia%3C%2Fa%3E%3A+https%3A%2F%2Fdota2.gamepedia.com%2FEarth_Spirit" target="_blank">
        <img src="/extensions/Social/images/square_icons/tumblr.png"/>
       </a>
      </div>
@@ -4160,17 +4174,10 @@ Transclusion expansion time report (%,ms,calls,template)
        </a>
       </span>
      </li>
-     <li id="ca-ve-edit">
-      <span>
-       <a accesskey="v" href="/index.php?title=Earth_Spirit&amp;veaction=edit" title="Edit this page [v]">
-        Edit
-       </a>
-      </span>
-     </li>
-     <li class=" collapsible" id="ca-edit">
+     <li id="ca-edit">
       <span>
        <a accesskey="e" href="/index.php?title=Earth_Spirit&amp;action=edit" title="Edit this page [e]">
-        Edit source
+        Edit
        </a>
       </span>
      </li>
@@ -4368,7 +4375,7 @@ Transclusion expansion time report (%,ms,calls,template)
       </a>
      </li>
      <li id="t-permalink">
-      <a href="/index.php?title=Earth_Spirit&amp;oldid=1445560" title="Permanent link to this revision of the page">
+      <a href="/index.php?title=Earth_Spirit&amp;oldid=1526641" title="Permanent link to this revision of the page">
        Permanent link
       </a>
      </li>
@@ -4532,12 +4539,41 @@ Transclusion expansion time report (%,ms,calls,template)
     </div>
    </div>
   </div>
+  <div aria-labelledby="p-lang-label" class="portal" id="p-lang" role="navigation">
+   <h3 id="p-lang-label">
+    In other languages
+   </h3>
+   <div class="body">
+    <ul>
+     <li class="interlanguage-link interwiki-de">
+      <a href="http://dota2-de.gamepedia.com/Earth_Spirit" hreflang="de" lang="de" title="Earth Spirit – Deutsch">
+       Deutsch
+      </a>
+     </li>
+     <li class="interlanguage-link interwiki-pt">
+      <a href="http://dota2-pt.gamepedia.com/Earth_Spirit" hreflang="pt" lang="pt" title="Earth Spirit – português">
+       Português
+      </a>
+     </li>
+     <li class="interlanguage-link interwiki-ru">
+      <a href="http://dota2-ru.gamepedia.com/Earth_Spirit" hreflang="ru" lang="ru" title="Earth Spirit – русский">
+       Русский
+      </a>
+     </li>
+     <li class="interlanguage-link interwiki-zh">
+      <a href="http://dota2-zh.gamepedia.com/%E5%A4%A7%E5%9C%B0%E4%B9%8B%E7%81%B5" hreflang="zh" lang="zh" title="大地之灵 – 中文">
+       中文
+      </a>
+     </li>
+    </ul>
+   </div>
+  </div>
  </div>
 </div>
 <div id="footer" role="contentinfo">
  <ul id="footer-info">
   <li id="footer-info-lastmod">
-   This page was last modified on 22 January 2017, at 21:47.
+   This page was last modified on 23 May 2017, at 19:03.
   </li>
   <li id="footer-info-copyright">
    Content is available under
@@ -4621,8 +4657,8 @@ Transclusion expansion time report (%,ms,calls,template)
     </a>
    </li>
    <li>
-    <a class="advertise" href="https://ghostreconwildlands.gamepedia.com">
-     Ghost Recon
+    <a class="advertise" href="https://masseffectandromeda.gamepedia.com/Mass_Effect:_Andromeda_Wiki">
+     ME:Andromeda
     </a>
    </li>
   </ul>
@@ -4648,8 +4684,8 @@ Transclusion expansion time report (%,ms,calls,template)
     </a>
    </li>
    <li>
-    <a class="about" href="http://www.hearthpwn.com/guides/1480-how-to-get-cheaper-hearthstone-packs-buy-amazon">
-     HS Packs
+    <a class="advertise" href="https://masseffectandromeda.gamepedia.com/Skill">
+     ME:A Skills
     </a>
    </li>
   </ul>
@@ -4675,8 +4711,8 @@ Transclusion expansion time report (%,ms,calls,template)
     </a>
    </li>
    <li>
-    <a class="tos" href="https://forhonor.gamepedia.com">
-     For Honor
+    <a class="advertise" href="https://zelda.gamepedia.com/Main_Page">
+     Zelda Wiki
     </a>
    </li>
   </ul>
@@ -4732,8 +4768,5 @@ _comscore.push({ c1: "2", c2: "6035118" });
 				window.wikiTags = ["action","defense of the ancients","esports","free-to-play","free to play","ftp","game:dota 2","linux","mac","pc","rts","source","steam","valve"];
 </script>
 <script>
- (window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":79});});
-</script>
-<script type="text/javascript">
- window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"75f4858b7a","applicationID":"1909498","transactionName":"YlVXbREHWksEUkVdCVsfYEsKSV1WAVRJGhZdQA==","queueTime":0,"applicationTime":94,"atts":"ThJAG1kdSRRHUBMOHUhN","errorBeacon":"bam.nr-data.net","agent":""}
+ (window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":82});});
 </script>

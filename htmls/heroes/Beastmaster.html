@@ -2,9 +2,6 @@
 <html class="client-nojs" dir="ltr" lang="en">
  <head>
   <meta charset="utf-8"/>
-  <script type="text/javascript">
-   (window.NREUM||(NREUM={})).loader_config={xpid:"UAcAUlNACQoAXVVbDw=="};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var o=e[n]={exports:{}};t[n][0].call(o.exports,function(e){var o=t[n][1][e];return r(o||e)},o,o.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({1:[function(t,e,n){function r(t){try{c.console&&console.log(t)}catch(e){}}var o,i=t("ee"),a=t(15),c={};try{o=localStorage.getItem("__nr_flags").split(","),console&&"function"==typeof console.log&&(c.console=!0,o.indexOf("dev")!==-1&&(c.dev=!0),o.indexOf("nr_dev")!==-1&&(c.nrDev=!0))}catch(s){}c.nrDev&&i.on("internal-error",function(t){r(t.stack)}),c.dev&&i.on("fn-err",function(t,e,n){r(n.stack)}),c.dev&&(r("NR AGENT IN DEVELOPMENT MODE"),r("flags: "+a(c,function(t,e){return t}).join(", ")))},{}],2:[function(t,e,n){function r(t,e,n,r,o){try{d?d-=1:i("err",[o||new UncaughtException(t,e,n)])}catch(c){try{i("ierr",[c,(new Date).getTime(),!0])}catch(s){}}return"function"==typeof f&&f.apply(this,a(arguments))}function UncaughtException(t,e,n){this.message=t||"Uncaught error with no additional information",this.sourceURL=e,this.line=n}function o(t){i("err",[t,(new Date).getTime()])}var i=t("handle"),a=t(16),c=t("ee"),s=t("loader"),f=window.onerror,u=!1,d=0;s.features.err=!0,t(1),window.onerror=r;try{throw new Error}catch(l){"stack"in l&&(t(8),t(7),"addEventListener"in window&&t(5),s.xhrWrappable&&t(9),u=!0)}c.on("fn-start",function(t,e,n){u&&(d+=1)}),c.on("fn-err",function(t,e,n){u&&(this.thrown=!0,o(n))}),c.on("fn-end",function(){u&&!this.thrown&&d>0&&(d-=1)}),c.on("internal-error",function(t){i("ierr",[t,(new Date).getTime(),!0])})},{}],3:[function(t,e,n){t("loader").features.ins=!0},{}],4:[function(t,e,n){function r(t){}if(window.performance&&window.performance.timing&&window.performance.getEntriesByType){var o=t("ee"),i=t("handle"),a=t(8),c=t(7),s="learResourceTimings",f="addEventListener",u="resourcetimingbufferfull",d="bstResource",l="resource",p="-start",h="-end",m="fn"+p,w="fn"+h,v="bstTimer",y="pushState";t("loader").features.stn=!0,t(6);var g=NREUM.o.EV;o.on(m,function(t,e){var n=t[0];n instanceof g&&(this.bstStart=Date.now())}),o.on(w,function(t,e){var n=t[0];n instanceof g&&i("bst",[n,e,this.bstStart,Date.now()])}),a.on(m,function(t,e,n){this.bstStart=Date.now(),this.bstType=n}),a.on(w,function(t,e){i(v,[e,this.bstStart,Date.now(),this.bstType])}),c.on(m,function(){this.bstStart=Date.now()}),c.on(w,function(t,e){i(v,[e,this.bstStart,Date.now(),"requestAnimationFrame"])}),o.on(y+p,function(t){this.time=Date.now(),this.startPath=location.pathname+location.hash}),o.on(y+h,function(t){i("bstHist",[location.pathname+location.hash,this.startPath,this.time])}),f in window.performance&&(window.performance["c"+s]?window.performance[f](u,function(t){i(d,[window.performance.getEntriesByType(l)]),window.performance["c"+s]()},!1):window.performance[f]("webkit"+u,function(t){i(d,[window.performance.getEntriesByType(l)]),window.performance["webkitC"+s]()},!1)),document[f]("scroll",r,{passive:!0}),document[f]("keypress",r,!1),document[f]("click",r,!1)}},{}],5:[function(t,e,n){function r(t){for(var e=t;e&&!e.hasOwnProperty(u);)e=Object.getPrototypeOf(e);e&&o(e)}function o(t){c.inPlace(t,[u,d],"-",i)}function i(t,e){return t[1]}var a=t("ee").get("events"),c=t(17)(a,!0),s=t("gos"),f=XMLHttpRequest,u="addEventListener",d="removeEventListener";e.exports=a,"getPrototypeOf"in Object?(r(document),r(window),r(f.prototype)):f.prototype.hasOwnProperty(u)&&(o(window),o(f.prototype)),a.on(u+"-start",function(t,e){var n=t[1],r=s(n,"nr@wrapped",function(){function t(){if("function"==typeof n.handleEvent)return n.handleEvent.apply(n,arguments)}var e={object:t,"function":n}[typeof n];return e?c(e,"fn-",null,e.name||"anonymous"):n});this.wrapped=t[1]=r}),a.on(d+"-start",function(t){t[1]=this.wrapped||t[1]})},{}],6:[function(t,e,n){var r=t("ee").get("history"),o=t(17)(r);e.exports=r,o.inPlace(window.history,["pushState","replaceState"],"-")},{}],7:[function(t,e,n){var r=t("ee").get("raf"),o=t(17)(r),i="equestAnimationFrame";e.exports=r,o.inPlace(window,["r"+i,"mozR"+i,"webkitR"+i,"msR"+i],"raf-"),r.on("raf-start",function(t){t[0]=o(t[0],"fn-")})},{}],8:[function(t,e,n){function r(t,e,n){t[0]=a(t[0],"fn-",null,n)}function o(t,e,n){this.method=n,this.timerDuration="number"==typeof t[1]?t[1]:0,t[0]=a(t[0],"fn-",this,n)}var i=t("ee").get("timer"),a=t(17)(i),c="setTimeout",s="setInterval",f="clearTimeout",u="-start",d="-";e.exports=i,a.inPlace(window,[c,"setImmediate"],c+d),a.inPlace(window,[s],s+d),a.inPlace(window,[f,"clearImmediate"],f+d),i.on(s+u,r),i.on(c+u,o)},{}],9:[function(t,e,n){function r(t,e){d.inPlace(e,["onreadystatechange"],"fn-",c)}function o(){var t=this,e=u.context(t);t.readyState>3&&!e.resolved&&(e.resolved=!0,u.emit("xhr-resolved",[],t)),d.inPlace(t,w,"fn-",c)}function i(t){v.push(t),h&&(g=-g,b.data=g)}function a(){for(var t=0;t<v.length;t++)r([],v[t]);v.length&&(v=[])}function c(t,e){return e}function s(t,e){for(var n in t)e[n]=t[n];return e}t(5);var f=t("ee"),u=f.get("xhr"),d=t(17)(u),l=NREUM.o,p=l.XHR,h=l.MO,m="readystatechange",w=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"],v=[];e.exports=u;var y=window.XMLHttpRequest=function(t){var e=new p(t);try{u.emit("new-xhr",[e],e),e.addEventListener(m,o,!1)}catch(n){try{u.emit("internal-error",[n])}catch(r){}}return e};if(s(p,y),y.prototype=p.prototype,d.inPlace(y.prototype,["open","send"],"-xhr-",c),u.on("send-xhr-start",function(t,e){r(t,e),i(e)}),u.on("open-xhr-start",r),h){var g=1,b=document.createTextNode(g);new h(a).observe(b,{characterData:!0})}else f.on("fn-end",function(t){t[0]&&t[0].type===m||a()})},{}],10:[function(t,e,n){function r(t){var e=this.params,n=this.metrics;if(!this.ended){this.ended=!0;for(var r=0;r<d;r++)t.removeEventListener(u[r],this.listener,!1);if(!e.aborted){if(n.duration=(new Date).getTime()-this.startTime,4===t.readyState){e.status=t.status;var i=o(t,this.lastSize);if(i&&(n.rxSize=i),this.sameOrigin){var a=t.getResponseHeader("X-NewRelic-App-Data");a&&(e.cat=a.split(", ").pop())}}else e.status=0;n.cbTime=this.cbTime,f.emit("xhr-done",[t],t),c("xhr",[e,n,this.startTime])}}}function o(t,e){var n=t.responseType;if("json"===n&&null!==e)return e;var r="arraybuffer"===n||"blob"===n||"json"===n?t.response:t.responseText;return h(r)}function i(t,e){var n=s(e),r=t.params;r.host=n.hostname+":"+n.port,r.pathname=n.pathname,t.sameOrigin=n.sameOrigin}var a=t("loader");if(a.xhrWrappable){var c=t("handle"),s=t(11),f=t("ee"),u=["load","error","abort","timeout"],d=u.length,l=t("id"),p=t(14),h=t(13),m=window.XMLHttpRequest;a.features.xhr=!0,t(9),f.on("new-xhr",function(t){var e=this;e.totalCbs=0,e.called=0,e.cbTime=0,e.end=r,e.ended=!1,e.xhrGuids={},e.lastSize=null,p&&(p>34||p<10)||window.opera||t.addEventListener("progress",function(t){e.lastSize=t.loaded},!1)}),f.on("open-xhr-start",function(t){this.params={method:t[0]},i(this,t[1]),this.metrics={}}),f.on("open-xhr-end",function(t,e){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&e.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid)}),f.on("send-xhr-start",function(t,e){var n=this.metrics,r=t[0],o=this;if(n&&r){var i=h(r);i&&(n.txSize=i)}this.startTime=(new Date).getTime(),this.listener=function(t){try{"abort"===t.type&&(o.params.aborted=!0),("load"!==t.type||o.called===o.totalCbs&&(o.onloadCalled||"function"!=typeof e.onload))&&o.end(e)}catch(n){try{f.emit("internal-error",[n])}catch(r){}}};for(var a=0;a<d;a++)e.addEventListener(u[a],this.listener,!1)}),f.on("xhr-cb-time",function(t,e,n){this.cbTime+=t,e?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof n.onload||this.end(n)}),f.on("xhr-load-added",function(t,e){var n=""+l(t)+!!e;this.xhrGuids&&!this.xhrGuids[n]&&(this.xhrGuids[n]=!0,this.totalCbs+=1)}),f.on("xhr-load-removed",function(t,e){var n=""+l(t)+!!e;this.xhrGuids&&this.xhrGuids[n]&&(delete this.xhrGuids[n],this.totalCbs-=1)}),f.on("addEventListener-end",function(t,e){e instanceof m&&"load"===t[0]&&f.emit("xhr-load-added",[t[1],t[2]],e)}),f.on("removeEventListener-end",function(t,e){e instanceof m&&"load"===t[0]&&f.emit("xhr-load-removed",[t[1],t[2]],e)}),f.on("fn-start",function(t,e,n){e instanceof m&&("onload"===n&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=(new Date).getTime()))}),f.on("fn-end",function(t,e){this.xhrCbStart&&f.emit("xhr-cb-time",[(new Date).getTime()-this.xhrCbStart,this.onload,e],e)})}},{}],11:[function(t,e,n){e.exports=function(t){var e=document.createElement("a"),n=window.location,r={};e.href=t,r.port=e.port;var o=e.href.split("://");!r.port&&o[1]&&(r.port=o[1].split("/")[0].split("@").pop().split(":")[1]),r.port&&"0"!==r.port||(r.port="https"===o[0]?"443":"80"),r.hostname=e.hostname||n.hostname,r.pathname=e.pathname,r.protocol=o[0],"/"!==r.pathname.charAt(0)&&(r.pathname="/"+r.pathname);var i=!e.protocol||":"===e.protocol||e.protocol===n.protocol,a=e.hostname===document.domain&&e.port===n.port;return r.sameOrigin=i&&(!e.hostname||a),r}},{}],12:[function(t,e,n){function r(){}function o(t,e,n){return function(){return i(t,[(new Date).getTime()].concat(c(arguments)),e?null:this,n),e?void 0:this}}var i=t("handle"),a=t(15),c=t(16),s=t("ee").get("tracer"),f=NREUM;"undefined"==typeof window.newrelic&&(newrelic=f);var u=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(u,function(t,e){f[e]=o(d+e,!0,"api")}),f.addPageAction=o(d+"addPageAction",!0),f.setCurrentRouteName=o(d+"routeName",!0),e.exports=newrelic,f.interaction=function(){return(new r).get()};var p=r.prototype={createTracer:function(t,e){var n={},r=this,o="function"==typeof e;return i(l+"tracer",[Date.now(),t,n],r),function(){if(s.emit((o?"":"no-")+"fn-start",[Date.now(),r,o],n),o)try{return e.apply(this,arguments)}finally{s.emit("fn-end",[Date.now()],n)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){p[e]=o(l+e)}),newrelic.noticeError=function(t){"string"==typeof t&&(t=new Error(t)),i("err",[t,(new Date).getTime()])}},{}],13:[function(t,e,n){e.exports=function(t){if("string"==typeof t&&t.length)return t.length;if("object"==typeof t){if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if(!("undefined"!=typeof FormData&&t instanceof FormData))try{return JSON.stringify(t).length}catch(e){return}}}},{}],14:[function(t,e,n){var r=0,o=navigator.userAgent.match(/Firefox[\/\s](\d+\.\d+)/);o&&(r=+o[1]),e.exports=r},{}],15:[function(t,e,n){function r(t,e){var n=[],r="",i=0;for(r in t)o.call(t,r)&&(n[i]=e(r,t[r]),i+=1);return n}var o=Object.prototype.hasOwnProperty;e.exports=r},{}],16:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,o=n-e||0,i=Array(o<0?0:o);++r<o;)i[r]=t[e+r];return i}e.exports=r},{}],17:[function(t,e,n){function r(t){return!(t&&t instanceof Function&&t.apply&&!t[a])}var o=t("ee"),i=t(16),a="nr@original",c=Object.prototype.hasOwnProperty,s=!1;e.exports=function(t,e){function n(t,e,n,o){function nrWrapper(){var r,a,c,s;try{a=this,r=i(arguments),c="function"==typeof n?n(r,a):n||{}}catch(f){l([f,"",[r,a,o],c])}u(e+"start",[r,a,o],c);try{return s=t.apply(a,r)}catch(d){throw u(e+"err",[r,a,d],c),d}finally{u(e+"end",[r,a,s],c)}}return r(t)?t:(e||(e=""),nrWrapper[a]=t,d(t,nrWrapper),nrWrapper)}function f(t,e,o,i){o||(o="");var a,c,s,f="-"===o.charAt(0);for(s=0;s<e.length;s++)c=e[s],a=t[c],r(a)||(t[c]=n(a,f?c+o:o,i,c))}function u(n,r,o){if(!s||e){var i=s;s=!0;try{t.emit(n,r,o)}catch(a){l([a,n,r,o])}s=i}}function d(t,e){if(Object.defineProperty&&Object.keys)try{var n=Object.keys(t);return n.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(r){l([r])}for(var o in t)c.call(t,o)&&(e[o]=t[o]);return e}function l(e){try{t.emit("internal-error",e)}catch(n){}}return t||(t=o),n.inPlace=f,n.flag=a,n}},{}],ee:[function(t,e,n){function r(){}function o(t){function e(t){return t&&t instanceof r?t:t?s(t,c,i):i()}function n(n,r,o){if(!l.aborted){t&&t(n,r,o);for(var i=e(o),a=h(n),c=a.length,s=0;s<c;s++)a[s].apply(i,r);var f=u[y[n]];return f&&f.push([g,n,r,i]),i}}function p(t,e){v[t]=h(t).concat(e)}function h(t){return v[t]||[]}function m(t){return d[t]=d[t]||o(n)}function w(t,e){f(t,function(t,n){e=e||"feature",y[n]=e,e in u||(u[e]=[])})}var v={},y={},g={on:p,emit:n,get:m,listeners:h,context:e,buffer:w,abort:a,aborted:!1};return g}function i(){return new r}function a(){(u.api||u.feature)&&(l.aborted=!0,u=l.backlog={})}var c="nr@context",s=t("gos"),f=t(15),u={},d={},l=e.exports=o();l.backlog=u},{}],gos:[function(t,e,n){function r(t,e,n){if(o.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return t[e]=r,r}var o=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){o.buffer([t],r),o.emit(t,e,n)}var o=t("ee").get("handle");e.exports=r,r.ee=o},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,i,function(){return o++})}var o=1,i="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!b++){var t=g.info=NREUM.info,e=d.getElementsByTagName("script")[0];if(setTimeout(f.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return f.abort();s(v,function(e,n){t[e]||(t[e]=n)}),c("mark",["onload",a()],null,"api");var n=d.createElement("script");n.src="https://"+t.agent,e.parentNode.insertBefore(n,e)}}function o(){"complete"===d.readyState&&i()}function i(){c("mark",["domContent",a()],null,"api")}function a(){return(new Date).getTime()}var c=t("handle"),s=t(15),f=t("ee"),u=window,d=u.document,l="addEventListener",p="attachEvent",h=u.XMLHttpRequest,m=h&&h.prototype;NREUM.o={ST:setTimeout,CT:clearTimeout,XHR:h,REQ:u.Request,EV:u.Event,PR:u.Promise,MO:u.MutationObserver},t(12);var w=""+location,v={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1016.min.js"},y=h&&m&&m[l]&&!/CriOS/.test(navigator.userAgent),g=e.exports={offset:a(),origin:w,features:{},xhrWrappable:y};d[l]?(d[l]("DOMContentLoaded",i,!1),u[l]("load",r,!1)):(d[p]("onreadystatechange",o),u[p]("onload",r)),c("mark",["firstbyte",a()],null,"api");var b=0},{}]},{},["loader",2,10,4,3]);
-  </script>
   <title>
    Beastmaster - Dota 2 Wiki
   </title>
@@ -12,7 +9,7 @@
    document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );
   </script>
   <script>
-   (window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Beastmaster","wgTitle":"Beastmaster","wgCurRevisionId":1441667,"wgRevisionId":1441667,"wgArticleId":445,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Heroes","Strength heroes","Melee heroes","Initiators","Disablers","Durable","Nukers"],"wgBreakFrames":true,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Beastmaster","wgRelevantArticleId":445,"wgRequestId":"16d06aebeaad62f6b62871b9","wgIsProbablyEditable":true,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgPreferredVariant":"en","wgCollapsibleVectorEnabledModules":{"collapsiblenav":true,"experiments":true},"wgVisualEditor":{"pageLanguageCode":"en","pageLanguageDir":"ltr","usePageImages":true,"usePageDescriptions":false},"wgWikiEditorEnabledModules":{"toolbar":true,"dialogs":true,"preview":true,"publish":true},"wgCategoryTreePageCategoryOptions":"{\"mode\":0,\"hideprefix\":20,\"showcount\":true,\"namespaces\":false}","wgVisualEditorToolbarScrollOffset":0});mw.loader.implement("user.options",function($,jQuery,require,module){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function ( $, jQuery, require, module ) {
+   (window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Beastmaster","wgTitle":"Beastmaster","wgCurRevisionId":1526011,"wgRevisionId":1526011,"wgArticleId":445,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Heroes","Strength heroes","Melee heroes","Initiators","Disablers","Durable","Nukers"],"wgBreakFrames":true,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Beastmaster","wgRelevantArticleId":445,"wgRequestId":"95b4de1604af1a01417416ca","wgIsProbablyEditable":true,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgPreferredVariant":"en","wgCollapsibleVectorEnabledModules":{"collapsiblenav":true,"experiments":true},"wgVisualEditor":{"pageLanguageCode":"en","pageLanguageDir":"ltr","usePageImages":true,"usePageDescriptions":false},"wgWikiEditorEnabledModules":{"toolbar":true,"dialogs":true,"preview":true,"publish":true},"wgCategoryTreePageCategoryOptions":"{\"mode\":0,\"hideprefix\":20,\"showcount\":true,\"namespaces\":false}","wgVisualEditorToolbarScrollOffset":0});mw.loader.implement("user.options",function($,jQuery,require,module){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function ( $, jQuery, require, module ) {
 mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/;
 
 });mw.loader.load(["ext.smw.style","mediawiki.page.startup","ext.siteGlobals","ext.bunnyears","ext.visualEditor.desktopArticleTarget.init","ext.hydraAuth.banners","skins.vector.js","skins.hydra.advertisements.js","skins.hydra.footer.js","ext.social"]);});
@@ -23,11 +20,11 @@ mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","cs
   <link href="/load.php?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=hydra" rel="stylesheet"/>
   <script async="" src="/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=hydra">
   </script>
-  <meta content="MediaWiki 1.27.1" name="generator"/>
+  <meta content="MediaWiki 1.27.3" name="generator"/>
   <meta content="Beastmaster" name="og:title"/>
   <meta content="website" name="og:type"/>
   <meta content="https://hydra-media.cursecdn.com/dota2.gamepedia.com/b/bc/Wiki.png" name="og:image"/>
-  <meta content="http://dota2.gamepedia.com/Beastmaster" name="og:url"/>
+  <meta content="https://dota2.gamepedia.com/Beastmaster" name="og:url"/>
   <meta content="Dota 2 Wiki" name="og:site_name"/>
   <meta name="description"/>
   <meta content="" name="keywords"/>
@@ -40,13 +37,13 @@ mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","cs
   <link href="/opensearch_desc.php" rel="search" title="Dota 2 Wiki (en)" type="application/opensearchdescription+xml"/>
   <link href="//dota2.gamepedia.com/api.php?action=rsd" rel="EditURI" type="application/rsd+xml"/>
   <link href="//creativecommons.org/licenses/by-nc-sa/3.0/" rel="copyright"/>
-  <link href="http://dota2.gamepedia.com/Beastmaster" rel="canonical"/>
+  <link href="https://dota2.gamepedia.com/Beastmaster" rel="canonical"/>
   <link href="dota2-de.gamepedia.com" hreflang="de" rel="alternate"/>
   <link href="dota2-ru.gamepedia.com" hreflang="ru" rel="alternate"/>
   <link href="dota2-pt.gamepedia.com" hreflang="pt" rel="alternate"/>
   <link href="dota2-zh.gamepedia.com" hreflang="zh" rel="alternate"/>
   <meta content="Gamepedia" itemprop="author"/>
-  <link href="https://stations.cursetech.com/be/bunnyears.min.css" rel="stylesheet" type="text/css"/>
+  <link href="https://stations.cursetech.com/be/bunnyears-1.1.min.css" rel="stylesheet" type="text/css"/>
  </head>
  <body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-Beastmaster rootpage-Beastmaster skin-hydra action-view site-dota2-gamepedia show-ads">
   <script type="application/ld+json">
@@ -81,8 +78,8 @@ mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","cs
 		"target": "https://dota2.gamepedia.com/index.php?title=Special:Search&search={search_term}",
 		"query-input": "required name=search_term"
 	},
-	"datePublished": "2017-01-19T00:41:26Z",
-	"dateModified": "2017-01-19T00:41:26Z",
+	"datePublished": "2017-05-22T14:47:02Z",
+	"dateModified": "2017-05-22T14:47:02Z",
 	"mainEntityOfPage": "https://dota2.gamepedia.com/Beastmaster"
 }
   </script>
@@ -124,7 +121,7 @@ mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","cs
 var script = document.createElement('script');
 var tstamp = new Date();
 script.id = 'factorem';
-script.src = 'http://cdm.cursecdn.com/js/gamepedia/cdmfactorem_min.js?misc=' + tstamp.getTime();;
+script.src = '//cdm.cursecdn.com/js/gamepedia/cdmfactorem_min.js?misc=' + tstamp.getTime();;
 script.async = true;
 script.type='text/javascript';
 document.head.appendChild(script);
@@ -133,10 +130,10 @@ document.head.appendChild(script);
    setTimeout(function(){if("undefined"!=typeof b2){var element=document.getElementById(b2);setTimeout(function(){element.parentNode.innerHTML='<div id="'+b2+'"></div>'},5000)}},20000)
   </script>
   <script>
-   setTimeout(function(){if("undefined"!=typeof b2){var element=document.getElementById(b3);setTimeout(function(){element.parentNode.innerHTML='<div id="'+b3+'"></div>'},5000)}},20000)
+   setTimeout(function(){if("undefined"!=typeof b3){var element=document.getElementById(b3);setTimeout(function(){element.parentNode.innerHTML='<div id="'+b3+'"></div>'},5000)}},20000)
   </script>
   <script>
-   setTimeout(function(){if("undefined"!=typeof b2){var element=document.getElementById(b6);setTimeout(function(){element.parentNode.innerHTML='<div id="'+b6+'"></div>'},5000)}},20000)
+   setTimeout(function(){if("undefined"!=typeof b6){var element=document.getElementById(b6);setTimeout(function(){element.parentNode.innerHTML='<div id="'+b6+'"></div>'},5000)}},20000)
   </script>
   <div id="netbar">
    <ul class="netbar-left">
@@ -279,6 +276,13 @@ document.head.appendChild(script);
          </td>
          <td style="border-bottom: 2px solid #A3B1BF; width: 3px;">
          </td>
+         <td style="padding: 0.5em; background-color: #d7e6f4; line-height: 0.95em; border: 1px solid #A3B1BF; border-bottom: solid 2px #A3B1BF; width: 20px;">
+          <a href="/Beastmaster/Bugs" title="Beastmaster/Bugs">
+           Known Bugs
+          </a>
+         </td>
+         <td style="border-bottom: 2px solid #A3B1BF; width: 3px;">
+         </td>
          <td style="border-bottom:2px solid #A3B1BF" width="3000">
          </td>
         </tr>
@@ -293,8 +297,8 @@ document.head.appendChild(script);
         </tr>
         <tr>
          <td colspan="4">
-          <a class="image" href="/File:Beastmaster.png">
-           <img alt="Beastmaster.png" height="144" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/d/d6/Beastmaster.png?version=366062c505eb87ce9c8df222b4089e13" width="256"/>
+          <a class="image" href="/File:Beastmaster_icon.png">
+           <img alt="Beastmaster icon.png" height="144" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/d/d9/Beastmaster_icon.png?version=4a7ae07345b39df324a5e61596796ba8" width="256"/>
           </a>
          </td>
         </tr>
@@ -304,17 +308,17 @@ document.head.appendChild(script);
            <tr>
             <th align="center" width="45">
              <a href="/Strength" title="Strength">
-              <img alt="Strength" height="40" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/a/a3/Strength_primary_attribute_symbol.png/40px-Strength_primary_attribute_symbol.png?version=274549a76d8ff80bb74928cf3a3a720c" width="40"/>
+              <img alt="Strength primary attribute symbol.png" height="40" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/a/a3/Strength_primary_attribute_symbol.png/40px-Strength_primary_attribute_symbol.png?version=274549a76d8ff80bb74928cf3a3a720c" width="40"/>
              </a>
              <br/>
              <b>
               23
              </b>
-             + 2.2
+             + 2.5
             </th>
             <th align="center" width="45">
              <a href="/Agility" title="Agility">
-              <img alt="Agility" height="40" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/2/2d/Agility_attribute_symbol.png/40px-Agility_attribute_symbol.png?version=366b1f8f1bc09dbc72aac21691851193" width="40"/>
+              <img alt="Agility attribute symbol.png" height="40" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/2/2d/Agility_attribute_symbol.png/40px-Agility_attribute_symbol.png?version=366b1f8f1bc09dbc72aac21691851193" width="40"/>
              </a>
              <br/>
              <b>
@@ -324,7 +328,7 @@ document.head.appendChild(script);
             </th>
             <th align="center" width="45">
              <a href="/Intelligence" title="Intelligence">
-              <img alt="Intelligence" height="40" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/5/56/Intelligence_attribute_symbol.png/40px-Intelligence_attribute_symbol.png?version=4040e46b05f05f761993086ea3d191f0" width="40"/>
+              <img alt="Intelligence attribute symbol.png" height="40" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/5/56/Intelligence_attribute_symbol.png/40px-Intelligence_attribute_symbol.png?version=4040e46b05f05f761993086ea3d191f0" width="40"/>
              </a>
              <br/>
              <b>
@@ -377,10 +381,10 @@ document.head.appendChild(script);
              660
             </td>
             <td>
-             1260
+             1360
             </td>
             <td>
-             1700
+             1860
             </td>
            </tr>
            <tr>
@@ -392,16 +396,16 @@ document.head.appendChild(script);
              </b>
             </td>
             <td>
-             0.25
+             0
             </td>
             <td>
-             0.94
+             1.38
             </td>
             <td>
-             1.86
+             3.48
             </td>
             <td>
-             2.52
+             4.98
             </td>
            </tr>
            <tr style="background:#ededed">
@@ -413,16 +417,16 @@ document.head.appendChild(script);
              </b>
             </td>
             <td>
-             50
+             75
             </td>
             <td>
-             242
+             251
             </td>
             <td>
-             554
+             537
             </td>
             <td>
-             782
+             746
             </td>
            </tr>
            <tr>
@@ -461,10 +465,10 @@ document.head.appendChild(script);
              64‒68
             </td>
             <td>
-             94‒98
+             99‒103
             </td>
             <td>
-             116‒120
+             124‒128
             </td>
            </tr>
            <tr>
@@ -500,13 +504,13 @@ document.head.appendChild(script);
              0%
             </td>
             <td>
-             1%
+             1.14%
             </td>
             <td>
-             2.66%
+             3.04%
             </td>
             <td>
-             3.85%
+             4.4%
             </td>
            </tr>
            <tr>
@@ -871,14 +875,8 @@ document.head.appendChild(script);
          <span class="mw-editsection-bracket">
           [
          </span>
-         <a class="mw-editsection-visualeditor" href="/index.php?title=Beastmaster&amp;veaction=edit&amp;vesection=1" title="Edit section: Bio">
-          edit
-         </a>
-         <span class="mw-editsection-divider">
-          |
-         </span>
          <a href="/index.php?title=Beastmaster&amp;action=edit&amp;section=1" title="Edit section: Bio">
-          edit source
+          edit
          </a>
          <span class="mw-editsection-bracket">
           ]
@@ -886,92 +884,87 @@ document.head.appendChild(script);
         </span>
        </h2>
        <div class="biobox" style="color:#333333;padding:8px;font-size:12px;">
-        <table style="background: none;">
+        <table cellspacing="4" style="background: none;">
          <tr>
-          <td valign="top">
-           <table cellspacing="4" style="background: none;">
-            <tr>
-             <td colspan="2" style="font-weight:bold;font-size:13px;text-align:center;">
-              <a href="/Beastmaster" title="Beastmaster">
-               <img alt="Beastmaster" height="32" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/d/d9/Beastmaster_icon.png?version=cc5f9f90232a898f47376ff0c0029ef4" width="32"/>
-              </a>
-              Karroch, the Beastmaster
-             </td>
-            </tr>
-            <tr>
-             <td align="center" colspan="2">
-              <a class="sm2_button" href="https://hydra-media.cursecdn.com/dota2.gamepedia.com/b/b1/Beas_rare_02.mp3" title="Play">
-               Play
-              </a>
-              "I run with the rabbit and hunt with the hounds."
-             </td>
-            </tr>
-            <tr>
-             <td valign="top">
-              <b>
-               Role:
-              </b>
-             </td>
-             <td>
-              <a href="/Role#Initiator" title="Initiator">
-               <img alt="Initiator" height="24" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/2/25/Pip_initiator.png/24px-Pip_initiator.png?version=dd8026b54598cb0f1095f87db539ce5c" width="24"/>
-              </a>
-              <a href="/Role#Initiator" title="Role">
-               Initiator
-              </a>
-              /
-              <a href="/Role#Disabler" title="Disabler">
-               <img alt="Disabler" height="24" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/c/c3/Pip_disabler.png/24px-Pip_disabler.png?version=340edcbcd7b35f85bea7d18c802ed99c" width="24"/>
-              </a>
-              <a href="/Role#Disabler" title="Role">
-               Disabler
-              </a>
-              /
-              <a href="/Role#Durable" title="Durable">
-               <img alt="Durable" height="24" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/d/d3/Pip_tank.png/24px-Pip_tank.png?version=5d8ccf7b704ff54ffe6c2a65a3861423" width="24"/>
-              </a>
-              <a href="/Role#Durable" title="Role">
-               Durable
-              </a>
-              /
-              <a href="/Role#Nuker" title="Nuker">
-               <img alt="Nuker" height="24" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/0/04/Pip_ganker.png/24px-Pip_ganker.png?version=f403b95dc688f11a6af39e1110731b4d" width="24"/>
-              </a>
-              <a href="/Role#Nuker" title="Role">
-               Nuker
-              </a>
-             </td>
-            </tr>
-            <tr>
-             <td valign="top">
-              <b>
-               Lore:
-              </b>
-             </td>
-             <td>
-              <i>
-               Karroch was born a child of the stocks. His mother died in childbirth; his father, a farrier for the Last King of Slom, was trampled to death when Karroch was five. Afterward Karroch was indentured to the king’s menagerie, where he grew up among all the beasts of the royal court: lions, apes, fell-deer, and things less known, things barely believed in. When the lad was seven, an explorer brought in a beast like none before seen. Dragged before the King in chains, the beast spoke, though its mouth moved not. Its words: a plea for freedom. The King only laughed and ordered the beast perform for his amusement; and when it refused, struck it with the Mad Scepter and ordered it dragged to the stocks.
-               <br/>
-               <br/>
-               Over the coming months, the boy Karroch sneaked food and medicinal draughts to the wounded creature, but only managed to slow its deterioration. Wordlessly, the beast spoke to the boy, and over time their bond strengthened until the boy found he could hold up his end of a conversation—could in fact speak now to all the creatures of the King's menagerie. On the night the beast died, a rage came over the boy. He incited the animals of the court to rebel and threw open their cages to set them amok on the palace grounds. The Last King was mauled in the mayhem. In the chaos, one regal stag bowed to the boy who had freed him; and with Beastmaster astride him, leapt the high walls of the estate, and escaped. Now a man, Karroch the Beastmaster has not lost his ability to converse with wild creatures. He has grown into a warrior at one with nature’s savagery.
-              </i>
-             </td>
-            </tr>
-            <tr>
-             <td valign="top">
-              <b>
-               Voice:
-              </b>
-             </td>
-             <td>
-              Sam A. Mowry (
-              <a href="/Beastmaster/Responses" title="Beastmaster/Responses">
-               Responses
-              </a>
-              )
-             </td>
-            </tr>
-           </table>
+          <td colspan="2" style="font-weight: bold; font-size: 13px; text-align: center;">
+           <a href="/Beastmaster" title="Beastmaster">
+            <img alt="Beastmaster" height="32" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/5/5c/Beastmaster_minimap_icon.png?version=6a24e76b36fdcfa33731584fefbaf121" width="32"/>
+           </a>
+           Karroch, the Beastmaster
+          </td>
+         </tr>
+         <tr>
+          <td colspan="2" style="text-align: center;">
+           <a class="sm2_button" href="https://hydra-media.cursecdn.com/dota2.gamepedia.com/b/b1/Beas_rare_02.mp3" title="Play">
+            Play
+           </a>
+           "I run with the rabbit and hunt with the hounds."
+          </td>
+         </tr>
+         <tr>
+          <td>
+           <b>
+            Role:
+           </b>
+          </td>
+          <td>
+           <a href="/Role#Initiator" title="Initiator">
+            <img alt="Initiator" height="24" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/2/25/Pip_initiator.png/24px-Pip_initiator.png?version=dd8026b54598cb0f1095f87db539ce5c" width="24"/>
+           </a>
+           <a href="/Role#Initiator" title="Role">
+            Initiator
+           </a>
+           /
+           <a href="/Role#Disabler" title="Disabler">
+            <img alt="Disabler" height="24" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/c/c3/Pip_disabler.png/24px-Pip_disabler.png?version=340edcbcd7b35f85bea7d18c802ed99c" width="24"/>
+           </a>
+           <a href="/Role#Disabler" title="Role">
+            Disabler
+           </a>
+           /
+           <a href="/Role#Durable" title="Durable">
+            <img alt="Durable" height="24" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/d/d3/Pip_tank.png/24px-Pip_tank.png?version=5d8ccf7b704ff54ffe6c2a65a3861423" width="24"/>
+           </a>
+           <a href="/Role#Durable" title="Role">
+            Durable
+           </a>
+           /
+           <a href="/Role#Nuker" title="Nuker">
+            <img alt="Nuker" height="24" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/0/04/Pip_ganker.png/24px-Pip_ganker.png?version=f403b95dc688f11a6af39e1110731b4d" width="24"/>
+           </a>
+           <a href="/Role#Nuker" title="Role">
+            Nuker
+           </a>
+          </td>
+         </tr>
+         <tr>
+          <td style="vertical-align: top;">
+           <b>
+            <a href="/Beastmaster/Lore" title="Beastmaster/Lore">
+             Lore
+            </a>
+            :
+           </b>
+          </td>
+          <td style="font-style: italic;">
+           Karroch was born a child of the stocks. His mother died in childbirth; his father, a farrier for the Last King of Slom, was trampled to death when Karroch was five. Afterward Karroch was indentured to the king’s menagerie, where he grew up among all the beasts of the royal court: lions, apes, fell-deer, and things less known, things barely believed in. When the lad was seven, an explorer brought in a beast like none before seen. Dragged before the King in chains, the beast spoke, though its mouth moved not. Its words: a plea for freedom. The King only laughed and ordered the beast perform for his amusement; and when it refused, struck it with the Mad Scepter and ordered it dragged to the stocks.
+           <br/>
+           <br/>
+           Over the coming months, the boy Karroch sneaked food and medicinal draughts to the wounded creature, but only managed to slow its deterioration. Wordlessly, the beast spoke to the boy, and over time their bond strengthened until the boy found he could hold up his end of a conversation—could in fact speak now to all the creatures of the King's menagerie. On the night the beast died, a rage came over the boy. He incited the animals of the court to rebel and threw open their cages to set them amok on the palace grounds. The Last King was mauled in the mayhem. In the chaos, one regal stag bowed to the boy who had freed him; and with Beastmaster astride him, leapt the high walls of the estate, and escaped. Now a man, Karroch the Beastmaster has not lost his ability to converse with wild creatures. He has grown into a warrior at one with nature’s savagery.
+          </td>
+         </tr>
+         <tr>
+          <td>
+           <b>
+            Voice:
+           </b>
+          </td>
+          <td>
+           Sam A. Mowry (
+           <a href="/Beastmaster/Responses" title="Beastmaster/Responses">
+            Responses
+           </a>
+           )
           </td>
          </tr>
         </table>
@@ -984,14 +977,8 @@ document.head.appendChild(script);
          <span class="mw-editsection-bracket">
           [
          </span>
-         <a class="mw-editsection-visualeditor" href="/index.php?title=Beastmaster&amp;veaction=edit&amp;vesection=2" title="Edit section: Abilities">
-          edit
-         </a>
-         <span class="mw-editsection-divider">
-          |
-         </span>
          <a href="/index.php?title=Beastmaster&amp;action=edit&amp;section=2" title="Edit section: Abilities">
-          edit source
+          edit
          </a>
          <span class="mw-editsection-bracket">
           ]
@@ -1057,11 +1044,11 @@ document.head.appendChild(script);
              </b>
              <br/>
              <a href="/Damage_types#Physical" title="Damage types">
-              <b>
-               <span style="color:#71A9EA">
+              <span style="color:#71A9EA">
+               <b>
                 Physical
-               </span>
-              </b>
+               </b>
+              </span>
              </a>
             </div>
            </div>
@@ -1088,55 +1075,91 @@ document.head.appendChild(script);
            <b>
             Cast Range
            </b>
-           : 1300
+           :
+           <span style="white-space: nowrap">
+            1500
+           </span>
           </div>
           <div>
            <b>
             Axes Radius
            </b>
-           : 140
+           :
+           <span style="white-space: nowrap">
+            140
+           </span>
           </div>
           <div>
            <b>
             Axes Travel Distance
            </b>
-           : 1300
+           :
+           <span style="white-space: nowrap">
+            1500
+           </span>
           </div>
           <div>
            <b>
             Axes Spread Distance
            </b>
-           : 353
+           :
+           <span style="white-space: nowrap">
+            353
+           </span>
           </div>
           <div>
            <b>
-            Damage per Hit
+            Damage per Axe
            </b>
-           : 70/100/130/160 (
-           <a href="/Talents" title="Talent">
-            <img alt="Talent" height="16" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/c/cd/Talent_tree_symbol.png/16px-Talent_tree_symbol.png?version=b4db4b31a2f9c215885be017c22a8b0c" style="vertical-align: text-top" width="16"/>
-           </a>
-           245/275/305/335)
+           :
+           <span style="white-space: nowrap">
+            70/100/130/160 (
+            <a href="/Talents" title="Talent">
+             <img alt="Talent" height="16" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/c/cd/Talent_tree_symbol.png/16px-Talent_tree_symbol.png?version=b4db4b31a2f9c215885be017c22a8b0c" style="vertical-align: text-top" width="16"/>
+            </a>
+            320/350/380/410)
+           </span>
           </div>
-          <div style="display: inline-block; margin: 8px 0px 0px 50px; width: 190px; vertical-align: top;">
+          <div style="display: inline-block; margin: 8px 0px 0px 50px; width: 190px; vertical-align: top; word-wrap: break-word;">
            <span style="position: relative; top: -2px;">
             <a href="/Cooldown" title="Cooldown">
              <img alt="Cooldown symbol.png" height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/b/b7/Cooldown_symbol.png?version=7429ed9baf0f121e6ab3324bfdfad708" style="vertical-align: text-top" width="20"/>
             </a>
            </span>
-           13 (
-           <a href="/Talents" title="Talent">
-            <img alt="Talent" height="16" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/c/cd/Talent_tree_symbol.png/16px-Talent_tree_symbol.png?version=b4db4b31a2f9c215885be017c22a8b0c" style="vertical-align: text-top" width="16"/>
-           </a>
-           11.44)
+           13
+           <span style="white-space: nowrap">
+            (
+            <a href="/Talents" title="Talent">
+             <img alt="Talent" height="16" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/c/cd/Talent_tree_symbol.png/16px-Talent_tree_symbol.png?version=b4db4b31a2f9c215885be017c22a8b0c" style="vertical-align: text-top" width="16"/>
+            </a>
+            11.44)
+           </span>
           </div>
-          <div style="display: inline-block; margin: 8px 0px 0px; width: 190px; vertical-align: top;">
+          <div style="display: inline-block; margin: 8px 0px 0px; width: 190px; vertical-align: top; word-wrap: break-word;">
            <span style="position: relative; top: -2px;">
             <a href="/Mana" title="Mana">
              <img alt="Mana symbol.png" height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/f/f3/Mana_symbol.png?version=a81185ac577f9b52f2df06be91b6600c" style="vertical-align: text-top" width="20"/>
             </a>
            </span>
-           120
+           105/110/115/120
+          </div>
+          <div style="margin-top: 10px;">
+           <b>
+            <span id="tooltip" style="cursor:help; border-bottom:1px dotted;" title="The displayed names are the intern names of the modifiers. Do not change them even if they don't match the ability name.">
+             Modifiers
+            </span>
+           </b>
+          </div>
+          <div style="font-size: 85%; margin-left: 10px;">
+           <div>
+            <img alt="Buff" height="16" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/c/c1/Modifier_buff_symbol.png/16px-Modifier_buff_symbol.png?version=97c71541b396c601c0ac22a73d1a7573" style="vertical-align: text-top" title="Buff" width="16"/>
+            <span style="color:#1F631F;">
+             <b>
+              Wild Axes:
+             </b>
+             Undispellable.
+            </span>
+           </div>
           </div>
           <div style="margin-top: 5px; padding-top: 2px; border-top: 1px solid #C1C1C1;">
            <i>
@@ -1154,7 +1177,15 @@ document.head.appendChild(script);
          </p>
          <ul>
           <li>
-           The axes travel at an average speed of 800 and move in arcs towards the target point, where they intersect and then fly back.
+           The axes either travel at a speed of 1200 or reach the target point in one second, whichever is faster. The same applies upon returning.
+           <ul>
+            <li>
+             Upon returning, their speed periodically adapts based on their distance to Beastmaster and the remaining travel time.
+            </li>
+            <li>
+             This means the axes fly a maximum of up to two seconds, up to one seconds towards the point and up to one second back.
+            </li>
+           </ul>
           </li>
          </ul>
          <ul>
@@ -1169,19 +1200,25 @@ document.head.appendChild(script);
          </ul>
          <ul>
           <li>
-           A unit can only get hit twice per cast, so the maximum possible damage is 140/200/260/320 (
+           Both axes fly in arcs, so that the axe coming from Beastmaster's left hand travels back towards his right hand, and vice versa.
+          </li>
+         </ul>
+         <ul>
+          <li>
+           A unit can only get hit once by each axe, so the maximum possible damage (
+           <a href="/Damage_manipulation" title="Damage manipulation">
+            before reductions
+           </a>
+           ) is 140/200/260/320 (
            <a href="/Talents" title="Talent">
             <img alt="Talent" height="16" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/c/cd/Talent_tree_symbol.png/16px-Talent_tree_symbol.png?version=b4db4b31a2f9c215885be017c22a8b0c" style="vertical-align: text-top" width="16"/>
            </a>
-           490/550/610/670).
-           <ul>
-            <li>
-             Each axe can hit a unit once upon traveling to the target point, and once again upon traveling back to Beastmaster.
-            </li>
-            <li>
-             If a unit is hit by both axes upon traveling to the target point, it cannot be hit again upon retracting.
-            </li>
-           </ul>
+           640/700/760/820).
+          </li>
+         </ul>
+         <ul>
+          <li>
+           Choosing the damage upgrading talent immediately upgrades all of Beastmaster's currently flying axes.
           </li>
          </ul>
          <ul>
@@ -1190,7 +1227,7 @@ document.head.appendChild(script);
            <a href="/Trees" title="Trees">
             trees
            </a>
-           within 140 range of them.
+           within 140 radius around them.
           </li>
          </ul>
          <ul>
@@ -1206,16 +1243,14 @@ document.head.appendChild(script);
        </div>
        <p>
         <br/>
-       </p>
-       <p>
         <span id="Call_of_the_Wild">
         </span>
        </p>
-       <table class="infobox" style="float:right; text-align:center; line-height: 1.5em; white-space: nowrap; font-size: 80%;">
+       <table class="infobox" style="text-align:center; line-height:1.5em; font-size:80%; white-space:nowrap;">
         <tr>
-         <th style="color:white; background-color:#B44335; font-size:112%;">
+         <th style="background-color:#B44335; font-size:112%;">
           <a href="/Hawk" title="Hawk">
-           <span style="color:#FFFFFF;">
+           <span style="color:white;">
             Hawk
            </span>
           </a>
@@ -1229,147 +1264,130 @@ document.head.appendChild(script);
          </td>
         </tr>
         <tr>
-         <td class="images40pxwidth">
-          <div style="display:table; table-layout:fixed; width:100%;">
-           <div style="display:table-row">
-           </div>
-          </div>
+         <td style="border-top:1px solid black;">
          </td>
         </tr>
         <tr>
-         <th style="color:white;background-color:#FFBE66" width="100%">
+         <td style="background:black;">
+          <a class="image" href="/File:Unknown_Unit_icon.png">
+           <img alt="Unknown Unit icon.png" height="72" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/5/5d/Unknown_Unit_icon.png?version=f2ed984345f683a8ee029ffdb5220380" width="128"/>
+          </a>
+         </td>
+        </tr>
+        <tr>
+         <th style="color:white; background-color:#FFBE66;">
           Summon
          </th>
         </tr>
         <tr>
          <td>
-          <table class="oddrowsgray" style="width:100%; text-align:left; border-collapse:collapse; padding-left: 10px;">
+          <table class="oddrowsgray" style="width:100%; text-align:left; border-collapse:collapse;">
            <tr>
-            <td>
-             <b>
-              Level
-             </b>
-            </td>
+            <th>
+             Level
+            </th>
             <td>
              1
             </td>
            </tr>
            <tr>
-            <td>
-             <b>
-              Duration
-             </b>
-            </td>
-            <td>
+            <th>
+             Duration
+            </th>
+            <td style="white-space:normal;">
              60
             </td>
            </tr>
            <tr>
-            <td>
-             <b>
-              <a href="/Health" title="Health">
-               Health
-              </a>
-             </b>
-            </td>
-            <td>
+            <th>
+             <a href="/Health" title="Health">
+              Health
+             </a>
+            </th>
+            <td style="white-space:normal;">
              40/60/80/100
             </td>
            </tr>
            <tr>
-            <td>
-             <b>
-              <a class="mw-redirect" href="/Health_regeneration" title="Health regeneration">
-               Health regeneration
-              </a>
-             </b>
-            </td>
+            <th>
+             <a class="mw-redirect" href="/Health_regeneration" title="Health regeneration">
+              Health regeneration
+             </a>
+            </th>
             <td>
              1.5
             </td>
            </tr>
            <tr>
-            <td>
-             <b>
-              <a href="/Armor" title="Armor">
-               Armor
-              </a>
-             </b>
-            </td>
-            <td>
+            <th>
+             <a href="/Armor" title="Armor">
+              Armor
+             </a>
+            </th>
+            <td style="white-space:normal;">
              <span id="tooltip" style="cursor:help; border-bottom:1px dotted;" title="Type: Basic">
               5
              </span>
             </td>
            </tr>
            <tr>
-            <td>
-             <b>
-              <a href="/Magic_resistance" title="Magic resistance">
-               Magic resistance
-              </a>
-             </b>
-            </td>
-            <td>
+            <th>
+             <a href="/Magic_resistance" title="Magic resistance">
+              Magic resistance
+             </a>
+            </th>
+            <td style="white-space:normal;">
              0 %
             </td>
            </tr>
            <tr>
-            <td>
-             <b>
-              <a href="/Movement_speed" title="Movement speed">
-               Movement Speed
-              </a>
-             </b>
-            </td>
-            <td>
+            <th>
+             <a href="/Movement_speed" title="Movement speed">
+              Movement speed
+             </a>
+            </th>
+            <td style="white-space:normal;">
              <span id="tooltip" style="cursor:help; border-bottom:1px dotted;" title="Flying">
               250/275/300/325
              </span>
             </td>
            </tr>
            <tr>
-            <td>
-             <b>
-              <a class="mw-redirect" href="/Follow_range" title="Follow range">
-               Follow range
-              </a>
-             </b>
-            </td>
+            <th>
+             <a class="mw-redirect" href="/Follow_range" title="Follow range">
+              Follow range
+             </a>
+            </th>
             <td>
              100
             </td>
            </tr>
            <tr>
-            <td>
-             <b>
-              <a href="/Turn_rate" title="Turn rate">
-               Turn Rate
-              </a>
-             </b>
-            </td>
+            <th>
+             <a href="/Turn_rate" title="Turn rate">
+              Turn rate
+             </a>
+            </th>
             <td>
              0.6
             </td>
            </tr>
            <tr>
-            <td>
-             <b>
-              Collision Size
-             </b>
-            </td>
+            <th>
+             <a href="/Collision_size" title="Collision size">
+              Collision size
+             </a>
+            </th>
             <td>
              24
             </td>
            </tr>
            <tr>
-            <td>
-             <b>
-              <a href="/Vision" title="Vision">
-               Vision Range
-              </a>
-             </b>
-            </td>
+            <th>
+             <a href="/Vision" title="Vision">
+              Vision range
+             </a>
+            </th>
             <td>
              <span id="tooltip" style="cursor:help; border-bottom:1px dotted;" title="During the day">
               500/750/1000/1250
@@ -1386,46 +1404,38 @@ document.head.appendChild(script);
             </td>
            </tr>
            <tr>
-            <td>
-             <b>
-              <a href="/Gold" title="Gold">
-               Bounty
-              </a>
-             </b>
-            </td>
-            <td>
+            <th>
+             <a href="/Gold" title="Gold">
+              Bounty
+             </a>
+            </th>
+            <td style="white-space:normal;">
              30/40/50/60
             </td>
            </tr>
            <tr>
-            <td>
-             <b>
-              <a href="/Experience" title="Experience">
-               Experience
-              </a>
-             </b>
-            </td>
+            <th>
+             <a href="/Experience" title="Experience">
+              Experience
+             </a>
+            </th>
             <td>
              77
             </td>
            </tr>
            <tr>
-            <td>
-             <b>
-              Model scale
-             </b>
-            </td>
+            <th>
+             Model scale
+            </th>
             <td>
              1.2
             </td>
            </tr>
            <tr>
-            <td>
-             <b>
-              Notes
-             </b>
-            </td>
-            <td>
+            <th>
+             Notes
+            </th>
+            <td style="white-space:normal;">
              <b>
               Abilities:
              </b>
@@ -1438,7 +1448,6 @@ document.head.appendChild(script);
                Invisibility
               </a>
              </span>
-             ​
             </td>
            </tr>
           </table>
@@ -1516,25 +1525,38 @@ document.head.appendChild(script);
           </div>
           <div>
            <b>
+            Number of Hawks
+           </b>
+           :
+           <span style="white-space: nowrap">
+            1
+           </span>
+          </div>
+          <div>
+           <b>
             Hawk Duration
            </b>
-           : 60
+           :
+           <span style="white-space: nowrap">
+            60
+           </span>
           </div>
-          <div style="display: inline-block; margin: 8px 0px 0px 50px; width: 190px; vertical-align: top;">
+          <div style="display: inline-block; margin: 8px 0px 0px 50px; width: 190px; vertical-align: top; word-wrap: break-word;">
            <span style="position: relative; top: -2px;">
             <a href="/Cooldown" title="Cooldown">
              <img alt="Cooldown symbol.png" height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/b/b7/Cooldown_symbol.png?version=7429ed9baf0f121e6ab3324bfdfad708" style="vertical-align: text-top" width="20"/>
             </a>
            </span>
            42/38/34/30
-           <br/>
-           (
-           <a href="/Talents" title="Talent">
-            <img alt="Talent" height="16" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/c/cd/Talent_tree_symbol.png/16px-Talent_tree_symbol.png?version=b4db4b31a2f9c215885be017c22a8b0c" style="vertical-align: text-top" width="16"/>
-           </a>
-           36.96/33.44/29.92/26.4)
+           <span style="white-space: nowrap">
+            (
+            <a href="/Talents" title="Talent">
+             <img alt="Talent" height="16" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/c/cd/Talent_tree_symbol.png/16px-Talent_tree_symbol.png?version=b4db4b31a2f9c215885be017c22a8b0c" style="vertical-align: text-top" width="16"/>
+            </a>
+            36.96/33.44/29.92/26.4)
+           </span>
           </div>
-          <div style="display: inline-block; margin: 8px 0px 0px; width: 190px; vertical-align: top;">
+          <div style="display: inline-block; margin: 8px 0px 0px; width: 190px; vertical-align: top; word-wrap: break-word;">
            <span style="position: relative; top: -2px;">
             <a href="/Mana" title="Mana">
              <img alt="Mana symbol.png" height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/f/f3/Mana_symbol.png?version=a81185ac577f9b52f2df06be91b6600c" style="vertical-align: text-top" width="20"/>
@@ -1567,7 +1589,7 @@ document.head.appendChild(script);
              Call of the Wild: Boar
             </a>
            </span>
-           ​ as well.
+           as well.
           </li>
          </ul>
          <ul>
@@ -1590,7 +1612,7 @@ document.head.appendChild(script);
              Proximity Mines
             </a>
            </span>
-           ​.
+           .
           </li>
          </ul>
          <ul>
@@ -1603,11 +1625,11 @@ document.head.appendChild(script);
        <p>
         <br/>
        </p>
-       <table class="infobox" style="float:right; text-align:center; line-height: 1.5em; white-space: nowrap; font-size: 80%;">
+       <table class="infobox" style="text-align:center; line-height:1.5em; font-size:80%; white-space:nowrap;">
         <tr>
-         <th style="color:white; background-color:#B44335; font-size:112%;">
+         <th style="background-color:#B44335; font-size:112%;">
           <a href="/Boar" title="Boar">
-           <span style="color:#FFFFFF;">
+           <span style="color:white;">
             Boar
            </span>
           </a>
@@ -1621,118 +1643,1385 @@ document.head.appendChild(script);
          </td>
         </tr>
         <tr>
-         <td class="images40pxwidth">
-          <div style="display:table; table-layout:fixed; width:100%;">
-           <div style="display:table-row">
-           </div>
-          </div>
+         <td style="border-top:1px solid black;">
          </td>
         </tr>
         <tr>
-         <th style="color:white;background-color:#FFBE66" width="100%">
+         <td style="background:black;">
+          <a class="image" href="/File:Beastmaster_Boar_icon.png">
+           <img alt="Beastmaster Boar icon.png" height="72" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/6/63/Beastmaster_Boar_icon.png?version=fb47e349589d0c6d0e44af10621a8ddc" width="128"/>
+          </a>
+         </td>
+        </tr>
+        <tr>
+         <th style="color:white; background-color:#FFBE66;">
           Summon
          </th>
         </tr>
         <tr>
          <td>
-          <table class="oddrowsgray" style="width:100%; text-align:left; border-collapse:collapse; padding-left: 10px;">
+          <table class="oddrowsgray" style="width:100%; text-align:left; border-collapse:collapse;">
            <tr>
-            <td>
-             <b>
-              Level
-             </b>
-            </td>
+            <th>
+             Level
+            </th>
             <td>
              1
             </td>
            </tr>
            <tr>
-            <td>
-             <b>
-              Duration
-             </b>
-            </td>
-            <td>
+            <th>
+             Duration
+            </th>
+            <td style="white-space:normal;">
              60
             </td>
            </tr>
            <tr>
-            <td>
-             <b>
-              <a href="/Health" title="Health">
-               Health
-              </a>
-             </b>
-            </td>
-            <td>
+            <th>
+             <a href="/Health" title="Health">
+              Health
+             </a>
+            </th>
+            <td style="white-space:normal;">
              200/300/400/500
             </td>
            </tr>
            <tr>
-            <td>
-             <b>
-              <a class="mw-redirect" href="/Health_regeneration" title="Health regeneration">
-               Health regeneration
-              </a>
-             </b>
-            </td>
+            <th>
+             <a class="mw-redirect" href="/Health_regeneration" title="Health regeneration">
+              Health regeneration
+             </a>
+            </th>
             <td>
              1.5
             </td>
            </tr>
            <tr>
-            <td>
-             <b>
-              <a href="/Armor" title="Armor">
-               Armor
-              </a>
-             </b>
-            </td>
-            <td>
+            <th>
+             <a href="/Armor" title="Armor">
+              Armor
+             </a>
+            </th>
+            <td style="white-space:normal;">
              <span id="tooltip" style="cursor:help; border-bottom:1px dotted;" title="Type: Basic">
               0
              </span>
             </td>
            </tr>
            <tr>
-            <td>
-             <b>
-              <a href="/Magic_resistance" title="Magic resistance">
-               Magic resistance
-              </a>
-             </b>
-            </td>
-            <td>
+            <th>
+             <a href="/Magic_resistance" title="Magic resistance">
+              Magic resistance
+             </a>
+            </th>
+            <td style="white-space:normal;">
              0 %
             </td>
            </tr>
            <tr>
-            <td>
-             <b>
-              <a href="/Attack_damage" title="Attack damage">
-               Damage
-              </a>
-             </b>
-            </td>
-            <td>
+            <th>
+             <a href="/Attack_damage" title="Attack damage">
+              Attack damage
+             </a>
+            </th>
+            <td style="white-space:normal;">
              <span id="tooltip" style="cursor:help; border-bottom:1px dotted;" title="Type: Pierce">
               10/25/40/55
              </span>
             </td>
            </tr>
            <tr>
+            <th>
+             <a class="mw-redirect" href="/Acquisition_range" title="Acquisition range">
+              Acquisition range
+             </a>
+            </th>
+            <td style="white-space:normal;">
+             600
+            </td>
+           </tr>
+           <tr>
+            <th>
+             <a href="/Attack_range" title="Attack range">
+              Attack range
+             </a>
+            </th>
+            <td style="white-space:normal;">
+             <span id="tooltip" style="cursor:help; border-bottom:1px dotted;" title="Ranged">
+              550
+             </span>
+            </td>
+           </tr>
+           <tr>
+            <th>
+             <a href="/Attack_speed" title="Attack speed">
+              Base attack time
+             </a>
+            </th>
             <td>
+             1.25
+            </td>
+           </tr>
+           <tr>
+            <th>
+             <a href="/Attack_animation" title="Attack animation">
+              Attack animation
+             </a>
+            </th>
+            <td>
+             <span id="tooltip" style="cursor:help; border-bottom:1px dotted;" title="Attack point">
+              0.5
+             </span>
+             +
+             <span id="tooltip" style="cursor:help; border-bottom:1px dotted;" title="Attack backswing">
+              0.47
+             </span>
+            </td>
+           </tr>
+           <tr>
+            <th>
+             <a class="mw-redirect" href="/Projectile_speed" title="Projectile speed">
+              Projectile speed
+             </a>
+            </th>
+            <td>
+             1500
+            </td>
+           </tr>
+           <tr>
+            <th>
+             <a href="/Movement_speed" title="Movement speed">
+              Movement speed
+             </a>
+            </th>
+            <td style="white-space:normal;">
+             <span id="tooltip" style="cursor:help; border-bottom:1px dotted;" title="Walking">
+              350
+             </span>
+            </td>
+           </tr>
+           <tr>
+            <th>
+             <a class="mw-redirect" href="/Follow_range" title="Follow range">
+              Follow range
+             </a>
+            </th>
+            <td>
+             100
+            </td>
+           </tr>
+           <tr>
+            <th>
+             <a href="/Turn_rate" title="Turn rate">
+              Turn rate
+             </a>
+            </th>
+            <td>
+             0.6
+            </td>
+           </tr>
+           <tr>
+            <th>
+             <a href="/Collision_size" title="Collision size">
+              Collision size
+             </a>
+            </th>
+            <td>
+             24
+            </td>
+           </tr>
+           <tr>
+            <th>
+             <a href="/Vision" title="Vision">
+              Vision range
+             </a>
+            </th>
+            <td>
+             <span id="tooltip" style="cursor:help; border-bottom:1px dotted;" title="During the day">
+              1400
+             </span>
+             •
+             <span id="tooltip" style="cursor:help; border-bottom:1px dotted;" title="During the night">
+              800
+             </span>
+             (
+             <span id="tooltip" style="cursor:help; border-bottom:1px dotted;" title="Ground vision">
+              G
+             </span>
+             )
+            </td>
+           </tr>
+           <tr>
+            <th>
+             <a href="/Gold" title="Gold">
+              Bounty
+             </a>
+            </th>
+            <td style="white-space:normal;">
+             26‒38
+            </td>
+           </tr>
+           <tr>
+            <th>
+             <a href="/Experience" title="Experience">
+              Experience
+             </a>
+            </th>
+            <td>
+             60/70/80/90
+            </td>
+           </tr>
+           <tr>
+            <th>
+             Model scale
+            </th>
+            <td>
+             0.65
+            </td>
+           </tr>
+           <tr>
+            <th>
+             Notes
+            </th>
+            <td style="white-space:normal;">
              <b>
-              <a class="mw-redirect" href="/Acquisition_range" title="Acquisition range">
-               Acquisition range
-              </a>
+              Abilities:
              </b>
+             <br/>
+             <span style="white-space: nowrap;">
+              <a href="/Boar#Poison" title="Boar#Poison">
+               <img alt="Poison (Boar) icon.png" height="16" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/9/9c/Poison_%28Boar%29_icon.png/16px-Poison_%28Boar%29_icon.png?version=fd3b3801eafa1ae743dbb18a40596aff" width="16"/>
+              </a>
+              <a href="/Boar#Poison" title="Boar">
+               Poison
+              </a>
+             </span>
             </td>
            </tr>
           </table>
          </td>
         </tr>
        </table>
+       <p>
+        <span id="Call_of_the_Wild_Boar">
+        </span>
+        <span id="Call_of_the_Wild:_Boar">
+        </span>
+       </p>
+       <div style="display: flex; flex-wrap: wrap; align-items: flex-start;">
+        <div style="width: 450px; margin-right: 15px; vertical-align: top; background-color: #EAEAEA;">
+         <div style="font-weight: bold; font-size: 110%; border-bottom: 1px solid black; background-color: #B44335; color: white; padding: 3px 5px;">
+          Call of the Wild: Boar
+          <div style="float:right;">
+           <span style="position:relative; top:-2px;">
+            <a class="sm2_button" href="https://hydra-media.cursecdn.com/dota2.gamepedia.com/f/f5/Call_of_the_Wild_Boar.mp3" title="Play">
+             Play
+            </a>
+           </span>
+           <div style="background-color:white; display:inline-block; margin-left:5px; color:#B44335; padding-left:0.2em; padding-right:0.25em; text-align:center;">
+            <span id="tooltip" style="cursor:help; border-bottom:1px dotted;" title="Hotkey">
+             E
+            </span>
+           </div>
+           <div style="background-color:white; display:inline-block; margin-left:5px; color:#B44335; opacity:0.65; padding-left:0.25em; padding-right:0.2em; text-align:center;">
+            <span id="tooltip" style="cursor:help; border-bottom:1px dotted;" title="Legacy Key">
+             B
+            </span>
+           </div>
+          </div>
+         </div>
+         <div>
+          <div class="ico_active">
+           <a class="image" href="/File:Call_of_the_Wild_Boar_icon.png">
+            <img alt="Call of the Wild Boar icon.png" height="128" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/f/fa/Call_of_the_Wild_Boar_icon.png?version=5991aa23ccec882430d98cf3fb6b30a2" width="128"/>
+           </a>
+          </div>
+          <div style="width: 312px; display: inline-block;">
+           <div style="padding: 15px 5px; font-size: 85%; line-height: 100%; text-align: center;">
+            <div style="display: inline-block; width: 32%; vertical-align: top;">
+             <b>
+              Ability
+             </b>
+             <br/>
+             <a href="/Abilities#No_Target" title="Abilities">
+              No Target
+             </a>
+            </div>
+            <div style="display: inline-block; width: 32%; vertical-align: top;">
+            </div>
+            <div style="display: inline-block; width: 32%; vertical-align: top;">
+             <b>
+              Damage
+             </b>
+             <br/>
+             <a href="/Damage_types#Physical" title="Damage types">
+              <span style="color:#71A9EA">
+               <b>
+                Physical
+               </b>
+              </span>
+             </a>
+            </div>
+           </div>
+           <div style="vertical-align: top; padding: 3px 5px; border-top: 1px solid black;">
+            Beastmaster calls a powerful Boar to stalk the battlefield, capable of spitting poison at enemies to slow their movement and attack speed.
+           </div>
+          </div>
+         </div>
+         <div style="vertical-align:top; padding: 3px 5px;">
+          <div>
+           <b>
+            Cast Animation
+           </b>
+           :
+           <span id="tooltip" style="cursor:help; border-bottom:1px dotted;" title="Cast point">
+            0.3
+           </span>
+           +
+           <span id="tooltip" style="cursor:help; border-bottom:1px dotted;" title="Cast backswing">
+            0.63
+           </span>
+          </div>
+          <div>
+           <b>
+            Number of Boars
+           </b>
+           :
+           <span style="white-space: nowrap">
+            1 (
+            <a href="/Talents" title="Talent">
+             <img alt="Talent" height="16" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/c/cd/Talent_tree_symbol.png/16px-Talent_tree_symbol.png?version=b4db4b31a2f9c215885be017c22a8b0c" style="vertical-align: text-top" width="16"/>
+            </a>
+            2)
+           </span>
+          </div>
+          <div>
+           <b>
+            Boar Duration
+           </b>
+           :
+           <span style="white-space: nowrap">
+            60
+           </span>
+          </div>
+          <div style="display: inline-block; margin: 8px 0px 0px 50px; width: 190px; vertical-align: top; word-wrap: break-word;">
+           <span style="position: relative; top: -2px;">
+            <a href="/Cooldown" title="Cooldown">
+             <img alt="Cooldown symbol.png" height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/b/b7/Cooldown_symbol.png?version=7429ed9baf0f121e6ab3324bfdfad708" style="vertical-align: text-top" width="20"/>
+            </a>
+           </span>
+           42/38/34/30
+           <span style="white-space: nowrap">
+            (
+            <a href="/Talents" title="Talent">
+             <img alt="Talent" height="16" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/c/cd/Talent_tree_symbol.png/16px-Talent_tree_symbol.png?version=b4db4b31a2f9c215885be017c22a8b0c" style="vertical-align: text-top" width="16"/>
+            </a>
+            36.96/33.44/29.92/26.4)
+           </span>
+          </div>
+          <div style="display: inline-block; margin: 8px 0px 0px; width: 190px; vertical-align: top; word-wrap: break-word;">
+           <span style="position: relative; top: -2px;">
+            <a href="/Mana" title="Mana">
+             <img alt="Mana symbol.png" height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/f/f3/Mana_symbol.png?version=a81185ac577f9b52f2df06be91b6600c" style="vertical-align: text-top" width="20"/>
+            </a>
+           </span>
+           25
+          </div>
+          <div style="margin-top: 5px; padding-top: 2px; border-top: 1px solid #C1C1C1;">
+           <i>
+            After befriending the strange beast of his childhood, Beastmaster has learned to call to animals in times of need.
+           </i>
+          </div>
+         </div>
+        </div>
+        <div style="flex: 2 3 400px; word-wrap: break-word;">
+         <p>
+          <b>
+           Notes:
+          </b>
+          <br/>
+         </p>
+         <ul>
+          <li>
+           Leveling this spell automatically levels
+           <span style="white-space: nowrap;">
+            <a href="/Beastmaster#Call_of_the_Wild:_Hawk" title="Beastmaster#Call of the Wild: Hawk">
+             <img alt="Call of the Wild Hawk icon.png" height="16" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/f/fc/Call_of_the_Wild_Hawk_icon.png/16px-Call_of_the_Wild_Hawk_icon.png?version=d03fd4852c5548906043c01fe6cbe6ef" width="16"/>
+            </a>
+            <a href="/Beastmaster#Call_of_the_Wild:_Hawk" title="Beastmaster">
+             Call of the Wild: Hawk
+            </a>
+           </span>
+           as well.
+          </li>
+         </ul>
+         <ul>
+          <li>
+           Does not destroy a previous summon if this ability is used again before the previous
+           <a href="/Boar" title="Boar">
+            Boar
+           </a>
+           expires.
+          </li>
+         </ul>
+        </div>
+       </div>
+       <p>
+        <br/>
+        <span id="Inner_Beast">
+        </span>
+       </p>
+       <div style="display: flex; flex-wrap: wrap; align-items: flex-start;">
+        <div style="width: 450px; margin-right: 15px; vertical-align: top; background-color: #EAEAEA;">
+         <div style="font-weight: bold; font-size: 110%; border-bottom: 1px solid black; background-color: #B44335; color: white; padding: 3px 5px;">
+          Inner Beast
+          <div style="float:right;">
+           <a href="/Illusions" title="Can be used by illusions.">
+            <img alt="Can be used by illusions." height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/e/e2/Illusion_symbol.png/20px-Illusion_symbol.png?version=7a3a01543d327eccde768866533cbae2" style="vertical-align: text-top" width="20"/>
+           </a>
+           <a href="/Break" title="Disabled by Break.">
+            <img alt="Disabled by Break." height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/f/f9/Breakable_symbol.png/20px-Breakable_symbol.png?version=75c8c39d828694e4c795718ece243865" style="vertical-align: text-top" width="20"/>
+           </a>
+           <a href="/Spell_Immunity" title="Pierces spell immunity.">
+            <img alt="Pierces spell immunity." height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/0/0c/Spell_immunity_block_no_symbol.png/20px-Spell_immunity_block_no_symbol.png?version=8a9b499fbc92dda21de2b49951268177" style="vertical-align: text-top" width="20"/>
+           </a>
+           <div style="background-color:white; display:inline-block; margin-left:5px; color:#B44335; padding-left:0.2em; padding-right:0.25em; text-align:center;">
+            <span id="tooltip" style="cursor:help; border-bottom:1px dotted;" title="Hotkey">
+             D
+            </span>
+           </div>
+           <div style="background-color:white; display:inline-block; margin-left:5px; color:#B44335; opacity:0.65; padding-left:0.25em; padding-right:0.2em; text-align:center;">
+            <span id="tooltip" style="cursor:help; border-bottom:1px dotted;" title="Legacy Key">
+             F
+            </span>
+           </div>
+          </div>
+         </div>
+         <div>
+          <div class="ico_passive">
+           <a class="image" href="/File:Inner_Beast_icon.png">
+            <img alt="Inner Beast icon.png" height="128" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/1/1d/Inner_Beast_icon.png?version=4515ef4d5ee00788a7ca4abdcd592a76" width="128"/>
+           </a>
+          </div>
+          <div style="width: 312px; display: inline-block;">
+           <div style="padding: 15px 5px; font-size: 85%; line-height: 100%; text-align: center;">
+            <div style="display: inline-block; width: 32%; vertical-align: top;">
+             <b>
+              Ability
+             </b>
+             <br/>
+             <a href="/Aura" title="Aura">
+              Aura
+             </a>
+            </div>
+            <div style="display: inline-block; width: 32%; vertical-align: top;">
+             <b>
+              Affects
+             </b>
+             <br/>
+             Allies
+            </div>
+            <div style="display: inline-block; width: 32%; vertical-align: top;">
+            </div>
+           </div>
+           <div style="vertical-align: top; padding: 3px 5px; border-top: 1px solid black;">
+            Untaps the inner fury of allies, passively increasing their attack speed.
+           </div>
+          </div>
+         </div>
+         <div style="vertical-align:top; padding: 3px 5px;">
+          <div>
+           <b>
+            Radius
+           </b>
+           :
+           <span style="white-space: nowrap">
+            900
+           </span>
+          </div>
+          <div>
+           <b>
+            Attack Speed Bonus
+           </b>
+           :
+           <span style="white-space: nowrap">
+            15/25/35/45
+           </span>
+          </div>
+          <div style="margin-top: 10px;">
+           <b>
+            <span id="tooltip" style="cursor:help; border-bottom:1px dotted;" title="The displayed names are the intern names of the modifiers. Do not change them even if they don't match the ability name.">
+             Modifiers
+            </span>
+           </b>
+          </div>
+          <div style="font-size: 85%; margin-left: 10px;">
+           <div>
+            <img alt="Buff" height="16" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/c/c1/Modifier_buff_symbol.png/16px-Modifier_buff_symbol.png?version=97c71541b396c601c0ac22a73d1a7573" style="vertical-align: text-top" title="Buff" width="16"/>
+            <span style="color:#1F631F;">
+             <b>
+              Inner Beast:
+             </b>
+             Undispellable.
+            </span>
+           </div>
+          </div>
+          <div style="margin-top: 5px; padding-top: 2px; border-top: 1px solid #C1C1C1;">
+           <i>
+            Beastmaster's ability to incite the innate strength of animals was seen in the mauling of the king of Slom.
+           </i>
+          </div>
+         </div>
+        </div>
+        <div style="flex: 2 3 400px; word-wrap: break-word;">
+         <p>
+          <b>
+           Notes:
+          </b>
+          <br/>
+         </p>
+         <ul>
+          <li>
+           Affects all summons,
+           <a href="/Illusions" title="Illusions">
+            illusions
+           </a>
+           and
+           <a class="mw-redirect" href="/Invulnerable" title="Invulnerable">
+            invulnerable
+           </a>
+           units.
+          </li>
+         </ul>
+         <ul>
+          <li>
+           The
+           <a href="/Aura" title="Aura">
+            aura
+           </a>
+           's buff lingers for 0.5 seconds.
+          </li>
+         </ul>
+        </div>
+       </div>
+       <p>
+        <br/>
+        <span id="Primal_Roar">
+        </span>
+       </p>
+       <div style="display: flex; flex-wrap: wrap; align-items: flex-start;">
+        <div style="width: 450px; margin-right: 15px; vertical-align: top; background-color: #EAEAEA;">
+         <div style="font-weight: bold; font-size: 110%; border-bottom: 1px solid black; background-color: #414141; color: white; padding: 3px 5px;">
+          Primal Roar
+          <div style="float:right;">
+           <a href="/Linken%27s_Sphere" title="Partially blocked by Linken's Sphere.">
+            <img alt="Partially blocked by Linken's Sphere." height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/e/ea/Spell_block_partial_symbol.png/20px-Spell_block_partial_symbol.png?version=26cd9313a8228e5b4390b8d942cb1f16" style="vertical-align: text-top" width="20"/>
+           </a>
+           <a href="/Spell_Immunity" title="Partially pierces spell immunity.">
+            <img alt="Partially pierces spell immunity." height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/5/59/Spell_immunity_block_partial_symbol.png/20px-Spell_immunity_block_partial_symbol.png?version=923f604c1ecd2a88b6b5a2bf6e32b59e" style="vertical-align: text-top" width="20"/>
+           </a>
+           <span style="position:relative; top:-2px;">
+            <a class="sm2_button" href="https://hydra-media.cursecdn.com/dota2.gamepedia.com/6/64/Primal_Roar.mp3" title="Play">
+             Play
+            </a>
+           </span>
+           <div style="background-color:white; display:inline-block; margin-left:5px; color:#414141; padding-left:0.2em; padding-right:0.25em; text-align:center;">
+            <span id="tooltip" style="cursor:help; border-bottom:1px dotted;" title="Hotkey">
+             R
+            </span>
+           </div>
+           <div style="background-color:white; display:inline-block; margin-left:5px; color:#414141; opacity:0.65; padding-left:0.25em; padding-right:0.2em; text-align:center;">
+            <span id="tooltip" style="cursor:help; border-bottom:1px dotted;" title="Legacy Key">
+             R
+            </span>
+           </div>
+          </div>
+         </div>
+         <div>
+          <div class="ico_active">
+           <a class="image" href="/File:Primal_Roar_icon.png">
+            <img alt="Primal Roar icon.png" height="128" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/6/68/Primal_Roar_icon.png?version=17dec674a0829f3bad3cad3fe1619707" width="128"/>
+           </a>
+          </div>
+          <div style="width: 312px; display: inline-block;">
+           <div style="padding: 15px 5px; font-size: 85%; line-height: 100%; text-align: center;">
+            <div style="display: inline-block; width: 32%; vertical-align: top;">
+             <b>
+              Ability
+             </b>
+             <br/>
+             <a href="/Abilities#Target_Unit" title="Abilities">
+              Target Unit
+             </a>
+            </div>
+            <div style="display: inline-block; width: 32%; vertical-align: top;">
+             <b>
+              Affects
+             </b>
+             <br/>
+             Enemies
+            </div>
+            <div style="display: inline-block; width: 32%; vertical-align: top;">
+             <b>
+              Damage
+             </b>
+             <br/>
+             <a href="/Damage_types#Magical" title="Damage types">
+              <span style="color:#3F56AD">
+               <b>
+                Magical
+               </b>
+              </span>
+             </a>
+            </div>
+           </div>
+           <div style="vertical-align: top; padding: 3px 5px; border-top: 1px solid black;">
+            Beastmaster lets loose a deafening roar that stuns, and shoves open, a path to its target. All units in the path of the roar are damaged, while units shoved aside by the roar have their movement and attack speed slowed.
+           </div>
+          </div>
+         </div>
+         <div style="vertical-align:top; padding: 3px 5px;">
+          <div>
+           <b>
+            Cast Animation
+           </b>
+           :
+           <span id="tooltip" style="cursor:help; border-bottom:1px dotted;" title="Cast point">
+            0.5
+           </span>
+           +
+           <span id="tooltip" style="cursor:help; border-bottom:1px dotted;" title="Cast backswing">
+            0.63
+           </span>
+          </div>
+          <div>
+           <b>
+            Cast Range
+           </b>
+           :
+           <span style="white-space: nowrap">
+            600 (
+            <a href="/Aghanim%27s_Scepter" title="Upgradable by Aghanim's Scepter.">
+             <img alt="Upgradable by Aghanim's Scepter." height="16" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/73/Aghanim%27s_Scepter_symbol.png/16px-Aghanim%27s_Scepter_symbol.png?version=7d547f82a4dc57080ed920f762776a32" style="vertical-align: text-top" width="16"/>
+            </a>
+            <span style="color:#538028;">
+             950
+            </span>
+            )
+           </span>
+          </div>
+          <div>
+           <b>
+            Knockback Width
+           </b>
+           :
+           <span style="white-space: nowrap">
+            300
+           </span>
+          </div>
+          <div>
+           <b>
+            Damage
+           </b>
+           :
+           <span style="white-space: nowrap">
+            150/225/300
+           </span>
+          </div>
+          <div>
+           <b>
+            Move Speed Slow
+           </b>
+           :
+           <span style="white-space: nowrap">
+            50%
+           </span>
+          </div>
+          <div>
+           <b>
+            Attack Speed Slow
+           </b>
+           :
+           <span style="white-space: nowrap">
+            50
+           </span>
+          </div>
+          <div>
+           <b>
+            Slow Duration
+           </b>
+           :
+           <span style="white-space: nowrap">
+            2/3/4
+           </span>
+          </div>
+          <div>
+           <b>
+            Knockback Distance
+           </b>
+           :
+           <span style="white-space: nowrap">
+            300
+           </span>
+          </div>
+          <div>
+           <b>
+            Knockback Duration
+           </b>
+           :
+           <span style="white-space: nowrap">
+            0.6
+           </span>
+          </div>
+          <div>
+           <b>
+            Stun Duration
+           </b>
+           :
+           <span style="white-space: nowrap">
+            3/3.5/4
+           </span>
+          </div>
+          <div style="display: inline-block; margin: 8px 0px 0px 50px; width: 190px; vertical-align: top; word-wrap: break-word;">
+           <span style="position: relative; top: -2px;">
+            <a href="/Cooldown" title="Cooldown">
+             <img alt="Cooldown symbol.png" height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/b/b7/Cooldown_symbol.png?version=7429ed9baf0f121e6ab3324bfdfad708" style="vertical-align: text-top" width="20"/>
+            </a>
+           </span>
+           80/75/70
+           <span style="white-space: nowrap">
+            (
+            <a href="/Talents" title="Talent">
+             <img alt="Talent" height="16" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/c/cd/Talent_tree_symbol.png/16px-Talent_tree_symbol.png?version=b4db4b31a2f9c215885be017c22a8b0c" style="vertical-align: text-top" width="16"/>
+            </a>
+            70.4/66/61.6)
+           </span>
+           <span style="white-space: nowrap">
+            (
+            <a href="/Aghanim%27s_Scepter" title="Upgradable by Aghanim's Scepter.">
+             <img alt="Upgradable by Aghanim's Scepter." height="16" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/73/Aghanim%27s_Scepter_symbol.png/16px-Aghanim%27s_Scepter_symbol.png?version=7d547f82a4dc57080ed920f762776a32" style="vertical-align: text-top" width="16"/>
+            </a>
+            <span style="color:#538028;">
+             45
+            </span>
+            ,
+            <a href="/Talents" title="Talent">
+             <img alt="Talent" height="16" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/c/cd/Talent_tree_symbol.png/16px-Talent_tree_symbol.png?version=b4db4b31a2f9c215885be017c22a8b0c" style="vertical-align: text-top" width="16"/>
+            </a>
+            <span style="color:#538028;">
+             39.6
+            </span>
+            )
+           </span>
+          </div>
+          <div style="display: inline-block; margin: 8px 0px 0px; width: 190px; vertical-align: top; word-wrap: break-word;">
+           <span style="position: relative; top: -2px;">
+            <a href="/Mana" title="Mana">
+             <img alt="Mana symbol.png" height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/f/f3/Mana_symbol.png?version=a81185ac577f9b52f2df06be91b6600c" style="vertical-align: text-top" width="20"/>
+            </a>
+           </span>
+           150/175/200
+          </div>
+          <div style="height: 8px; line-height: 0px;">
+          </div>
+          <div style="margin-left: 50px;">
+           <span style="position: relative; top: -2px;">
+            <a href="/Aghanim%27s_Scepter" title="Upgradable by Aghanim's Scepter.">
+             <img alt="Upgradable by Aghanim's Scepter." height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/73/Aghanim%27s_Scepter_symbol.png/20px-Aghanim%27s_Scepter_symbol.png?version=d829eda2dfcb5c0078dd83220a3299dc" style="vertical-align: text-top" width="20"/>
+            </a>
+           </span>
+           Reduces cooldown, and increases cast range.
+          </div>
+          <div style="margin-left: 50px;">
+           <span style="position: relative; top: -2px;">
+            <a href="/Spell_Immunity" title="Partially pierces spell immunity.">
+             <img alt="Partially pierces spell immunity." height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/5/59/Spell_immunity_block_partial_symbol.png/20px-Spell_immunity_block_partial_symbol.png?version=923f604c1ecd2a88b6b5a2bf6e32b59e" style="vertical-align: text-top" width="20"/>
+            </a>
+           </span>
+           Can target and stun spell immune enemies. Attempts to damage the primary target while spell immune. Can knock back secondary spell immune enemies. Does not slow and does not attempt to damage secondary spell immune enemies. Slow persists if debuff was placed before spell immunity and when not dispelled.
+          </div>
+          <div style="margin-left: 50px;">
+           <span style="position: relative; top: -2px;">
+            <a href="/Linken%27s_Sphere" title="Partially blocked by Linken's Sphere.">
+             <img alt="Partially blocked by Linken's Sphere." height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/e/ea/Spell_block_partial_symbol.png/20px-Spell_block_partial_symbol.png?version=26cd9313a8228e5b4390b8d942cb1f16" style="vertical-align: text-top" width="20"/>
+            </a>
+           </span>
+           Blocked fully only when primary target.
+          </div>
+          <div style="margin-top: 10px;">
+           <b>
+            <span id="tooltip" style="cursor:help; border-bottom:1px dotted;" title="The displayed names are the intern names of the modifiers. Do not change them even if they don't match the ability name.">
+             Modifiers
+            </span>
+           </b>
+          </div>
+          <div style="font-size: 85%; margin-left: 10px;">
+           <div>
+            <img alt="Debuff" height="16" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/1/1a/Modifier_debuff_symbol.png/16px-Modifier_debuff_symbol.png?version=5684dfbf37c3058c80b8495a4d0dc346" style="vertical-align: text-top" title="Debuff" width="16"/>
+            <span style="color:#631F1F;">
+             <b>
+              Stunned:
+             </b>
+             Dispellable with strong dispels.
+            </span>
+           </div>
+           <div>
+            <img alt="Debuff" height="16" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/1/1a/Modifier_debuff_symbol.png/16px-Modifier_debuff_symbol.png?version=5684dfbf37c3058c80b8495a4d0dc346" style="vertical-align: text-top" title="Debuff" width="16"/>
+            <span style="color:#631F1F;">
+             <b>
+              Prima Roar Push:
+             </b>
+             Dispellable with any dispel.
+            </span>
+           </div>
+           <div>
+            <img alt="Debuff" height="16" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/1/1a/Modifier_debuff_symbol.png/16px-Modifier_debuff_symbol.png?version=5684dfbf37c3058c80b8495a4d0dc346" style="vertical-align: text-top" title="Debuff" width="16"/>
+            <span style="color:#631F1F;">
+             <b>
+              Primal Roar Slow:
+             </b>
+             Dispellable with any dispel.
+            </span>
+           </div>
+          </div>
+          <div style="margin-top: 5px; padding-top: 2px; border-top: 1px solid #C1C1C1;">
+           <i>
+            The Beastmaster has learned to channel his primal instincts into an animalistic roar, causing devastation in the ranks of enemies.
+           </i>
+          </div>
+         </div>
+        </div>
+        <div style="flex: 2 3 400px; word-wrap: break-word;">
+         <p>
+          <b>
+           Notes:
+          </b>
+          <br/>
+         </p>
+         <ul>
+          <li>
+           Only enemy units are shoved aside from the path of the roar.
+           <a href="/Roshan" title="Roshan">
+            Roshan
+           </a>
+           is not affected by the knockback.
+          </li>
+         </ul>
+         <ul>
+          <li>
+           Affected units are fully
+           <a href="/Disable" title="Disable">
+            disabled
+           </a>
+           during the knockback.
+          </li>
+         </ul>
+         <ul>
+          <li>
+           Primal Roar can be used on a
+           <a class="mw-redirect" href="/Courier" title="Courier">
+            courier
+           </a>
+           to stun it, but it is not damaged. Couriers are also a valid target for the knockback.
+          </li>
+         </ul>
+         <ul>
+          <li>
+           Knocks units aside at a speed of 500, up to 300 range away, resulting in a
+           <span id="tooltip" style="cursor:help; border-bottom:1px dotted;" title="The knockback debuff is hidden">
+            knockback
+           </span>
+           duration of 0.6 seconds.
+          </li>
+         </ul>
+         <ul>
+          <li>
+           Units hit by the knockback are made to face towards the direction they are getting pushed.
+          </li>
+         </ul>
+         <ul>
+          <li>
+           The knockback and slow have a dynamic range, based on the distance between Beastmaster and the primary target.
+           <ul>
+            <li>
+             For every 2 distance between Beastmaster and the target upon cast, the knockback range increases by 1.
+            </li>
+            <li>
+             When the target is 600 range away, the knockback hits units up to 300 range behind the target and behind Beastmaster.
+            </li>
+            <li>
+             When the target is 950 range away, the knockback hits units up to 475 range behind the target and behind Beastmaster.
+            </li>
+            <li>
+             The width of the knockback area is always 300, so the affected area is always
+             <a class="extiw" href="http://en.wikipedia.org/wiki/Stadium_(geometry)" title="w:Stadium (geometry)">
+              stadium-shaped
+             </a>
+             .
+            </li>
+           </ul>
+          </li>
+         </ul>
+         <ul>
+          <li>
+           Considering the dynamic range, the slow/knockback can hit units up to 900 (
+           <a href="/Aghanim%27s_Scepter" title="Upgradable by Aghanim's Scepter.">
+            <img alt="Upgradable by Aghanim's Scepter." height="16" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/73/Aghanim%27s_Scepter_symbol.png/16px-Aghanim%27s_Scepter_symbol.png?version=7d547f82a4dc57080ed920f762776a32" style="vertical-align: text-top" width="16"/>
+           </a>
+           1425) range away.
+          </li>
+         </ul>
+         <ul>
+          <li>
+           When an enemy is perfectly aligned with Beastmaster and his Primal Roar target, it does not get knocked aside
+           <ul>
+            <li>
+             However, the slow and damage are still applied, and the target is still disabled for the knockback duration.
+            </li>
+           </ul>
+          </li>
+         </ul>
+        </div>
+       </div>
+       <p>
+        <br/>
+       </p>
+       <h3>
+        <span class="mw-headline" id="Hawk">
+         Hawk
+        </span>
+        <span class="mw-editsection">
+         <span class="mw-editsection-bracket">
+          [
+         </span>
+         <a href="/index.php?title=Beastmaster&amp;action=edit&amp;section=3" title="Edit section: Hawk">
+          edit
+         </a>
+         <span class="mw-editsection-bracket">
+          ]
+         </span>
+        </span>
+       </h3>
+       <p>
+        <span id="Invisibility">
+        </span>
+       </p>
+       <div style="display: flex; flex-wrap: wrap; align-items: flex-start;">
+        <div style="width: 450px; margin-right: 15px; vertical-align: top; background-color: #EAEAEA;">
+         <div style="font-weight: bold; font-size: 110%; border-bottom: 1px solid black; background-color: #2277AA; color: white; padding: 3px 5px;">
+          Invisibility
+          <div style="float:right;">
+           <a href="/Break" title="Not disabled by Break.">
+            <img alt="Not disabled by Break." height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/d/dd/Breakable_no_symbol.png/20px-Breakable_no_symbol.png?version=576e43cc086d47930d17f3d13a65bd79" style="vertical-align: text-top" width="20"/>
+           </a>
+           <a href="/Spell_Immunity" title="Pierces spell immunity.">
+            <img alt="Pierces spell immunity." height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/0/0c/Spell_immunity_block_no_symbol.png/20px-Spell_immunity_block_no_symbol.png?version=8a9b499fbc92dda21de2b49951268177" style="vertical-align: text-top" width="20"/>
+           </a>
+          </div>
+         </div>
+         <div>
+          <div class="ico_passive">
+           <a class="image" href="/File:Invisibility_(Hawk)_icon.png">
+            <img alt="Invisibility (Hawk) icon.png" height="128" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/2/28/Invisibility_%28Hawk%29_icon.png?version=9c3e5de88a38039a1743d19b88899172" width="128"/>
+           </a>
+          </div>
+          <div style="width: 312px; display: inline-block;">
+           <div style="padding: 15px 5px; font-size: 85%; line-height: 100%; text-align: center;">
+            <div style="display: inline-block; width: 32%; vertical-align: top;">
+             <b>
+              Ability
+             </b>
+             <br/>
+             <a href="/Abilities#Passive" title="Abilities">
+              Passive
+             </a>
+            </div>
+            <div style="display: inline-block; width: 32%; vertical-align: top;">
+             <b>
+              Affects
+             </b>
+             <br/>
+             Self
+            </div>
+            <div style="display: inline-block; width: 32%; vertical-align: top;">
+            </div>
+           </div>
+           <div style="vertical-align: top; padding: 3px 5px; border-top: 1px solid black;">
+            If motionless for some time, the Hawk becomes invisible.
+           </div>
+          </div>
+         </div>
+         <div style="vertical-align:top; padding: 3px 5px;">
+          <div>
+           <b>
+            Fade Time
+           </b>
+           :
+           <span style="white-space: nowrap">
+            1
+           </span>
+          </div>
+          <div>
+           <b>
+            Fade Delay
+           </b>
+           :
+           <span style="white-space: nowrap">
+            3
+           </span>
+          </div>
+          <div style="margin-top: 10px;">
+           <b>
+            <span id="tooltip" style="cursor:help; border-bottom:1px dotted;" title="The displayed names are the intern names of the modifiers. Do not change them even if they don't match the ability name.">
+             Modifiers
+            </span>
+           </b>
+          </div>
+          <div style="font-size: 85%; margin-left: 10px;">
+           <div>
+            <img alt="Buff" height="16" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/c/c1/Modifier_buff_symbol.png/16px-Modifier_buff_symbol.png?version=97c71541b396c601c0ac22a73d1a7573" style="vertical-align: text-top" title="Buff" width="16"/>
+            <span style="color:#1F631F;">
+             <b>
+              Hawk Invisibility:
+             </b>
+             Undispellable.
+            </span>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div style="flex: 2 3 400px; word-wrap: break-word;">
+         <p>
+          <b>
+           Notes:
+          </b>
+          <br/>
+         </p>
+         <ul>
+          <li>
+           Requires Call of the Wild to be level 3.
+          </li>
+         </ul>
+         <ul>
+          <li>
+           The fade time + the fade delay equal the total time before the hawk goes
+           <a class="mw-redirect" href="/Invisible" title="Invisible">
+            invisible
+           </a>
+           (4 seconds).
+          </li>
+         </ul>
+        </div>
+       </div>
+       <p>
+        <br/>
+       </p>
+       <h3>
+        <span class="mw-headline" id="Boar">
+         Boar
+        </span>
+        <span class="mw-editsection">
+         <span class="mw-editsection-bracket">
+          [
+         </span>
+         <a href="/index.php?title=Beastmaster&amp;action=edit&amp;section=4" title="Edit section: Boar">
+          edit
+         </a>
+         <span class="mw-editsection-bracket">
+          ]
+         </span>
+        </span>
+       </h3>
+       <p>
+        <span id="Poison">
+        </span>
+       </p>
+       <div style="display: flex; flex-wrap: wrap; align-items: flex-start;">
+        <div style="width: 450px; margin-right: 15px; vertical-align: top; background-color: #EAEAEA;">
+         <div style="font-weight: bold; font-size: 110%; border-bottom: 1px solid black; background-color: #2277AA; color: white; padding: 3px 5px;">
+          Poison
+          <div style="float:right;">
+           <a href="/Unique_Attack_Modifier" title="Not a Unique Attack Modifier.">
+            <img alt="Not a Unique Attack Modifier." height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/8/8e/Uam_no_symbol.png/20px-Uam_no_symbol.png?version=b3b165d8f9d0aec242958ad7639a60fd" style="vertical-align: text-top" width="20"/>
+           </a>
+           <a href="/Break" title="Disabled by Break.">
+            <img alt="Disabled by Break." height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/f/f9/Breakable_symbol.png/20px-Breakable_symbol.png?version=75c8c39d828694e4c795718ece243865" style="vertical-align: text-top" width="20"/>
+           </a>
+           <a href="/Spell_Immunity" title="Does not pierce spell immunity.">
+            <img alt="Does not pierce spell immunity." height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/9/9c/Spell_immunity_block_symbol.png/20px-Spell_immunity_block_symbol.png?version=7588eb7155b0b0ba78ae6c948c459858" style="vertical-align: text-top" width="20"/>
+           </a>
+          </div>
+         </div>
+         <div>
+          <div class="ico_passive">
+           <a class="image" href="/File:Poison_(Boar)_icon.png">
+            <img alt="Poison (Boar) icon.png" height="128" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/9/9c/Poison_%28Boar%29_icon.png?version=994748f465cffda9edb5b576bc4ff385" width="128"/>
+           </a>
+          </div>
+          <div style="width: 312px; display: inline-block;">
+           <div style="padding: 15px 5px; font-size: 85%; line-height: 100%; text-align: center;">
+            <div style="display: inline-block; width: 32%; vertical-align: top;">
+             <b>
+              Ability
+             </b>
+             <br/>
+             <a href="/Abilities#Passive" title="Abilities">
+              Passive
+             </a>
+            </div>
+            <div style="display: inline-block; width: 32%; vertical-align: top;">
+             <b>
+              Affects
+             </b>
+             <br/>
+             Enemies
+            </div>
+            <div style="display: inline-block; width: 32%; vertical-align: top;">
+            </div>
+           </div>
+           <div style="vertical-align: top; padding: 3px 5px; border-top: 1px solid black;">
+            Inflicts a poison that slows attack and movement speeds.
+           </div>
+          </div>
+         </div>
+         <div style="vertical-align:top; padding: 3px 5px;">
+          <div>
+           <b>
+            Move Speed Slow
+           </b>
+           :
+           <span style="white-space: nowrap">
+            10%/20%/30%/40%
+           </span>
+          </div>
+          <div>
+           <b>
+            Attack Speed Slow
+           </b>
+           :
+           <span style="white-space: nowrap">
+            10/20/30/40
+           </span>
+          </div>
+          <div>
+           <b>
+            Slow Duration
+           </b>
+           :
+           <span style="white-space: nowrap">
+            3
+           </span>
+          </div>
+          <div style="height: 8px; line-height: 0px;">
+          </div>
+          <div style="margin-left: 50px;">
+           <span style="position: relative; top: -2px;">
+            <a href="/Spell_Immunity" title="Does not pierce spell immunity.">
+             <img alt="Does not pierce spell immunity." height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/9/9c/Spell_immunity_block_symbol.png/20px-Spell_immunity_block_symbol.png?version=7588eb7155b0b0ba78ae6c948c459858" style="vertical-align: text-top" width="20"/>
+            </a>
+           </span>
+           Slow persists if debuff was placed before spell immunity and when not dispelled.
+          </div>
+          <div style="margin-top: 10px;">
+           <b>
+            <span id="tooltip" style="cursor:help; border-bottom:1px dotted;" title="The displayed names are the intern names of the modifiers. Do not change them even if they don't match the ability name.">
+             Modifiers
+            </span>
+           </b>
+          </div>
+          <div style="font-size: 85%; margin-left: 10px;">
+           <div>
+            <img alt="Debuff" height="16" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/1/1a/Modifier_debuff_symbol.png/16px-Modifier_debuff_symbol.png?version=5684dfbf37c3058c80b8495a4d0dc346" style="vertical-align: text-top" title="Debuff" width="16"/>
+            <span style="color:#631F1F;">
+             <b>
+              Boar Poison Effect:
+             </b>
+             Dispellable with any dispel.
+            </span>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div style="flex: 2 3 400px; word-wrap: break-word;">
+         <p>
+          <b>
+           Notes:
+          </b>
+          <br/>
+         </p>
+         <ul>
+          <li>
+           Level scales together with Call of the Wild's level. However, the level of already summoned boars does not adapt.
+          </li>
+         </ul>
+         <ul>
+          <li>
+           Successive attacks do not stack the slow, they refresh the duration.
+          </li>
+         </ul>
+        </div>
+       </div>
+       <p>
+        <br/>
+       </p>
+       <h2>
+        <span class="mw-headline" id="Talents">
+         Talents
+        </span>
+        <span class="mw-editsection">
+         <span class="mw-editsection-bracket">
+          [
+         </span>
+         <a href="/index.php?title=Beastmaster&amp;action=edit&amp;section=5" title="Edit section: Talents">
+          edit
+         </a>
+         <span class="mw-editsection-bracket">
+          ]
+         </span>
+        </span>
+       </h2>
+       <div style="display: flex; flex-wrap: wrap; align-items: flex-start;">
+        <div style="margin: 3px 5px;">
+         <table class="wikitable" style="text-align:center; margin: 0px;">
+          <tr>
+           <td colspan="3" height="40px" style="background-color: #0c2a5a">
+            <b>
+             <a href="/Talents" title="Talents">
+              <span style="color: white; font-size:14pt">
+               Hero Talents
+              </span>
+             </a>
+            </b>
+           </td>
+          </tr>
+          <tr>
+           <td width="240">
+            +250
+            <span style="white-space: nowrap;">
+             <a href="/Beastmaster#Wild_Axes" title="Beastmaster#Wild Axes">
+              <img alt="Wild Axes icon.png" height="16" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/2/27/Wild_Axes_icon.png/16px-Wild_Axes_icon.png?version=a9bc83df7cdc54f00b2eda5482403641" width="16"/>
+             </a>
+             <a href="/Beastmaster#Wild_Axes" title="Beastmaster">
+              Wild Axes
+             </a>
+            </span>
+            Damage
+           </td>
+           <td style="padding: 10px; background-color: #0c2a5a">
+            <span style="color: white; font-size:13pt">
+             <b>
+              25
+             </b>
+            </span>
+           </td>
+           <td width="240">
+            +120 Damage
+           </td>
+          </tr>
+          <tr>
+           <td width="240">
+            +400 Health
+           </td>
+           <td style="padding: 10px; background-color: #15499d">
+            <span style="color: white; font-size:13pt">
+             <b>
+              20
+             </b>
+            </span>
+           </td>
+           <td width="240">
+            12% Cooldown Reduction
+           </td>
+          </tr>
+          <tr>
+           <td width="240">
+            +1
+            <span style="white-space:nowrap">
+             <a href="/Boar" title="Boar">
+              <img alt="Beastmaster Boar icon.png" height="14" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/6/63/Beastmaster_Boar_icon.png/24px-Beastmaster_Boar_icon.png?version=04f1142dd350b6e74e74e9c08be58f09" width="24"/>
+             </a>
+             <a href="/Boar" title="Boar">
+              Boar
+             </a>
+            </span>
+            Summoned
+           </td>
+           <td style="padding: 10px; background-color: #1c5eca">
+            <span style="color: white; font-size:13pt">
+             <b>
+              15
+             </b>
+            </span>
+           </td>
+           <td width="240">
+            +12
+            <span style="white-space:nowrap">
+             <a href="/Strength" title="Strength">
+              <img alt="Strength attribute symbol.png" height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/7a/Strength_attribute_symbol.png/20px-Strength_attribute_symbol.png?version=64e80a13f4b239d9924059648cad28e1" width="20"/>
+             </a>
+             <a href="/Strength" title="Strength">
+              Strength
+             </a>
+            </span>
+           </td>
+          </tr>
+          <tr>
+           <td width="240">
+            +20 Movement Speed
+           </td>
+           <td style="padding: 10px; background-color: #3578e3">
+            <span style="color: white; font-size:13pt">
+             <b>
+              10
+             </b>
+            </span>
+           </td>
+           <td width="240">
+            +20% XP Gain
+           </td>
+          </tr>
+         </table>
+        </div>
+        <div style="word-wrap: break-word;">
+         <b>
+          Notes:
+         </b>
+         <ul>
+          <li>
+           Cooldown reduction affects abilities and items. Stacks multiplicatively with
+           <span style="white-space:nowrap">
+            <a href="/Octarine_Core" title="Octarine Core">
+             <img alt="Octarine Core icon.png" height="15" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/1/13/Octarine_Core_icon.png/20px-Octarine_Core_icon.png?version=654d9cc153bea2aa1bdd56323e43be63" width="20"/>
+            </a>
+            <a href="/Octarine_Core" title="Octarine Core">
+             Octarine Core
+            </a>
+           </span>
+           and additively with
+           <span style="white-space:nowrap">
+            <a href="/Arcane_Rune" title="Arcane Rune">
+             <img alt="Arcane Rune minimap icon.png" height="16" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/3/30/Arcane_Rune_minimap_icon.png/16px-Arcane_Rune_minimap_icon.png?version=f45a23b2a23ba16af0f974ad179e29db" width="16"/>
+            </a>
+            <a href="/Arcane_Rune" title="Arcane Rune">
+             Arcane Rune
+            </a>
+           </span>
+           .
+          </li>
+         </ul>
+         <ul>
+          <li>
+           Upgrading health increases maximum health capacity and keeps the current health percentage.
+          </li>
+         </ul>
+         <ul>
+          <li>
+           The attack damage is added as bonus attack damage, and therefore does not benefit illusions.
+          </li>
+         </ul>
+        </div>
+       </div>
       </div>
      </div>
     </div>
@@ -1740,1255 +3029,6 @@ document.head.appendChild(script);
   </div>
  </body>
 </html>
-<td>
- 600
-</td>
-<tr>
- <td>
-  <b>
-   <a href="/Attack_range" title="Attack range">
-    Attack Range
-   </a>
-  </b>
- </td>
- <td>
-  <span id="tooltip" style="cursor:help; border-bottom:1px dotted;" title="Ranged">
-   550
-  </span>
- </td>
-</tr>
-<tr>
- <td>
-  <b>
-   <a href="/Attack_speed" title="Attack speed">
-    Base Attack Time
-   </a>
-  </b>
- </td>
- <td>
-  1.25
- </td>
-</tr>
-<tr>
- <td>
-  <b>
-   <a href="/Attack_animation" title="Attack animation">
-    Attack Animation
-   </a>
-  </b>
- </td>
- <td>
-  <span id="tooltip" style="cursor:help; border-bottom:1px dotted;" title="Attack point">
-   0.5
-  </span>
-  +
-  <span id="tooltip" style="cursor:help; border-bottom:1px dotted;" title="Attack backswing">
-   0.47
-  </span>
- </td>
-</tr>
-<tr>
- <td>
-  <b>
-   Projectile Speed
-  </b>
- </td>
- <td>
-  1500
- </td>
-</tr>
-<tr>
- <td>
-  <b>
-   <a href="/Movement_speed" title="Movement speed">
-    Movement Speed
-   </a>
-  </b>
- </td>
- <td>
-  <span id="tooltip" style="cursor:help; border-bottom:1px dotted;" title="Walking">
-   350
-  </span>
- </td>
-</tr>
-<tr>
- <td>
-  <b>
-   <a class="mw-redirect" href="/Follow_range" title="Follow range">
-    Follow range
-   </a>
-  </b>
- </td>
- <td>
-  100
- </td>
-</tr>
-<tr>
- <td>
-  <b>
-   <a href="/Turn_rate" title="Turn rate">
-    Turn Rate
-   </a>
-  </b>
- </td>
- <td>
-  0.6
- </td>
-</tr>
-<tr>
- <td>
-  <b>
-   Collision Size
-  </b>
- </td>
- <td>
-  24
- </td>
-</tr>
-<tr>
- <td>
-  <b>
-   <a href="/Vision" title="Vision">
-    Vision Range
-   </a>
-  </b>
- </td>
- <td>
-  <span id="tooltip" style="cursor:help; border-bottom:1px dotted;" title="During the day">
-   1400
-  </span>
-  •
-  <span id="tooltip" style="cursor:help; border-bottom:1px dotted;" title="During the night">
-   800
-  </span>
-  (
-  <span id="tooltip" style="cursor:help; border-bottom:1px dotted;" title="Ground vision">
-   G
-  </span>
-  )
- </td>
-</tr>
-<tr>
- <td>
-  <b>
-   <a href="/Gold" title="Gold">
-    Bounty
-   </a>
-  </b>
- </td>
- <td>
-  26‒38
- </td>
-</tr>
-<tr>
- <td>
-  <b>
-   <a href="/Experience" title="Experience">
-    Experience
-   </a>
-  </b>
- </td>
- <td>
-  60/70/80/90
- </td>
-</tr>
-<tr>
- <td>
-  <b>
-   Model scale
-  </b>
- </td>
- <td>
-  0.65
- </td>
-</tr>
-<tr>
- <td>
-  <b>
-   Notes
-  </b>
- </td>
- <td>
-  <b>
-   Abilities:
-  </b>
-  <br/>
-  <span style="white-space: nowrap;">
-   <a href="/Boar#Poison" title="Boar#Poison">
-    <img alt="Poison (Boar) icon.png" height="16" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/9/9c/Poison_%28Boar%29_icon.png/16px-Poison_%28Boar%29_icon.png?version=fd3b3801eafa1ae743dbb18a40596aff" width="16"/>
-   </a>
-   <a href="/Boar#Poison" title="Boar">
-    Poison
-   </a>
-  </span>
-  ​
- </td>
-</tr>
-<p>
- <span id="Call_of_the_Wild_Boar">
- </span>
- <span id="Call_of_the_Wild:_Boar">
- </span>
-</p>
-<div style="display: flex; flex-wrap: wrap; align-items: flex-start;">
- <div style="width: 450px; margin-right: 15px; vertical-align: top; background-color: #EAEAEA;">
-  <div style="font-weight: bold; font-size: 110%; border-bottom: 1px solid black; background-color: #B44335; color: white; padding: 3px 5px;">
-   Call of the Wild: Boar
-   <div style="float:right;">
-    <span style="position:relative; top:-2px;">
-     <a class="sm2_button" href="https://hydra-media.cursecdn.com/dota2.gamepedia.com/f/f5/Call_of_the_Wild_Boar.mp3" title="Play">
-      Play
-     </a>
-    </span>
-    <div style="background-color:white; display:inline-block; margin-left:5px; color:#B44335; padding-left:0.2em; padding-right:0.25em; text-align:center;">
-     <span id="tooltip" style="cursor:help; border-bottom:1px dotted;" title="Hotkey">
-      E
-     </span>
-    </div>
-    <div style="background-color:white; display:inline-block; margin-left:5px; color:#B44335; opacity:0.65; padding-left:0.25em; padding-right:0.2em; text-align:center;">
-     <span id="tooltip" style="cursor:help; border-bottom:1px dotted;" title="Legacy Key">
-      B
-     </span>
-    </div>
-   </div>
-  </div>
-  <div>
-   <div class="ico_active">
-    <a class="image" href="/File:Call_of_the_Wild_Boar_icon.png">
-     <img alt="Call of the Wild Boar icon.png" height="128" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/f/fa/Call_of_the_Wild_Boar_icon.png?version=5991aa23ccec882430d98cf3fb6b30a2" width="128"/>
-    </a>
-   </div>
-   <div style="width: 312px; display: inline-block;">
-    <div style="padding: 15px 5px; font-size: 85%; line-height: 100%; text-align: center;">
-     <div style="display: inline-block; width: 32%; vertical-align: top;">
-      <b>
-       Ability
-      </b>
-      <br/>
-      <a href="/Abilities#No_Target" title="Abilities">
-       No Target
-      </a>
-     </div>
-     <div style="display: inline-block; width: 32%; vertical-align: top;">
-     </div>
-     <div style="display: inline-block; width: 32%; vertical-align: top;">
-      <b>
-       Damage
-      </b>
-      <br/>
-      <a href="/Damage_types#Physical" title="Damage types">
-       <b>
-        <span style="color:#71A9EA">
-         Physical
-        </span>
-       </b>
-      </a>
-     </div>
-    </div>
-    <div style="vertical-align: top; padding: 3px 5px; border-top: 1px solid black;">
-     Beastmaster calls a powerful Boar to stalk the battlefield, capable of spitting poison at enemies to slow their movement and attack speed.
-    </div>
-   </div>
-  </div>
-  <div style="vertical-align:top; padding: 3px 5px;">
-   <div>
-    <b>
-     Cast Animation
-    </b>
-    :
-    <span id="tooltip" style="cursor:help; border-bottom:1px dotted;" title="Cast point">
-     0.3
-    </span>
-    +
-    <span id="tooltip" style="cursor:help; border-bottom:1px dotted;" title="Cast backswing">
-     0.63
-    </span>
-   </div>
-   <div>
-    <b>
-     Boar Duration
-    </b>
-    : 60
-   </div>
-   <div style="display: inline-block; margin: 8px 0px 0px 50px; width: 190px; vertical-align: top;">
-    <span style="position: relative; top: -2px;">
-     <a href="/Cooldown" title="Cooldown">
-      <img alt="Cooldown symbol.png" height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/b/b7/Cooldown_symbol.png?version=7429ed9baf0f121e6ab3324bfdfad708" style="vertical-align: text-top" width="20"/>
-     </a>
-    </span>
-    42/38/34/30
-    <br/>
-    (
-    <a href="/Talents" title="Talent">
-     <img alt="Talent" height="16" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/c/cd/Talent_tree_symbol.png/16px-Talent_tree_symbol.png?version=b4db4b31a2f9c215885be017c22a8b0c" style="vertical-align: text-top" width="16"/>
-    </a>
-    36.96/33.44/29.92/26.4)
-   </div>
-   <div style="display: inline-block; margin: 8px 0px 0px; width: 190px; vertical-align: top;">
-    <span style="position: relative; top: -2px;">
-     <a href="/Mana" title="Mana">
-      <img alt="Mana symbol.png" height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/f/f3/Mana_symbol.png?version=a81185ac577f9b52f2df06be91b6600c" style="vertical-align: text-top" width="20"/>
-     </a>
-    </span>
-    25
-   </div>
-   <div style="margin-top: 5px; padding-top: 2px; border-top: 1px solid #C1C1C1;">
-    <i>
-     After befriending the strange beast of his childhood, Beastmaster has learned to call to animals in times of need.
-    </i>
-   </div>
-  </div>
- </div>
- <div style="flex: 2 3 400px; word-wrap: break-word;">
-  <p>
-   <b>
-    Notes:
-   </b>
-   <br/>
-  </p>
-  <ul>
-   <li>
-    Leveling this spell automatically levels
-    <span style="white-space: nowrap;">
-     <a href="/Beastmaster#Call_of_the_Wild:_Hawk" title="Beastmaster#Call of the Wild: Hawk">
-      <img alt="Call of the Wild Hawk icon.png" height="16" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/f/fc/Call_of_the_Wild_Hawk_icon.png/16px-Call_of_the_Wild_Hawk_icon.png?version=d03fd4852c5548906043c01fe6cbe6ef" width="16"/>
-     </a>
-     <a href="/Beastmaster#Call_of_the_Wild:_Hawk" title="Beastmaster">
-      Call of the Wild: Hawk
-     </a>
-    </span>
-    ​ as well.
-   </li>
-  </ul>
-  <ul>
-   <li>
-    Does not destroy a previous summon if this ability is used again before the previous
-    <a href="/Boar" title="Boar">
-     Boar
-    </a>
-    duration expires.
-   </li>
-  </ul>
- </div>
-</div>
-<p>
- <br/>
-</p>
-<p>
- <span id="Inner_Beast">
- </span>
-</p>
-<div style="display: flex; flex-wrap: wrap; align-items: flex-start;">
- <div style="width: 450px; margin-right: 15px; vertical-align: top; background-color: #EAEAEA;">
-  <div style="font-weight: bold; font-size: 110%; border-bottom: 1px solid black; background-color: #B44335; color: white; padding: 3px 5px;">
-   Inner Beast
-   <div style="float:right;">
-    <a href="/Illusions" title="Can be used by illusions.">
-     <img alt="Can be used by illusions." height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/e/e2/Illusion_symbol.png/20px-Illusion_symbol.png?version=7a3a01543d327eccde768866533cbae2" style="vertical-align: text-top" width="20"/>
-    </a>
-    <a href="/Break" title="Disabled by Break.">
-     <img alt="Disabled by Break." height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/f/f9/Breakable_symbol.png/20px-Breakable_symbol.png?version=75c8c39d828694e4c795718ece243865" style="vertical-align: text-top" width="20"/>
-    </a>
-    <a href="/Spell_Immunity" title="Pierces spell immunity.">
-     <img alt="Pierces spell immunity." height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/0/0c/Spell_immunity_block_no_symbol.png/20px-Spell_immunity_block_no_symbol.png?version=8a9b499fbc92dda21de2b49951268177" style="vertical-align: text-top" width="20"/>
-    </a>
-    <div style="background-color:white; display:inline-block; margin-left:5px; color:#B44335; padding-left:0.2em; padding-right:0.25em; text-align:center;">
-     <span id="tooltip" style="cursor:help; border-bottom:1px dotted;" title="Hotkey">
-      D
-     </span>
-    </div>
-    <div style="background-color:white; display:inline-block; margin-left:5px; color:#B44335; opacity:0.65; padding-left:0.25em; padding-right:0.2em; text-align:center;">
-     <span id="tooltip" style="cursor:help; border-bottom:1px dotted;" title="Legacy Key">
-      F
-     </span>
-    </div>
-   </div>
-  </div>
-  <div>
-   <div class="ico_passive">
-    <a class="image" href="/File:Inner_Beast_icon.png">
-     <img alt="Inner Beast icon.png" height="128" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/1/1d/Inner_Beast_icon.png?version=4515ef4d5ee00788a7ca4abdcd592a76" width="128"/>
-    </a>
-   </div>
-   <div style="width: 312px; display: inline-block;">
-    <div style="padding: 15px 5px; font-size: 85%; line-height: 100%; text-align: center;">
-     <div style="display: inline-block; width: 32%; vertical-align: top;">
-      <b>
-       Ability
-      </b>
-      <br/>
-      <a href="/Aura" title="Aura">
-       Aura
-      </a>
-     </div>
-     <div style="display: inline-block; width: 32%; vertical-align: top;">
-      <b>
-       Affects
-      </b>
-      <br/>
-      Allies
-     </div>
-     <div style="display: inline-block; width: 32%; vertical-align: top;">
-     </div>
-    </div>
-    <div style="vertical-align: top; padding: 3px 5px; border-top: 1px solid black;">
-     Untaps the inner fury of allies, passively increasing their attack speed.
-    </div>
-   </div>
-  </div>
-  <div style="vertical-align:top; padding: 3px 5px;">
-   <div>
-    <b>
-     Radius
-    </b>
-    : 900
-   </div>
-   <div>
-    <b>
-     Attack Speed Bonus
-    </b>
-    : 15/25/35/45
-   </div>
-   <div style="margin-top: 10px;">
-    <b>
-     Modifiers
-    </b>
-   </div>
-   <div style="font-size: 85%; margin-left: 10px;">
-    <div>
-     <img alt="Buff" height="16" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/c/c1/Modifier_buff_symbol.png/16px-Modifier_buff_symbol.png?version=97c71541b396c601c0ac22a73d1a7573" style="vertical-align: text-top" title="Buff" width="16"/>
-     <span style="color:#1F631F;">
-      <b>
-       Inner Beast:
-      </b>
-      Undispellable.
-     </span>
-    </div>
-   </div>
-   <div style="margin-top: 5px; padding-top: 2px; border-top: 1px solid #C1C1C1;">
-    <i>
-     Beastmaster's ability to incite the innate strength of animals was seen in the mauling of the king of Slom.
-    </i>
-   </div>
-  </div>
- </div>
- <div style="flex: 2 3 400px; word-wrap: break-word;">
-  <p>
-   <b>
-    Notes:
-   </b>
-   <br/>
-  </p>
-  <ul>
-   <li>
-    Affects all summons,
-    <a href="/Illusions" title="Illusions">
-     illusions
-    </a>
-    and
-    <a class="mw-redirect" href="/Invulnerable" title="Invulnerable">
-     invulnerable
-    </a>
-    units.
-   </li>
-  </ul>
-  <ul>
-   <li>
-    The
-    <a href="/Aura" title="Aura">
-     aura
-    </a>
-    's buff lingers for 0.5 seconds.
-   </li>
-  </ul>
- </div>
-</div>
-<p>
- <br/>
-</p>
-<p>
- <span id="Primal_Roar">
- </span>
-</p>
-<div style="display: flex; flex-wrap: wrap; align-items: flex-start;">
- <div style="width: 450px; margin-right: 15px; vertical-align: top; background-color: #EAEAEA;">
-  <div style="font-weight: bold; font-size: 110%; border-bottom: 1px solid black; background-color: #414141; color: white; padding: 3px 5px;">
-   Primal Roar
-   <div style="float:right;">
-    <a href="/Linken%27s_Sphere" title="Partially blocked by Linken's Sphere.">
-     <img alt="Partially blocked by Linken's Sphere." height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/e/ea/Spell_block_partial_symbol.png/20px-Spell_block_partial_symbol.png?version=26cd9313a8228e5b4390b8d942cb1f16" style="vertical-align: text-top" width="20"/>
-    </a>
-    <a href="/Spell_Immunity" title="Partially pierces spell immunity.">
-     <img alt="Partially pierces spell immunity." height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/5/59/Spell_immunity_block_partial_symbol.png/20px-Spell_immunity_block_partial_symbol.png?version=923f604c1ecd2a88b6b5a2bf6e32b59e" style="vertical-align: text-top" width="20"/>
-    </a>
-    <span style="position:relative; top:-2px;">
-     <a class="sm2_button" href="https://hydra-media.cursecdn.com/dota2.gamepedia.com/6/64/Primal_Roar.mp3" title="Play">
-      Play
-     </a>
-    </span>
-    <div style="background-color:white; display:inline-block; margin-left:5px; color:#414141; padding-left:0.2em; padding-right:0.25em; text-align:center;">
-     <span id="tooltip" style="cursor:help; border-bottom:1px dotted;" title="Hotkey">
-      R
-     </span>
-    </div>
-    <div style="background-color:white; display:inline-block; margin-left:5px; color:#414141; opacity:0.65; padding-left:0.25em; padding-right:0.2em; text-align:center;">
-     <span id="tooltip" style="cursor:help; border-bottom:1px dotted;" title="Legacy Key">
-      R
-     </span>
-    </div>
-   </div>
-  </div>
-  <div>
-   <div class="ico_active">
-    <a class="image" href="/File:Primal_Roar_icon.png">
-     <img alt="Primal Roar icon.png" height="128" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/6/68/Primal_Roar_icon.png?version=17dec674a0829f3bad3cad3fe1619707" width="128"/>
-    </a>
-   </div>
-   <div style="width: 312px; display: inline-block;">
-    <div style="padding: 15px 5px; font-size: 85%; line-height: 100%; text-align: center;">
-     <div style="display: inline-block; width: 32%; vertical-align: top;">
-      <b>
-       Ability
-      </b>
-      <br/>
-      <a href="/Abilities#Target_Unit" title="Abilities">
-       Target Unit
-      </a>
-     </div>
-     <div style="display: inline-block; width: 32%; vertical-align: top;">
-      <b>
-       Affects
-      </b>
-      <br/>
-      Enemies
-     </div>
-     <div style="display: inline-block; width: 32%; vertical-align: top;">
-      <b>
-       Damage
-      </b>
-      <br/>
-      <a href="/Damage_types#Magical" title="Damage types">
-       <b>
-        <span style="color:#3F56AD">
-         Magical
-        </span>
-       </b>
-      </a>
-     </div>
-    </div>
-    <div style="vertical-align: top; padding: 3px 5px; border-top: 1px solid black;">
-     Beastmaster lets loose a deafening roar that stuns, and shoves open, a path to its target. All units in the path of the roar are damaged, while units shoved aside by the roar have their movement and attack speed slowed.
-    </div>
-   </div>
-  </div>
-  <div style="vertical-align:top; padding: 3px 5px;">
-   <div>
-    <b>
-     Cast Animation
-    </b>
-    :
-    <span id="tooltip" style="cursor:help; border-bottom:1px dotted;" title="Cast point">
-     0.5
-    </span>
-    +
-    <span id="tooltip" style="cursor:help; border-bottom:1px dotted;" title="Cast backswing">
-     0.63
-    </span>
-   </div>
-   <div>
-    <b>
-     Cast Range
-    </b>
-    : 600 (
-    <a href="/Aghanim%27s_Scepter" title="Upgradable by Aghanim's Scepter.">
-     <img alt="Upgradable by Aghanim's Scepter." height="16" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/73/Aghanim%27s_Scepter_symbol.png/16px-Aghanim%27s_Scepter_symbol.png?version=7d547f82a4dc57080ed920f762776a32" style="vertical-align: text-top" width="16"/>
-    </a>
-    <span style="color:#538028;">
-     950
-    </span>
-    )
-   </div>
-   <div>
-    <b>
-     Knockback Radius
-    </b>
-    : 300
-   </div>
-   <div>
-    <b>
-     Damage
-    </b>
-    : 150/225/300
-   </div>
-   <div>
-    <b>
-     Move Speed Slow
-    </b>
-    : 50%
-   </div>
-   <div>
-    <b>
-     Attack Speed Slow
-    </b>
-    : 50
-   </div>
-   <div>
-    <b>
-     Slow Duration
-    </b>
-    : 2/3/4
-   </div>
-   <div>
-    <b>
-     Knockback Duration
-    </b>
-    : 0.6
-   </div>
-   <div>
-    <b>
-     Stun Duration
-    </b>
-    : 3/3.5/4
-   </div>
-   <div style="display: inline-block; margin: 8px 0px 0px 50px; width: 190px; vertical-align: top;">
-    <span style="position: relative; top: -2px;">
-     <a href="/Cooldown" title="Cooldown">
-      <img alt="Cooldown symbol.png" height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/b/b7/Cooldown_symbol.png?version=7429ed9baf0f121e6ab3324bfdfad708" style="vertical-align: text-top" width="20"/>
-     </a>
-    </span>
-    80/75/70 (
-    <a href="/Talents" title="Talent">
-     <img alt="Talent" height="16" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/c/cd/Talent_tree_symbol.png/16px-Talent_tree_symbol.png?version=b4db4b31a2f9c215885be017c22a8b0c" style="vertical-align: text-top" width="16"/>
-    </a>
-    70.4/66/61.6) (
-    <a href="/Aghanim%27s_Scepter" title="Upgradable by Aghanim's Scepter.">
-     <img alt="Upgradable by Aghanim's Scepter." height="16" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/73/Aghanim%27s_Scepter_symbol.png/16px-Aghanim%27s_Scepter_symbol.png?version=7d547f82a4dc57080ed920f762776a32" style="vertical-align: text-top" width="16"/>
-    </a>
-    <span style="color:#538028;">
-     45
-    </span>
-    ,
-    <a href="/Talents" title="Talent">
-     <img alt="Talent" height="16" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/c/cd/Talent_tree_symbol.png/16px-Talent_tree_symbol.png?version=b4db4b31a2f9c215885be017c22a8b0c" style="vertical-align: text-top" width="16"/>
-    </a>
-    <span style="color:#538028;">
-     39.6
-    </span>
-    )
-   </div>
-   <div style="display: inline-block; margin: 8px 0px 0px; width: 190px; vertical-align: top;">
-    <span style="position: relative; top: -2px;">
-     <a href="/Mana" title="Mana">
-      <img alt="Mana symbol.png" height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/f/f3/Mana_symbol.png?version=a81185ac577f9b52f2df06be91b6600c" style="vertical-align: text-top" width="20"/>
-     </a>
-    </span>
-    150/175/200
-   </div>
-   <div style="height: 8px; line-height: 0px;">
-   </div>
-   <div style="margin-left: 50px;">
-    <span style="position: relative; top: -2px;">
-     <a href="/Aghanim%27s_Scepter" title="Upgradable by Aghanim's Scepter.">
-      <img alt="Upgradable by Aghanim's Scepter." height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/73/Aghanim%27s_Scepter_symbol.png/20px-Aghanim%27s_Scepter_symbol.png?version=d829eda2dfcb5c0078dd83220a3299dc" style="vertical-align: text-top" width="20"/>
-     </a>
-    </span>
-    Reduces cooldown, and increases cast range.
-   </div>
-   <div style="margin-left: 50px;">
-    <span style="position: relative; top: -2px;">
-     <a href="/Spell_Immunity" title="Partially pierces spell immunity.">
-      <img alt="Partially pierces spell immunity." height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/5/59/Spell_immunity_block_partial_symbol.png/20px-Spell_immunity_block_partial_symbol.png?version=923f604c1ecd2a88b6b5a2bf6e32b59e" style="vertical-align: text-top" width="20"/>
-     </a>
-    </span>
-    Can target and stun spell immune enemies. Attempts to damage the primary target while spell immune. Can knock back secondary spell immune enemies. Does not slow and does not attempt to damage secondary spell immune enemies. Slow persists if debuff was placed before spell immunity and when not dispelled.
-   </div>
-   <div style="margin-left: 50px;">
-    <span style="position: relative; top: -2px;">
-     <a href="/Linken%27s_Sphere" title="Partially blocked by Linken's Sphere.">
-      <img alt="Partially blocked by Linken's Sphere." height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/e/ea/Spell_block_partial_symbol.png/20px-Spell_block_partial_symbol.png?version=26cd9313a8228e5b4390b8d942cb1f16" style="vertical-align: text-top" width="20"/>
-     </a>
-    </span>
-    Blocked fully only when primary target.
-   </div>
-   <div style="margin-top: 10px;">
-    <b>
-     Modifiers
-    </b>
-   </div>
-   <div style="font-size: 85%; margin-left: 10px;">
-    <div>
-     <img alt="Debuff" height="16" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/1/1a/Modifier_debuff_symbol.png/16px-Modifier_debuff_symbol.png?version=5684dfbf37c3058c80b8495a4d0dc346" style="vertical-align: text-top" title="Debuff" width="16"/>
-     <span style="color:#631F1F;">
-      <b>
-       Stunned:
-      </b>
-      Dispellable with strong dispels.
-     </span>
-    </div>
-    <div>
-     <img alt="Debuff" height="16" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/1/1a/Modifier_debuff_symbol.png/16px-Modifier_debuff_symbol.png?version=5684dfbf37c3058c80b8495a4d0dc346" style="vertical-align: text-top" title="Debuff" width="16"/>
-     <span style="color:#631F1F;">
-      <b>
-       Prima Roar Push:
-      </b>
-      Dispellable with any dispel.
-     </span>
-    </div>
-    <div>
-     <img alt="Debuff" height="16" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/1/1a/Modifier_debuff_symbol.png/16px-Modifier_debuff_symbol.png?version=5684dfbf37c3058c80b8495a4d0dc346" style="vertical-align: text-top" title="Debuff" width="16"/>
-     <span style="color:#631F1F;">
-      <b>
-       Primal Roar Slow:
-      </b>
-      Dispellable with any dispel.
-     </span>
-    </div>
-   </div>
-   <div style="margin-top: 5px; padding-top: 2px; border-top: 1px solid #C1C1C1;">
-    <i>
-     The Beastmaster has learned to channel his primal instincts into an animalistic roar, causing devastation in the ranks of enemies.
-    </i>
-   </div>
-  </div>
- </div>
- <div style="flex: 2 3 400px; word-wrap: break-word;">
-  <p>
-   <b>
-    Notes:
-   </b>
-   <br/>
-  </p>
-  <ul>
-   <li>
-    Only enemy units are shoved aside from the path of the roar.
-    <a href="/Roshan" title="Roshan">
-     Roshan
-    </a>
-    is not affected by the pushback.
-   </li>
-  </ul>
-  <ul>
-   <li>
-    Affected units are fully
-    <a href="/Disable" title="Disable">
-     disabled
-    </a>
-    during the pushback.
-   </li>
-  </ul>
-  <ul>
-   <li>
-    Primal Roar can be used on a
-    <a class="mw-redirect" href="/Courier" title="Courier">
-     courier
-    </a>
-    to stun it, but it is not damaged. Couriers are also a valid target for the pushback.
-   </li>
-  </ul>
-  <ul>
-   <li>
-    Knocks units aside at a speed of 500, up to 300 range away, resulting in a
-    <span id="tooltip" style="cursor:help; border-bottom:1px dotted;" title="The knockback debuff is hidden">
-     knockback
-    </span>
-    duration of 0.6 seconds.
-   </li>
-  </ul>
-  <ul>
-   <li>
-    The pushback and slow have a dynamic range, based on the distance between Beastmaster and the primary target.
-    <ul>
-     <li>
-      For every 2 distance between Beastmaster and the target upon cast, the knockback range increases by 1.
-     </li>
-     <li>
-      When the target is 600 range away, the knockback hits units up to 300 range behind the target and behind Beastmaster.
-     </li>
-     <li>
-      When the target is 950 range away, the knockback hits units up to 475 range behind the target and behind Beastmaster.
-     </li>
-     <li>
-      The width of the knockback area is always 300, so the affected area is always
-      <a class="extiw" href="http://en.wikipedia.org/wiki/Stadium_(geometry)" title="w:Stadium (geometry)">
-       stadium-shaped
-      </a>
-      .
-     </li>
-    </ul>
-   </li>
-  </ul>
-  <ul>
-   <li>
-    Considering the dynamic range, the slow/knockback can hit units up to 900 (
-    <a href="/Aghanim%27s_Scepter" title="Upgradable by Aghanim's Scepter.">
-     <img alt="Upgradable by Aghanim's Scepter." height="16" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/73/Aghanim%27s_Scepter_symbol.png/16px-Aghanim%27s_Scepter_symbol.png?version=7d547f82a4dc57080ed920f762776a32" style="vertical-align: text-top" width="16"/>
-    </a>
-    1425) range away.
-    <ul>
-     <li>
-      Can hit units up to 1200 (
-      <a href="/Aghanim%27s_Scepter" title="Upgradable by Aghanim's Scepter.">
-       <img alt="Upgradable by Aghanim's Scepter." height="16" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/73/Aghanim%27s_Scepter_symbol.png/16px-Aghanim%27s_Scepter_symbol.png?version=7d547f82a4dc57080ed920f762776a32" style="vertical-align: text-top" width="16"/>
-      </a>
-      1725) range away when having
-      <span style="white-space:nowrap">
-       <a href="/Aether_Lens" title="Aether Lens">
-        <img alt="Aether Lens icon.png" height="15" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/d/d4/Aether_Lens_icon.png/20px-Aether_Lens_icon.png?version=6a5260f04b895b4e6c9fa57770ef11b8" width="20"/>
-       </a>
-       <a href="/Aether_Lens" title="Aether Lens">
-        Aether Lens
-       </a>
-      </span>
-      .
-     </li>
-    </ul>
-   </li>
-  </ul>
-  <ul>
-   <li>
-    When an enemy is perfectly aligned with Beastmaster and his Primal Roar target, it does not get knocked aside
-    <ul>
-     <li>
-      However, the slow and damage are still applied, and the target is still disabled for the knockback duration.
-     </li>
-    </ul>
-   </li>
-  </ul>
- </div>
-</div>
-<p>
- <br/>
-</p>
-<h3>
- <span class="mw-headline" id="Hawk">
-  Hawk
- </span>
- <span class="mw-editsection">
-  <span class="mw-editsection-bracket">
-   [
-  </span>
-  <a class="mw-editsection-visualeditor" href="/index.php?title=Beastmaster&amp;veaction=edit&amp;vesection=3" title="Edit section: Hawk">
-   edit
-  </a>
-  <span class="mw-editsection-divider">
-   |
-  </span>
-  <a href="/index.php?title=Beastmaster&amp;action=edit&amp;section=3" title="Edit section: Hawk">
-   edit source
-  </a>
-  <span class="mw-editsection-bracket">
-   ]
-  </span>
- </span>
-</h3>
-<p>
- <span id="Invisibility">
- </span>
-</p>
-<div style="display: flex; flex-wrap: wrap; align-items: flex-start;">
- <div style="width: 450px; margin-right: 15px; vertical-align: top; background-color: #EAEAEA;">
-  <div style="font-weight: bold; font-size: 110%; border-bottom: 1px solid black; background-color: #2277AA; color: white; padding: 3px 5px;">
-   Invisibility
-   <div style="float:right;">
-    <a href="/Break" title="Not disabled by Break.">
-     <img alt="Not disabled by Break." height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/d/dd/Breakable_no_symbol.png/20px-Breakable_no_symbol.png?version=576e43cc086d47930d17f3d13a65bd79" style="vertical-align: text-top" width="20"/>
-    </a>
-    <a href="/Spell_Immunity" title="Pierces spell immunity.">
-     <img alt="Pierces spell immunity." height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/0/0c/Spell_immunity_block_no_symbol.png/20px-Spell_immunity_block_no_symbol.png?version=8a9b499fbc92dda21de2b49951268177" style="vertical-align: text-top" width="20"/>
-    </a>
-   </div>
-  </div>
-  <div>
-   <div class="ico_passive">
-    <a class="image" href="/File:Invisibility_(Hawk)_icon.png">
-     <img alt="Invisibility (Hawk) icon.png" height="128" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/2/28/Invisibility_%28Hawk%29_icon.png?version=9c3e5de88a38039a1743d19b88899172" width="128"/>
-    </a>
-   </div>
-   <div style="width: 312px; display: inline-block;">
-    <div style="padding: 15px 5px; font-size: 85%; line-height: 100%; text-align: center;">
-     <div style="display: inline-block; width: 32%; vertical-align: top;">
-      <b>
-       Ability
-      </b>
-      <br/>
-      <a href="/Abilities#Passive" title="Abilities">
-       Passive
-      </a>
-     </div>
-     <div style="display: inline-block; width: 32%; vertical-align: top;">
-      <b>
-       Affects
-      </b>
-      <br/>
-      Self
-     </div>
-     <div style="display: inline-block; width: 32%; vertical-align: top;">
-     </div>
-    </div>
-    <div style="vertical-align: top; padding: 3px 5px; border-top: 1px solid black;">
-     If motionless for some time, the Hawk becomes invisible.
-    </div>
-   </div>
-  </div>
-  <div style="vertical-align:top; padding: 3px 5px;">
-   <div>
-    <b>
-     Fade Time
-    </b>
-    : 1
-   </div>
-   <div>
-    <b>
-     Fade Delay
-    </b>
-    : 3
-   </div>
-   <div style="margin-top: 10px;">
-    <b>
-     Modifiers
-    </b>
-   </div>
-   <div style="font-size: 85%; margin-left: 10px;">
-    <div>
-     <img alt="Buff" height="16" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/c/c1/Modifier_buff_symbol.png/16px-Modifier_buff_symbol.png?version=97c71541b396c601c0ac22a73d1a7573" style="vertical-align: text-top" title="Buff" width="16"/>
-     <span style="color:#1F631F;">
-      <b>
-       Hawk Invisibility:
-      </b>
-      Undispellable.
-     </span>
-    </div>
-   </div>
-  </div>
- </div>
- <div style="flex: 2 3 400px; word-wrap: break-word;">
-  <p>
-   <b>
-    Notes:
-   </b>
-   <br/>
-  </p>
-  <ul>
-   <li>
-    Requires Call of the Wild to be level 3.
-   </li>
-  </ul>
-  <ul>
-   <li>
-    The fade time + the fade delay equal the total time before the hawk goes
-    <a class="mw-redirect" href="/Invisible" title="Invisible">
-     invisible
-    </a>
-    (4 seconds).
-   </li>
-  </ul>
- </div>
-</div>
-<p>
- <br/>
-</p>
-<h3>
- <span class="mw-headline" id="Boar">
-  Boar
- </span>
- <span class="mw-editsection">
-  <span class="mw-editsection-bracket">
-   [
-  </span>
-  <a class="mw-editsection-visualeditor" href="/index.php?title=Beastmaster&amp;veaction=edit&amp;vesection=4" title="Edit section: Boar">
-   edit
-  </a>
-  <span class="mw-editsection-divider">
-   |
-  </span>
-  <a href="/index.php?title=Beastmaster&amp;action=edit&amp;section=4" title="Edit section: Boar">
-   edit source
-  </a>
-  <span class="mw-editsection-bracket">
-   ]
-  </span>
- </span>
-</h3>
-<p>
- <span id="Poison">
- </span>
-</p>
-<div style="display: flex; flex-wrap: wrap; align-items: flex-start;">
- <div style="width: 450px; margin-right: 15px; vertical-align: top; background-color: #EAEAEA;">
-  <div style="font-weight: bold; font-size: 110%; border-bottom: 1px solid black; background-color: #2277AA; color: white; padding: 3px 5px;">
-   Poison
-   <div style="float:right;">
-    <a href="/Unique_Attack_Modifier" title="Not a Unique Attack Modifier.">
-     <img alt="Not a Unique Attack Modifier." height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/8/8e/Uam_no_symbol.png/20px-Uam_no_symbol.png?version=b3b165d8f9d0aec242958ad7639a60fd" style="vertical-align: text-top" width="20"/>
-    </a>
-    <a href="/Break" title="Disabled by Break.">
-     <img alt="Disabled by Break." height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/f/f9/Breakable_symbol.png/20px-Breakable_symbol.png?version=75c8c39d828694e4c795718ece243865" style="vertical-align: text-top" width="20"/>
-    </a>
-    <a href="/Spell_Immunity" title="Does not pierce spell immunity.">
-     <img alt="Does not pierce spell immunity." height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/9/9c/Spell_immunity_block_symbol.png/20px-Spell_immunity_block_symbol.png?version=7588eb7155b0b0ba78ae6c948c459858" style="vertical-align: text-top" width="20"/>
-    </a>
-   </div>
-  </div>
-  <div>
-   <div class="ico_passive">
-    <a class="image" href="/File:Poison_(Boar)_icon.png">
-     <img alt="Poison (Boar) icon.png" height="128" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/9/9c/Poison_%28Boar%29_icon.png?version=994748f465cffda9edb5b576bc4ff385" width="128"/>
-    </a>
-   </div>
-   <div style="width: 312px; display: inline-block;">
-    <div style="padding: 15px 5px; font-size: 85%; line-height: 100%; text-align: center;">
-     <div style="display: inline-block; width: 32%; vertical-align: top;">
-      <b>
-       Ability
-      </b>
-      <br/>
-      <a href="/Abilities#Passive" title="Abilities">
-       Passive
-      </a>
-     </div>
-     <div style="display: inline-block; width: 32%; vertical-align: top;">
-      <b>
-       Affects
-      </b>
-      <br/>
-      Enemies
-     </div>
-     <div style="display: inline-block; width: 32%; vertical-align: top;">
-     </div>
-    </div>
-    <div style="vertical-align: top; padding: 3px 5px; border-top: 1px solid black;">
-     Inflicts a poison that slows attack and movement speeds.
-    </div>
-   </div>
-  </div>
-  <div style="vertical-align:top; padding: 3px 5px;">
-   <div>
-    <b>
-     Move Speed Slow
-    </b>
-    : 10%/20%/30%/40%
-   </div>
-   <div>
-    <b>
-     Attack Speed Slow
-    </b>
-    : 10/20/30/40
-   </div>
-   <div>
-    <b>
-     Slow Duration
-    </b>
-    : 3
-   </div>
-   <div style="height: 8px; line-height: 0px;">
-   </div>
-   <div style="margin-left: 50px;">
-    <span style="position: relative; top: -2px;">
-     <a href="/Spell_Immunity" title="Does not pierce spell immunity.">
-      <img alt="Does not pierce spell immunity." height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/9/9c/Spell_immunity_block_symbol.png/20px-Spell_immunity_block_symbol.png?version=7588eb7155b0b0ba78ae6c948c459858" style="vertical-align: text-top" width="20"/>
-     </a>
-    </span>
-    Slow persists if debuff was placed before spell immunity and when not dispelled.
-   </div>
-   <div style="margin-top: 10px;">
-    <b>
-     Modifiers
-    </b>
-   </div>
-   <div style="font-size: 85%; margin-left: 10px;">
-    <div>
-     <img alt="Debuff" height="16" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/1/1a/Modifier_debuff_symbol.png/16px-Modifier_debuff_symbol.png?version=5684dfbf37c3058c80b8495a4d0dc346" style="vertical-align: text-top" title="Debuff" width="16"/>
-     <span style="color:#631F1F;">
-      <b>
-       Boar Poison Effect:
-      </b>
-      Dispellable with any dispel.
-     </span>
-    </div>
-   </div>
-  </div>
- </div>
- <div style="flex: 2 3 400px; word-wrap: break-word;">
-  <p>
-   <b>
-    Notes:
-   </b>
-   <br/>
-  </p>
-  <ul>
-   <li>
-    Level scales together with Call of the Wild's level. However, the level of already summoned boars does not adapt.
-   </li>
-  </ul>
-  <ul>
-   <li>
-    Successive attacks do not stack the slow, they refresh the duration.
-   </li>
-  </ul>
- </div>
-</div>
-<p>
- <br/>
-</p>
-<h2>
- <span class="mw-headline" id="Talents">
-  Talents
- </span>
- <span class="mw-editsection">
-  <span class="mw-editsection-bracket">
-   [
-  </span>
-  <a class="mw-editsection-visualeditor" href="/index.php?title=Beastmaster&amp;veaction=edit&amp;vesection=5" title="Edit section: Talents">
-   edit
-  </a>
-  <span class="mw-editsection-divider">
-   |
-  </span>
-  <a href="/index.php?title=Beastmaster&amp;action=edit&amp;section=5" title="Edit section: Talents">
-   edit source
-  </a>
-  <span class="mw-editsection-bracket">
-   ]
-  </span>
- </span>
-</h2>
-<div style="display: flex; flex-wrap: wrap; align-items: flex-start;">
- <div style="margin: 3px 5px;">
-  <table class="wikitable" style="text-align:center; margin: 0px;">
-   <tr>
-    <td colspan="3" height="40px" style="background-color: #0c2a5a">
-     <b>
-      <a href="/Talents" title="Talents">
-       <span style="color: white; font-size:14pt">
-        Hero Talents
-       </span>
-      </a>
-     </b>
-    </td>
-   </tr>
-   <tr>
-    <td width="240">
-     +175
-     <span style="white-space: nowrap;">
-      <a href="/Beastmaster#Wild_Axes" title="Beastmaster#Wild Axes">
-       <img alt="Wild Axes icon.png" height="16" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/2/27/Wild_Axes_icon.png/16px-Wild_Axes_icon.png?version=a9bc83df7cdc54f00b2eda5482403641" width="16"/>
-      </a>
-      <a href="/Beastmaster#Wild_Axes" title="Beastmaster">
-       Wild Axes
-      </a>
-     </span>
-     ​ Damage
-    </td>
-    <td style="padding: 10px; background-color: #0c2a5a">
-     <span style="color: white; font-size:13pt">
-      <b>
-       25
-      </b>
-     </span>
-    </td>
-    <td width="240">
-     +120 Damage
-    </td>
-   </tr>
-   <tr>
-    <td width="240">
-     +300 Health
-    </td>
-    <td style="padding: 10px; background-color: #15499d">
-     <span style="color: white; font-size:13pt">
-      <b>
-       20
-      </b>
-     </span>
-    </td>
-    <td width="240">
-     12% Cooldown Reduction
-    </td>
-   </tr>
-   <tr>
-    <td width="240">
-     -30s Respawn Time
-    </td>
-    <td style="padding: 10px; background-color: #1c5eca">
-     <span style="color: white; font-size:13pt">
-      <b>
-       15
-      </b>
-     </span>
-    </td>
-    <td width="240">
-     +12
-     <span style="white-space:nowrap">
-      <a href="/Strength" title="Strength">
-       <img alt="Strength attribute symbol.png" height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/7a/Strength_attribute_symbol.png/20px-Strength_attribute_symbol.png?version=64e80a13f4b239d9924059648cad28e1" width="20"/>
-      </a>
-      <a href="/Strength" title="Strength">
-       Strength
-      </a>
-     </span>
-    </td>
-   </tr>
-   <tr>
-    <td width="240">
-     +20 Movement Speed
-    </td>
-    <td style="padding: 10px; background-color: #3578e3">
-     <span style="color: white; font-size:13pt">
-      <b>
-       10
-      </b>
-     </span>
-    </td>
-    <td width="240">
-     +15% XP Gain
-    </td>
-   </tr>
-  </table>
- </div>
- <div style="word-wrap: break-word;">
-  <b>
-   Notes:
-  </b>
-  <ul>
-   <li>
-    Respawn reductions cannot reduce respawn time below 1 second.
-   </li>
-  </ul>
-  <ul>
-   <li>
-    Cooldown reduction affects abilities and items. Stacks multiplicatively with
-    <span style="white-space:nowrap">
-     <a href="/Octarine_Core" title="Octarine Core">
-      <img alt="Octarine Core icon.png" height="15" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/1/13/Octarine_Core_icon.png/20px-Octarine_Core_icon.png?version=654d9cc153bea2aa1bdd56323e43be63" width="20"/>
-     </a>
-     <a href="/Octarine_Core" title="Octarine Core">
-      Octarine Core
-     </a>
-    </span>
-    and additively with
-    <span style="white-space:nowrap">
-     <a href="/Arcane_Rune" title="Arcane Rune">
-      <img alt="Arcane Rune" height="16" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/b/bf/Rune_icon_Arcane.png/16px-Rune_icon_Arcane.png?version=03d09af71fc1cd0e954c8035cf61f836" width="16"/>
-     </a>
-     <a href="/Arcane_Rune" title="Arcane Rune">
-      Arcane Rune
-     </a>
-    </span>
-    .
-   </li>
-  </ul>
-  <ul>
-   <li>
-    Upgrading health increases maximum health capacity and keeps the current health percentage.
-   </li>
-  </ul>
-  <ul>
-   <li>
-    The attack damage is added as bonus attack damage, and therefore does not benefit illusions.
-   </li>
-  </ul>
- </div>
-</div>
 <h2>
  <span class="mw-headline" id="Recommended_items">
   Recommended items
@@ -2997,14 +3037,8 @@ document.head.appendChild(script);
   <span class="mw-editsection-bracket">
    [
   </span>
-  <a class="mw-editsection-visualeditor" href="/index.php?title=Beastmaster&amp;veaction=edit&amp;vesection=6" title="Edit section: Recommended items">
-   edit
-  </a>
-  <span class="mw-editsection-divider">
-   |
-  </span>
   <a href="/index.php?title=Beastmaster&amp;action=edit&amp;section=6" title="Edit section: Recommended items">
-   edit source
+   edit
   </a>
   <span class="mw-editsection-bracket">
    ]
@@ -3055,7 +3089,7 @@ document.head.appendChild(script);
     Tango
    </a>
   </span>
-  allow you to stay in lane longer without having to return to the fountain.
+  allow you to stay longer in lane without having to return to the fountain.
  </li>
  <li>
   <span style="white-space:nowrap">
@@ -3183,7 +3217,7 @@ document.head.appendChild(script);
     Inner Beast
    </a>
   </span>
-  ​ and is a great item to quickly take towers and add additional damage to target hit by
+  and is a great item to quickly take towers and add additional damage to target hit by
   <span style="white-space: nowrap;">
    <a href="/Beastmaster#Primal_Roar" title="Beastmaster#Primal Roar">
     <img alt="Primal Roar icon.png" height="16" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/6/68/Primal_Roar_icon.png/16px-Primal_Roar_icon.png?version=d795b640e6d9a54ae28be4c653f40b74" width="16"/>
@@ -3192,7 +3226,7 @@ document.head.appendChild(script);
     Primal Roar
    </a>
   </span>
-  ​, draining their mana and making the enemy hard to retaliate after.
+  , draining their mana and making the enemy hard to retaliate after.
  </li>
 </ul>
 <p>
@@ -3230,7 +3264,7 @@ document.head.appendChild(script);
     Inner Beast
    </a>
   </span>
-  ​ and summons you can bring down Roshan in early game. Can be upgraded into a
+  and summons you can bring down Roshan in early game. Can be upgraded into a
   <span style="white-space:nowrap">
    <a href="/Solar_Crest" title="Solar Crest">
     <img alt="Solar Crest icon.png" height="15" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/3/36/Solar_Crest_icon.png/20px-Solar_Crest_icon.png?version=894faf3d6b1d850844699debbac2eaac" width="20"/>
@@ -3263,7 +3297,7 @@ document.head.appendChild(script);
     Primal Roar
    </a>
   </span>
-  ​ on enemies. It also further increases the attack speed of your
+  on enemies. It also further increases the attack speed of your
   <a href="#Boar">
    Boar
   </a>
@@ -3287,7 +3321,7 @@ document.head.appendChild(script);
     Inner Beast
    </a>
   </span>
-  ​, since it boost your teams's damage as well as survivability. Also, Beastmaster is able to stay outside of base thanks to the lifesteal.
+  , since it boost your teams's damage as well as survivability. Also, Beastmaster is able to stay outside of base thanks to the lifesteal.
  </li>
  <li>
   <span style="white-space:nowrap">
@@ -3367,9 +3401,6 @@ document.head.appendChild(script);
   can be bought in the late game. It is especially powerful when teleporting to the Hawk to kill lone target.
  </li>
 </ul>
-<p>
- <br/>
-</p>
 <h2>
  <span class="mw-headline" id="Gameplay">
   Gameplay
@@ -3378,14 +3409,8 @@ document.head.appendChild(script);
   <span class="mw-editsection-bracket">
    [
   </span>
-  <a class="mw-editsection-visualeditor" href="/index.php?title=Beastmaster&amp;veaction=edit&amp;vesection=7" title="Edit section: Gameplay">
-   edit
-  </a>
-  <span class="mw-editsection-divider">
-   |
-  </span>
   <a href="/index.php?title=Beastmaster&amp;action=edit&amp;section=7" title="Edit section: Gameplay">
-   edit source
+   edit
   </a>
   <span class="mw-editsection-bracket">
    ]
@@ -3422,14 +3447,8 @@ document.head.appendChild(script);
   <span class="mw-editsection-bracket">
    [
   </span>
-  <a class="mw-editsection-visualeditor" href="/index.php?title=Beastmaster&amp;veaction=edit&amp;vesection=8" title="Edit section: Audio">
-   edit
-  </a>
-  <span class="mw-editsection-divider">
-   |
-  </span>
   <a href="/index.php?title=Beastmaster&amp;action=edit&amp;section=8" title="Edit section: Audio">
-   edit source
+   edit
   </a>
   <span class="mw-editsection-bracket">
    ]
@@ -3464,14 +3483,8 @@ document.head.appendChild(script);
   <span class="mw-editsection-bracket">
    [
   </span>
-  <a class="mw-editsection-visualeditor" href="/index.php?title=Beastmaster&amp;veaction=edit&amp;vesection=9" title="Edit section: History">
-   edit
-  </a>
-  <span class="mw-editsection-divider">
-   |
-  </span>
   <a href="/index.php?title=Beastmaster&amp;action=edit&amp;section=9" title="Edit section: History">
-   edit source
+   edit
   </a>
   <span class="mw-editsection-bracket">
    ]
@@ -3515,14 +3528,8 @@ document.head.appendChild(script);
   <span class="mw-editsection-bracket">
    [
   </span>
-  <a class="mw-editsection-visualeditor" href="/index.php?title=Beastmaster&amp;veaction=edit&amp;vesection=10" title="Edit section: Equipment">
-   edit
-  </a>
-  <span class="mw-editsection-divider">
-   |
-  </span>
   <a href="/index.php?title=Beastmaster&amp;action=edit&amp;section=10" title="Edit section: Equipment">
-   edit source
+   edit
   </a>
   <span class="mw-editsection-bracket">
    ]
@@ -3563,13 +3570,12 @@ document.head.appendChild(script);
       <span class="" style="font-size:110%;">
        <span style="white-space:nowrap">
         <a href="/Beastmaster" title="Beastmaster">
-         <img alt="Beastmaster icon.png" height="32" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/d/d9/Beastmaster_icon.png?version=cc5f9f90232a898f47376ff0c0029ef4" width="32"/>
+         <img alt="Beastmaster minimap icon.png" height="32" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/5/5c/Beastmaster_minimap_icon.png?version=6a24e76b36fdcfa33731584fefbaf121" width="32"/>
         </a>
         <strong class="selflink">
          Beastmaster
         </strong>
        </span>
-       ​
        <a href="/Equipment" title="Equipment">
         Equipment
        </a>
@@ -3742,14 +3748,8 @@ document.head.appendChild(script);
   <span class="mw-editsection-bracket">
    [
   </span>
-  <a class="mw-editsection-visualeditor" href="/index.php?title=Beastmaster&amp;veaction=edit&amp;vesection=11" title="Edit section: Trivia">
-   edit
-  </a>
-  <span class="mw-editsection-divider">
-   |
-  </span>
   <a href="/index.php?title=Beastmaster&amp;action=edit&amp;section=11" title="Edit section: Trivia">
-   edit source
+   edit
   </a>
   <span class="mw-editsection-bracket">
    ]
@@ -3830,14 +3830,8 @@ document.head.appendChild(script);
   <span class="mw-editsection-bracket">
    [
   </span>
-  <a class="mw-editsection-visualeditor" href="/index.php?title=Beastmaster&amp;veaction=edit&amp;vesection=12" title="Edit section: Gallery">
-   edit
-  </a>
-  <span class="mw-editsection-divider">
-   |
-  </span>
   <a href="/index.php?title=Beastmaster&amp;action=edit&amp;section=12" title="Edit section: Gallery">
-   edit source
+   edit
   </a>
   <span class="mw-editsection-bracket">
    ]
@@ -3986,14 +3980,8 @@ document.head.appendChild(script);
   <span class="mw-editsection-bracket">
    [
   </span>
-  <a class="mw-editsection-visualeditor" href="/index.php?title=Beastmaster&amp;veaction=edit&amp;vesection=13" title="Edit section: References">
-   edit
-  </a>
-  <span class="mw-editsection-divider">
-   |
-  </span>
   <a href="/index.php?title=Beastmaster&amp;action=edit&amp;section=13" title="Edit section: References">
-   edit source
+   edit
   </a>
   <span class="mw-editsection-bracket">
    ]
@@ -4028,38 +4016,39 @@ document.head.appendChild(script);
 </ol>
 <!-- 
 NewPP limit report
-Cached time: 20170207215155
+Cached time: 20170608231235
 Cache expiry: 86400
 Dynamic content: false
 [SMW] In‐text annotation parser time: 0.001 seconds
-CPU time usage: 2.312 seconds
-Real time usage: 3.851 seconds
-Preprocessor visited node count: 17784/1000000
-Preprocessor generated node count: 64278/1000000
-Post‐expand include size: 169950/2097152 bytes
-Template argument size: 48293/2097152 bytes
-Highest expansion depth: 18/40
-Expensive parser function count: 0/99
+CPU time usage: 2.108 seconds
+Real time usage: 3.710 seconds
+Preprocessor visited node count: 11749/1000000
+Preprocessor generated node count: 57487/1000000
+Post‐expand include size: 164626/2097152 bytes
+Template argument size: 46368/2097152 bytes
+Highest expansion depth: 13/40
+Expensive parser function count: 1/99
+ExtLoops count: 52/1000
 -->
 <!-- 
 Transclusion expansion time report (%,ms,calls,template)
-100.00% 3156.523      1 - -total
- 41.81% 1319.860      7 - Template:Ability
- 21.77%  687.155      2 - Template:Ability_wrapper
- 14.97%  472.581      2 - Template:Unit_infobox_wrapper
- 14.94%  471.589     27 - Template:I
- 14.87%  469.527      2 - Template:Unit_infobox
- 12.08%  381.228      1 - Template:Equipment_Beastmaster
- 12.00%  378.769      1 - Template:Equipment
- 11.88%  375.145      1 - Template:Navbox
-  7.61%  240.356      1 - Template:Hero_infobox
+100.00% 3011.978      1 - -total
+ 39.18% 1180.116      7 - Template:Ability
+ 21.74%  654.716      2 - Template:Unit_infobox_wrapper
+ 21.61%  650.878      2 - Template:Unit_infobox
+ 16.08%  484.190      2 - Template:Ability_wrapper
+ 12.40%  373.460      1 - Template:Equipment_Beastmaster
+ 12.32%  370.949      1 - Template:Equipment
+ 12.20%  367.599      1 - Template:Navbox
+  9.30%  280.215     26 - Template:I
+  8.65%  260.580      1 - Template:Hero_infobox
 -->
-<!-- Saved in parser cache with key dota2_gamepedia:pcache:idhash:445-0!*!0!default!!en!5!* and timestamp 20170207215151 and revision id 1441667
+<!-- Saved in parser cache with key dota2_gamepedia:pcache:idhash:445-0!*!0!default!!en!5!* and timestamp 20170608231232 and revision id 1526011
  -->
 <div class="printfooter">
  Retrieved from "
- <a dir="ltr" href="http://dota2.gamepedia.com/index.php?title=Beastmaster&amp;oldid=1441667">
-  http://dota2.gamepedia.com/index.php?title=Beastmaster&amp;oldid=1441667
+ <a dir="ltr" href="https://dota2.gamepedia.com/index.php?title=Beastmaster&amp;oldid=1526011">
+  https://dota2.gamepedia.com/index.php?title=Beastmaster&amp;oldid=1526011
  </a>
  "
 </div>
@@ -4123,7 +4112,7 @@ Transclusion expansion time report (%,ms,calls,template)
     (function() {
         var zergnet = document.createElement('script');
         zergnet.type = 'text/javascript'; zergnet.async = true;
-        zergnet.src = 'http://www.zergnet.com/zerg.js?id=42966';
+        zergnet.src = '//www.zergnet.com/zerg.js?id=42966';
         var znscr = document.getElementsByTagName('script')[0];
         znscr.parentNode.insertBefore(zergnet, znscr);
     })();
@@ -4213,19 +4202,19 @@ Transclusion expansion time report (%,ms,calls,template)
     </h3>
     <div class="menu">
      <div id="socialIconImages">
-      <a href="https://twitter.com/intent/tweet?text=Check+out+Beastmaster+on+Dota+2+Wiki+--&amp;via=CurseGamepedia&amp;url=http%3A%2F%2Fdota2.gamepedia.com%2FBeastmaster" target="_blank">
+      <a href="https://twitter.com/intent/tweet?text=Check+out+Beastmaster+on+Dota+2+Wiki+--&amp;via=CurseGamepedia&amp;url=https%3A%2F%2Fdota2.gamepedia.com%2FBeastmaster" target="_blank">
        <img src="/extensions/Social/images/square_icons/twitter.png"/>
       </a>
-      <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fdota2.gamepedia.com%2FBeastmaster" target="_blank">
+      <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdota2.gamepedia.com%2FBeastmaster" target="_blank">
        <img src="/extensions/Social/images/square_icons/facebook.png"/>
       </a>
-      <a href="https://plus.google.com/share?url=http%3A%2F%2Fdota2.gamepedia.com%2FBeastmaster" target="_blank">
+      <a href="https://plus.google.com/share?url=https%3A%2F%2Fdota2.gamepedia.com%2FBeastmaster" target="_blank">
        <img src="/extensions/Social/images/square_icons/googleplus.png"/>
       </a>
-      <a href="http://www.reddit.com/submit?url=http%3A%2F%2Fdota2.gamepedia.com%2FBeastmaster&amp;title=Check+out+Beastmaster+on+Dota+2+Wiki+via+%40CurseGamepedia%3A+http%3A%2F%2Fdota2.gamepedia.com%2FBeastmaster" target="_blank">
+      <a href="http://www.reddit.com/submit?url=https%3A%2F%2Fdota2.gamepedia.com%2FBeastmaster&amp;title=Check+out+Beastmaster+on+Dota+2+Wiki+via+%40CurseGamepedia%3A+https%3A%2F%2Fdota2.gamepedia.com%2FBeastmaster" target="_blank">
        <img src="/extensions/Social/images/square_icons/reddit.png"/>
       </a>
-      <a href="http://www.tumblr.com/share/link?url=http%3A%2F%2Fdota2.gamepedia.com%2FBeastmaster&amp;name=Dota+2+Wiki&amp;description=Check+out+Beastmaster+on+Dota+2+Wiki+via+%3Ca+href%3D%22https%3A%2F%2Ftwitter.com%2FCurseGamepedia%22+target%3D%22_blank%22%3E%40CurseGamepedia%3C%2Fa%3E%3A+http%3A%2F%2Fdota2.gamepedia.com%2FBeastmaster" target="_blank">
+      <a href="http://www.tumblr.com/share/link?url=https%3A%2F%2Fdota2.gamepedia.com%2FBeastmaster&amp;name=Dota+2+Wiki&amp;description=Check+out+Beastmaster+on+Dota+2+Wiki+via+%3Ca+href%3D%22https%3A%2F%2Ftwitter.com%2FCurseGamepedia%22+target%3D%22_blank%22%3E%40CurseGamepedia%3C%2Fa%3E%3A+https%3A%2F%2Fdota2.gamepedia.com%2FBeastmaster" target="_blank">
        <img src="/extensions/Social/images/square_icons/tumblr.png"/>
       </a>
      </div>
@@ -4245,17 +4234,10 @@ Transclusion expansion time report (%,ms,calls,template)
        </a>
       </span>
      </li>
-     <li id="ca-ve-edit">
-      <span>
-       <a accesskey="v" href="/index.php?title=Beastmaster&amp;veaction=edit" title="Edit this page [v]">
-        Edit
-       </a>
-      </span>
-     </li>
-     <li class=" collapsible" id="ca-edit">
+     <li id="ca-edit">
       <span>
        <a accesskey="e" href="/index.php?title=Beastmaster&amp;action=edit" title="Edit this page [e]">
-        Edit source
+        Edit
        </a>
       </span>
      </li>
@@ -4453,7 +4435,7 @@ Transclusion expansion time report (%,ms,calls,template)
       </a>
      </li>
      <li id="t-permalink">
-      <a href="/index.php?title=Beastmaster&amp;oldid=1441667" title="Permanent link to this revision of the page">
+      <a href="/index.php?title=Beastmaster&amp;oldid=1526011" title="Permanent link to this revision of the page">
        Permanent link
       </a>
      </li>
@@ -4617,12 +4599,41 @@ Transclusion expansion time report (%,ms,calls,template)
     </div>
    </div>
   </div>
+  <div aria-labelledby="p-lang-label" class="portal" id="p-lang" role="navigation">
+   <h3 id="p-lang-label">
+    In other languages
+   </h3>
+   <div class="body">
+    <ul>
+     <li class="interlanguage-link interwiki-de">
+      <a href="http://dota2-de.gamepedia.com/Beastmaster" hreflang="de" lang="de" title="Beastmaster – Deutsch">
+       Deutsch
+      </a>
+     </li>
+     <li class="interlanguage-link interwiki-pt">
+      <a href="http://dota2-pt.gamepedia.com/Beastmaster" hreflang="pt" lang="pt" title="Beastmaster – português">
+       Português
+      </a>
+     </li>
+     <li class="interlanguage-link interwiki-ru">
+      <a href="http://dota2-ru.gamepedia.com/Beastmaster" hreflang="ru" lang="ru" title="Beastmaster – русский">
+       Русский
+      </a>
+     </li>
+     <li class="interlanguage-link interwiki-zh">
+      <a href="http://dota2-zh.gamepedia.com/%E5%85%BD%E7%8E%8B" hreflang="zh" lang="zh" title="兽王 – 中文">
+       中文
+      </a>
+     </li>
+    </ul>
+   </div>
+  </div>
  </div>
 </div>
 <div id="footer" role="contentinfo">
  <ul id="footer-info">
   <li id="footer-info-lastmod">
-   This page was last modified on 19 January 2017, at 00:41.
+   This page was last modified on 22 May 2017, at 14:47.
   </li>
   <li id="footer-info-copyright">
    Content is available under
@@ -4706,8 +4717,8 @@ Transclusion expansion time report (%,ms,calls,template)
     </a>
    </li>
    <li>
-    <a class="advertise" href="https://ghostreconwildlands.gamepedia.com">
-     Ghost Recon
+    <a class="advertise" href="https://masseffectandromeda.gamepedia.com/Mass_Effect:_Andromeda_Wiki">
+     ME:Andromeda
     </a>
    </li>
   </ul>
@@ -4733,8 +4744,8 @@ Transclusion expansion time report (%,ms,calls,template)
     </a>
    </li>
    <li>
-    <a class="about" href="http://www.hearthpwn.com/guides/1480-how-to-get-cheaper-hearthstone-packs-buy-amazon">
-     HS Packs
+    <a class="advertise" href="https://masseffectandromeda.gamepedia.com/Skill">
+     ME:A Skills
     </a>
    </li>
   </ul>
@@ -4760,8 +4771,8 @@ Transclusion expansion time report (%,ms,calls,template)
     </a>
    </li>
    <li>
-    <a class="tos" href="https://forhonor.gamepedia.com">
-     For Honor
+    <a class="advertise" href="https://zelda.gamepedia.com/Main_Page">
+     Zelda Wiki
     </a>
    </li>
   </ul>
@@ -4817,8 +4828,5 @@ _comscore.push({ c1: "2", c2: "6035118" });
 				window.wikiTags = ["action","defense of the ancients","esports","free-to-play","free to play","ftp","game:dota 2","linux","mac","pc","rts","source","steam","valve"];
 </script>
 <script>
- (window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":79});});
-</script>
-<script type="text/javascript">
- window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"75f4858b7a","applicationID":"1909498","transactionName":"YlVXbREHWksEUkVdCVsfYEsKSV1WAVRJGhZdQA==","queueTime":0,"applicationTime":92,"atts":"ThJAG1kdSRRHUBMOHUhN","errorBeacon":"bam.nr-data.net","agent":""}
+ (window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":83});});
 </script>

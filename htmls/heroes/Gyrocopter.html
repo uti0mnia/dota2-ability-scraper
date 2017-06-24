@@ -2,9 +2,6 @@
 <html class="client-nojs" dir="ltr" lang="en">
  <head>
   <meta charset="utf-8"/>
-  <script type="text/javascript">
-   (window.NREUM||(NREUM={})).loader_config={xpid:"UAcAUlNACQoAXVVbDw=="};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var o=e[n]={exports:{}};t[n][0].call(o.exports,function(e){var o=t[n][1][e];return r(o||e)},o,o.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({1:[function(t,e,n){function r(t){try{c.console&&console.log(t)}catch(e){}}var o,i=t("ee"),a=t(15),c={};try{o=localStorage.getItem("__nr_flags").split(","),console&&"function"==typeof console.log&&(c.console=!0,o.indexOf("dev")!==-1&&(c.dev=!0),o.indexOf("nr_dev")!==-1&&(c.nrDev=!0))}catch(s){}c.nrDev&&i.on("internal-error",function(t){r(t.stack)}),c.dev&&i.on("fn-err",function(t,e,n){r(n.stack)}),c.dev&&(r("NR AGENT IN DEVELOPMENT MODE"),r("flags: "+a(c,function(t,e){return t}).join(", ")))},{}],2:[function(t,e,n){function r(t,e,n,r,o){try{d?d-=1:i("err",[o||new UncaughtException(t,e,n)])}catch(c){try{i("ierr",[c,(new Date).getTime(),!0])}catch(s){}}return"function"==typeof f&&f.apply(this,a(arguments))}function UncaughtException(t,e,n){this.message=t||"Uncaught error with no additional information",this.sourceURL=e,this.line=n}function o(t){i("err",[t,(new Date).getTime()])}var i=t("handle"),a=t(16),c=t("ee"),s=t("loader"),f=window.onerror,u=!1,d=0;s.features.err=!0,t(1),window.onerror=r;try{throw new Error}catch(l){"stack"in l&&(t(8),t(7),"addEventListener"in window&&t(5),s.xhrWrappable&&t(9),u=!0)}c.on("fn-start",function(t,e,n){u&&(d+=1)}),c.on("fn-err",function(t,e,n){u&&(this.thrown=!0,o(n))}),c.on("fn-end",function(){u&&!this.thrown&&d>0&&(d-=1)}),c.on("internal-error",function(t){i("ierr",[t,(new Date).getTime(),!0])})},{}],3:[function(t,e,n){t("loader").features.ins=!0},{}],4:[function(t,e,n){function r(t){}if(window.performance&&window.performance.timing&&window.performance.getEntriesByType){var o=t("ee"),i=t("handle"),a=t(8),c=t(7),s="learResourceTimings",f="addEventListener",u="resourcetimingbufferfull",d="bstResource",l="resource",p="-start",h="-end",m="fn"+p,w="fn"+h,v="bstTimer",y="pushState";t("loader").features.stn=!0,t(6);var g=NREUM.o.EV;o.on(m,function(t,e){var n=t[0];n instanceof g&&(this.bstStart=Date.now())}),o.on(w,function(t,e){var n=t[0];n instanceof g&&i("bst",[n,e,this.bstStart,Date.now()])}),a.on(m,function(t,e,n){this.bstStart=Date.now(),this.bstType=n}),a.on(w,function(t,e){i(v,[e,this.bstStart,Date.now(),this.bstType])}),c.on(m,function(){this.bstStart=Date.now()}),c.on(w,function(t,e){i(v,[e,this.bstStart,Date.now(),"requestAnimationFrame"])}),o.on(y+p,function(t){this.time=Date.now(),this.startPath=location.pathname+location.hash}),o.on(y+h,function(t){i("bstHist",[location.pathname+location.hash,this.startPath,this.time])}),f in window.performance&&(window.performance["c"+s]?window.performance[f](u,function(t){i(d,[window.performance.getEntriesByType(l)]),window.performance["c"+s]()},!1):window.performance[f]("webkit"+u,function(t){i(d,[window.performance.getEntriesByType(l)]),window.performance["webkitC"+s]()},!1)),document[f]("scroll",r,{passive:!0}),document[f]("keypress",r,!1),document[f]("click",r,!1)}},{}],5:[function(t,e,n){function r(t){for(var e=t;e&&!e.hasOwnProperty(u);)e=Object.getPrototypeOf(e);e&&o(e)}function o(t){c.inPlace(t,[u,d],"-",i)}function i(t,e){return t[1]}var a=t("ee").get("events"),c=t(17)(a,!0),s=t("gos"),f=XMLHttpRequest,u="addEventListener",d="removeEventListener";e.exports=a,"getPrototypeOf"in Object?(r(document),r(window),r(f.prototype)):f.prototype.hasOwnProperty(u)&&(o(window),o(f.prototype)),a.on(u+"-start",function(t,e){var n=t[1],r=s(n,"nr@wrapped",function(){function t(){if("function"==typeof n.handleEvent)return n.handleEvent.apply(n,arguments)}var e={object:t,"function":n}[typeof n];return e?c(e,"fn-",null,e.name||"anonymous"):n});this.wrapped=t[1]=r}),a.on(d+"-start",function(t){t[1]=this.wrapped||t[1]})},{}],6:[function(t,e,n){var r=t("ee").get("history"),o=t(17)(r);e.exports=r,o.inPlace(window.history,["pushState","replaceState"],"-")},{}],7:[function(t,e,n){var r=t("ee").get("raf"),o=t(17)(r),i="equestAnimationFrame";e.exports=r,o.inPlace(window,["r"+i,"mozR"+i,"webkitR"+i,"msR"+i],"raf-"),r.on("raf-start",function(t){t[0]=o(t[0],"fn-")})},{}],8:[function(t,e,n){function r(t,e,n){t[0]=a(t[0],"fn-",null,n)}function o(t,e,n){this.method=n,this.timerDuration="number"==typeof t[1]?t[1]:0,t[0]=a(t[0],"fn-",this,n)}var i=t("ee").get("timer"),a=t(17)(i),c="setTimeout",s="setInterval",f="clearTimeout",u="-start",d="-";e.exports=i,a.inPlace(window,[c,"setImmediate"],c+d),a.inPlace(window,[s],s+d),a.inPlace(window,[f,"clearImmediate"],f+d),i.on(s+u,r),i.on(c+u,o)},{}],9:[function(t,e,n){function r(t,e){d.inPlace(e,["onreadystatechange"],"fn-",c)}function o(){var t=this,e=u.context(t);t.readyState>3&&!e.resolved&&(e.resolved=!0,u.emit("xhr-resolved",[],t)),d.inPlace(t,w,"fn-",c)}function i(t){v.push(t),h&&(g=-g,b.data=g)}function a(){for(var t=0;t<v.length;t++)r([],v[t]);v.length&&(v=[])}function c(t,e){return e}function s(t,e){for(var n in t)e[n]=t[n];return e}t(5);var f=t("ee"),u=f.get("xhr"),d=t(17)(u),l=NREUM.o,p=l.XHR,h=l.MO,m="readystatechange",w=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"],v=[];e.exports=u;var y=window.XMLHttpRequest=function(t){var e=new p(t);try{u.emit("new-xhr",[e],e),e.addEventListener(m,o,!1)}catch(n){try{u.emit("internal-error",[n])}catch(r){}}return e};if(s(p,y),y.prototype=p.prototype,d.inPlace(y.prototype,["open","send"],"-xhr-",c),u.on("send-xhr-start",function(t,e){r(t,e),i(e)}),u.on("open-xhr-start",r),h){var g=1,b=document.createTextNode(g);new h(a).observe(b,{characterData:!0})}else f.on("fn-end",function(t){t[0]&&t[0].type===m||a()})},{}],10:[function(t,e,n){function r(t){var e=this.params,n=this.metrics;if(!this.ended){this.ended=!0;for(var r=0;r<d;r++)t.removeEventListener(u[r],this.listener,!1);if(!e.aborted){if(n.duration=(new Date).getTime()-this.startTime,4===t.readyState){e.status=t.status;var i=o(t,this.lastSize);if(i&&(n.rxSize=i),this.sameOrigin){var a=t.getResponseHeader("X-NewRelic-App-Data");a&&(e.cat=a.split(", ").pop())}}else e.status=0;n.cbTime=this.cbTime,f.emit("xhr-done",[t],t),c("xhr",[e,n,this.startTime])}}}function o(t,e){var n=t.responseType;if("json"===n&&null!==e)return e;var r="arraybuffer"===n||"blob"===n||"json"===n?t.response:t.responseText;return h(r)}function i(t,e){var n=s(e),r=t.params;r.host=n.hostname+":"+n.port,r.pathname=n.pathname,t.sameOrigin=n.sameOrigin}var a=t("loader");if(a.xhrWrappable){var c=t("handle"),s=t(11),f=t("ee"),u=["load","error","abort","timeout"],d=u.length,l=t("id"),p=t(14),h=t(13),m=window.XMLHttpRequest;a.features.xhr=!0,t(9),f.on("new-xhr",function(t){var e=this;e.totalCbs=0,e.called=0,e.cbTime=0,e.end=r,e.ended=!1,e.xhrGuids={},e.lastSize=null,p&&(p>34||p<10)||window.opera||t.addEventListener("progress",function(t){e.lastSize=t.loaded},!1)}),f.on("open-xhr-start",function(t){this.params={method:t[0]},i(this,t[1]),this.metrics={}}),f.on("open-xhr-end",function(t,e){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&e.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid)}),f.on("send-xhr-start",function(t,e){var n=this.metrics,r=t[0],o=this;if(n&&r){var i=h(r);i&&(n.txSize=i)}this.startTime=(new Date).getTime(),this.listener=function(t){try{"abort"===t.type&&(o.params.aborted=!0),("load"!==t.type||o.called===o.totalCbs&&(o.onloadCalled||"function"!=typeof e.onload))&&o.end(e)}catch(n){try{f.emit("internal-error",[n])}catch(r){}}};for(var a=0;a<d;a++)e.addEventListener(u[a],this.listener,!1)}),f.on("xhr-cb-time",function(t,e,n){this.cbTime+=t,e?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof n.onload||this.end(n)}),f.on("xhr-load-added",function(t,e){var n=""+l(t)+!!e;this.xhrGuids&&!this.xhrGuids[n]&&(this.xhrGuids[n]=!0,this.totalCbs+=1)}),f.on("xhr-load-removed",function(t,e){var n=""+l(t)+!!e;this.xhrGuids&&this.xhrGuids[n]&&(delete this.xhrGuids[n],this.totalCbs-=1)}),f.on("addEventListener-end",function(t,e){e instanceof m&&"load"===t[0]&&f.emit("xhr-load-added",[t[1],t[2]],e)}),f.on("removeEventListener-end",function(t,e){e instanceof m&&"load"===t[0]&&f.emit("xhr-load-removed",[t[1],t[2]],e)}),f.on("fn-start",function(t,e,n){e instanceof m&&("onload"===n&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=(new Date).getTime()))}),f.on("fn-end",function(t,e){this.xhrCbStart&&f.emit("xhr-cb-time",[(new Date).getTime()-this.xhrCbStart,this.onload,e],e)})}},{}],11:[function(t,e,n){e.exports=function(t){var e=document.createElement("a"),n=window.location,r={};e.href=t,r.port=e.port;var o=e.href.split("://");!r.port&&o[1]&&(r.port=o[1].split("/")[0].split("@").pop().split(":")[1]),r.port&&"0"!==r.port||(r.port="https"===o[0]?"443":"80"),r.hostname=e.hostname||n.hostname,r.pathname=e.pathname,r.protocol=o[0],"/"!==r.pathname.charAt(0)&&(r.pathname="/"+r.pathname);var i=!e.protocol||":"===e.protocol||e.protocol===n.protocol,a=e.hostname===document.domain&&e.port===n.port;return r.sameOrigin=i&&(!e.hostname||a),r}},{}],12:[function(t,e,n){function r(){}function o(t,e,n){return function(){return i(t,[(new Date).getTime()].concat(c(arguments)),e?null:this,n),e?void 0:this}}var i=t("handle"),a=t(15),c=t(16),s=t("ee").get("tracer"),f=NREUM;"undefined"==typeof window.newrelic&&(newrelic=f);var u=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(u,function(t,e){f[e]=o(d+e,!0,"api")}),f.addPageAction=o(d+"addPageAction",!0),f.setCurrentRouteName=o(d+"routeName",!0),e.exports=newrelic,f.interaction=function(){return(new r).get()};var p=r.prototype={createTracer:function(t,e){var n={},r=this,o="function"==typeof e;return i(l+"tracer",[Date.now(),t,n],r),function(){if(s.emit((o?"":"no-")+"fn-start",[Date.now(),r,o],n),o)try{return e.apply(this,arguments)}finally{s.emit("fn-end",[Date.now()],n)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){p[e]=o(l+e)}),newrelic.noticeError=function(t){"string"==typeof t&&(t=new Error(t)),i("err",[t,(new Date).getTime()])}},{}],13:[function(t,e,n){e.exports=function(t){if("string"==typeof t&&t.length)return t.length;if("object"==typeof t){if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if(!("undefined"!=typeof FormData&&t instanceof FormData))try{return JSON.stringify(t).length}catch(e){return}}}},{}],14:[function(t,e,n){var r=0,o=navigator.userAgent.match(/Firefox[\/\s](\d+\.\d+)/);o&&(r=+o[1]),e.exports=r},{}],15:[function(t,e,n){function r(t,e){var n=[],r="",i=0;for(r in t)o.call(t,r)&&(n[i]=e(r,t[r]),i+=1);return n}var o=Object.prototype.hasOwnProperty;e.exports=r},{}],16:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,o=n-e||0,i=Array(o<0?0:o);++r<o;)i[r]=t[e+r];return i}e.exports=r},{}],17:[function(t,e,n){function r(t){return!(t&&t instanceof Function&&t.apply&&!t[a])}var o=t("ee"),i=t(16),a="nr@original",c=Object.prototype.hasOwnProperty,s=!1;e.exports=function(t,e){function n(t,e,n,o){function nrWrapper(){var r,a,c,s;try{a=this,r=i(arguments),c="function"==typeof n?n(r,a):n||{}}catch(f){l([f,"",[r,a,o],c])}u(e+"start",[r,a,o],c);try{return s=t.apply(a,r)}catch(d){throw u(e+"err",[r,a,d],c),d}finally{u(e+"end",[r,a,s],c)}}return r(t)?t:(e||(e=""),nrWrapper[a]=t,d(t,nrWrapper),nrWrapper)}function f(t,e,o,i){o||(o="");var a,c,s,f="-"===o.charAt(0);for(s=0;s<e.length;s++)c=e[s],a=t[c],r(a)||(t[c]=n(a,f?c+o:o,i,c))}function u(n,r,o){if(!s||e){var i=s;s=!0;try{t.emit(n,r,o)}catch(a){l([a,n,r,o])}s=i}}function d(t,e){if(Object.defineProperty&&Object.keys)try{var n=Object.keys(t);return n.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(r){l([r])}for(var o in t)c.call(t,o)&&(e[o]=t[o]);return e}function l(e){try{t.emit("internal-error",e)}catch(n){}}return t||(t=o),n.inPlace=f,n.flag=a,n}},{}],ee:[function(t,e,n){function r(){}function o(t){function e(t){return t&&t instanceof r?t:t?s(t,c,i):i()}function n(n,r,o){if(!l.aborted){t&&t(n,r,o);for(var i=e(o),a=h(n),c=a.length,s=0;s<c;s++)a[s].apply(i,r);var f=u[y[n]];return f&&f.push([g,n,r,i]),i}}function p(t,e){v[t]=h(t).concat(e)}function h(t){return v[t]||[]}function m(t){return d[t]=d[t]||o(n)}function w(t,e){f(t,function(t,n){e=e||"feature",y[n]=e,e in u||(u[e]=[])})}var v={},y={},g={on:p,emit:n,get:m,listeners:h,context:e,buffer:w,abort:a,aborted:!1};return g}function i(){return new r}function a(){(u.api||u.feature)&&(l.aborted=!0,u=l.backlog={})}var c="nr@context",s=t("gos"),f=t(15),u={},d={},l=e.exports=o();l.backlog=u},{}],gos:[function(t,e,n){function r(t,e,n){if(o.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return t[e]=r,r}var o=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){o.buffer([t],r),o.emit(t,e,n)}var o=t("ee").get("handle");e.exports=r,r.ee=o},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,i,function(){return o++})}var o=1,i="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!b++){var t=g.info=NREUM.info,e=d.getElementsByTagName("script")[0];if(setTimeout(f.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return f.abort();s(v,function(e,n){t[e]||(t[e]=n)}),c("mark",["onload",a()],null,"api");var n=d.createElement("script");n.src="https://"+t.agent,e.parentNode.insertBefore(n,e)}}function o(){"complete"===d.readyState&&i()}function i(){c("mark",["domContent",a()],null,"api")}function a(){return(new Date).getTime()}var c=t("handle"),s=t(15),f=t("ee"),u=window,d=u.document,l="addEventListener",p="attachEvent",h=u.XMLHttpRequest,m=h&&h.prototype;NREUM.o={ST:setTimeout,CT:clearTimeout,XHR:h,REQ:u.Request,EV:u.Event,PR:u.Promise,MO:u.MutationObserver},t(12);var w=""+location,v={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1016.min.js"},y=h&&m&&m[l]&&!/CriOS/.test(navigator.userAgent),g=e.exports={offset:a(),origin:w,features:{},xhrWrappable:y};d[l]?(d[l]("DOMContentLoaded",i,!1),u[l]("load",r,!1)):(d[p]("onreadystatechange",o),u[p]("onload",r)),c("mark",["firstbyte",a()],null,"api");var b=0},{}]},{},["loader",2,10,4,3]);
-  </script>
   <title>
    Gyrocopter - Dota 2 Wiki
   </title>
@@ -12,7 +9,7 @@
    document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );
   </script>
   <script>
-   (window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Gyrocopter","wgTitle":"Gyrocopter","wgCurRevisionId":1445266,"wgRevisionId":1445266,"wgArticleId":1487,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Heroes","Agility heroes","Ranged heroes","Carries","Nukers","Disablers"],"wgBreakFrames":true,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Gyrocopter","wgRelevantArticleId":1487,"wgRequestId":"b2f0657beb4b15da38fad4b4","wgIsProbablyEditable":true,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgPreferredVariant":"en","wgCollapsibleVectorEnabledModules":{"collapsiblenav":true,"experiments":true},"wgVisualEditor":{"pageLanguageCode":"en","pageLanguageDir":"ltr","usePageImages":true,"usePageDescriptions":false},"wgWikiEditorEnabledModules":{"toolbar":true,"dialogs":true,"preview":true,"publish":true},"wgCategoryTreePageCategoryOptions":"{\"mode\":0,\"hideprefix\":20,\"showcount\":true,\"namespaces\":false}","wgVisualEditorToolbarScrollOffset":0});mw.loader.implement("user.options",function($,jQuery,require,module){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function ( $, jQuery, require, module ) {
+   (window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Gyrocopter","wgTitle":"Gyrocopter","wgCurRevisionId":1529924,"wgRevisionId":1529924,"wgArticleId":1487,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Heroes","Agility heroes","Ranged heroes","Carries","Nukers","Disablers"],"wgBreakFrames":true,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Gyrocopter","wgRelevantArticleId":1487,"wgRequestId":"425d2c4356fd6b65a4ad1c83","wgIsProbablyEditable":true,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgPreferredVariant":"en","wgCollapsibleVectorEnabledModules":{"collapsiblenav":true,"experiments":true},"wgVisualEditor":{"pageLanguageCode":"en","pageLanguageDir":"ltr","usePageImages":true,"usePageDescriptions":false},"wgWikiEditorEnabledModules":{"toolbar":true,"dialogs":true,"preview":true,"publish":true},"wgCategoryTreePageCategoryOptions":"{\"mode\":0,\"hideprefix\":20,\"showcount\":true,\"namespaces\":false}","wgVisualEditorToolbarScrollOffset":0});mw.loader.implement("user.options",function($,jQuery,require,module){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function ( $, jQuery, require, module ) {
 mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/;
 
 });mw.loader.load(["ext.smw.style","mediawiki.page.startup","ext.siteGlobals","ext.bunnyears","ext.visualEditor.desktopArticleTarget.init","ext.hydraAuth.banners","skins.vector.js","skins.hydra.advertisements.js","skins.hydra.footer.js","ext.social"]);});
@@ -23,11 +20,11 @@ mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","cs
   <link href="/load.php?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=hydra" rel="stylesheet"/>
   <script async="" src="/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=hydra">
   </script>
-  <meta content="MediaWiki 1.27.1" name="generator"/>
+  <meta content="MediaWiki 1.27.3" name="generator"/>
   <meta content="Gyrocopter" name="og:title"/>
   <meta content="website" name="og:type"/>
   <meta content="https://hydra-media.cursecdn.com/dota2.gamepedia.com/b/bc/Wiki.png" name="og:image"/>
-  <meta content="http://dota2.gamepedia.com/Gyrocopter" name="og:url"/>
+  <meta content="https://dota2.gamepedia.com/Gyrocopter" name="og:url"/>
   <meta content="Dota 2 Wiki" name="og:site_name"/>
   <meta name="description"/>
   <meta content="" name="keywords"/>
@@ -40,13 +37,13 @@ mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","cs
   <link href="/opensearch_desc.php" rel="search" title="Dota 2 Wiki (en)" type="application/opensearchdescription+xml"/>
   <link href="//dota2.gamepedia.com/api.php?action=rsd" rel="EditURI" type="application/rsd+xml"/>
   <link href="//creativecommons.org/licenses/by-nc-sa/3.0/" rel="copyright"/>
-  <link href="http://dota2.gamepedia.com/Gyrocopter" rel="canonical"/>
+  <link href="https://dota2.gamepedia.com/Gyrocopter" rel="canonical"/>
   <link href="dota2-de.gamepedia.com" hreflang="de" rel="alternate"/>
   <link href="dota2-ru.gamepedia.com" hreflang="ru" rel="alternate"/>
   <link href="dota2-pt.gamepedia.com" hreflang="pt" rel="alternate"/>
   <link href="dota2-zh.gamepedia.com" hreflang="zh" rel="alternate"/>
   <meta content="Gamepedia" itemprop="author"/>
-  <link href="https://stations.cursetech.com/be/bunnyears.min.css" rel="stylesheet" type="text/css"/>
+  <link href="https://stations.cursetech.com/be/bunnyears-1.1.min.css" rel="stylesheet" type="text/css"/>
  </head>
  <body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-Gyrocopter rootpage-Gyrocopter skin-hydra action-view site-dota2-gamepedia show-ads">
   <script type="application/ld+json">
@@ -81,8 +78,8 @@ mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","cs
 		"target": "https://dota2.gamepedia.com/index.php?title=Special:Search&search={search_term}",
 		"query-input": "required name=search_term"
 	},
-	"datePublished": "2017-01-22T09:32:12Z",
-	"dateModified": "2017-01-22T09:32:12Z",
+	"datePublished": "2017-05-29T14:41:15Z",
+	"dateModified": "2017-05-29T14:41:15Z",
 	"mainEntityOfPage": "https://dota2.gamepedia.com/Gyrocopter"
 }
   </script>
@@ -124,7 +121,7 @@ mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","cs
 var script = document.createElement('script');
 var tstamp = new Date();
 script.id = 'factorem';
-script.src = 'http://cdm.cursecdn.com/js/gamepedia/cdmfactorem_min.js?misc=' + tstamp.getTime();;
+script.src = '//cdm.cursecdn.com/js/gamepedia/cdmfactorem_min.js?misc=' + tstamp.getTime();;
 script.async = true;
 script.type='text/javascript';
 document.head.appendChild(script);
@@ -133,10 +130,10 @@ document.head.appendChild(script);
    setTimeout(function(){if("undefined"!=typeof b2){var element=document.getElementById(b2);setTimeout(function(){element.parentNode.innerHTML='<div id="'+b2+'"></div>'},5000)}},20000)
   </script>
   <script>
-   setTimeout(function(){if("undefined"!=typeof b2){var element=document.getElementById(b3);setTimeout(function(){element.parentNode.innerHTML='<div id="'+b3+'"></div>'},5000)}},20000)
+   setTimeout(function(){if("undefined"!=typeof b3){var element=document.getElementById(b3);setTimeout(function(){element.parentNode.innerHTML='<div id="'+b3+'"></div>'},5000)}},20000)
   </script>
   <script>
-   setTimeout(function(){if("undefined"!=typeof b2){var element=document.getElementById(b6);setTimeout(function(){element.parentNode.innerHTML='<div id="'+b6+'"></div>'},5000)}},20000)
+   setTimeout(function(){if("undefined"!=typeof b6){var element=document.getElementById(b6);setTimeout(function(){element.parentNode.innerHTML='<div id="'+b6+'"></div>'},5000)}},20000)
   </script>
   <div id="netbar">
    <ul class="netbar-left">
@@ -279,6 +276,13 @@ document.head.appendChild(script);
          </td>
          <td style="border-bottom: 2px solid #A3B1BF; width: 3px;">
          </td>
+         <td style="padding: 0.5em; background-color: #d7e6f4; line-height: 0.95em; border: 1px solid #A3B1BF; border-bottom: solid 2px #A3B1BF; width: 20px;">
+          <a href="/Gyrocopter/Bugs" title="Gyrocopter/Bugs">
+           Known Bugs
+          </a>
+         </td>
+         <td style="border-bottom: 2px solid #A3B1BF; width: 3px;">
+         </td>
          <td style="border-bottom:2px solid #A3B1BF" width="3000">
          </td>
         </tr>
@@ -293,8 +297,8 @@ document.head.appendChild(script);
         </tr>
         <tr>
          <td colspan="4">
-          <a class="image" href="/File:Gyrocopter.png">
-           <img alt="Gyrocopter.png" height="144" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/5/5d/Gyrocopter.png?version=c13041da410294cef17fc2898254d180" width="256"/>
+          <a class="image" href="/File:Gyrocopter_icon.png">
+           <img alt="Gyrocopter icon.png" height="144" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/4/4f/Gyrocopter_icon.png?version=4efc0fffbc50060ee625a46c1b4d9167" width="256"/>
           </a>
          </td>
         </tr>
@@ -304,17 +308,17 @@ document.head.appendChild(script);
            <tr>
             <th align="center" width="45">
              <a href="/Strength" title="Strength">
-              <img alt="Strength" height="40" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/7a/Strength_attribute_symbol.png/40px-Strength_attribute_symbol.png?version=79371ef0198db066c30dfa55b0e6b483" width="40"/>
+              <img alt="Strength attribute symbol.png" height="40" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/7a/Strength_attribute_symbol.png/40px-Strength_attribute_symbol.png?version=79371ef0198db066c30dfa55b0e6b483" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/7a/Strength_attribute_symbol.png/60px-Strength_attribute_symbol.png?version=79371ef0198db066c30dfa55b0e6b483 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/7/7a/Strength_attribute_symbol.png?version=79371ef0198db066c30dfa55b0e6b483 2x" width="40"/>
              </a>
              <br/>
              <b>
               18
              </b>
-             + 1.8
+             + 2.1
             </th>
             <th align="center" width="45">
              <a href="/Agility" title="Agility">
-              <img alt="Agility" height="40" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/72/Agility_primary_attribute_symbol.png/40px-Agility_primary_attribute_symbol.png?version=d62be6f497df32db012c4ddcf8153a1a" width="40"/>
+              <img alt="Agility primary attribute symbol.png" height="40" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/72/Agility_primary_attribute_symbol.png/40px-Agility_primary_attribute_symbol.png?version=d62be6f497df32db012c4ddcf8153a1a" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/72/Agility_primary_attribute_symbol.png/60px-Agility_primary_attribute_symbol.png?version=d62be6f497df32db012c4ddcf8153a1a 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/7/72/Agility_primary_attribute_symbol.png?version=d62be6f497df32db012c4ddcf8153a1a 2x" width="40"/>
              </a>
              <br/>
              <b>
@@ -324,7 +328,7 @@ document.head.appendChild(script);
             </th>
             <th align="center" width="45">
              <a href="/Intelligence" title="Intelligence">
-              <img alt="Intelligence" height="40" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/5/56/Intelligence_attribute_symbol.png/40px-Intelligence_attribute_symbol.png?version=4040e46b05f05f761993086ea3d191f0" width="40"/>
+              <img alt="Intelligence attribute symbol.png" height="40" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/5/56/Intelligence_attribute_symbol.png/40px-Intelligence_attribute_symbol.png?version=4040e46b05f05f761993086ea3d191f0" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/5/56/Intelligence_attribute_symbol.png/60px-Intelligence_attribute_symbol.png?version=4040e46b05f05f761993086ea3d191f0 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/5/56/Intelligence_attribute_symbol.png?version=4040e46b05f05f761993086ea3d191f0 2x" width="40"/>
              </a>
              <br/>
              <b>
@@ -377,10 +381,10 @@ document.head.appendChild(script);
              560
             </td>
             <td>
-             1060
+             1140
             </td>
             <td>
-             1420
+             1560
             </td>
            </tr>
            <tr>
@@ -392,16 +396,16 @@ document.head.appendChild(script);
              </b>
             </td>
             <td>
-             0.25
+             0
             </td>
             <td>
-             0.79
+             1.08
             </td>
             <td>
-             1.55
+             2.84
             </td>
             <td>
-             2.09
+             4.1
             </td>
            </tr>
            <tr style="background:#ededed">
@@ -413,16 +417,16 @@ document.head.appendChild(script);
              </b>
             </td>
             <td>
-             50
+             75
             </td>
             <td>
-             278
+             284
             </td>
             <td>
-             626
+             603
             </td>
             <td>
-             878
+             834
             </td>
            </tr>
            <tr>
@@ -500,13 +504,13 @@ document.head.appendChild(script);
              0%
             </td>
             <td>
-             1.19%
+             1.36%
             </td>
             <td>
-             3.03%
+             3.46%
             </td>
             <td>
-             4.34%
+             4.96%
             </td>
            </tr>
            <tr>
@@ -547,7 +551,7 @@ document.head.appendChild(script);
              </b>
             </td>
             <td>
-             315
+             320
             </td>
            </tr>
            <tr>
@@ -825,14 +829,8 @@ document.head.appendChild(script);
          <span class="mw-editsection-bracket">
           [
          </span>
-         <a class="mw-editsection-visualeditor" href="/index.php?title=Gyrocopter&amp;veaction=edit&amp;vesection=1" title="Edit section: Bio">
-          edit
-         </a>
-         <span class="mw-editsection-divider">
-          |
-         </span>
          <a href="/index.php?title=Gyrocopter&amp;action=edit&amp;section=1" title="Edit section: Bio">
-          edit source
+          edit
          </a>
          <span class="mw-editsection-bracket">
           ]
@@ -840,82 +838,77 @@ document.head.appendChild(script);
         </span>
        </h2>
        <div class="biobox" style="color:#333333;padding:8px;font-size:12px;">
-        <table style="background: none;">
+        <table cellspacing="4" style="background: none;">
          <tr>
-          <td valign="top">
-           <table cellspacing="4" style="background: none;">
-            <tr>
-             <td colspan="2" style="font-weight:bold;font-size:13px;text-align:center;">
-              <a href="/Gyrocopter" title="Gyrocopter">
-               <img alt="Gyrocopter" height="32" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/4/4f/Gyrocopter_icon.png?version=b98400aee235f4887c8d59af40a58559" width="32"/>
-              </a>
-              Aurel, the Gyrocopter
-             </td>
-            </tr>
-            <tr>
-             <td align="center" colspan="2">
-              <a class="sm2_button" href="https://hydra-media.cursecdn.com/dota2.gamepedia.com/f/f3/Gyro_begins_02.mp3" title="Play">
-               Play
-              </a>
-              "So much for being retired..."
-             </td>
-            </tr>
-            <tr>
-             <td valign="top">
-              <b>
-               Role:
-              </b>
-             </td>
-             <td>
-              <a href="/Role#Carry" title="Carry">
-               <img alt="Carry" height="24" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/5/52/Pip_carry.png/24px-Pip_carry.png?version=7897014a7741857935320d543e26bcac" width="24"/>
-              </a>
-              <a href="/Role#Carry" title="Role">
-               Carry
-              </a>
-              /
-              <a href="/Role#Nuker" title="Nuker">
-               <img alt="Nuker" height="24" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/0/04/Pip_ganker.png/24px-Pip_ganker.png?version=f403b95dc688f11a6af39e1110731b4d" width="24"/>
-              </a>
-              <a href="/Role#Nuker" title="Role">
-               Nuker
-              </a>
-              /
-              <a href="/Role#Disabler" title="Disabler">
-               <img alt="Disabler" height="24" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/c/c3/Pip_disabler.png/24px-Pip_disabler.png?version=340edcbcd7b35f85bea7d18c802ed99c" width="24"/>
-              </a>
-              <a href="/Role#Disabler" title="Role">
-               Disabler
-              </a>
-             </td>
-            </tr>
-            <tr>
-             <td valign="top">
-              <b>
-               Lore:
-              </b>
-             </td>
-             <td>
-              <i>
-               After serving through a lifetime of wars, upheaval, riots, and revolutions, the brass figured Aurel had seen enough. But in addition to a few trinkets and his considerable pension, the erstwhile engineer left with something far more interesting: a long-forgotten, incomplete schematic for a Gyrocopter, the world’s first manned, non-magical flying device. Retiring to the tropical obscurity of the Ash Archipelago with little else but time and money, he set to work building the device. As the years wore on and the remains of failed prototypes began to pile up, he began to wonder if mechanical flight was even possible. A decade and a day after his retirement, on a sunny afternoon with a southerly breeze, Aurel sat in his latest attempt bristling with indignation and expectant failure. With a grunt of effort he pulled the ignition cord and covered his head, waiting for the inevitable explosion. However to his great surprise he began to lift and, following a few panicked adjustments, stabilize. Within an hour, he was ducking and weaving with the breeze, level with the gulls, and Aurel found himself filled with the breathless wonder of flight. As dusk settled in he set a course back to his workshop, but no sooner had he turned his craft when a cannonball tore through his tailfin. Disentangling himself from the wreckage, he swam toward the nearest piece of land in sight, and cursed to see the ship responsible for the cannonball collecting the debris. Days later, when Aurel returned to his workshop, he set to work on yet another gyrocopter, this one capable of carrying a much heavier, more dangerous payload.
-              </i>
-             </td>
-            </tr>
-            <tr>
-             <td valign="top">
-              <b>
-               Voice:
-              </b>
-             </td>
-             <td>
-              Nolan North (
-              <a href="/Gyrocopter/Responses" title="Gyrocopter/Responses">
-               Responses
-              </a>
-              )
-             </td>
-            </tr>
-           </table>
+          <td colspan="2" style="font-weight: bold; font-size: 13px; text-align: center;">
+           <a href="/Gyrocopter" title="Gyrocopter">
+            <img alt="Gyrocopter" height="32" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/f/f8/Gyrocopter_minimap_icon.png?version=bf7926eb895a2059be237fa9612655ed" width="32"/>
+           </a>
+           Aurel, the Gyrocopter
+          </td>
+         </tr>
+         <tr>
+          <td colspan="2" style="text-align: center;">
+           <a class="sm2_button" href="https://hydra-media.cursecdn.com/dota2.gamepedia.com/f/f3/Gyro_begins_02.mp3" title="Play">
+            Play
+           </a>
+           "So much for being retired…"
+          </td>
+         </tr>
+         <tr>
+          <td>
+           <b>
+            Role:
+           </b>
+          </td>
+          <td>
+           <a href="/Role#Carry" title="Carry">
+            <img alt="Carry" height="24" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/5/52/Pip_carry.png/24px-Pip_carry.png?version=7897014a7741857935320d543e26bcac" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/5/52/Pip_carry.png/36px-Pip_carry.png?version=7897014a7741857935320d543e26bcac 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/5/52/Pip_carry.png/48px-Pip_carry.png?version=7897014a7741857935320d543e26bcac 2x" width="24"/>
+           </a>
+           <a href="/Role#Carry" title="Role">
+            Carry
+           </a>
+           /
+           <a href="/Role#Nuker" title="Nuker">
+            <img alt="Nuker" height="24" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/0/04/Pip_ganker.png/24px-Pip_ganker.png?version=f403b95dc688f11a6af39e1110731b4d" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/0/04/Pip_ganker.png/36px-Pip_ganker.png?version=f403b95dc688f11a6af39e1110731b4d 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/0/04/Pip_ganker.png/48px-Pip_ganker.png?version=f403b95dc688f11a6af39e1110731b4d 2x" width="24"/>
+           </a>
+           <a href="/Role#Nuker" title="Role">
+            Nuker
+           </a>
+           /
+           <a href="/Role#Disabler" title="Disabler">
+            <img alt="Disabler" height="24" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/c/c3/Pip_disabler.png/24px-Pip_disabler.png?version=340edcbcd7b35f85bea7d18c802ed99c" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/c/c3/Pip_disabler.png/36px-Pip_disabler.png?version=340edcbcd7b35f85bea7d18c802ed99c 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/c/c3/Pip_disabler.png/48px-Pip_disabler.png?version=340edcbcd7b35f85bea7d18c802ed99c 2x" width="24"/>
+           </a>
+           <a href="/Role#Disabler" title="Role">
+            Disabler
+           </a>
+          </td>
+         </tr>
+         <tr>
+          <td style="vertical-align: top;">
+           <b>
+            <a href="/Gyrocopter/Lore" title="Gyrocopter/Lore">
+             Lore
+            </a>
+            :
+           </b>
+          </td>
+          <td style="font-style: italic;">
+           After serving through a lifetime of wars, upheaval, riots, and revolutions, the brass figured Aurel had seen enough. But in addition to a few trinkets and his considerable pension, the erstwhile engineer left with something far more interesting: a long-forgotten, incomplete schematic for a Gyrocopter, the world’s first manned, non-magical flying device. Retiring to the tropical obscurity of the Ash Archipelago with little else but time and money, he set to work building the device. As the years wore on and the remains of failed prototypes began to pile up, he began to wonder if mechanical flight was even possible. A decade and a day after his retirement, on a sunny afternoon with a southerly breeze, Aurel sat in his latest attempt bristling with indignation and expectant failure. With a grunt of effort he pulled the ignition cord and covered his head, waiting for the inevitable explosion. However to his great surprise he began to lift and, following a few panicked adjustments, stabilize. Within an hour, he was ducking and weaving with the breeze, level with the gulls, and Aurel found himself filled with the breathless wonder of flight. As dusk settled in he set a course back to his workshop, but no sooner had he turned his craft when a cannonball tore through his tailfin. Disentangling himself from the wreckage, he swam toward the nearest piece of land in sight, and cursed to see the ship responsible for the cannonball collecting the debris. Days later, when Aurel returned to his workshop, he set to work on yet another gyrocopter, this one capable of carrying a much heavier, more dangerous payload.
+          </td>
+         </tr>
+         <tr>
+          <td>
+           <b>
+            Voice:
+           </b>
+          </td>
+          <td>
+           Nolan North (
+           <a href="/Gyrocopter/Responses" title="Gyrocopter/Responses">
+            Responses
+           </a>
+           )
           </td>
          </tr>
         </table>
@@ -928,14 +921,8 @@ document.head.appendChild(script);
          <span class="mw-editsection-bracket">
           [
          </span>
-         <a class="mw-editsection-visualeditor" href="/index.php?title=Gyrocopter&amp;veaction=edit&amp;vesection=2" title="Edit section: Abilities">
-          edit
-         </a>
-         <span class="mw-editsection-divider">
-          |
-         </span>
          <a href="/index.php?title=Gyrocopter&amp;action=edit&amp;section=2" title="Edit section: Abilities">
-          edit source
+          edit
          </a>
          <span class="mw-editsection-bracket">
           ]
@@ -952,7 +939,7 @@ document.head.appendChild(script);
           Rocket Barrage
           <div style="float:right;">
            <a href="/Spell_Immunity" title="Does not pierce spell immunity.">
-            <img alt="Does not pierce spell immunity." height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/9/9c/Spell_immunity_block_symbol.png/20px-Spell_immunity_block_symbol.png?version=7588eb7155b0b0ba78ae6c948c459858" style="vertical-align: text-top" width="20"/>
+            <img alt="Does not pierce spell immunity." height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/9/9c/Spell_immunity_block_symbol.png/20px-Spell_immunity_block_symbol.png?version=7588eb7155b0b0ba78ae6c948c459858" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/9/9c/Spell_immunity_block_symbol.png/30px-Spell_immunity_block_symbol.png?version=7588eb7155b0b0ba78ae6c948c459858 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/9/9c/Spell_immunity_block_symbol.png/40px-Spell_immunity_block_symbol.png?version=7588eb7155b0b0ba78ae6c948c459858 2x" style="vertical-align: text-top" width="20"/>
            </a>
            <span style="position:relative; top:-2px;">
             <a class="sm2_button" href="https://hydra-media.cursecdn.com/dota2.gamepedia.com/4/43/Rocket_Barrage.mp3" title="Play">
@@ -1001,11 +988,11 @@ document.head.appendChild(script);
              </b>
              <br/>
              <a href="/Damage_types#Magical" title="Damage types">
-              <b>
-               <span style="color:#3F56AD">
+              <span style="color:#3F56AD">
+               <b>
                 Magical
-               </span>
-              </b>
+               </b>
+              </span>
              </a>
             </div>
            </div>
@@ -1032,41 +1019,54 @@ document.head.appendChild(script);
            <b>
             Search Radius
            </b>
-           : 400
+           :
+           <span style="white-space: nowrap">
+            400
+           </span>
           </div>
           <div>
            <b>
             Rockets per Second
            </b>
-           : 10
+           :
+           <span style="white-space: nowrap">
+            10
+           </span>
           </div>
           <div>
            <b>
             Damage per Rocket
            </b>
-           : 7/12/17/22
+           :
+           <span style="white-space: nowrap">
+            7/12/17/22
+           </span>
           </div>
           <div>
            <b>
             Barrage Duration
            </b>
-           : 3
+           :
+           <span style="white-space: nowrap">
+            3
+           </span>
           </div>
-          <div style="display: inline-block; margin: 8px 0px 0px 50px; width: 190px; vertical-align: top;">
+          <div style="display: inline-block; margin: 8px 0px 0px 50px; width: 190px; vertical-align: top; word-wrap: break-word;">
            <span style="position: relative; top: -2px;">
             <a href="/Cooldown" title="Cooldown">
              <img alt="Cooldown symbol.png" height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/b/b7/Cooldown_symbol.png?version=7429ed9baf0f121e6ab3324bfdfad708" style="vertical-align: text-top" width="20"/>
             </a>
            </span>
            7/6.5/6/5.5
-           <br/>
-           (
-           <a href="/Talents" title="Talent">
-            <img alt="Talent" height="16" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/c/cd/Talent_tree_symbol.png/16px-Talent_tree_symbol.png?version=b4db4b31a2f9c215885be017c22a8b0c" style="vertical-align: text-top" width="16"/>
-           </a>
-           5.6/5.2/4.8/4.4)
+           <span style="white-space: nowrap">
+            (
+            <a href="/Talents" title="Talent">
+             <img alt="Talent" height="16" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/c/cd/Talent_tree_symbol.png/16px-Talent_tree_symbol.png?version=b4db4b31a2f9c215885be017c22a8b0c" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/c/cd/Talent_tree_symbol.png/24px-Talent_tree_symbol.png?version=b4db4b31a2f9c215885be017c22a8b0c 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/c/cd/Talent_tree_symbol.png/32px-Talent_tree_symbol.png?version=b4db4b31a2f9c215885be017c22a8b0c 2x" style="vertical-align: text-top" width="16"/>
+            </a>
+            5.6/5.2/4.8/4.4)
+           </span>
           </div>
-          <div style="display: inline-block; margin: 8px 0px 0px; width: 190px; vertical-align: top;">
+          <div style="display: inline-block; margin: 8px 0px 0px; width: 190px; vertical-align: top; word-wrap: break-word;">
            <span style="position: relative; top: -2px;">
             <a href="/Mana" title="Mana">
              <img alt="Mana symbol.png" height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/f/f3/Mana_symbol.png?version=a81185ac577f9b52f2df06be91b6600c" style="vertical-align: text-top" width="20"/>
@@ -1076,12 +1076,14 @@ document.head.appendChild(script);
           </div>
           <div style="margin-top: 10px;">
            <b>
-            Modifiers
+            <span id="tooltip" style="cursor:help; border-bottom:1px dotted;" title="The displayed names are the intern names of the modifiers. Do not change them even if they don't match the ability name.">
+             Modifiers
+            </span>
            </b>
           </div>
           <div style="font-size: 85%; margin-left: 10px;">
            <div>
-            <img alt="Buff" height="16" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/c/c1/Modifier_buff_symbol.png/16px-Modifier_buff_symbol.png?version=97c71541b396c601c0ac22a73d1a7573" style="vertical-align: text-top" title="Buff" width="16"/>
+            <img alt="Buff" height="16" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/c/c1/Modifier_buff_symbol.png/16px-Modifier_buff_symbol.png?version=97c71541b396c601c0ac22a73d1a7573" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/c/c1/Modifier_buff_symbol.png/24px-Modifier_buff_symbol.png?version=97c71541b396c601c0ac22a73d1a7573 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/c/c1/Modifier_buff_symbol.png/32px-Modifier_buff_symbol.png?version=97c71541b396c601c0ac22a73d1a7573 2x" style="vertical-align: text-top" title="Buff" width="16"/>
             <span style="color:#1F631F;">
              <b>
               Rocket Barrage:
@@ -1155,11 +1157,11 @@ document.head.appendChild(script);
        <p>
         <br/>
        </p>
-       <table class="infobox" style="float:right; text-align:center; line-height: 1.5em; white-space: nowrap; font-size: 80%;">
+       <table class="infobox" style="text-align:center; line-height:1.5em; font-size:80%; white-space:nowrap;">
         <tr>
-         <th style="color:white; background-color:#B44335; font-size:112%;">
+         <th style="background-color:#B44335; font-size:112%;">
           <a href="/Homing_Missile" title="Homing Missile">
-           <span style="color:#FFFFFF;">
+           <span style="color:white;">
             Homing Missile
            </span>
           </a>
@@ -1168,104 +1170,93 @@ document.head.appendChild(script);
         <tr>
          <td>
           <a class="image" href="/File:Gyrocopter_Homing_Missile_model.png">
-           <img alt="Gyrocopter Homing Missile model.png" height="250" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/5/5e/Gyrocopter_Homing_Missile_model.png/250px-Gyrocopter_Homing_Missile_model.png?version=e4f5e55f3b1c2926cfe00c388d32de9f" width="250"/>
+           <img alt="Gyrocopter Homing Missile model.png" height="250" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/5/5e/Gyrocopter_Homing_Missile_model.png/250px-Gyrocopter_Homing_Missile_model.png?version=e4f5e55f3b1c2926cfe00c388d32de9f" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/5/5e/Gyrocopter_Homing_Missile_model.png/375px-Gyrocopter_Homing_Missile_model.png?version=e4f5e55f3b1c2926cfe00c388d32de9f 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/5/5e/Gyrocopter_Homing_Missile_model.png/500px-Gyrocopter_Homing_Missile_model.png?version=e4f5e55f3b1c2926cfe00c388d32de9f 2x" width="250"/>
           </a>
          </td>
         </tr>
         <tr>
-         <td class="images40pxwidth">
-          <div style="display:table; table-layout:fixed; width:100%;">
-           <div style="display:table-row">
-           </div>
-          </div>
+         <td style="border-top:1px solid black;">
          </td>
         </tr>
         <tr>
-         <th style="color:white;background-color:#64D74A" width="100%">
+         <td style="background:black;">
+          <a class="image" href="/File:Unknown_Unit_icon.png">
+           <img alt="Unknown Unit icon.png" height="72" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/5/5d/Unknown_Unit_icon.png?version=f2ed984345f683a8ee029ffdb5220380" width="128"/>
+          </a>
+         </td>
+        </tr>
+        <tr>
+         <th style="color:white; background-color:#64D74A;">
           Ward
          </th>
         </tr>
         <tr>
          <td>
-          <table class="oddrowsgray" style="width:100%; text-align:left; border-collapse:collapse; padding-left: 10px;">
+          <table class="oddrowsgray" style="width:100%; text-align:left; border-collapse:collapse;">
            <tr>
-            <td>
-             <b>
-              Level
-             </b>
-            </td>
+            <th>
+             Level
+            </th>
             <td>
              2
             </td>
            </tr>
            <tr>
-            <td>
-             <b>
-              Duration
-             </b>
-            </td>
-            <td>
+            <th>
+             Duration
+            </th>
+            <td style="white-space:normal;">
              Permanent
             </td>
            </tr>
            <tr>
-            <td>
-             <b>
-              <a href="/Health" title="Health">
-               Health
-              </a>
-             </b>
-            </td>
-            <td>
+            <th>
+             <a href="/Health" title="Health">
+              Health
+             </a>
+            </th>
+            <td style="white-space:normal;">
              100
             </td>
            </tr>
            <tr>
-            <td>
-             <b>
-              <a class="mw-redirect" href="/Health_regeneration" title="Health regeneration">
-               Health regeneration
-              </a>
-             </b>
-            </td>
+            <th>
+             <a class="mw-redirect" href="/Health_regeneration" title="Health regeneration">
+              Health regeneration
+             </a>
+            </th>
             <td>
              0
             </td>
            </tr>
            <tr>
-            <td>
-             <b>
-              <a href="/Armor" title="Armor">
-               Armor
-              </a>
-             </b>
-            </td>
-            <td>
+            <th>
+             <a href="/Armor" title="Armor">
+              Armor
+             </a>
+            </th>
+            <td style="white-space:normal;">
              <span id="tooltip" style="cursor:help; border-bottom:1px dotted;" title="Type: Basic">
               0
              </span>
             </td>
            </tr>
            <tr>
-            <td>
-             <b>
-              <a href="/Magic_resistance" title="Magic resistance">
-               Magic resistance
-              </a>
-             </b>
-            </td>
-            <td>
+            <th>
+             <a href="/Magic_resistance" title="Magic resistance">
+              Magic resistance
+             </a>
+            </th>
+            <td style="white-space:normal;">
              0 %
             </td>
            </tr>
            <tr>
-            <td>
-             <b>
-              <a href="/Vision" title="Vision">
-               Vision Range
-              </a>
-             </b>
-            </td>
+            <th>
+             <a href="/Vision" title="Vision">
+              Vision range
+             </a>
+            </th>
             <td>
              <span id="tooltip" style="cursor:help; border-bottom:1px dotted;" title="During the day">
               400
@@ -1282,36 +1273,30 @@ document.head.appendChild(script);
             </td>
            </tr>
            <tr>
-            <td>
-             <b>
-              <a href="/Gold" title="Gold">
-               Bounty
-              </a>
-             </b>
-            </td>
-            <td>
+            <th>
+             <a href="/Gold" title="Gold">
+              Bounty
+             </a>
+            </th>
+            <td style="white-space:normal;">
              20‒30
             </td>
            </tr>
            <tr>
-            <td>
-             <b>
-              <a href="/Experience" title="Experience">
-               Experience
-              </a>
-             </b>
-            </td>
+            <th>
+             <a href="/Experience" title="Experience">
+              Experience
+             </a>
+            </th>
             <td>
              20
             </td>
            </tr>
            <tr>
-            <td>
-             <b>
-              Notes
-             </b>
-            </td>
-            <td>
+            <th>
+             Notes
+            </th>
+            <td style="white-space:normal;">
              Uncontrollable
             </td>
            </tr>
@@ -1329,10 +1314,10 @@ document.head.appendChild(script);
           Homing Missile
           <div style="float:right;">
            <a href="/Linken%27s_Sphere" title="Blocked by Linken's Sphere.">
-            <img alt="Blocked by Linken's Sphere." height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/72/Spell_block_symbol.png/20px-Spell_block_symbol.png?version=b767728c632ebe4ef05893d2da7d2488" style="vertical-align: text-top" width="20"/>
+            <img alt="Blocked by Linken's Sphere." height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/72/Spell_block_symbol.png/20px-Spell_block_symbol.png?version=b767728c632ebe4ef05893d2da7d2488" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/72/Spell_block_symbol.png/30px-Spell_block_symbol.png?version=b767728c632ebe4ef05893d2da7d2488 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/72/Spell_block_symbol.png/40px-Spell_block_symbol.png?version=b767728c632ebe4ef05893d2da7d2488 2x" style="vertical-align: text-top" width="20"/>
            </a>
            <a href="/Spell_Immunity" title="Does not pierce spell immunity.">
-            <img alt="Does not pierce spell immunity." height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/9/9c/Spell_immunity_block_symbol.png/20px-Spell_immunity_block_symbol.png?version=7588eb7155b0b0ba78ae6c948c459858" style="vertical-align: text-top" width="20"/>
+            <img alt="Does not pierce spell immunity." height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/9/9c/Spell_immunity_block_symbol.png/20px-Spell_immunity_block_symbol.png?version=7588eb7155b0b0ba78ae6c948c459858" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/9/9c/Spell_immunity_block_symbol.png/30px-Spell_immunity_block_symbol.png?version=7588eb7155b0b0ba78ae6c948c459858 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/9/9c/Spell_immunity_block_symbol.png/40px-Spell_immunity_block_symbol.png?version=7588eb7155b0b0ba78ae6c948c459858 2x" style="vertical-align: text-top" width="20"/>
            </a>
            <span style="position:relative; top:-2px;">
             <a class="sm2_button" href="https://hydra-media.cursecdn.com/dota2.gamepedia.com/4/4d/Homing_Missile.mp3" title="Play">
@@ -1381,11 +1366,11 @@ document.head.appendChild(script);
              </b>
              <br/>
              <a href="/Damage_types#Magical" title="Damage types">
-              <b>
-               <span style="color:#3F56AD">
+              <span style="color:#3F56AD">
+               <b>
                 Magical
-               </span>
-              </b>
+               </b>
+              </span>
              </a>
             </div>
            </div>
@@ -1412,71 +1397,98 @@ document.head.appendChild(script);
            <b>
             Cast Range
            </b>
-           : 1050
+           :
+           <span style="white-space: nowrap">
+            1050
+           </span>
           </div>
           <div>
            <b>
             Hero Attacks to Destroy
            </b>
-           : 3/3/4/5
+           :
+           <span style="white-space: nowrap">
+            3/3/4/5
+           </span>
           </div>
           <div>
            <b>
             Tower Attacks to Destroy
            </b>
-           : 6/6/8/10
+           :
+           <span style="white-space: nowrap">
+            6/6/8/10
+           </span>
           </div>
           <div>
            <b>
             Minimum Damage
            </b>
-           : 50
+           :
+           <span style="white-space: nowrap">
+            50
+           </span>
           </div>
           <div>
            <b>
             Maximum Damage
            </b>
-           : 125/250/375/500
+           :
+           <span style="white-space: nowrap">
+            125/250/375/500
+           </span>
           </div>
           <div>
            <b>
             Stun Duration
            </b>
-           : 2.2/2.4/2.6/2.8
+           :
+           <span style="white-space: nowrap">
+            2.25/2.5/2.75/3
+           </span>
           </div>
           <div>
            <b>
             Number of Charges
            </b>
-           : 0 (
-           <a href="/Talents" title="Talent">
-            <img alt="Talent" height="16" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/c/cd/Talent_tree_symbol.png/16px-Talent_tree_symbol.png?version=b4db4b31a2f9c215885be017c22a8b0c" style="vertical-align: text-top" width="16"/>
-           </a>
-           3)
+           :
+           <span style="white-space: nowrap">
+            0 (
+            <a href="/Talents" title="Talent">
+             <img alt="Talent" height="16" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/c/cd/Talent_tree_symbol.png/16px-Talent_tree_symbol.png?version=b4db4b31a2f9c215885be017c22a8b0c" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/c/cd/Talent_tree_symbol.png/24px-Talent_tree_symbol.png?version=b4db4b31a2f9c215885be017c22a8b0c 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/c/cd/Talent_tree_symbol.png/32px-Talent_tree_symbol.png?version=b4db4b31a2f9c215885be017c22a8b0c 2x" style="vertical-align: text-top" width="16"/>
+            </a>
+            3)
+           </span>
           </div>
           <div>
            <b>
             Charge Replenish Time
            </b>
-           : 0 (
-           <a href="/Talents" title="Talent">
-            <img alt="Talent" height="16" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/c/cd/Talent_tree_symbol.png/16px-Talent_tree_symbol.png?version=b4db4b31a2f9c215885be017c22a8b0c" style="vertical-align: text-top" width="16"/>
-           </a>
-           20/17/14/11)
+           :
+           <span style="white-space: nowrap">
+            0 (
+            <a href="/Talents" title="Talent">
+             <img alt="Talent" height="16" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/c/cd/Talent_tree_symbol.png/16px-Talent_tree_symbol.png?version=b4db4b31a2f9c215885be017c22a8b0c" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/c/cd/Talent_tree_symbol.png/24px-Talent_tree_symbol.png?version=b4db4b31a2f9c215885be017c22a8b0c 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/c/cd/Talent_tree_symbol.png/32px-Talent_tree_symbol.png?version=b4db4b31a2f9c215885be017c22a8b0c 2x" style="vertical-align: text-top" width="16"/>
+            </a>
+            20/17/14/11)
+           </span>
           </div>
-          <div style="display: inline-block; margin: 8px 0px 0px 50px; width: 190px; vertical-align: top;">
+          <div style="display: inline-block; margin: 8px 0px 0px 50px; width: 190px; vertical-align: top; word-wrap: break-word;">
            <span style="position: relative; top: -2px;">
             <a href="/Cooldown" title="Cooldown">
              <img alt="Cooldown symbol.png" height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/b/b7/Cooldown_symbol.png?version=7429ed9baf0f121e6ab3324bfdfad708" style="vertical-align: text-top" width="20"/>
             </a>
            </span>
-           20/17/14/11 (
-           <a href="/Talents" title="Talent">
-            <img alt="Talent" height="16" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/c/cd/Talent_tree_symbol.png/16px-Talent_tree_symbol.png?version=b4db4b31a2f9c215885be017c22a8b0c" style="vertical-align: text-top" width="16"/>
-           </a>
-           0)
+           20/17/14/11
+           <span style="white-space: nowrap">
+            (
+            <a href="/Talents" title="Talent">
+             <img alt="Talent" height="16" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/c/cd/Talent_tree_symbol.png/16px-Talent_tree_symbol.png?version=b4db4b31a2f9c215885be017c22a8b0c" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/c/cd/Talent_tree_symbol.png/24px-Talent_tree_symbol.png?version=b4db4b31a2f9c215885be017c22a8b0c 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/c/cd/Talent_tree_symbol.png/32px-Talent_tree_symbol.png?version=b4db4b31a2f9c215885be017c22a8b0c 2x" style="vertical-align: text-top" width="16"/>
+            </a>
+            0)
+           </span>
           </div>
-          <div style="display: inline-block; margin: 8px 0px 0px; width: 190px; vertical-align: top;">
+          <div style="display: inline-block; margin: 8px 0px 0px; width: 190px; vertical-align: top; word-wrap: break-word;">
            <span style="position: relative; top: -2px;">
             <a href="/Mana" title="Mana">
              <img alt="Mana symbol.png" height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/f/f3/Mana_symbol.png?version=a81185ac577f9b52f2df06be91b6600c" style="vertical-align: text-top" width="20"/>
@@ -1489,19 +1501,21 @@ document.head.appendChild(script);
           <div style="margin-left: 50px;">
            <span style="position: relative; top: -2px;">
             <a href="/Linken%27s_Sphere" title="Blocked by Linken's Sphere.">
-             <img alt="Blocked by Linken's Sphere." height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/72/Spell_block_symbol.png/20px-Spell_block_symbol.png?version=b767728c632ebe4ef05893d2da7d2488" style="vertical-align: text-top" width="20"/>
+             <img alt="Blocked by Linken's Sphere." height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/72/Spell_block_symbol.png/20px-Spell_block_symbol.png?version=b767728c632ebe4ef05893d2da7d2488" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/72/Spell_block_symbol.png/30px-Spell_block_symbol.png?version=b767728c632ebe4ef05893d2da7d2488 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/72/Spell_block_symbol.png/40px-Spell_block_symbol.png?version=b767728c632ebe4ef05893d2da7d2488 2x" style="vertical-align: text-top" width="20"/>
             </a>
            </span>
            Blocked upon impact.
           </div>
           <div style="margin-top: 10px;">
            <b>
-            Modifiers
+            <span id="tooltip" style="cursor:help; border-bottom:1px dotted;" title="The displayed names are the intern names of the modifiers. Do not change them even if they don't match the ability name.">
+             Modifiers
+            </span>
            </b>
           </div>
           <div style="font-size: 85%; margin-left: 10px;">
            <div>
-            <img alt="Debuff" height="16" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/1/1a/Modifier_debuff_symbol.png/16px-Modifier_debuff_symbol.png?version=5684dfbf37c3058c80b8495a4d0dc346" style="vertical-align: text-top" title="Debuff" width="16"/>
+            <img alt="Debuff" height="16" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/1/1a/Modifier_debuff_symbol.png/16px-Modifier_debuff_symbol.png?version=5684dfbf37c3058c80b8495a4d0dc346" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/1/1a/Modifier_debuff_symbol.png/24px-Modifier_debuff_symbol.png?version=5684dfbf37c3058c80b8495a4d0dc346 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/1/1a/Modifier_debuff_symbol.png/32px-Modifier_debuff_symbol.png?version=5684dfbf37c3058c80b8495a4d0dc346 2x" style="vertical-align: text-top" title="Debuff" width="16"/>
             <span style="color:#631F1F;">
              <b>
               Stunned:
@@ -1526,7 +1540,17 @@ document.head.appendChild(script);
          </p>
          <ul>
           <li>
-           Homing Missile's initial speed is 340 and increases by 20 per second.
+           When Cast, a stationary missile is placed 150 range in front of Gyrocopter, which begins to move 2.5 seconds later.
+          </li>
+         </ul>
+         <ul>
+          <li>
+           Homing Missile's initial speed is 340 and increases by 20 per second, growing by 1 every 0.05 seconds.
+           <ul>
+            <li>
+             Though the damage is capped, the speed is not, and continues to increase until it hits the target or is destroyed.
+            </li>
+           </ul>
           </li>
          </ul>
          <ul>
@@ -1544,16 +1568,6 @@ document.head.appendChild(script);
             fountains
            </a>
            (counting as towers) can damage the missile.
-          </li>
-         </ul>
-         <ul>
-          <li>
-           Though the damage is capped, the missile's speed keeps on increasing until it hits the target or is destroyed.
-          </li>
-         </ul>
-         <ul>
-          <li>
-           The missile is placed 150 range in front of Gyrocopter and starts moving 3 seconds after cast.
           </li>
          </ul>
          <ul>
@@ -1576,7 +1590,7 @@ document.head.appendChild(script);
          </ul>
          <ul>
           <li>
-           When the missile hits its target, its 400 range
+           If the missile hits its target, its 400 range
            <a class="mw-redirect" href="/Flying_vision" title="Flying vision">
             flying vision
            </a>
@@ -1585,12 +1599,12 @@ document.head.appendChild(script);
          </ul>
          <ul>
           <li>
-           The missile's damage is based on the distance between the rocket's starting position (150 range in front of Gyrocopter upon cast).
-          </li>
-         </ul>
-         <ul>
-          <li>
-           To deal more than the minimum damage, the missile has to hit its target at least 601/301/201/151 range away from its starting position.
+           The missile's damage is based on the distance between the rocket's starting position and the target upon impact.
+           <ul>
+            <li>
+             To deal more than the minimum damage, the missile has to hit its target at least 601/301/201/151 range away from its starting position.
+            </li>
+           </ul>
           </li>
          </ul>
          <ul>
@@ -1642,7 +1656,7 @@ document.head.appendChild(script);
            The missile can be targeted by
            <span style="white-space:nowrap">
             <a href="/Force_Staff" title="Force Staff">
-             <img alt="Force Staff icon.png" height="15" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/a/a2/Force_Staff_icon.png/20px-Force_Staff_icon.png?version=4c957d9f52628d988a4322c66ee32d3e" width="20"/>
+             <img alt="Force Staff icon.png" height="15" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/a/a2/Force_Staff_icon.png/20px-Force_Staff_icon.png?version=4c957d9f52628d988a4322c66ee32d3e" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/a/a2/Force_Staff_icon.png/30px-Force_Staff_icon.png?version=4c957d9f52628d988a4322c66ee32d3e 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/a/a2/Force_Staff_icon.png/40px-Force_Staff_icon.png?version=4c957d9f52628d988a4322c66ee32d3e 2x" width="20"/>
             </a>
             <a href="/Force_Staff" title="Force Staff">
              Force Staff
@@ -1651,13 +1665,22 @@ document.head.appendChild(script);
            and
            <span style="white-space:nowrap">
             <a href="/Hurricane_Pike" title="Hurricane Pike">
-             <img alt="Hurricane Pike icon.png" height="15" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/1/13/Hurricane_Pike_icon.png/20px-Hurricane_Pike_icon.png?version=9020423beeaf284ebbd4b7cef35c628d" width="20"/>
+             <img alt="Hurricane Pike icon.png" height="15" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/1/13/Hurricane_Pike_icon.png/20px-Hurricane_Pike_icon.png?version=9020423beeaf284ebbd4b7cef35c628d" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/1/13/Hurricane_Pike_icon.png/30px-Hurricane_Pike_icon.png?version=9020423beeaf284ebbd4b7cef35c628d 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/1/13/Hurricane_Pike_icon.png/40px-Hurricane_Pike_icon.png?version=9020423beeaf284ebbd4b7cef35c628d 2x" width="20"/>
             </a>
             <a href="/Hurricane_Pike" title="Hurricane Pike">
              Hurricane Pike
             </a>
            </span>
-           , pushing the rocket forwards (or back).
+           , pushing the rocket forwards (or backwards).
+           <ul>
+            <li>
+             The missile cannot impact the target during the
+             <a class="mw-redirect" href="/Forced_movement" title="Forced movement">
+              forced movement
+             </a>
+             , and passes through, reorients, and continues to chase the target.
+            </li>
+           </ul>
           </li>
          </ul>
          <ul>
@@ -1665,31 +1688,28 @@ document.head.appendChild(script);
            When the missile gets affected by
            <span style="white-space: nowrap;">
             <a href="/Faceless_Void#Chronosphere" title="Faceless Void#Chronosphere">
-             <img alt="Chronosphere icon.png" height="16" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/b/bf/Chronosphere_icon.png/16px-Chronosphere_icon.png?version=474c2ac46a97172926de861045f4e836" width="16"/>
+             <img alt="Chronosphere icon.png" height="16" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/b/bf/Chronosphere_icon.png/16px-Chronosphere_icon.png?version=474c2ac46a97172926de861045f4e836" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/b/bf/Chronosphere_icon.png/24px-Chronosphere_icon.png?version=474c2ac46a97172926de861045f4e836 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/b/bf/Chronosphere_icon.png/32px-Chronosphere_icon.png?version=474c2ac46a97172926de861045f4e836 2x" width="16"/>
             </a>
             <a href="/Faceless_Void#Chronosphere" title="Faceless Void">
              Chronosphere
             </a>
            </span>
-           ​ it gets instantly destroyed.
+           it gets instantly destroyed.
           </li>
          </ul>
          <ul>
           <li>
-           When choosing the cooldown reducing talent, the cooldown of Homing Missile is 16/13.6/11.2/8.8, considering no other sources of reductions.
-           <ul>
-            <li>
-             The talent also affects the charge replenish time.
-            </li>
-           </ul>
+           When choosing the cooldown reducing talent, its cooldown (
+           <a href="/Talents" title="Talent">
+            <img alt="Talent" height="16" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/c/cd/Talent_tree_symbol.png/16px-Talent_tree_symbol.png?version=b4db4b31a2f9c215885be017c22a8b0c" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/c/cd/Talent_tree_symbol.png/24px-Talent_tree_symbol.png?version=b4db4b31a2f9c215885be017c22a8b0c 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/c/cd/Talent_tree_symbol.png/32px-Talent_tree_symbol.png?version=b4db4b31a2f9c215885be017c22a8b0c 2x" style="vertical-align: text-top" width="16"/>
+           </a>
+           recharge time) is 16/13.6/11.2/8.8, considering no other sources of reductions.
           </li>
          </ul>
         </div>
        </div>
        <p>
         <br/>
-       </p>
-       <p>
         <span id="Flak_Cannon">
         </span>
        </p>
@@ -1699,13 +1719,13 @@ document.head.appendChild(script);
           Flak Cannon
           <div style="float:right;">
            <a href="/Unique_Attack_Modifier" title="Not a Unique Attack Modifier.">
-            <img alt="Not a Unique Attack Modifier." height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/8/8e/Uam_no_symbol.png/20px-Uam_no_symbol.png?version=b3b165d8f9d0aec242958ad7639a60fd" style="vertical-align: text-top" width="20"/>
+            <img alt="Not a Unique Attack Modifier." height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/8/8e/Uam_no_symbol.png/20px-Uam_no_symbol.png?version=b3b165d8f9d0aec242958ad7639a60fd" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/8/8e/Uam_no_symbol.png/30px-Uam_no_symbol.png?version=b3b165d8f9d0aec242958ad7639a60fd 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/8/8e/Uam_no_symbol.png/40px-Uam_no_symbol.png?version=b3b165d8f9d0aec242958ad7639a60fd 2x" style="vertical-align: text-top" width="20"/>
            </a>
            <a href="/Illusions" title="Cannot be used by illusions.">
-            <img alt="Cannot be used by illusions." height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/6/65/Illusion_no_symbol.png/20px-Illusion_no_symbol.png?version=3f8cfe494798366cbdba71574d6b7223" style="vertical-align: text-top" width="20"/>
+            <img alt="Cannot be used by illusions." height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/6/65/Illusion_no_symbol.png/20px-Illusion_no_symbol.png?version=3f8cfe494798366cbdba71574d6b7223" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/6/65/Illusion_no_symbol.png/30px-Illusion_no_symbol.png?version=3f8cfe494798366cbdba71574d6b7223 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/6/65/Illusion_no_symbol.png/40px-Illusion_no_symbol.png?version=3f8cfe494798366cbdba71574d6b7223 2x" style="vertical-align: text-top" width="20"/>
            </a>
            <a href="/Spell_Immunity" title="Pierces spell immunity.">
-            <img alt="Pierces spell immunity." height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/0/0c/Spell_immunity_block_no_symbol.png/20px-Spell_immunity_block_no_symbol.png?version=8a9b499fbc92dda21de2b49951268177" style="vertical-align: text-top" width="20"/>
+            <img alt="Pierces spell immunity." height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/0/0c/Spell_immunity_block_no_symbol.png/20px-Spell_immunity_block_no_symbol.png?version=8a9b499fbc92dda21de2b49951268177" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/0/0c/Spell_immunity_block_no_symbol.png/30px-Spell_immunity_block_no_symbol.png?version=8a9b499fbc92dda21de2b49951268177 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/0/0c/Spell_immunity_block_no_symbol.png/40px-Spell_immunity_block_no_symbol.png?version=8a9b499fbc92dda21de2b49951268177 2x" style="vertical-align: text-top" width="20"/>
            </a>
            <span style="position:relative; top:-2px;">
             <a class="sm2_button" href="https://hydra-media.cursecdn.com/dota2.gamepedia.com/2/2d/Flak_Cannon.mp3" title="Play">
@@ -1774,37 +1794,49 @@ document.head.appendChild(script);
            <b>
             Search Radius
            </b>
-           : 1000
+           :
+           <span style="white-space: nowrap">
+            1250
+           </span>
           </div>
           <div>
            <b>
             Number of Attacks
            </b>
-           : 3/4/5/6 (
-           <a href="/Talents" title="Talent">
-            <img alt="Talent" height="16" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/c/cd/Talent_tree_symbol.png/16px-Talent_tree_symbol.png?version=b4db4b31a2f9c215885be017c22a8b0c" style="vertical-align: text-top" width="16"/>
-           </a>
-           7/8/9/10)
+           :
+           <span style="white-space: nowrap">
+            3/4/5/6 (
+            <a href="/Talents" title="Talent">
+             <img alt="Talent" height="16" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/c/cd/Talent_tree_symbol.png/16px-Talent_tree_symbol.png?version=b4db4b31a2f9c215885be017c22a8b0c" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/c/cd/Talent_tree_symbol.png/24px-Talent_tree_symbol.png?version=b4db4b31a2f9c215885be017c22a8b0c 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/c/cd/Talent_tree_symbol.png/32px-Talent_tree_symbol.png?version=b4db4b31a2f9c215885be017c22a8b0c 2x" style="vertical-align: text-top" width="16"/>
+            </a>
+            7/8/9/10)
+           </span>
           </div>
           <div>
            <b>
             Duration
            </b>
-           : 15
+           :
+           <span style="white-space: nowrap">
+            15
+           </span>
           </div>
-          <div style="display: inline-block; margin: 8px 0px 0px 50px; width: 190px; vertical-align: top;">
+          <div style="display: inline-block; margin: 8px 0px 0px 50px; width: 190px; vertical-align: top; word-wrap: break-word;">
            <span style="position: relative; top: -2px;">
             <a href="/Cooldown" title="Cooldown">
              <img alt="Cooldown symbol.png" height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/b/b7/Cooldown_symbol.png?version=7429ed9baf0f121e6ab3324bfdfad708" style="vertical-align: text-top" width="20"/>
             </a>
            </span>
-           30 (
-           <a href="/Talents" title="Talent">
-            <img alt="Talent" height="16" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/c/cd/Talent_tree_symbol.png/16px-Talent_tree_symbol.png?version=b4db4b31a2f9c215885be017c22a8b0c" style="vertical-align: text-top" width="16"/>
-           </a>
-           24)
+           30
+           <span style="white-space: nowrap">
+            (
+            <a href="/Talents" title="Talent">
+             <img alt="Talent" height="16" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/c/cd/Talent_tree_symbol.png/16px-Talent_tree_symbol.png?version=b4db4b31a2f9c215885be017c22a8b0c" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/c/cd/Talent_tree_symbol.png/24px-Talent_tree_symbol.png?version=b4db4b31a2f9c215885be017c22a8b0c 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/c/cd/Talent_tree_symbol.png/32px-Talent_tree_symbol.png?version=b4db4b31a2f9c215885be017c22a8b0c 2x" style="vertical-align: text-top" width="16"/>
+            </a>
+            24)
+           </span>
           </div>
-          <div style="display: inline-block; margin: 8px 0px 0px; width: 190px; vertical-align: top;">
+          <div style="display: inline-block; margin: 8px 0px 0px; width: 190px; vertical-align: top; word-wrap: break-word;">
            <span style="position: relative; top: -2px;">
             <a href="/Mana" title="Mana">
              <img alt="Mana symbol.png" height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/f/f3/Mana_symbol.png?version=a81185ac577f9b52f2df06be91b6600c" style="vertical-align: text-top" width="20"/>
@@ -1817,19 +1849,21 @@ document.head.appendChild(script);
           <div style="margin-left: 50px;">
            <span style="position: relative; top: -2px;">
             <a href="/Unique_Attack_Modifier" title="Not a Unique Attack Modifier.">
-             <img alt="Not a Unique Attack Modifier." height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/8/8e/Uam_no_symbol.png/20px-Uam_no_symbol.png?version=b3b165d8f9d0aec242958ad7639a60fd" style="vertical-align: text-top" width="20"/>
+             <img alt="Not a Unique Attack Modifier." height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/8/8e/Uam_no_symbol.png/20px-Uam_no_symbol.png?version=b3b165d8f9d0aec242958ad7639a60fd" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/8/8e/Uam_no_symbol.png/30px-Uam_no_symbol.png?version=b3b165d8f9d0aec242958ad7639a60fd 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/8/8e/Uam_no_symbol.png/40px-Uam_no_symbol.png?version=b3b165d8f9d0aec242958ad7639a60fd 2x" style="vertical-align: text-top" width="20"/>
             </a>
            </span>
            Other attack modifiers are only applied to the primary attack target.
           </div>
           <div style="margin-top: 10px;">
            <b>
-            Modifiers
+            <span id="tooltip" style="cursor:help; border-bottom:1px dotted;" title="The displayed names are the intern names of the modifiers. Do not change them even if they don't match the ability name.">
+             Modifiers
+            </span>
            </b>
           </div>
           <div style="font-size: 85%; margin-left: 10px;">
            <div>
-            <img alt="Buff" height="16" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/c/c1/Modifier_buff_symbol.png/16px-Modifier_buff_symbol.png?version=97c71541b396c601c0ac22a73d1a7573" style="vertical-align: text-top" title="Buff" width="16"/>
+            <img alt="Buff" height="16" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/c/c1/Modifier_buff_symbol.png/16px-Modifier_buff_symbol.png?version=97c71541b396c601c0ac22a73d1a7573" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/c/c1/Modifier_buff_symbol.png/24px-Modifier_buff_symbol.png?version=97c71541b396c601c0ac22a73d1a7573 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/c/c1/Modifier_buff_symbol.png/32px-Modifier_buff_symbol.png?version=97c71541b396c601c0ac22a73d1a7573 2x" style="vertical-align: text-top" title="Buff" width="16"/>
             <span style="color:#1F631F;">
              <b>
               Flak Cannon:
@@ -1878,6 +1912,9 @@ document.head.appendChild(script);
             <li>
              The flaks have no count limit. All valid nearby targets get attacked.
             </li>
+            <li>
+             Flaks are not launched when the Side Gunner attacks.
+            </li>
            </ul>
           </li>
          </ul>
@@ -1922,17 +1959,17 @@ document.head.appendChild(script);
              like regular attacks.
             </li>
             <li>
-             If Gyrocopter is
+             The flaks can miss to
+             <a href="/Evasion" title="Evasion">
+              evasion
+             </a>
+             or if Gyrocopter is
              <a class="mw-redirect" href="/Blind" title="Blind">
               blinded
              </a>
-             , the flaks can miss, unless he has
+             , unless he has
              <a class="mw-redirect" href="/True_Strike" title="True Strike">
               True Strike
-             </a>
-             . They can also miss to
-             <a href="/Evasion" title="Evasion">
-              evasion
              </a>
              .
             </li>
@@ -1961,10 +1998,10 @@ document.head.appendChild(script);
            <a class="mw-redirect" href="/Fog_of_War" title="Fog of War">
             Fog of War
            </a>
-           in range.
+           .
            <ul>
             <li>
-             However, attacking couriers, wards or buildings still causes flaks to hit all valid targets within the radius.
+             However, attacking couriers, wards, buildings, or allied units still causes flaks to hit all valid targets within the radius.
             </li>
            </ul>
           </li>
@@ -1978,8 +2015,6 @@ document.head.appendChild(script);
        </div>
        <p>
         <br/>
-       </p>
-       <p>
         <span id="Call_Down">
         </span>
        </p>
@@ -1988,14 +2023,8 @@ document.head.appendChild(script);
          <div style="font-weight: bold; font-size: 110%; border-bottom: 1px solid black; background-color: #414141; color: white; padding: 3px 5px;">
           Call Down
           <div style="float:right;">
-           <a href="/Illusions" title="Cannot be used by illusions.">
-            <img alt="Cannot be used by illusions." height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/6/65/Illusion_no_symbol.png/20px-Illusion_no_symbol.png?version=3f8cfe494798366cbdba71574d6b7223" style="vertical-align: text-top" width="20"/>
-           </a>
-           <a href="/Break" title="Disabled by Break.">
-            <img alt="Disabled by Break." height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/f/f9/Breakable_symbol.png/20px-Breakable_symbol.png?version=75c8c39d828694e4c795718ece243865" style="vertical-align: text-top" width="20"/>
-           </a>
-           <a href="/Spell_Immunity" title="Partially pierces spell immunity.">
-            <img alt="Partially pierces spell immunity." height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/5/59/Spell_immunity_block_partial_symbol.png/20px-Spell_immunity_block_partial_symbol.png?version=923f604c1ecd2a88b6b5a2bf6e32b59e" style="vertical-align: text-top" width="20"/>
+           <a href="/Spell_Immunity" title="Does not pierce spell immunity.">
+            <img alt="Does not pierce spell immunity." height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/9/9c/Spell_immunity_block_symbol.png/20px-Spell_immunity_block_symbol.png?version=7588eb7155b0b0ba78ae6c948c459858" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/9/9c/Spell_immunity_block_symbol.png/30px-Spell_immunity_block_symbol.png?version=7588eb7155b0b0ba78ae6c948c459858 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/9/9c/Spell_immunity_block_symbol.png/40px-Spell_immunity_block_symbol.png?version=7588eb7155b0b0ba78ae6c948c459858 2x" style="vertical-align: text-top" width="20"/>
            </a>
            <span style="position:relative; top:-2px;">
             <a class="sm2_button" href="https://hydra-media.cursecdn.com/dota2.gamepedia.com/1/1a/Call_Down.mp3" title="Play">
@@ -2044,11 +2073,11 @@ document.head.appendChild(script);
              </b>
              <br/>
              <a href="/Damage_types#Magical" title="Damage types">
-              <b>
-               <span style="color:#3F56AD">
+              <span style="color:#3F56AD">
+               <b>
                 Magical
-               </span>
-              </b>
+               </b>
+              </span>
              </a>
             </div>
            </div>
@@ -2075,89 +2104,90 @@ document.head.appendChild(script);
            <b>
             Cast Range
            </b>
-           : 1000
+           :
+           <span style="white-space: nowrap">
+            1000
+           </span>
           </div>
           <div>
            <b>
             Effect Radius
            </b>
-           : 600
+           :
+           <span style="white-space: nowrap">
+            600
+           </span>
           </div>
           <div>
            <b>
             Missile One Damage
            </b>
-           : 200/275/350
+           :
+           <span style="white-space: nowrap">
+            200/275/350
+           </span>
           </div>
           <div>
            <b>
             Missile Two Damage
            </b>
-           : 100/150/200
+           :
+           <span style="white-space: nowrap">
+            100/150/200
+           </span>
           </div>
           <div>
            <b>
             Missile One Move Speed Slow
            </b>
-           : 30%
+           :
+           <span style="white-space: nowrap">
+            30%
+           </span>
           </div>
           <div>
            <b>
             Missile Two Move Speed Slow
            </b>
-           : 60%
+           :
+           <span style="white-space: nowrap">
+            60%
+           </span>
           </div>
           <div>
            <b>
             Missile One Slow Duration
            </b>
-           : 2
+           :
+           <span style="white-space: nowrap">
+            2
+           </span>
           </div>
           <div>
            <b>
             Missile Two Slow Duration
            </b>
-           : 4
-          </div>
-          <div>
-           <b>
-            Side Gunner Attack Range
-           </b>
-           : 0 (
-           <a href="/Aghanim%27s_Scepter" title="Upgradable by Aghanim's Scepter.">
-            <img alt="Upgradable by Aghanim's Scepter." height="16" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/73/Aghanim%27s_Scepter_symbol.png/16px-Aghanim%27s_Scepter_symbol.png?version=7d547f82a4dc57080ed920f762776a32" style="vertical-align: text-top" width="16"/>
-           </a>
-           <span style="color:#538028;">
-            600
+           :
+           <span style="white-space: nowrap">
+            4
            </span>
-           )
           </div>
-          <div>
-           <b>
-            Side Gunner Attack Interval
-           </b>
-           : 0 (
-           <a href="/Aghanim%27s_Scepter" title="Upgradable by Aghanim's Scepter.">
-            <img alt="Upgradable by Aghanim's Scepter." height="16" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/73/Aghanim%27s_Scepter_symbol.png/16px-Aghanim%27s_Scepter_symbol.png?version=7d547f82a4dc57080ed920f762776a32" style="vertical-align: text-top" width="16"/>
-           </a>
-           <span style="color:#538028;">
-            1.1
-           </span>
-           )
-          </div>
-          <div style="display: inline-block; margin: 8px 0px 0px 50px; width: 190px; vertical-align: top;">
+          <div style="display: inline-block; margin: 8px 0px 0px 50px; width: 190px; vertical-align: top; word-wrap: break-word;">
            <span style="position: relative; top: -2px;">
             <a href="/Cooldown" title="Cooldown">
              <img alt="Cooldown symbol.png" height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/b/b7/Cooldown_symbol.png?version=7429ed9baf0f121e6ab3324bfdfad708" style="vertical-align: text-top" width="20"/>
             </a>
            </span>
-           55/50/45 (
-           <a href="/Talents" title="Talent">
-            <img alt="Talent" height="16" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/c/cd/Talent_tree_symbol.png/16px-Talent_tree_symbol.png?version=b4db4b31a2f9c215885be017c22a8b0c" style="vertical-align: text-top" width="16"/>
-           </a>
-           44/40/36)
+           55/50/45
+           <span style="white-space: nowrap">
+            (
+            <a href="/Talents" title="Talent">
+             <img alt="Talent" height="16" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/c/cd/Talent_tree_symbol.png/16px-Talent_tree_symbol.png?version=b4db4b31a2f9c215885be017c22a8b0c" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/c/cd/Talent_tree_symbol.png/24px-Talent_tree_symbol.png?version=b4db4b31a2f9c215885be017c22a8b0c 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/c/cd/Talent_tree_symbol.png/32px-Talent_tree_symbol.png?version=b4db4b31a2f9c215885be017c22a8b0c 2x" style="vertical-align: text-top" width="16"/>
+            </a>
+            44/40/36)
+           </span>
           </div>
-          <div style="display: inline-block; margin: 8px 0px 0px; width: 190px; vertical-align: top;">
+          <div style="display: inline-block; margin: 8px 0px 0px; width: 190px; vertical-align: top; word-wrap: break-word;">
            <span style="position: relative; top: -2px;">
             <a href="/Mana" title="Mana">
              <img alt="Mana symbol.png" height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/f/f3/Mana_symbol.png?version=a81185ac577f9b52f2df06be91b6600c" style="vertical-align: text-top" width="20"/>
@@ -2170,45 +2200,29 @@ document.head.appendChild(script);
           <div style="margin-left: 50px;">
            <span style="position: relative; top: -2px;">
             <a href="/Aghanim%27s_Scepter" title="Upgradable by Aghanim's Scepter.">
-             <img alt="Upgradable by Aghanim's Scepter." height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/73/Aghanim%27s_Scepter_symbol.png/20px-Aghanim%27s_Scepter_symbol.png?version=d829eda2dfcb5c0078dd83220a3299dc" style="vertical-align: text-top" width="20"/>
+             <img alt="Upgradable by Aghanim's Scepter." height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/73/Aghanim%27s_Scepter_symbol.png/20px-Aghanim%27s_Scepter_symbol.png?version=d829eda2dfcb5c0078dd83220a3299dc" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/73/Aghanim%27s_Scepter_symbol.png/30px-Aghanim%27s_Scepter_symbol.png?version=d829eda2dfcb5c0078dd83220a3299dc 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/73/Aghanim%27s_Scepter_symbol.png/40px-Aghanim%27s_Scepter_symbol.png?version=d829eda2dfcb5c0078dd83220a3299dc 2x" style="vertical-align: text-top" width="20"/>
             </a>
            </span>
            Adds a Side Gunner that at random attacks enemy units within a 600 radius every 1.1 seconds.
           </div>
           <div style="margin-left: 50px;">
            <span style="position: relative; top: -2px;">
-            <a href="/Spell_Immunity" title="Partially pierces spell immunity.">
-             <img alt="Partially pierces spell immunity." height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/5/59/Spell_immunity_block_partial_symbol.png/20px-Spell_immunity_block_partial_symbol.png?version=923f604c1ecd2a88b6b5a2bf6e32b59e" style="vertical-align: text-top" width="20"/>
+            <a href="/Spell_Immunity" title="Does not pierce spell immunity.">
+             <img alt="Does not pierce spell immunity." height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/9/9c/Spell_immunity_block_symbol.png/20px-Spell_immunity_block_symbol.png?version=7588eb7155b0b0ba78ae6c948c459858" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/9/9c/Spell_immunity_block_symbol.png/30px-Spell_immunity_block_symbol.png?version=7588eb7155b0b0ba78ae6c948c459858 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/9/9c/Spell_immunity_block_symbol.png/40px-Spell_immunity_block_symbol.png?version=7588eb7155b0b0ba78ae6c948c459858 2x" style="vertical-align: text-top" width="20"/>
             </a>
            </span>
-           Call Down does not affect spell immune enemies. Slow persists if debuff was placed before spell immunity and when not dispelled.
-           <br/>
-           The Side Gunner can attack spell immune enemies.
-          </div>
-          <div style="margin-left: 50px;">
-           <span style="position: relative; top: -2px;">
-            <a href="/Break" title="Disabled by Break.">
-             <img alt="Disabled by Break." height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/f/f9/Breakable_symbol.png/20px-Breakable_symbol.png?version=75c8c39d828694e4c795718ece243865" style="vertical-align: text-top" width="20"/>
-            </a>
-           </span>
-           The Side Gunner is disabled by break.
-          </div>
-          <div style="margin-left: 50px;">
-           <span style="position: relative; top: -2px;">
-            <a href="/Illusions" title="Cannot be used by illusions.">
-             <img alt="Cannot be used by illusions." height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/6/65/Illusion_no_symbol.png/20px-Illusion_no_symbol.png?version=3f8cfe494798366cbdba71574d6b7223" style="vertical-align: text-top" width="20"/>
-            </a>
-           </span>
-           Illusions are not granted the Sidegunner.
+           Slow persists if debuff was placed before spell immunity and when not dispelled.
           </div>
           <div style="margin-top: 10px;">
            <b>
-            Modifiers
+            <span id="tooltip" style="cursor:help; border-bottom:1px dotted;" title="The displayed names are the intern names of the modifiers. Do not change them even if they don't match the ability name.">
+             Modifiers
+            </span>
            </b>
           </div>
           <div style="font-size: 85%; margin-left: 10px;">
            <div>
-            <img alt="Debuff" height="16" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/1/1a/Modifier_debuff_symbol.png/16px-Modifier_debuff_symbol.png?version=5684dfbf37c3058c80b8495a4d0dc346" style="vertical-align: text-top" title="Debuff" width="16"/>
+            <img alt="Debuff" height="16" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/1/1a/Modifier_debuff_symbol.png/16px-Modifier_debuff_symbol.png?version=5684dfbf37c3058c80b8495a4d0dc346" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/1/1a/Modifier_debuff_symbol.png/24px-Modifier_debuff_symbol.png?version=5684dfbf37c3058c80b8495a4d0dc346 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/1/1a/Modifier_debuff_symbol.png/32px-Modifier_debuff_symbol.png?version=5684dfbf37c3058c80b8495a4d0dc346 2x" style="vertical-align: text-top" title="Debuff" width="16"/>
             <span style="color:#631F1F;">
              <b>
               Call Down Slow:
@@ -2248,7 +2262,7 @@ document.head.appendChild(script);
            <a class="mw-redirect" href="/Flying_vision" title="Flying vision">
             flying vision
            </a>
-           at the targeted area for 4 seconds after cast.
+           at the targeted area for 4 seconds upon cast.
           </li>
          </ul>
          <ul>
@@ -2262,29 +2276,128 @@ document.head.appendChild(script);
          </ul>
          <ul>
           <li>
-           The visual areal indicator is visible to allies only, but the sound effects are audible and the missiles visible to everyone.
+           The big red area indicator is visible to allies only, but the sound effects are audible and the missiles visible to everyone.
           </li>
          </ul>
+        </div>
+       </div>
+       <p>
+        <br/>
+        <span id="Side_Gunner">
+        </span>
+       </p>
+       <div style="display: flex; flex-wrap: wrap; align-items: flex-start;">
+        <div style="width: 450px; margin-right: 15px; vertical-align: top; background-color: #EAEAEA;">
+         <div style="font-weight: bold; font-size: 110%; border-bottom: 1px solid black; background-color: #5B388F; color: white; padding: 3px 5px;">
+          Side Gunner
+          <div style="float:right;">
+           <a href="/Illusions" title="Cannot be used by illusions.">
+            <img alt="Cannot be used by illusions." height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/6/65/Illusion_no_symbol.png/20px-Illusion_no_symbol.png?version=3f8cfe494798366cbdba71574d6b7223" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/6/65/Illusion_no_symbol.png/30px-Illusion_no_symbol.png?version=3f8cfe494798366cbdba71574d6b7223 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/6/65/Illusion_no_symbol.png/40px-Illusion_no_symbol.png?version=3f8cfe494798366cbdba71574d6b7223 2x" style="vertical-align: text-top" width="20"/>
+           </a>
+           <a href="/Break" title="Disabled by Break.">
+            <img alt="Disabled by Break." height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/f/f9/Breakable_symbol.png/20px-Breakable_symbol.png?version=75c8c39d828694e4c795718ece243865" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/f/f9/Breakable_symbol.png/30px-Breakable_symbol.png?version=75c8c39d828694e4c795718ece243865 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/f/f9/Breakable_symbol.png/40px-Breakable_symbol.png?version=75c8c39d828694e4c795718ece243865 2x" style="vertical-align: text-top" width="20"/>
+           </a>
+           <a href="/Spell_Immunity" title="Pierces spell immunity.">
+            <img alt="Pierces spell immunity." height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/0/0c/Spell_immunity_block_no_symbol.png/20px-Spell_immunity_block_no_symbol.png?version=8a9b499fbc92dda21de2b49951268177" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/0/0c/Spell_immunity_block_no_symbol.png/30px-Spell_immunity_block_no_symbol.png?version=8a9b499fbc92dda21de2b49951268177 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/0/0c/Spell_immunity_block_no_symbol.png/40px-Spell_immunity_block_no_symbol.png?version=8a9b499fbc92dda21de2b49951268177 2x" style="vertical-align: text-top" width="20"/>
+           </a>
+          </div>
+         </div>
+         <div>
+          <div class="ico_passive">
+           <a class="image" href="/File:Unknown_icon.png">
+            <img alt="Unknown icon.png" height="128" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/6/6b/Unknown_icon.png/128px-Unknown_icon.png?version=611216791090a3ec4e53273701363b06" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/6/6b/Unknown_icon.png?version=611216791090a3ec4e53273701363b06 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/6/6b/Unknown_icon.png?version=611216791090a3ec4e53273701363b06 2x" width="128"/>
+           </a>
+          </div>
+          <div style="width: 312px; display: inline-block;">
+           <div style="padding: 15px 5px; font-size: 85%; line-height: 100%; text-align: center;">
+            <div style="display: inline-block; width: 32%; vertical-align: top;">
+             <b>
+              Ability
+             </b>
+             <br/>
+             <a href="/Abilities#Passive" title="Abilities">
+              Passive
+             </a>
+            </div>
+            <div style="display: inline-block; width: 32%; vertical-align: top;">
+             <b>
+              Affects
+             </b>
+             <br/>
+             Enemies
+            </div>
+            <div style="display: inline-block; width: 32%; vertical-align: top;">
+            </div>
+           </div>
+           <div style="vertical-align: top; padding: 3px 5px; border-top: 1px solid black;">
+            A Side Gunner that at random attacks enemy units within a 600 radius every 1.1 seconds.
+           </div>
+          </div>
+         </div>
+         <div style="vertical-align:top; padding: 3px 5px;">
+          <div>
+           <b>
+            Attack Range
+           </b>
+           :
+           <span style="white-space: nowrap">
+            600
+           </span>
+          </div>
+          <div>
+           <b>
+            Attack Interval
+           </b>
+           :
+           <span style="white-space: nowrap">
+            1.1
+           </span>
+          </div>
+         </div>
+        </div>
+        <div style="flex: 2 3 400px; word-wrap: break-word;">
+         <p>
+          <b>
+           Notes:
+          </b>
+          <br/>
+         </p>
          <ul>
           <li>
-           The Side Gunner granted by
+           Requires
            <span style="white-space:nowrap">
             <a href="/Aghanim%27s_Scepter" title="Aghanim's Scepter">
-             <img alt="Aghanim's Scepter icon.png" height="15" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/0/07/Aghanim%27s_Scepter_icon.png/20px-Aghanim%27s_Scepter_icon.png?version=43732a02c1d1daeca8a103486e85aeb0" width="20"/>
+             <img alt="Aghanim's Scepter icon.png" height="15" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/0/07/Aghanim%27s_Scepter_icon.png/20px-Aghanim%27s_Scepter_icon.png?version=43732a02c1d1daeca8a103486e85aeb0" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/0/07/Aghanim%27s_Scepter_icon.png/30px-Aghanim%27s_Scepter_icon.png?version=43732a02c1d1daeca8a103486e85aeb0 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/0/07/Aghanim%27s_Scepter_icon.png/40px-Aghanim%27s_Scepter_icon.png?version=43732a02c1d1daeca8a103486e85aeb0 2x" width="20"/>
             </a>
             <a href="/Aghanim%27s_Scepter" title="Aghanim's Scepter">
              Aghanim's Scepter
             </a>
            </span>
-           is not bound to any of Gyrocopter's spells.
+           in the active inventory, or an Aghanim's Scepter Synth buff to be unlocked.
+          </li>
+         </ul>
+         <ul>
+          <li>
+           The Side Gunner is not bound to any of Gyrocopter's spells and is not visible in the HUD. However, its values are in
+           <span style="white-space: nowrap;">
+            <a href="/Gyrocopter#Call_Down" title="Gyrocopter#Call Down">
+             <img alt="Call Down icon.png" height="16" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/a/ad/Call_Down_icon.png/16px-Call_Down_icon.png?version=f8de1e5003100485c526a5a9a1db32bd" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/a/ad/Call_Down_icon.png/24px-Call_Down_icon.png?version=f8de1e5003100485c526a5a9a1db32bd 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/a/ad/Call_Down_icon.png/32px-Call_Down_icon.png?version=f8de1e5003100485c526a5a9a1db32bd 2x" width="16"/>
+            </a>
+            <a href="/Gyrocopter#Call_Down" title="Gyrocopter">
+             Call Down
+            </a>
+           </span>
+           's description.
+          </li>
+         </ul>
+         <ul>
+          <li>
+           The Side Gunner performs an
+           <a class="mw-redirect" href="/Instant_attack" title="Instant attack">
+            instant attack
+           </a>
+           in the set interval. Its target is chosen completely randomly.
            <ul>
-            <li>
-             The Side Gunner performs an
-             <a class="mw-redirect" href="/Instant_attack" title="Instant attack">
-              instant attack
-             </a>
-             in the set interval. Its target is chosen completely randomly.
-            </li>
             <li>
              Since it uses instant attacks, it neither interferes with the regular attacks, nor does it use animations. It also ignores
              <a href="/Disarm" title="Disarm">
@@ -2304,64 +2417,77 @@ document.head.appendChild(script);
              .
             </li>
             <li>
-             Unlike Flak Cannon, the Side Gunner can proc any
+             The gunner can proc any
              <a href="/Attack_modifier" title="Attack modifier">
               attack modifier
              </a>
-             or any on-hit effect like a regular attack.
+             or any on-hit effect like a regular attack, except for Flak Cannon.
             </li>
             <li>
-             If Gyrocopter is
-             <a class="mw-redirect" href="/Blind" title="Blind">
-              blinded
-             </a>
-             , the gunner can miss, unless he has
-             <a class="mw-redirect" href="/True_Strike" title="True Strike">
-              True Strike
-             </a>
-             . It can also miss to
+             The gunner can miss to
              <a href="/Evasion" title="Evasion">
               evasion
              </a>
-             .
-            </li>
-            <li>
-             The Side Gunner uses the same 3000 projectile speed as Gyrocopter's attack.
-            </li>
-            <li>
-             The Side Gunner does not attack when Gyrocopter is
-             <a class="mw-redirect" href="/Hidden" title="Hidden">
-              hidden
+             or if Gyrocopter is
+             <a class="mw-redirect" href="/Blind" title="Blind">
+              blinded
              </a>
-             ,
-             <a class="mw-redirect" href="/Invisible" title="Invisible">
-              invisible
-             </a>
-             or affected by
-             <a href="/Break" title="Break">
-              Break
+             , unless he has
+             <a class="mw-redirect" href="/True_Strike" title="True Strike">
+              True Strike
              </a>
              .
             </li>
+           </ul>
+          </li>
+         </ul>
+         <ul>
+          <li>
+           The Side Gunner uses the same 3000 projectile speed as Gyrocopter's attack.
+          </li>
+         </ul>
+         <ul>
+          <li>
+           The Side Gunner does not attack when Gyrocopter is
+           <a class="mw-redirect" href="/Hidden" title="Hidden">
+            hidden
+           </a>
+           ,
+           <a class="mw-redirect" href="/Invisible" title="Invisible">
+            invisible
+           </a>
+           or affected by
+           <a href="/Break" title="Break">
+            Break
+           </a>
+           .
+           <ul>
             <li>
              However, the gunner ignores fade times and fade delays of spells. It only does not attack when fully invisible.
             </li>
-            <li>
-             The Side Gunner does not attack
-             <a class="mw-redirect" href="/Wards" title="Wards">
-              wards
-             </a>
-             and
-             <a href="/Couriers" title="Couriers">
-              couriers
-             </a>
-             , but does attack
-             <a href="/Buildings" title="Buildings">
-              buildings
-             </a>
-             . Only attacks units Gyrocopter has vision over.
-            </li>
            </ul>
+          </li>
+         </ul>
+         <ul>
+          <li>
+           The Side Gunner does not attack
+           <a class="mw-redirect" href="/Wards" title="Wards">
+            wards
+           </a>
+           and
+           <a href="/Couriers" title="Couriers">
+            couriers
+           </a>
+           , but does attack
+           <a href="/Buildings" title="Buildings">
+            buildings
+           </a>
+           . Only attacks units Gyrocopter has vision over.
+          </li>
+         </ul>
+         <ul>
+          <li>
+           Side Gunner attack speed and range are not affected by anything.
           </li>
          </ul>
         </div>
@@ -2377,14 +2503,8 @@ document.head.appendChild(script);
          <span class="mw-editsection-bracket">
           [
          </span>
-         <a class="mw-editsection-visualeditor" href="/index.php?title=Gyrocopter&amp;veaction=edit&amp;vesection=3" title="Edit section: Talents">
-          edit
-         </a>
-         <span class="mw-editsection-divider">
-          |
-         </span>
          <a href="/index.php?title=Gyrocopter&amp;action=edit&amp;section=3" title="Edit section: Talents">
-          edit source
+          edit
          </a>
          <span class="mw-editsection-bracket">
           ]
@@ -2410,13 +2530,13 @@ document.head.appendChild(script);
             +4
             <span style="white-space: nowrap;">
              <a href="/Gyrocopter#Flak_Cannon" title="Gyrocopter#Flak Cannon">
-              <img alt="Flak Cannon icon.png" height="16" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/2/2b/Flak_Cannon_icon.png/16px-Flak_Cannon_icon.png?version=32503877d89b30e993db8e2a59a54358" width="16"/>
+              <img alt="Flak Cannon icon.png" height="16" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/2/2b/Flak_Cannon_icon.png/16px-Flak_Cannon_icon.png?version=32503877d89b30e993db8e2a59a54358" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/2/2b/Flak_Cannon_icon.png/24px-Flak_Cannon_icon.png?version=32503877d89b30e993db8e2a59a54358 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/2/2b/Flak_Cannon_icon.png/32px-Flak_Cannon_icon.png?version=32503877d89b30e993db8e2a59a54358 2x" width="16"/>
              </a>
              <a href="/Gyrocopter#Flak_Cannon" title="Gyrocopter">
               Flak Cannon
              </a>
             </span>
-            ​ Attacks
+            Attacks
            </td>
            <td style="padding: 10px; background-color: #0c2a5a">
             <span style="color: white; font-size:13pt">
@@ -2429,13 +2549,13 @@ document.head.appendChild(script);
             3
             <span style="white-space: nowrap;">
              <a href="/Gyrocopter#Homing_Missile" title="Gyrocopter#Homing Missile">
-              <img alt="Homing Missile icon.png" height="16" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/3/3a/Homing_Missile_icon.png/16px-Homing_Missile_icon.png?version=7f76f6e93f54cce436d98bc56fc79017" width="16"/>
+              <img alt="Homing Missile icon.png" height="16" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/3/3a/Homing_Missile_icon.png/16px-Homing_Missile_icon.png?version=7f76f6e93f54cce436d98bc56fc79017" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/3/3a/Homing_Missile_icon.png/24px-Homing_Missile_icon.png?version=7f76f6e93f54cce436d98bc56fc79017 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/3/3a/Homing_Missile_icon.png/32px-Homing_Missile_icon.png?version=7f76f6e93f54cce436d98bc56fc79017 2x" width="16"/>
              </a>
              <a href="/Gyrocopter#Homing_Missile" title="Gyrocopter">
               Homing Missile
              </a>
             </span>
-            ​ Charges
+            Charges
            </td>
           </tr>
           <tr>
@@ -2450,7 +2570,7 @@ document.head.appendChild(script);
             </span>
            </td>
            <td width="240">
-            +25 Movement Speed
+            +35 Movement Speed
            </td>
           </tr>
           <tr>
@@ -2465,12 +2585,12 @@ document.head.appendChild(script);
             </span>
            </td>
            <td width="240">
-            +10% Magic Resistance
+            +15% Magic Resistance
            </td>
           </tr>
           <tr>
            <td width="240">
-            +150 Health
+            +225 Health
            </td>
            <td style="padding: 10px; background-color: #3578e3">
             <span style="color: white; font-size:13pt">
@@ -2509,7 +2629,7 @@ document.head.appendChild(script);
            Cooldown reduction affects abilities and items. Stacks multiplicatively with
            <span style="white-space:nowrap">
             <a href="/Octarine_Core" title="Octarine Core">
-             <img alt="Octarine Core icon.png" height="15" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/1/13/Octarine_Core_icon.png/20px-Octarine_Core_icon.png?version=654d9cc153bea2aa1bdd56323e43be63" width="20"/>
+             <img alt="Octarine Core icon.png" height="15" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/1/13/Octarine_Core_icon.png/20px-Octarine_Core_icon.png?version=654d9cc153bea2aa1bdd56323e43be63" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/1/13/Octarine_Core_icon.png/30px-Octarine_Core_icon.png?version=654d9cc153bea2aa1bdd56323e43be63 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/1/13/Octarine_Core_icon.png/40px-Octarine_Core_icon.png?version=654d9cc153bea2aa1bdd56323e43be63 2x" width="20"/>
             </a>
             <a href="/Octarine_Core" title="Octarine Core">
              Octarine Core
@@ -2518,7 +2638,7 @@ document.head.appendChild(script);
            and additively with
            <span style="white-space:nowrap">
             <a href="/Arcane_Rune" title="Arcane Rune">
-             <img alt="Arcane Rune" height="16" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/b/bf/Rune_icon_Arcane.png/16px-Rune_icon_Arcane.png?version=03d09af71fc1cd0e954c8035cf61f836" width="16"/>
+             <img alt="Arcane Rune minimap icon.png" height="16" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/3/30/Arcane_Rune_minimap_icon.png/16px-Arcane_Rune_minimap_icon.png?version=f45a23b2a23ba16af0f974ad179e29db" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/3/30/Arcane_Rune_minimap_icon.png/24px-Arcane_Rune_minimap_icon.png?version=f45a23b2a23ba16af0f974ad179e29db 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/3/30/Arcane_Rune_minimap_icon.png?version=f45a23b2a23ba16af0f974ad179e29db 2x" width="16"/>
             </a>
             <a href="/Arcane_Rune" title="Arcane Rune">
              Arcane Rune
@@ -2532,13 +2652,13 @@ document.head.appendChild(script);
            Cooldown reduction affects replenish time of
            <span style="white-space: nowrap;">
             <a href="/Gyrocopter#Homing_Missile" title="Gyrocopter#Homing Missile">
-             <img alt="Homing Missile icon.png" height="16" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/3/3a/Homing_Missile_icon.png/16px-Homing_Missile_icon.png?version=7f76f6e93f54cce436d98bc56fc79017" width="16"/>
+             <img alt="Homing Missile icon.png" height="16" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/3/3a/Homing_Missile_icon.png/16px-Homing_Missile_icon.png?version=7f76f6e93f54cce436d98bc56fc79017" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/3/3a/Homing_Missile_icon.png/24px-Homing_Missile_icon.png?version=7f76f6e93f54cce436d98bc56fc79017 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/3/3a/Homing_Missile_icon.png/32px-Homing_Missile_icon.png?version=7f76f6e93f54cce436d98bc56fc79017 2x" width="16"/>
             </a>
             <a href="/Gyrocopter#Homing_Missile" title="Gyrocopter">
              Homing Missile
             </a>
            </span>
-           ​.
+           .
           </li>
          </ul>
         </div>
@@ -2558,14 +2678,8 @@ document.head.appendChild(script);
   <span class="mw-editsection-bracket">
    [
   </span>
-  <a class="mw-editsection-visualeditor" href="/index.php?title=Gyrocopter&amp;veaction=edit&amp;vesection=4" title="Edit section: Recommended items">
-   edit
-  </a>
-  <span class="mw-editsection-divider">
-   |
-  </span>
   <a href="/index.php?title=Gyrocopter&amp;action=edit&amp;section=4" title="Edit section: Recommended items">
-   edit source
+   edit
   </a>
   <span class="mw-editsection-bracket">
    ]
@@ -2581,40 +2695,40 @@ document.head.appendChild(script);
  <li>
   <span style="white-space:nowrap">
    <a href="/Tango" title="Tango">
-    <img alt="Tango icon.png" height="22" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/f/fd/Tango_icon.png/30px-Tango_icon.png?version=6ddcac461cbd98cc58e99a5f70d04a57" width="30"/>
+    <img alt="Tango icon.png" height="22" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/f/fd/Tango_icon.png/30px-Tango_icon.png?version=6ddcac461cbd98cc58e99a5f70d04a57" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/f/fd/Tango_icon.png/45px-Tango_icon.png?version=6ddcac461cbd98cc58e99a5f70d04a57 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/f/fd/Tango_icon.png/60px-Tango_icon.png?version=6ddcac461cbd98cc58e99a5f70d04a57 2x" width="30"/>
    </a>
    <a href="/Tango" title="Tango">
     Tango
    </a>
   </span>
-  keeps Gyrocopter in lane.
+  gives Gyrocopter regen to counter early harassment.
  </li>
  <li>
   <span style="white-space:nowrap">
    <a href="/Healing_Salve" title="Healing Salve">
-    <img alt="Healing Salve icon.png" height="22" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/3/36/Healing_Salve_icon.png/30px-Healing_Salve_icon.png?version=923f3249add1829368656d8a736b8545" width="30"/>
+    <img alt="Healing Salve icon.png" height="22" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/3/36/Healing_Salve_icon.png/30px-Healing_Salve_icon.png?version=923f3249add1829368656d8a736b8545" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/3/36/Healing_Salve_icon.png/45px-Healing_Salve_icon.png?version=923f3249add1829368656d8a736b8545 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/3/36/Healing_Salve_icon.png/60px-Healing_Salve_icon.png?version=923f3249add1829368656d8a736b8545 2x" width="30"/>
    </a>
    <a href="/Healing_Salve" title="Healing Salve">
     Healing Salve
    </a>
   </span>
-  keeps Gyrocopter alive.
+  gives a helpful burst heal to help stay in lane.
  </li>
  <li>
   <span style="white-space:nowrap">
    <a href="/Iron_Branch" title="Iron Branch">
-    <img alt="Iron Branch icon.png" height="22" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/a/a3/Iron_Branch_icon.png/30px-Iron_Branch_icon.png?version=fe283e2ed6e68366cffdf0a80ac1c5be" width="30"/>
+    <img alt="Iron Branch icon.png" height="22" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/a/a3/Iron_Branch_icon.png/30px-Iron_Branch_icon.png?version=fe283e2ed6e68366cffdf0a80ac1c5be" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/a/a3/Iron_Branch_icon.png/45px-Iron_Branch_icon.png?version=fe283e2ed6e68366cffdf0a80ac1c5be 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/a/a3/Iron_Branch_icon.png/60px-Iron_Branch_icon.png?version=fe283e2ed6e68366cffdf0a80ac1c5be 2x" width="30"/>
    </a>
    <a href="/Iron_Branch" title="Iron Branch">
     Iron Branch
    </a>
   </span>
-  gives a few extra stats.
+  gives cheap early stats, and can be consumed with a tango for extra regen.
  </li>
  <li>
   <span style="white-space:nowrap">
    <a href="/Faerie_Fire" title="Faerie Fire">
-    <img alt="Faerie Fire icon.png" height="22" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/5/54/Faerie_Fire_icon.png/30px-Faerie_Fire_icon.png?version=824a0853a545e48c0776ff545f197ddf" width="30"/>
+    <img alt="Faerie Fire icon.png" height="22" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/5/54/Faerie_Fire_icon.png/30px-Faerie_Fire_icon.png?version=824a0853a545e48c0776ff545f197ddf" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/5/54/Faerie_Fire_icon.png/45px-Faerie_Fire_icon.png?version=824a0853a545e48c0776ff545f197ddf 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/5/54/Faerie_Fire_icon.png/60px-Faerie_Fire_icon.png?version=824a0853a545e48c0776ff545f197ddf 2x" width="30"/>
    </a>
    <a href="/Faerie_Fire" title="Faerie Fire">
     Faerie Fire
@@ -2625,7 +2739,7 @@ document.head.appendChild(script);
  <li>
   <span style="white-space:nowrap">
    <a href="/Slippers_of_Agility" title="Slippers of Agility">
-    <img alt="Slippers of Agility icon.png" height="22" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/5/5c/Slippers_of_Agility_icon.png/30px-Slippers_of_Agility_icon.png?version=e7af64fce0ce6441d6c7ca88777a53ec" width="30"/>
+    <img alt="Slippers of Agility icon.png" height="22" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/5/5c/Slippers_of_Agility_icon.png/30px-Slippers_of_Agility_icon.png?version=e7af64fce0ce6441d6c7ca88777a53ec" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/5/5c/Slippers_of_Agility_icon.png/45px-Slippers_of_Agility_icon.png?version=e7af64fce0ce6441d6c7ca88777a53ec 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/5/5c/Slippers_of_Agility_icon.png/60px-Slippers_of_Agility_icon.png?version=e7af64fce0ce6441d6c7ca88777a53ec 2x" width="30"/>
    </a>
    <a href="/Slippers_of_Agility" title="Slippers of Agility">
     Slippers of Agility
@@ -2643,18 +2757,18 @@ document.head.appendChild(script);
  <li>
   <span style="white-space:nowrap">
    <a href="/Boots_of_Speed" title="Boots of Speed">
-    <img alt="Boots of Speed icon.png" height="22" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/9/97/Boots_of_Speed_icon.png/30px-Boots_of_Speed_icon.png?version=9321885327b320054df62171f8f89c2b" width="30"/>
+    <img alt="Boots of Speed icon.png" height="22" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/9/97/Boots_of_Speed_icon.png/30px-Boots_of_Speed_icon.png?version=9321885327b320054df62171f8f89c2b" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/9/97/Boots_of_Speed_icon.png/45px-Boots_of_Speed_icon.png?version=9321885327b320054df62171f8f89c2b 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/9/97/Boots_of_Speed_icon.png/60px-Boots_of_Speed_icon.png?version=9321885327b320054df62171f8f89c2b 2x" width="30"/>
    </a>
    <a href="/Boots_of_Speed" title="Boots of Speed">
     Boots of Speed
    </a>
   </span>
-  is required on all heroes.
+  quickly can allow Gyrocopter to get early kills with his Rocket Barrage.
  </li>
  <li>
   <span style="white-space:nowrap">
    <a href="/Magic_Stick" title="Magic Stick">
-    <img alt="Magic Stick icon.png" height="22" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/5/59/Magic_Stick_icon.png/30px-Magic_Stick_icon.png?version=a5e1eacc06e3b794a3e54f965acf4d7c" width="30"/>
+    <img alt="Magic Stick icon.png" height="22" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/5/59/Magic_Stick_icon.png/30px-Magic_Stick_icon.png?version=a5e1eacc06e3b794a3e54f965acf4d7c" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/5/59/Magic_Stick_icon.png/45px-Magic_Stick_icon.png?version=a5e1eacc06e3b794a3e54f965acf4d7c 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/5/59/Magic_Stick_icon.png/60px-Magic_Stick_icon.png?version=a5e1eacc06e3b794a3e54f965acf4d7c 2x" width="30"/>
    </a>
    <a href="/Magic_Stick" title="Magic Stick">
     Magic Stick
@@ -2665,7 +2779,7 @@ document.head.appendChild(script);
  <li>
   <span style="white-space:nowrap">
    <a href="/Wraith_Band" title="Wraith Band">
-    <img alt="Wraith Band icon.png" height="22" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/5/55/Wraith_Band_icon.png/30px-Wraith_Band_icon.png?version=ab43ec5293438730ea4cf2ff6c73728a" width="30"/>
+    <img alt="Wraith Band icon.png" height="22" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/5/55/Wraith_Band_icon.png/30px-Wraith_Band_icon.png?version=ab43ec5293438730ea4cf2ff6c73728a" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/5/55/Wraith_Band_icon.png/45px-Wraith_Band_icon.png?version=ab43ec5293438730ea4cf2ff6c73728a 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/5/55/Wraith_Band_icon.png/60px-Wraith_Band_icon.png?version=ab43ec5293438730ea4cf2ff6c73728a 2x" width="30"/>
    </a>
    <a href="/Wraith_Band" title="Wraith Band">
     Wraith Band
@@ -2675,28 +2789,8 @@ document.head.appendChild(script);
  </li>
  <li>
   <span style="white-space:nowrap">
-   <a href="/Bracer" title="Bracer">
-    <img alt="Bracer icon.png" height="22" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/6/6e/Bracer_icon.png/30px-Bracer_icon.png?version=27530944bafd39270ab9e6a05dfbb2d6" width="30"/>
-   </a>
-   <a href="/Bracer" title="Bracer">
-    Bracer
-   </a>
-  </span>
-  can be turned into a
-  <span style="white-space:nowrap">
-   <a href="/Drum_of_Endurance" title="Drum of Endurance">
-    <img alt="Drum of Endurance icon.png" height="15" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/9/91/Drum_of_Endurance_icon.png/20px-Drum_of_Endurance_icon.png?version=893ed34a6f20de7d7d637d5cf0110165" width="20"/>
-   </a>
-   <a href="/Drum_of_Endurance" title="Drum of Endurance">
-    Drum of Endurance
-   </a>
-  </span>
-  later on.
- </li>
- <li>
-  <span style="white-space:nowrap">
    <a href="/Town_Portal_Scroll" title="Town Portal Scroll">
-    <img alt="Town Portal Scroll icon.png" height="22" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/4/46/Town_Portal_Scroll_icon.png/30px-Town_Portal_Scroll_icon.png?version=9ea24933254e81afb8e601a9613f5244" width="30"/>
+    <img alt="Town Portal Scroll icon.png" height="22" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/4/46/Town_Portal_Scroll_icon.png/30px-Town_Portal_Scroll_icon.png?version=9ea24933254e81afb8e601a9613f5244" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/4/46/Town_Portal_Scroll_icon.png/45px-Town_Portal_Scroll_icon.png?version=9ea24933254e81afb8e601a9613f5244 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/4/46/Town_Portal_Scroll_icon.png/60px-Town_Portal_Scroll_icon.png?version=9ea24933254e81afb8e601a9613f5244 2x" width="30"/>
    </a>
    <a href="/Town_Portal_Scroll" title="Town Portal Scroll">
     Town Portal Scroll
@@ -2713,8 +2807,19 @@ document.head.appendChild(script);
 <ul>
  <li>
   <span style="white-space:nowrap">
+   <a href="/Ring_of_Aquila" title="Ring of Aquila">
+    <img alt="Ring of Aquila (Active) icon.png" height="22" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/3/3f/Ring_of_Aquila_%28Active%29_icon.png/30px-Ring_of_Aquila_%28Active%29_icon.png?version=d9e1851149c0f51e8fc985ee1504740c" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/3/3f/Ring_of_Aquila_%28Active%29_icon.png/45px-Ring_of_Aquila_%28Active%29_icon.png?version=d9e1851149c0f51e8fc985ee1504740c 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/3/3f/Ring_of_Aquila_%28Active%29_icon.png/60px-Ring_of_Aquila_%28Active%29_icon.png?version=d9e1851149c0f51e8fc985ee1504740c 2x" width="30"/>
+   </a>
+   <a href="/Ring_of_Aquila" title="Ring of Aquila">
+    Ring of Aquila
+   </a>
+  </span>
+  gives cheap damage and a modest amount of Mana Regen to allow him to use Flak Cannon more often.
+ </li>
+ <li>
+  <span style="white-space:nowrap">
    <a href="/Phase_Boots" title="Phase Boots">
-    <img alt="Phase Boots icon.png" height="22" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/9/98/Phase_Boots_icon.png/30px-Phase_Boots_icon.png?version=d7c797340db018431a844b72f4b5e7bb" width="30"/>
+    <img alt="Phase Boots icon.png" height="22" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/9/98/Phase_Boots_icon.png/30px-Phase_Boots_icon.png?version=d7c797340db018431a844b72f4b5e7bb" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/9/98/Phase_Boots_icon.png/45px-Phase_Boots_icon.png?version=d7c797340db018431a844b72f4b5e7bb 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/9/98/Phase_Boots_icon.png/60px-Phase_Boots_icon.png?version=d7c797340db018431a844b72f4b5e7bb 2x" width="30"/>
    </a>
    <a href="/Phase_Boots" title="Phase Boots">
     Phase Boots
@@ -2724,23 +2829,19 @@ document.head.appendChild(script);
  </li>
  <li>
   <span style="white-space:nowrap">
-   <a href="/Helm_of_the_Dominator" title="Helm of the Dominator">
-    <img alt="Helm of the Dominator icon.png" height="22" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/9/97/Helm_of_the_Dominator_icon.png/30px-Helm_of_the_Dominator_icon.png?version=02878b74908d39caf56f8edbdedfece3" width="30"/>
+   <a href="/Dragon_Lance" title="Dragon Lance">
+    <img alt="Dragon Lance icon.png" height="22" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/d/db/Dragon_Lance_icon.png/30px-Dragon_Lance_icon.png?version=57bddf366274a17c84f225277e8b1ae8" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/d/db/Dragon_Lance_icon.png/45px-Dragon_Lance_icon.png?version=57bddf366274a17c84f225277e8b1ae8 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/d/db/Dragon_Lance_icon.png/60px-Dragon_Lance_icon.png?version=57bddf366274a17c84f225277e8b1ae8 2x" width="30"/>
    </a>
-   <a href="/Helm_of_the_Dominator" title="Helm of the Dominator">
-    Helm of the Dominator
+   <a href="/Dragon_Lance" title="Dragon Lance">
+    Dragon Lance
    </a>
   </span>
-  gives Gyrocopter
-  <a href="/Lifesteal" title="Lifesteal">
-   lifesteal
-  </a>
-  , making him much tougher to kill. It also helps him farm easier.
+  greatly improves Gyrocopter's short attack range and offers cost efficient stats.
  </li>
  <li>
   <span style="white-space:nowrap">
    <a href="/Black_King_Bar" title="Black King Bar">
-    <img alt="Black King Bar icon.png" height="22" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/72/Black_King_Bar_icon.png/30px-Black_King_Bar_icon.png?version=f8be2cb8d6d3f6716a950594ce082d80" width="30"/>
+    <img alt="Black King Bar icon.png" height="22" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/72/Black_King_Bar_icon.png/30px-Black_King_Bar_icon.png?version=f8be2cb8d6d3f6716a950594ce082d80" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/72/Black_King_Bar_icon.png/45px-Black_King_Bar_icon.png?version=f8be2cb8d6d3f6716a950594ce082d80 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/72/Black_King_Bar_icon.png/60px-Black_King_Bar_icon.png?version=f8be2cb8d6d3f6716a950594ce082d80 2x" width="30"/>
    </a>
    <a href="/Black_King_Bar" title="Black King Bar">
     Black King Bar
@@ -2753,67 +2854,94 @@ document.head.appendChild(script);
  <b>
   Situational items:
  </b>
+ .
 </p>
 <ul>
  <li>
   <span style="white-space:nowrap">
+   <a href="/Hurricane_Pike" title="Hurricane Pike">
+    <img alt="Hurricane Pike icon.png" height="22" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/1/13/Hurricane_Pike_icon.png/30px-Hurricane_Pike_icon.png?version=eab5cb4c418c9e7bedbf6ed1962de88d" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/1/13/Hurricane_Pike_icon.png/45px-Hurricane_Pike_icon.png?version=eab5cb4c418c9e7bedbf6ed1962de88d 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/1/13/Hurricane_Pike_icon.png/60px-Hurricane_Pike_icon.png?version=eab5cb4c418c9e7bedbf6ed1962de88d 2x" width="30"/>
+   </a>
+   <a href="/Hurricane_Pike" title="Hurricane Pike">
+    Hurricane Pike
+   </a>
+  </span>
+  is a natural extension to
+  <span style="white-space:nowrap">
    <a href="/Dragon_Lance" title="Dragon Lance">
-    <img alt="Dragon Lance icon.png" height="22" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/d/db/Dragon_Lance_icon.png/30px-Dragon_Lance_icon.png?version=57bddf366274a17c84f225277e8b1ae8" width="30"/>
+    <img alt="Dragon Lance icon.png" height="15" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/d/db/Dragon_Lance_icon.png/20px-Dragon_Lance_icon.png?version=f795c24c3471a7dc3d8323493a531fdb" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/d/db/Dragon_Lance_icon.png/30px-Dragon_Lance_icon.png?version=f795c24c3471a7dc3d8323493a531fdb 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/d/db/Dragon_Lance_icon.png/40px-Dragon_Lance_icon.png?version=f795c24c3471a7dc3d8323493a531fdb 2x" width="20"/>
    </a>
    <a href="/Dragon_Lance" title="Dragon Lance">
     Dragon Lance
    </a>
   </span>
-  greatly improves Gyrocopter's short attack range.
+  , giving Gyrocopter more mobility, and can be used to push the Homing Missile to hit the target faster.
  </li>
  <li>
   <span style="white-space:nowrap">
-   <a href="/Daedalus" title="Daedalus">
-    <img alt="Daedalus icon.png" height="22" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/2/24/Daedalus_icon.png/30px-Daedalus_icon.png?version=968d51f311d85a301c53f9aec728bfd0" width="30"/>
+   <a href="/Morbid_Mask" title="Morbid Mask">
+    <img alt="Morbid Mask icon.png" height="22" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/76/Morbid_Mask_icon.png/30px-Morbid_Mask_icon.png?version=a8efb5378f954c78e38c2dfd1db8b10b" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/76/Morbid_Mask_icon.png/45px-Morbid_Mask_icon.png?version=a8efb5378f954c78e38c2dfd1db8b10b 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/76/Morbid_Mask_icon.png/60px-Morbid_Mask_icon.png?version=a8efb5378f954c78e38c2dfd1db8b10b 2x" width="30"/>
    </a>
-   <a href="/Daedalus" title="Daedalus">
-    Daedalus
+   <a href="/Morbid_Mask" title="Morbid Mask">
+    Morbid Mask
    </a>
   </span>
-  multiplies well with Flak Cannon, increasing Gyrocopter's damage significantly. It also gives him a chance on inflicting critical hits on his primary target
+  is a cheap way to keep his health up during jungling, and provides a modest amount of damage too.
+ </li>
+ <li>
+  <span style="white-space:nowrap">
+   <a href="/Helm_of_the_Dominator" title="Helm of the Dominator">
+    <img alt="Helm of the Dominator icon.png" height="22" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/9/97/Helm_of_the_Dominator_icon.png/30px-Helm_of_the_Dominator_icon.png?version=02878b74908d39caf56f8edbdedfece3" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/9/97/Helm_of_the_Dominator_icon.png/45px-Helm_of_the_Dominator_icon.png?version=02878b74908d39caf56f8edbdedfece3 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/9/97/Helm_of_the_Dominator_icon.png/60px-Helm_of_the_Dominator_icon.png?version=02878b74908d39caf56f8edbdedfece3 2x" width="30"/>
+   </a>
+   <a href="/Helm_of_the_Dominator" title="Helm of the Dominator">
+    Helm of the Dominator
+   </a>
+  </span>
+  gives Gyrocopter a source of
+  <a class="mw-redirect" href="/Health_regen" title="Health regen">
+   health regen
+  </a>
+  , and many neutral creeps have useful
+  <a class="mw-redirect" href="/Auras" title="Auras">
+   auras
+  </a>
+  to make farming and pushing easier.
  </li>
  <li>
   <span style="white-space:nowrap">
    <a href="/Shadow_Blade" title="Shadow Blade">
-    <img alt="Shadow Blade icon.png" height="22" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/0/0f/Shadow_Blade_icon.png/30px-Shadow_Blade_icon.png?version=0a69432573a18312685d3cbb85c91cff" width="30"/>
+    <img alt="Shadow Blade icon.png" height="22" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/0/0f/Shadow_Blade_icon.png/30px-Shadow_Blade_icon.png?version=0a69432573a18312685d3cbb85c91cff" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/0/0f/Shadow_Blade_icon.png/45px-Shadow_Blade_icon.png?version=0a69432573a18312685d3cbb85c91cff 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/0/0f/Shadow_Blade_icon.png/60px-Shadow_Blade_icon.png?version=0a69432573a18312685d3cbb85c91cff 2x" width="30"/>
    </a>
    <a href="/Shadow_Blade" title="Shadow Blade">
     Shadow Blade
    </a>
   </span>
-  can be purchased for ganking or escape purposes.
+  can be purchased for ganking or escape purposes, and can be upgraded to
+  <span style="white-space:nowrap">
+   <a href="/Silver_Edge" title="Silver Edge">
+    <img alt="Silver Edge icon.png" height="15" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/9/91/Silver_Edge_icon.png/20px-Silver_Edge_icon.png?version=589a101cebb47901cbac5663ad96bd12" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/9/91/Silver_Edge_icon.png/30px-Silver_Edge_icon.png?version=589a101cebb47901cbac5663ad96bd12 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/9/91/Silver_Edge_icon.png/40px-Silver_Edge_icon.png?version=589a101cebb47901cbac5663ad96bd12 2x" width="20"/>
+   </a>
+   <a href="/Silver_Edge" title="Silver Edge">
+    Silver Edge
+   </a>
+  </span>
+  to counter troublesome passive abilities.
  </li>
  <li>
   <span style="white-space:nowrap">
    <a href="/Aghanim%27s_Scepter" title="Aghanim's Scepter">
-    <img alt="Aghanim's Scepter icon.png" height="22" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/0/07/Aghanim%27s_Scepter_icon.png/30px-Aghanim%27s_Scepter_icon.png?version=edd1c0d7d3c00a8233897e53a0011edd" width="30"/>
+    <img alt="Aghanim's Scepter icon.png" height="22" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/0/07/Aghanim%27s_Scepter_icon.png/30px-Aghanim%27s_Scepter_icon.png?version=edd1c0d7d3c00a8233897e53a0011edd" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/0/07/Aghanim%27s_Scepter_icon.png/45px-Aghanim%27s_Scepter_icon.png?version=edd1c0d7d3c00a8233897e53a0011edd 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/0/07/Aghanim%27s_Scepter_icon.png/60px-Aghanim%27s_Scepter_icon.png?version=edd1c0d7d3c00a8233897e53a0011edd 2x" width="30"/>
    </a>
    <a href="/Aghanim%27s_Scepter" title="Aghanim's Scepter">
     Aghanim's Scepter
    </a>
   </span>
-  is a useful utility item when Gyrocopter is not the only carry his team depends on.
- </li>
- <li>
-  <span style="white-space:nowrap">
-   <a href="/Satanic" title="Satanic">
-    <img alt="Satanic icon.png" height="22" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/d/dd/Satanic_icon.png/30px-Satanic_icon.png?version=f46beecb845e697f909132827ead590e" width="30"/>
-   </a>
-   <a href="/Satanic" title="Satanic">
-    Satanic
-   </a>
-  </span>
-  will heal Gyrocopter almost instantly during late game with just a few shots from Flak Cannon.
+  allows Gyrocopter to continue attacking even when disabled, and gives more attacks which can proc attack modifiers.
  </li>
  <li>
   <span style="white-space:nowrap">
    <a href="/Sange_and_Yasha" title="Sange and Yasha">
-    <img alt="Sange and Yasha icon.png" height="22" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/b/b4/Sange_and_Yasha_icon.png/30px-Sange_and_Yasha_icon.png?version=ea679e01a75a7acfc3752ec13bacdced" width="30"/>
+    <img alt="Sange and Yasha icon.png" height="22" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/b/b4/Sange_and_Yasha_icon.png/30px-Sange_and_Yasha_icon.png?version=ea679e01a75a7acfc3752ec13bacdced" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/b/b4/Sange_and_Yasha_icon.png/45px-Sange_and_Yasha_icon.png?version=ea679e01a75a7acfc3752ec13bacdced 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/b/b4/Sange_and_Yasha_icon.png/60px-Sange_and_Yasha_icon.png?version=ea679e01a75a7acfc3752ec13bacdced 2x" width="30"/>
    </a>
    <a href="/Sange_and_Yasha" title="Sange and Yasha">
     Sange and Yasha
@@ -2824,7 +2952,7 @@ document.head.appendChild(script);
  <li>
   <span style="white-space:nowrap">
    <a href="/Boots_of_Travel" title="Boots of Travel">
-    <img alt="Boots of Travel 1 icon.png" height="22" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/6/6d/Boots_of_Travel_1_icon.png/30px-Boots_of_Travel_1_icon.png?version=8ae16e23541021fe24e3dac127ffae8d" width="30"/>
+    <img alt="Boots of Travel 1 icon.png" height="22" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/6/6d/Boots_of_Travel_1_icon.png/30px-Boots_of_Travel_1_icon.png?version=8ae16e23541021fe24e3dac127ffae8d" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/6/6d/Boots_of_Travel_1_icon.png/45px-Boots_of_Travel_1_icon.png?version=8ae16e23541021fe24e3dac127ffae8d 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/6/6d/Boots_of_Travel_1_icon.png/60px-Boots_of_Travel_1_icon.png?version=8ae16e23541021fe24e3dac127ffae8d 2x" width="30"/>
    </a>
    <a href="/Boots_of_Travel" title="Boots of Travel">
     Boots of Travel
@@ -2834,8 +2962,63 @@ document.head.appendChild(script);
  </li>
  <li>
   <span style="white-space:nowrap">
+   <a href="/Manta_Style" title="Manta Style">
+    <img alt="Manta Style icon.png" height="22" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/8/84/Manta_Style_icon.png/30px-Manta_Style_icon.png?version=7171fd71a68fec2d5b0114f337a56602" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/8/84/Manta_Style_icon.png/45px-Manta_Style_icon.png?version=7171fd71a68fec2d5b0114f337a56602 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/8/84/Manta_Style_icon.png/60px-Manta_Style_icon.png?version=7171fd71a68fec2d5b0114f337a56602 2x" width="30"/>
+   </a>
+   <a href="/Manta_Style" title="Manta Style">
+    Manta Style
+   </a>
+  </span>
+  is good for pushing, and
+  <a href="/Disjoint" title="Disjoint">
+   disjointing
+  </a>
+  projectiles.
+ </li>
+</ul>
+<p>
+ <b>
+  Extension items:
+ </b>
+</p>
+<ul>
+ <li>
+  <span style="white-space:nowrap">
+   <a href="/Satanic" title="Satanic">
+    <img alt="Satanic icon.png" height="22" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/d/dd/Satanic_icon.png/30px-Satanic_icon.png?version=f46beecb845e697f909132827ead590e" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/d/dd/Satanic_icon.png/45px-Satanic_icon.png?version=f46beecb845e697f909132827ead590e 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/d/dd/Satanic_icon.png/60px-Satanic_icon.png?version=f46beecb845e697f909132827ead590e 2x" width="30"/>
+   </a>
+   <a href="/Satanic" title="Satanic">
+    Satanic
+   </a>
+  </span>
+  is the natural supplemental item to make Gyrocopter with multiple damage items able to survive longer in late-game teamfights, while also providing a decent damage boost itself.
+ </li>
+ <li>
+  <span style="white-space:nowrap">
+   <a href="/Daedalus" title="Daedalus">
+    <img alt="Daedalus icon.png" height="22" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/2/24/Daedalus_icon.png/30px-Daedalus_icon.png?version=968d51f311d85a301c53f9aec728bfd0" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/2/24/Daedalus_icon.png/45px-Daedalus_icon.png?version=968d51f311d85a301c53f9aec728bfd0 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/2/24/Daedalus_icon.png/60px-Daedalus_icon.png?version=968d51f311d85a301c53f9aec728bfd0 2x" width="30"/>
+   </a>
+   <a href="/Daedalus" title="Daedalus">
+    Daedalus
+   </a>
+  </span>
+  multiplies well with Flak Cannon, increasing Gyrocopter's damage significantly. It also gives him a chance on inflicting critical hits on his primary target.
+ </li>
+ <li>
+  <span style="white-space:nowrap">
+   <a href="/Monkey_King_Bar" title="Monkey King Bar">
+    <img alt="Monkey King Bar icon.png" height="22" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/b/b0/Monkey_King_Bar_icon.png/30px-Monkey_King_Bar_icon.png?version=1d2f12fe05fa405d5d324f9c85cdbd91" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/b/b0/Monkey_King_Bar_icon.png/45px-Monkey_King_Bar_icon.png?version=1d2f12fe05fa405d5d324f9c85cdbd91 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/b/b0/Monkey_King_Bar_icon.png/60px-Monkey_King_Bar_icon.png?version=1d2f12fe05fa405d5d324f9c85cdbd91 2x" width="30"/>
+   </a>
+   <a href="/Monkey_King_Bar" title="Monkey King Bar">
+    Monkey King Bar
+   </a>
+  </span>
+  gives Gyrocopter a strong damage source, which also provides a chance to mini-bash and gives his main attack and attacks from Flak Cannon True Strike.
+ </li>
+ <li>
+  <span style="white-space:nowrap">
    <a href="/Butterfly" title="Butterfly">
-    <img alt="Butterfly icon.png" height="22" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/2/28/Butterfly_icon.png/30px-Butterfly_icon.png?version=f1076a78206994a4de8f684e56ff138a" width="30"/>
+    <img alt="Butterfly icon.png" height="22" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/2/28/Butterfly_icon.png/30px-Butterfly_icon.png?version=f1076a78206994a4de8f684e56ff138a" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/2/28/Butterfly_icon.png/45px-Butterfly_icon.png?version=f1076a78206994a4de8f684e56ff138a 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/2/28/Butterfly_icon.png/60px-Butterfly_icon.png?version=f1076a78206994a4de8f684e56ff138a 2x" width="30"/>
    </a>
    <a href="/Butterfly" title="Butterfly">
     Butterfly
@@ -2849,45 +3032,16 @@ document.head.appendChild(script);
  </li>
  <li>
   <span style="white-space:nowrap">
-   <a href="/Monkey_King_Bar" title="Monkey King Bar">
-    <img alt="Monkey King Bar icon.png" height="22" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/b/b0/Monkey_King_Bar_icon.png/30px-Monkey_King_Bar_icon.png?version=1d2f12fe05fa405d5d324f9c85cdbd91" width="30"/>
-   </a>
-   <a href="/Monkey_King_Bar" title="Monkey King Bar">
-    Monkey King Bar
-   </a>
-  </span>
-  gives Gyrocopter a strong damage source, which also provides a chance to mini-bash and gives his main attack and attacks from Flak Cannon True Strike.
- </li>
- <li>
-  <span style="white-space:nowrap">
-   <a href="/Manta_Style" title="Manta Style">
-    <img alt="Manta Style icon.png" height="22" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/8/84/Manta_Style_icon.png/30px-Manta_Style_icon.png?version=7171fd71a68fec2d5b0114f337a56602" width="30"/>
-   </a>
-   <a href="/Manta_Style" title="Manta Style">
-    Manta Style
-   </a>
-  </span>
-  is good for pushing, and
-  <a href="/Disjoint" title="Disjoint">
-   disjointing
-  </a>
-  projectiles.
- </li>
- <li>
-  <span style="white-space:nowrap">
    <a href="/Divine_Rapier" title="Divine Rapier">
-    <img alt="Divine Rapier icon.png" height="22" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/b/b1/Divine_Rapier_icon.png/30px-Divine_Rapier_icon.png?version=20c208c850d592297b16f33f51b475ef" width="30"/>
+    <img alt="Divine Rapier icon.png" height="22" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/b/b1/Divine_Rapier_icon.png/30px-Divine_Rapier_icon.png?version=20c208c850d592297b16f33f51b475ef" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/b/b1/Divine_Rapier_icon.png/45px-Divine_Rapier_icon.png?version=20c208c850d592297b16f33f51b475ef 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/b/b1/Divine_Rapier_icon.png/60px-Divine_Rapier_icon.png?version=20c208c850d592297b16f33f51b475ef 2x" width="30"/>
    </a>
    <a href="/Divine_Rapier" title="Divine Rapier">
     Divine Rapier
    </a>
   </span>
-  is the be-all end-all in terms of damage for gyrocopter. In combination with Flak Cannon it can decimate the entire enemy team within seconds. But it is also a risky purchase and should only be bought when Gyrocopter is sufficiently tanky or as a last resort in dealing with an overwhelming enemy advantage.
+  is the be-all end-all in terms of damage for Gyrocopter. In combination with Flak Cannon it can decimate the entire enemy team within seconds. But it is also a risky purchase and should only be bought when Gyrocopter is sufficiently tanky or as a last resort in dealing with an overwhelming enemy advantage.
  </li>
 </ul>
-<p>
- <br/>
-</p>
 <h2>
  <span class="mw-headline" id="Gameplay">
   Gameplay
@@ -2896,14 +3050,8 @@ document.head.appendChild(script);
   <span class="mw-editsection-bracket">
    [
   </span>
-  <a class="mw-editsection-visualeditor" href="/index.php?title=Gyrocopter&amp;veaction=edit&amp;vesection=5" title="Edit section: Gameplay">
-   edit
-  </a>
-  <span class="mw-editsection-divider">
-   |
-  </span>
   <a href="/index.php?title=Gyrocopter&amp;action=edit&amp;section=5" title="Edit section: Gameplay">
-   edit source
+   edit
   </a>
   <span class="mw-editsection-bracket">
    ]
@@ -2940,14 +3088,8 @@ document.head.appendChild(script);
   <span class="mw-editsection-bracket">
    [
   </span>
-  <a class="mw-editsection-visualeditor" href="/index.php?title=Gyrocopter&amp;veaction=edit&amp;vesection=6" title="Edit section: Audio">
-   edit
-  </a>
-  <span class="mw-editsection-divider">
-   |
-  </span>
   <a href="/index.php?title=Gyrocopter&amp;action=edit&amp;section=6" title="Edit section: Audio">
-   edit source
+   edit
   </a>
   <span class="mw-editsection-bracket">
    ]
@@ -2982,14 +3124,8 @@ document.head.appendChild(script);
   <span class="mw-editsection-bracket">
    [
   </span>
-  <a class="mw-editsection-visualeditor" href="/index.php?title=Gyrocopter&amp;veaction=edit&amp;vesection=7" title="Edit section: History">
-   edit
-  </a>
-  <span class="mw-editsection-divider">
-   |
-  </span>
   <a href="/index.php?title=Gyrocopter&amp;action=edit&amp;section=7" title="Edit section: History">
-   edit source
+   edit
   </a>
   <span class="mw-editsection-bracket">
    ]
@@ -3033,14 +3169,8 @@ document.head.appendChild(script);
   <span class="mw-editsection-bracket">
    [
   </span>
-  <a class="mw-editsection-visualeditor" href="/index.php?title=Gyrocopter&amp;veaction=edit&amp;vesection=8" title="Edit section: Equipment">
-   edit
-  </a>
-  <span class="mw-editsection-divider">
-   |
-  </span>
   <a href="/index.php?title=Gyrocopter&amp;action=edit&amp;section=8" title="Edit section: Equipment">
-   edit source
+   edit
   </a>
   <span class="mw-editsection-bracket">
    ]
@@ -3081,13 +3211,12 @@ document.head.appendChild(script);
       <span class="" style="font-size:110%;">
        <span style="white-space:nowrap">
         <a href="/Gyrocopter" title="Gyrocopter">
-         <img alt="Gyrocopter icon.png" height="32" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/4/4f/Gyrocopter_icon.png?version=b98400aee235f4887c8d59af40a58559" width="32"/>
+         <img alt="Gyrocopter minimap icon.png" height="32" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/f/f8/Gyrocopter_minimap_icon.png?version=bf7926eb895a2059be237fa9612655ed" width="32"/>
         </a>
         <strong class="selflink">
          Gyrocopter
         </strong>
        </span>
-       ​
        <a href="/Equipment" title="Equipment">
         Equipment
        </a>
@@ -3112,7 +3241,7 @@ document.head.appendChild(script);
        <div class="cosmetic-label" style="width:200px;">
         <div style="box-shadow:0px 0px 2px 4px #8847ff;">
          <a href="/Airborne_Assault_Craft" title="Airborne Assault Craft">
-          <img alt="Airborne Assault Craft" height="133" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/1/1b/Cosmetic_icon_Airborne_Assault_Craft.png/200px-Cosmetic_icon_Airborne_Assault_Craft.png?version=1971deb1ae9518454684b11399228fc4" width="200"/>
+          <img alt="Airborne Assault Craft" height="133" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/1/1b/Cosmetic_icon_Airborne_Assault_Craft.png/200px-Cosmetic_icon_Airborne_Assault_Craft.png?version=1971deb1ae9518454684b11399228fc4" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/1/1b/Cosmetic_icon_Airborne_Assault_Craft.png?version=1971deb1ae9518454684b11399228fc4 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/1/1b/Cosmetic_icon_Airborne_Assault_Craft.png?version=1971deb1ae9518454684b11399228fc4 2x" width="200"/>
          </a>
         </div>
         <a href="/Airborne_Assault_Craft" title="Airborne Assault Craft">
@@ -3122,7 +3251,7 @@ document.head.appendChild(script);
        <div class="cosmetic-label" style="width:200px;">
         <div style="box-shadow:0px 0px 2px 4px #4b69ff;">
          <a href="/Armaments_of_the_Dragon_Emperor_Set" title="Armaments of the Dragon Emperor Set">
-          <img alt="Armaments of the Dragon Emperor Set" height="133" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/f/f6/Cosmetic_icon_Armaments_of_the_Dragon_Emperor_Set.png/200px-Cosmetic_icon_Armaments_of_the_Dragon_Emperor_Set.png?version=05e87166dc573fee8d83f254c7e5b527" width="200"/>
+          <img alt="Armaments of the Dragon Emperor Set" height="133" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/f/f6/Cosmetic_icon_Armaments_of_the_Dragon_Emperor_Set.png/200px-Cosmetic_icon_Armaments_of_the_Dragon_Emperor_Set.png?version=05e87166dc573fee8d83f254c7e5b527" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/f/f6/Cosmetic_icon_Armaments_of_the_Dragon_Emperor_Set.png/300px-Cosmetic_icon_Armaments_of_the_Dragon_Emperor_Set.png?version=05e87166dc573fee8d83f254c7e5b527 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/f/f6/Cosmetic_icon_Armaments_of_the_Dragon_Emperor_Set.png/400px-Cosmetic_icon_Armaments_of_the_Dragon_Emperor_Set.png?version=05e87166dc573fee8d83f254c7e5b527 2x" width="200"/>
          </a>
         </div>
         <a href="/Armaments_of_the_Dragon_Emperor_Set" title="Armaments of the Dragon Emperor Set">
@@ -3132,7 +3261,7 @@ document.head.appendChild(script);
        <div class="cosmetic-label" style="width:200px;">
         <div style="box-shadow:0px 0px 2px 4px #5e98d9;">
          <a href="/Dwarf_Gyrocopter" title="Dwarf Gyrocopter">
-          <img alt="Dwarf Gyrocopter" height="133" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/d/dc/Cosmetic_icon_Dwarf_Gyrocopter.png/200px-Cosmetic_icon_Dwarf_Gyrocopter.png?version=33850ccb5ca44b24789ced77d0d60d9f" width="200"/>
+          <img alt="Dwarf Gyrocopter" height="133" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/d/dc/Cosmetic_icon_Dwarf_Gyrocopter.png/200px-Cosmetic_icon_Dwarf_Gyrocopter.png?version=33850ccb5ca44b24789ced77d0d60d9f" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/d/dc/Cosmetic_icon_Dwarf_Gyrocopter.png/300px-Cosmetic_icon_Dwarf_Gyrocopter.png?version=33850ccb5ca44b24789ced77d0d60d9f 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/d/dc/Cosmetic_icon_Dwarf_Gyrocopter.png/400px-Cosmetic_icon_Dwarf_Gyrocopter.png?version=33850ccb5ca44b24789ced77d0d60d9f 2x" width="200"/>
          </a>
         </div>
         <a href="/Dwarf_Gyrocopter" title="Dwarf Gyrocopter">
@@ -3140,9 +3269,19 @@ document.head.appendChild(script);
         </a>
        </div>
        <div class="cosmetic-label" style="width:200px;">
+        <div style="box-shadow:0px 0px 2px 4px #8847ff;">
+         <a href="/Gunboat_Hegemon" title="Gunboat Hegemon">
+          <img alt="Gunboat Hegemon" height="133" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/0/01/Cosmetic_icon_Gunboat_Hegemon.png/200px-Cosmetic_icon_Gunboat_Hegemon.png?version=5048bb449b2048104a5deebed7c7f657" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/0/01/Cosmetic_icon_Gunboat_Hegemon.png/300px-Cosmetic_icon_Gunboat_Hegemon.png?version=5048bb449b2048104a5deebed7c7f657 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/0/01/Cosmetic_icon_Gunboat_Hegemon.png/400px-Cosmetic_icon_Gunboat_Hegemon.png?version=5048bb449b2048104a5deebed7c7f657 2x" width="200"/>
+         </a>
+        </div>
+        <a href="/Gunboat_Hegemon" title="Gunboat Hegemon">
+         Gunboat Hegemon
+        </a>
+       </div>
+       <div class="cosmetic-label" style="width:200px;">
         <div style="box-shadow:0px 0px 2px 4px #4b69ff;">
          <a href="/Iron_Dwarf_Gyrocopter" title="Iron Dwarf Gyrocopter">
-          <img alt="Iron Dwarf Gyrocopter" height="133" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/3/3c/Cosmetic_icon_Iron_Dwarf_Gyrocopter.png/200px-Cosmetic_icon_Iron_Dwarf_Gyrocopter.png?version=f6a56fa192fea2619e08878a5c57cd9f" width="200"/>
+          <img alt="Iron Dwarf Gyrocopter" height="133" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/3/3c/Cosmetic_icon_Iron_Dwarf_Gyrocopter.png/200px-Cosmetic_icon_Iron_Dwarf_Gyrocopter.png?version=f6a56fa192fea2619e08878a5c57cd9f" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/3/3c/Cosmetic_icon_Iron_Dwarf_Gyrocopter.png/300px-Cosmetic_icon_Iron_Dwarf_Gyrocopter.png?version=f6a56fa192fea2619e08878a5c57cd9f 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/3/3c/Cosmetic_icon_Iron_Dwarf_Gyrocopter.png/400px-Cosmetic_icon_Iron_Dwarf_Gyrocopter.png?version=f6a56fa192fea2619e08878a5c57cd9f 2x" width="200"/>
          </a>
         </div>
         <a href="/Iron_Dwarf_Gyrocopter" title="Iron Dwarf Gyrocopter">
@@ -3151,8 +3290,18 @@ document.head.appendChild(script);
        </div>
        <div class="cosmetic-label" style="width:200px;">
         <div style="box-shadow:0px 0px 2px 4px #8847ff;">
+         <a href="/Mechalodon_Interdictor" title="Mechalodon Interdictor">
+          <img alt="Mechalodon Interdictor" height="133" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/3/37/Cosmetic_icon_Mechalodon_Interdictor.png/200px-Cosmetic_icon_Mechalodon_Interdictor.png?version=46f8dabbd572f0d4dec004486e9114b8" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/3/37/Cosmetic_icon_Mechalodon_Interdictor.png/300px-Cosmetic_icon_Mechalodon_Interdictor.png?version=46f8dabbd572f0d4dec004486e9114b8 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/3/37/Cosmetic_icon_Mechalodon_Interdictor.png/400px-Cosmetic_icon_Mechalodon_Interdictor.png?version=46f8dabbd572f0d4dec004486e9114b8 2x" width="200"/>
+         </a>
+        </div>
+        <a href="/Mechalodon_Interdictor" title="Mechalodon Interdictor">
+         Mechalodon Interdictor
+        </a>
+       </div>
+       <div class="cosmetic-label" style="width:200px;">
+        <div style="box-shadow:0px 0px 2px 4px #8847ff;">
          <a href="/Rainmaker_MK.VII" title="Rainmaker MK.VII">
-          <img alt="Rainmaker MK.VII" height="133" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/73/Cosmetic_icon_Rainmaker_MK.VII.png/200px-Cosmetic_icon_Rainmaker_MK.VII.png?version=fb247adc85597a068065938758f6eb91" width="200"/>
+          <img alt="Rainmaker MK.VII" height="133" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/73/Cosmetic_icon_Rainmaker_MK.VII.png/200px-Cosmetic_icon_Rainmaker_MK.VII.png?version=fb247adc85597a068065938758f6eb91" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/73/Cosmetic_icon_Rainmaker_MK.VII.png/300px-Cosmetic_icon_Rainmaker_MK.VII.png?version=fb247adc85597a068065938758f6eb91 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/73/Cosmetic_icon_Rainmaker_MK.VII.png/400px-Cosmetic_icon_Rainmaker_MK.VII.png?version=fb247adc85597a068065938758f6eb91 2x" width="200"/>
          </a>
         </div>
         <a href="/Rainmaker_MK.VII" title="Rainmaker MK.VII">
@@ -3162,7 +3311,7 @@ document.head.appendChild(script);
        <div class="cosmetic-label" style="width:200px;">
         <div style="box-shadow:0px 0px 2px 4px #4b69ff;">
          <a href="/Sky-High_Warship" title="Sky-High Warship">
-          <img alt="Sky-High Warship" height="133" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/1/1b/Cosmetic_icon_Sky-High_Warship.png/200px-Cosmetic_icon_Sky-High_Warship.png?version=60da8dae1cca854fa39c720b6160dfaf" width="200"/>
+          <img alt="Sky-High Warship" height="133" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/1/1b/Cosmetic_icon_Sky-High_Warship.png/200px-Cosmetic_icon_Sky-High_Warship.png?version=60da8dae1cca854fa39c720b6160dfaf" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/1/1b/Cosmetic_icon_Sky-High_Warship.png/300px-Cosmetic_icon_Sky-High_Warship.png?version=60da8dae1cca854fa39c720b6160dfaf 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/1/1b/Cosmetic_icon_Sky-High_Warship.png/400px-Cosmetic_icon_Sky-High_Warship.png?version=60da8dae1cca854fa39c720b6160dfaf 2x" width="200"/>
          </a>
         </div>
         <a href="/Sky-High_Warship" title="Sky-High Warship">
@@ -3172,7 +3321,7 @@ document.head.appendChild(script);
        <div class="cosmetic-label" style="width:200px;">
         <div style="box-shadow:0px 0px 2px 4px #8847ff;">
          <a href="/Swooping_Elder" title="Swooping Elder">
-          <img alt="Swooping Elder" height="133" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/6/60/Cosmetic_icon_Swooping_Elder.png/200px-Cosmetic_icon_Swooping_Elder.png?version=b4782796f8cb073a4659f7eca652a2bf" width="200"/>
+          <img alt="Swooping Elder" height="133" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/6/60/Cosmetic_icon_Swooping_Elder.png/200px-Cosmetic_icon_Swooping_Elder.png?version=b4782796f8cb073a4659f7eca652a2bf" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/6/60/Cosmetic_icon_Swooping_Elder.png/300px-Cosmetic_icon_Swooping_Elder.png?version=b4782796f8cb073a4659f7eca652a2bf 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/6/60/Cosmetic_icon_Swooping_Elder.png/400px-Cosmetic_icon_Swooping_Elder.png?version=b4782796f8cb073a4659f7eca652a2bf 2x" width="200"/>
          </a>
         </div>
         <a href="/Swooping_Elder" title="Swooping Elder">
@@ -3195,7 +3344,7 @@ document.head.appendChild(script);
        <div class="cosmetic-label" style="width:110px;">
         <div style="box-shadow:0px 0px 2px 4px #b28a33;">
          <a href="/Atomic_Ray_Thrusters" title="Atomic Ray Thrusters">
-          <img alt="Atomic Ray Thrusters" height="73" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/0/01/Cosmetic_icon_Atomic_Ray_Thrusters.png/110px-Cosmetic_icon_Atomic_Ray_Thrusters.png?version=bf6a75b9ec6a92e526a8f6df3ed897cb" width="110"/>
+          <img alt="Atomic Ray Thrusters" height="73" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/0/01/Cosmetic_icon_Atomic_Ray_Thrusters.png/110px-Cosmetic_icon_Atomic_Ray_Thrusters.png?version=bf6a75b9ec6a92e526a8f6df3ed897cb" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/0/01/Cosmetic_icon_Atomic_Ray_Thrusters.png/165px-Cosmetic_icon_Atomic_Ray_Thrusters.png?version=bf6a75b9ec6a92e526a8f6df3ed897cb 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/0/01/Cosmetic_icon_Atomic_Ray_Thrusters.png/220px-Cosmetic_icon_Atomic_Ray_Thrusters.png?version=bf6a75b9ec6a92e526a8f6df3ed897cb 2x" width="110"/>
          </a>
         </div>
         <a href="/Atomic_Ray_Thrusters" title="Atomic Ray Thrusters">
@@ -3205,7 +3354,7 @@ document.head.appendChild(script);
        <div class="cosmetic-label" style="width:110px;">
         <div style="box-shadow:0px 0px 2px 4px #b28a33;">
          <a href="/Golden_Atomic_Ray_Thrusters" title="Golden Atomic Ray Thrusters">
-          <img alt="Golden Atomic Ray Thrusters" height="73" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/f/fe/Cosmetic_icon_Golden_Atomic_Ray_Thrusters.png/110px-Cosmetic_icon_Golden_Atomic_Ray_Thrusters.png?version=9fc0121d89c9c8de9076865dc7c6ba8d" width="110"/>
+          <img alt="Golden Atomic Ray Thrusters" height="73" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/f/fe/Cosmetic_icon_Golden_Atomic_Ray_Thrusters.png/110px-Cosmetic_icon_Golden_Atomic_Ray_Thrusters.png?version=9fc0121d89c9c8de9076865dc7c6ba8d" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/f/fe/Cosmetic_icon_Golden_Atomic_Ray_Thrusters.png/165px-Cosmetic_icon_Golden_Atomic_Ray_Thrusters.png?version=9fc0121d89c9c8de9076865dc7c6ba8d 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/f/fe/Cosmetic_icon_Golden_Atomic_Ray_Thrusters.png/220px-Cosmetic_icon_Golden_Atomic_Ray_Thrusters.png?version=9fc0121d89c9c8de9076865dc7c6ba8d 2x" width="110"/>
          </a>
         </div>
         <a href="/Golden_Atomic_Ray_Thrusters" title="Golden Atomic Ray Thrusters">
@@ -3223,12 +3372,12 @@ document.head.appendChild(script);
      <td class="navbox-group" style=";text-align: center;">
       Taunt
      </td>
-     <td class="navbox-list navbox-odd" style="text-align:left;border-left-width:2px;border-left-style:solid;width:100%;padding:0px;;;">
+     <td class="navbox-list navbox-even" style="text-align:left;border-left-width:2px;border-left-style:solid;width:100%;padding:0px;;;">
       <div style="padding:0em 0.25em">
        <div class="cosmetic-label" style="width:110px;">
         <div style="box-shadow:0px 0px 2px 4px #4b69ff;">
          <a href="/Taunt:_Do_a_Barrel_Roll!" title="Taunt: Do a Barrel Roll!">
-          <img alt="Taunt: Do a Barrel Roll!" height="73" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/e/e7/Cosmetic_icon_Taunt_Do_a_Barrel_Roll%21.png/110px-Cosmetic_icon_Taunt_Do_a_Barrel_Roll%21.png?version=84c9162829eb36a00a22747f4946eec9" width="110"/>
+          <img alt="Taunt: Do a Barrel Roll!" height="73" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/e/e7/Cosmetic_icon_Taunt_Do_a_Barrel_Roll%21.png/110px-Cosmetic_icon_Taunt_Do_a_Barrel_Roll%21.png?version=84c9162829eb36a00a22747f4946eec9" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/e/e7/Cosmetic_icon_Taunt_Do_a_Barrel_Roll%21.png/165px-Cosmetic_icon_Taunt_Do_a_Barrel_Roll%21.png?version=84c9162829eb36a00a22747f4946eec9 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/e/e7/Cosmetic_icon_Taunt_Do_a_Barrel_Roll%21.png/220px-Cosmetic_icon_Taunt_Do_a_Barrel_Roll%21.png?version=84c9162829eb36a00a22747f4946eec9 2x" width="110"/>
          </a>
         </div>
         <a href="/Taunt:_Do_a_Barrel_Roll!" title="Taunt: Do a Barrel Roll!">
@@ -3250,14 +3399,8 @@ document.head.appendChild(script);
   <span class="mw-editsection-bracket">
    [
   </span>
-  <a class="mw-editsection-visualeditor" href="/index.php?title=Gyrocopter&amp;veaction=edit&amp;vesection=9" title="Edit section: Trivia">
-   edit
-  </a>
-  <span class="mw-editsection-divider">
-   |
-  </span>
   <a href="/index.php?title=Gyrocopter&amp;action=edit&amp;section=9" title="Edit section: Trivia">
-   edit source
+   edit
   </a>
   <span class="mw-editsection-bracket">
    ]
@@ -3275,13 +3418,12 @@ document.head.appendChild(script);
   Gyrocopter's response upon meeting
   <span style="white-space:nowrap">
    <a href="/Viper" title="Viper">
-    <img alt="Viper icon.png" height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/5/5f/Viper_icon.png/20px-Viper_icon.png?version=be3d6f60271c026279a6337af2471e8b" width="20"/>
+    <img alt="Viper minimap icon.png" height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/c/cb/Viper_minimap_icon.png/20px-Viper_minimap_icon.png?version=9d48be351908bd2cef074ea5fa4059f6" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/c/cb/Viper_minimap_icon.png/30px-Viper_minimap_icon.png?version=9d48be351908bd2cef074ea5fa4059f6 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/c/cb/Viper_minimap_icon.png?version=9d48be351908bd2cef074ea5fa4059f6 2x" width="20"/>
    </a>
    <a href="/Viper" title="Viper">
     Viper
    </a>
   </span>
-  ​
   <a class="sm2_button" href="https://hydra-media.cursecdn.com/dota2.gamepedia.com/5/59/Gyro_ally_01.mp3" title="Play">
    Play
   </a>
@@ -3320,14 +3462,8 @@ document.head.appendChild(script);
   <span class="mw-editsection-bracket">
    [
   </span>
-  <a class="mw-editsection-visualeditor" href="/index.php?title=Gyrocopter&amp;veaction=edit&amp;vesection=10" title="Edit section: Gallery">
-   edit
-  </a>
-  <span class="mw-editsection-divider">
-   |
-  </span>
   <a href="/index.php?title=Gyrocopter&amp;action=edit&amp;section=10" title="Edit section: Gallery">
-   edit source
+   edit
   </a>
   <span class="mw-editsection-bracket">
    ]
@@ -3340,7 +3476,7 @@ document.head.appendChild(script);
    <div class="thumb" style="width: 150px;">
     <div style="margin:53px auto;">
      <a class="image" href="/File:Oldmod-gyro.png">
-      <img alt="" height="44" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/a/a0/Oldmod-gyro.png/120px-Oldmod-gyro.png?version=4304d4edb88083afb7f8383e9cae96ac" width="120"/>
+      <img alt="" height="44" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/a/a0/Oldmod-gyro.png/120px-Oldmod-gyro.png?version=4304d4edb88083afb7f8383e9cae96ac" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/a/a0/Oldmod-gyro.png/180px-Oldmod-gyro.png?version=4304d4edb88083afb7f8383e9cae96ac 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/a/a0/Oldmod-gyro.png/240px-Oldmod-gyro.png?version=4304d4edb88083afb7f8383e9cae96ac 2x" width="120"/>
      </a>
     </div>
    </div>
@@ -3359,7 +3495,7 @@ document.head.appendChild(script);
    <div class="thumb" style="width: 150px;">
     <div style="margin:37.5px auto;">
      <a class="image" href="/File:Gyro_wallpaper.jpg">
-      <img alt="" height="75" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/4/45/Gyro_wallpaper.jpg/120px-Gyro_wallpaper.jpg?version=9d05950d8462e4f3cda59b3e1a6b81ce" width="120"/>
+      <img alt="" height="75" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/4/45/Gyro_wallpaper.jpg/120px-Gyro_wallpaper.jpg?version=9d05950d8462e4f3cda59b3e1a6b81ce" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/4/45/Gyro_wallpaper.jpg/180px-Gyro_wallpaper.jpg?version=9d05950d8462e4f3cda59b3e1a6b81ce 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/4/45/Gyro_wallpaper.jpg/240px-Gyro_wallpaper.jpg?version=9d05950d8462e4f3cda59b3e1a6b81ce 2x" width="120"/>
      </a>
     </div>
    </div>
@@ -3375,7 +3511,7 @@ document.head.appendChild(script);
    <div class="thumb" style="width: 150px;">
     <div style="margin:40px auto;">
      <a class="image" href="/File:Gyrocopter_Concept_Art1.jpg">
-      <img alt="" height="70" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/d/da/Gyrocopter_Concept_Art1.jpg/120px-Gyrocopter_Concept_Art1.jpg.png?version=fa160aec223b6be31568ec86771456c4" width="120"/>
+      <img alt="" height="70" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/d/da/Gyrocopter_Concept_Art1.jpg/120px-Gyrocopter_Concept_Art1.jpg.png?version=fa160aec223b6be31568ec86771456c4" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/d/da/Gyrocopter_Concept_Art1.jpg/180px-Gyrocopter_Concept_Art1.jpg.png?version=fa160aec223b6be31568ec86771456c4 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/d/da/Gyrocopter_Concept_Art1.jpg/240px-Gyrocopter_Concept_Art1.jpg.png?version=fa160aec223b6be31568ec86771456c4 2x" width="120"/>
      </a>
     </div>
    </div>
@@ -3391,7 +3527,7 @@ document.head.appendChild(script);
    <div class="thumb" style="width: 150px;">
     <div style="margin:15px auto;">
      <a class="image" href="/File:Gyrocopter_Concept_Art2.jpg">
-      <img alt="" height="120" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/c/ce/Gyrocopter_Concept_Art2.jpg/96px-Gyrocopter_Concept_Art2.jpg?version=8c87d246135eb741bb8942b21f6f23dd" width="96"/>
+      <img alt="" height="120" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/c/ce/Gyrocopter_Concept_Art2.jpg/96px-Gyrocopter_Concept_Art2.jpg?version=8c87d246135eb741bb8942b21f6f23dd" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/c/ce/Gyrocopter_Concept_Art2.jpg/145px-Gyrocopter_Concept_Art2.jpg?version=8c87d246135eb741bb8942b21f6f23dd 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/c/ce/Gyrocopter_Concept_Art2.jpg/193px-Gyrocopter_Concept_Art2.jpg?version=8c87d246135eb741bb8942b21f6f23dd 2x" width="96"/>
      </a>
     </div>
    </div>
@@ -3407,7 +3543,7 @@ document.head.appendChild(script);
    <div class="thumb" style="width: 150px;">
     <div style="margin:45px auto;">
      <a class="image" href="/File:Gyrocopter_ability_icon_progress.png">
-      <img alt="" height="60" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/4/42/Gyrocopter_ability_icon_progress.png/120px-Gyrocopter_ability_icon_progress.png?version=2c6197de3f4105262481edb81495e76f" width="120"/>
+      <img alt="" height="60" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/4/42/Gyrocopter_ability_icon_progress.png/120px-Gyrocopter_ability_icon_progress.png?version=2c6197de3f4105262481edb81495e76f" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/4/42/Gyrocopter_ability_icon_progress.png/180px-Gyrocopter_ability_icon_progress.png?version=2c6197de3f4105262481edb81495e76f 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/4/42/Gyrocopter_ability_icon_progress.png/240px-Gyrocopter_ability_icon_progress.png?version=2c6197de3f4105262481edb81495e76f 2x" width="120"/>
      </a>
     </div>
    </div>
@@ -3423,7 +3559,7 @@ document.head.appendChild(script);
    <div class="thumb" style="width: 150px;">
     <div style="margin:15px auto;">
      <a class="image" href="/File:Gyrocopter_hero_icon_progress.png">
-      <img alt="" height="120" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/77/Gyrocopter_hero_icon_progress.png/71px-Gyrocopter_hero_icon_progress.png?version=9c0ff3c51d8d9121b67faa2fb6364805" width="71"/>
+      <img alt="" height="120" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/77/Gyrocopter_hero_icon_progress.png/71px-Gyrocopter_hero_icon_progress.png?version=9c0ff3c51d8d9121b67faa2fb6364805" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/77/Gyrocopter_hero_icon_progress.png/106px-Gyrocopter_hero_icon_progress.png?version=9c0ff3c51d8d9121b67faa2fb6364805 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/77/Gyrocopter_hero_icon_progress.png/141px-Gyrocopter_hero_icon_progress.png?version=9c0ff3c51d8d9121b67faa2fb6364805 2x" width="71"/>
      </a>
     </div>
    </div>
@@ -3443,14 +3579,8 @@ document.head.appendChild(script);
   <span class="mw-editsection-bracket">
    [
   </span>
-  <a class="mw-editsection-visualeditor" href="/index.php?title=Gyrocopter&amp;veaction=edit&amp;vesection=11" title="Edit section: References">
-   edit
-  </a>
-  <span class="mw-editsection-divider">
-   |
-  </span>
   <a href="/index.php?title=Gyrocopter&amp;action=edit&amp;section=11" title="Edit section: References">
-   edit source
+   edit
   </a>
   <span class="mw-editsection-bracket">
    ]
@@ -3465,51 +3595,50 @@ document.head.appendChild(script);
    </a>
   </span>
   <span class="reference-text">
-   <a class="external autonumber" href="https://www.youtube.com/watch?v=jk0gBZtTYUA" rel="nofollow noreferrer noopener" target="_blank">
-    [1]
+   <a class="external text" href="https://www.youtube.com/watch?v=jk0gBZtTYUA" rel="nofollow noreferrer noopener" target="_blank">
+    <i>
+     Top Gun
+    </i>
+    scene Gyrocopter is referring to.
    </a>
-   ,
-   <i>
-    Top Gun
-   </i>
-   scene Gyrocopter is referring to.
   </span>
  </li>
 </ol>
 <!-- 
 NewPP limit report
-Cached time: 20170207214728
+Cached time: 20170608212440
 Cache expiry: 86400
 Dynamic content: false
-[SMW] In‐text annotation parser time: 0.001 seconds
-CPU time usage: 2.804 seconds
-Real time usage: 4.160 seconds
-Preprocessor visited node count: 14552/1000000
-Preprocessor generated node count: 59323/1000000
-Post‐expand include size: 142443/2097152 bytes
-Template argument size: 50172/2097152 bytes
-Highest expansion depth: 18/40
-Expensive parser function count: 0/99
+[SMW] In‐text annotation parser time: 0.002 seconds
+CPU time usage: 1.664 seconds
+Real time usage: 2.881 seconds
+Preprocessor visited node count: 9459/1000000
+Preprocessor generated node count: 53511/1000000
+Post‐expand include size: 141754/2097152 bytes
+Template argument size: 51044/2097152 bytes
+Highest expansion depth: 13/40
+Expensive parser function count: 1/99
+ExtLoops count: 50/1000
 -->
 <!-- 
 Transclusion expansion time report (%,ms,calls,template)
-100.00% 3323.015      1 - -total
- 30.68% 1019.484      4 - Template:Ability
- 25.09%  833.871     29 - Template:I
- 15.97%  530.632      1 - Template:Equipment_Gyrocopter
- 15.87%  527.341      1 - Template:Equipment
- 15.59%  517.977      1 - Template:Navbox
- 12.81%  425.691     29 - Template:Item_link
- 10.72%  356.206      1 - Template:Unit_infobox_wrapper
- 10.60%  352.173      1 - Template:Unit_infobox
- 10.48%  348.123      1 - Template:Hero_infobox
+100.00% 2166.535      1 - -total
+ 32.79%  710.351      5 - Template:Ability
+ 21.22%  459.788      1 - Template:Equipment_Gyrocopter
+ 21.10%  457.246      1 - Template:Equipment
+ 20.93%  453.521      1 - Template:Navbox
+ 15.24%  330.229     32 - Template:I
+ 12.21%  264.624      1 - Template:Unit_infobox_wrapper
+ 12.07%  261.584      1 - Template:Unit_infobox
+ 11.72%  253.976     12 - Template:Cosmetic
+ 11.45%  248.047      1 - Template:Hero_infobox
 -->
-<!-- Saved in parser cache with key dota2_gamepedia:pcache:idhash:1487-0!*!0!default!!en!5!* and timestamp 20170207214723 and revision id 1445266
+<!-- Saved in parser cache with key dota2_gamepedia:pcache:idhash:1487-0!*!0!default!!en!5!* and timestamp 20170608212437 and revision id 1529924
  -->
 <div class="printfooter">
  Retrieved from "
- <a dir="ltr" href="http://dota2.gamepedia.com/index.php?title=Gyrocopter&amp;oldid=1445266">
-  http://dota2.gamepedia.com/index.php?title=Gyrocopter&amp;oldid=1445266
+ <a dir="ltr" href="https://dota2.gamepedia.com/index.php?title=Gyrocopter&amp;oldid=1529924">
+  https://dota2.gamepedia.com/index.php?title=Gyrocopter&amp;oldid=1529924
  </a>
  "
 </div>
@@ -3568,7 +3697,7 @@ Transclusion expansion time report (%,ms,calls,template)
     (function() {
         var zergnet = document.createElement('script');
         zergnet.type = 'text/javascript'; zergnet.async = true;
-        zergnet.src = 'http://www.zergnet.com/zerg.js?id=42966';
+        zergnet.src = '//www.zergnet.com/zerg.js?id=42966';
         var znscr = document.getElementsByTagName('script')[0];
         znscr.parentNode.insertBefore(zergnet, znscr);
     })();
@@ -3658,19 +3787,19 @@ Transclusion expansion time report (%,ms,calls,template)
     </h3>
     <div class="menu">
      <div id="socialIconImages">
-      <a href="https://twitter.com/intent/tweet?text=Check+out+Gyrocopter+on+Dota+2+Wiki+--&amp;via=CurseGamepedia&amp;url=http%3A%2F%2Fdota2.gamepedia.com%2FGyrocopter" target="_blank">
+      <a href="https://twitter.com/intent/tweet?text=Check+out+Gyrocopter+on+Dota+2+Wiki+--&amp;via=CurseGamepedia&amp;url=https%3A%2F%2Fdota2.gamepedia.com%2FGyrocopter" target="_blank">
        <img src="/extensions/Social/images/square_icons/twitter.png"/>
       </a>
-      <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fdota2.gamepedia.com%2FGyrocopter" target="_blank">
+      <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdota2.gamepedia.com%2FGyrocopter" target="_blank">
        <img src="/extensions/Social/images/square_icons/facebook.png"/>
       </a>
-      <a href="https://plus.google.com/share?url=http%3A%2F%2Fdota2.gamepedia.com%2FGyrocopter" target="_blank">
+      <a href="https://plus.google.com/share?url=https%3A%2F%2Fdota2.gamepedia.com%2FGyrocopter" target="_blank">
        <img src="/extensions/Social/images/square_icons/googleplus.png"/>
       </a>
-      <a href="http://www.reddit.com/submit?url=http%3A%2F%2Fdota2.gamepedia.com%2FGyrocopter&amp;title=Check+out+Gyrocopter+on+Dota+2+Wiki+via+%40CurseGamepedia%3A+http%3A%2F%2Fdota2.gamepedia.com%2FGyrocopter" target="_blank">
+      <a href="http://www.reddit.com/submit?url=https%3A%2F%2Fdota2.gamepedia.com%2FGyrocopter&amp;title=Check+out+Gyrocopter+on+Dota+2+Wiki+via+%40CurseGamepedia%3A+https%3A%2F%2Fdota2.gamepedia.com%2FGyrocopter" target="_blank">
        <img src="/extensions/Social/images/square_icons/reddit.png"/>
       </a>
-      <a href="http://www.tumblr.com/share/link?url=http%3A%2F%2Fdota2.gamepedia.com%2FGyrocopter&amp;name=Dota+2+Wiki&amp;description=Check+out+Gyrocopter+on+Dota+2+Wiki+via+%3Ca+href%3D%22https%3A%2F%2Ftwitter.com%2FCurseGamepedia%22+target%3D%22_blank%22%3E%40CurseGamepedia%3C%2Fa%3E%3A+http%3A%2F%2Fdota2.gamepedia.com%2FGyrocopter" target="_blank">
+      <a href="http://www.tumblr.com/share/link?url=https%3A%2F%2Fdota2.gamepedia.com%2FGyrocopter&amp;name=Dota+2+Wiki&amp;description=Check+out+Gyrocopter+on+Dota+2+Wiki+via+%3Ca+href%3D%22https%3A%2F%2Ftwitter.com%2FCurseGamepedia%22+target%3D%22_blank%22%3E%40CurseGamepedia%3C%2Fa%3E%3A+https%3A%2F%2Fdota2.gamepedia.com%2FGyrocopter" target="_blank">
        <img src="/extensions/Social/images/square_icons/tumblr.png"/>
       </a>
      </div>
@@ -3690,17 +3819,10 @@ Transclusion expansion time report (%,ms,calls,template)
        </a>
       </span>
      </li>
-     <li id="ca-ve-edit">
-      <span>
-       <a accesskey="v" href="/index.php?title=Gyrocopter&amp;veaction=edit" title="Edit this page [v]">
-        Edit
-       </a>
-      </span>
-     </li>
-     <li class=" collapsible" id="ca-edit">
+     <li id="ca-edit">
       <span>
        <a accesskey="e" href="/index.php?title=Gyrocopter&amp;action=edit" title="Edit this page [e]">
-        Edit source
+        Edit
        </a>
       </span>
      </li>
@@ -3898,7 +4020,7 @@ Transclusion expansion time report (%,ms,calls,template)
       </a>
      </li>
      <li id="t-permalink">
-      <a href="/index.php?title=Gyrocopter&amp;oldid=1445266" title="Permanent link to this revision of the page">
+      <a href="/index.php?title=Gyrocopter&amp;oldid=1529924" title="Permanent link to this revision of the page">
        Permanent link
       </a>
      </li>
@@ -4062,12 +4184,41 @@ Transclusion expansion time report (%,ms,calls,template)
     </div>
    </div>
   </div>
+  <div aria-labelledby="p-lang-label" class="portal" id="p-lang" role="navigation">
+   <h3 id="p-lang-label">
+    In other languages
+   </h3>
+   <div class="body">
+    <ul>
+     <li class="interlanguage-link interwiki-de">
+      <a href="http://dota2-de.gamepedia.com/Gyrocopter" hreflang="de" lang="de" title="Gyrocopter – Deutsch">
+       Deutsch
+      </a>
+     </li>
+     <li class="interlanguage-link interwiki-pt">
+      <a href="http://dota2-pt.gamepedia.com/Gyrocopter" hreflang="pt" lang="pt" title="Gyrocopter – português">
+       Português
+      </a>
+     </li>
+     <li class="interlanguage-link interwiki-ru">
+      <a href="http://dota2-ru.gamepedia.com/Gyrocopter" hreflang="ru" lang="ru" title="Gyrocopter – русский">
+       Русский
+      </a>
+     </li>
+     <li class="interlanguage-link interwiki-zh">
+      <a href="http://dota2-zh.gamepedia.com/%E7%9F%AE%E4%BA%BA%E7%9B%B4%E5%8D%87%E6%9C%BA" hreflang="zh" lang="zh" title="矮人直升机 – 中文">
+       中文
+      </a>
+     </li>
+    </ul>
+   </div>
+  </div>
  </div>
 </div>
 <div id="footer" role="contentinfo">
  <ul id="footer-info">
   <li id="footer-info-lastmod">
-   This page was last modified on 22 January 2017, at 09:32.
+   This page was last modified on 29 May 2017, at 14:41.
   </li>
   <li id="footer-info-copyright">
    Content is available under
@@ -4151,8 +4302,8 @@ Transclusion expansion time report (%,ms,calls,template)
     </a>
    </li>
    <li>
-    <a class="advertise" href="https://ghostreconwildlands.gamepedia.com">
-     Ghost Recon
+    <a class="advertise" href="https://masseffectandromeda.gamepedia.com/Mass_Effect:_Andromeda_Wiki">
+     ME:Andromeda
     </a>
    </li>
   </ul>
@@ -4178,8 +4329,8 @@ Transclusion expansion time report (%,ms,calls,template)
     </a>
    </li>
    <li>
-    <a class="about" href="http://www.hearthpwn.com/guides/1480-how-to-get-cheaper-hearthstone-packs-buy-amazon">
-     HS Packs
+    <a class="advertise" href="https://masseffectandromeda.gamepedia.com/Skill">
+     ME:A Skills
     </a>
    </li>
   </ul>
@@ -4205,8 +4356,8 @@ Transclusion expansion time report (%,ms,calls,template)
     </a>
    </li>
    <li>
-    <a class="tos" href="https://forhonor.gamepedia.com">
-     For Honor
+    <a class="advertise" href="https://zelda.gamepedia.com/Main_Page">
+     Zelda Wiki
     </a>
    </li>
   </ul>
@@ -4262,8 +4413,5 @@ _comscore.push({ c1: "2", c2: "6035118" });
 				window.wikiTags = ["action","defense of the ancients","esports","free-to-play","free to play","ftp","game:dota 2","linux","mac","pc","rts","source","steam","valve"];
 </script>
 <script>
- (window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":78});});
-</script>
-<script type="text/javascript">
- window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"75f4858b7a","applicationID":"1909498","transactionName":"YlVXbREHWksEUkVdCVsfYEsKSV1WAVRJGhZdQA==","queueTime":0,"applicationTime":94,"atts":"ThJAG1kdSRRHUBMOHUhN","errorBeacon":"bam.nr-data.net","agent":""}
+ (window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":82});});
 </script>

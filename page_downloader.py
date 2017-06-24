@@ -62,5 +62,5 @@ def download_items(item_urls):
         download_url(item_urls[key.encode('utf-8')], 'htmls/items/' + key + '.html')
 
 
-# download_heroes(get_all_heroes())
+download_heroes(get_all_heroes())
 download_items(get_all_items())

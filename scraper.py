@@ -29,13 +29,15 @@ SPECIAL_SENTENCES = {
     'Blocked by Linken\'s Sphere.': 'BLOCKED_BY_LINKEN',
     'Available at Secret Shop': 'SECRET_SHOP',
     'Available at Side Lane Shop': 'SIDE_SHOP',
-    'Talent': 'TALENT'
+    'Talent': 'TALENT_UPGRADE',
+    'Available at Base Shop': None
 }
 HERO_HTMLS = './htmls/heroes/'
 ITEM_HTMLS = './htmls/items/'
 
 # divs is an array of <ul> tags
 # notes is the array used recursively, also the return value
+# Note: the name of the image is between '$' because that is how our parser works
 def find_notes(divs_old, notes):
     divs = [BS(str(div), 'html.parser') for div in divs_old]  # deep copy fixes problems later on with the BS object
 
@@ -53,22 +55,27 @@ def find_notes(divs_old, notes):
         # if there is a talent or aghs image
         for a in li.findAll('a'):
             if a.get('title') == 'Talent' or a.get('title') == 'Upgradable by Aghanim\'s Scepter.':
-                a.string = '$$' + SPECIAL_SENTENCES[a.get('title')] + '$$'
+                a.string = ' $' + SPECIAL_SENTENCES[a.get('title')] + '$ '
         text = clean(li.text)
-        notes.append(text.split('$$'))  # split by $$ because that's where our dictionary keys are
-        notes.append(ul_notes)
+        notes.append({
+            'note': text,
+            'subnotes': ul_notes
+        })
         return find_notes(divs[1:], notes)
 
     # no subpoints, get the text and return in the notes
     else:
-        texts = []
+        text = ''
         for li in divs[0].findAll('li'):
             # if there is a talent or aghs image
             for a in li.findAll('a'):
                 if a.get('title') == 'Talent' or a.get('title') == 'Upgradable by Aghanim\'s Scepter.':
-                    a.string = '$$' + SPECIAL_SENTENCES[a.get('title')] + '$$'
-            texts.append(clean(li.text).split('$$'))
-        notes += texts
+                    a.string = ' $' + SPECIAL_SENTENCES[a.get('title')] + '$ '
+            text = clean(li.text)
+            notes.append({
+                'note': text,
+                'subnotes': None
+            })
         return find_notes(divs[1:], notes) # recurse with the rest
 
 def clean(str):
@@ -294,7 +301,7 @@ def hero_data(soup, extra=True):
     hero['misc_stats'] = misc_stats
 
     # get bio
-    bio_trs = soup.find('div', class_='biobox').findAll('table')[1].findAll('tr', recursive=False)
+    bio_trs = soup.find('div', class_='biobox').findAll('table')[0].findAll('tr', recursive=False)
     roles = []
     for a in bio_trs[2].findAll('td')[1].findAll('a'):
         if a.get('title') == 'Role':
@@ -490,6 +497,10 @@ def get_heroes():
             print str(i) + '/' + str(num_files)
             with open(HERO_HTMLS + file, 'r') as html:
                 name = os.path.splitext(file)[0]
+                type = os.path.splitext(file)[1]
+                if type != '.html':
+                    i -= 1
+                    continue
                 print name
                 hero_soup = BS(html.read(), 'html.parser')  # soupify the page to parse
                 heroes[name] = hero_data(hero_soup)

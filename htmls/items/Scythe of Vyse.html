@@ -2,9 +2,6 @@
 <html class="client-nojs" dir="ltr" lang="en">
  <head>
   <meta charset="utf-8"/>
-  <script type="text/javascript">
-   (window.NREUM||(NREUM={})).loader_config={xpid:"UAcAUlNACQoAXVVbDw=="};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var o=e[n]={exports:{}};t[n][0].call(o.exports,function(e){var o=t[n][1][e];return r(o||e)},o,o.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({1:[function(t,e,n){function r(t){try{c.console&&console.log(t)}catch(e){}}var o,i=t("ee"),a=t(15),c={};try{o=localStorage.getItem("__nr_flags").split(","),console&&"function"==typeof console.log&&(c.console=!0,o.indexOf("dev")!==-1&&(c.dev=!0),o.indexOf("nr_dev")!==-1&&(c.nrDev=!0))}catch(s){}c.nrDev&&i.on("internal-error",function(t){r(t.stack)}),c.dev&&i.on("fn-err",function(t,e,n){r(n.stack)}),c.dev&&(r("NR AGENT IN DEVELOPMENT MODE"),r("flags: "+a(c,function(t,e){return t}).join(", ")))},{}],2:[function(t,e,n){function r(t,e,n,r,o){try{d?d-=1:i("err",[o||new UncaughtException(t,e,n)])}catch(c){try{i("ierr",[c,(new Date).getTime(),!0])}catch(s){}}return"function"==typeof f&&f.apply(this,a(arguments))}function UncaughtException(t,e,n){this.message=t||"Uncaught error with no additional information",this.sourceURL=e,this.line=n}function o(t){i("err",[t,(new Date).getTime()])}var i=t("handle"),a=t(16),c=t("ee"),s=t("loader"),f=window.onerror,u=!1,d=0;s.features.err=!0,t(1),window.onerror=r;try{throw new Error}catch(l){"stack"in l&&(t(8),t(7),"addEventListener"in window&&t(5),s.xhrWrappable&&t(9),u=!0)}c.on("fn-start",function(t,e,n){u&&(d+=1)}),c.on("fn-err",function(t,e,n){u&&(this.thrown=!0,o(n))}),c.on("fn-end",function(){u&&!this.thrown&&d>0&&(d-=1)}),c.on("internal-error",function(t){i("ierr",[t,(new Date).getTime(),!0])})},{}],3:[function(t,e,n){t("loader").features.ins=!0},{}],4:[function(t,e,n){function r(t){}if(window.performance&&window.performance.timing&&window.performance.getEntriesByType){var o=t("ee"),i=t("handle"),a=t(8),c=t(7),s="learResourceTimings",f="addEventListener",u="resourcetimingbufferfull",d="bstResource",l="resource",p="-start",h="-end",m="fn"+p,w="fn"+h,v="bstTimer",y="pushState";t("loader").features.stn=!0,t(6);var g=NREUM.o.EV;o.on(m,function(t,e){var n=t[0];n instanceof g&&(this.bstStart=Date.now())}),o.on(w,function(t,e){var n=t[0];n instanceof g&&i("bst",[n,e,this.bstStart,Date.now()])}),a.on(m,function(t,e,n){this.bstStart=Date.now(),this.bstType=n}),a.on(w,function(t,e){i(v,[e,this.bstStart,Date.now(),this.bstType])}),c.on(m,function(){this.bstStart=Date.now()}),c.on(w,function(t,e){i(v,[e,this.bstStart,Date.now(),"requestAnimationFrame"])}),o.on(y+p,function(t){this.time=Date.now(),this.startPath=location.pathname+location.hash}),o.on(y+h,function(t){i("bstHist",[location.pathname+location.hash,this.startPath,this.time])}),f in window.performance&&(window.performance["c"+s]?window.performance[f](u,function(t){i(d,[window.performance.getEntriesByType(l)]),window.performance["c"+s]()},!1):window.performance[f]("webkit"+u,function(t){i(d,[window.performance.getEntriesByType(l)]),window.performance["webkitC"+s]()},!1)),document[f]("scroll",r,{passive:!0}),document[f]("keypress",r,!1),document[f]("click",r,!1)}},{}],5:[function(t,e,n){function r(t){for(var e=t;e&&!e.hasOwnProperty(u);)e=Object.getPrototypeOf(e);e&&o(e)}function o(t){c.inPlace(t,[u,d],"-",i)}function i(t,e){return t[1]}var a=t("ee").get("events"),c=t(17)(a,!0),s=t("gos"),f=XMLHttpRequest,u="addEventListener",d="removeEventListener";e.exports=a,"getPrototypeOf"in Object?(r(document),r(window),r(f.prototype)):f.prototype.hasOwnProperty(u)&&(o(window),o(f.prototype)),a.on(u+"-start",function(t,e){var n=t[1],r=s(n,"nr@wrapped",function(){function t(){if("function"==typeof n.handleEvent)return n.handleEvent.apply(n,arguments)}var e={object:t,"function":n}[typeof n];return e?c(e,"fn-",null,e.name||"anonymous"):n});this.wrapped=t[1]=r}),a.on(d+"-start",function(t){t[1]=this.wrapped||t[1]})},{}],6:[function(t,e,n){var r=t("ee").get("history"),o=t(17)(r);e.exports=r,o.inPlace(window.history,["pushState","replaceState"],"-")},{}],7:[function(t,e,n){var r=t("ee").get("raf"),o=t(17)(r),i="equestAnimationFrame";e.exports=r,o.inPlace(window,["r"+i,"mozR"+i,"webkitR"+i,"msR"+i],"raf-"),r.on("raf-start",function(t){t[0]=o(t[0],"fn-")})},{}],8:[function(t,e,n){function r(t,e,n){t[0]=a(t[0],"fn-",null,n)}function o(t,e,n){this.method=n,this.timerDuration="number"==typeof t[1]?t[1]:0,t[0]=a(t[0],"fn-",this,n)}var i=t("ee").get("timer"),a=t(17)(i),c="setTimeout",s="setInterval",f="clearTimeout",u="-start",d="-";e.exports=i,a.inPlace(window,[c,"setImmediate"],c+d),a.inPlace(window,[s],s+d),a.inPlace(window,[f,"clearImmediate"],f+d),i.on(s+u,r),i.on(c+u,o)},{}],9:[function(t,e,n){function r(t,e){d.inPlace(e,["onreadystatechange"],"fn-",c)}function o(){var t=this,e=u.context(t);t.readyState>3&&!e.resolved&&(e.resolved=!0,u.emit("xhr-resolved",[],t)),d.inPlace(t,w,"fn-",c)}function i(t){v.push(t),h&&(g=-g,b.data=g)}function a(){for(var t=0;t<v.length;t++)r([],v[t]);v.length&&(v=[])}function c(t,e){return e}function s(t,e){for(var n in t)e[n]=t[n];return e}t(5);var f=t("ee"),u=f.get("xhr"),d=t(17)(u),l=NREUM.o,p=l.XHR,h=l.MO,m="readystatechange",w=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"],v=[];e.exports=u;var y=window.XMLHttpRequest=function(t){var e=new p(t);try{u.emit("new-xhr",[e],e),e.addEventListener(m,o,!1)}catch(n){try{u.emit("internal-error",[n])}catch(r){}}return e};if(s(p,y),y.prototype=p.prototype,d.inPlace(y.prototype,["open","send"],"-xhr-",c),u.on("send-xhr-start",function(t,e){r(t,e),i(e)}),u.on("open-xhr-start",r),h){var g=1,b=document.createTextNode(g);new h(a).observe(b,{characterData:!0})}else f.on("fn-end",function(t){t[0]&&t[0].type===m||a()})},{}],10:[function(t,e,n){function r(t){var e=this.params,n=this.metrics;if(!this.ended){this.ended=!0;for(var r=0;r<d;r++)t.removeEventListener(u[r],this.listener,!1);if(!e.aborted){if(n.duration=(new Date).getTime()-this.startTime,4===t.readyState){e.status=t.status;var i=o(t,this.lastSize);if(i&&(n.rxSize=i),this.sameOrigin){var a=t.getResponseHeader("X-NewRelic-App-Data");a&&(e.cat=a.split(", ").pop())}}else e.status=0;n.cbTime=this.cbTime,f.emit("xhr-done",[t],t),c("xhr",[e,n,this.startTime])}}}function o(t,e){var n=t.responseType;if("json"===n&&null!==e)return e;var r="arraybuffer"===n||"blob"===n||"json"===n?t.response:t.responseText;return h(r)}function i(t,e){var n=s(e),r=t.params;r.host=n.hostname+":"+n.port,r.pathname=n.pathname,t.sameOrigin=n.sameOrigin}var a=t("loader");if(a.xhrWrappable){var c=t("handle"),s=t(11),f=t("ee"),u=["load","error","abort","timeout"],d=u.length,l=t("id"),p=t(14),h=t(13),m=window.XMLHttpRequest;a.features.xhr=!0,t(9),f.on("new-xhr",function(t){var e=this;e.totalCbs=0,e.called=0,e.cbTime=0,e.end=r,e.ended=!1,e.xhrGuids={},e.lastSize=null,p&&(p>34||p<10)||window.opera||t.addEventListener("progress",function(t){e.lastSize=t.loaded},!1)}),f.on("open-xhr-start",function(t){this.params={method:t[0]},i(this,t[1]),this.metrics={}}),f.on("open-xhr-end",function(t,e){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&e.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid)}),f.on("send-xhr-start",function(t,e){var n=this.metrics,r=t[0],o=this;if(n&&r){var i=h(r);i&&(n.txSize=i)}this.startTime=(new Date).getTime(),this.listener=function(t){try{"abort"===t.type&&(o.params.aborted=!0),("load"!==t.type||o.called===o.totalCbs&&(o.onloadCalled||"function"!=typeof e.onload))&&o.end(e)}catch(n){try{f.emit("internal-error",[n])}catch(r){}}};for(var a=0;a<d;a++)e.addEventListener(u[a],this.listener,!1)}),f.on("xhr-cb-time",function(t,e,n){this.cbTime+=t,e?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof n.onload||this.end(n)}),f.on("xhr-load-added",function(t,e){var n=""+l(t)+!!e;this.xhrGuids&&!this.xhrGuids[n]&&(this.xhrGuids[n]=!0,this.totalCbs+=1)}),f.on("xhr-load-removed",function(t,e){var n=""+l(t)+!!e;this.xhrGuids&&this.xhrGuids[n]&&(delete this.xhrGuids[n],this.totalCbs-=1)}),f.on("addEventListener-end",function(t,e){e instanceof m&&"load"===t[0]&&f.emit("xhr-load-added",[t[1],t[2]],e)}),f.on("removeEventListener-end",function(t,e){e instanceof m&&"load"===t[0]&&f.emit("xhr-load-removed",[t[1],t[2]],e)}),f.on("fn-start",function(t,e,n){e instanceof m&&("onload"===n&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=(new Date).getTime()))}),f.on("fn-end",function(t,e){this.xhrCbStart&&f.emit("xhr-cb-time",[(new Date).getTime()-this.xhrCbStart,this.onload,e],e)})}},{}],11:[function(t,e,n){e.exports=function(t){var e=document.createElement("a"),n=window.location,r={};e.href=t,r.port=e.port;var o=e.href.split("://");!r.port&&o[1]&&(r.port=o[1].split("/")[0].split("@").pop().split(":")[1]),r.port&&"0"!==r.port||(r.port="https"===o[0]?"443":"80"),r.hostname=e.hostname||n.hostname,r.pathname=e.pathname,r.protocol=o[0],"/"!==r.pathname.charAt(0)&&(r.pathname="/"+r.pathname);var i=!e.protocol||":"===e.protocol||e.protocol===n.protocol,a=e.hostname===document.domain&&e.port===n.port;return r.sameOrigin=i&&(!e.hostname||a),r}},{}],12:[function(t,e,n){function r(){}function o(t,e,n){return function(){return i(t,[(new Date).getTime()].concat(c(arguments)),e?null:this,n),e?void 0:this}}var i=t("handle"),a=t(15),c=t(16),s=t("ee").get("tracer"),f=NREUM;"undefined"==typeof window.newrelic&&(newrelic=f);var u=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(u,function(t,e){f[e]=o(d+e,!0,"api")}),f.addPageAction=o(d+"addPageAction",!0),f.setCurrentRouteName=o(d+"routeName",!0),e.exports=newrelic,f.interaction=function(){return(new r).get()};var p=r.prototype={createTracer:function(t,e){var n={},r=this,o="function"==typeof e;return i(l+"tracer",[Date.now(),t,n],r),function(){if(s.emit((o?"":"no-")+"fn-start",[Date.now(),r,o],n),o)try{return e.apply(this,arguments)}finally{s.emit("fn-end",[Date.now()],n)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){p[e]=o(l+e)}),newrelic.noticeError=function(t){"string"==typeof t&&(t=new Error(t)),i("err",[t,(new Date).getTime()])}},{}],13:[function(t,e,n){e.exports=function(t){if("string"==typeof t&&t.length)return t.length;if("object"==typeof t){if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if(!("undefined"!=typeof FormData&&t instanceof FormData))try{return JSON.stringify(t).length}catch(e){return}}}},{}],14:[function(t,e,n){var r=0,o=navigator.userAgent.match(/Firefox[\/\s](\d+\.\d+)/);o&&(r=+o[1]),e.exports=r},{}],15:[function(t,e,n){function r(t,e){var n=[],r="",i=0;for(r in t)o.call(t,r)&&(n[i]=e(r,t[r]),i+=1);return n}var o=Object.prototype.hasOwnProperty;e.exports=r},{}],16:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,o=n-e||0,i=Array(o<0?0:o);++r<o;)i[r]=t[e+r];return i}e.exports=r},{}],17:[function(t,e,n){function r(t){return!(t&&t instanceof Function&&t.apply&&!t[a])}var o=t("ee"),i=t(16),a="nr@original",c=Object.prototype.hasOwnProperty,s=!1;e.exports=function(t,e){function n(t,e,n,o){function nrWrapper(){var r,a,c,s;try{a=this,r=i(arguments),c="function"==typeof n?n(r,a):n||{}}catch(f){l([f,"",[r,a,o],c])}u(e+"start",[r,a,o],c);try{return s=t.apply(a,r)}catch(d){throw u(e+"err",[r,a,d],c),d}finally{u(e+"end",[r,a,s],c)}}return r(t)?t:(e||(e=""),nrWrapper[a]=t,d(t,nrWrapper),nrWrapper)}function f(t,e,o,i){o||(o="");var a,c,s,f="-"===o.charAt(0);for(s=0;s<e.length;s++)c=e[s],a=t[c],r(a)||(t[c]=n(a,f?c+o:o,i,c))}function u(n,r,o){if(!s||e){var i=s;s=!0;try{t.emit(n,r,o)}catch(a){l([a,n,r,o])}s=i}}function d(t,e){if(Object.defineProperty&&Object.keys)try{var n=Object.keys(t);return n.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(r){l([r])}for(var o in t)c.call(t,o)&&(e[o]=t[o]);return e}function l(e){try{t.emit("internal-error",e)}catch(n){}}return t||(t=o),n.inPlace=f,n.flag=a,n}},{}],ee:[function(t,e,n){function r(){}function o(t){function e(t){return t&&t instanceof r?t:t?s(t,c,i):i()}function n(n,r,o){if(!l.aborted){t&&t(n,r,o);for(var i=e(o),a=h(n),c=a.length,s=0;s<c;s++)a[s].apply(i,r);var f=u[y[n]];return f&&f.push([g,n,r,i]),i}}function p(t,e){v[t]=h(t).concat(e)}function h(t){return v[t]||[]}function m(t){return d[t]=d[t]||o(n)}function w(t,e){f(t,function(t,n){e=e||"feature",y[n]=e,e in u||(u[e]=[])})}var v={},y={},g={on:p,emit:n,get:m,listeners:h,context:e,buffer:w,abort:a,aborted:!1};return g}function i(){return new r}function a(){(u.api||u.feature)&&(l.aborted=!0,u=l.backlog={})}var c="nr@context",s=t("gos"),f=t(15),u={},d={},l=e.exports=o();l.backlog=u},{}],gos:[function(t,e,n){function r(t,e,n){if(o.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return t[e]=r,r}var o=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){o.buffer([t],r),o.emit(t,e,n)}var o=t("ee").get("handle");e.exports=r,r.ee=o},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,i,function(){return o++})}var o=1,i="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!b++){var t=g.info=NREUM.info,e=d.getElementsByTagName("script")[0];if(setTimeout(f.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return f.abort();s(v,function(e,n){t[e]||(t[e]=n)}),c("mark",["onload",a()],null,"api");var n=d.createElement("script");n.src="https://"+t.agent,e.parentNode.insertBefore(n,e)}}function o(){"complete"===d.readyState&&i()}function i(){c("mark",["domContent",a()],null,"api")}function a(){return(new Date).getTime()}var c=t("handle"),s=t(15),f=t("ee"),u=window,d=u.document,l="addEventListener",p="attachEvent",h=u.XMLHttpRequest,m=h&&h.prototype;NREUM.o={ST:setTimeout,CT:clearTimeout,XHR:h,REQ:u.Request,EV:u.Event,PR:u.Promise,MO:u.MutationObserver},t(12);var w=""+location,v={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1016.min.js"},y=h&&m&&m[l]&&!/CriOS/.test(navigator.userAgent),g=e.exports={offset:a(),origin:w,features:{},xhrWrappable:y};d[l]?(d[l]("DOMContentLoaded",i,!1),u[l]("load",r,!1)):(d[p]("onreadystatechange",o),u[p]("onload",r)),c("mark",["firstbyte",a()],null,"api");var b=0},{}]},{},["loader",2,10,4,3]);
-  </script>
   <title>
    Scythe of Vyse - Dota 2 Wiki
   </title>
@@ -12,7 +9,7 @@
    document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );
   </script>
   <script>
-   (window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Scythe_of_Vyse","wgTitle":"Scythe of Vyse","wgCurRevisionId":1448520,"wgRevisionId":1448520,"wgArticleId":1044,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Items","Strength items","Agility items","Intelligence items","Mana regeneration items","Bought from Caster"],"wgBreakFrames":true,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Scythe_of_Vyse","wgRelevantArticleId":1044,"wgRequestId":"042637aae22333a69cd59a5b","wgIsProbablyEditable":true,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgPreferredVariant":"en","wgCollapsibleVectorEnabledModules":{"collapsiblenav":true,"experiments":true},"wgVisualEditor":{"pageLanguageCode":"en","pageLanguageDir":"ltr","usePageImages":true,"usePageDescriptions":false},"wgWikiEditorEnabledModules":{"toolbar":true,"dialogs":true,"preview":true,"publish":true},"wgCategoryTreePageCategoryOptions":"{\"mode\":0,\"hideprefix\":20,\"showcount\":true,\"namespaces\":false}","wgVisualEditorToolbarScrollOffset":0});mw.loader.implement("user.options",function($,jQuery,require,module){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function ( $, jQuery, require, module ) {
+   (window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Scythe_of_Vyse","wgTitle":"Scythe of Vyse","wgCurRevisionId":1530381,"wgRevisionId":1530381,"wgArticleId":1044,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Items","Strength items","Agility items","Intelligence items","Mana regeneration items","Shop items"],"wgBreakFrames":true,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Scythe_of_Vyse","wgRelevantArticleId":1044,"wgRequestId":"d0fbf1fbda75b1947e428f7d","wgIsProbablyEditable":true,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgPreferredVariant":"en","wgCollapsibleVectorEnabledModules":{"collapsiblenav":true,"experiments":true},"wgVisualEditor":{"pageLanguageCode":"en","pageLanguageDir":"ltr","usePageImages":true,"usePageDescriptions":false},"wgWikiEditorEnabledModules":{"toolbar":true,"dialogs":true,"preview":true,"publish":true},"wgCategoryTreePageCategoryOptions":"{\"mode\":0,\"hideprefix\":20,\"showcount\":true,\"namespaces\":false}","wgVisualEditorToolbarScrollOffset":0});mw.loader.implement("user.options",function($,jQuery,require,module){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function ( $, jQuery, require, module ) {
 mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/;
 
 });mw.loader.load(["ext.smw.style","mediawiki.page.startup","ext.siteGlobals","ext.bunnyears","ext.visualEditor.desktopArticleTarget.init","ext.hydraAuth.banners","skins.vector.js","skins.hydra.advertisements.js","skins.hydra.footer.js","ext.social"]);});
@@ -23,11 +20,11 @@ mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","cs
   <link href="/load.php?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=hydra" rel="stylesheet"/>
   <script async="" src="/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=hydra">
   </script>
-  <meta content="MediaWiki 1.27.1" name="generator"/>
+  <meta content="MediaWiki 1.27.3" name="generator"/>
   <meta content="Scythe of Vyse" name="og:title"/>
   <meta content="website" name="og:type"/>
   <meta content="https://hydra-media.cursecdn.com/dota2.gamepedia.com/b/bc/Wiki.png" name="og:image"/>
-  <meta content="http://dota2.gamepedia.com/Scythe_of_Vyse" name="og:url"/>
+  <meta content="https://dota2.gamepedia.com/Scythe_of_Vyse" name="og:url"/>
   <meta content="Dota 2 Wiki" name="og:site_name"/>
   <meta name="description"/>
   <meta content="" name="keywords"/>
@@ -40,13 +37,13 @@ mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","cs
   <link href="/opensearch_desc.php" rel="search" title="Dota 2 Wiki (en)" type="application/opensearchdescription+xml"/>
   <link href="//dota2.gamepedia.com/api.php?action=rsd" rel="EditURI" type="application/rsd+xml"/>
   <link href="//creativecommons.org/licenses/by-nc-sa/3.0/" rel="copyright"/>
-  <link href="http://dota2.gamepedia.com/Scythe_of_Vyse" rel="canonical"/>
+  <link href="https://dota2.gamepedia.com/Scythe_of_Vyse" rel="canonical"/>
   <link href="dota2-de.gamepedia.com" hreflang="de" rel="alternate"/>
   <link href="dota2-ru.gamepedia.com" hreflang="ru" rel="alternate"/>
   <link href="dota2-pt.gamepedia.com" hreflang="pt" rel="alternate"/>
   <link href="dota2-zh.gamepedia.com" hreflang="zh" rel="alternate"/>
   <meta content="Gamepedia" itemprop="author"/>
-  <link href="https://stations.cursetech.com/be/bunnyears.min.css" rel="stylesheet" type="text/css"/>
+  <link href="https://stations.cursetech.com/be/bunnyears-1.1.min.css" rel="stylesheet" type="text/css"/>
  </head>
  <body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-Scythe_of_Vyse rootpage-Scythe_of_Vyse skin-hydra action-view site-dota2-gamepedia show-ads">
   <script type="application/ld+json">
@@ -81,8 +78,8 @@ mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","cs
 		"target": "https://dota2.gamepedia.com/index.php?title=Special:Search&search={search_term}",
 		"query-input": "required name=search_term"
 	},
-	"datePublished": "2017-01-28T04:13:45Z",
-	"dateModified": "2017-01-28T04:13:45Z",
+	"datePublished": "2017-05-30T17:46:22Z",
+	"dateModified": "2017-05-30T17:46:22Z",
 	"mainEntityOfPage": "https://dota2.gamepedia.com/Scythe_of_Vyse"
 }
   </script>
@@ -124,7 +121,7 @@ mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","cs
 var script = document.createElement('script');
 var tstamp = new Date();
 script.id = 'factorem';
-script.src = 'http://cdm.cursecdn.com/js/gamepedia/cdmfactorem_min.js?misc=' + tstamp.getTime();;
+script.src = '//cdm.cursecdn.com/js/gamepedia/cdmfactorem_min.js?misc=' + tstamp.getTime();;
 script.async = true;
 script.type='text/javascript';
 document.head.appendChild(script);
@@ -133,10 +130,10 @@ document.head.appendChild(script);
    setTimeout(function(){if("undefined"!=typeof b2){var element=document.getElementById(b2);setTimeout(function(){element.parentNode.innerHTML='<div id="'+b2+'"></div>'},5000)}},20000)
   </script>
   <script>
-   setTimeout(function(){if("undefined"!=typeof b2){var element=document.getElementById(b3);setTimeout(function(){element.parentNode.innerHTML='<div id="'+b3+'"></div>'},5000)}},20000)
+   setTimeout(function(){if("undefined"!=typeof b3){var element=document.getElementById(b3);setTimeout(function(){element.parentNode.innerHTML='<div id="'+b3+'"></div>'},5000)}},20000)
   </script>
   <script>
-   setTimeout(function(){if("undefined"!=typeof b2){var element=document.getElementById(b6);setTimeout(function(){element.parentNode.innerHTML='<div id="'+b6+'"></div>'},5000)}},20000)
+   setTimeout(function(){if("undefined"!=typeof b6){var element=document.getElementById(b6);setTimeout(function(){element.parentNode.innerHTML='<div id="'+b6+'"></div>'},5000)}},20000)
   </script>
   <div id="netbar">
    <ul class="netbar-left">
@@ -231,7 +228,7 @@ document.head.appendChild(script);
         <tr>
          <td style="font-weight:bold;font-size:110%;background-color:#B44335;color:white;padding:3px 5px;">
           Scythe of Vyse
-          <div style="float:right;">
+          <div style="float:right;text-align:center;">
           </div>
          </td>
         </tr>
@@ -251,7 +248,7 @@ document.head.appendChild(script);
          </td>
         </tr>
         <tr>
-         <td style="font-style:{italic;padding:6px 10px;">
+         <td style="font-style:italic;padding:6px 10px;">
           The most guarded relic among the cult of Vyse, it is the most coveted weapon among magi.
          </td>
         </tr>
@@ -260,7 +257,7 @@ document.head.appendChild(script);
           <div style="width:50%;display:inline-block;color:white;background-color:#A58B07;">
            Cost
            <br/>
-           5650
+           5700
           </div>
           <div style="width:50%;display:inline-block;color:white;background-color:#B44335;">
            Bought From
@@ -359,8 +356,8 @@ document.head.appendChild(script);
               </div>
              </div>
              <img alt="" height="10" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/c/c2/UsedIn0.png?version=9c87491372651536823010a791b8bdd2" width="246"/>
-             <a href="/Scythe_of_Vyse" title="Scythe of Vyse (5650)">
-              <img alt="Scythe of Vyse (5650)" height="29" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/5/54/Scythe_of_Vyse_icon.png/40px-Scythe_of_Vyse_icon.png?version=baf90245c0493a36212a8362c7b03d74" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/5/54/Scythe_of_Vyse_icon.png/60px-Scythe_of_Vyse_icon.png?version=baf90245c0493a36212a8362c7b03d74 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/5/54/Scythe_of_Vyse_icon.png/80px-Scythe_of_Vyse_icon.png?version=baf90245c0493a36212a8362c7b03d74 2x" width="40"/>
+             <a href="/Scythe_of_Vyse" title="Scythe of Vyse (5700)">
+              <img alt="Scythe of Vyse (5700)" height="29" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/5/54/Scythe_of_Vyse_icon.png/40px-Scythe_of_Vyse_icon.png?version=baf90245c0493a36212a8362c7b03d74" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/5/54/Scythe_of_Vyse_icon.png/60px-Scythe_of_Vyse_icon.png?version=baf90245c0493a36212a8362c7b03d74 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/5/54/Scythe_of_Vyse_icon.png/80px-Scythe_of_Vyse_icon.png?version=baf90245c0493a36212a8362c7b03d74 2x" width="40"/>
              </a>
              <img alt="" height="10" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/5/52/Components3.png?version=7c2f78ff54e9df277979c937ae01c7fa" width="246"/>
              <div style="display:table;table-layout:fixed;width:100%;text-align:center;">
@@ -371,8 +368,8 @@ document.head.appendChild(script);
                 </a>
                </div>
                <div style="display:table-cell">
-                <a href="/Ultimate_Orb" title="Ultimate Orb (2100)">
-                 <img alt="Ultimate Orb (2100)" height="29" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/1/14/Ultimate_Orb_icon.png/40px-Ultimate_Orb_icon.png?version=6442d5c59746c04cf9ffc21147409fb2" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/1/14/Ultimate_Orb_icon.png/60px-Ultimate_Orb_icon.png?version=6442d5c59746c04cf9ffc21147409fb2 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/1/14/Ultimate_Orb_icon.png/80px-Ultimate_Orb_icon.png?version=6442d5c59746c04cf9ffc21147409fb2 2x" width="40"/>
+                <a href="/Ultimate_Orb" title="Ultimate Orb (2150)">
+                 <img alt="Ultimate Orb (2150)" height="29" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/1/14/Ultimate_Orb_icon.png/40px-Ultimate_Orb_icon.png?version=6442d5c59746c04cf9ffc21147409fb2" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/1/14/Ultimate_Orb_icon.png/60px-Ultimate_Orb_icon.png?version=6442d5c59746c04cf9ffc21147409fb2 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/1/14/Ultimate_Orb_icon.png/80px-Ultimate_Orb_icon.png?version=6442d5c59746c04cf9ffc21147409fb2 2x" width="40"/>
                 </a>
                </div>
                <div style="display:table-cell">
@@ -388,7 +385,7 @@ document.head.appendChild(script);
          </td>
         </tr>
        </table>
-       <div class="dablink">
+       <div style="font-style:italic; font-size:15px; padding-left: 2em; margin-bottom: 0.5em;">
         For the cosmetic item equipped by
         <a href="/Nature%27s_Prophet" title="Nature's Prophet">
          Nature's Prophet
@@ -499,14 +496,8 @@ document.head.appendChild(script);
          <span class="mw-editsection-bracket">
           [
          </span>
-         <a class="mw-editsection-visualeditor" href="/index.php?title=Scythe_of_Vyse&amp;veaction=edit&amp;vesection=1" title="Edit section: Additional information">
-          edit
-         </a>
-         <span class="mw-editsection-divider">
-          |
-         </span>
          <a href="/index.php?title=Scythe_of_Vyse&amp;action=edit&amp;section=1" title="Edit section: Additional information">
-          edit source
+          edit
          </a>
          <span class="mw-editsection-bracket">
           ]
@@ -519,7 +510,7 @@ document.head.appendChild(script);
          <a href="/Health" title="Health">
           health
          </a>
-         , 0.3
+         , 0.6
          <a class="mw-redirect" href="/Health_regeneration" title="Health regeneration">
           health regeneration
          </a>
@@ -531,7 +522,7 @@ document.head.appendChild(script);
          <a href="/Attack_speed" title="Attack speed">
           attack speed
          </a>
-         , 420
+         , 385
          <a href="/Mana" title="Mana">
           mana
          </a>
@@ -539,7 +530,7 @@ document.head.appendChild(script);
          <a class="mw-redirect" href="/Mana_regeneration" title="Mana regeneration">
           mana regeneration
          </a>
-         , 2.1875%
+         , 2.5%
          <a href="/Spell_damage" title="Spell damage">
           spell damage
          </a>
@@ -565,14 +556,8 @@ document.head.appendChild(script);
          <span class="mw-editsection-bracket">
           [
          </span>
-         <a class="mw-editsection-visualeditor" href="/index.php?title=Scythe_of_Vyse&amp;veaction=edit&amp;vesection=2" title="Edit section: Ability">
-          edit
-         </a>
-         <span class="mw-editsection-divider">
-          |
-         </span>
          <a href="/index.php?title=Scythe_of_Vyse&amp;action=edit&amp;section=2" title="Edit section: Ability">
-          edit source
+          edit
          </a>
          <span class="mw-editsection-bracket">
           ]
@@ -652,23 +637,38 @@ document.head.appendChild(script);
            <b>
             Cast Range
            </b>
-           : 800
+           :
+           <span style="white-space: nowrap">
+            800
+           </span>
+          </div>
+          <div>
+           <b>
+            Set Movement Speed
+           </b>
+           :
+           <span style="white-space: nowrap">
+            140
+           </span>
           </div>
           <div>
            <b>
             Duration
            </b>
-           : 3.5
+           :
+           <span style="white-space: nowrap">
+            3.5
+           </span>
           </div>
-          <div style="display: inline-block; margin: 8px 0px 0px 50px; width: 190px; vertical-align: top;">
+          <div style="display: inline-block; margin: 8px 0px 0px 50px; width: 190px; vertical-align: top; word-wrap: break-word;">
            <span style="position: relative; top: -2px;">
             <a href="/Cooldown" title="Cooldown">
              <img alt="Cooldown symbol.png" height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/b/b7/Cooldown_symbol.png?version=7429ed9baf0f121e6ab3324bfdfad708" style="vertical-align: text-top" width="20"/>
             </a>
            </span>
-           25
+           22
           </div>
-          <div style="display: inline-block; margin: 8px 0px 0px; width: 190px; vertical-align: top;">
+          <div style="display: inline-block; margin: 8px 0px 0px; width: 190px; vertical-align: top; word-wrap: break-word;">
            <span style="position: relative; top: -2px;">
             <a href="/Mana" title="Mana">
              <img alt="Mana symbol.png" height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/f/f3/Mana_symbol.png?version=a81185ac577f9b52f2df06be91b6600c" style="vertical-align: text-top" width="20"/>
@@ -688,7 +688,9 @@ document.head.appendChild(script);
           </div>
           <div style="margin-top: 10px;">
            <b>
-            Modifiers
+            <span id="tooltip" style="cursor:help; border-bottom:1px dotted;" title="The displayed names are the intern names of the modifiers. Do not change them even if they don't match the ability name.">
+             Modifiers
+            </span>
            </b>
           </div>
           <div style="font-size: 85%; margin-left: 10px;">
@@ -715,13 +717,13 @@ document.head.appendChild(script);
           <li>
            Applies a
            <a href="/Hex" title="Hex">
-            Hex
+            hex
            </a>
            on the target, setting its base
            <a href="/Movement_speed" title="Movement speed">
             movement speed
            </a>
-           to 140 and
+           to 140 as well as
            <a href="/Silence" title="Silence">
             silencing
            </a>
@@ -738,7 +740,7 @@ document.head.appendChild(script);
          </ul>
          <ul>
           <li>
-           Because hex changes base move speed and does not actually apply a
+           Since hex changes base movement speed and does not actually apply a
            <a href="/Slow" title="Slow">
             slow
            </a>
@@ -750,10 +752,10 @@ document.head.appendChild(script);
            For example:
            <ul>
             <li>
-             a hexed unit with no speed bonuses has 140 move speed
+             A hexed unit with no speed bonuses has 140 movement speed.
             </li>
             <li>
-             a hexed unit with +8% from
+             A hexed unit with +8% from
              <span style="white-space:nowrap">
               <a href="/Yasha" title="Yasha">
                <img alt="Yasha icon.png" height="15" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/d/d1/Yasha_icon.png/20px-Yasha_icon.png?version=06695e9c0511d415db0a5efe9c953236" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/d/d1/Yasha_icon.png/30px-Yasha_icon.png?version=06695e9c0511d415db0a5efe9c953236 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/d/d1/Yasha_icon.png/40px-Yasha_icon.png?version=06695e9c0511d415db0a5efe9c953236 2x" width="20"/>
@@ -762,10 +764,10 @@ document.head.appendChild(script);
                Yasha
               </a>
              </span>
-             has 151.2 move speed
+             has 151.2 movement speed.
             </li>
             <li>
-             a hexed unit with +45 from
+             A hexed unit with +45 from
              <span style="white-space:nowrap">
               <a href="/Boots_of_Speed" title="Boots of Speed">
                <img alt="Boots of Speed icon.png" height="15" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/9/97/Boots_of_Speed_icon.png/20px-Boots_of_Speed_icon.png?version=ae10de7a080958c2cf14c6cb7bca184f" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/9/97/Boots_of_Speed_icon.png/30px-Boots_of_Speed_icon.png?version=ae10de7a080958c2cf14c6cb7bca184f 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/9/97/Boots_of_Speed_icon.png/40px-Boots_of_Speed_icon.png?version=ae10de7a080958c2cf14c6cb7bca184f 2x" width="20"/>
@@ -774,38 +776,17 @@ document.head.appendChild(script);
                Boots of Speed
               </a>
              </span>
-             has 185 move speed
+             has 185 movement speed.
             </li>
             <li>
-             a hexed unit with both
-             <span style="white-space:nowrap">
-              <a href="/Boots_of_Speed" title="Boots of Speed">
-               <img alt="Boots of Speed icon.png" height="15" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/9/97/Boots_of_Speed_icon.png/20px-Boots_of_Speed_icon.png?version=ae10de7a080958c2cf14c6cb7bca184f" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/9/97/Boots_of_Speed_icon.png/30px-Boots_of_Speed_icon.png?version=ae10de7a080958c2cf14c6cb7bca184f 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/9/97/Boots_of_Speed_icon.png/40px-Boots_of_Speed_icon.png?version=ae10de7a080958c2cf14c6cb7bca184f 2x" width="20"/>
-              </a>
-              <a href="/Boots_of_Speed" title="Boots of Speed">
-               Boots of Speed
-              </a>
-             </span>
-             and
-             <span style="white-space:nowrap">
-              <a href="/Yasha" title="Yasha">
-               <img alt="Yasha icon.png" height="15" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/d/d1/Yasha_icon.png/20px-Yasha_icon.png?version=06695e9c0511d415db0a5efe9c953236" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/d/d1/Yasha_icon.png/30px-Yasha_icon.png?version=06695e9c0511d415db0a5efe9c953236 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/d/d1/Yasha_icon.png/40px-Yasha_icon.png?version=06695e9c0511d415db0a5efe9c953236 2x" width="20"/>
-              </a>
-              <a href="/Yasha" title="Yasha">
-               Yasha
-              </a>
-             </span>
-             has 199.8 move speed
+             A hexed unit with both Boots of Speed and Yasha has 199.8 movement speed.
             </li>
            </ul>
           </li>
          </ul>
          <ul>
           <li>
-           <a href="/Hex" title="Hex">
-            Hex
-           </a>
-           instantly destroys
+           Hex instantly destroys
            <a href="/Illusions" title="Illusions">
             illusions
            </a>
@@ -834,14 +815,8 @@ document.head.appendChild(script);
          <span class="mw-editsection-bracket">
           [
          </span>
-         <a class="mw-editsection-visualeditor" href="/index.php?title=Scythe_of_Vyse&amp;veaction=edit&amp;vesection=3" title="Edit section: Recommended heroes">
-          edit
-         </a>
-         <span class="mw-editsection-divider">
-          |
-         </span>
          <a href="/index.php?title=Scythe_of_Vyse&amp;action=edit&amp;section=3" title="Edit section: Recommended heroes">
-          edit source
+          edit
          </a>
          <span class="mw-editsection-bracket">
           ]
@@ -854,13 +829,12 @@ document.head.appendChild(script);
        <p>
         <span style="white-space:nowrap">
          <a href="/Nature%27s_Prophet" title="Nature's Prophet">
-          <img alt="Nature's Prophet icon.png" height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/c/c4/Nature%27s_Prophet_icon.png/20px-Nature%27s_Prophet_icon.png?version=456431e3c273ba7042d14298bc047e24" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/c/c4/Nature%27s_Prophet_icon.png/30px-Nature%27s_Prophet_icon.png?version=456431e3c273ba7042d14298bc047e24 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/c/c4/Nature%27s_Prophet_icon.png?version=456431e3c273ba7042d14298bc047e24 2x" width="20"/>
+          <img alt="Nature's Prophet minimap icon.png" height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/a/a4/Nature%27s_Prophet_minimap_icon.png/20px-Nature%27s_Prophet_minimap_icon.png?version=049c567698b44ae9ff44449ae86021b4" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/a/a4/Nature%27s_Prophet_minimap_icon.png/30px-Nature%27s_Prophet_minimap_icon.png?version=049c567698b44ae9ff44449ae86021b4 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/a/a4/Nature%27s_Prophet_minimap_icon.png?version=049c567698b44ae9ff44449ae86021b4 2x" width="20"/>
          </a>
          <a href="/Nature%27s_Prophet" title="Nature's Prophet">
           Nature's Prophet
          </a>
         </span>
-        ​
        </p>
        <p>
         Heroes whose default item build includes Scythe of Vyse as a situational item
@@ -869,289 +843,289 @@ document.head.appendChild(script);
         Strength:
         <span style="white-space:nowrap">
          <a href="/Underlord" title="Underlord">
-          <img alt="Underlord icon.png" height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/1/18/Underlord_icon.png/20px-Underlord_icon.png?version=c56c29b21ca01176a235b48d8848335c" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/1/18/Underlord_icon.png/30px-Underlord_icon.png?version=c56c29b21ca01176a235b48d8848335c 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/1/18/Underlord_icon.png?version=c56c29b21ca01176a235b48d8848335c 2x" width="20"/>
+          <img alt="Underlord minimap icon.png" height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/2/29/Underlord_minimap_icon.png/20px-Underlord_minimap_icon.png?version=5ef62fddee1b673c95dca955dd05a1ba" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/2/29/Underlord_minimap_icon.png/30px-Underlord_minimap_icon.png?version=5ef62fddee1b673c95dca955dd05a1ba 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/2/29/Underlord_minimap_icon.png?version=5ef62fddee1b673c95dca955dd05a1ba 2x" width="20"/>
          </a>
          <a href="/Underlord" title="Underlord">
           Underlord
          </a>
         </span>
-        ​,
+        ,
         <span style="white-space:nowrap">
          <a href="/Undying" title="Undying">
-          <img alt="Undying icon.png" height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/6/61/Undying_icon.png/20px-Undying_icon.png?version=4c934e3fcfa931a562bafb75ac4db592" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/6/61/Undying_icon.png/30px-Undying_icon.png?version=4c934e3fcfa931a562bafb75ac4db592 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/6/61/Undying_icon.png?version=4c934e3fcfa931a562bafb75ac4db592 2x" width="20"/>
+          <img alt="Undying minimap icon.png" height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/8/8a/Undying_minimap_icon.png/20px-Undying_minimap_icon.png?version=c0420122947bbb972a027b117ffd2d02" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/8/8a/Undying_minimap_icon.png/30px-Undying_minimap_icon.png?version=c0420122947bbb972a027b117ffd2d02 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/8/8a/Undying_minimap_icon.png?version=c0420122947bbb972a027b117ffd2d02 2x" width="20"/>
          </a>
          <a href="/Undying" title="Undying">
           Undying
          </a>
         </span>
-        ​,
+        ,
         <span style="white-space:nowrap">
          <a href="/Timbersaw" title="Timbersaw">
-          <img alt="Timbersaw icon.png" height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/9/9a/Timbersaw_icon.png/20px-Timbersaw_icon.png?version=fc148f2837635fe1b7c878b7476cae09" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/9/9a/Timbersaw_icon.png/30px-Timbersaw_icon.png?version=fc148f2837635fe1b7c878b7476cae09 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/9/9a/Timbersaw_icon.png?version=fc148f2837635fe1b7c878b7476cae09 2x" width="20"/>
+          <img alt="Timbersaw minimap icon.png" height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/4/49/Timbersaw_minimap_icon.png/20px-Timbersaw_minimap_icon.png?version=dc06d4d3dffbd63907fe172f6f709786" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/4/49/Timbersaw_minimap_icon.png/30px-Timbersaw_minimap_icon.png?version=dc06d4d3dffbd63907fe172f6f709786 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/4/49/Timbersaw_minimap_icon.png?version=dc06d4d3dffbd63907fe172f6f709786 2x" width="20"/>
          </a>
          <a href="/Timbersaw" title="Timbersaw">
           Timbersaw
          </a>
         </span>
-        ​,
+        ,
         <span style="white-space:nowrap">
          <a href="/Earthshaker" title="Earthshaker">
-          <img alt="Earthshaker icon.png" height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/a/a5/Earthshaker_icon.png/20px-Earthshaker_icon.png?version=b317e3a4dbe5e4e3c9d053fa28e43a2d" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/a/a5/Earthshaker_icon.png/30px-Earthshaker_icon.png?version=b317e3a4dbe5e4e3c9d053fa28e43a2d 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/a/a5/Earthshaker_icon.png?version=b317e3a4dbe5e4e3c9d053fa28e43a2d 2x" width="20"/>
+          <img alt="Earthshaker minimap icon.png" height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/4/42/Earthshaker_minimap_icon.png/20px-Earthshaker_minimap_icon.png?version=f54a5326511e6ca23f9ee48e3ebb1366" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/4/42/Earthshaker_minimap_icon.png/30px-Earthshaker_minimap_icon.png?version=f54a5326511e6ca23f9ee48e3ebb1366 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/4/42/Earthshaker_minimap_icon.png?version=f54a5326511e6ca23f9ee48e3ebb1366 2x" width="20"/>
          </a>
          <a href="/Earthshaker" title="Earthshaker">
           Earthshaker
          </a>
         </span>
-        ​.
+        .
        </p>
        <p>
         Agility:
         <span style="white-space:nowrap">
          <a href="/Arc_Warden" title="Arc Warden">
-          <img alt="Arc Warden icon.png" height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/0/07/Arc_Warden_icon.png/20px-Arc_Warden_icon.png?version=8bb090f9a902a6533bec6f16aec12599" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/0/07/Arc_Warden_icon.png/30px-Arc_Warden_icon.png?version=8bb090f9a902a6533bec6f16aec12599 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/0/07/Arc_Warden_icon.png?version=8bb090f9a902a6533bec6f16aec12599 2x" width="20"/>
+          <img alt="Arc Warden minimap icon.png" height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/e/e9/Arc_Warden_minimap_icon.png/20px-Arc_Warden_minimap_icon.png?version=d43ce1fc54e9a3a4e120c16d51191cd0" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/e/e9/Arc_Warden_minimap_icon.png/30px-Arc_Warden_minimap_icon.png?version=d43ce1fc54e9a3a4e120c16d51191cd0 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/e/e9/Arc_Warden_minimap_icon.png?version=d43ce1fc54e9a3a4e120c16d51191cd0 2x" width="20"/>
          </a>
          <a href="/Arc_Warden" title="Arc Warden">
           Arc Warden
          </a>
         </span>
-        ​,
+        ,
         <span style="white-space:nowrap">
          <a href="/Meepo" title="Meepo">
-          <img alt="Meepo icon.png" height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/8/85/Meepo_icon.png/20px-Meepo_icon.png?version=693768a3d95c044e1be4226272f5bbcd" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/8/85/Meepo_icon.png/30px-Meepo_icon.png?version=693768a3d95c044e1be4226272f5bbcd 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/8/85/Meepo_icon.png?version=693768a3d95c044e1be4226272f5bbcd 2x" width="20"/>
+          <img alt="Meepo minimap icon.png" height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/1/17/Meepo_minimap_icon.png/20px-Meepo_minimap_icon.png?version=8820eba56fdad20774b4fe9e5a1a0c10" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/1/17/Meepo_minimap_icon.png/30px-Meepo_minimap_icon.png?version=8820eba56fdad20774b4fe9e5a1a0c10 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/1/17/Meepo_minimap_icon.png?version=8820eba56fdad20774b4fe9e5a1a0c10 2x" width="20"/>
          </a>
          <a href="/Meepo" title="Meepo">
           Meepo
          </a>
         </span>
-        ​,
+        ,
         <span style="white-space:nowrap">
          <a href="/Medusa" title="Medusa">
-          <img alt="Medusa icon.png" height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/c/cc/Medusa_icon.png/20px-Medusa_icon.png?version=5745ecaed988c4da276a75d2743b198e" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/c/cc/Medusa_icon.png/30px-Medusa_icon.png?version=5745ecaed988c4da276a75d2743b198e 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/c/cc/Medusa_icon.png?version=5745ecaed988c4da276a75d2743b198e 2x" width="20"/>
+          <img alt="Medusa minimap icon.png" height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/6/64/Medusa_minimap_icon.png/20px-Medusa_minimap_icon.png?version=03f17a4326d4ca5d57e228026c4dd7ec" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/6/64/Medusa_minimap_icon.png/30px-Medusa_minimap_icon.png?version=03f17a4326d4ca5d57e228026c4dd7ec 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/6/64/Medusa_minimap_icon.png?version=03f17a4326d4ca5d57e228026c4dd7ec 2x" width="20"/>
          </a>
          <a href="/Medusa" title="Medusa">
           Medusa
          </a>
         </span>
-        ​,
+        ,
         <span style="white-space:nowrap">
          <a href="/Clinkz" title="Clinkz">
-          <img alt="Clinkz icon.png" height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/c/cb/Clinkz_icon.png/20px-Clinkz_icon.png?version=77fe6b6d65b02fa18982f8db983dad50" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/c/cb/Clinkz_icon.png/30px-Clinkz_icon.png?version=77fe6b6d65b02fa18982f8db983dad50 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/c/cb/Clinkz_icon.png?version=77fe6b6d65b02fa18982f8db983dad50 2x" width="20"/>
+          <img alt="Clinkz minimap icon.png" height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/1/16/Clinkz_minimap_icon.png/20px-Clinkz_minimap_icon.png?version=1938732a926476314a0e06436d38a449" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/1/16/Clinkz_minimap_icon.png/30px-Clinkz_minimap_icon.png?version=1938732a926476314a0e06436d38a449 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/1/16/Clinkz_minimap_icon.png?version=1938732a926476314a0e06436d38a449 2x" width="20"/>
          </a>
          <a href="/Clinkz" title="Clinkz">
           Clinkz
          </a>
         </span>
-        ​,
+        ,
         <span style="white-space:nowrap">
          <a href="/Ursa" title="Ursa">
-          <img alt="Ursa icon.png" height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/4/40/Ursa_icon.png/20px-Ursa_icon.png?version=243266b1c0fbfc5e642b6776fdcb657c" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/4/40/Ursa_icon.png/30px-Ursa_icon.png?version=243266b1c0fbfc5e642b6776fdcb657c 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/4/40/Ursa_icon.png?version=243266b1c0fbfc5e642b6776fdcb657c 2x" width="20"/>
+          <img alt="Ursa minimap icon.png" height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/e/ee/Ursa_minimap_icon.png/20px-Ursa_minimap_icon.png?version=fa617bfdd6d73f8ab57d628f5669485d" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/e/ee/Ursa_minimap_icon.png/30px-Ursa_minimap_icon.png?version=fa617bfdd6d73f8ab57d628f5669485d 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/e/ee/Ursa_minimap_icon.png?version=fa617bfdd6d73f8ab57d628f5669485d 2x" width="20"/>
          </a>
          <a href="/Ursa" title="Ursa">
           Ursa
          </a>
         </span>
-        ​,
+        ,
         <span style="white-space:nowrap">
          <a href="/Nyx_Assassin" title="Nyx Assassin">
-          <img alt="Nyx Assassin icon.png" height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/f/fa/Nyx_Assassin_icon.png/20px-Nyx_Assassin_icon.png?version=b2d7b61895303faa1fae1c3d8db1ecac" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/f/fa/Nyx_Assassin_icon.png/30px-Nyx_Assassin_icon.png?version=b2d7b61895303faa1fae1c3d8db1ecac 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/f/fa/Nyx_Assassin_icon.png?version=b2d7b61895303faa1fae1c3d8db1ecac 2x" width="20"/>
+          <img alt="Nyx Assassin minimap icon.png" height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/a/aa/Nyx_Assassin_minimap_icon.png/20px-Nyx_Assassin_minimap_icon.png?version=1128739801b905d189170576f242947f" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/a/aa/Nyx_Assassin_minimap_icon.png/30px-Nyx_Assassin_minimap_icon.png?version=1128739801b905d189170576f242947f 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/a/aa/Nyx_Assassin_minimap_icon.png?version=1128739801b905d189170576f242947f 2x" width="20"/>
          </a>
          <a href="/Nyx_Assassin" title="Nyx Assassin">
           Nyx Assassin
          </a>
         </span>
-        ​.
+        .
        </p>
        <p>
         Intelligence:
         <span style="white-space:nowrap">
          <a href="/Batrider" title="Batrider">
-          <img alt="Batrider icon.png" height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/f/f2/Batrider_icon.png/20px-Batrider_icon.png?version=b09fb77d60a118618b1ca855f25a5099" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/f/f2/Batrider_icon.png/30px-Batrider_icon.png?version=b09fb77d60a118618b1ca855f25a5099 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/f/f2/Batrider_icon.png?version=b09fb77d60a118618b1ca855f25a5099 2x" width="20"/>
+          <img alt="Batrider minimap icon.png" height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/0/0d/Batrider_minimap_icon.png/20px-Batrider_minimap_icon.png?version=00dc12b349a0c5468fe87d89bccd6f36" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/0/0d/Batrider_minimap_icon.png/30px-Batrider_minimap_icon.png?version=00dc12b349a0c5468fe87d89bccd6f36 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/0/0d/Batrider_minimap_icon.png?version=00dc12b349a0c5468fe87d89bccd6f36 2x" width="20"/>
          </a>
          <a href="/Batrider" title="Batrider">
           Batrider
          </a>
         </span>
-        ​,
+        ,
         <span style="white-space:nowrap">
          <a href="/Storm_Spirit" title="Storm Spirit">
-          <img alt="Storm Spirit icon.png" height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/1/13/Storm_Spirit_icon.png/20px-Storm_Spirit_icon.png?version=b55c1c4d4671b0218148dda658eab4c1" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/1/13/Storm_Spirit_icon.png/30px-Storm_Spirit_icon.png?version=b55c1c4d4671b0218148dda658eab4c1 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/1/13/Storm_Spirit_icon.png?version=b55c1c4d4671b0218148dda658eab4c1 2x" width="20"/>
+          <img alt="Storm Spirit minimap icon.png" height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/d/d6/Storm_Spirit_minimap_icon.png/20px-Storm_Spirit_minimap_icon.png?version=3b855db456ae450de2fa27e9bf4a2757" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/d/d6/Storm_Spirit_minimap_icon.png/30px-Storm_Spirit_minimap_icon.png?version=3b855db456ae450de2fa27e9bf4a2757 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/d/d6/Storm_Spirit_minimap_icon.png?version=3b855db456ae450de2fa27e9bf4a2757 2x" width="20"/>
          </a>
          <a href="/Storm_Spirit" title="Storm Spirit">
           Storm Spirit
          </a>
         </span>
-        ​,
+        ,
         <span style="white-space:nowrap">
          <a href="/Silencer" title="Silencer">
-          <img alt="Silencer icon.png" height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/9/9f/Silencer_icon.png/20px-Silencer_icon.png?version=e1f2c38d02a353ddfbf82fcc1a60a68f" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/9/9f/Silencer_icon.png/30px-Silencer_icon.png?version=e1f2c38d02a353ddfbf82fcc1a60a68f 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/9/9f/Silencer_icon.png?version=e1f2c38d02a353ddfbf82fcc1a60a68f 2x" width="20"/>
+          <img alt="Silencer minimap icon.png" height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/0/0f/Silencer_minimap_icon.png/20px-Silencer_minimap_icon.png?version=61f134580af8ab1453c33d1642c7c0da" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/0/0f/Silencer_minimap_icon.png/30px-Silencer_minimap_icon.png?version=61f134580af8ab1453c33d1642c7c0da 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/0/0f/Silencer_minimap_icon.png?version=61f134580af8ab1453c33d1642c7c0da 2x" width="20"/>
          </a>
          <a href="/Silencer" title="Silencer">
           Silencer
          </a>
         </span>
-        ​,
+        ,
         <span style="white-space:nowrap">
          <a href="/Witch_Doctor" title="Witch Doctor">
-          <img alt="Witch Doctor icon.png" height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/3/33/Witch_Doctor_icon.png/20px-Witch_Doctor_icon.png?version=1721ec7376ec9ce3639e5ade50c65c65" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/3/33/Witch_Doctor_icon.png/30px-Witch_Doctor_icon.png?version=1721ec7376ec9ce3639e5ade50c65c65 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/3/33/Witch_Doctor_icon.png?version=1721ec7376ec9ce3639e5ade50c65c65 2x" width="20"/>
+          <img alt="Witch Doctor minimap icon.png" height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/b/b6/Witch_Doctor_minimap_icon.png/20px-Witch_Doctor_minimap_icon.png?version=a8d9dae4fd39a589cdb51f1711f8d5b6" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/b/b6/Witch_Doctor_minimap_icon.png/30px-Witch_Doctor_minimap_icon.png?version=a8d9dae4fd39a589cdb51f1711f8d5b6 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/b/b6/Witch_Doctor_minimap_icon.png?version=a8d9dae4fd39a589cdb51f1711f8d5b6 2x" width="20"/>
          </a>
          <a href="/Witch_Doctor" title="Witch Doctor">
           Witch Doctor
          </a>
         </span>
-        ​,
+        ,
         <span style="white-space:nowrap">
          <a href="/Crystal_Maiden" title="Crystal Maiden">
-          <img alt="Crystal Maiden icon.png" height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/2/27/Crystal_Maiden_icon.png/20px-Crystal_Maiden_icon.png?version=c496183a1912c8a5ea396f54da755dd3" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/2/27/Crystal_Maiden_icon.png/30px-Crystal_Maiden_icon.png?version=c496183a1912c8a5ea396f54da755dd3 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/2/27/Crystal_Maiden_icon.png?version=c496183a1912c8a5ea396f54da755dd3 2x" width="20"/>
+          <img alt="Crystal Maiden minimap icon.png" height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/b/b4/Crystal_Maiden_minimap_icon.png/20px-Crystal_Maiden_minimap_icon.png?version=88b9c374bb896406b758b764266d9e4f" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/b/b4/Crystal_Maiden_minimap_icon.png/30px-Crystal_Maiden_minimap_icon.png?version=88b9c374bb896406b758b764266d9e4f 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/b/b4/Crystal_Maiden_minimap_icon.png?version=88b9c374bb896406b758b764266d9e4f 2x" width="20"/>
          </a>
          <a href="/Crystal_Maiden" title="Crystal Maiden">
           Crystal Maiden
          </a>
         </span>
-        ​,
+        ,
         <span style="white-space:nowrap">
          <a href="/Death_Prophet" title="Death Prophet">
-          <img alt="Death Prophet icon.png" height="21" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/d/d7/Death_Prophet_icon.png/20px-Death_Prophet_icon.png?version=2850e37e419120a5d5b116bfff0fed95" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/d/d7/Death_Prophet_icon.png?version=2850e37e419120a5d5b116bfff0fed95 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/d/d7/Death_Prophet_icon.png?version=2850e37e419120a5d5b116bfff0fed95 2x" width="20"/>
+          <img alt="Death Prophet minimap icon.png" height="21" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/5/5d/Death_Prophet_minimap_icon.png/20px-Death_Prophet_minimap_icon.png?version=b9adc1427423eafdf1d0db5f34af8bcb" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/5/5d/Death_Prophet_minimap_icon.png?version=b9adc1427423eafdf1d0db5f34af8bcb 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/5/5d/Death_Prophet_minimap_icon.png?version=b9adc1427423eafdf1d0db5f34af8bcb 2x" width="20"/>
          </a>
          <a href="/Death_Prophet" title="Death Prophet">
           Death Prophet
          </a>
         </span>
-        ​,
+        ,
         <span style="white-space:nowrap">
          <a href="/Rubick" title="Rubick">
-          <img alt="Rubick icon.png" height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/8/8a/Rubick_icon.png/20px-Rubick_icon.png?version=03dc7ad31edce28d13d6e03fe2bcf0ea" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/8/8a/Rubick_icon.png/30px-Rubick_icon.png?version=03dc7ad31edce28d13d6e03fe2bcf0ea 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/8/8a/Rubick_icon.png?version=03dc7ad31edce28d13d6e03fe2bcf0ea 2x" width="20"/>
+          <img alt="Rubick minimap icon.png" height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/6/61/Rubick_minimap_icon.png/20px-Rubick_minimap_icon.png?version=624cd2b0359403052534f6b7f01e3c04" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/6/61/Rubick_minimap_icon.png/30px-Rubick_minimap_icon.png?version=624cd2b0359403052534f6b7f01e3c04 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/6/61/Rubick_minimap_icon.png?version=624cd2b0359403052534f6b7f01e3c04 2x" width="20"/>
          </a>
          <a href="/Rubick" title="Rubick">
           Rubick
          </a>
         </span>
-        ​,
+        ,
         <span style="white-space:nowrap">
          <a href="/Invoker" title="Invoker">
-          <img alt="Invoker icon.png" height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/0/00/Invoker_icon.png/20px-Invoker_icon.png?version=1d9a06738168196ece6c0084ab7cd5ba" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/0/00/Invoker_icon.png/30px-Invoker_icon.png?version=1d9a06738168196ece6c0084ab7cd5ba 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/0/00/Invoker_icon.png?version=1d9a06738168196ece6c0084ab7cd5ba 2x" width="20"/>
+          <img alt="Invoker minimap icon.png" height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/7d/Invoker_minimap_icon.png/20px-Invoker_minimap_icon.png?version=b8df0488c8f43a80f410211a4fb0ee2d" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/7d/Invoker_minimap_icon.png/30px-Invoker_minimap_icon.png?version=b8df0488c8f43a80f410211a4fb0ee2d 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/7/7d/Invoker_minimap_icon.png?version=b8df0488c8f43a80f410211a4fb0ee2d 2x" width="20"/>
          </a>
          <a href="/Invoker" title="Invoker">
           Invoker
          </a>
         </span>
-        ​,
+        ,
         <span style="white-space:nowrap">
          <a href="/Leshrac" title="Leshrac">
-          <img alt="Leshrac icon.png" height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/2/26/Leshrac_icon.png/20px-Leshrac_icon.png?version=ce5d3b2a3857dce9c73baaa413360705" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/2/26/Leshrac_icon.png/30px-Leshrac_icon.png?version=ce5d3b2a3857dce9c73baaa413360705 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/2/26/Leshrac_icon.png?version=ce5d3b2a3857dce9c73baaa413360705 2x" width="20"/>
+          <img alt="Leshrac minimap icon.png" height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/c/c8/Leshrac_minimap_icon.png/20px-Leshrac_minimap_icon.png?version=a4e5e62399c7646d8f730052833dd630" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/c/c8/Leshrac_minimap_icon.png/30px-Leshrac_minimap_icon.png?version=a4e5e62399c7646d8f730052833dd630 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/c/c8/Leshrac_minimap_icon.png?version=a4e5e62399c7646d8f730052833dd630 2x" width="20"/>
          </a>
          <a href="/Leshrac" title="Leshrac">
           Leshrac
          </a>
         </span>
-        ​.
+        .
         <span style="white-space:nowrap">
          <a href="/Pugna" title="Pugna">
-          <img alt="Pugna icon.png" height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/c/cd/Pugna_icon.png/20px-Pugna_icon.png?version=333c6109722b626ce1bb246e4c233306" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/c/cd/Pugna_icon.png/30px-Pugna_icon.png?version=333c6109722b626ce1bb246e4c233306 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/c/cd/Pugna_icon.png?version=333c6109722b626ce1bb246e4c233306 2x" width="20"/>
+          <img alt="Pugna minimap icon.png" height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/a/ab/Pugna_minimap_icon.png/20px-Pugna_minimap_icon.png?version=5a8287372edc678356cb00d1745109b4" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/a/ab/Pugna_minimap_icon.png/30px-Pugna_minimap_icon.png?version=5a8287372edc678356cb00d1745109b4 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/a/ab/Pugna_minimap_icon.png?version=5a8287372edc678356cb00d1745109b4 2x" width="20"/>
          </a>
          <a href="/Pugna" title="Pugna">
           Pugna
          </a>
         </span>
-        ​,
+        ,
         <span style="white-space:nowrap">
          <a href="/Outworld_Devourer" title="Outworld Devourer">
-          <img alt="Outworld Devourer icon.png" height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/9/99/Outworld_Devourer_icon.png/20px-Outworld_Devourer_icon.png?version=f45cc2699b118c5c73402a6066b2724b" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/9/99/Outworld_Devourer_icon.png/30px-Outworld_Devourer_icon.png?version=f45cc2699b118c5c73402a6066b2724b 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/9/99/Outworld_Devourer_icon.png?version=f45cc2699b118c5c73402a6066b2724b 2x" width="20"/>
+          <img alt="Outworld Devourer minimap icon.png" height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/2/28/Outworld_Devourer_minimap_icon.png/20px-Outworld_Devourer_minimap_icon.png?version=3229dae5046c1df09a52d64201d5efc9" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/2/28/Outworld_Devourer_minimap_icon.png/30px-Outworld_Devourer_minimap_icon.png?version=3229dae5046c1df09a52d64201d5efc9 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/2/28/Outworld_Devourer_minimap_icon.png?version=3229dae5046c1df09a52d64201d5efc9 2x" width="20"/>
          </a>
          <a href="/Outworld_Devourer" title="Outworld Devourer">
           Outworld Devourer
          </a>
         </span>
-        ​,
+        ,
         <span style="white-space:nowrap">
          <a href="/Enigma" title="Enigma">
-          <img alt="Enigma icon.png" height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/f/f7/Enigma_icon.png/20px-Enigma_icon.png?version=291978432471576d87a2d8e371a5508e" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/f/f7/Enigma_icon.png/30px-Enigma_icon.png?version=291978432471576d87a2d8e371a5508e 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/f/f7/Enigma_icon.png?version=291978432471576d87a2d8e371a5508e 2x" width="20"/>
+          <img alt="Enigma minimap icon.png" height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/0/03/Enigma_minimap_icon.png/20px-Enigma_minimap_icon.png?version=d4d2c06a0b02c227ee7ca3fa3a513ad7" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/0/03/Enigma_minimap_icon.png/30px-Enigma_minimap_icon.png?version=d4d2c06a0b02c227ee7ca3fa3a513ad7 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/0/03/Enigma_minimap_icon.png?version=d4d2c06a0b02c227ee7ca3fa3a513ad7 2x" width="20"/>
          </a>
          <a href="/Enigma" title="Enigma">
           Enigma
          </a>
         </span>
-        ​,
+        ,
         <span style="white-space:nowrap">
          <a href="/Warlock" title="Warlock">
-          <img alt="Warlock icon.png" height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/3/3f/Warlock_icon.png/20px-Warlock_icon.png?version=7bd19b8a88bae7fcdef1437952a475ba" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/3/3f/Warlock_icon.png/30px-Warlock_icon.png?version=7bd19b8a88bae7fcdef1437952a475ba 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/3/3f/Warlock_icon.png?version=7bd19b8a88bae7fcdef1437952a475ba 2x" width="20"/>
+          <img alt="Warlock minimap icon.png" height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/d/d3/Warlock_minimap_icon.png/20px-Warlock_minimap_icon.png?version=49044cd888a92bd54dcd0e8c6f006831" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/d/d3/Warlock_minimap_icon.png/30px-Warlock_minimap_icon.png?version=49044cd888a92bd54dcd0e8c6f006831 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/d/d3/Warlock_minimap_icon.png?version=49044cd888a92bd54dcd0e8c6f006831 2x" width="20"/>
          </a>
          <a href="/Warlock" title="Warlock">
           Warlock
          </a>
         </span>
-        ​,
+        ,
         <span style="white-space:nowrap">
          <a href="/Dazzle" title="Dazzle">
-          <img alt="Dazzle icon.png" height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/e/e6/Dazzle_icon.png/20px-Dazzle_icon.png?version=be72e711403bd4483d68f241385183be" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/e/e6/Dazzle_icon.png/30px-Dazzle_icon.png?version=be72e711403bd4483d68f241385183be 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/e/e6/Dazzle_icon.png?version=be72e711403bd4483d68f241385183be 2x" width="20"/>
+          <img alt="Dazzle minimap icon.png" height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/3/3b/Dazzle_minimap_icon.png/20px-Dazzle_minimap_icon.png?version=a2c3fd95db2f9dce86df0b72b5fb5c5e" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/3/3b/Dazzle_minimap_icon.png/30px-Dazzle_minimap_icon.png?version=a2c3fd95db2f9dce86df0b72b5fb5c5e 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/3/3b/Dazzle_minimap_icon.png?version=a2c3fd95db2f9dce86df0b72b5fb5c5e 2x" width="20"/>
          </a>
          <a href="/Dazzle" title="Dazzle">
           Dazzle
          </a>
         </span>
-        ​,
+        ,
         <span style="white-space:nowrap">
          <a href="/Shadow_Shaman" title="Shadow Shaman">
-          <img alt="Shadow Shaman icon.png" height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/9/96/Shadow_Shaman_icon.png/20px-Shadow_Shaman_icon.png?version=53e2559e54f15fb7a06dd024ca98b694" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/9/96/Shadow_Shaman_icon.png/30px-Shadow_Shaman_icon.png?version=53e2559e54f15fb7a06dd024ca98b694 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/9/96/Shadow_Shaman_icon.png?version=53e2559e54f15fb7a06dd024ca98b694 2x" width="20"/>
+          <img alt="Shadow Shaman minimap icon.png" height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/7e/Shadow_Shaman_minimap_icon.png/20px-Shadow_Shaman_minimap_icon.png?version=c814aae5fb036f8a34c7537a40032b00" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/7e/Shadow_Shaman_minimap_icon.png/30px-Shadow_Shaman_minimap_icon.png?version=c814aae5fb036f8a34c7537a40032b00 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/7/7e/Shadow_Shaman_minimap_icon.png?version=c814aae5fb036f8a34c7537a40032b00 2x" width="20"/>
          </a>
          <a href="/Shadow_Shaman" title="Shadow Shaman">
           Shadow Shaman
          </a>
         </span>
-        ​,
+        ,
         <span style="white-space:nowrap">
          <a href="/Shadow_Demon" title="Shadow Demon">
-          <img alt="Shadow Demon icon.png" height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/f/f3/Shadow_Demon_icon.png/20px-Shadow_Demon_icon.png?version=7b387c4c6d0c282a0c584df95bc97de4" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/f/f3/Shadow_Demon_icon.png/30px-Shadow_Demon_icon.png?version=7b387c4c6d0c282a0c584df95bc97de4 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/f/f3/Shadow_Demon_icon.png?version=7b387c4c6d0c282a0c584df95bc97de4 2x" width="20"/>
+          <img alt="Shadow Demon minimap icon.png" height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/3/35/Shadow_Demon_minimap_icon.png/20px-Shadow_Demon_minimap_icon.png?version=3fcbf4ceebcc366f5ba5698994e45d17" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/3/35/Shadow_Demon_minimap_icon.png/30px-Shadow_Demon_minimap_icon.png?version=3fcbf4ceebcc366f5ba5698994e45d17 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/3/35/Shadow_Demon_minimap_icon.png?version=3fcbf4ceebcc366f5ba5698994e45d17 2x" width="20"/>
          </a>
          <a href="/Shadow_Demon" title="Shadow Demon">
           Shadow Demon
          </a>
         </span>
-        ​,
+        ,
         <span style="white-space:nowrap">
          <a href="/Necrophos" title="Necrophos">
-          <img alt="Necrophos icon.png" height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/a/a6/Necrophos_icon.png/20px-Necrophos_icon.png?version=113570b75dc4d5da88e64acabc824906" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/a/a6/Necrophos_icon.png/30px-Necrophos_icon.png?version=113570b75dc4d5da88e64acabc824906 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/a/a6/Necrophos_icon.png?version=113570b75dc4d5da88e64acabc824906 2x" width="20"/>
+          <img alt="Necrophos minimap icon.png" height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/a/af/Necrophos_minimap_icon.png/20px-Necrophos_minimap_icon.png?version=3634f0733f18b09e3580a3cef705be2e" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/a/af/Necrophos_minimap_icon.png/30px-Necrophos_minimap_icon.png?version=3634f0733f18b09e3580a3cef705be2e 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/a/af/Necrophos_minimap_icon.png?version=3634f0733f18b09e3580a3cef705be2e 2x" width="20"/>
          </a>
          <a href="/Necrophos" title="Necrophos">
           Necrophos
          </a>
         </span>
-        ​,
+        ,
         <span style="white-space:nowrap">
          <a href="/Visage" title="Visage">
-          <img alt="Visage icon.png" height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/9/9e/Visage_icon.png/20px-Visage_icon.png?version=a6c93892674e71337423d5b2666ef69d" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/9/9e/Visage_icon.png/30px-Visage_icon.png?version=a6c93892674e71337423d5b2666ef69d 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/9/9e/Visage_icon.png?version=a6c93892674e71337423d5b2666ef69d 2x" width="20"/>
+          <img alt="Visage minimap icon.png" height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/2/2f/Visage_minimap_icon.png/20px-Visage_minimap_icon.png?version=ebdb277b3b2e90d2451c92d49192e8b1" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/2/2f/Visage_minimap_icon.png/30px-Visage_minimap_icon.png?version=ebdb277b3b2e90d2451c92d49192e8b1 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/2/2f/Visage_minimap_icon.png?version=ebdb277b3b2e90d2451c92d49192e8b1 2x" width="20"/>
          </a>
          <a href="/Visage" title="Visage">
           Visage
          </a>
         </span>
-        ​,
+        ,
         <span style="white-space:nowrap">
          <a href="/Skywrath_Mage" title="Skywrath Mage">
-          <img alt="Skywrath Mage icon.png" height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/b/bf/Skywrath_Mage_icon.png/20px-Skywrath_Mage_icon.png?version=b5cd43622ed69e87c3605e7d3bf7472e" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/b/bf/Skywrath_Mage_icon.png/30px-Skywrath_Mage_icon.png?version=b5cd43622ed69e87c3605e7d3bf7472e 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/b/bf/Skywrath_Mage_icon.png?version=b5cd43622ed69e87c3605e7d3bf7472e 2x" width="20"/>
+          <img alt="Skywrath Mage minimap icon.png" height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/8/84/Skywrath_Mage_minimap_icon.png/20px-Skywrath_Mage_minimap_icon.png?version=1029498eda9ca86e78fabfce1067abd0" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/8/84/Skywrath_Mage_minimap_icon.png/30px-Skywrath_Mage_minimap_icon.png?version=1029498eda9ca86e78fabfce1067abd0 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/8/84/Skywrath_Mage_minimap_icon.png?version=1029498eda9ca86e78fabfce1067abd0 2x" width="20"/>
          </a>
          <a href="/Skywrath_Mage" title="Skywrath Mage">
           Skywrath Mage
          </a>
         </span>
-        ​,
+        ,
         <span style="white-space:nowrap">
          <a href="/Disruptor" title="Disruptor">
-          <img alt="Disruptor icon.png" height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/9/97/Disruptor_icon.png/20px-Disruptor_icon.png?version=7e4a7d38c208df6ef892b7364289dd91" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/9/97/Disruptor_icon.png/30px-Disruptor_icon.png?version=7e4a7d38c208df6ef892b7364289dd91 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/9/97/Disruptor_icon.png?version=7e4a7d38c208df6ef892b7364289dd91 2x" width="20"/>
+          <img alt="Disruptor minimap icon.png" height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/b/b9/Disruptor_minimap_icon.png/20px-Disruptor_minimap_icon.png?version=de9ee085c67d1c00dd04b5bf5db1dd07" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/b/b9/Disruptor_minimap_icon.png/30px-Disruptor_minimap_icon.png?version=de9ee085c67d1c00dd04b5bf5db1dd07 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/b/b9/Disruptor_minimap_icon.png?version=de9ee085c67d1c00dd04b5bf5db1dd07 2x" width="20"/>
          </a>
          <a href="/Disruptor" title="Disruptor">
           Disruptor
          </a>
         </span>
-        ​,
+        ,
         <span style="white-space:nowrap">
          <a href="/Lion" title="Lion">
-          <img alt="Lion icon.png" height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/b/b8/Lion_icon.png/20px-Lion_icon.png?version=94bbc310fbb234f9e6edbb41b93f4f0d" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/b/b8/Lion_icon.png/30px-Lion_icon.png?version=94bbc310fbb234f9e6edbb41b93f4f0d 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/b/b8/Lion_icon.png?version=94bbc310fbb234f9e6edbb41b93f4f0d 2x" width="20"/>
+          <img alt="Lion minimap icon.png" height="20" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/1/13/Lion_minimap_icon.png/20px-Lion_minimap_icon.png?version=973a76704f6e76996725ecd606c1e785" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/1/13/Lion_minimap_icon.png/30px-Lion_minimap_icon.png?version=973a76704f6e76996725ecd606c1e785 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/1/13/Lion_minimap_icon.png?version=973a76704f6e76996725ecd606c1e785 2x" width="20"/>
          </a>
          <a href="/Lion" title="Lion">
           Lion
          </a>
         </span>
-        ​, Enchantress, Windranger, Oracle, Dark Seer.
+        , Enchantress, Windranger, Oracle, Dark Seer.
        </p>
        <h2>
         <span class="mw-headline" id="Tips">
@@ -1161,14 +1135,8 @@ document.head.appendChild(script);
          <span class="mw-editsection-bracket">
           [
          </span>
-         <a class="mw-editsection-visualeditor" href="/index.php?title=Scythe_of_Vyse&amp;veaction=edit&amp;vesection=4" title="Edit section: Tips">
-          edit
-         </a>
-         <span class="mw-editsection-divider">
-          |
-         </span>
          <a href="/index.php?title=Scythe_of_Vyse&amp;action=edit&amp;section=4" title="Edit section: Tips">
-          edit source
+          edit
          </a>
          <span class="mw-editsection-bracket">
           ]
@@ -1177,10 +1145,69 @@ document.head.appendChild(script);
        </h2>
        <ul>
         <li>
-         Combine it with a blink or invisibility to surprise your target and approchach and hit him while he is hexed. You can also use those items to catch an enemy that is running away.
+         Combine it with a blink or invisibility to surprise your target and approach and hit him while he is hexed. You can also use those items to catch an enemy that is running away.
         </li>
         <li>
-         If your enemy has a Linken's Sphere you can buy a Force Staff which is the cheapest item to disable it before applying hex.
+         Extremely powerful against heroes with high DPS, escape abilities, disablers, debuffs and carrying initiation or escape items like
+         <span style="white-space:nowrap">
+          <a href="/Black_King_Bar" title="Black King Bar">
+           <img alt="Black King Bar icon.png" height="15" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/72/Black_King_Bar_icon.png/20px-Black_King_Bar_icon.png?version=3b260e404db95d92a71ae02d60f6159b" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/72/Black_King_Bar_icon.png/30px-Black_King_Bar_icon.png?version=3b260e404db95d92a71ae02d60f6159b 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/7/72/Black_King_Bar_icon.png/40px-Black_King_Bar_icon.png?version=3b260e404db95d92a71ae02d60f6159b 2x" width="20"/>
+          </a>
+          <a href="/Black_King_Bar" title="Black King Bar">
+           Black King Bar
+          </a>
+         </span>
+         ,
+         <span style="white-space:nowrap">
+          <a href="/Blademail" title="Blademail">
+           <img alt="Blade Mail icon.png" height="15" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/1/18/Blade_Mail_icon.png/20px-Blade_Mail_icon.png?version=1cd63c6607e44771a213838e9a659cf1" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/1/18/Blade_Mail_icon.png/30px-Blade_Mail_icon.png?version=1cd63c6607e44771a213838e9a659cf1 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/1/18/Blade_Mail_icon.png/40px-Blade_Mail_icon.png?version=1cd63c6607e44771a213838e9a659cf1 2x" width="20"/>
+          </a>
+          <a class="mw-redirect" href="/Blademail" title="Blademail">
+           Blade Mail
+          </a>
+         </span>
+         ,
+         <span style="white-space:nowrap">
+          <a href="/Blink_Dagger" title="Blink Dagger">
+           <img alt="Blink Dagger icon.png" height="15" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/4/4c/Blink_Dagger_icon.png/20px-Blink_Dagger_icon.png?version=5e5c77df754652176e13ef200a71af7a" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/4/4c/Blink_Dagger_icon.png/30px-Blink_Dagger_icon.png?version=5e5c77df754652176e13ef200a71af7a 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/4/4c/Blink_Dagger_icon.png/40px-Blink_Dagger_icon.png?version=5e5c77df754652176e13ef200a71af7a 2x" width="20"/>
+          </a>
+          <a href="/Blink_Dagger" title="Blink Dagger">
+           Blink Dagger
+          </a>
+         </span>
+         ,
+         <span style="white-space:nowrap">
+          <a href="/Shadow_Blade" title="Shadow Blade">
+           <img alt="Shadow Blade icon.png" height="15" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/0/0f/Shadow_Blade_icon.png/20px-Shadow_Blade_icon.png?version=9f8a4132ee98f44cccbeefc3986e6b20" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/0/0f/Shadow_Blade_icon.png/30px-Shadow_Blade_icon.png?version=9f8a4132ee98f44cccbeefc3986e6b20 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/0/0f/Shadow_Blade_icon.png/40px-Shadow_Blade_icon.png?version=9f8a4132ee98f44cccbeefc3986e6b20 2x" width="20"/>
+          </a>
+          <a href="/Shadow_Blade" title="Shadow Blade">
+           Shadow Blade
+          </a>
+         </span>
+         ,
+         <span style="white-space:nowrap">
+          <a href="/Town_Portal_Scroll" title="Town Portal Scroll">
+           <img alt="Town Portal Scroll icon.png" height="15" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/4/46/Town_Portal_Scroll_icon.png/20px-Town_Portal_Scroll_icon.png?version=0791beb3701d30779b388bd46cc4f601" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/4/46/Town_Portal_Scroll_icon.png/30px-Town_Portal_Scroll_icon.png?version=0791beb3701d30779b388bd46cc4f601 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/4/46/Town_Portal_Scroll_icon.png/40px-Town_Portal_Scroll_icon.png?version=0791beb3701d30779b388bd46cc4f601 2x" width="20"/>
+          </a>
+          <a href="/Town_Portal_Scroll" title="Town Portal Scroll">
+           Town Portal Scroll
+          </a>
+         </span>
+         .
+         <ul>
+          <li>
+           Alternatively a
+           <span style="white-space:nowrap">
+            <a href="/Eul%27s_Scepter_of_Divinity" title="Eul's Scepter of Divinity">
+             <img alt="Eul's Scepter of Divinity icon.png" height="15" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/8/80/Eul%27s_Scepter_of_Divinity_icon.png/20px-Eul%27s_Scepter_of_Divinity_icon.png?version=d2b71066c6e70baee7b1cc69722ed51d" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/8/80/Eul%27s_Scepter_of_Divinity_icon.png/30px-Eul%27s_Scepter_of_Divinity_icon.png?version=d2b71066c6e70baee7b1cc69722ed51d 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/8/80/Eul%27s_Scepter_of_Divinity_icon.png/40px-Eul%27s_Scepter_of_Divinity_icon.png?version=d2b71066c6e70baee7b1cc69722ed51d 2x" width="20"/>
+            </a>
+            <a href="/Eul%27s_Scepter_of_Divinity" title="Eul's Scepter of Divinity">
+             Eul's Scepter of Divinity
+            </a>
+           </span>
+           can put an enemy carry out of a fight, it is useful against heroes hard to reach with high attack range.
+          </li>
+         </ul>
         </li>
        </ul>
        <h2>
@@ -1191,14 +1218,8 @@ document.head.appendChild(script);
          <span class="mw-editsection-bracket">
           [
          </span>
-         <a class="mw-editsection-visualeditor" href="/index.php?title=Scythe_of_Vyse&amp;veaction=edit&amp;vesection=5" title="Edit section: Trivia">
-          edit
-         </a>
-         <span class="mw-editsection-divider">
-          |
-         </span>
          <a href="/index.php?title=Scythe_of_Vyse&amp;action=edit&amp;section=5" title="Edit section: Trivia">
-          edit source
+          edit
          </a>
          <span class="mw-editsection-bracket">
           ]
@@ -1227,22 +1248,13 @@ document.head.appendChild(script);
           Sheepstick
          </i>
          " due to turning targeted heroes into sheep in DotA. However, in Dota 2, targeted units turn into a pig.
-         <ul>
-          <li>
-           Many heroes that have responses for buying Scythe of Vyse also call it "
-           <i>
-            Sheepstick
-           </i>
-           ".
-          </li>
-         </ul>
         </li>
         <li>
          The item's name may be a reference to the Sega RPG
          <i>
           Skies of Arcadia
          </i>
-         . The main character, Vyse, has been depicted weilding a scythe in early concept art.
+         . The main character, Vyse, has been depicted wielding a scythe in early concept art.
         </li>
        </ul>
        <h2>
@@ -1253,14 +1265,8 @@ document.head.appendChild(script);
          <span class="mw-editsection-bracket">
           [
          </span>
-         <a class="mw-editsection-visualeditor" href="/index.php?title=Scythe_of_Vyse&amp;veaction=edit&amp;vesection=6" title="Edit section: Gallery">
-          edit
-         </a>
-         <span class="mw-editsection-divider">
-          |
-         </span>
          <a href="/index.php?title=Scythe_of_Vyse&amp;action=edit&amp;section=6" title="Edit section: Gallery">
-          edit source
+          edit
          </a>
          <span class="mw-editsection-bracket">
           ]
@@ -2368,44 +2374,50 @@ document.head.appendChild(script);
  </a>
 </li>
 <li>
+ <a href="/Upgrader" title="Upgrader">
+  Upgrader
+ </a>
+</li>
+<li>
  <a href="/Arcane_Ring" title="Arcane Ring">
   Arcane Ring
  </a>
 </li>
 <!-- 
 NewPP limit report
-Cached time: 20170208015338
+Cached time: 20170609032813
 Cache expiry: 86400
 Dynamic content: false
 [SMW] In‐text annotation parser time: 0.001 seconds
-CPU time usage: 2.476 seconds
-Real time usage: 3.503 seconds
-Preprocessor visited node count: 24537/1000000
-Preprocessor generated node count: 43457/1000000
-Post‐expand include size: 115881/2097152 bytes
-Template argument size: 58181/2097152 bytes
-Highest expansion depth: 16/40
+CPU time usage: 0.776 seconds
+Real time usage: 1.409 seconds
+Preprocessor visited node count: 3847/1000000
+Preprocessor generated node count: 38210/1000000
+Post‐expand include size: 69735/2097152 bytes
+Template argument size: 37957/2097152 bytes
+Highest expansion depth: 9/40
 Expensive parser function count: 0/99
+ExtLoops count: 5/1000
 -->
 <!-- 
 Transclusion expansion time report (%,ms,calls,template)
-103.36% 3250.529      4 - Template:Navbox
-100.00% 3144.854      1 - -total
- 52.34% 1646.097      1 - Template:ItemNav
- 49.85% 1567.562    161 - Template:Item_link
- 42.18% 1326.400    166 - Template:Item_name
- 27.22%  855.976     32 - Template:H
- 19.24%  605.046    431 - Template:If_lang
- 11.52%  362.416      1 - Template:Item_infobox
-  8.11%  255.062     32 - Template:Hero_link
-  5.89%  185.138     32 - Template:Hero_name
+100.00% 1074.891      1 - -total
+ 32.96%  354.290      1 - Template:Item_infobox
+ 29.43%  316.345     32 - Template:H
+ 13.13%  141.151      1 - Template:Ability
+ 11.51%  123.772      4 - Template:Navbox
+  7.88%   84.694      8 - Template:I
+  7.55%   81.139      1 - Template:ItemNav
+  6.27%   67.427      4 - Template:Item
+  1.59%   17.078      1 - Template:Tabber
+  0.72%    7.746      7 - Template:Symbol
 -->
-<!-- Saved in parser cache with key dota2_gamepedia:pcache:idhash:1044-0!*!0!default!!en!5!* and timestamp 20170208015334 and revision id 1448520
+<!-- Saved in parser cache with key dota2_gamepedia:pcache:idhash:1044-0!*!0!default!!en!5!* and timestamp 20170609032812 and revision id 1530381
  -->
 <div class="printfooter">
  Retrieved from "
- <a dir="ltr" href="http://dota2.gamepedia.com/index.php?title=Scythe_of_Vyse&amp;oldid=1448520">
-  http://dota2.gamepedia.com/index.php?title=Scythe_of_Vyse&amp;oldid=1448520
+ <a dir="ltr" href="https://dota2.gamepedia.com/index.php?title=Scythe_of_Vyse&amp;oldid=1530381">
+  https://dota2.gamepedia.com/index.php?title=Scythe_of_Vyse&amp;oldid=1530381
  </a>
  "
 </div>
@@ -2442,8 +2454,8 @@ Transclusion expansion time report (%,ms,calls,template)
     </a>
    </li>
    <li>
-    <a href="/Category:Bought_from_Caster" title="Category:Bought from Caster">
-     Bought from Caster
+    <a href="/Category:Shop_items" title="Category:Shop items">
+     Shop items
     </a>
    </li>
   </ul>
@@ -2464,7 +2476,7 @@ Transclusion expansion time report (%,ms,calls,template)
     (function() {
         var zergnet = document.createElement('script');
         zergnet.type = 'text/javascript'; zergnet.async = true;
-        zergnet.src = 'http://www.zergnet.com/zerg.js?id=42966';
+        zergnet.src = '//www.zergnet.com/zerg.js?id=42966';
         var znscr = document.getElementsByTagName('script')[0];
         znscr.parentNode.insertBefore(zergnet, znscr);
     })();
@@ -2554,19 +2566,19 @@ Transclusion expansion time report (%,ms,calls,template)
     </h3>
     <div class="menu">
      <div id="socialIconImages">
-      <a href="https://twitter.com/intent/tweet?text=Check+out+Scythe+of+Vyse+on+Dota+2+Wiki+--&amp;via=CurseGamepedia&amp;url=http%3A%2F%2Fdota2.gamepedia.com%2FScythe_of_Vyse" target="_blank">
+      <a href="https://twitter.com/intent/tweet?text=Check+out+Scythe+of+Vyse+on+Dota+2+Wiki+--&amp;via=CurseGamepedia&amp;url=https%3A%2F%2Fdota2.gamepedia.com%2FScythe_of_Vyse" target="_blank">
        <img src="/extensions/Social/images/square_icons/twitter.png"/>
       </a>
-      <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fdota2.gamepedia.com%2FScythe_of_Vyse" target="_blank">
+      <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdota2.gamepedia.com%2FScythe_of_Vyse" target="_blank">
        <img src="/extensions/Social/images/square_icons/facebook.png"/>
       </a>
-      <a href="https://plus.google.com/share?url=http%3A%2F%2Fdota2.gamepedia.com%2FScythe_of_Vyse" target="_blank">
+      <a href="https://plus.google.com/share?url=https%3A%2F%2Fdota2.gamepedia.com%2FScythe_of_Vyse" target="_blank">
        <img src="/extensions/Social/images/square_icons/googleplus.png"/>
       </a>
-      <a href="http://www.reddit.com/submit?url=http%3A%2F%2Fdota2.gamepedia.com%2FScythe_of_Vyse&amp;title=Check+out+Scythe+of+Vyse+on+Dota+2+Wiki+via+%40CurseGamepedia%3A+http%3A%2F%2Fdota2.gamepedia.com%2FScythe_of_Vyse" target="_blank">
+      <a href="http://www.reddit.com/submit?url=https%3A%2F%2Fdota2.gamepedia.com%2FScythe_of_Vyse&amp;title=Check+out+Scythe+of+Vyse+on+Dota+2+Wiki+via+%40CurseGamepedia%3A+https%3A%2F%2Fdota2.gamepedia.com%2FScythe_of_Vyse" target="_blank">
        <img src="/extensions/Social/images/square_icons/reddit.png"/>
       </a>
-      <a href="http://www.tumblr.com/share/link?url=http%3A%2F%2Fdota2.gamepedia.com%2FScythe_of_Vyse&amp;name=Dota+2+Wiki&amp;description=Check+out+Scythe+of+Vyse+on+Dota+2+Wiki+via+%3Ca+href%3D%22https%3A%2F%2Ftwitter.com%2FCurseGamepedia%22+target%3D%22_blank%22%3E%40CurseGamepedia%3C%2Fa%3E%3A+http%3A%2F%2Fdota2.gamepedia.com%2FScythe_of_Vyse" target="_blank">
+      <a href="http://www.tumblr.com/share/link?url=https%3A%2F%2Fdota2.gamepedia.com%2FScythe_of_Vyse&amp;name=Dota+2+Wiki&amp;description=Check+out+Scythe+of+Vyse+on+Dota+2+Wiki+via+%3Ca+href%3D%22https%3A%2F%2Ftwitter.com%2FCurseGamepedia%22+target%3D%22_blank%22%3E%40CurseGamepedia%3C%2Fa%3E%3A+https%3A%2F%2Fdota2.gamepedia.com%2FScythe_of_Vyse" target="_blank">
        <img src="/extensions/Social/images/square_icons/tumblr.png"/>
       </a>
      </div>
@@ -2586,17 +2598,10 @@ Transclusion expansion time report (%,ms,calls,template)
        </a>
       </span>
      </li>
-     <li id="ca-ve-edit">
-      <span>
-       <a accesskey="v" href="/index.php?title=Scythe_of_Vyse&amp;veaction=edit" title="Edit this page [v]">
-        Edit
-       </a>
-      </span>
-     </li>
-     <li class=" collapsible" id="ca-edit">
+     <li id="ca-edit">
       <span>
        <a accesskey="e" href="/index.php?title=Scythe_of_Vyse&amp;action=edit" title="Edit this page [e]">
-        Edit source
+        Edit
        </a>
       </span>
      </li>
@@ -2794,7 +2799,7 @@ Transclusion expansion time report (%,ms,calls,template)
       </a>
      </li>
      <li id="t-permalink">
-      <a href="/index.php?title=Scythe_of_Vyse&amp;oldid=1448520" title="Permanent link to this revision of the page">
+      <a href="/index.php?title=Scythe_of_Vyse&amp;oldid=1530381" title="Permanent link to this revision of the page">
        Permanent link
       </a>
      </li>
@@ -2958,12 +2963,36 @@ Transclusion expansion time report (%,ms,calls,template)
     </div>
    </div>
   </div>
+  <div aria-labelledby="p-lang-label" class="portal" id="p-lang" role="navigation">
+   <h3 id="p-lang-label">
+    In other languages
+   </h3>
+   <div class="body">
+    <ul>
+     <li class="interlanguage-link interwiki-de">
+      <a href="http://dota2-de.gamepedia.com/Scythe_of_Vyse" hreflang="de" lang="de" title="Scythe of Vyse – Deutsch">
+       Deutsch
+      </a>
+     </li>
+     <li class="interlanguage-link interwiki-ru">
+      <a href="http://dota2-ru.gamepedia.com/Scythe_of_Vyse" hreflang="ru" lang="ru" title="Scythe of Vyse – русский">
+       Русский
+      </a>
+     </li>
+     <li class="interlanguage-link interwiki-zh">
+      <a href="http://dota2-zh.gamepedia.com/%E9%82%AA%E6%81%B6%E9%95%B0%E5%88%80" hreflang="zh" lang="zh" title="邪恶镰刀 – 中文">
+       中文
+      </a>
+     </li>
+    </ul>
+   </div>
+  </div>
  </div>
 </div>
 <div id="footer" role="contentinfo">
  <ul id="footer-info">
   <li id="footer-info-lastmod">
-   This page was last modified on 28 January 2017, at 04:13.
+   This page was last modified on 30 May 2017, at 17:46.
   </li>
   <li id="footer-info-copyright">
    Content is available under
@@ -3047,8 +3076,8 @@ Transclusion expansion time report (%,ms,calls,template)
     </a>
    </li>
    <li>
-    <a class="advertise" href="https://ghostreconwildlands.gamepedia.com">
-     Ghost Recon
+    <a class="advertise" href="https://masseffectandromeda.gamepedia.com/Mass_Effect:_Andromeda_Wiki">
+     ME:Andromeda
     </a>
    </li>
   </ul>
@@ -3074,8 +3103,8 @@ Transclusion expansion time report (%,ms,calls,template)
     </a>
    </li>
    <li>
-    <a class="about" href="http://www.hearthpwn.com/guides/1480-how-to-get-cheaper-hearthstone-packs-buy-amazon">
-     HS Packs
+    <a class="advertise" href="https://masseffectandromeda.gamepedia.com/Skill">
+     ME:A Skills
     </a>
    </li>
   </ul>
@@ -3101,8 +3130,8 @@ Transclusion expansion time report (%,ms,calls,template)
     </a>
    </li>
    <li>
-    <a class="tos" href="https://forhonor.gamepedia.com">
-     For Honor
+    <a class="advertise" href="https://zelda.gamepedia.com/Main_Page">
+     Zelda Wiki
     </a>
    </li>
   </ul>
@@ -3158,8 +3187,5 @@ _comscore.push({ c1: "2", c2: "6035118" });
 				window.wikiTags = ["action","defense of the ancients","esports","free-to-play","free to play","ftp","game:dota 2","linux","mac","pc","rts","source","steam","valve"];
 </script>
 <script>
- (window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":83});});
-</script>
-<script type="text/javascript">
- window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"75f4858b7a","applicationID":"1909498","transactionName":"YlVXbREHWksEUkVdCVsfYEsKSV1WAVRJGhZdQA==","queueTime":0,"applicationTime":99,"atts":"ThJAG1kdSRRHUBMOHUhN","errorBeacon":"bam.nr-data.net","agent":""}
+ (window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":1524});});
 </script>
