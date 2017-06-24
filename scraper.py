@@ -1,9 +1,11 @@
 # !/usr/bin/env python
-# -*- coding: utf-8 -*-
+# -*- coding: utf-8 -*-import sys
+import sys
+reload(sys)
+sys.setdefaultencoding('utf-8')
 from bs4 import BeautifulSoup as BS, NavigableString
 import re
 import os
-import codecs
 import urllib
 import json
 from pprint import pprint, pformat
@@ -26,14 +28,19 @@ SPECIAL_SENTENCES = {
     'Partially blocked by Linken\'s Sphere.': 'PARTIAL_BLOCKED_BY_LINKEN',
     'Blocked by Linken\'s Sphere.': 'BLOCKED_BY_LINKEN',
     'Available at Secret Shop': 'SECRET_SHOP',
-    'Available at Side Lane Shop': 'SIDE_SHOP'
+    'Available at Side Lane Shop': 'SIDE_SHOP',
+    'Talent': 'TALENT_UPGRADE',
+    'Available at Base Shop': None
 }
 HERO_HTMLS = './htmls/heroes/'
 ITEM_HTMLS = './htmls/items/'
 
 # divs is an array of <ul> tags
 # notes is the array used recursively, also the return value
-def find_notes(divs, notes):
+# Note: the name of the image is between '$' because that is how our parser works
+def find_notes(divs_old, notes):
+    divs = [BS(str(div), 'html.parser') for div in divs_old]  # deep copy fixes problems later on with the BS object
+
     # base case, we are done
     if len(divs) == 0:
         return notes
@@ -44,31 +51,60 @@ def find_notes(divs, notes):
         ul_divs = li.findAll('ul')  # get the sub points
         ul_notes = find_notes(ul_divs, [])  # get the points for those sub points
         [d.extract() for d in ul_divs]  # remove them from the tag since we're done
-        text = li.text.encode('utf-8').strip().replace('\xe2\x80\x8b', '')  # get the text from the <li> (without children now)
-        notes.append(text)
-        notes.append(ul_notes)
+
+        # if there is a talent or aghs image
+        for a in li.findAll('a'):
+            if a.get('title') == 'Talent' or a.get('title') == 'Upgradable by Aghanim\'s Scepter.':
+                a.string = ' $' + SPECIAL_SENTENCES[a.get('title')] + '$ '
+        text = clean(li.text)
+        notes.append({
+            'note': text,
+            'subnotes': ul_notes
+        })
         return find_notes(divs[1:], notes)
 
     # no subpoints, get the text and return in the notes
     else:
-        [notes.append(div.text.encode('utf-8').strip().replace('\xe2\x80\x8b', '')) for div in divs[0].findAll('li')]  # append all <li> text to the notes
+        text = ''
+        for li in divs[0].findAll('li'):
+            # if there is a talent or aghs image
+            for a in li.findAll('a'):
+                if a.get('title') == 'Talent' or a.get('title') == 'Upgradable by Aghanim\'s Scepter.':
+                    a.string = ' $' + SPECIAL_SENTENCES[a.get('title')] + '$ '
+            text = clean(li.text)
+            notes.append({
+                'note': text,
+                'subnotes': None
+            })
         return find_notes(divs[1:], notes) # recurse with the rest
+
+def clean(str):
+    str = str.strip()
+    str = re.sub('\n+', '', str)
+    str = re.sub(' +', ' ', str)
+    return str
 
 def fetch_abilities(soup, extra=True):
     abilities = []
-    for div in soup.findAll('div', style='display: flex; flex-wrap: wrap; align-items: flex-start;'):
+    # iterate through all ability divs
+    for ability_div in soup.findAll('div', style='display: flex; flex-wrap: wrap; align-items: flex-start;')[0:-1]:
         ability = {}
-        children = div.find('div', style=re.compile(r'font-weight: bold; font-size: 110%; border-bottom: 1px solid black;.*')).contents
+        children = ability_div.find('div', style=re.compile(r'font-weight: bold; font-size: 110%; border-bottom: 1px solid black;.*')).contents
         # get name
-        name = children[0].encode('utf-8')
+        name = children[0].encode('utf-8').strip()
 
         # get the special information
         ability_special = [SPECIAL_SENTENCES[a['title'].encode('utf-8')] for a in
                            children[1].findAll('a', recursive=False)]
 
+        # get if aghs upgrade too since it's not shown in the title
+        if len([x.get('alt') for x in ability_div.findAll('img') if x.get('alt') == 'Upgradable by Aghanim\'s Scepter.']) != 0:
+            ability_special.append('AGHANIM_UPGRADE')
+
+
         # get "type" (i.e no target/passive/etc) and summary
-        type_div = div.find('div', style='padding: 15px 5px; font-size: 85%; line-height: 100%; text-align: center;')
-        types = {}
+        type_div = ability_div.find('div', style='padding: 15px 5px; font-size: 85%; line-height: 100%; text-align: center;')
+        types = []
         for type in type_div.findAll('div', recursive=False):
             if type.find('b') is None:
                 continue
@@ -79,59 +115,120 @@ def fetch_abilities(soup, extra=True):
             b.extract()
 
             # iterate through each block that's split by a br (this doesn't makes sense lol)
-            string = ''
-            strings = []
-            soups = [BS(x, 'html.parser') for x in unicode(''.join([unicode(child) for child in list(type.children)])).split('<br/>') if x != '']
+            strings = {}
+            soups = [BS(x.strip(), 'html.parser') for x in unicode(''.join([unicode(child) for child in list(type.children)])).split('<br/>') if x.strip() != '']
             for s in soups:
-                string += ' '.join([SPECIAL_SENTENCES[a.get('title').encode('utf-8')] for a in s.findAll('a') if a.get('title').encode('utf-8') in SPECIAL_SENTENCES])
-                string += ' '.join([re.sub(r'\(|\)', '', x.encode('utf-8')) for x in s.findAll(text=True) if x.strip() != ''])
-                strings.append(string.strip())
-                string = ''
+                extra = ' '.join([SPECIAL_SENTENCES[a.get('title').encode('utf-8')] for a in s.findAll('a') if a.get('title').encode('utf-8') in SPECIAL_SENTENCES])  # if it works don't fix
+                string = ' '.join([re.sub(r'\(|\)', '', x.encode('utf-8')) for x in s.findAll(text=True) if x.strip() != ''])
+                string = clean(string)
+                if extra is not '':
+                    strings[extra] = string
+                else:
+                    if 'normal' in strings.keys():
+                        strings['normal'] += ', ' + string
+                    else:
+                        strings['normal'] = string
 
             # save
-            types[val] = strings
+            strings['name'] = val
+            types.append(strings)
 
         # get description
-        description = div.find('div', style='vertical-align: top; padding: 3px 5px; border-top: 1px solid black;').text.encode('utf-8')
+        description = ability_div.find('div', style='vertical-align: top; padding: 3px 5px; border-top: 1px solid black;').text.encode('utf-8')
+        description = clean(description)
 
-        # get the data about the ability
-        div_data = div.find('div', style='vertical-align:top; padding: 3px 5px;')
+        # find all the divs for data
+        div_data = ability_div.find('div', style='vertical-align:top; padding: 3px 5px;')
         data = []
-
-        # find all the divs
         for data_item in div_data.findAll('div'):
-            # we want to break once we hit a style-less div
+            # we want to break once we hit a div with a style
             if data_item.has_attr('style'):
                 break
 
-            # push data
-            text = data_item.text.replace(u'\xa0', u' ').encode('utf-8').strip()
-            data.append(text)
+            for span in data_item.find('b').findAll('span'):
+                span.unwrap()
+            lines = [BS(x,'html.parser') for x in str(data_item).split(':', 1)]  # left side is data, right side is/are value(s)
+            data_object = clean(lines[0].text)
+            current_data = {
+                'name': data_object
+            }
+            values = [BS(x, 'html.parser') for x in str(lines[1]).split('(')]
+            for value in values:
+                if ',' in value.text:  ## there is a talent value along with a aghs value
+                    for a_tag in value.findAll('a', recursive=False):
+                        if a_tag.get('title') == 'Talent':
+                            current_data[SPECIAL_SENTENCES['Talent'] + '_AGHS'] = clean(a_tag.findNext('span').text)
+                        else:
+                            current_data[SPECIAL_SENTENCES[a_tag.get('title')]] = clean(a_tag.findNext('span').text)
+                elif value.find('a') is not None:
+                    current_data[SPECIAL_SENTENCES[value.find('a').get('title')]] = clean(value.text.replace(')', ''))
+                else:
+                    current_data['normal'] = clean(value.text)
+            data.append(current_data)
 
         # get special details (i.e extra notes about the special)
-        special_details = []
+        special_details = {}
         for special_div in div_data.findAll('div', style='margin-left: 50px;'):
             # this is for the special ablities (i.e aghs upgrade, linken partial, etc...)
             a_tag = special_div.find('a')
             if a_tag is not None:
-                # we want to append the data so when we can add it when getting the div's text
-                a_tag.append(SPECIAL_SENTENCES[a_tag['title']])
+                special = SPECIAL_SENTENCES[a_tag['title']]
+            else:
+                print 'No a-tag for ' + name
 
             text = special_div.text.encode('utf-8').strip()
-            special_details.append(text)
+            text = re.sub(' +', ' ', text)
+            special_details[special] = text.replace('\n \n', '\n')
 
 
         modifiers = []
         # finding the modifiers
         for d in div_data.findAll('div', style='font-size: 85%; margin-left: 10px;'):
-            modifiers += [item.strip().replace(u'\xa0', u' ').encode('utf-8') for item in d.text.strip().split('\n')]
+            modifier = {
+                'value': clean(d.text),
+                'colour': 'red' if d.find('span').get('style') == u'color:#631F1F;' else 'green'
+            }
+            modifiers.append(modifier)
 
         # finding notes
-        note_div = div.find('div', style='flex: 2 3 400px; word-wrap: break-word;')
+        note_div = ability_div.find('div', style='flex: 2 3 400px; word-wrap: break-word;')
         if note_div is not None:
             notes = find_notes(note_div.findAll('ul', recursive=False), [])
         else:
             notes = []
+
+        # check if there's a cooldown "div"
+        cooldown = {}
+        cooldown_atag = ability_div.find('a', title='Cooldown')
+        if cooldown_atag is not None:
+            cooldown_div = cooldown_atag.parent.parent
+            extra_a_tag = cooldown_div.find('a', recursive = False)
+
+            # check if there is a TALENT or AGHS upgrade that changes the value
+            if extra_a_tag is not None:
+                extra_cooldown = cooldown_div.text.split('(')[-1].replace(')', '')
+                cooldown[SPECIAL_SENTENCES[extra_a_tag.get('title')]] = clean(extra_cooldown)
+
+            # set the normal value of the cooldown
+            normal_cooldown = cooldown_div.text.split('(')[0].replace(')', '')
+            cooldown['normal'] = clean(normal_cooldown)
+
+        # check if there's a mana div
+        mana = {}
+        mana_atag = ability_div.find('a', title='Mana')  # reparsing as BS object seems to fix a bug
+        if mana_atag is not None:
+            mana_div = mana_atag.parent.parent
+            extra_a_tag = mana_div.find('a', recursive=False)
+
+            # check if there is a TALENT or AGHS upgrade that changes the value
+            if extra_a_tag is not None:
+                extra_mana = mana_div.text.split('(')[-1].replace(')', '')
+                mana[SPECIAL_SENTENCES[extra_a_tag.get('title')]] = clean(extra_mana)
+
+            # set the normal value of the mana
+            normal_mana = mana_div.text.split('(')[0].replace(')', '')
+            mana['normal'] = clean(normal_mana)
+
 
         ability[name] = {
             'ability_special': ability_special,
@@ -141,35 +238,25 @@ def fetch_abilities(soup, extra=True):
             'data': data,
             'modifiers': modifiers,
             'notes': notes,
-            'Cooldown': '',
-            'Mana': '',
+            'cooldown': cooldown,
+            'mana': mana,
         }
-
-        # are we getting cooldown and mana cost?
-        if extra:
-            # check if there's a cooldown "div"
-            if div.find('a', title='Cooldown') is not None:
-                ability[name]['Cooldown'] = div.find('a', title='Cooldown').parent.parent.text.encode('utf-8').strip()
-            if div.find('a', title='Mana') is not None:
-                ability[name]['Mana'] = div.find('a', title='Mana').parent.parent.text.replace(u'\xa0', u' ').encode(
-                    'utf-8').strip()
-
-        # add to array
         abilities.append(ability)
 
     return abilities
 
+# FOR DATA
 def hero_data(soup, extra=True):
     # return object
     hero = {}
 
     # get description
     p = soup.find('div', id='mw-content-text').find('p')
-    description = p.text.encode('utf-8')
+    description = re.sub(' +', ' ', p.text.encode('utf-8')).replace('\n', '').strip()
     hero['description'] = description
 
     # get info
-    tablebody = soup.find('table', class_='infobox').find('tbody')
+    tablebody = soup.find('table', class_='infobox')#.find('tbody')
     trs = tablebody.findAll('tr', recursive=False)
 
     # get attributes
@@ -207,25 +294,51 @@ def hero_data(soup, extra=True):
     misc_stats_table = trs[4].findAll('tr')
     misc_stats = {}
     for tr in misc_stats_table:
-        misc_stats[get_stat(tr, 0).encode('utf-8').strip()] = get_stat(tr, 1).encode('utf-8').strip()
+        misc_stat = get_stat(tr, 0).encode('utf-8').strip()
+        misc_stat_value = get_stat(tr, 1).encode('utf-8').strip()
+        misc_stats[misc_stat] = re.sub(' +', ' ', misc_stat_value).replace('\n', '')
 
     hero['misc_stats'] = misc_stats
 
     # get bio
-    bio_trs = soup.find('div', class_='biobox').findAll('tbody')[-1].findAll('tr', recursive=False)
+    bio_trs = soup.find('div', class_='biobox').findAll('table')[0].findAll('tr', recursive=False)
     roles = []
     for a in bio_trs[2].findAll('td')[1].findAll('a'):
-        if a.text is None or a.text == '':
+        if a.get('title') == 'Role':
             continue
-        roles.append(a.text.encode('utf-8').strip())
+        roles.append(a.get('title'))
     hero['roles'] = roles
     lore = bio_trs[3].findAll('td')[1].text.encode('utf-8').strip()
-    hero['lore'] = lore
-
+    lore = re.sub(' +', ' ', lore)
+    lore = re.sub('\n+', '\n', lore)
+    hero['lore'] = lore.replace('\n \n', '\n')
 
     #get abilities
     abilities = fetch_abilities(soup, extra)
     hero['abilities'] = abilities
+
+    # get talents
+    talents = {}
+    talent_div = soup.find('span', id='Talents').parent.findNext('div')
+    talent_table = talent_div.find('table')
+    trs = talent_table.findAll('tr', recursive = False)[1:]
+    for tr in trs:
+        tds = tr.findAll('td', recursive = False)
+        left = clean(tds[0].text)
+        level = clean(tds[1].text)
+        right = clean(tds[2].text)
+        talents[level] = {
+            'left': left,
+            'right': right
+        }
+    note_div = talent_div.findAll('div', recursive = False)[1]
+    if note_div is not None:
+        notes = find_notes(note_div.findAll('ul', recursive=False), [])
+    else:
+        notes = []
+    talents['notes'] = notes
+    hero['talents'] = talents
+
     return hero
 
 def fetch_items(soup):
@@ -246,27 +359,35 @@ def fetch_items(soup):
         for li in ul.findAll('li'):  # get each li in the ul
             if li.find('li') is not None:
                 print 'Double li'
-            additional_info.append(re.sub(' +', ' ', li.text.encode('utf-8').strip()).replace('\xe2\x80\x8b', '')) #  removes double whitespaces and other utf-8 bad chars
+            additional_info.append(clean(li.text.encode('utf-8').strip())) #  removes double whitespaces and other utf-8 bad chars
 
     item_data['additional_info'] = additional_info
 
     # find the table with the item info and get its <tr> tags
-    trs = soup.find('table', class_='infobox').find('tbody').findAll('tr', recursive=False)
+    trs = soup.find('table', class_='infobox').findAll('tr', recursive=False) or soup.find('table', class_='infobox').find('tbody').findAll('tr', recursive=False)
     item_data['availability'] = []
     for span in trs[0].findAll('span'):
         item_data['availability'].append(SPECIAL_SENTENCES[span.get('title')])
-    item_data['lore'] = trs[3].text.encode('utf-8').strip()
-    item_data['cost'] = re.sub(r'[a-z]|[A-Z]', '', trs[4].find('th').find('div').text)  # removes text (keeps cost + recipe)
-    item_data['type'] = re.sub(r'Bought From', '', trs[4].find('th').findAll('div', recursive=False)[-1].text)
+    item_data['lore'] = clean(trs[3].text)
+
+    cost = clean(re.sub(r'[a-z]|[A-Z]', '', trs[4].find('th').find('div').text))
+    item_data['cost'] = {
+        'item': cost.split('(')[0].strip()
+    }
+    if len(cost.split('(')) > 1:
+        item_data['cost']['recipe'] = cost.split('(')[1].replace(')', '').strip()
+
+    # removes text (keeps cost + recipe)
+    item_data['type'] = clean(re.sub(r'Bought From', '', trs[4].find('th').findAll('div', recursive=False)[-1].text))
 
     # get the details
-    detail_trs = trs[-1].find('tbody').findAll('tr')
+    detail_trs = trs[-1].findAll('tr')
     details = {}
     for tr in detail_trs:
         # make sure it's not empty
         if tr.find('td') is None or tr.find('td').text.strip() == '':
             continue
-        detail = tr.find('td').text.encode('utf-8').strip()
+        detail = clean(tr.find('td').text)
 
         # if it's a recipe, we do something different
         if detail == 'Recipe':
@@ -293,18 +414,18 @@ def fetch_items(soup):
             br.name = 'p'
             br.insert(0, NavigableString(','))
 
-        details[detail] = [x.strip() for x in tr.findAll('td')[1].text.encode('utf-8').split(',') if x.strip() != '']
+        details[detail] = [clean(x) for x in tr.findAll('td')[1].text.encode('utf-8').split(',') if x.strip() != '']
 
     item_data['details'] = details
 
     return item_data
 
+## IMAGES
 def fetch_item_image(soup, name):
     table = soup.find('table', class_='infobox')
     tr = table.find('tbody').findAll('tr', recursive=False)[1]
     img = tr.find('img')
     urllib.urlretrieve(img.get('src'), './images/' + name + '.' + img.get('alt').split('.')[-1])
-
 
 def fetch_hero_images(soup, hero_name):
     fetch_image(soup)
@@ -344,8 +465,7 @@ def replace_unicode(string):
     pattern = re.compile('|'.join(re.escape(key) for key in REPLACE_STRINGS.keys()))
     return pattern.sub(lambda x: REPLACE_STRINGS[x.group()], string)
 
-
-# FOR IMAGES
+## DATA
 def fetch_images():
     i = 0
     num_files = len(os.listdir(HERO_HTMLS)) + len(os.listdir(ITEM_HTMLS))
@@ -377,12 +497,15 @@ def get_heroes():
             print str(i) + '/' + str(num_files)
             with open(HERO_HTMLS + file, 'r') as html:
                 name = os.path.splitext(file)[0]
+                type = os.path.splitext(file)[1]
+                if type != '.html':
+                    i -= 1
+                    continue
                 print name
                 hero_soup = BS(html.read(), 'html.parser')  # soupify the page to parse
                 heroes[name] = hero_data(hero_soup)
 
         json.dump(heroes, jsonfile, ensure_ascii=False)
-
 
 def get_items():
     i = 0
@@ -400,7 +523,6 @@ def get_items():
 
         json.dump(items, jsonfile, ensure_ascii=False)
 
-
 def combine():
     # combine files into 1
     with open('heroes.json', 'r') as herofile:
@@ -414,6 +536,7 @@ def combine():
             with open('dota2.json', 'w') as dotafile:
                 json.dump(new_json, dotafile)
 
+## LOGGING
 def pretty_print():
     # pretty print it for readability
     with open('heroes_fixed.json', 'r') as file:
@@ -425,7 +548,6 @@ def pretty_print():
         data = json.load(file)
         with open('items_pretty.json', 'w') as prettyfile:
             prettyfile.write(pformat(data, indent=2))
-
 
 get_heroes()
 get_items()

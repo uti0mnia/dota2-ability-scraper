@@ -1,0 +1,44 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+BS	page_downloader.py	/^from bs4 import BeautifulSoup as BS$/;"	kind:namespace	line:3
+BS	scraper.py	/^from bs4 import BeautifulSoup as BS, NavigableString$/;"	kind:namespace	line:6
+HERO_HTMLS	scraper.py	/^HERO_HTMLS = '.\/htmls\/heroes\/'$/;"	kind:variable	line:34
+ITEM_HTMLS	scraper.py	/^ITEM_HTMLS = '.\/htmls\/items\/'$/;"	kind:variable	line:35
+NavigableString	scraper.py	/^from bs4 import BeautifulSoup as BS, NavigableString$/;"	kind:namespace	line:6
+SPECIAL_SENTENCES	scraper.py	/^SPECIAL_SENTENCES = {$/;"	kind:variable	line:14
+clean	scraper.py	/^def clean(str):$/;"	kind:function	line:89
+combine	scraper.py	/^def combine():$/;"	kind:function	line:512
+download_heroes	page_downloader.py	/^def download_heroes(hero_urls):$/;"	kind:function	line:48
+download_items	page_downloader.py	/^def download_items(item_urls):$/;"	kind:function	line:56
+download_url	page_downloader.py	/^def download_url(url, hfile):$/;"	kind:function	line:6
+fetch_abilities	scraper.py	/^def fetch_abilities(soup, extra=True):$/;"	kind:function	line:95
+fetch_ability_images	scraper.py	/^def fetch_ability_images(soup, owner):$/;"	kind:function	line:430
+fetch_hero_images	scraper.py	/^def fetch_hero_images(soup, hero_name):$/;"	kind:function	line:420
+fetch_image	scraper.py	/^def fetch_image(soup):$/;"	kind:function	line:424
+fetch_images	scraper.py	/^def fetch_images():$/;"	kind:function	line:459
+fetch_item_image	scraper.py	/^def fetch_item_image(soup, name):$/;"	kind:function	line:414
+fetch_items	scraper.py	/^def fetch_items(soup):$/;"	kind:function	line:342
+find_notes	scraper.py	/^def find_notes(divs_old, notes):$/;"	kind:function	line:39
+get_all_heroes	page_downloader.py	/^def get_all_heroes():$/;"	kind:function	line:14
+get_all_items	page_downloader.py	/^def get_all_items():$/;"	kind:function	line:31
+get_heroes	scraper.py	/^def get_heroes():$/;"	kind:function	line:479
+get_items	scraper.py	/^def get_items():$/;"	kind:function	line:496
+hero_data	scraper.py	/^def hero_data(soup, extra=True):$/;"	kind:function	line:247
+json	scraper.py	/^import json$/;"	kind:namespace	line:10
+os	scraper.py	/^import os$/;"	kind:namespace	line:8
+page_downloader.py	page_downloader.py	1;"	kind:file	line:1
+pformat	scraper.py	/^from pprint import pprint, pformat$/;"	kind:namespace	line:11
+pprint	scraper.py	/^from pprint import pprint, pformat$/;"	kind:namespace	line:11
+pretty_print	scraper.py	/^def pretty_print():$/;"	kind:function	line:526
+re	scraper.py	/^import re$/;"	kind:namespace	line:7
+replace_unicode	scraper.py	/^def replace_unicode(string):$/;"	kind:function	line:440
+scraper.py	scraper.py	1;"	kind:file	line:1
+sys	scraper.py	/^import sys$/;"	kind:namespace	line:3
+thread	page_downloader.py	/^import thread$/;"	kind:namespace	line:4
+urllib	scraper.py	/^import urllib$/;"	kind:namespace	line:9
+urllib2	page_downloader.py	/^import urllib2$/;"	kind:namespace	line:2
+webdriver	page_downloader.py	/^from selenium import webdriver$/;"	kind:namespace	line:1
