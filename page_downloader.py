@@ -1,10 +1,8 @@
-from selenium import webdriver
 import urllib2
 from bs4 import BeautifulSoup as BS
-import thread
 
 def download_url(url, hfile):
-    req = urllib2.Request(url, headers={'User-Agent' : "Magic Browser"})
+    req = urllib2.Request(url, headers={'User-Agent': "Magic Browser"})
     con = urllib2.urlopen(req)
     soup = BS(con.read(), 'html.parser')
     file = open(hfile, 'wb')

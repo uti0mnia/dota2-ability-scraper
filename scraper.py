@@ -85,11 +85,28 @@ def clean(str):
     return str
 
 def fetch_abilities(soup, extra=True):
+    try:
+        ability_header = soup.find('span', id='Ability').parent
+    except:
+        return []
+
+    ability_divs = []
+    next_tag = ability_header.find_next_sibling()
+    while next_tag != None and next_tag.name != 'h2':
+        if next_tag.name == 'div':
+            ability_divs.append(next_tag)
+        next_tag = next_tag.find_next_sibling()
+
     abilities = []
+
     # iterate through all ability divs
-    for ability_div in soup.findAll('div', style='display: flex; flex-wrap: wrap; align-items: flex-start;')[0:-1]:
+    for ability_div in ability_divs:
         ability = {}
-        children = ability_div.find('div', style=re.compile(r'font-weight: bold; font-size: 110%; border-bottom: 1px solid black;.*')).contents
+        try:
+            children = ability_div.find('div', style=re.compile('font-weight: bold; font-size: 110%; border-bottom: 1px solid black;')).contents
+        except:
+            continue # This is an unwanted div
+
         # get name
         name = children[0].encode('utf-8').strip()
 
@@ -370,51 +387,86 @@ def fetch_items(soup):
         item_data['availability'].append(SPECIAL_SENTENCES[span.get('title')])
     item_data['lore'] = clean(trs[3].text)
 
-    cost = clean(re.sub(r'[a-z]|[A-Z]', '', trs[4].find('th').find('div').text))
+    info_box = soup.find('table', class_='infobox')
+
+    # get cost
+    cost_div = info_box.find(text=re.compile('Cost')).parent
+    cost_text = clean(cost_div.text)
+    costs = re.findall(r'\d+', cost_text)
     item_data['cost'] = {
-        'item': cost.split('(')[0].strip()
+        'item': costs[0]
     }
-    if len(cost.split('(')) > 1:
-        item_data['cost']['recipe'] = cost.split('(')[1].replace(')', '').strip()
+    if len(costs) > 1:
+        item_data['cost']['recipe'] = costs[1]
 
     # removes text (keeps cost + recipe)
-    item_data['type'] = clean(re.sub(r'Bought From', '', trs[4].find('th').findAll('div', recursive=False)[-1].text))
+    type_div = info_box.find(text=re.compile('Bought From')).parent
+    item_data['type'] = clean(type_div.text.replace('Bought From', ''))
 
     # get the details
     detail_trs = trs[-1].findAll('tr')
     details = {}
     for tr in detail_trs:
-        # make sure it's not empty
-        if tr.find('td') is None or tr.find('td').text.strip() == '':
+        th = tr.find('th')
+        td = tr.find('td')
+        if th is None or th.text.strip() == '':
             continue
-        detail = clean(tr.find('td').text)
 
-        # if it's a recipe, we do something different
-        if detail == 'Recipe':
-            recipe_td = detail_trs[-1].find('td')  # the recipe is always the last tag
+        key = th.text.strip()
 
-            # get what the item build into
-            builds_into_div = recipe_td.find('div')
+        if key == 'Recipe':
+            td = tr.find_next_sibling().find('td')
+            item_a = td.find('a', recursive=False)
+            builds_into_div = item_a.find_previous_sibling('div')
             builds_into = []
-            for a in builds_into_div.findAll('a'):
-                builds_into.append(re.sub(r'\(|\)|[0-9]', '', a.get('title')).encode('utf-8').strip())
+            if builds_into_div is not None:
+                builds_into = [clean(a.get('title').split('(')[0]) for a in builds_into_div.findAll('a')]
 
-            # get the items that build it
-            builds_from_div = recipe_td.findAll('div', recursive=False)[-1]
+            builds_from_div = item_a.find_next_sibling('div')
             builds_from = []
-            for a in builds_from_div.findAll('a'):
-                builds_from.append(re.sub('\(|\)|[0-9]', '', a.get('title')).encode('utf-8').strip())
+            if builds_from_div is not None:
+                builds_from = [clean(a.get('title').split('(')[0]) for a in builds_from_div.findAll('a')]
 
             details['builds_from'] = builds_from
             details['builds_into'] = builds_into
+
             break
+        else:
+            [br.replace_with('$br$') for br in td.findAll('br')]
+            values = [clean(value) for value in clean(td.text).split('$br$') if value != '']
+            details[key] = values
 
-        # we want to clear the br (make them into ',')
-        for br in tr.findAll('td')[1].findAll('br'):
-            br.name = 'p'
-            br.insert(0, NavigableString(','))
-
-        details[detail] = [clean(x) for x in tr.findAll('td')[1].text.encode('utf-8').split(',') if x.strip() != '']
+        # make sure it's not empty
+        # if tr.find('td') is None or tr.find('td').text.strip() == '':
+        #     continue
+        # detail = clean(tr.find('td').text)
+        #
+        # # if it's a recipe, we do something different
+        # if detail == 'Recipe':
+        #     recipe_td = detail_trs[-1].find('td')  # the recipe is always the last tag
+        #
+        #     # get what the item build into
+        #     builds_into_div = recipe_td.find('div')
+        #     builds_into = []
+        #     for a in builds_into_div.findAll('a'):
+        #         builds_into.append(re.sub(r'\(|\)|[0-9]', '', a.get('title')).encode('utf-8').strip())
+        #
+        #     # get the items that build it
+        #     builds_from_div = recipe_td.findAll('div', recursive=False)[-1]
+        #     builds_from = []
+        #     for a in builds_from_div.findAll('a'):
+        #         builds_from.append(re.sub('\(|\)|[0-9]', '', a.get('title')).encode('utf-8').strip())
+        #
+        #     details['builds_from'] = builds_from
+        #     details['builds_into'] = builds_into
+        #     break
+        #
+        # # we want to clear the br (make them into ',')
+        # for br in tr.findAll('td')[1].findAll('br'):
+        #     br.name = 'p'
+        #     br.insert(0, NavigableString(','))
+        #
+        # details[detail] = [clean(x) for x in tr.findAll('td')[1].text.encode('utf-8').split(',') if x.strip() != '']
 
     item_data['details'] = details
 
@@ -447,6 +499,7 @@ def fetch_ability_images(soup, owner):
         img = div_img.find('img')
         urllib.urlretrieve(img.get('src'), './images/' + name + '_' + owner + '.' + img.get('alt').split('.')[-1])
 
+
 def replace_unicode(string):
     REPLACE_STRINGS = {
         '\u02da': '˚',
@@ -465,7 +518,8 @@ def replace_unicode(string):
     pattern = re.compile('|'.join(re.escape(key) for key in REPLACE_STRINGS.keys()))
     return pattern.sub(lambda x: REPLACE_STRINGS[x.group()], string)
 
-## DATA
+
+# DATA
 def fetch_images():
     i = 0
     num_files = len(os.listdir(HERO_HTMLS)) + len(os.listdir(ITEM_HTMLS))
@@ -507,6 +561,7 @@ def get_heroes():
 
         json.dump(heroes, jsonfile, ensure_ascii=False)
 
+
 def get_items():
     i = 0
     num_files = len(os.listdir(ITEM_HTMLS))
@@ -523,6 +578,7 @@ def get_items():
 
         json.dump(items, jsonfile, ensure_ascii=False)
 
+
 def combine():
     # combine files into 1
     with open('heroes.json', 'r') as herofile:
@@ -536,7 +592,8 @@ def combine():
             with open('dota2.json', 'w') as dotafile:
                 json.dump(new_json, dotafile)
 
-## LOGGING
+
+# LOGGING
 def pretty_print():
     # pretty print it for readability
     with open('heroes_fixed.json', 'r') as file:
@@ -549,6 +606,6 @@ def pretty_print():
         with open('items_pretty.json', 'w') as prettyfile:
             prettyfile.write(pformat(data, indent=2))
 
-get_heroes()
+# get_heroes()
 get_items()
 combine()
