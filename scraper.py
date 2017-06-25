@@ -85,9 +85,11 @@ def clean(str):
     return str
 
 def fetch_abilities(soup, extra=True):
+
     try:
-        ability_header = soup.find('span', id='Ability').parent
+        ability_header = soup.find('span', id=re.compile(r'Ability|Abilities')).parent
     except:
+        print 'No abilities'
         return []
 
     ability_divs = []
@@ -102,10 +104,12 @@ def fetch_abilities(soup, extra=True):
     # iterate through all ability divs
     for ability_div in ability_divs:
         ability = {}
-        try:
-            children = ability_div.find('div', style=re.compile('font-weight: bold; font-size: 110%; border-bottom: 1px solid black;')).contents
-        except:
-            continue # This is an unwanted div
+
+        top_div = ability_div.find('div', style=re.compile('font-weight: bold; font-size: 110%; border-bottom: 1px solid black;'))
+        if top_div is None:
+            continue
+
+        children = top_div.contents
 
         # get name
         name = children[0].encode('utf-8').strip()
@@ -436,38 +440,6 @@ def fetch_items(soup):
             values = [clean(value) for value in clean(td.text).split('$br$') if value != '']
             details[key] = values
 
-        # make sure it's not empty
-        # if tr.find('td') is None or tr.find('td').text.strip() == '':
-        #     continue
-        # detail = clean(tr.find('td').text)
-        #
-        # # if it's a recipe, we do something different
-        # if detail == 'Recipe':
-        #     recipe_td = detail_trs[-1].find('td')  # the recipe is always the last tag
-        #
-        #     # get what the item build into
-        #     builds_into_div = recipe_td.find('div')
-        #     builds_into = []
-        #     for a in builds_into_div.findAll('a'):
-        #         builds_into.append(re.sub(r'\(|\)|[0-9]', '', a.get('title')).encode('utf-8').strip())
-        #
-        #     # get the items that build it
-        #     builds_from_div = recipe_td.findAll('div', recursive=False)[-1]
-        #     builds_from = []
-        #     for a in builds_from_div.findAll('a'):
-        #         builds_from.append(re.sub('\(|\)|[0-9]', '', a.get('title')).encode('utf-8').strip())
-        #
-        #     details['builds_from'] = builds_from
-        #     details['builds_into'] = builds_into
-        #     break
-        #
-        # # we want to clear the br (make them into ',')
-        # for br in tr.findAll('td')[1].findAll('br'):
-        #     br.name = 'p'
-        #     br.insert(0, NavigableString(','))
-        #
-        # details[detail] = [clean(x) for x in tr.findAll('td')[1].text.encode('utf-8').split(',') if x.strip() != '']
-
     item_data['details'] = details
 
     return item_data
@@ -606,6 +578,6 @@ def pretty_print():
         with open('items_pretty.json', 'w') as prettyfile:
             prettyfile.write(pformat(data, indent=2))
 
-# get_heroes()
+get_heroes()
 get_items()
 combine()
