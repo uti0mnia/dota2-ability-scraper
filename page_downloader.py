@@ -43,13 +43,15 @@ def get_all_items():
 
     return urls
 
+
 def download_heroes(hero_urls):
     print 'Heroes:'
     i = 0
     for url in hero_urls:
         i += 1
         print str(i) + '/' + str(len(hero_urls))
-        download_url(url, 'htmls/heroes/' + url.split('/')[-1].split('.')[0].replace('_', ' ') + '.html')
+        download_url(url, 'htmls/heroes/' + url.split('/')[-1].split('.')[0].replace('_', ' ').replace('%20', '\'') + '.html')
+
 
 def download_items(item_urls):
     print 'Items:'

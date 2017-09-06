@@ -35,6 +35,10 @@ SPECIAL_SENTENCES = {
 HERO_HTMLS = './htmls/heroes/'
 ITEM_HTMLS = './htmls/items/'
 
+
+# Used to search BeautifulSoup Objects
+
+
 # divs is an array of <ul> tags
 # notes is the array used recursively, also the return value
 # Note: the name of the image is between '$' because that is how our parser works
@@ -78,16 +82,17 @@ def find_notes(divs_old, notes):
             })
         return find_notes(divs[1:], notes) # recurse with the rest
 
-def clean(str):
-    str = str.strip()
-    str = re.sub('\n+', '', str)
-    str = re.sub(' +', ' ', str)
-    return str
+
+def clean(string):
+    string = string.strip()
+    string = re.sub('\n+', '', string)
+    string = re.sub(' +', ' ', string)
+    return string
+
 
 def fetch_abilities(soup, extra=True):
-
     try:
-        ability_header = soup.find('span', id=re.compile(r'Ability|Abilities')).parent
+        ability_header = soup.find('span', id=re.compile(r'Ability|Abilities|')).parent
     except:
         print 'No abilities'
         return []
@@ -101,8 +106,12 @@ def fetch_abilities(soup, extra=True):
 
     abilities = []
 
+    ability_divs = soup.findAll('div', style='display: flex; flex-wrap: wrap; align-items: flex-start;')
+
     # iterate through all ability divs
     for ability_div in ability_divs:
+        if ability_div.findAll(text='Hero Talents'):
+            continue
         ability = {}
 
         top_div = ability_div.find('div', style=re.compile('font-weight: bold; font-size: 110%; border-bottom: 1px solid black;'))
@@ -121,7 +130,6 @@ def fetch_abilities(soup, extra=True):
         # get if aghs upgrade too since it's not shown in the title
         if len([x.get('alt') for x in ability_div.findAll('img') if x.get('alt') == 'Upgradable by Aghanim\'s Scepter.']) != 0:
             ability_special.append('AGHANIM_UPGRADE')
-
 
         # get "type" (i.e no target/passive/etc) and summary
         type_div = ability_div.find('div', style='padding: 15px 5px; font-size: 85%; line-height: 100%; text-align: center;')
@@ -201,7 +209,6 @@ def fetch_abilities(soup, extra=True):
             text = re.sub(' +', ' ', text)
             special_details[special] = text.replace('\n \n', '\n')
 
-
         modifiers = []
         # finding the modifiers
         for d in div_data.findAll('div', style='font-size: 85%; margin-left: 10px;'):
@@ -250,7 +257,6 @@ def fetch_abilities(soup, extra=True):
             normal_mana = mana_div.text.split('(')[0].replace(')', '')
             mana['normal'] = clean(normal_mana)
 
-
         ability[name] = {
             'ability_special': ability_special,
             'special_details': special_details,
@@ -265,6 +271,7 @@ def fetch_abilities(soup, extra=True):
         abilities.append(ability)
 
     return abilities
+
 
 # FOR DATA
 def hero_data(soup, extra=True):
@@ -310,13 +317,12 @@ def hero_data(soup, extra=True):
 
     hero['base_stats'] = base_stats
 
-
     # get misc stats
     misc_stats_table = trs[4].findAll('tr')
     misc_stats = {}
     for tr in misc_stats_table:
-        misc_stat = get_stat(tr, 0).encode('utf-8').strip()
-        misc_stat_value = get_stat(tr, 1).encode('utf-8').strip()
+        misc_stat = tr.find('th').text.encode('utf-8').strip()
+        misc_stat_value = get_stat(tr, 0)
         misc_stats[misc_stat] = re.sub(' +', ' ', misc_stat_value).replace('\n', '')
 
     hero['misc_stats'] = misc_stats
@@ -334,7 +340,7 @@ def hero_data(soup, extra=True):
     lore = re.sub('\n+', '\n', lore)
     hero['lore'] = lore.replace('\n \n', '\n')
 
-    #get abilities
+    # get abilities
     abilities = fetch_abilities(soup, extra)
     hero['abilities'] = abilities
 
@@ -342,17 +348,18 @@ def hero_data(soup, extra=True):
     talents = {}
     talent_div = soup.find('span', id='Talents').parent.findNext('div')
     talent_table = talent_div.find('table')
-    trs = talent_table.findAll('tr', recursive = False)[1:]
+    trs = talent_table.findAll('tr', recursive=False)[1:]
     for tr in trs:
-        tds = tr.findAll('td', recursive = False)
+        tds = tr.findAll('td', recursive=False)
+        th = tr.find('th')
         left = clean(tds[0].text)
-        level = clean(tds[1].text)
-        right = clean(tds[2].text)
+        level = clean(th.text)
+        right = clean(tds[1].text)
         talents[level] = {
             'left': left,
             'right': right
         }
-    note_div = talent_div.findAll('div', recursive = False)[1]
+    note_div = talent_div.findAll('div', recursive=False)[-1]
     if note_div is not None:
         notes = find_notes(note_div.findAll('ul', recursive=False), [])
     else:
@@ -361,6 +368,7 @@ def hero_data(soup, extra=True):
     hero['talents'] = talents
 
     return hero
+
 
 def fetch_items(soup):
     # return dictionary
@@ -374,13 +382,10 @@ def fetch_items(soup):
 
     # find the first ul that contains the additional information
     ul = div.find('ul', recursive=False)  # get the ul
-    additional_info = []
+    additional_info = None
 
     if ul is not None:
-        for li in ul.findAll('li'):  # get each li in the ul
-            if li.find('li') is not None:
-                print 'Double li'
-            additional_info.append(clean(li.text.encode('utf-8').strip())) #  removes double whitespaces and other utf-8 bad chars
+        additional_info = find_notes([ul], [])
 
     item_data['additional_info'] = additional_info
 
@@ -389,9 +394,11 @@ def fetch_items(soup):
     item_data['availability'] = []
     for span in trs[0].findAll('span'):
         item_data['availability'].append(SPECIAL_SENTENCES[span.get('title')])
-    item_data['lore'] = clean(trs[3].text)
 
     info_box = soup.find('table', class_='infobox')
+
+    # get lore (note the '.?' is for in some cases there's a '{' for some reason
+    item_data['lore'] = clean(info_box.find('td', style=re.compile(r'.*font-style:.?italic.*')).text)
 
     # get cost
     cost_div = info_box.find(text=re.compile('Cost')).parent
@@ -410,6 +417,8 @@ def fetch_items(soup):
     # get the details
     detail_trs = trs[-1].findAll('tr')
     details = {}
+    builds_from = []
+    builds_into = []
     for tr in detail_trs:
         th = tr.find('th')
         td = tr.find('td')
@@ -422,17 +431,12 @@ def fetch_items(soup):
             td = tr.find_next_sibling().find('td')
             item_a = td.find('a', recursive=False)
             builds_into_div = item_a.find_previous_sibling('div')
-            builds_into = []
             if builds_into_div is not None:
                 builds_into = [clean(a.get('title').split('(')[0]) for a in builds_into_div.findAll('a')]
 
             builds_from_div = item_a.find_next_sibling('div')
-            builds_from = []
             if builds_from_div is not None:
                 builds_from = [clean(a.get('title').split('(')[0]) for a in builds_from_div.findAll('a')]
-
-            details['builds_from'] = builds_from
-            details['builds_into'] = builds_into
 
             break
         else:
@@ -441,25 +445,31 @@ def fetch_items(soup):
             details[key] = values
 
     item_data['details'] = details
+    item_data['builds_from'] = builds_from
+    item_data['builds_into'] = builds_into
 
     return item_data
 
-## IMAGES
+
+# IMAGES
 def fetch_item_image(soup, name):
     table = soup.find('table', class_='infobox')
     tr = table.find('tbody').findAll('tr', recursive=False)[1]
     img = tr.find('img')
     urllib.urlretrieve(img.get('src'), './images/' + name + '.' + img.get('alt').split('.')[-1])
 
+
 def fetch_hero_images(soup, hero_name):
     fetch_image(soup)
     fetch_ability_images(soup, hero_name)
+
 
 def fetch_image(soup):
     table = soup.find('table', class_='infobox')
     img = table.find('img')
     name = table.find('tr').text.encode('utf-8').strip()
     urllib.urlretrieve(img.get('src'), './images/' + name + '.' + img.get('alt').split('.')[-1])
+
 
 def fetch_ability_images(soup, owner):
     # get each ability
